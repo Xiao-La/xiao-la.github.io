@@ -42,7 +42,8 @@ li a.active {
 #top{
 	position:fixed;
 	opacity:0.75;
-	top:0
+	top:0;
+    transition:opacity 0.5s;
 }
 #top:hover{
 	opacity:1;
