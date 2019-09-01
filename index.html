@@ -7,25 +7,29 @@
 		<script type="text/javascript">
 			window.onload = function autodiv(){ 
 				var winWidth=$(window).width();
+                var winHeight=$(window).height();
 				var heading = document.getElementById("html");
+                var urls = document.getElementById("urls");
 				document.getElementById("top").width=winWidth+"px";
 				heading.style.width=winWidth-10 +"px";
 				heading.style.height=winWidth*3120/1078 +"px";
+                urls.style.width=winWidth-250+"px";
+                urls.style.height="500px";
 			}
 		</script>
 	</head> 
 	<div id="html">
 		<div id="top">
-			<ul>
-			  <li><a class="active" href="./index.html">HOME</a></li>
-			  <li><a href="./blog.html">BLOG</a></li>
-			  <li><a href="./about.html">ABOUT</a></li>
+			<ul id="topb">
+			  <li id="topa"><a id="topc" class="active" href="./index.html">HOME</a></li>
+			  <li id="topa"><a id="topc" href="./blog.html">BLOG</a></li>
+			  <li id="topa"><a id="topc" href="./about.html">ABOUT</a></li>
 			</ul>
 		</div>
 		<h1 class="heading">Xiao_La | HOME</h1>
+        <hr />
         <div id="urls">
-            
+            <li class="urls"><a class="urls" href="./blog.html">Blog</a></li>
         </div>
-		<hr />
 	</div>
 </html>

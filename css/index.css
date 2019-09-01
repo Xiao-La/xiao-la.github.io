@@ -11,7 +11,7 @@ h1{
 	padding: 0px;
 	font-family: serif;
 }
-ul {
+ul#topb{
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -19,11 +19,11 @@ ul {
     background-color: #f3f3f3;
 }
 
-li {
+li#topa{
     float: left;
 }
 
-li a {
+li#topa a#topc{
     display: block;
     color: #666;
     text-align: center;
@@ -31,11 +31,11 @@ li a {
     text-decoration: none;
 }
 
-li a:hover:not(.active) {
+li#topa a#topc:hover:not(.active) {
     background-color: #ddd;
 }
 
-li a.active {
+li#topa a#topc.active {
     color: white;
     background-color: #4CAF50;
 }
@@ -55,4 +55,12 @@ border: 0;
 height: 0;
 border-top: 1px solid rgba(0, 0, 0, 0.3);
 border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+#urls{
+    border:0px solid;
+    background-color:rgba(255,255,255,0.5);
+    border-radius:25px;
+    margin: 0 auto;
+    margin-top:40px;
+    box-shadow:0px 0px 5px #888888;
 }
