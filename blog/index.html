@@ -1,10 +1,13 @@
-<!DOCTYPE html>
+---
+layout: default
+title: Blog
+---
 <html>
 	<head>
 		<title>BLOG | Xiao_La的个人网站</title>
 		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="./js/loadblogs.js"></script>
-		<link rel="stylesheet" type="text/css" href="./css/index.css">
+		<link rel="stylesheet" type="text/css" href="index.css">
 		<script type="text/javascript">
 			window.onload = function autodiv(){ 
 				var winWidth=$(window).width();
@@ -25,7 +28,11 @@
 		</div>
 		<h1 class="heading">Xiao_La | BLOG</h1>
         <div id="urls">
-            
+         {% for post in site.posts %}
+
+　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+
+　　　　{% endfor %}
         </div>
 		<hr />
 	</div>
