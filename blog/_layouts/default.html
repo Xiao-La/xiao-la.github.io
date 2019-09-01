@@ -1,9 +1,10 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>BLOG | Xiao_La的个人网站</title>
 		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="./js/loadblogs.js"></script>
-		<link rel="stylesheet" type="text/css" href="index.css">
+		<link rel="stylesheet" type="text/css" href="./index.css">
 		<script type="text/javascript">
 			window.onload = function autodiv(){ 
 				var winWidth=$(window).width();
@@ -23,12 +24,8 @@
 			</ul>
 		</div>
 		<h1 class="heading">Xiao_La | BLOG</h1>
-        <div id="urls">
-         
-
-　　　　　　<li>01 Sep 2019 <a href="/blog/2019/09/01/hello-world.html">你好，世界</a></li>
-
-　　　　
+        <div id="text">
+            {{content}}
         </div>
 	</div>
 </html>

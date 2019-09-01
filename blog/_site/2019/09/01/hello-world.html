@@ -1,5 +1,35 @@
-<h2>你好，世界</h2>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BLOG | Xiao_La的个人网站</title>
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="./js/loadblogs.js"></script>
+		<link rel="stylesheet" type="text/css" href="./index.css">
+		<script type="text/javascript">
+			window.onload = function autodiv(){ 
+				var winWidth=$(window).width();
+				var heading = document.getElementById("html");
+				document.getElementById("top").width=winWidth+"px";
+				heading.style.width=winWidth-10 +"px";
+				heading.style.height=winWidth*3120/1078 +"px";
+			}
+		</script>
+	</head> 
+	<div id="html">
+		<div id="top">
+			<ul id="topb">
+			  <li id="topa"><a id="topc" href="./index.html">HOME</a></li>
+			  <li id="topa"><a id="topc" class="active" href="./blog.html">BLOG</a></li>
+			  <li id="topa"><a id="topc" href="./about.html">ABOUT</a></li>
+			</ul>
+		</div>
+		<h1 class="heading">Xiao_La | BLOG</h1>
+        <div id="text">
+            <h2>你好，世界</h2>
 
 <p>我的第一篇文章</p>
 
 <p>01 Sep 2019</p>
+        </div>
+	</div>
+</html>
