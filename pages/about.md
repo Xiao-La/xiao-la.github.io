@@ -16,7 +16,6 @@ permalink: /about/
 
 {% for website in site.data.social %}
 * {{ website.sitename }}：[@{{ website.name }}]({{ website.url }})
-{% endfor %}
 
 ### {{ category.name }}
 <div class="btn-inline">
