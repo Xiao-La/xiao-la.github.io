@@ -39,8 +39,8 @@ navs:
 #     label: 归档
 
   -
-    href: /wiki/
-    label: 维基
+    href: /file/pan.html
+    label: 网盘
 
   -
     href: /links/

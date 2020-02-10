@@ -1,0 +1,1 @@
+[{"name":"测试","cowdown":"https://cowtransfer.com/","pandown":"https://www.pan.baidu.com"},{"name":"测试2","cowdown":"https://cowtransfer.com/","pandown":"https://www.pan.baidu.com"}]
