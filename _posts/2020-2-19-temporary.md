@@ -1,8 +1,8 @@
 ---
 layout: post
 title: 操你妈
-categories: python
-description: python
+categories: temporary
+description: temporary
 keywords: cnm
 ---
 
