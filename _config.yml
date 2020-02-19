@@ -91,7 +91,7 @@ comments_provider: gitalk
 # gitalk
 gitalk:
     owner: Xiao-La
-    repo: blog-comments
+    repo: xiao-la.github.io
     clientID: a9a3c7d92c1367124405
     clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
 
