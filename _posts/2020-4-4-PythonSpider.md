@@ -2,8 +2,13 @@
 layout: post
 title: Python爬虫入门
 categories: python
+<<<<<<< HEAD:_posts/2020-4-4-PythonSpider.md
 description: python
 keywords: python
+=======
+description: python爬虫
+keywords: python,爬虫
+>>>>>>> 088eeb9d9f5af0df5251a8153dd05e2094da8286:_posts/2020-4-3-Python爬虫.md
 ---
 
 
@@ -12,7 +17,6 @@ keywords: python
 
 
 # Python网络爬虫入门
----
 来讲一下**怎么入门Python爬虫**。
 
 ### 爬虫是什么?
