@@ -1,10 +1,15 @@
 ---
 layout: post
-title: 如何从头开始学Python爬虫
+title: 使用Python写一个成语接龙工具
 categories: python
 description: python
-keywords: python, spider, requests, 正则表达式, 入门
+keywords: python,pypinyin,成语接龙,一个顶俩,接龙红包,成语词典
 ---
+
+
+
+
+
 
 # Python网络爬虫入门
 ---
