@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 使用Python写一个成语接龙工具
+title: Python爬虫入门
 categories: python
 description: python
-keywords: python,pypinyin,成语接龙,一个顶俩,接龙红包,成语词典
+keywords: python
 ---
 
 
