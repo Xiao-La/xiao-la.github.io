@@ -16,8 +16,8 @@ side_bar_repo_limit: 5
 #      Author      #
 # ---------------- #
 author: Xiao_La
-organization: 
-organization_url: 
+organization:
+organization_url:
 github_username: xiao-la
 location: Fuzhou, China
 email: 836772730@qq.com
@@ -92,8 +92,8 @@ comments_provider: gitalk
 gitalk:
     owner: Xiao-La
     repo: xiao-la.github.io
-    clientID: a9a3c7d92c1367124405
-    clientSecret: b42a4178e5fd4a7cf63189ef4b1453b05c375709
+    clientID: a4a8ede1ad02d082969a
+    clientSecret: a33d0698e7e839adaa52bfb8b2b23b7fc15441b7
 
 # ---------------- #
 #      Search      #
