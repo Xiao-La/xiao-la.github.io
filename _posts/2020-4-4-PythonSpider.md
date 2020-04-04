@@ -3,7 +3,7 @@ layout: post
 title: Python爬虫入门
 categories: python
 description: python
-keywords: python
+keywords: python,爬虫,正则,教程,入门,spider
 ---
 
 
@@ -52,7 +52,7 @@ keywords: python
 ### 我应该怎么开始?
 
 下图是简化后的浏览器访问一个网页的流程:
-![img](\images\htl.png)
+![文章](\images\pySpider.png)
 
 所以，爬虫就要伪造其中发送请求的部分，并且获取相应的响应。
 
