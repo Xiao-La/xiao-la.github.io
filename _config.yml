@@ -39,8 +39,8 @@ navs:
 #     label: 归档
 
   -
-    href: /file/pan.html
-    label: 网盘
+    href: https://www.bilibili.com/
+    label: Bilibili
 
   -
     href: /links/
