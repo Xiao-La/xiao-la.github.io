@@ -18,9 +18,9 @@
                 {% for nav in site.navs %}
                 <li>
                     <a href="{{ site.url }}{{ nav.href }}" title="{{ nav.label }}" target="{{ nav.target | default: _self }}">{{ nav.label }}</a>
-                    <a href="https://www.jinrishici.com" target = "_blank">今日诗词 API</a>
                 </li>
                 {% endfor %}
+                <a href="https://www.jinrishici.com" target = "_blank">今日诗词 API</a>
                 <li><a href="{{ site.url }}{{ site.subscribe_rss }}"><span class="octicon octicon-rss" style="color:orange;"></span></a></li>
             </ul>
 
