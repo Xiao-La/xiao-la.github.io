@@ -38,11 +38,6 @@ navs:
 #     href: /archives/
 #     label: 归档
 
-  -
-    href: https://www.bilibili.com/
-    label: Bilibili
-
-  -
     href: /links/
     label: 链接
 

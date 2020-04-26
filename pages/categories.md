@@ -1,7 +1,7 @@
 ---
 layout: categories
 title: Categories
-description: 所有文章的分类呢~
+description: 文章分类
 keywords: 分类
 comments: false
 menu: 分类
