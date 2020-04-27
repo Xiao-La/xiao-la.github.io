@@ -1,6 +1,6 @@
 @font-face{
-    font-family: 'BF';
-    src : url('Font.ttf');
+    font-family: "FZXiJinLJW";
+    src: url(Font.ttf) format("truetype")
 }
 
 
@@ -34,7 +34,7 @@
 }
 
 #subtitle{
-    font-family: 'BF'
+    font-family: 'FZXiJinLJW'
 }
 
 @media (max-width:50em) {
