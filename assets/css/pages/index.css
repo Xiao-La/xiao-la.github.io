@@ -1,3 +1,9 @@
+@font-face{
+    font-family: 'BF';
+    src : url('Font.ttf');
+}
+
+
 .home .banner,
 .home .site-header {
     background: #21373d;
@@ -27,6 +33,9 @@
     color: #fff
 }
 
+#subtitle{
+    font-family: 'BF'
+}
 
 @media (max-width:50em) {
   .home .collapsed .icon-bar {
