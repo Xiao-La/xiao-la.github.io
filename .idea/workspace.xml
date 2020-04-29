@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e1108593-cb63-4cf8-9894-877d9ad19767" name="Default" comment="fix: move clustrmaps to bottom.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/oukohou_github_io$resize_image.coverage" NAME="resize_image Coverage Results" MODIFIED="1537262164741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/laboratory" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2019-09-20-SSRNet.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="1386">
+                <caret line="63" selection-start-line="63" selection-end-line="63" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/about.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2020-04-08-InvisibleMan.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="22">
+                <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="82" column="89" selection-start-line="82" selection-start-column="89" selection-end-line="82" selection-end-column="89" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_layouts/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4056" />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="12" />
+        <option value="markdown" />
+        <option value="blog_post" />
+        <option value="Github_blog_post" />
+        <option value="HTML File" />
+        <option value="MarkDown" />
+        <option value="Blog_post" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="oukohou &lt;oukohou@outlook.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/_posts/2020-04-08-InvisibleMan.md" />
+        <option value="$PROJECT_DIR$/index.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="117" />
+    <option name="y" value="249" />
+    <option name="width" value="1772" />
+    <option name="height" value="719" />
+  </component>
+  <component name="ProjectId" id="1XOAfmqPgpnBSAgDSjDWVIZpjyg" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="oukohou.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oukohou.github.io" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="oukohou.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="oukohou.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="_layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="duoshuo&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/_site/jekyll/update/2018/08/28/welcome-to-jekyll.html&#10;/home/CVAR/study/interest/blogs/github_page/oukohou.github.io/laboratory/comment_test.html&#10;/home/CVAR/study/interest/blogs/github_page/oukohou.github.io/_site/guestbook/index.html&#10;/home/CVAR/study/interest/blogs/github_page/oukohou.github.io/laboratory/fd.html&#10;true&#10;/home/CVAR/study/interest/blogs/github_page/oukohou.github.io/_site/assets/css/style.css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/imgs" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/assets/live2dw" />
+      <recent name="$PROJECT_DIR$/assets/css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/server" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.post.html">
+    <configuration name="post.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/oukohou.github.io/_layouts/post.html">
+      <method v="2" />
+    </configuration>
+    <configuration name="resize_image" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="oukohou.github.io" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/laboratory" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/laboratory/resize_image.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.post.html" />
+      <item itemvalue="Python.resize_image" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.post.html" />
+        <item itemvalue="Python.resize_image" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e1108593-cb63-4cf8-9894-877d9ad19767" name="Default" comment="" />
+      <created>1535506444679</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1535506444679</updated>
+      <workItem from="1551064343038" duration="3944000" />
+      <workItem from="1551075200788" duration="1042000" />
+      <workItem from="1551162388406" duration="4520000" />
+      <workItem from="1551262750224" duration="605000" />
+      <workItem from="1551355970947" duration="823000" />
+      <workItem from="1551421174274" duration="1241000" />
+      <workItem from="1551662751264" duration="604000" />
+      <workItem from="1551866563914" duration="6504000" />
+      <workItem from="1551879594236" duration="807000" />
+      <workItem from="1552382202190" duration="2022000" />
+      <workItem from="1552455942067" duration="389000" />
+      <workItem from="1552463610616" duration="1252000" />
+      <workItem from="1552535382336" duration="596000" />
+      <workItem from="1553505183905" duration="1987000" />
+      <workItem from="1553741473375" duration="33000" />
+      <workItem from="1553852055293" duration="1533000" />
+      <workItem from="1554100148790" duration="119000" />
+      <workItem from="1554193797052" duration="10448000" />
+      <workItem from="1554689860362" duration="10000" />
+      <workItem from="1554881898013" duration="13854000" />
+      <workItem from="1555395914645" duration="702000" />
+      <workItem from="1555566943521" duration="10324000" />
+      <workItem from="1555666243925" duration="634000" />
+      <workItem from="1555902546102" duration="5899000" />
+      <workItem from="1556268179983" duration="608000" />
+      <workItem from="1557470410703" duration="12507000" />
+      <workItem from="1558921181852" duration="3212000" />
+      <workItem from="1559185492797" duration="1401000" />
+      <workItem from="1560332707263" duration="679000" />
+      <workItem from="1561368387673" duration="1271000" />
+      <workItem from="1561688731817" duration="8243000" />
+      <workItem from="1561945733749" duration="3927000" />
+      <workItem from="1562125215356" duration="695000" />
+      <workItem from="1562141665359" duration="11287000" />
+      <workItem from="1565690218869" duration="2896000" />
+      <workItem from="1566380875642" duration="5573000" />
+      <workItem from="1566550339270" duration="626000" />
+      <workItem from="1566895022100" duration="898000" />
+      <workItem from="1568805591004" duration="3013000" />
+      <workItem from="1569231311309" duration="1411000" />
+      <workItem from="1569576827289" duration="1834000" />
+      <workItem from="1570499856405" duration="2031000" />
+      <workItem from="1570845180398" duration="598000" />
+      <workItem from="1571017164837" duration="121000" />
+      <workItem from="1571017320618" duration="9424000" />
+      <workItem from="1576577346841" duration="1207000" />
+      <workItem from="1577151703701" duration="597000" />
+      <workItem from="1577430163923" duration="598000" />
+      <workItem from="1580955153705" duration="596000" />
+      <workItem from="1580978959503" duration="2128000" />
+      <workItem from="1581041972023" duration="3830000" />
+      <workItem from="1581069582411" duration="594000" />
+      <workItem from="1581255700375" duration="2435000" />
+      <workItem from="1581260135239" duration="445000" />
+      <workItem from="1581574357807" duration="2901000" />
+      <workItem from="1581578153142" duration="2871000" />
+      <workItem from="1586336795639" duration="1137000" />
+      <workItem from="1586763298386" duration="2365000" />
+    </task>
+    <task id="LOCAL-00148" summary="refactor: change category 活动 to 浪游, so as to include more posts.">
+      <created>1547634277179</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1547634277179</updated>
+    </task>
+    <task id="LOCAL-00149" summary="add posts: VMware's network adaptor and records of errors.">
+      <created>1547645225909</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1547645225910</updated>
+    </task>
+    <task id="LOCAL-00150" summary="small refinement: add a picture.">
+      <created>1547646014565</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1547646014565</updated>
+    </task>
+    <task id="LOCAL-00151" summary="add post: ProgressiveGAN.">
+      <created>1548247427183</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1548247427185</updated>
+    </task>
+    <task id="LOCAL-00152" summary="add post: ProgressiveGAN.">
+      <created>1548247700336</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1548247700336</updated>
+    </task>
+    <task id="LOCAL-00153" summary="refactor: change a post's name to lower-case.">
+      <created>1548293800095</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1548293800096</updated>
+    </task>
+    <task id="LOCAL-00154" summary="add content: matlab and python's datenum convert.">
+      <created>1548300742916</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1548300742916</updated>
+    </task>
+    <task id="LOCAL-00155" summary="add post: how to mount disk on Ubuntu.">
+      <created>1548814056111</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1548814056112</updated>
+    </task>
+    <task id="LOCAL-00156" summary="add post: face aging using GAN.">
+      <created>1548930291687</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1548930291688</updated>
+    </task>
+    <task id="LOCAL-00157" summary="refactor: change format.">
+      <created>1548930674627</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1548930674627</updated>
+    </task>
+    <task id="LOCAL-00158" summary="add post: autumn poems 2;&#10;refactor: simplify tags of autumn poems.">
+      <created>1550052482475</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1550052482475</updated>
+    </task>
+    <task id="LOCAL-00159" summary="add content: of post records of installation errors and operations;&#10;refactor: correct a typo.">
+      <created>1551074842414</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1551074842415</updated>
+    </task>
+    <task id="LOCAL-00160" summary="add post:ubuntu atom and latex.">
+      <created>1551200308857</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1551200308857</updated>
+    </task>
+    <task id="LOCAL-00161" summary="add post:ubuntu atom and latex.">
+      <created>1551200354898</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1551200354898</updated>
+    </task>
+    <task id="LOCAL-00162" summary="features: add Google AdSense codes.">
+      <created>1551356131183</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1551356131183</updated>
+    </task>
+    <task id="LOCAL-00163" summary="add post: CycleGAN;&#10;refactor: delete the `dollar` icon.">
+      <created>1551879170272</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1551879170272</updated>
+    </task>
+    <task id="LOCAL-00164" summary="refactor: add category and labels.">
+      <created>1551879798371</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1551879798371</updated>
+    </task>
+    <task id="LOCAL-00165" summary="refactor: change signature format.">
+      <created>1552455971879</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1552455971879</updated>
+    </task>
+    <task id="LOCAL-00166" summary="refactor: change signature format.">
+      <created>1553738689702</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1553738689703</updated>
+    </task>
+    <task id="LOCAL-00167" summary="refactor: change signature format.">
+      <created>1553741480247</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1553741480248</updated>
+    </task>
+    <task id="LOCAL-00168" summary="refactor: live2D fixed problem on mobile's scale, see https://github.com/xiazeyu/live2d-widget.js/issues/40#issuecomment-478934856 for detail.">
+      <created>1554201366132</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1554201366133</updated>
+    </task>
+    <task id="LOCAL-00169" summary="refactor: parameters of Live2D changes.">
+      <created>1554277788509</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1554277788509</updated>
+    </task>
+    <task id="LOCAL-00170" summary="refactor: change donation's format, and yellow background.">
+      <created>1554374455491</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1554374455491</updated>
+    </task>
+    <task id="LOCAL-00171" summary="add post: Style-based GAN.">
+      <created>1554978863381</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1554978863381</updated>
+    </task>
+    <task id="LOCAL-00172" summary="refactor: change contents of StyleGAN.">
+      <created>1555395949514</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1555395949515</updated>
+    </task>
+    <task id="LOCAL-00173" summary="refactor: change title of StyleGAN, change time of autumn-poem-2.">
+      <created>1555569801122</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1555569801122</updated>
+    </task>
+    <task id="LOCAL-00174" summary="refactor: change title of face-aging-GAN.">
+      <created>1555569979634</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1555569979635</updated>
+    </task>
+    <task id="LOCAL-00175" summary="refactor: change title of face-aging-gan.">
+      <created>1555570298968</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1555570298968</updated>
+    </task>
+    <task id="LOCAL-00176" summary="refactor: change colons in titles of posts into - .">
+      <created>1555570463263</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1555570463263</updated>
+    </task>
+    <task id="LOCAL-00177" summary="add post: spring poem 1.">
+      <created>1555584252990</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1555584252990</updated>
+    </task>
+    <task id="LOCAL-00178" summary="add content: section 4: Connection reset by peer.">
+      <created>1555916623493</created>
+      <option name="number" value="00178" />
+      <option name="presentableId" value="LOCAL-00178" />
+      <option name="project" value="LOCAL" />
+      <updated>1555916623493</updated>
+    </task>
+    <task id="LOCAL-00179" summary="add post: sprctral normalization.">
+      <created>1557716154351</created>
+      <option name="number" value="00179" />
+      <option name="presentableId" value="LOCAL-00179" />
+      <option name="project" value="LOCAL" />
+      <updated>1557716154352</updated>
+    </task>
+    <task id="LOCAL-00180" summary="Big change: now use github to save images, as most image gallery services are unreliable.">
+      <created>1561948886700</created>
+      <option name="number" value="00180" />
+      <option name="presentableId" value="LOCAL-00180" />
+      <option name="project" value="LOCAL" />
+      <updated>1561948886701</updated>
+    </task>
+    <task id="LOCAL-00181" summary="refactor: modify two wrong image links.">
+      <created>1562125308412</created>
+      <option name="number" value="00181" />
+      <option name="presentableId" value="LOCAL-00181" />
+      <option name="project" value="LOCAL" />
+      <updated>1562125308412</updated>
+    </task>
+    <task id="LOCAL-00182" summary="add post: SAGAN.">
+      <created>1562315129575</created>
+      <option name="number" value="00182" />
+      <option name="presentableId" value="LOCAL-00182" />
+      <option name="project" value="LOCAL" />
+      <updated>1562315129575</updated>
+    </task>
+    <task id="LOCAL-00183" summary="refactor:donate.md.">
+      <created>1565690376783</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1565690376783</updated>
+    </task>
+    <task id="LOCAL-00184" summary="add post: UEA.">
+      <created>1566550357826</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1566550357827</updated>
+    </task>
+    <task id="LOCAL-00185" summary="bug fix: get 'new Valine' out of the 'for' loop, see https://github.com/xCss/Valine/issues/136 for details.">
+      <created>1566895318638</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1566895318639</updated>
+    </task>
+    <task id="LOCAL-00186" summary="add post: SSR-Net.">
+      <created>1571626825714</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1571626825714</updated>
+    </task>
+    <task id="LOCAL-00187" summary="post content: add results.">
+      <created>1571629981355</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1571629981355</updated>
+    </task>
+    <task id="LOCAL-00188" summary="add content: control video's size.">
+      <created>1581575061378</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1581575061379</updated>
+    </task>
+    <task id="LOCAL-00189" summary="add content:">
+      <created>1581577886115</created>
+      <option name="number" value="00189" />
+      <option name="presentableId" value="LOCAL-00189" />
+      <option name="project" value="LOCAL" />
+      <updated>1581577886115</updated>
+    </task>
+    <task id="LOCAL-00190" summary="refactor: change video's post images.">
+      <created>1581578220314</created>
+      <option name="number" value="00190" />
+      <option name="presentableId" value="LOCAL-00190" />
+      <option name="project" value="LOCAL" />
+      <updated>1581578220314</updated>
+    </task>
+    <task id="LOCAL-00191" summary="refactor: change video's autoplay.">
+      <created>1581579499799</created>
+      <option name="number" value="00191" />
+      <option name="presentableId" value="LOCAL-00191" />
+      <option name="project" value="LOCAL" />
+      <updated>1581579499799</updated>
+    </task>
+    <task id="LOCAL-00192" summary="refactor: change video's size.">
+      <created>1581581130940</created>
+      <option name="number" value="00192" />
+      <option name="presentableId" value="LOCAL-00192" />
+      <option name="project" value="LOCAL" />
+      <updated>1581581130940</updated>
+    </task>
+    <task id="LOCAL-00193" summary="refactor: change video's size.">
+      <created>1581582427091</created>
+      <option name="number" value="00193" />
+      <option name="presentableId" value="LOCAL-00193" />
+      <option name="project" value="LOCAL" />
+      <updated>1581582427091</updated>
+    </task>
+    <task id="LOCAL-00194" summary="add post:invisible man.">
+      <created>1586337327879</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1586337327880</updated>
+    </task>
+    <task id="LOCAL-00195" summary="feature: add clustrmaps.">
+      <created>1586763411998</created>
+      <option name="number" value="00195" />
+      <option name="presentableId" value="LOCAL-00195" />
+      <option name="project" value="LOCAL" />
+      <updated>1586763411998</updated>
+    </task>
+    <task id="LOCAL-00196" summary="fix: move clustrmaps to bottom.">
+      <created>1586764239159</created>
+      <option name="number" value="00196" />
+      <option name="presentableId" value="LOCAL-00196" />
+      <option name="project" value="LOCAL" />
+      <updated>1586764239159</updated>
+    </task>
+    <option name="localTasksCounter" value="197" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3682000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19624102" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4991708" weight="0.32983193" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.498618" weight="0.21743697" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3294979" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.5317855" weight="0.17782427" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.5644002" visible="true" weight="0.31589958" />
+      <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.4997236" weight="0.8880753" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.46821448" side_tool="true" weight="0.2972689" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="R Packages" order="6" />
+      <window_info anchor="right" id="make" order="7" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25262576" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4991708" weight="0.32983193" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.498618" weight="0.21743697" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3294979" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.5317855" visible="true" weight="0.2374477" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.5644002" weight="0.31485355" />
+      <window_info anchor="bottom" id="Python Console" order="11" sideWeight="0.4997236" weight="0.8880753" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.46821448" side_tool="true" weight="0.2972689" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="R Graphics" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="R Packages" order="6" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add post: Style-based GAN." />
+    <MESSAGE value="refactor: change contents of StyleGAN." />
+    <MESSAGE value="refactor: change title of StyleGAN, change time of autumn-poem-2." />
+    <MESSAGE value="refactor: change title of face-aging-GAN." />
+    <MESSAGE value="refactor: change title of face-aging-gan." />
+    <MESSAGE value="refactor: change colons in titles of posts into - ." />
+    <MESSAGE value="add post: spring poem 1." />
+    <MESSAGE value="add content: section 4: Connection reset by peer." />
+    <MESSAGE value="add post: sprctral normalization." />
+    <MESSAGE value="Big change: now use github to save images, as most image gallery services are unreliable." />
+    <MESSAGE value="refactor: modify two wrong image links." />
+    <MESSAGE value="add post: SAGAN." />
+    <MESSAGE value="refactor:donate.md." />
+    <MESSAGE value="add post: UEA." />
+    <MESSAGE value="bug fix: get 'new Valine' out of the 'for' loop, see https://github.com/xCss/Valine/issues/136 for details." />
+    <MESSAGE value="add post: SSR-Net." />
+    <MESSAGE value="post content: add results." />
+    <MESSAGE value="add content: control video's size." />
+    <MESSAGE value="add content:" />
+    <MESSAGE value="refactor: change video's post images." />
+    <MESSAGE value="refactor: change video's autoplay." />
+    <MESSAGE value="refactor: change video's size." />
+    <MESSAGE value="add post:invisible man." />
+    <MESSAGE value="feature: add clustrmaps." />
+    <MESSAGE value="fix: move clustrmaps to bottom." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: move clustrmaps to bottom." />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="304" y="0" key="CommitChangelistDialog2" timestamp="1581582422212">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="304" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1581582422212" />
+    <state x="517" y="130" key="FileChooserDialogImpl" timestamp="1581574465763">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="517" y="130" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1581574465763" />
+    <state x="503" y="141" key="FileChooserDialogImpl/65.24.1301.744@65.24.1301.744" timestamp="1580981422426" />
+    <state x="143" y="0" key="SettingsEditor" timestamp="1581574471271">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="143" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1581574471271" />
+    <state x="261" y="73" key="Vcs.Push.Dialog.v2" timestamp="1581582428435">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="261" y="73" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1581582428435" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/laboratory/resize_image.py</url>
+          <line>17</line>
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/_posts/2019-09-20-SSRNet.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1386">
+            <caret line="63" selection-start-line="63" selection-end-line="63" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2020-04-08-InvisibleMan.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="22">
+            <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_layouts/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4056" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="82" column="89" selection-start-line="82" selection-start-column="89" selection-end-line="82" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,106 +1,90 @@
-# ---------------- #
-#   Main Configs   #
-# ---------------- #
-baseurl:
-url:
-date_format: "ordinal"
-title: BLOG | Xiao_La的个人网站
-subtitle: "一个人的BLOG。"
-description: "Xiao_La的个人博客"
-keywords: Xiao_La ,Xiao_La的个人博客 ,Python ,BLOG
-timezone: Asia/Shanghai
-encoding: "utf-8"
-side_bar_repo_limit: 5
+# Site settings
+title: Xiao_La's Blog
+subtitle: [ Welcome]
+keywords: Xiao_La ,Xiao_La's Blog ,Python ,BLOG
+description: Welcome to my blog.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://xiao-la.tk/" # 你的域名
+page_no_title: "Xiao_La's Blog" # 文章无标题时默认显示内容
+beian: # "备案号"
+author: xiao-la
+email: marcustonytxi@gmail.com
 
-# ---------------- #
-#      Author      #
-# ---------------- #
-author: Xiao_La
-organization:
-organization_url:
-github_username: xiao-la
-location: Fuzhou, China
-email: 836772730@qq.com
-
-# ---------------- #
-#    Navigation    #
-# ---------------- #
-navs:
-  -
-    href: /
-    label: 首页
-
-  -
-    href: /categories/
-    label: 分类
-
-#   -
-#     href: /archives/
-#     label: 归档
-
-    href: /links/
-    label: 链接
-
-  -
-    href: /about/
-    label: 关于
-
-# ---------------- #
-#       RSS        #
-# ---------------- #
-subscribe_rss: /feed.xml
-
-# ---------------- #
-#      Jekyll      #
-# ---------------- #
-markdown: kramdown
-kramdown:
-    input: GFM
-highlighter: rouge
-paginate: 10
-lsi: false
-quiet: false
-excerpt_separator: "\n\n"
+# Build settings
 permalink: /:year/:month/:day/:title/
-gems:
-    - jekyll-github-metadata
-    - rouge
-#     - jekyll-html-pipeline
-    - jekyll-paginate
-    - jekyll-sitemap
-    - jekyll-feed
-    - jemoji
-#     - jekyll-mentions
-collections:
-    wiki:
-        output: true
-        permalink: /wiki/:path/
+exclude: ["README.md", "changelog.md", "server", "tools", "Pipfile"]
+plugins:
+  - jekyll-paginate
+  - jemoji
 
-repository: mzlogin/mzlogin.github.io
 
-# ---------------- #
-#      Comments    #
-# ---------------- #
-# support provider: disqus, gitment, gitalk
-comments_provider: gitalk
-# gitalk
-gitalk:
-    owner: Xiao-La
-    repo: xiao-la.github.io
-    clientID: a4a8ede1ad02d082969a
-    clientSecret: a33d0698e7e839adaa52bfb8b2b23b7fc15441b7
+# always get github's error email saying redcarpet is not supported,
+# so change it to kramdown.
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
 
-# ---------------- #
-#      Search      #
-# ---------------- #
-simple_jekyll_search:
-    # 是否支持全文搜索
-    fulltext: false
-    # 最多显示多少条搜索结果
-    limit: 10
 
-# ---------------- #
-#    Analytics     #
-# ---------------- #
-google:
-    analytics_id: UA-80669434-1
+# Pageinate settings
+paginate: 8 # 分页大小
+paginate_path: "page/:num/"
+
+# Search settings
+baidu_search: true
+google_search: # true
+
+# Menu settings
+menu:
+  - page: 首页
+    directory: .
+    icon: icon-home
+  - page: 归档
+    directory: archives/
+    icon: icon-archive
+  - page: 标签
+    directory: tags/
+    icon: icon-tags
+  - page: 留言
+    directory: guestbook/
+    icon: icon-guestbook
+  - page: 关于
+    directory: about/
+    icon: icon-about
+#  - page: 订阅
+#    directory: feed.xml
+#    icon: icon-rss
+
+# Link settings
+links: # 友情链接
+
+  - title: Xiao_La's blog
+    url: https://github.com/xiao-la
+#  - title:
+#    url: http://jekyllcn.com/
+  - title: 今日诗词 
+    url: https://www.jinrishici.com/
+
+
+# Google Analytics
+ga_track_id: 'UA-164963210-1'            # Format: UA-xxxxxx-xx
+ga_domain: https://xiao-la.tk/             # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+
+
+# Code hub settings
+codehub: # 代码仓库
+  - title: Github
+    url: https://github.com/xiao-la
+
+
+valine:
+  enable: false
+  app_id:  K1rbn2Oo0YMM04VuzdLS7Nzz-gzGzoHsz
+  app_key: AAsHbwVm8ofKFJ6ghGqqrXSU
+  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+  verify: false # Verification code
+  visitor: true
+  avatar: retro
+  placeholder: say something~~\n - 昵称 为你所要显示的评论的ID；\n - 邮箱 只有后台可见，仅供讨论过程中是否需要交流邮件而设置，请放心填写;\n - 网址 为你的评论的昵称的超链接。\n当然，以上都可以不写，评论依然会显示……
+  guest_info: nick,mail,link
+  pageSize: 10

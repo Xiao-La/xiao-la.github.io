@@ -1,49 +1,88 @@
 ---
-layout: default
+layout: base
 ---
-<section class="collection-head small geopattern" data-pattern-id="{{ page.title | truncate: 15, ''}}">
-<div class="container">
-  <div class="columns">
-    <div class="column three-fourths">
-      <div class="collection-title">
-        <h1 class="collection-header">{{ page.title }}</h1>
-        <div class="collection-info">
-          {% if page.date %}
-          <span class="meta-info">
-            <span class="octicon octicon-calendar"></span> {{ page.date | date: "%Y/%m/%d" }}
-          </span>
-          {% endif %}
-          {% for cat in page.categories %}
-          <span class="meta-info">
-            <span class="octicon octicon-file-directory"></span>
-            <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>
-          </span>
-          {% endfor %}
-        </div>
-      </div>
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+        <p class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                <i class="icon-post-date">{{ page.date | date: "%b %-d, %Y" }}</i>
+            </time>
+            {% if page.categories.size > 0 %} |
+            <span class="post-category">
+            <i class="icon-post-category">
+            {% for page_category in page.categories %}
+                <a href="{{ site.baseurl }}/category/#{{ page_category }}">{{ page_category }}</a>
+            {% endfor %}
+            </i>
+        </span> {% endif %} {% if page.tags.size > 0 %} |
+            <span class="post-tag">
+            <i class="icon-post-tag">
+            {% for page_tag in page.tags %}
+                <a href="{{ site.baseurl }}/tags/#{{ page_tag }}">{{ page_tag }}</a>
+            {% endfor %}
+            </i>
+        </span>{% endif %}
+
+
+            <!-- 阅读量统计， id 将作为查询条件 -->
+            <span id={{page.url}} class="leancloud-visitors" data-flag-title={{page.title}}>
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-text">阅读量 </span>
+                <span class="leancloud-visitors-count"></span>
+            </span>
+        </p>
+
+    </header>
+
+    <div class="post-content" itemprop="articleBody">
+        {{ content }}
     </div>
-  </div>
-</div>
-</section>
-<!-- / .banner -->
-<section class="container content">
-<div class="columns">
-  <div class="column three-fourths" >
-    <article class="article-content markdown-body">
-    {{ content }}
-    </article>
-    <div class="share">
-      {% include sns-share.html %}
+
+    <div id="donate" >
+        <a href="/donate/" style="text-decoration: none" title="点击直达打赏页面～" >
+            <button>客官~对小店满意的话，<mark>赏个铜板</mark>再走啊🐼</button>
+        </a>
     </div>
-    <div class="comment">
-      {% include comments.html %}
+
+
+    <div class="post-nav">
+        {% if page.previous %}
+        <a href="{{ page.previous.url | prepend: site.baseurl }}" class="pre"><i class="icon-post-pre"> {{
+            page.previous.title }}</i></a>
+        {% endif %} {% if page.next %}
+        <a href="{{ page.next.url | prepend: site.baseur }}" class="next">{{ page.next.title }} <i
+                class="icon-post-next"></i></a>
+        {% endif %}
     </div>
-  </div>
-  <div class="column one-fourth">
-    {% include sidebar-search.html %}
-    {% include sidebar-qrcode.html %}
-    {% include sidebar-post-nav.html %}
-  </div>
-</div>
-</section>
-<!-- /section.content -->
+
+
+    <!--valine comment function-->
+    <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+    <p><br/>既已览卷至此，何不品评一二：</p>
+    <div id="valine_comment" class="fb_comments_container"></div>
+    <script>
+        var notify = '{{site.valine.notify}}' === true;
+        var verify = '{{site.valine.verify}}.>' === true;
+        var visitor = '{{site.valine.visitor}}.>' === true;
+
+        new Valine({
+            av: AV,
+            el: '#valine_comment',
+            notify: notify,
+            verify: verify,
+            // smiles_url: '/smiles',
+            visitor: true,
+            app_id: '{{site.valine.app_id}}',
+            app_key: '{{site.valine.app_key}}',
+            placeholder: '{{site.valine.placeholder}}',
+            avatar: '{{site.valine.avatar}}',
+        });
+    </script>
+
+
+</article>
