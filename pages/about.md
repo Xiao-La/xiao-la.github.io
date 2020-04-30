@@ -1,28 +1,15 @@
 ---
 layout: page
-title: Zhuang Ma
-description: Zhuang Ma的个人简介。
-keywords: Zhuang Ma, 马壮
+title: Xiao La
+description: Xiao_La
+keywords: About, xiao_la
 permalink: /about/
 ---
 
-**Software Engineer at [Sogou, Inc.](http://www.sogou.com)**
 
-Beijing City, China \| Computer Software
-  
-*Education:* Wuhan Institute of Technology
 
-scholar, CS/IT
+这里是Xiao_La， 一名学生。
 
-*Contact:* `print '%s@%s' % ('ChumpMa', 'gmail.com')  #via Python`
+正在学习Python & C。
 
-*Social:*  [github](http://github.com/mzlogin) \| [linkedin](http://www.linkedin.com/in/mazhuang) \| [weibo](http://weibo.com/mzlogin) \| [douban](http://www.douban.com/people/freedim/) \| [blog](http://mazhuang.org)
-    
-```c++
-#include <iostream>
-int main()
-{
-	std::cout << "Hello, friends!" << std::endl;
-	return 0;
-}
-```
+欢迎交流: marcustonytxi@gmail.com
