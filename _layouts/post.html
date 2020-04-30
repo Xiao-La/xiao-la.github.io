@@ -1,88 +1,33 @@
----
-layout: base
----
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
-    <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-        <p class="post-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-                <i class="icon-post-date">{{ page.date | date: "%b %-d, %Y" }}</i>
-            </time>
-            {% if page.categories.size > 0 %} |
-            <span class="post-category">
-            <i class="icon-post-category">
-            {% for page_category in page.categories %}
-                <a href="{{ site.baseurl }}/category/#{{ page_category }}">{{ page_category }}</a>
-            {% endfor %}
-            </i>
-        </span> {% endif %} {% if page.tags.size > 0 %} |
-            <span class="post-tag">
-            <i class="icon-post-tag">
-            {% for page_tag in page.tags %}
-                <a href="{{ site.baseurl }}/tags/#{{ page_tag }}">{{ page_tag }}</a>
-            {% endfor %}
-            </i>
-        </span>{% endif %}
-
-
-            <!-- 阅读量统计， id 将作为查询条件 -->
-            <span id={{page.url}} class="leancloud-visitors" data-flag-title={{page.title}}>
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-text">阅读量 </span>
-                <span class="leancloud-visitors-count"></span>
-            </span>
-        </p>
-
-    </header>
-
-    <div class="post-content" itemprop="articleBody">
+{% include header.html %}
+<div class="container">
+    {% include navigation.html %}
+    <div class="main">
+        <h2> {{ page.title }} </h2>
         {{ content }}
-    </div>
-
-    <div id="donate" >
-        <a href="/donate/" style="text-decoration: none" title="点击直达打赏页面～" >
-            <button>客官~对小店满意的话，<mark>赏个铜板</mark>再走啊🐼</button>
-        </a>
-    </div>
-
-
-    <div class="post-nav">
-        {% if page.previous %}
-        <a href="{{ page.previous.url | prepend: site.baseurl }}" class="pre"><i class="icon-post-pre"> {{
-            page.previous.title }}</i></a>
-        {% endif %} {% if page.next %}
-        <a href="{{ page.next.url | prepend: site.baseur }}" class="next">{{ page.next.title }} <i
-                class="icon-post-next"></i></a>
+        {% if page.categories %}
+        <div class="post_footer">
+          <p>Published on {{ page.date | date: "%b %d, %Y" }} in categories 
+          {% for cat in page.categories %}
+          <a href="{{ site.url }}/categories/#{{ cat }}" title="{{ cat }}">{{ cat }}</a>&nbsp;
+          {% endfor %}
+          <p>
+        </div>
         {% endif %}
+        <ul class="prev_next">
+            {% if page.previous.url %}
+            <li>
+                <span>上一篇</span>
+                <a href="{{page.previous.url}}">{{page.previous.title}}</a>
+            </li>
+            {% endif %}
+            {% if page.next.url %}
+            <li>
+                <span>下一篇</span>
+                <a href="{{page.next.url}}">{{page.next.title}}</a>
+            </li>
+            {% endif %}
+        </ul>
+        {% include comments.html %}
     </div>
-
-
-    <!--valine comment function-->
-    <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-
-    <p><br/>既已览卷至此，何不品评一二：</p>
-    <div id="valine_comment" class="fb_comments_container"></div>
-    <script>
-        var notify = '{{site.valine.notify}}' === true;
-        var verify = '{{site.valine.verify}}.>' === true;
-        var visitor = '{{site.valine.visitor}}.>' === true;
-
-        new Valine({
-            av: AV,
-            el: '#valine_comment',
-            notify: notify,
-            verify: verify,
-            // smiles_url: '/smiles',
-            visitor: true,
-            app_id: '{{site.valine.app_id}}',
-            app_key: '{{site.valine.app_key}}',
-            placeholder: '{{site.valine.placeholder}}',
-            avatar: '{{site.valine.avatar}}',
-        });
-    </script>
-
-
-</article>
+</div>
+{% include footer.html %}
