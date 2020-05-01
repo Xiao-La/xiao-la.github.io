@@ -4,6 +4,7 @@ description: Xiao_La's Blog
 keywords: xiao-la, xiao_la, blog, python
 ---
 <div class="overview">
+    <h2>Info</h2>
     <div class="date">Blog By</div>
     <div class="detail"><a href="https://github.com/Xiao-La">Xiao_La</a></div>
     <br>
@@ -13,6 +14,7 @@ keywords: xiao-la, xiao_la, blog, python
 </div>
 <hr>
 <div class="postlist">
+    <h2>Article</h2>
     {% for post in paginator.posts %}
     <div class="overview">
         <div class="date">{{ post.date | date: "%b %d, %Y" }}</div>
