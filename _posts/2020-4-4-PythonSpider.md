@@ -12,8 +12,9 @@ keywords: python,爬虫,正则,教程,入门,spider
 
 
 
-# Python网络爬虫入门
-来讲一下**怎么入门Python爬虫**。
+
+
+这里是自己学习Python爬虫踩过的坑和笔记；以及怎么入门Python爬虫。
 
 ### 爬虫是什么?
 
@@ -35,18 +36,30 @@ keywords: python,爬虫,正则,教程,入门,spider
 
 不必担心你学不会下列内容，**它们都很简单**，下文中我们会进行介绍。
 
-- 必须:
+必须:
+
  - 学会抓包、了解基本HTML语法
+
  - 网络请求的类型与基本参数
+
  - 了解不触犯法律的爬虫知识
+
  - 一个适合你的爬虫第三方库
+
  - 一个适合你的信息提取方法
+
  - 一个适合你的数据处理方法
-- 建议:
+
+建议:
+
  - 了解网络请求协议
+
  - 使用模块化、错误处理完善的代码
+
  - 学习正则表达式、XPath、Beautiful Soup等常用处理网页方式
+
  - 学习 Panda、Numpy 等数据处理方式
+
  - 学习 Matplotlib 等数据可视化库
 
 注 : 这些**并不是你必须要学习的**(其中许多模块我也不了解)，当你需要时再去学习(甚至套用)也不迟。
@@ -81,7 +94,7 @@ print(r.text)#r.text就是返回的HTML内容
 
 下列是这些方法的优缺点:
 
-| 方法  |    优点    |      缺点    |  
+| 方法  |    优点    |      缺点    |
 | ----- | :-------- | :---------   |
 | 正则表达式|简洁，应用范围广，简单|不是处理网页的最好方法，稍微慢于Xpath|
 | Xpath|简洁，方便(可以直接生成)，速度快|学习成本略高|
@@ -90,7 +103,7 @@ print(r.text)#r.text就是返回的HTML内容
 我个人推荐你先学习正则表达式和Beautiful Soup。
 教程:[正则](https://www.runoob.com/regexp/regexp-tutorial.html)、[Xpath](https://www.runoob.com/xpath/xpath-tutorial.html)、[Beautifulsoup](https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/)
 
-### 我得到了数据，那怎么把数据画成图?
+### 我得到了数据，那怎么把数据可视化？
 你可以学习Matplotlib、Plotly等数据可视化包，同样的，你可以搜索`python3 matplotlib`来学习。
 
 ### 如何进阶?
