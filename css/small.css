@@ -4,6 +4,10 @@ div.main {
   border: none;
 }
 
+div.info{
+  display: none;
+}
+
 H1, H2 {
   margin-bottom: 1.25em;
   padding: 0;
