@@ -5,28 +5,28 @@
     <a class="nav_a1" href="{{ site.url }}/wiki/">维基</a>
     <a href="{{ site.url }}/links/">链接</a>
     <a class="nav_a1" href="{{ site.url }}/about/">关于</a>
-  </div>
-  <!-- HTML elements for search-->
-  <div id="search-container" class="nav_nav">
-    <input type="text" id="search-input" placeholder="search..." class="nav_a1">
-    <ul id="results-container" style="max-width:300px;"></ul>
-  </div>
+    <!-- HTML elements for search-->
+    <div id="search-container" style="width: 80%; padding: 0 5% 0 5%;">
+      <input type="text" id="search-input" placeholder="search..." class="nav_a1" style="border-radius:4px">
+      <ul id="results-container" style="list-style-type:none; max-width:300px;"></ul>
+    </div>
 
-  <!-- script pointing to jekyll-search.js-->
-  <script src="/js/simple-jekyll-search.min.js"></script>
+    <!-- script pointing to jekyll-search.js-->
+    <script src="/js/simple-jekyll-search.min.js"></script>
 
-  <script>
-    window.simpleJekyllSearch = new SimpleJekyllSearch({
-      searchInput: document.getElementById('search-input'),
-      resultsContainer: document.getElementById('results-container'),
-      json: '/search.json',
-      searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-      noResultsText: 'No results found',
-      limit: 5,
-      fuzzy: false,
-      exclude: ['Welcome']
-    })
-  </script>
+    <script>
+      window.simpleJekyllSearch = new SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        resultsContainer: document.getElementById('results-container'),
+        json: '/search.json',
+        searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+        noResultsText: 'No results found',
+        limit: 5,
+        fuzzy: false,
+        exclude: ['Welcome']
+      })
+    </script>
+  </div>
 
   <div class="nav_rss"><a href="{{ site.url }}/sitemap.xml" style="display:none;">SITEMAP</a><a href="{{ site.url }}/feed.xml" target="_blank">订阅</a></div>
 </div>
