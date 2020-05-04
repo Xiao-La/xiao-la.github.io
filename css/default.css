@@ -118,6 +118,12 @@ div.nav_rss {
   float: right;
 }
 
+#search-container{
+  width: 20%;
+  text-align: right;
+  float: right;
+}
+
 div.nav_nav {
   width: 80%;
   float: left;
