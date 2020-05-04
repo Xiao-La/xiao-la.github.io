@@ -124,6 +124,10 @@ div.nav_rss {
   float: right;
 }
 
+#results-container{
+  position: fixed;
+}
+
 div.nav_nav {
   width: 80%;
   float: left;
