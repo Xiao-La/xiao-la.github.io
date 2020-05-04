@@ -4,6 +4,14 @@ div.main {
   border: none;
 }
 
+.pconly{
+  display: none;
+}
+
+.monly{
+  display: inline;
+}
+
 div.info{
   display: none;
 }

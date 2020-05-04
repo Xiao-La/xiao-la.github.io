@@ -5,6 +5,10 @@ body {
   font-size: 100%;
 }
 
+.monly{
+  display: none;
+}
+
 div.main {
   margin: auto;
   padding: 2% 5% 5% 5%;
@@ -14,7 +18,7 @@ div.main {
 }
 
 H1, H2, H3, H4 {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif; 
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
   width: 98%;
   line-height: 150%;
   color: #666666;
@@ -151,13 +155,13 @@ div.detail {
   margin-left: 28%;
 }
 
-div.date { 
+div.date {
   padding-top: 1px;
-  float: left; 
-  width: 25%; 
+  float: left;
+  width: 25%;
   color: #555;
-  text-align: right; 
-  font-style: italic; 
+  text-align: right;
+  font-style: italic;
   font-size: 0.75em;
 }
 
