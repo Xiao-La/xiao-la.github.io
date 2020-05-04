@@ -126,6 +126,7 @@ div.nav_rss {
 
 #results-container{
   position: fixed;
+  text-align: left;
 }
 
 div.nav_nav {
