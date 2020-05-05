@@ -1,11 +1,11 @@
-﻿/* modified from http://www.yinwang.org/main.css */
+/* modified from http://www.yinwang.org/main.css */
 body {
-  font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   background-color: white;
   font-size: 100%;
 }
 
-.monly{
+.monly {
   display: none;
 }
 
@@ -118,15 +118,18 @@ div.nav_rss {
   float: right;
 }
 
-#search-container{
+#search-container {
   width: 20%;
   text-align: right;
   float: right;
 }
 
-#results-container{
+#results-container {
   position: fixed;
   text-align: left;
+  width: 20%;
+  border-radius: 1px;
+  border: 1px solid #DBDBDB;
 }
 
 div.nav_nav {

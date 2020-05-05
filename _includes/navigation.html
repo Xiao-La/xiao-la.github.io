@@ -5,13 +5,12 @@
     <a class="nav_a1" href="{{ site.url }}/wiki/">维基</a>
     <a href="{{ site.url }}/links/">链接</a>
     <a class="nav_a1" href="{{ site.url }}/about/">关于</a>
-    <!-- HTML elements for search-->
-    <div id="search-container">
-      <input type="text" id="search-input" placeholder=" search..." class="nav_a1" style="border-radius:2px; border:1px solid #DBDBDB;">
+
+    <div class="pconly" id="search-container">
+      <input type="text" id="search-input" placeholder=" Search.." class="nav_a1" style="border-radius:2px; border:1px solid #DBDBDB;">
       <ul id="results-container" style="list-style-type:none; max-width:300px;"></ul>
     </div>
 
-    <!-- script pointing to jekyll-search.js-->
     <script src="/js/simple-jekyll-search.min.js"></script>
 
     <script>
