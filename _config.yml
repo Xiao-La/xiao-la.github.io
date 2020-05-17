@@ -27,9 +27,9 @@ gems:
     - jekyll-feed
     - jemoji
 collections:
-    wiki:
+    study:
         output: true
-        permalink: /wiki/:path/
+        permalink: /study/:path/
 
 # ---------------- #
 #      Comments    #
