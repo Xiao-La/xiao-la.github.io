@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Wiki
-description: 个人知识管理，随手笔记更新备忘。
-keywords: 维基, Wiki
-permalink: /wiki/
+title: Study
+description: 学习笔记以及监督屏幕使用时间
+keywords: study, 学习, 监督
+permalink: /study/
 ---
 
 <ul>
-{% for wiki in site.wiki %}
-{% if wiki.title != "Wiki Template" %}
-<li><a href="{{ site.url }}{{ wiki.url }}">{{ wiki.title }}</a></li>
+{% for study in site.study %}
+{% if study.title != "Study Template" %}
+<li><a href="{{ site.url }}{{ study.url }}">{{ study.title }}</a></li>
 {% endif %}
 {% endfor %}
 </ul>
