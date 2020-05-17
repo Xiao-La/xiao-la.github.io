@@ -7,9 +7,9 @@ permalink: /study/
 ---
 
 <ul>
-{% for study in site.study %}
-{% if study.title != "Study Template" %}
-<li><a href="{{ site.url }}{{ study.url }}">{{ study.title }}</a></li>
+{% for art in site.study %}
+{% if art.title != "Study Template" %}
+<li><a href="{{ site.url }}{{ art.url }}">{{ art.title }}</a></li>
 {% endif %}
 {% endfor %}
 </ul>
