@@ -7,7 +7,7 @@ permalink: /study/
 ---
 
 <ul>
-{% for study in paginator.study %}
+{% for study in site.study %}
 {% if study.title != "Study Template" %}
 <li><a href="{{ site.url }}{{ study.url }}">{{ study.title }}</a></li>
 {% endif %}
