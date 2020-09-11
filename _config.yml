@@ -1,21 +1,16 @@
-# ---------------- #
-#   Main Configs   #
-# ---------------- #
+#Main Configs
 baseurl: 
 url: https://xiao-la.tk
 date_format: "ordinal"
 title: Xiao_La's Blog
 author: Xiao_La
 
-# ---------------- #
-#   RSS / Email    #
-# ---------------- #
+#RSS/Email
 subscribe_rss: /feed.xml
 email: marcustonytxi@gmail.com
 
-# ---------------- #
-#      Jekyll      #
-# ---------------- #
+#Jekyll Config
+
 markdown: kramdown
 kramdown:
     input: GFM
@@ -31,23 +26,16 @@ collections:
         output: true
         permalink: /study/:path/
 
-# ---------------- #
-#      Comments    #
-# ---------------- #
-# support provider: disqus, gitment, gitalk
+#Comments
 comments_provider: gitalk
-# !!!重要!!! 请修改下面这些信息为你自己申请的
-# !!!Important!!! Please modify infos below to yours
 
-# https://imsun.net/posts/gitment-introduction/
-gitment:
-    owner: xiao-la
-    repo: xiao-la.github.io
-    oauth:
-        client_id: f274da889848fa5e330e
-        client_secret: 49eea8a3f3191b404d6ca3261bc404392fdfd3a4
 gitalk:
     owner: xiao-la
     repo: xiao-la.github.io
     clientID: f274da889848fa5e330e
     clientSecret: 49eea8a3f3191b404d6ca3261bc404392fdfd3a4
+
+#Cdn Config
+cdn:
+     jsdelivr:
+         enabled: true
