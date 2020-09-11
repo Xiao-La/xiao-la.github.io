@@ -10,7 +10,6 @@ subscribe_rss: /feed.xml
 email: marcustonytxi@gmail.com
 
 #Jekyll Config
-
 markdown: kramdown
 kramdown:
     input: GFM
