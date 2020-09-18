@@ -5,3 +5,5 @@ categories: kindle
 description: kindle
 keywords: kindle, 技巧
 ---
+
+>> 预计 2020.10 写成。
