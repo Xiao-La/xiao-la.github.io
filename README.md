@@ -1,3 +1,3 @@
-# Xiao_La's Blog
+# Joy's Blog
 
 Use github pages, design by mzlogin.

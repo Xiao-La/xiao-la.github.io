@@ -1,14 +1,14 @@
 ---
 layout: page
-title: Xiao La
-description: Xiao_La
-keywords: About, xiao_la
+title: I'm Joy
+description: Joy
+keywords: About, Joy
 permalink: /about/
 ---
 
 
 
-这里是Xiao_La， 一名学生。
+这里是Joy， 一名学生。
 
 正在学习Python & C。
 
