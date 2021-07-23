@@ -8,7 +8,7 @@
 
     <div class="pconly" id="search-container">
       <input type="text" id="search-input" placeholder=" Search.." class="nav_a1" style="border-radius:2px; border:1px solid #DBDBDB;">
-      <ul id="results-container" style="list-style-type:none"></ul>
+      <ul id="results-container" style="visibility: hidden;"></ul>
       <!--style="list-style-type:none; max-width:300px;"-->
     </div>
 
@@ -19,7 +19,7 @@
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('results-container'),
         json: '/search.json',
-        searchResultTemplate: '<li style="list-style: none;padding-left:0px;border-radius: 1px;border: 1px solid #DBDBDB;"><a href="{url}" title="{desc}">{title}</a></li>',
+        searchResultTemplate: '<li style="list-style: none;padding-left:0px;border-radius: 1px;border: 1px solid #DBDBDB;visibility: visible;"><a href="{url}" title="{desc}">{title}</a></li>',
         noResultsText: 'No results found',
         limit: 5,
         fuzzy: false,
