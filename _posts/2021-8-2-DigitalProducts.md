@@ -2,8 +2,8 @@
 layout: post
 title: 我使用了哪些数码产品？推荐&吐槽
 categories: life
-description: digital products
-keywords:数码产品, 记录, 推荐, 吐槽, 介绍
+description: digitalproducts
+keywords: 数码产品, 记录, 推荐, 吐槽, 介绍
 ---
 
 时下电子设备产业高速发展，我也对数码产品兴致盎然。这导致我现在的冲动消费基本都是在于数码产品。不过好在它们虽然会吃灰，但总会给我带来帮助，总归是物有所值。
