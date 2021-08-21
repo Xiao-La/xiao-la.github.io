@@ -38,4 +38,4 @@ gitalk:
 #Cdn Config
 cdn:
      jsdelivr:
-         enabled: true
+         enabled: false
