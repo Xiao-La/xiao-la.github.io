@@ -1,3 +1,4 @@
+<!--
 {% if page.comments != false %}
 
   {% if site.comments_provider != 'disqus' and site.lazy_load_disqus and site.disqus and site.disqus.username %}
@@ -35,7 +36,7 @@
     {% when 'disqus' %}
       {% if site.disqus and site.disqus.username %}
         {% assign load_disqus = true %}
-        <!-- Disqus Protection, see https://github.com/mzlogin/mzlogin.github.io/issues/2 -->
+
         {% if site.disqus.username == 'mzlogin' %}
           {% assign load_disqus = false %}
           {% if site.url contains 'mazhuang.org' %}
@@ -97,4 +98,5 @@
         gitalk.render('gitalk-container')
         </script>
   {% endcase %}
-{% endif %}
+{% endif %} -->
+<p style="color:rgb(192,192,192)">暂停开放评论。如果需要取得联系，请发邮件至 marcustonytxi@gmail.com 。</p>

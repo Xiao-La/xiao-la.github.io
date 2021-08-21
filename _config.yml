@@ -26,6 +26,7 @@ collections:
         permalink: /study/:path/
 
 #Comments
+
 comments_provider: gitalk
 
 gitalk:
