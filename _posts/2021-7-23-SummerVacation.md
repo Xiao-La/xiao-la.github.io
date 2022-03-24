@@ -3,7 +3,7 @@ layout: post
 title: 时间飞逝——近况
 categories: life
 description: life
-keywords: 准初三, 暑假, 计划, 生活, 困难
+keywords: 准初三, 暑假, 计划, 生活记录, 困难, 生活
 ---
 
 

@@ -2,7 +2,7 @@
 layout: post
 title: 我使用了哪些数码产品？推荐&吐槽
 categories: life
-description: digitalproducts
+description: digital products
 keywords: 数码产品, 记录, 推荐, 吐槽, 介绍
 ---
 
