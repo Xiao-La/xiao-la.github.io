@@ -8,4 +8,6 @@ permalink: /links/
 
 这里还没有东西...
 
-联系我: marcustonytxi@gmail.com
+来个人联系我挂友链吧....
+
+Email: marcustonytxi@gmail.com
