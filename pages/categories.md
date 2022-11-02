@@ -1,10 +1,12 @@
 ---
 layout: default
 title: Categories
-description: 本博客所有文章分类列表。
+description: 本博客所有文章分类列表
 keywords: 分类
 permalink: /categories/
 ---
+
+这里是这个博客中所有文章的**分类列表**。可能有些文章存在分类错误。
 
 <div class='tag_cloud'>
 {% for cat in site.categories %} 

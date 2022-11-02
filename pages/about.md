@@ -26,6 +26,16 @@ permalink: /about/
 7. `[阅读]` 近来越来越没有闲暇看书了，偶尔看点散文和小说
 8. `[Extra]` 有欣赏的人
 
-Bilibili频道：[Joyslog](https://space.bilibili.com/109336323)
 
-欢迎交流: marcustonytxi@gmail.com   来跟我挂友链......
+你可以通过以下方式联系到我：
+
+Email： <marcustonytxi@gmail.com>
+
+QQ： [LINK](https://s2.loli.net/2022/11/02/lotT3Lwcq8NQ5U7.jpg)
+
+洛谷： [LINK](https://www.luogu.com.cn/user/671835)
+
+B 站： [LINK](https://space.bilibili.com/109336323)
+
+
+
