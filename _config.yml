@@ -39,3 +39,5 @@ gitalk:
 cdn:
      jsdelivr:
          enabled: false
+
+future: true
