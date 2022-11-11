@@ -6,36 +6,40 @@ keywords: About, Joy
 permalink: /about/
 ---
 
-`2022.7.8更新`
+`2022.11.11 更新`
 
-这里是Joy。
+这里是 Joy。这个 Blog 的内容主要是 **OI**、**数学**、**生活** 相关。
 
-**在做的事：** 
-1. 学习高一知识
-2. 在B站知识区投稿视频
-3. 偶尔练琴（自己喜欢的曲子）
-4. 学习OI
+由于这个 Blog 托管在 Github Pages 上，所以本地就没有安装 Jekyll，也就不能在 push 到 Github 上前本地构建，这可能会造成一些奇怪的 Bug。具体来说就是 Markdown 渲染环境不一样，有时候 Latex 会挂，有时候会有奇怪的渲染错误导致代码块加载不出来之类的。所以如果你发现图床或者 Latex 挂了可以找我修。
 
-**喜欢什么：** 
-1. `[数学]` 喜爱数学，但暂未学过数学竞赛
-2. `[二次元成分]` 偶尔看番；经常看虚拟主播的切片
-3. `[电子游戏]` 独立游戏爱好者；偶尔打音游；Celeste全成就，空洞骑士击破竞技场三；正在练习Celeste速通
-4. `[扑克]` 喜欢看花切和魔术，但自己不怎么练习
-5. `[OI]`  从初三开始学OI虽然很晚，但是会努力的
-6. `[听歌]` 喜欢的曲风比较多样，V家、古典、摇滚、电影原声带、流行，喜欢即可；但是对于华语经典歌曲很不熟悉
-7. `[阅读]` 近来越来越没有闲暇看书了，偶尔看点散文和小说
-8. `[Extra]` 有欣赏的人
 
 
 你可以通过以下方式联系到我：
 
-Email： <marcustonytxi@gmail.com>
+- Email:    <marcustonytxi@gmail.com>
 
-QQ： [LINK](https://s2.loli.net/2022/11/02/lotT3Lwcq8NQ5U7.jpg)
+- QQ:   [LINK](https://s2.loli.net/2022/11/02/lotT3Lwcq8NQ5U7.jpg)
 
-洛谷： [LINK](https://www.luogu.com.cn/user/671835)
+- 洛谷: [LINK](https://www.luogu.com.cn/user/671835)
 
-B 站： [LINK](https://space.bilibili.com/109336323)
+- B站:  [LINK](https://space.bilibili.com/109336323)
 
+### 在做的事 
+
+1. 学习 OI
+
+2. 在B站知识区投稿视频
+
+### 爱好
+
+1. 数学
+
+2. 偶尔看番，基本不追番，但哪部看对眼了就刷完
+
+3. 独立游戏，尤其 Celeste / Hollow Knight
+
+4. 各种曲风的音乐
+
+5. 某人
 
 
