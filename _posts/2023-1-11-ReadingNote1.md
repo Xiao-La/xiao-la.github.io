@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 读书笔记 | 《被讨厌的勇气》
-categories: Solution
+categories: Reading
 description: Note
 keywords: reading, note
 ---
