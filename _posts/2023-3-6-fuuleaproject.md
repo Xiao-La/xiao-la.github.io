@@ -42,7 +42,7 @@ if __name__ == "__main__" :
 
 已经可以实现输入提取码后直接下载并打开本地文件，非常直接快速：
 
-![GIF](images/anime.gif)
+![GIF]({{ site.url }} /images/anime.gif)
 
 ### TODO
 
