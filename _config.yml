@@ -8,6 +8,7 @@ author: Joy
 #RSS/Email
 subscribe_rss: /feed.xml
 email: marcustonytxi@gmail.com
+repository: Xiao-La/xiao-la.github.io
 
 #Jekyll Config
 markdown: kramdown
@@ -38,6 +39,6 @@ gitalk:
 #Cdn Config
 cdn:
      jsdelivr:
-         enabled: false
+         enabled: true
 
 future: true
