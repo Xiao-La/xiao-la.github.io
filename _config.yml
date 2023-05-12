@@ -26,15 +26,6 @@ collections:
         output: true
         permalink: /study/:path/
 
-#Comments
-
-comments_provider: gitalk
-
-gitalk:
-    owner: xiao-la
-    repo: xiao-la.github.io
-    clientID: f274da889848fa5e330e
-    clientSecret: 49eea8a3f3191b404d6ca3261bc404392fdfd3a4
 
 #Cdn Config
 cdn:
