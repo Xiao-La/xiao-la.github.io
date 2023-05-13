@@ -1,3 +1,8 @@
+<span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="{{ page.title }}">
+    <em class="post-meta-item-text">阅读量 </em>
+    <i class="leancloud-visitors-count"> 加载中... </i>
+</span>
+
 <div id="vcomments"></div>
 <script>
     new Valine({
@@ -5,6 +10,8 @@
         appId: 'YHAa8KVAgllvIvixOSZFNLjZ-MdYXbMMI',
         appKey: 'ZGi29AAOtj9dSsltGGpBDYb8',
         placeholder: 'Post a comment here...',
-        serverURLs: 'https://yhaa8kva.api.lncldglobal.com'
+        serverURLs: 'https://yhaa8kva.api.lncldglobal.com',
+        visitor: true,
+        path: location.pathname
     })
 </script>
