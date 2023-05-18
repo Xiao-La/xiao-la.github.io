@@ -15,20 +15,20 @@ keywords: blog, jekyll, valine
 具体地，在页面中引用 `simple-jekyll-search.min.js`，这个可以在 Github 的页面上下载到。页面中还需要包含以下代码块：
 
 ```html
-<div class="dropdown navbar-form navbar-right ">
-    <input id="dLabel" name="word" type="text"  aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" class="form-control typeahead"   placeholder="Search..">
-    <ul class="dropdown-menu" aria-labelledby="dLabel" id="c">
-    </ul>
+<div class="pconly" id="search-container">
+    <input type="text" id="search-input" placeholder=" Search.." class="nav_a1" style="border-radius:2px; border:1px solid #DBDBDB;">
+    <ul id="results-container" style="visibility: hidden;margin:0;padding:0;position:absolute"></ul>
 </div>
+<script src="/js/simple-jekyll-search.min.js"></script>
 <script>
     window.simpleJekyllSearch = new SimpleJekyllSearch({
-    searchInput: document.getElementById('dLabel'),
-    resultsContainer: document.getElementById('c'),
+    searchInput: document.getElementById('search-input'),
+    resultsContainer: document.getElementById('results-container'),
     json: '/search.json',
-    searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-    noResultsText: 'No Result',
+    searchResultTemplate: '<li style="list-style: none;padding-left:0px;border-radius: 1px;border: 1px solid #DBDBDB;visibility: visible;"><a href="{url}" title="{desc}">{title}</a></li>',
+    noResultsText: 'No results found',
     limit: 20,
-    fuzzy: false
+    fuzzy: false,
     })
 </script>
 ```
