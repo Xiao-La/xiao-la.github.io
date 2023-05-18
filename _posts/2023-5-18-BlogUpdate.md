@@ -37,7 +37,11 @@ keywords: blog, jekyll, valine
 
 在 Blog 根目录下新建文件 `search.json`，填入以下内容：
 
-```json
+{% highlight liquid linenos%}
+{% raw %}
+---
+layout: null
+---
 [
   {% for post in site.posts %}
     {
@@ -49,7 +53,8 @@ keywords: blog, jekyll, valine
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]
-```
+{% endraw %}
+{% endhighlight %}
 
 即可按照这些关键字来查找文章。
 
