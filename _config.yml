@@ -14,7 +14,7 @@ repository: Xiao-La/xiao-la.github.io
 markdown: kramdown
 kramdown:
     input: GFM
-paginate: 9
+paginate: 15
 permalink: /:year/:month/:day/:title/
 gems:
     - jekyll-paginate
