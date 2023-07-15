@@ -1,7 +1,7 @@
 ---
 layout: post
 title: OI笔记 | 线段树合并笔记
-categories: Solution
+categories: Note
 description: Note
 keywords: NOIP, OI, Note
 ---
