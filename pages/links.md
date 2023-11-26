@@ -6,7 +6,7 @@ keywords: 友情链接
 permalink: /links/
 ---
 
-暂无。
+[Reqwey's Blog](https://oi.reqwey.me/)
 
 你可以通过以下方式联系到我：
 
