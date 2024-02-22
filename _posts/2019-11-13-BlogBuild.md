@@ -116,7 +116,7 @@ Github Pages为此提供了很好的支持，使得它非常简单。
 
 Github Pages现在在部分地区无法访问，能访问的地区也很慢。
 
-我现在已经无法访问 http://xiao-la.github.io/ 了，但是访问 https://joyslog.tk 就暂时没问题，所以暂时没有搬迁的想法。
+我现在已经无法访问 http://xiao-la.github.io/ 了，但是访问 https://joyslog.top 就暂时没问题，所以暂时没有搬迁的想法。
 
 如果你也遇到了类似问题，可以尝试使用 `Gitee Pages` 或 `Coding Pages`。如果想加速 `Github Pages` ，可以使用 **CDN加速**。
 
