@@ -21,6 +21,7 @@ gems:
     - jekyll-sitemap
     - jekyll-feed
     - jemoji
+plugins: [jekyll-paginate]
 collections:
     study:
         output: true
