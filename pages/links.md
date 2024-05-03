@@ -12,7 +12,7 @@ permalink: /links/
 
 - Email:    <marcustonytxi@gmail.com>
 
-- QQ:   [LINK]({{ assets_base_url }}/images/58229185)
+- QQ:   [LINK]({{ assets_base_url }}/images/58229185.png)
 
 - 洛谷: [LINK](https://www.luogu.com.cn/user/671835)
 

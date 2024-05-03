@@ -12,7 +12,7 @@ permalink: /about/
 
 - Email:    <marcustonytxi@gmail.com>
 
-- QQ:   [LINK]({{ assets_base_url }}/images/92348724)
+- QQ:   [LINK]({{ assets_base_url }}/images/92348724.png)
 
 - 洛谷: [LINK](https://www.luogu.com.cn/user/671835)
 

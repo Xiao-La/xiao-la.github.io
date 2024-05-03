@@ -67,7 +67,7 @@ keywords: python, 爬虫, 正则, 教程, 入门, spider
 ### 我应该怎么开始?
 
 下图是简化后的浏览器访问一个网页的流程:
-![pySpider.png]({{ assets_base_url }}/images/59526601)
+![pySpider.png]({{ assets_base_url }}/images/59526601.png)
 
 所以，爬虫就要伪造其中发送请求的部分，并且获取相应的响应。
 

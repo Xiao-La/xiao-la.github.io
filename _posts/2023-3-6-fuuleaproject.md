@@ -48,7 +48,7 @@ if __name__ == "__main__" :
 
 已经可以实现输入提取码后直接下载并打开本地文件，非常直接快速：
 
-![GIF]({{ assets_base_url }}/images/anime.gif)
+![GIF]({{ assets_base_url }}/images/anime.gif.png)
 
 ### TODO
 
