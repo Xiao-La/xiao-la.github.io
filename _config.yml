@@ -1,6 +1,7 @@
 #Main Configs
-baseurl: 
+baseurl: https://joyslog.top
 url: https://joyslog.top
+assets_base_url: https://joyslog.top
 date_format: "ordinal"
 title: Joy's Blog
 author: Joy
@@ -31,6 +32,6 @@ collections:
 #Cdn Config
 cdn:
      jsdelivr:
-         enabled: true
+         enabled: false
 
 future: true
