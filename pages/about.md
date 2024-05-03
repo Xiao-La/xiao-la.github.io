@@ -8,8 +8,6 @@ permalink: /about/
 
 这里是 Joy。这个 Blog 的内容主要是 **OI**、**数学**、**生活** 相关。
 
-这个 Blog 托管在 Github Pages 上。我在本地并没有安装 Jekyll，无法提前构建并预览，本地的 Markdown 渲染环境与 Blog 上有些不同。所以如果你发现渲染错误可以找我修。
-
 你可以通过以下方式联系到我：
 
 - Email:    <marcustonytxi@gmail.com>
@@ -36,6 +34,6 @@ permalink: /about/
 
 3. 独立游戏，尤其 Celeste / Hollow Knight
 
-4. 某人
+4. 魔术
 
 
