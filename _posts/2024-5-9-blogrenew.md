@@ -88,3 +88,5 @@ keywords: blog, github pages, removal
 我还用这个云服务器搭建了一个 hypixel 的加速 ip，这是一个知名的 minecraft 国际小游戏服务器。
 
 这应该会持续运行一年左右，只需要在 minecraft 多人游戏中加入 `hypixel.joyslog.top` 即可使用。
+
+![]({{ assets_base_url }}/images/mc.png)
