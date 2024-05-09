@@ -8,6 +8,8 @@ permalink: /links/
 
 [Reqwey's Blog](https://oi.reqwey.me/)
 
+[陈郑逸领域](https://fujianprovince.github.io/)
+
 你可以通过以下方式联系到我：
 
 - Email:    <marcustonytxi@gmail.com>
