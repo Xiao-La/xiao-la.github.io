@@ -67,7 +67,9 @@ card_html = card_html.replace(field, value)
 
 然后在模板网页里用 javascript 和 css 简单处理一下表格的着色、数学公式的渲染、填空题的显示，即可完成。
 
-```html
+{% highlight html %}
+{% raw %}
+
 <head>
     <meta charset="UTF-8">
     <script type="text/x-mathjax-config">
@@ -140,7 +142,9 @@ card_html = card_html.replace(field, value)
         </tr>
     </table>
 </body>
-```
+
+{% endraw %}
+{% endhighlight %}
 
 最后贴一张解决了上述各种坑点的效果图：
 
