@@ -1,6 +1,6 @@
 ---
 layout: post
-title: DaydreamPoem | Story 1 & 2
+title: DaydreamPoem | Story 1 记梦 & 2 超载
 categories: poem
 description: Daydream Poem
 keywords: daydream
