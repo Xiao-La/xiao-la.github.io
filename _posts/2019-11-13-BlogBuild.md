@@ -79,7 +79,7 @@ Fork后，打开你仓库里的那份fork的设置（Setting）。
 
 **Markdown**是编写博文的**最简单的方式**。
 
-在这里，有一份可以用于编写**Markdown**的指南（搬运自mzlogin）：[链接](http://xiao-la.tk/2019/11/13/%E4%B8%8D%E6%9D%83%E5%A8%81Markdown%E6%8C%87%E5%8D%97/)
+<!-- 在这里，有一份可以用于编写**Markdown**的指南（搬运自mzlogin）：[链接](http://xiao-la.tk/2019/11/13/%E4%B8%8D%E6%9D%83%E5%A8%81Markdown%E6%8C%87%E5%8D%97/) -->
 
 ------
 
