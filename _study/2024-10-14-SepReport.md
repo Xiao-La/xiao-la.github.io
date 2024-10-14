@@ -10,7 +10,7 @@ keywords: report
 
 | 科目   | <font color=green> 总分</font> | <font color=red>语文</font> | <font color=green>数学</font> | <font color=green>英语</font> | <font color=red>物理</font> |  <font color=green>化学</font> | <font color=red>生物</font> |
 |------|----|----|----|----|----|-----|----|---|---|
-| 班级排名(共50人) | 10 | 46 | 1  | 3  | 28 | 23  | 35 |
+| 班级排名(共53人) | 10 | 46 | 1  | 3  | 28 | 23  | 35 |
 | 年段排名(共790人) | /  | /  | /  | /  | /  | /   | /  |
 
 

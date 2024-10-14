@@ -8,10 +8,11 @@ permalink: /study/
 
 这个页面的文章**不会被归档**。
 
-主要是课内数学的一些分析文章。
-
-<ul>
-{% for art in site.study %}
-<li><a href="{{ site.url }}{{ art.url }}">{{ art.title }}</a></li>
+<div class="postlist">
+{% for art in site.study reversed %}
+<div class="overview">
+    <div class="date">{{ art.date | date: "%b %d, %Y" }}</div>
+    <div class="detail"><a href="{{ site.url }}{{ art.url }}">{{ art.title }}</a></div>
+  </div>
 {% endfor %}
-</ul>
+</div>
