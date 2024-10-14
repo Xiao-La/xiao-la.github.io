@@ -11,17 +11,16 @@
         <link rel="stylesheet" href="{{ assets_base_url }}/css/small.css" type="text/css" media="(max-width: 720px)"/>
         <link rel="stylesheet" href="{{ assets_base_url }}/css/syntax.css" type="text/css" />
         <link rel="shortcut icon" href="{{ assets_base_url }}/favicon.ico" type="image/x-icon" />
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
         <script type="text/javascript" id="MathJax-script" async
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
         </script>
-        <script src="/socket.io/socket.io.js"></script>
         <!-- <script
           type="text/javascript"
           src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML"
           async
         ></script> -->
-        <script>
+        <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+        <!-- <script>
           var socket = io();
           socket.on('markdown', function (msg) {
             document.getElementById('markdown').innerHTML = msg;
@@ -36,7 +35,7 @@
           socket.on('disconnect', function () {
             window.close();
           });
-        </script>
+        </script> -->
         <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
     </head>
     <body>
