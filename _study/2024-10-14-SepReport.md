@@ -10,8 +10,8 @@ keywords: report
 
 | 科目   | <font color=green> 总分</font> | <font color=red>语文</font> | <font color=green>数学</font> | <font color=green>英语</font> | <font color=red>物理</font> |  <font color=green>化学</font> | <font color=red>生物</font> |
 |------|----|----|----|----|----|-----|----|---|---|
-| 班级排名(共53人) | 10 | 46 | 1  | 3  | 28 | 23  | 35 |
-| 年段排名(共790人) | /  | /  | /  | /  | /  | /   | /  |
+| 班级排名(估算/共53人) | 10 | 46 | 1  | 3  | 28 | 23  | 35 |
+| 年段排名(估算/共790人) | 37 | 473 | 2 | 9 | 159  | 123 | 193 |
 
 
 部分学习时长记录见 [链接]({{ assets_base_url }}/reports/2024-9-report.html)。
