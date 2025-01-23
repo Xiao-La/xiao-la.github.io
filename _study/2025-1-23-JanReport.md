@@ -1,6 +1,6 @@
 ---
 layout: study
-title: 2024 年 1 月学习报告（高三上学期总结）
+title: 2025 年 1 月学习报告（高三上学期总结）
 categories: study
 description: study
 keywords: report
