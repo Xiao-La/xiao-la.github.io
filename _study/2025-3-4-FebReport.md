@@ -6,7 +6,7 @@ description: study
 keywords: report
 ---
 
-本月经历 2 次大考，数据如下。
+本月经历 3 次大考，数据如下。
 
 **九检（市质检）**
 
