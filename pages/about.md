@@ -6,34 +6,22 @@ keywords: About, Joy
 permalink: /about/
 ---
 
-这里是 Joy。这个 Blog 的内容主要是 **OI**、**数学**、**生活** 相关。
+这里是 Joy。
 
 你可以通过以下方式联系到我：
 
-- Email:    <marcustonytxi@gmail.com>
+- Email： <marcustonytxi@gmail.com>
 
-- QQ:   [LINK]({{ assets_base_url }}/images/92348724.png)
+- Bilibili：  [Joyslog](https://space.bilibili.com/109336323)
 
-- 洛谷: [LINK](https://www.luogu.com.cn/user/671835)
+- Wechat： [JoyShen_Learn](weixin://dl/chat?JoyShen_Learn)
 
-- B站:  [LINK](https://space.bilibili.com/109336323)
+这个 Blog 的内容包括：
 
-### 在做的事 
+- 生活随笔或写作
 
-1. ~~OI~~
+- 高中信息学竞赛期间的笔记和做题记录
 
-2. 备考 2025 年高考
+- 高考期间的学习记录
 
-2. 在 B 站知识区投稿视频
-
-### 爱好
-
-1. 数学
-
-2. 偶尔看番，基本不追番，但哪部看对眼了就刷完
-
-3. 独立游戏，尤其 Celeste / Hollow Knight
-
-4. 魔术
-
-
+- 一些学术、技术问题的讨论
