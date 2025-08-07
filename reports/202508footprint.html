@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/echarts.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+</head>
+
+<body id="page">
+  <!--style中定义视图的长宽尺寸-->
+  <div id="main" style="width: 2000px;height:1200px;"></div>
+  <script type="text/javascript">
+
+    let blackStyle = [
+      "#343233",  // 背景和省份颜色
+      "#2be4f3",  // 省份边界线颜色
+      "#5aae5c",  // 点亮省份的颜色
+      "#fff",     // 标签字体的颜色
+      "#ffff00"   // 城市圆点的颜色
+    ];
+    let grayStyle = [
+      "#dedfde",
+      "#6e6e6d",
+      "#d5e5f1",
+      "#000",
+      "#fe7e3a",
+    ]
+
+    // 自由选择样式
+    let style = grayStyle;
+
+    document.getElementById("page").style.background = style[0];
+    var myChart = echarts.init(document.getElementById('main'));
+    myChart.showLoading();
+    $.get('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json', function (geoJson) {
+      myChart.hideLoading();
+      echarts.registerMap('china', geoJson);
+      myChart.setOption(
+        option = {
+          title: {
+            text: '旅行足迹'
+          },
+          geo: {
+            name: '旅行足迹',
+            type: 'map',
+            map: 'china',
+            selectedMode: 'multiple',
+            zoom: 1,
+            roam: true,
+            animation: false,
+            itemStyle: {
+              normal: {
+                borderWidth: 1,             // 省份边界线宽度
+                borderColor: style[1],     // 省份边界线颜色
+                areaColor: style[0]        // 省份颜色
+              },
+            },
+            // 点亮的省份
+            regions: [
+              { name: ["北京市"], itemStyle: { normal: { areaColor: style[2] }, }, },
+              { name: ["湖南省"], itemStyle: { normal: { areaColor: style[2] }, }, },
+              { name: ["青海省"], itemStyle: { normal: { areaColor: style[2] }, }, },
+              { name: ["广东省"], itemStyle: { normal: { areaColor: style[2] }, }, },
+              { name: ["甘肃省"], itemStyle: { normal: { areaColor: style[2] }, }, },
+              { name: ["福建省"], itemStyle: { normal: { areaColor: style[2] }, }, },
+              { name: ["浙江省"], itemStyle: { normal: { areaColor: style[2] }, }, },
+              { name: ["重庆市"], itemStyle: { normal: { areaColor: style[2] }, }, },
+              { name: ["上海市"], itemStyle: { normal: { areaColor: style[2] }, }, },
+              { name: ["贵州省"], itemStyle: { normal: { areaColor: style[2] }, }, },
+            ],
+          },
+          series: {
+            name: '标记点',
+            type: 'scatter',
+            coordinateSystem: 'geo',
+            // 去过的城市，对应的经纬度
+            data: [
+
+            { name: '北京', value: [116.4074, 39.9042] },
+
+            { name: '上海', value: [121.4737, 31.2304] },
+
+            { name: '重庆', value: [106.5049, 29.5332] },
+
+            { name: '福州', value: [119.3062, 26.0751] },
+
+            { name: '南平', value: [118.1784, 26.6415] },
+
+            { name: '泉州', value: [118.5894, 24.9078] },
+
+            { name: '厦门', value: [118.0894, 24.4798] },
+
+            { name: '漳州', value: [117.6478, 24.5130] },
+
+            { name: '兰州', value: [103.8343, 36.0611] },
+
+            { name: '张掖', value: [100.4498, 38.9259] },
+
+            { name: '广州', value: [113.2644, 23.1291] },
+
+            { name: '深圳', value: [114.0579, 22.5431] },
+
+            { name: '贵阳', value: [106.6302, 26.6470] },
+
+            { name: '长沙', value: [112.9388, 28.2282] },
+
+            { name: '西宁', value: [101.7778, 36.6171] },
+
+            { name: '杭州', value: [120.1552, 30.2741] }
+
+            ],
+            symbolSize: 5,
+            label: {
+              formatter: '{b}',
+              show: true,
+              position: 'bottom',
+              color: style[3], // 标签字体的颜色
+              fontSize: 12,
+              fontWeight: 'bold',
+              fontFamily: 'sans-serif'
+            },
+            itemStyle: {
+              color: style[4], // 圆点的颜色
+              borderWidth: 2, // 边框大小
+              borderColor: style[4], // 圆点边框的样式
+            }
+          },
+        }
+      )
+    })
+
+    myChart.on('click', function (params) {
+      // 在用户点击后控制台打印数据的名称
+      console.log(params);
+    });
+
+  </script>
+</body>
+
+</html>
