@@ -6,7 +6,7 @@ keywords: About, Joy
 permalink: /about/
 ---
 
-这里是 Joy。
+这里是 Joy，目前（2025 年）就读于南方科技大学。
 
 你可以通过以下方式联系到我：
 
