@@ -16,6 +16,8 @@ permalink: /about/
 
 - Wechat： [JoyShen_Learn](weixin://dl/chat?JoyShen_Learn)
 
+- Github： [xiao-la](https://github.com/Xiao-La)
+
 这个 Blog 的内容包括：
 
 - 生活随笔或写作
@@ -25,3 +27,5 @@ permalink: /about/
 - 高考期间的学习记录
 
 - 一些学术、技术问题的讨论
+
+你可以在[这里]({{ assets_base_url }}/reports/202508footprint.html)看到我曾旅游过的中国的城市。
