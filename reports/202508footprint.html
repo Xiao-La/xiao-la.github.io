@@ -35,7 +35,7 @@
     document.getElementById("page").style.background = style[0];
     var myChart = echarts.init(document.getElementById('main'));
     myChart.showLoading();
-    $.get('https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json', function (geoJson) {
+  $.get('./100000_full.json', function (geoJson) {
       myChart.hideLoading();
       echarts.registerMap('china', geoJson);
       myChart.setOption(
