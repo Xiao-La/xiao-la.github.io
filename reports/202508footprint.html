@@ -49,6 +49,9 @@
             selectedMode: 'multiple',
             zoom: 1,
             roam: true,
+            // 不允许再缩小：缩得比现在还小，挨得近的城市点会挤到一起，
+            // 标签就又会互相压盖了（放大没有这个问题，所以只限制下限）
+            scaleLimit: { min: 1, max: 20 },
             animation: false,
             itemStyle: {
               normal: {
@@ -71,6 +74,7 @@
               { name: ["贵州省"], itemStyle: { normal: { areaColor: style[2] }, }, },
               { name: ["江西省"], itemStyle: { normal: { areaColor: style[2] }, }, },
               { name: ["香港特别行政区"], itemStyle: { normal: { areaColor: style[2] }, }, },
+              { name: ["云南省"], itemStyle: { normal: { areaColor: style[2] }, }, },
             ],
           },
           series: {
@@ -78,6 +82,8 @@
             type: 'scatter',
             coordinateSystem: 'geo',
             // 去过的城市，对应的经纬度
+            // 标签默认贴在圆点正下方；珠三角、福建沿海、江西这些城市挨得很近，
+            // 用 label.offset 把标签错开（[左右, 上下]，单位是像素，不是经纬度）
             data: [
 
             { name: '北京', value: [116.4074, 39.9042] },
@@ -86,15 +92,15 @@
 
             { name: '重庆', value: [106.5049, 29.5332] },
 
-            { name: '福州', value: [119.3062, 26.0751] },
+            { name: '福州', value: [119.3062, 26.0751], label: { offset: [10, 6] } },
 
-            { name: '宁德', value: [119.5420, 26.6657] },
+            { name: '宁德', value: [119.5420, 26.6657], label: { offset: [18, 2] } },
 
-            { name: '南平', value: [118.1784, 26.6415] },
+            { name: '南平', value: [118.1784, 26.6415], label: { offset: [-6, 2] } },
 
-            { name: '泉州', value: [118.5894, 24.9078] },
+            { name: '泉州', value: [118.5894, 24.9078], label: { offset: [22, 2] } },
 
-            { name: '厦门', value: [118.0894, 24.4798] },
+            { name: '厦门', value: [118.0894, 24.4798], label: { offset: [-2, 18] } },
 
             { name: '漳州', value: [117.6478, 24.5130] },
 
@@ -102,9 +108,11 @@
 
             { name: '张掖', value: [100.4498, 38.9259] },
 
-            { name: '广州', value: [113.2644, 23.1291] },
+            { name: '广州', value: [113.2644, 23.1291], label: { offset: [-22, 2] } },
 
-            { name: '深圳', value: [114.0579, 22.5431] },
+            { name: '深圳', value: [114.0579, 22.5431], label: { offset: [-2, 22] } },
+
+            { name: '东莞', value: [113.7518, 23.0207], label: { offset: [-2, -30] } },
 
             { name: '贵阳', value: [106.6302, 26.6470] },
 
@@ -114,17 +122,21 @@
 
             { name: '杭州', value: [120.1552, 30.2741] },
 
-            { name: '温州', value: [120.6994, 27.9991] },
+            { name: '温州', value: [120.6994, 27.9991], label: { offset: [2, 2] } },
 
-            { name: '南昌', value: [115.8581, 28.6832] },
+            { name: '南昌', value: [115.8581, 28.6832], label: { offset: [-2, 6] } },
 
-            { name: '九江', value: [115.9850, 29.7000] },
+            { name: '九江', value: [115.9850, 29.7000], label: { offset: [-22, 2] } },
 
-            { name: '景德镇', value: [117.2272, 29.2901] },
+            { name: '景德镇', value: [117.2272, 29.2901], label: { offset: [6, 2] } },
 
-            { name: '香港', value: [114.1733, 22.3193] },
+            { name: '香港', value: [114.1733, 22.3193], label: { offset: [-2, 2] } },
 
-            { name: '惠州', value: [114.4055, 23.0791] }
+            { name: '惠州', value: [114.4055, 23.0791], label: { offset: [22, 2] } },
+
+            { name: '丽江', value: [100.2330, 26.8721] },
+
+            { name: '香格里拉', value: [99.7065, 27.8253], label: { offset: [-26, 2] } }
 
             ],
             symbolSize: 5,
@@ -150,6 +162,24 @@
     myChart.on('click', function (params) {
       // 在用户点击后控制台打印数据的名称
       console.log(params);
+    });
+
+    // 标签的错开量是像素值，放大后城市点之间的距离会变大，错开量不跟着变
+    // 就会重新叠在一起，所以缩放时按同样的比例同步一次错开量
+    var lastZoom = 1;
+    myChart.on('georoam', function () {
+      var zoom = myChart.getOption().geo[0].zoom;
+      var k = zoom / lastZoom;
+      if (Math.abs(k - 1) < 0.02) return;      // 只是平移，没有缩放
+      lastZoom = zoom;
+      myChart.setOption({
+        series: [{
+          data: myChart.getOption().series[0].data.map(function (d) {
+            var o = (d.label && d.label.offset) || [0, 0];
+            return { name: d.name, value: d.value, label: { offset: [o[0] * k, o[1] * k] } };
+          })
+        }]
+      });
     });
 
   </script>
