@@ -80,10 +80,13 @@
           series: {
             name: '标记点',
             type: 'scatter',
+            animation: false,   // 缩放时标签高频重排，不做过渡动画
             coordinateSystem: 'geo',
             // 去过的城市，对应的经纬度
             // 标签默认贴在圆点正下方；珠三角、福建沿海、江西这些城市挨得很近，
-            // 用 label.offset 把标签错开（[左右, 上下]，单位是像素，不是经纬度）
+            // 用 label.offset 把标签错开（[左右, 上下]，单位是像素）。
+            // 这是 1 倍缩放下的起始布局，缩放后由文件底部"标签防重叠的实时布局"
+            // 代码重新求解，放得越大标签会贴得离自己的圆点越近。
             data: [
 
             { name: '北京', value: [116.4074, 39.9042] },
@@ -157,6 +160,7 @@
           },
         }
       )
+      layoutLabels();   // 数据到位后做第一次布局校准
     })
 
     myChart.on('click', function (params) {
@@ -164,22 +168,120 @@
       console.log(params);
     });
 
-    // 标签的错开量是像素值，放大后城市点之间的距离会变大，错开量不跟着变
-    // 就会重新叠在一起，所以缩放时按同样的比例同步一次错开量
-    var lastZoom = 1;
-    myChart.on('georoam', function () {
-      var zoom = myChart.getOption().geo[0].zoom;
-      var k = zoom / lastZoom;
-      if (Math.abs(k - 1) < 0.02) return;      // 只是平移，没有缩放
-      lastZoom = zoom;
+    // —— 标签防重叠的实时布局 ——
+    // 标签默认贴在圆点正下方；城市挤在一起时用 label.offset 把标签错开。
+    // offset 是像素值，缩放后点与点之间的距离会变：放大后距离拉开，之前
+    // 的错开量就不再需要了，标签要贴回自己的点。所以每次缩放都重新求解：
+    // 在不与任何文字/圆点重叠的前提下，优先保留当前位置（避免跳动），
+    // 冲突时选离圆点最近的空位；没冲突时也会尝试把标签往圆点收。
+    var labelCtx = document.createElement('canvas').getContext('2d');
+    labelCtx.font = 'bold 12px sans-serif';    // 与 label 的 fontSize/fontWeight/fontFamily 一致
+
+    var DOT_R = 3.2;          // 圆点半径（含边框）
+    var LABEL_H = 12.5;       // 12px 加粗汉字的墨水高度（含少量余量）
+    var LABEL_DY = 8.5;       // offset 为 [0,0] 时文字顶部距圆点中心的像素距离
+    var GAP_MIN = 2;          // 文字/圆点之间要求的最小间隙(px)
+    var VIEW_W = 2000, VIEW_H = 1200;   // 与 #main 的尺寸一致
+
+    // 候选错开位置，按"离圆点近"排序；优先保持在圆点下方（dy >= 0）
+    var OFFSETS = [];
+    (function () {
+      for (var dx = -36; dx <= 36; dx += 2) {
+        for (var dy = -32; dy <= 28; dy += 2) {
+          OFFSETS.push([dx, dy, Math.abs(dx) + Math.abs(dy) * 1.5 + (dy < 0 ? 10 : 0)]);
+        }
+      }
+      OFFSETS.sort(function (a, b) { return a[2] - b[2]; });
+    })();
+
+    var cityList = null;   // 首次 layoutLabels 时从已设置的 option 里构建
+
+    function labelBox(c, off) {
+      return { x: c.px[0] + off[0] - c.w / 2, y: c.px[1] + LABEL_DY + off[1], w: c.w, h: LABEL_H };
+    }
+    function dotBox(c) {
+      return { x: c.px[0] - DOT_R, y: c.px[1] - DOT_R, w: DOT_R * 2, h: DOT_R * 2 };
+    }
+    function gapBetween(a, b) {
+      var ox = Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x);
+      var oy = Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y);
+      if (ox > 0 && oy > 0) return -Math.min(ox, oy);   // 有重叠，返回负值
+      if (ox > 0) return Math.abs(oy);
+      if (oy > 0) return Math.abs(ox);
+      return Math.sqrt(ox * ox + oy * oy);
+    }
+    function costOf(off) {
+      return Math.abs(off[0]) + Math.abs(off[1]) * 1.5 + (off[1] < 0 ? 10 : 0);
+    }
+    function countCollisions(c, off) {
+      var box = labelBox(c, off);
+      var n = 0;
+      for (var i = 0; i < cityList.length; i++) {
+        var o = cityList[i];
+        if (o === c) {
+          if (gapBetween(box, dotBox(o)) < GAP_MIN) n++;      // 自己的圆点
+        } else {
+          if (gapBetween(box, labelBox(o, o.off)) < GAP_MIN) n++;
+          if (gapBetween(box, dotBox(o)) < GAP_MIN) n++;
+        }
+      }
+      if (box.x < 2 || box.x + box.w > VIEW_W - 2 || box.y < 2 || box.y + box.h > VIEW_H - 2) n += 10;
+      return n;
+    }
+    function layoutLabels() {
+      if (!cityList) {
+        cityList = myChart.getOption().series[0].data.map(function (d) {
+          return {
+            name: d.name,
+            value: d.value.slice(),
+            off: (d.label && d.label.offset) ? d.label.offset.slice() : [0, 0],
+            w: labelCtx.measureText(d.name).width
+          };
+        });
+      }
+      var i, c;
+      for (i = 0; i < cityList.length; i++) {
+        cityList[i].px = myChart.convertToPixel({ geoIndex: 0 }, cityList[i].value);
+      }
+      var round = 0, changed = true;
+      while (changed && round < 20) {          // 贪心多扫几轮直到稳定
+        changed = false; round++;
+        for (i = 0; i < cityList.length; i++) {
+          c = cityList[i];
+          var best = c.off, bestCost = costOf(c.off);
+          var collide = countCollisions(c, c.off) > 0;
+          for (var j = 0; j < OFFSETS.length; j++) {
+            if (countCollisions(c, OFFSETS[j]) > 0) continue;
+            // 第一个（即最靠圆的）不冲突的位置：要么解决冲突，要么比现在更贴近圆点
+            if (collide || OFFSETS[j][2] < bestCost) { best = OFFSETS[j]; bestCost = OFFSETS[j][2]; }
+            break;
+          }
+          if (best !== c.off) { c.off = [best[0], best[1]]; changed = true; }
+        }
+      }
       myChart.setOption({
+        animation: false,    // 缩放时高频更新，不做过渡动画
         series: [{
-          data: myChart.getOption().series[0].data.map(function (d) {
-            var o = (d.label && d.label.offset) || [0, 0];
-            return { name: d.name, value: d.value, label: { offset: [o[0] * k, o[1] * k] } };
+          data: cityList.map(function (c) {
+            return { name: c.name, value: c.value.slice(), label: { offset: c.off.slice() } };
           })
         }]
       });
+    }
+
+    var lastZoom = null;
+    var layoutTimer = null;
+    myChart.on('georoam', function () {
+      var zoom = myChart.getOption().geo[0].zoom;
+      if (lastZoom !== null && Math.abs(zoom - lastZoom) < 1e-9) return;  // 纯平移，相对位置没变
+      lastZoom = zoom;
+      // 双指/滚轮缩放是一连串事件，等动作停下 120ms 再求解，
+      // 确保拿到的是缩放稳定后的坐标（连续缩放中途坐标还在变）
+      if (layoutTimer) clearTimeout(layoutTimer);
+      layoutTimer = setTimeout(function () {
+        layoutTimer = null;
+        layoutLabels();
+      }, 120);
     });
 
   </script>
