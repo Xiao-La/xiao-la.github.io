@@ -173,19 +173,31 @@ div.tag_cloud a {
 .search-icon {
   position: relative;
   display: inline-block;
+  flex: 0 0 auto;
   box-sizing: border-box;
-  width: 0.8em;
-  height: 0.8em;
+  width: 1em;
+  height: 1em;
+}
+
+.search-icon::before {
+  position: absolute;
+  top: 0.05em;
+  left: 0.05em;
+  box-sizing: border-box;
+  width: 0.62em;
+  height: 0.62em;
   border: 1.5px solid currentColor;
   border-radius: 50%;
+  content: "";
 }
 
 .search-icon::after {
   position: absolute;
-  right: -0.32em;
-  bottom: -0.18em;
+  top: 0.57em;
+  left: 0.57em;
   width: 0.38em;
   height: 1.5px;
+  border-radius: 999px;
   background: currentColor;
   content: "";
   transform: rotate(45deg);
