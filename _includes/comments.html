@@ -1,20 +1,75 @@
 {% if site.comments.enabled %}
-  <span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="{{ page.title | escape }}">
-    <span class="post-meta-item-text" style="display: inline; color: #686868">页面访问次数 </span>
-    <span class="leancloud-visitors-count" style="display: inline; color: #383838; font-family: Impact">♥</span>
-  </span>
+  <section class="comments-panel" aria-labelledby="comments-title">
+    <header class="comments-header">
+      <div>
+        <h2 class="comments-title" id="comments-title">评论</h2>
+        <p>欢迎留下想法，邮箱仅用于接收回复提醒。</p>
+      </div>
+      <p id="{{ page.url }}" class="visitor-count leancloud_visitors" data-flag-title="{{ page.title | escape }}" aria-label="正在读取页面访问次数">
+        <span class="visitor-icon" aria-hidden="true"></span>
+        <span>阅读</span>
+        <strong class="leancloud-visitors-count" aria-live="polite">加载中</strong>
+        <span class="visitor-count-suffix">次</span>
+      </p>
+    </header>
 
-  <div id="vcomments"></div>
-  <script src="https://unpkg.com/valine@1.5.2/dist/Valine.min.js"></script>
+    <div id="vcomments"></div>
+    <p class="comments-status" id="comments-status" role="status" hidden>评论服务暂时无法加载，请稍后再试。</p>
+    <noscript><p class="comments-status">启用 JavaScript 后即可查看和发表评论。</p></noscript>
+  </section>
+
+  <!-- Keep browser dependencies on the same origin as the GitHub Pages site. -->
+  <script src="{{ '/assets/vendor/leancloud-storage/3.15.0/av-min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/vendor/valine/1.5.2/Valine.min.js' | relative_url }}"></script>
   <script>
-    new Valine({
-      el: '#vcomments',
-      appId: {{ site.comments.valine.app_id | jsonify }},
-      appKey: {{ site.comments.valine.app_key | jsonify }},
-      placeholder: 'Post a comment here...',
-      serverURLs: {{ site.comments.valine.server_url | jsonify }},
-      visitor: true,
-      path: location.pathname
-    });
+    (function () {
+      var status = document.getElementById('comments-status');
+      var visitor = document.querySelector('.visitor-count');
+      var visitorValue = visitor.querySelector('.leancloud-visitors-count');
+      var visitorSuffix = visitor.querySelector('.visitor-count-suffix');
+
+      function markVisitorUnavailable() {
+        if (/^\d+$/.test(visitorValue.textContent.trim())) return;
+
+        visitorValue.textContent = '暂不可用';
+        visitorSuffix.hidden = true;
+        visitor.classList.add('is-unavailable');
+        visitor.setAttribute('aria-label', '页面访问次数暂时不可用');
+      }
+
+      function showCommentsUnavailable() {
+        status.hidden = false;
+        markVisitorUnavailable();
+      }
+
+      if (!window.AV || !window.Valine) {
+        showCommentsUnavailable();
+        return;
+      }
+
+      try {
+        new Valine({
+          el: '#vcomments',
+          appId: {{ site.comments.valine.app_id | jsonify }},
+          appKey: {{ site.comments.valine.app_key | jsonify }},
+          placeholder: '写下你的评论…',
+          serverURLs: {{ site.comments.valine.server_url | jsonify }},
+          path: {{ page.url | jsonify }},
+          lang: 'zh-CN',
+          visitor: true
+        });
+
+        window.setTimeout(function () {
+          if (/^\d+$/.test(visitorValue.textContent.trim())) {
+            visitor.setAttribute('aria-label', '页面访问次数 ' + visitorValue.textContent.trim());
+          } else {
+            markVisitorUnavailable();
+          }
+        }, 10000);
+      } catch (error) {
+        showCommentsUnavailable();
+        console.error('Valine failed to initialize:', error);
+      }
+    }());
   </script>
 {% endif %}

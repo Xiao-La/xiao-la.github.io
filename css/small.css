@@ -31,26 +31,87 @@ H3, H4 {
   font-size: 1em;
 }
 
-div.nav {
+.nav {
   width: 100%;
-  padding: 0 0 0 0;
+  min-height: 2em;
+  padding: 0;
   border: 1px solid #d4d4d4;
 }
 
-div.nav a {
-  padding: 0.25em 0.75em;
+.nav a {
+  padding: 0.25em 0.55em;
 }
 
-div.nav_nav {
-  width: 100%;
+.nav_nav {
+  flex: 1;
+  width: auto;
 }
 
-div.nav_rss {
+.nav-rss-link,
+.search-shortcut {
   display: none;
+}
+
+.nav_actions {
+  gap: 0;
+}
+
+.search-toggle {
+  min-height: 2em;
+  padding: 0 0.65em;
+}
+
+.search-modal {
+  padding: 0;
+}
+
+.search-panel {
+  width: 100%;
+  max-height: 100vh;
+  min-height: 100vh;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.search-header {
+  padding: 1em 1em 0.75em;
+}
+
+.search-field {
+  margin: 0 1em;
+}
+
+.search-status {
+  padding-right: 1.25em;
+  padding-left: 1.25em;
+}
+
+.search-results {
+  max-height: calc(100vh - 10em);
+  padding-right: 0.5em;
+  padding-left: 0.5em;
 }
 
 a.nav_a1 {
   background: #d4d4d4;
+}
+
+.comments-panel {
+  margin-top: 2em;
+  padding-top: 1em;
+}
+
+.comments-header {
+  align-items: center;
+}
+
+.comments-header > div > p {
+  display: none;
+}
+
+.visitor-count {
+  font-size: 0.75em !important;
 }
 
 div.overview {

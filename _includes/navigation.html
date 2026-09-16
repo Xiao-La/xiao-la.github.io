@@ -1,28 +1,46 @@
-<div class="nav">
+<nav class="nav" aria-label="主导航">
   <div class="nav_nav">
     {% for item in site.data.navigation %}
       <a{% if item.emphasized %} class="nav_a1"{% endif %} href="{{ item.url | relative_url }}">{{ item.title }}</a>
     {% endfor %}
-
-    <div class="pconly" id="search-container">
-      <label class="visually-hidden" for="search-input">搜索文章</label>
-      <input type="search" id="search-input" placeholder=" Search.." class="nav_a1">
-      <ul id="results-container"></ul>
-    </div>
-    <script src="{{ '/js/simple-jekyll-search.min.js' | relative_url }}"></script>
-
-    <script>
-      window.simpleJekyllSearch = new SimpleJekyllSearch({
-        searchInput: document.getElementById('search-input'),
-        resultsContainer: document.getElementById('results-container'),
-        json: {{ '/search.json' | relative_url | jsonify }},
-        searchResultTemplate: '<li style="list-style: none;padding-left:0px;border-radius: 1px;border: 1px solid #DBDBDB;visibility: visible;"><a href="{url}" title="{desc}">{title}</a></li>',
-        noResultsText: 'No results found',
-        limit: 20,
-        fuzzy: false
-      });
-    </script>
   </div>
 
-  <div class="nav_rss"><a href="{{ '/feed.xml' | relative_url }}" target="_blank" rel="noopener">订阅</a></div>
+  <div class="nav_actions">
+    <button class="search-toggle" id="search-toggle" type="button" aria-haspopup="dialog" aria-controls="search-modal" aria-expanded="false">
+      <span class="search-icon" aria-hidden="true"></span>
+      <span>搜索</span>
+      <kbd class="search-shortcut">⌘ K</kbd>
+    </button>
+    <a class="nav-rss-link" href="{{ '/feed.xml' | relative_url }}" target="_blank" rel="noopener">订阅</a>
+  </div>
+</nav>
+
+<div class="search-modal" id="search-modal" hidden>
+  <div class="search-backdrop" data-search-close></div>
+  <section class="search-panel" role="dialog" aria-modal="true" aria-labelledby="search-title">
+    <header class="search-header">
+      <div>
+        <h2 id="search-title">搜索文章</h2>
+        <p>按标题、分类、标签或摘要查找</p>
+      </div>
+      <button class="search-close" type="button" data-search-close aria-label="关闭搜索">×</button>
+    </header>
+
+    <div class="search-field">
+      <span class="search-icon" aria-hidden="true"></span>
+      <label class="visually-hidden" for="search-input">搜索文章</label>
+      <input type="search" id="search-input" autocomplete="off" placeholder="输入关键词…" aria-describedby="search-status">
+      <kbd>Esc</kbd>
+    </div>
+
+    <p class="search-status" id="search-status" aria-live="polite">输入关键词开始搜索</p>
+    <ol class="search-results" id="search-results"></ol>
+  </section>
 </div>
+
+<script>
+  window.blogSearchConfig = {
+    indexUrl: {{ '/search.json' | relative_url | jsonify }}
+  };
+</script>
+<script defer src="{{ '/js/search.js' | relative_url }}"></script>
