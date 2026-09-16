@@ -4,15 +4,15 @@ description: Joy's Blog
 keywords: joy, joyslog, blog, python, oi, noip
 ---
 
-  <div class="info">
+<div class="info">
   <h2>Info</h2>
   <div class="overview">
     <div class="date">Blog By</div>
-    <div class="detail"><a href="{{ site.url }}/about">Joy</a></div>
+    <div class="detail"><a href="{{ '/about/' | relative_url }}">Joy</a></div>
     <br>
     <div class="date">每日诗词</div>
     <div class="detail"><a href="https://www.jinrishici.com/" id="jinrishici-sentence">Loading</a></div>
-    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    {% include daily-poem.html %}
   </div>
 </div>
 <div class="postlist">
@@ -21,7 +21,7 @@ keywords: joy, joyslog, blog, python, oi, noip
   {% for post in paginator.posts %}
   <div class="overview">
     <div class="date">{{ post.date | date: "%b %d, %Y" }}</div>
-    <div class="detail"><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></div>
+    <div class="detail"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
   </div>
   {% endfor %}
 </div>

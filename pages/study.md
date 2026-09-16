@@ -13,10 +13,11 @@ permalink: /study/
 <h2>Article</h2>
 
 <div class="postlist">
-{% for art in site.study reversed %}
+{% assign study_articles = site.study | sort: "date" | reverse %}
+{% for art in study_articles %}
 <div class="overview">
     <div class="date">{{ art.date | date: "%b %d, %Y" }}</div>
-    <div class="detail"><a href="{{ site.url }}{{ art.url }}">{{ art.title }}</a></div>
+    <div class="detail"><a href="{{ art.url | relative_url }}">{{ art.title }}</a></div>
   </div>
 {% endfor %}
 </div>

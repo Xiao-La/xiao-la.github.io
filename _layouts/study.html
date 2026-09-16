@@ -1,15 +1,8 @@
-{% assign assets_base_url = site.url %}
-{% if site.cdn.jsdelivr.enabled %}
-    {% assign assets_base_url = "https://cdn.jsdelivr.net/gh/" | append: site.repository | append: '@master' %}
-{% endif %}
-
-{% include header.html %}
-<div class="container">
-    {% include navigation.html %}
-    <div class="main">
-        <h2> {{ page.title }} </h2>
-        {{ content }}
-        {% include comments.html %}
-    </div>
-</div>
-{% include footer.html %}
+---
+layout: default
+---
+<article>
+  <h2>{{ page.title }}</h2>
+  {{ content }}
+</article>
+{% include comments.html %}

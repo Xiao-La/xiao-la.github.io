@@ -1,29 +1,28 @@
 <div class="nav">
   <div class="nav_nav">
-    <a class="nav_a1" href="{{ site.url }}/">首页</a>
-    <a href="{{ site.url }}/categories/">分类</a>
-    <a class="nav_a1" href="{{ site.url }}/study/">学习</a>
-    <a href="{{ site.url }}/links/">链接</a>
-    <a class="nav_a1" href="{{ site.url }}/about/">关于</a>
+    {% for item in site.data.navigation %}
+      <a{% if item.emphasized %} class="nav_a1"{% endif %} href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    {% endfor %}
 
     <div class="pconly" id="search-container">
-      <input type="text" id="search-input" placeholder=" Search.." class="nav_a1" style="border-radius:2px; border:1px solid #DBDBDB;">
-      <ul id="results-container" style="visibility: hidden;margin:0;padding:0;position:absolute"></ul>
+      <label class="visually-hidden" for="search-input">搜索文章</label>
+      <input type="search" id="search-input" placeholder=" Search.." class="nav_a1">
+      <ul id="results-container"></ul>
     </div>
-    <script src="/js/simple-jekyll-search.min.js"></script>
+    <script src="{{ '/js/simple-jekyll-search.min.js' | relative_url }}"></script>
 
     <script>
       window.simpleJekyllSearch = new SimpleJekyllSearch({
         searchInput: document.getElementById('search-input'),
         resultsContainer: document.getElementById('results-container'),
-        json: '/search.json',
+        json: {{ '/search.json' | relative_url | jsonify }},
         searchResultTemplate: '<li style="list-style: none;padding-left:0px;border-radius: 1px;border: 1px solid #DBDBDB;visibility: visible;"><a href="{url}" title="{desc}">{title}</a></li>',
         noResultsText: 'No results found',
         limit: 20,
-        fuzzy: false,
-      })
+        fuzzy: false
+      });
     </script>
   </div>
 
-  <div class="nav_rss"><a href="{{ site.url }}/sitemap.xml" style="display:none;">SITEMAP</a><a href="{{ site.url }}/feed.xml" target="_blank">订阅</a></div>
+  <div class="nav_rss"><a href="{{ '/feed.xml' | relative_url }}" target="_blank" rel="noopener">订阅</a></div>
 </div>

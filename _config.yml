@@ -1,37 +1,62 @@
-#Main Configs
-baseurl: https://joyslog.top
-url: https://joyslog.top
-assets_base_url: https://joyslog.top
-date_format: "ordinal"
+# Site metadata
 title: Joy's Blog
+description: Joy 的个人博客，记录生活、学习与技术笔记。
 author: Joy
-
-#RSS/Email
-subscribe_rss: /feed.xml
 email: marcustonytxi@gmail.com
+lang: zh-CN
+timezone: Asia/Shanghai
+url: https://joyslog.top
+baseurl: ""
 repository: Xiao-La/xiao-la.github.io
 
-#Jekyll Config
+# Kept for compatibility with image links in existing articles.
+assets_base_url: https://joyslog.top
+
+# Content and URLs
 markdown: kramdown
 kramdown:
-    input: GFM
-paginate: 15
+  input: GFM
 permalink: /:year/:month/:day/:title/
-gems:
-    - jekyll-paginate
-    - jekyll-sitemap
-    - jekyll-feed
-    - jemoji
-plugins: [jekyll-paginate]
-collections:
-    study:
-        output: true
-        permalink: /study/:path/
-
-
-#Cdn Config
-cdn:
-     jsdelivr:
-         enabled: false
-
 future: true
+
+# Homepage pagination
+paginate: 15
+paginate_path: /page:num/
+
+# GitHub Pages-supported plugins
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jemoji
+
+collections:
+  study:
+    output: true
+    permalink: /study/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+      type: study
+    values:
+      layout: study
+
+# External services are configured here instead of inside templates.
+comments:
+  enabled: true
+  valine:
+    app_id: YHAa8KVAgllvIvixOSZFNLjZ-MdYXbMMI
+    app_key: ZGi29AAOtj9dSsltGGpBDYb8
+    server_url: https://valine.joyslog.top
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

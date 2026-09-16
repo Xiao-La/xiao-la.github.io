@@ -1,2 +1,8 @@
 .DS_Store
+.claude/
 .vscode
+.bundle/
+.jekyll-cache/
+.jekyll-metadata
+_site/
+vendor/

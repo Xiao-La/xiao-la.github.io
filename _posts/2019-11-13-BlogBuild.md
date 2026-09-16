@@ -26,7 +26,7 @@ keywords: about, blog, github, free, 免费, githubpages
 
 ### 注册github账号
 
-打开github的 [*官网*](www.github.com)  即可看到醒目的注册框。
+打开github的 [*官网*](https://github.com/)  即可看到醒目的注册框。
 
 注：`username` [*用户名* ]（这将会成为你的二级域名： *username.github.io*）
 
@@ -89,7 +89,7 @@ Fork后，打开你仓库里的那份fork的设置（Setting）。
 
 Github Pages为此提供了很好的支持，使得它非常简单。
 
-购买一个域名，在[**阿里云**](www.aliyun.com) 、[**腾讯云**](https://cloud.tencent.com/)上都可以简单的买到（首年都很便宜）。
+购买一个域名，在[**阿里云**](https://www.aliyun.com/) 、[**腾讯云**](https://cloud.tencent.com/)上都可以简单的买到（首年都很便宜）。
 
 > 搜索“freenom”，可以获取到一个免费的.tk、.ml 等顶级域名（这是目前**唯一的免费域名服务商**）
 >

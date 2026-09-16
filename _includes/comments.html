@@ -1,18 +1,20 @@
-<span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="{{ page.title }}">
-    <p class="post-meta-item-text" style="display: inline; color: #686868">页面访问次数 </em>
-    <p class="leancloud-visitors-count" style="display: inline; color: #383838; font-family: Impact"> ♥ </i>
-</span>
+{% if site.comments.enabled %}
+  <span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="{{ page.title | escape }}">
+    <span class="post-meta-item-text" style="display: inline; color: #686868">页面访问次数 </span>
+    <span class="leancloud-visitors-count" style="display: inline; color: #383838; font-family: Impact">♥</span>
+  </span>
 
-
-<div id="vcomments"></div>
-<script>
+  <div id="vcomments"></div>
+  <script src="https://unpkg.com/valine@1.5.2/dist/Valine.min.js"></script>
+  <script>
     new Valine({
-        el: '#vcomments',
-        appId: 'YHAa8KVAgllvIvixOSZFNLjZ-MdYXbMMI',
-        appKey: 'ZGi29AAOtj9dSsltGGpBDYb8',
-        placeholder: 'Post a comment here...',
-        serverURLs: 'https://valine.joyslog.top',
-        visitor: true,
-        path: location.pathname
-    })
-</script>
+      el: '#vcomments',
+      appId: {{ site.comments.valine.app_id | jsonify }},
+      appKey: {{ site.comments.valine.app_key | jsonify }},
+      placeholder: 'Post a comment here...',
+      serverURLs: {{ site.comments.valine.server_url | jsonify }},
+      visitor: true,
+      path: location.pathname
+    });
+  </script>
+{% endif %}
