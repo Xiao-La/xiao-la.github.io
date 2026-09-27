@@ -6,7 +6,7 @@ keywords: 友情链接
 permalink: /links/
 ---
 
-[Reqwey's Blog](https://oi.reqwey.me/)
+[Reqwey's Blog](https://reqwey.xyz/){:target="_blank" rel="noopener noreferrer"}
 
 [陈郑逸领域](https://fujianprovince.github.io/)
 
@@ -19,4 +19,3 @@ permalink: /links/
 - 洛谷: [LINK](https://www.luogu.com.cn/user/671835)
 
 - B站:  [LINK](https://space.bilibili.com/109336323)
-
