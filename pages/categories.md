@@ -6,19 +6,30 @@ keywords: 分类
 permalink: /categories/
 ---
 
-这里是这个博客中所有文章的**分类列表**。可能有些文章存在分类错误。
+<div class="categories-page" id="categories-top">
+  <nav class="category-index" aria-label="文章分类索引">
+    {% for category in site.categories %}
+      <a href="#{{ category[0] | slugify }}">
+        <span>{{ category[0] }}</span>
+        <small>{{ category[1].size }} 篇</small>
+      </a>
+    {% endfor %}
+  </nav>
 
-<div class='tag_cloud'>
-{% for cat in site.categories %}
-<a href="#{{ cat[0] | slugify }}" title="{{ cat[0] }}">{{ cat[0] }}({{ cat[1].size }}) </a>
-{% endfor %}
+  {% for category in site.categories %}
+    <section class="category-section" id="{{ category[0] | slugify }}" aria-labelledby="{{ category[0] | slugify }}-title">
+      <header class="category-heading">
+        <h3 id="{{ category[0] | slugify }}-title">{{ category[0] }}</h3>
+        <span>{{ category[1].size }} 篇</span>
+      </header>
+      <ol class="category-post-list">
+        {% for post in category.last %}
+          <li>
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %d, %Y" }}</time>
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </li>
+        {% endfor %}
+      </ol>
+    </section>
+  {% endfor %}
 </div>
-
-{% for category in site.categories %}
-<h3>{{ category | first }}</h3>
-<ul id="{{ category[0] | slugify }}">
-{% for post in category.last %}
-<li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-{% endfor %}
-</ul>
-{% endfor %}

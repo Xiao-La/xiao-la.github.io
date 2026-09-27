@@ -8,15 +8,9 @@ permalink: /about/
 
 这里是 Joy，目前（2025 年）就读于南方科技大学。
 
-你可以通过以下方式联系到我：
+### 联系我
 
-- Email： <marcustonytxi@gmail.com>
-
-- Bilibili：  [Joyslog](https://space.bilibili.com/109336323)
-
-- Wechat： [JoyShen_Learn](weixin://dl/chat?JoyShen_Learn)
-
-- Github： [xiao-la](https://github.com/Xiao-La)
+{% include contact-list.html %}
 
 这个 Blog 的内容包括：
 

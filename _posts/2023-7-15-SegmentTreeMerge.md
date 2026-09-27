@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OI笔记 | 线段树合并笔记
+title: OI 笔记 | 线段树合并笔记
 categories: Note
 description: Note
 keywords: NOIP, OI, Note

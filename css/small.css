@@ -93,6 +93,36 @@ H3, H4 {
   padding-left: 0.5em;
 }
 
+.category-index {
+  grid-template-columns: 1fr;
+}
+
+.category-index a:nth-child(odd),
+.category-index a:nth-child(even) {
+  padding-right: 0.2em;
+  padding-left: 0.2em;
+  border-right: 0;
+}
+
+.category-post-list li {
+  display: grid;
+  grid-template-columns: 6.25em minmax(0, 1fr);
+  gap: 0.75em;
+  align-items: baseline;
+  margin: 1.25em 0.75em;
+}
+
+.category-post-list time {
+  float: none;
+  width: auto;
+  padding: 0;
+  text-align: left;
+}
+
+.category-post-list a {
+  margin-left: 0;
+}
+
 a.nav_a1 {
   background: #d4d4d4;
 }
@@ -112,6 +142,15 @@ a.nav_a1 {
 
 .visitor-count {
   font-size: 0.75em !important;
+}
+
+.qq-preview {
+  align-items: flex-start;
+  gap: 1em;
+}
+
+.qq-preview img {
+  width: 8em;
 }
 
 div.overview {

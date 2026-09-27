@@ -77,11 +77,11 @@ keywords: blog, github pages, removal
 
 但我想保留 github 上面的备份，把 github 作为一个中转站，以便日后再次迁移。
 
-于是，我找到了这样一个方案：在云服务器上创建一个 API，每次 POST 请求这个 API，就自动执行“从github上拉取”和“用jekyll渲染博客”这两件事。
+于是，我找到了这样一个方案：在云服务器上创建一个 API，每次 POST 请求这个 API，就自动执行“从 github 上拉取”和“用 jekyll 渲染博客”这两件事。
 
 然后通过 github 的 webhook 功能，可以建立一个每次 push 就 trigger 的 webhook，让他每次收到 push 就请求一下这个接口。这样就实现了自动同步。
 
-具体实现，可以查看我参考的文章 [利用Git Webhooks实现jekyll博客自动化部署](https://developer.aliyun.com/article/680718)。
+具体实现，可以查看我参考的文章 [利用 Git Webhooks 实现 jekyll 博客自动化部署](https://developer.aliyun.com/article/680718)。
 
 ### 其他
 

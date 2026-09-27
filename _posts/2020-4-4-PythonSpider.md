@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Python爬虫入门
+title: Python 爬虫入门
 categories: python
 description: python
 keywords: python, 爬虫, 正则, 教程, 入门, spider
@@ -14,7 +14,7 @@ keywords: python, 爬虫, 正则, 教程, 入门, spider
 
 
 
-这里是自己学习Python爬虫踩过的坑和笔记；以及怎么入门Python爬虫。
+这里是自己学习 Python 爬虫踩过的坑和笔记；以及怎么入门 Python 爬虫。
 
 ### 爬虫是什么?
 
@@ -26,7 +26,7 @@ keywords: python, 爬虫, 正则, 教程, 入门, spider
 >搜索引擎就是一个不断运行的爬虫系统。
 
 
-### 为什么要用Python写爬虫?  
+### 为什么要用 Python 写爬虫?
 
 - `Python`拥有强大的爬虫第三方库。
 - `Python`拥有方便的爬虫框架。
@@ -38,7 +38,7 @@ keywords: python, 爬虫, 正则, 教程, 入门, spider
 
 必须:
 
- - 学会抓包、了解基本HTML语法
+ - 学会抓包、了解基本 HTML 语法
 
  - 网络请求的类型与基本参数
 
@@ -56,7 +56,7 @@ keywords: python, 爬虫, 正则, 教程, 入门, spider
 
  - 使用模块化、错误处理完善的代码
 
- - 学习正则表达式、XPath、Beautiful Soup等常用处理网页方式
+ - 学习正则表达式、XPath、Beautiful Soup 等常用处理网页方式
 
  - 学习 Panda、Numpy 等数据处理方式
 
@@ -71,11 +71,11 @@ keywords: python, 爬虫, 正则, 教程, 入门, spider
 
 所以，爬虫就要伪造其中发送请求的部分，并且获取相应的响应。
 
-实际上，Requests库已经**封装好了这一切**，等着你调用。
+实际上，Requests 库已经**封装好了这一切**，等着你调用。
 
-网络请求常用的类型是**Get**和**Post**，你的浏览器发送的默认是Get请求。Post请求的作用是在请求中附带信息，比如你从B站的主站跳转到另一个页面，你会看到URL的问号后面里多了些东西，这些就是附带的内容。
+网络请求常用的类型是**Get**和**Post**，你的浏览器发送的默认是 Get 请求。Post 请求的作用是在请求中附带信息，比如你从 B 站的主站跳转到另一个页面，你会看到 URL 的问号后面里多了些东西，这些就是附带的内容。
 
-现在，打开你的终端，打开Python，输入如下内容:
+现在，打开你的终端，打开 Python，输入如下内容:
 ```python
 import requests # 导入reuqests库
 url = "https://www.baidu.com/" #str:url
@@ -86,7 +86,7 @@ print(r.text)#r.text就是返回的HTML内容
 
 这就是为什么我们要用`Python`写爬虫，它实在太简单了。
 
-现在，你可以去学习Requests这个库了，点开你的搜索引擎，搜索 `python3 requests` ，你会看到通俗易懂的教程。
+现在，你可以去学习 Requests 这个库了，点开你的搜索引擎，搜索 `python3 requests` ，你会看到通俗易懂的教程。
 ### 现在我会得到网页的响应了，那么如何处理这些杂乱的源代码?
 
 你可以使用主流的几种办法:
@@ -96,15 +96,15 @@ print(r.text)#r.text就是返回的HTML内容
 
 | 方法  |    优点    |      缺点    |
 | ----- | :-------- | :---------   |
-| 正则表达式|简洁，应用范围广，简单|不是处理网页的最好方法，稍微慢于Xpath|
+| 正则表达式|简洁，应用范围广，简单|不是处理网页的最好方法，稍微慢于 Xpath|
 | Xpath|简洁，方便(可以直接生成)，速度快|学习成本略高|
-| Beautiful Soup|可读性高，极其易学|稍微慢于Xpath|
+| Beautiful Soup|可读性高，极其易学|稍微慢于 Xpath|
 
-我个人推荐你先学习正则表达式和Beautiful Soup。
+我个人推荐你先学习正则表达式和 Beautiful Soup。
 教程:[正则](https://www.runoob.com/regexp/regexp-tutorial.html)、[Xpath](https://www.runoob.com/xpath/xpath-tutorial.html)、[Beautifulsoup](https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/)
 
 ### 我得到了数据，那怎么把数据可视化？
-你可以学习Matplotlib、Plotly等数据可视化包，同样的，你可以搜索`python3 matplotlib`来学习。
+你可以学习 Matplotlib、Plotly 等数据可视化包，同样的，你可以搜索`python3 matplotlib`来学习。
 
 ### 如何进阶?
 网站显然不会公开让你爬他们辛辛苦苦收集来的数据，一般都会设计各种各样的反爬虫机制。(当然，如果你将数据用做商用就是犯法的)

@@ -6,16 +6,25 @@ keywords: 友情链接
 permalink: /links/
 ---
 
-[Reqwey's Blog](https://reqwey.xyz/){:target="_blank" rel="noopener noreferrer"}
+<div class="links-page">
+  <section class="links-section" aria-labelledby="friends-title">
+    <h3 id="friends-title">友人站点</h3>
 
-[陈郑逸领域](https://fujianprovince.github.io/)
+    <div class="friend-list">
+      <a class="friend-item" href="https://reqwey.xyz/" target="_blank" rel="noopener noreferrer">
+        <span>Reqwey’s Blog</span>
+        <small>reqwey.xyz ↗</small>
+      </a>
 
-你可以通过以下方式联系到我：
+      <a class="friend-item" href="https://fujianprovince.github.io/" target="_blank" rel="noopener noreferrer">
+        <span>陈郑逸领域</span>
+        <small>fujianprovince.github.io ↗</small>
+      </a>
+    </div>
+  </section>
 
-- Email:    <marcustonytxi@gmail.com>
-
-- QQ:   [LINK]({{ assets_base_url }}/images/58229185.png)
-
-- 洛谷: [LINK](https://www.luogu.com.cn/user/671835)
-
-- B站:  [LINK](https://space.bilibili.com/109336323)
+  <section class="links-section" aria-labelledby="contact-title">
+    <h3 id="contact-title">联系我</h3>
+    {% include contact-list.html %}
+  </section>
+</div>

@@ -102,6 +102,117 @@ div.tag_cloud a {
   word-break: normal;
 }
 
+/* Categories page */
+.category-index {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 2.5em;
+  border-top: 1px solid #d8d8d8;
+}
+
+.category-index a {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1em;
+  min-width: 0;
+  padding: 0.6em 0.25em;
+  border-bottom: 1px solid #e4e4e4;
+  color: #555;
+  word-break: normal;
+}
+
+.category-index a > span,
+.category-heading h3 {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
+  font-size: 1.05em;
+  font-weight: bold;
+  line-height: 150%;
+}
+
+.category-index a:nth-child(odd) {
+  padding-right: 1em;
+  border-right: 1px solid #e4e4e4;
+}
+
+.category-index a:nth-child(even) {
+  padding-left: 1em;
+}
+
+.category-index a:hover,
+.category-index a:focus-visible {
+  background: #fafafa;
+  color: #204a87;
+  text-decoration: none;
+  outline: none;
+}
+
+.category-index small {
+  flex: 0 0 auto;
+  color: #555;
+  font-size: 0.75em;
+}
+
+.category-section {
+  margin-top: 2.25em;
+  scroll-margin-top: 1em;
+}
+
+.category-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.category-heading h3 {
+  width: auto;
+  margin: 0;
+  padding: 0 0 0.4em;
+  border: 0;
+  color: #555;
+}
+
+.category-heading span {
+  color: #555;
+  font-size: 0.75em;
+}
+
+.category-post-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.category-post-list li {
+  min-height: 1.5em;
+  margin: 1.75em 1.25em;
+}
+
+.category-post-list time {
+  float: left;
+  width: 25%;
+  padding-top: 1px;
+  color: #555;
+  font-size: 0.75em;
+  font-style: italic;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.category-post-list a {
+  display: block;
+  margin-left: 28%;
+  color: #204a87;
+  word-break: normal;
+}
+
+.category-post-list a:hover,
+.category-post-list a:focus-visible {
+  text-decoration: underline;
+}
+
 .nav {
   box-sizing: content-box;
   display: flex;
@@ -216,6 +327,10 @@ div.tag_cloud a {
   line-height: 1.5;
 }
 
+.search-field kbd {
+  border-radius: 0;
+}
+
 body.search-open {
   overflow: hidden;
 }
@@ -238,8 +353,7 @@ body.search-open {
 .search-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(31, 42, 55, 0.48);
-  backdrop-filter: blur(2px);
+  background: rgba(255, 255, 255, 0.92);
 }
 
 .search-panel {
@@ -248,10 +362,10 @@ body.search-open {
   width: min(640px, 100%);
   max-height: 78vh;
   overflow: hidden;
-  border: 1px solid #d4d4d4;
-  border-radius: 8px;
+  border: 1px solid #bfbfbf;
+  border-radius: 0;
   background: #ffffff;
-  box-shadow: 0 18px 55px rgba(32, 42, 55, 0.22);
+  box-shadow: none;
 }
 
 .search-header {
@@ -279,7 +393,7 @@ body.search-open {
 .search-close {
   width: 1.8em;
   height: 1.8em;
-  border-radius: 50%;
+  border-radius: 0;
   color: #777;
   font-size: 1.25em;
   line-height: 1;
@@ -297,15 +411,18 @@ body.search-open {
   align-items: center;
   gap: 0.65em;
   margin: 0 1.25em;
-  padding: 0.65em 0.8em;
-  border: 1px solid #b8c5d6;
-  border-radius: 6px;
-  color: #60758f;
+  padding: 0.65em 0;
+  border: 0;
+  border-top: 1px solid #d4d4d4;
+  border-bottom: 1px solid #d4d4d4;
+  border-radius: 0;
+  color: #555;
 }
 
 .search-field:focus-within {
-  border-color: #204a87;
-  box-shadow: 0 0 0 3px rgba(32, 74, 135, 0.1);
+  border-top-color: #b8b8b8;
+  border-bottom-color: #204a87;
+  box-shadow: none;
 }
 
 #search-input {
@@ -346,14 +463,14 @@ a.search-result {
   display: grid;
   gap: 0.2em;
   padding: 0.75em 0.8em;
-  border-radius: 5px;
+  border-radius: 0;
   color: inherit;
   word-break: normal;
 }
 
 a.search-result:hover,
 a.search-result:focus-visible {
-  background: #f4f7fb;
+  background: #f7f7f7;
   text-decoration: none;
   outline: none;
 }
@@ -455,6 +572,123 @@ div.post_footer {
 
 div.post_footer a {
   border: LightGrey 1px dashed;
+}
+
+/* Links page */
+.links-section + .links-section {
+  margin-top: 2em;
+}
+
+.friend-list,
+.contact-list {
+  border-top: 1px solid #d8d8d8;
+}
+
+.friend-item,
+a.contact-item,
+.contact-item-qq summary {
+  box-sizing: border-box;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1em;
+  width: 100%;
+  padding: 0.7em 0.2em;
+  border-bottom: 1px solid #e4e4e4;
+  color: #222;
+  word-break: normal;
+}
+
+a.friend-item:hover,
+a.friend-item:focus-visible,
+a.contact-item:hover,
+a.contact-item:focus-visible,
+.contact-item-qq summary:hover,
+.contact-item-qq summary:focus-visible {
+  background: #fafafa;
+  color: #204a87;
+  text-decoration: none;
+  outline: none;
+}
+
+.friend-item > span,
+a.contact-item > span,
+.contact-item-qq summary > span:first-child {
+  flex: 0 0 auto;
+  font-size: 0.9em;
+}
+
+.friend-item small,
+a.contact-item small,
+.contact-item-qq small {
+  overflow: hidden;
+  min-width: 0;
+  flex: 1;
+  color: #222;
+  font-size: 0.75em;
+  font-weight: normal;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact-item-qq {
+  margin: 0;
+}
+
+.contact-item-qq summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.contact-item-qq summary::-webkit-details-marker {
+  display: none;
+}
+
+.contact-item-qq[open] summary {
+  border-bottom-color: #d8d8d8;
+}
+
+.details-indicator {
+  flex: 0 0 auto;
+  width: 0.45em;
+  height: 0.45em;
+  border-right: 1px solid #888;
+  border-bottom: 1px solid #888;
+  transform: rotate(45deg) translateY(-0.15em);
+  transition: transform 150ms ease;
+}
+
+.contact-item-qq[open] .details-indicator {
+  transform: rotate(225deg) translate(-0.1em, -0.1em);
+}
+
+.qq-preview {
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  padding: 1em 0.2em 1.25em;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.qq-preview > a {
+  display: block;
+  flex: 0 0 auto;
+  padding: 0;
+  line-height: 0;
+}
+
+.qq-preview img {
+  display: block;
+  width: 10em;
+  height: auto;
+  border: 1px solid #333;
+}
+
+.qq-preview p {
+  margin: 0;
+  color: #222;
+  font-size: 0.78em;
 }
 
 .comments-panel {
