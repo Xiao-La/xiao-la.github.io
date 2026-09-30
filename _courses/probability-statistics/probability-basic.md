@@ -4,7 +4,10 @@ course_id: "probability-statistics"
 course_title: "概率与统计"
 section: ""
 status: "updating"
+created_at: "2026-09-09T16:58:35+08:00"
+updated_at: "2026-09-17T20:23:51+08:00"
 reference: false
+order: 1
 layout: "course"
 permalink: "/courses/probability-statistics/probability-basic/"
 course_page: true
@@ -14,8 +17,10 @@ excerpt: "概率与统计 · Probability Basic - 概率基础"
 ---
 
 {% raw %}
+
 ## 随机事件
 {: #section-1 }
+
 
  随机试验（Random Experiment / Experiment）：
  - 可重复
@@ -40,8 +45,10 @@ excerpt: "概率与统计 · Probability Basic - 概率基础"
 - 分配率（Distributive Law）：<span class="course-math" data-tex="A\cup(B\cap C)=(A\cup B)\cap(A\cup C)" data-display="false"><code>A\cup(B\cap C)=(A\cup B)\cap(A\cup C)</code></span>
 - 德摩根律（De Morgan's Laws）：<span class="course-math" data-tex="\overline{\bigcup_{i=1}^{\infty} A_i} = \bigcap_{i=1}^{\infty} \overline{A_i}, \qquad \overline{\bigcap_{i=1}^{\infty} A_i} = \bigcup_{i=1}^{\infty} \overline{A_i}" data-display="false"><code>\overline{\bigcup_{i=1}^{\infty} A_i} = \bigcap_{i=1}^{\infty} \overline{A_i}, \qquad \overline{\bigcap_{i=1}^{\infty} A_i} = \bigcup_{i=1}^{\infty} \overline{A_i}</code></span>
 
+
 ## 概率
 {: #section-2 }
+
 
 概率测度（Probability Measure），简称概率（Probability），是一个定义在样本空间 <span class="course-math" data-tex="\Omega" data-display="false"><code>\Omega</code></span> 的子集上的实值函数，满足一下三个公理：
 - 非负性（Non-negativity）：对任意 <span class="course-math" data-tex="A\subset \Omega" data-display="false"><code>A\subset \Omega</code></span>，<span class="course-math" data-tex="P(A)\geq 0" data-display="false"><code>P(A)\geq 0</code></span>。
@@ -61,11 +68,15 @@ excerpt: "概率与统计 · Probability Basic - 概率基础"
 - 容斥原理（The inclusion-exclusion principle）：（<span class="course-math" data-tex="A_{1},A_{2},\dots,A_{n}" data-display="false"><code>A_{1},A_{2},\dots,A_{n}</code></span> 不必互斥）：
 <span class="course-math course-math-display" data-tex="P\left(\bigcup_{i=1}^{n} A_i\right)&#10;=&#10;\sum_{i=1}^{n}P(A_i)&#10;-\sum_{1\le i&lt;j\le n}P(A_i\cap A_j)&#10;+\sum_{1\le i&lt;j&lt;k\le n}P(A_i\cap A_j\cap A_k)&#10;-\cdots&#10;+(-1)^{n+1}P(A_1\cap\cdots\cap A_n)" data-display="true"><code>P\left(\bigcup_{i=1}^{n} A_i\right)&#10;=&#10;\sum_{i=1}^{n}P(A_i)&#10;-\sum_{1\le i&lt;j\le n}P(A_i\cap A_j)&#10;+\sum_{1\le i&lt;j&lt;k\le n}P(A_i\cap A_j\cap A_k)&#10;-\cdots&#10;+(-1)^{n+1}P(A_1\cap\cdots\cap A_n)</code></span>
 结合加法定律，利用数学归纳法即可证明容斥原理。
+
 ## 计算概率
 {: #section-3 }
 
+
+
 ### 古典概型 （Classical Model of Probability）
 {: #section-4 }
+
 
 一个随机试验满足：
 - 样本空间 <span class="course-math" data-tex="\Omega" data-display="false"><code>\Omega</code></span> 中只有有限个样本点： <span class="course-math" data-tex="\Omega=\{ w=\omega_{1},\omega_{2},\dots,\omega _{n} \}" data-display="false"><code>\Omega=\{ w=\omega_{1},\omega_{2},\dots,\omega _{n} \}</code></span>。
@@ -100,8 +111,10 @@ excerpt: "概率与统计 · Probability Basic - 概率基础"
 - 当 <span class="course-math" data-tex="n\to \infty" data-display="false"><code>n\to \infty</code></span>，<span class="course-math" data-tex="P(A)\to 1-\frac{1}{e}" data-display="false"><code>P(A)\to 1-\frac{1}{e}</code></span>。
 - 错位排列的概率 <span class="course-math" data-tex="P(\overline{A})\to \frac{1}{e}" data-display="false"><code>P(\overline{A})\to \frac{1}{e}</code></span>。
 - 错排数 <span class="course-math" data-tex="D_{n}=n!P(A)" data-display="false"><code>D_{n}=n!P(A)</code></span>。
+
 ### 几何概型（Geometric Model of Probability）
 {: #section-5 }
+
 
 几何概型适用于：随机事件可表示成在一个有界区域 <span class="course-math" data-tex="\Omega" data-display="false"><code>\Omega</code></span> 上投点，每一个点是等可能的。
 <span class="course-math course-math-display" data-tex="P(A)= \frac{\text{The length / area / volume of }A}{\text{Total length / area / volume of }\Omega}" data-display="true"><code>P(A)= \frac{\text{The length / area / volume of }A}{\text{Total length / area / volume of }\Omega}</code></span>
@@ -110,8 +123,10 @@ excerpt: "概率与统计 · Probability Basic - 概率基础"
 - 例如，在一条半径上考虑弦中点的位置；考虑固定一点，另一点的位置；在整个圆中考虑弦中点的位置。
 - 关键在于如何定义“随机”，也就是如何定义样本空间。
 
+
 ## 条件概率（Conditional Probability）
 {: #section-6 }
+
 
 在事件 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 发生的情况下，事件 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的条件概率为：
 <span class="course-math course-math-display" data-tex="P(A&#124;B)= \frac{P(AB)}{P(B)}" data-display="true"><code>P(A&#124;B)= \frac{P(AB)}{P(B)}</code></span>

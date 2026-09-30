@@ -4,7 +4,10 @@ course_id: "calculus"
 course_title: "高等数学（上）/（下）"
 section: "下"
 status: "completed"
+created_at: "2026-02-27T10:23:55+08:00"
+updated_at: "2026-04-23T22:33:06+08:00"
 reference: false
+order: 8
 layout: "course"
 permalink: "/courses/calculus/sequence-and-series/"
 course_page: true
@@ -15,8 +18,10 @@ excerpt: "高等数学（上）/（下） · Sequence and Series - 数列与级�
 
 {% raw %}
 
+
 ## 概念与定义
 {: #section-1 }
+
 
 **数列（Sequence）** 收敛（Converge）到 <span class="course-math" data-tex="L" data-display="false"><code>L</code></span> 记作：
 <span class="course-math course-math-display" data-tex="\lim_{ n \to \infty } a_{n}=L" data-display="true"><code>\lim_{ n \to \infty } a_{n}=L</code></span>
@@ -55,11 +60,15 @@ excerpt: "高等数学（上）/（下） · Sequence and Series - 数列与级�
 
 **幂级数（Power Series）**：<span class="course-math" data-tex="\sum^{\infty}_{n=0}c_{n}(x-a)^n" data-display="false"><code>\sum^{\infty}_{n=0}c_{n}(x-a)^n</code></span> 为以 <span class="course-math" data-tex="x=a" data-display="false"><code>x=a</code></span> 为中心的幂级数。
 
+
 ## 定理
 {: #section-2 }
 
+
+
 ### 数列极限
 {: #section-3 }
+
 
 数列极限的性质与函数极限类似：四则运算与求极限可以交换位置。
 
@@ -68,8 +77,10 @@ excerpt: "高等数学（上）/（下） · Sequence and Series - 数列与级�
 **数列连续函数定理（The Continuous Function Theorem for Sequences）**：若 <span class="course-math" data-tex="\lim_{ n \to \infty }a_{n}=L" data-display="false"><code>\lim_{ n \to \infty }a_{n}=L</code></span> 且 <span class="course-math" data-tex="f(x)" data-display="false"><code>f(x)</code></span> 在 <span class="course-math" data-tex="L" data-display="false"><code>L</code></span> 处连续，那么有 <span class="course-math" data-tex="\lim_{ n \to \infty }f(a_{n})=f(L)" data-display="false"><code>\lim_{ n \to \infty }f(a_{n})=f(L)</code></span>。也就是说，复合一个连续函数和求极限可以交换位置。
 - 推论：若数列 <span class="course-math" data-tex="\{a_{n}\}" data-display="false"><code>\{a_{n}\}</code></span> 存在极限 <span class="course-math" data-tex="L" data-display="false"><code>L</code></span> 且有递推式 <span class="course-math" data-tex="a_{n+1}=f(a_{n})" data-display="false"><code>a_{n+1}=f(a_{n})</code></span>，则 <span class="course-math" data-tex="\lim_{ n \to \infty }a_{n+1}=\lim_{ n \to \infty }f(a_{n})\implies L=f(L)" data-display="false"><code>\lim_{ n \to \infty }a_{n+1}=\lim_{ n \to \infty }f(a_{n})\implies L=f(L)</code></span>，也就是用不动点法求数列极限。
 
+
 ### 判断敛散性
 {: #section-4 }
+
 
 常见结果：
 - 单调有界定理（The Monotonic Sequence Theorem）：单调且有界的数列一定收敛。
@@ -131,8 +142,10 @@ excerpt: "高等数学（上）/（下） · Sequence and Series - 数列与级�
 >  若 <span class="course-math" data-tex="\sum a_{n}" data-display="false"><code>\sum a_{n}</code></span> 条件收敛，则它重排之后极限与原来不一定相同。
 
 
+
 ### 幂级数
 {: #section-5 }
+
 
 **幂级数收敛定理（The Convergence Theorem for Power Series）：** 对级数 <span class="course-math" data-tex="\sum c_{n}x^n" data-display="false"><code>\sum c_{n}x^n</code></span>：
 - 若它在 <span class="course-math" data-tex="x=c" data-display="false"><code>x=c</code></span> 处收敛，则它在 <span class="course-math" data-tex="&#124;x&#124;&lt;&#124;c&#124;" data-display="false"><code>&#124;x&#124;&lt;&#124;c&#124;</code></span> 绝对收敛。
@@ -156,8 +169,10 @@ excerpt: "高等数学（上）/（下） · Sequence and Series - 数列与级�
 
 **逐项积分定理（The Term-by-term Differentiation Theorem）：** 若 <span class="course-math" data-tex="f(x)=\sum c_{n}(x-a)^n" data-display="false"><code>f(x)=\sum c_{n}(x-a)^n</code></span> 对 <span class="course-math" data-tex="&#124;x-a&#124;&lt;R" data-display="false"><code>&#124;x-a&#124;&lt;R</code></span> 收敛，则有
 <span class="course-math course-math-display" data-tex="\int f(x)\,dx= \sum c_{n} \frac{(x-a)^{n+1}}{n+1}+C" data-display="true"><code>\int f(x)\,dx= \sum c_{n} \frac{(x-a)^{n+1}}{n+1}+C</code></span>
+
 #### 求幂级数
 {: #section-6 }
+
 
 <a href="{% endraw %}{{ '/courses/calculus/limit-and-derivative/' | relative_url }}{% raw %}">Limit and Derivative - 极限与导数</a>
 

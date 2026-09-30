@@ -4,7 +4,10 @@ course_id: "linear-algebra"
 course_title: "线性代数"
 section: ""
 status: "completed"
+created_at: "2026-05-25T17:29:01+08:00"
+updated_at: "2026-06-04T20:26:52+08:00"
 reference: false
+order: 9
 layout: "course"
 permalink: "/courses/linear-algebra/positive-definite-matrices/"
 course_page: true
@@ -14,8 +17,10 @@ excerpt: "线性代数 · Positive Definite Matrices - 正定矩阵"
 ---
 
 {% raw %}
+
 ### 二次型
 {: #section-1 }
+
 
 <span class="course-math course-math-display" data-tex="f(x,y)=ax^{2}+2bxy+cy^{2}" data-display="true"><code>f(x,y)=ax^{2}+2bxy+cy^{2}</code></span>
  这样的（二元）二次型在原点处都是驻点：<span class="course-math" data-tex="\frac{ \partial f }{ \partial x }=\frac{ \partial f }{ \partial y }=0" data-display="false"><code>\frac{ \partial f }{ \partial x }=\frac{ \partial f }{ \partial y }=0</code></span>。
@@ -36,8 +41,10 @@ excerpt: "线性代数 · Positive Definite Matrices - 正定矩阵"
 其中 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 是一个实对称矩阵，把它叫作一个二次型矩阵。
 这里 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 中，若 <span class="course-math" data-tex="i\neq j" data-display="false"><code>i\neq j</code></span>，则 <span class="course-math" data-tex="x_{i}x_{j}" data-display="false"><code>x_{i}x_{j}</code></span> 的系数除以二才得到 <span class="course-math" data-tex="a_{ij}=a_{ji}" data-display="false"><code>a_{ij}=a_{ji}</code></span>。而矩阵的对角元就是平方项的系数。
 
+
 ### 正定矩阵
 {: #section-2 }
+
 
 若 <span class="course-math" data-tex="f=x^TAx" data-display="false"><code>f=x^TAx</code></span> 是一个**正定二次型**，则把对称矩阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 叫做**正定矩阵**。有时记作 <span class="course-math" data-tex="A&gt;0" data-display="false"><code>A&gt;0</code></span>。
 对对称矩阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span>，TFAE：
@@ -85,8 +92,10 @@ TFAE:
 - 右推左：<span class="course-math" data-tex="x^TAx=\lim_{ \varepsilon \to 0 } x^T(A+\varepsilon I)x\geq 0" data-display="false"><code>x^TAx=\lim_{ \varepsilon \to 0 } x^T(A+\varepsilon I)x\geq 0</code></span>。
 例如要证明 <span class="course-math" data-tex="A\geq 0\implies\lambda_{i}\geq 0" data-display="false"><code>A\geq 0\implies\lambda_{i}\geq 0</code></span> ：<span class="course-math" data-tex="A\geq 0 \implies A+\varepsilon I &gt; 0 \implies \lambda_{i}+\varepsilon &gt; 0 \implies\lambda_{i}\geq 0" data-display="false"><code>A\geq 0 \implies A+\varepsilon I &gt; 0 \implies \lambda_{i}+\varepsilon &gt; 0 \implies\lambda_{i}\geq 0</code></span>。
 
+
 ### 合同矩阵
 {: #section-3 }
+
 
 对于二次型 <span class="course-math" data-tex="f=x^TAx" data-display="false"><code>f=x^TAx</code></span>，它可以做换元 <span class="course-math" data-tex="x=Cy" data-display="false"><code>x=Cy</code></span> 来研究，且 
 <span class="course-math course-math-display" data-tex="x^TAx=y^T(C^TAC)y" data-display="true"><code>x^TAx=y^T(C^TAC)y</code></span>
@@ -108,8 +117,10 @@ TFAE:
 <span class="course-math course-math-display" data-tex="g(y_{1}\dots y_{n})=y_{1}^{2}+y_{2}^{2}+\dots+y_{p}^{2}-y_{{p+1}}^{2}-\dots-y_{r}^{2}" data-display="true"><code>g(y_{1}\dots y_{n})=y_{1}^{2}+y_{2}^{2}+\dots+y_{p}^{2}-y_{{p+1}}^{2}-\dots-y_{r}^{2}</code></span>
 - 上述二次型被称为 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 的规范型，其由 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 唯一决定。
 
+
 ### 应用
 {: #section-4 }
+
 
 二次超曲面（Geometry of Quadratic Hypersurface）可以写成
 <span class="course-math course-math-display" data-tex="x^TAx=1" data-display="true"><code>x^TAx=1</code></span>
@@ -142,8 +153,10 @@ TFAE:
 - 利用韦达定理判断 <span class="course-math" data-tex="\lambda" data-display="false"><code>\lambda</code></span> 的正负。
 - 换元，配方转换为规范型。
 *拉格朗日配方法：若至少一个平方项，那就直接对该平方项进行配方，迭代即可。若没有平方项，则挑一个交叉项 <span class="course-math" data-tex="x_{1}x_{2}" data-display="false"><code>x_{1}x_{2}</code></span>，令 <span class="course-math" data-tex="x_{1}=y_{1}+y_{2},x_{2}=y_{1}-y_{2}" data-display="false"><code>x_{1}=y_{1}+y_{2},x_{2}=y_{1}-y_{2}</code></span>，这就用平方差公式创造出了平方项。*
+
 ## 奇异值分解（Singular Value Decomposition, SVD）
 {: #section-5 }
+
 
 
 任何 <span class="course-math" data-tex="m\times n" data-display="false"><code>m\times n</code></span> 的矩阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 可以被分解为
@@ -194,8 +207,10 @@ TFAE:
 那么 <span class="course-math" data-tex="AQ_{2}S^{-1}" data-display="false"><code>AQ_{2}S^{-1}</code></span> 就是一个正交矩阵，记为 <span class="course-math" data-tex="Q_{1}" data-display="false"><code>Q_{1}</code></span>。于是有
 <span class="course-math course-math-display" data-tex="A=Q_{1}SQ_{2}^{-1}" data-display="true"><code>A=Q_{1}SQ_{2}^{-1}</code></span>
 
+
 ### SVD 的应用
 {: #section-6 }
+
 
 极分解（Polar Decomposition）：任何实方阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 可以分解成 <span class="course-math" data-tex="A=QS" data-display="false"><code>A=QS</code></span>，其中 <span class="course-math" data-tex="Q" data-display="false"><code>Q</code></span> 是正交矩阵，<span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 是对称的半正定的矩阵。
 （<span class="course-math" data-tex="A=U\Sigma V^T=(UV^T)(V\Sigma V^T)=QS" data-display="false"><code>A=U\Sigma V^T=(UV^T)(V\Sigma V^T)=QS</code></span>）

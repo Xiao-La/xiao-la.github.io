@@ -4,7 +4,10 @@ course_id: "physics"
 course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
+created_at: "2026-04-11T12:05:26+08:00"
+updated_at: "2026-05-08T14:02:01+08:00"
 reference: false
+order: 12
 layout: "course"
 permalink: "/courses/physics/magnetism-and-induction/"
 course_page: true
@@ -16,11 +19,15 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 {% raw %}
 地磁场与经线之间存在一个磁偏角（Magnetic Declination）。与地面还存在一个磁倾角（Magnetic Inclination）。
 目前没有发现磁单极子，任何磁体都有两极。磁场线是闭合的圈，在外部从 N 极走到 S 极，内部从 S 极回到 N 极。
+
 ## 磁场力（Magnetic Force）
 {: #section-1 }
 
+
+
 ### 对于粒子
 {: #section-2 }
+
 
 通过移动电荷在磁场中受到的磁场力来定义磁感应强度（Magnetic Flux Density）<span class="course-math" data-tex="B" data-display="false"><code>B</code></span>，国际单位为特斯拉（<span class="course-math" data-tex="\text{T}" data-display="false"><code>\text{T}</code></span>），也有单位高斯（<span class="course-math" data-tex="\text{G}" data-display="false"><code>\text{G}</code></span>），这里 <span class="course-math" data-tex="1\text{T}=10000\text{G}" data-display="false"><code>1\text{T}=10000\text{G}</code></span>。
 <span class="course-math course-math-display" data-tex="\vec{F}=q\vec{v}\times \vec{B}" data-display="true"><code>\vec{F}=q\vec{v}\times \vec{B}</code></span>
@@ -37,8 +44,10 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 回旋加速器（Cyclotron）：由于  <span class="course-math" data-tex="T=\frac{2\pi m}{qB},r=\frac{mv}{qB}" data-display="false"><code>T=\frac{2\pi m}{qB},r=\frac{mv}{qB}</code></span>，通过周期性改变电场的方向即可做到一直加速。
 质谱仪（Mass Spectrometer）：测量粒子的质量。
 
+
 ### 对于导线
 {: #section-3 }
+
 
 对于直导线：
 <span class="course-math course-math-display" data-tex="\begin{cases}&#10;q=it \\&#10;l=v_{d}t \\&#10;F=qv_{d}B\sin \phi&#10;\end{cases}&#10;\implies \vec{F}=i\vec{l}\times \vec{B}" data-display="true"><code>\begin{cases}&#10;q=it \\&#10;l=v_{d}t \\&#10;F=qv_{d}B\sin \phi&#10;\end{cases}&#10;\implies \vec{F}=i\vec{l}\times \vec{B}</code></span>
@@ -46,8 +55,10 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 <span class="course-math course-math-display" data-tex="\vec{F}=\int id\vec{l}\times \vec{B}=i\left( \int \vec{l} \right)\times \vec{B}=i\vec{L}\times \vec{B}" data-display="true"><code>\vec{F}=\int id\vec{l}\times \vec{B}=i\left( \int \vec{l} \right)\times \vec{B}=i\vec{L}\times \vec{B}</code></span>
 这里 <span class="course-math" data-tex="\vec{L}" data-display="false"><code>\vec{L}</code></span> 为导线首尾相接得到的矢量。
 
+
 ### 磁偶极矩/磁矩（Magnetic Dipole）
 {: #section-4 }
+
 
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20-%20%E7%A3%81%E5%AD%A6-1.png' | relative_url }}{% raw %}" alt="Magnetism - 磁学-1" width="538" loading="lazy">
 
@@ -61,13 +72,17 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 <span class="course-math course-math-display" data-tex="U=-\vec{\mu}\cdot \vec{B}" data-display="true"><code>U=-\vec{\mu}\cdot \vec{B}</code></span>
 这里势能零点就是 <span class="course-math" data-tex="\vec{\mu} \perp \vec{B}" data-display="false"><code>\vec{\mu} \perp \vec{B}</code></span> 的情况。
 
+
 ## 电流产生的磁场
 {: #section-5 }
 
+
 电流产生磁场的方向可以用右手定则判断（右手握电流，大拇指指向电流方向，四指即为磁场方向）。
+
 
 ### 毕奥-萨伐尔定律（Biot-Savart Law）
 {: #section-6 }
+
 
 <span class="course-math course-math-display" data-tex="d\vec{B}=\frac{\mu_{0}}{4\pi}  \frac{id\vec{s}\times \hat{r}}{r^{2}}" data-display="true"><code>d\vec{B}=\frac{\mu_{0}}{4\pi}  \frac{id\vec{s}\times \hat{r}}{r^{2}}</code></span>
 这里 <span class="course-math" data-tex="d\vec{s}" data-display="false"><code>d\vec{s}</code></span> 为沿着电流方向的一小段长度。<span class="course-math" data-tex="\mu_{0}=4\pi \times 10^{-7}" data-display="false"><code>\mu_{0}=4\pi \times 10^{-7}</code></span> 为磁导率（Permeability）。
@@ -81,8 +96,10 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 
 
 
+
 ### 安培定律（Ampere's Law）
 {: #section-7 }
+
 
 磁场的高斯定律（Gauss）：对于一个高斯面，有 
 <span class="course-math course-math-display" data-tex="\oint \vec{B}\cdot d\vec{A}=0" data-display="true"><code>\oint \vec{B}\cdot d\vec{A}=0</code></span>
@@ -104,8 +121,10 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20-%20%E7%A3%81%E5%AD%A6-4.png' | relative_url }}{% raw %}" alt="Magnetism - 磁学-4" width="510" loading="lazy"> 
 电流平板（Current Sheet）：假设电流线密度均匀且为 <span class="course-math" data-tex="J_{S}" data-display="false"><code>J_{S}</code></span>，有
 <span class="course-math course-math-display" data-tex="\oint \vec{B}\cdot d\vec{r}=2BL=\mu_{0} (J_{S}L)\implies B=\frac{1}{2}\mu_{0}J_{S}" data-display="true"><code>\oint \vec{B}\cdot d\vec{r}=2BL=\mu_{0} (J_{S}L)\implies B=\frac{1}{2}\mu_{0}J_{S}</code></span>
+
 ### 电磁感应
 {: #section-8 }
+
 
 楞次定律（Lenz's law）：电磁感应产生的电动势和感应电流的方向为抗拒磁通量改变的方向。
 法拉第定律（Faraday's law）：电动势和磁通量的变化率成正比。
@@ -123,8 +142,10 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 故有
 <span class="course-math course-math-display" data-tex="\oint \mathbf{E}d\mathbf{l}=-\frac{d}{dt}\int \mathbf{B}d\mathbf{A}" data-display="true"><code>\oint \mathbf{E}d\mathbf{l}=-\frac{d}{dt}\int \mathbf{B}d\mathbf{A}</code></span>
 
+
 ### 电感
 {: #section-9 }
+
 
 变化的电流会产生变化的磁场，从而产生感应电动势，来抵抗电流的变化，这就叫自感电动势 （Self-Induced emf）。
 定义自感的电感（Self-Inductance）：

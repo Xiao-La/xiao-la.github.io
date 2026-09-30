@@ -4,7 +4,10 @@ course_id: "linear-algebra"
 course_title: "线性代数"
 section: ""
 status: "completed"
+created_at: "2026-05-15T17:06:00+08:00"
+updated_at: "2026-05-28T20:27:30+08:00"
 reference: false
+order: 8
 layout: "course"
 permalink: "/courses/linear-algebra/complex-matrices/"
 course_page: true
@@ -14,8 +17,10 @@ excerpt: "线性代数 · Complex Matrices - 复矩阵"
 ---
 
 {% raw %}
+
 ### 复矩阵
 {: #section-1 }
+
 
 复向量空间 （Complex Vector Space） <span class="course-math" data-tex="\mathbb{C}^n" data-display="false"><code>\mathbb{C}^n</code></span>：
 <span class="course-math course-math-display" data-tex="\begin{bmatrix}&#10;x_{1} \\&#10;\vdots \\&#10;x_{n}&#10;\end{bmatrix}" data-display="true"><code>\begin{bmatrix}&#10;x_{1} \\&#10;\vdots \\&#10;x_{n}&#10;\end{bmatrix}</code></span>
@@ -41,8 +46,10 @@ excerpt: "线性代数 · Complex Matrices - 复矩阵"
 <span class="course-math course-math-display" data-tex="(AB)^H=B^HA^H" data-display="true"><code>(AB)^H=B^HA^H</code></span>
 用定义容易证明。
 
+
 #### **埃尔米特矩阵（Hermitian Matrices）：*
 {: #section-2 }
+
 
 满足 <span class="course-math" data-tex="A^H=A" data-display="false"><code>A^H=A</code></span> 的矩阵。
 - 埃尔米特矩阵是方阵。
@@ -68,8 +75,10 @@ excerpt: "线性代数 · Complex Matrices - 复矩阵"
 <span class="course-math course-math-display" data-tex="A=U\Lambda U^H" data-display="true"><code>A=U\Lambda U^H</code></span>
 其中 <span class="course-math" data-tex="U" data-display="false"><code>U</code></span> 是酉矩阵，满足 <span class="course-math" data-tex="U^HU=I" data-display="false"><code>U^HU=I</code></span>。
 
+
 #### 酉矩阵 （Unitary Matrix）
 {: #section-3 }
+
  
  有着规范正交的列的 <span class="course-math" data-tex="n\times n" data-display="false"><code>n\times n</code></span> 的复矩阵。
 <span class="course-math course-math-display" data-tex="U^HU=I" data-display="true"><code>U^HU=I</code></span>
@@ -88,8 +97,10 @@ excerpt: "线性代数 · Complex Matrices - 复矩阵"
 - 这里 <span class="course-math" data-tex="\mu\bar{\lambda}=(\mu-\lambda)\bar{\lambda}+\lambda\bar{\lambda}=(\mu-\lambda)\bar{\lambda}+1\neq 1" data-display="false"><code>\mu\bar{\lambda}=(\mu-\lambda)\bar{\lambda}+\lambda\bar{\lambda}=(\mu-\lambda)\bar{\lambda}+1\neq 1</code></span>。
 - 所以 <span class="course-math" data-tex="x^Hy=0" data-display="false"><code>x^Hy=0</code></span>。
 
+
 #### 斜埃尔米特矩阵（Skew-Hermitian Matrices）
 {: #section-4 }
+
 
 <span class="course-math course-math-display" data-tex="K^H=-K" data-display="true"><code>K^H=-K</code></span>
 对角元素满足 <span class="course-math" data-tex="a-bi=-(a+bi)\implies a=0" data-display="false"><code>a-bi=-(a+bi)\implies a=0</code></span>，所以为纯虚数。
@@ -103,8 +114,10 @@ excerpt: "线性代数 · Complex Matrices - 复矩阵"
 
 **定理：若 <span class="course-math" data-tex="x,y" data-display="false"><code>x,y</code></span> 是斜埃尔米特矩阵的两特征向量，对应不同的特征值 <span class="course-math" data-tex="\lambda,\mu" data-display="false"><code>\lambda,\mu</code></span>，则 <span class="course-math" data-tex="x\perp y" data-display="false"><code>x\perp y</code></span>。
 
+
 #### 总结
 {: #section-5 }
+
 
 
 | Real                                | Cpx                                                |
@@ -121,8 +134,10 @@ excerpt: "线性代数 · Complex Matrices - 复矩阵"
 
 对于 Hermitian, Unitary, Skew-Hermitian 矩阵，不同的特征值对应的特征向量相互垂直。它们都可以用酉矩阵进行对角化。
 
+
 ### 相似矩阵
 {: #section-6 }
+
 
 定义：称 <span class="course-math" data-tex="A,B" data-display="false"><code>A,B</code></span> 为相似矩阵，当且仅当存在可逆矩阵 <span class="course-math" data-tex="M" data-display="false"><code>M</code></span> 使得 <span class="course-math" data-tex="B=M^{-1}AM" data-display="false"><code>B=M^{-1}AM</code></span>（也就是 <span class="course-math" data-tex="A=MBM^{-1}" data-display="false"><code>A=MBM^{-1}</code></span>）。记作 <span class="course-math" data-tex="A\sim B" data-display="false"><code>A\sim B</code></span>。
 

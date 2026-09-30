@@ -4,7 +4,10 @@ course_id: "life-science"
 course_title: "生命科学概论"
 section: ""
 status: "completed"
+created_at: "2026-05-06T08:20:12+08:00"
+updated_at: "2026-05-18T12:05:21+08:00"
 reference: false
+order: 3
 layout: "course"
 permalink: "/courses/life-science/plants/"
 course_page: true

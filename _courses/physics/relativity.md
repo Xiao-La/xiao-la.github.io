@@ -4,7 +4,10 @@ course_id: "physics"
 course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
+created_at: "2026-05-29T17:22:15+08:00"
+updated_at: "2026-06-05T16:28:53+08:00"
 reference: false
+order: 15
 layout: "course"
 permalink: "/courses/physics/relativity/"
 course_page: true
@@ -27,11 +30,15 @@ excerpt: "大学物理（上）/（下） · Relativity - 相对论"
 是一个和参考系无关的量。
 
 从这个就可以推导出所有狭义相对论。
+
 ## 洛伦兹变换
 {: #section-1 }
 
+
+
 ### 一、坐标变换公式对比
 {: #section-2 }
+
 设系统 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 为静止参考系，系统 <span class="course-math" data-tex="S&#x27;" data-display="false"><code>S&#x27;</code></span> 以速度 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 沿 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 轴正方向相对于 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 运动。
 
 1.  **经典力学 - 伽利略变换 (低速适用, <span class="course-math" data-tex="v \ll c" data-display="false"><code>v \ll c</code></span>):**
@@ -49,8 +56,10 @@ excerpt: "大学物理（上）/（下） · Relativity - 相对论"
         <span class="course-math course-math-display" data-tex="\Delta x&#x27; = \gamma(\Delta x - v\Delta t)" data-display="true"><code>\Delta x&#x27; = \gamma(\Delta x - v\Delta t)</code></span>
         <span class="course-math course-math-display" data-tex="\Delta t&#x27; = \gamma\left(\Delta t - \frac{v\Delta x}{c^2}\right)" data-display="true"><code>\Delta t&#x27; = \gamma\left(\Delta t - \frac{v\Delta x}{c^2}\right)</code></span>
 
+
 ### 二、相对论速度加法公式 (Velocity Addition)
 {: #section-3 }
+
 当物体在运动系统 <span class="course-math" data-tex="S&#x27;" data-display="false"><code>S&#x27;</code></span> 中也有自己的速度 <span class="course-math" data-tex="u&#x27;" data-display="false"><code>u&#x27;</code></span> 时，在静止系统 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 中观察到的它的实际速度 <span class="course-math" data-tex="u" data-display="false"><code>u</code></span> 不再是简单的 <span class="course-math" data-tex="u = u&#x27;+v" data-display="false"><code>u = u&#x27;+v</code></span>，而是：
 <span class="course-math course-math-display" data-tex="u = \frac{u&#x27; + v}{1 + \frac{vu&#x27;}{c^2}}" data-display="true"><code>u = \frac{u&#x27; + v}{1 + \frac{vu&#x27;}{c^2}}</code></span>
 *(推论：无论 <span class="course-math" data-tex="u&#x27;" data-display="false"><code>u&#x27;</code></span> 或 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 有多接近光速，算出来的叠加速度 <span class="course-math" data-tex="u" data-display="false"><code>u</code></span> 永远不会超过光速 <span class="course-math" data-tex="c" data-display="false"><code>c</code></span>。这是一座越不过去的速度墙)*
@@ -58,8 +67,10 @@ excerpt: "大学物理（上）/（下） · Relativity - 相对论"
 <span class="course-math course-math-display" data-tex="u&#x27;= \frac{u-v}{1-uv / c^{2}}" data-display="true"><code>u&#x27;= \frac{u-v}{1-uv / c^{2}}</code></span>
 
 
+
 ### 三、基于洛伦兹变换的三大时空推论（万能解题法）
 {: #section-4 }
+
 做大题时，找出事件 1 和事件 2，列出它们在两种坐标系里的位置差 (<span class="course-math" data-tex="\Delta x, \Delta x&#x27;" data-display="false"><code>\Delta x, \Delta x&#x27;</code></span>) 和时间差 (<span class="course-math" data-tex="\Delta t, \Delta t&#x27;" data-display="false"><code>\Delta t, \Delta t&#x27;</code></span>)，套用公式直接秒杀。
 
 1.  **同时性的相对性 (Simultaneity):**
@@ -72,16 +83,22 @@ excerpt: "大学物理（上）/（下） · Relativity - 相对论"
     *   条件：在静止系 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 中测量运动物体的长度，必须**同时**记录两端位置（ <span class="course-math" data-tex="\Delta t = 0" data-display="false"><code>\Delta t = 0</code></span>, 此时测得的 <span class="course-math" data-tex="\Delta x = L" data-display="false"><code>\Delta x = L</code></span>）
     *   结论：代入逆变换公式 <span class="course-math" data-tex="\Delta x&#x27; = \gamma(\Delta x - 0)" data-display="false"><code>\Delta x&#x27; = \gamma(\Delta x - 0)</code></span>，由于 <span class="course-math" data-tex="\Delta x&#x27; = L_0" data-display="false"><code>\Delta x&#x27; = L_0</code></span> (原长)，得到 <span class="course-math" data-tex="L_0 = \gamma L" data-display="false"><code>L_0 = \gamma L</code></span>，即 **<span class="course-math" data-tex="L = \frac{L_0}{\gamma}" data-display="false"><code>L = \frac{L_0}{\gamma}</code></span>**。
 
+
 ## 时间膨胀
 {: #section-5 }
 
+
+
 ### 一、 “光钟”思想实验与时间膨胀 (Time Dilation)
 {: #section-6 }
+
 *   **现象：** 相对于观察者运动的时钟，其走时会变慢。这就是时间膨胀效应。简言之：“动钟变慢”。
 *   **推导基础：** 真空光速 <span class="course-math" data-tex="c" data-display="false"><code>c</code></span> 对所有惯性参考系都是恒定的，不随光源或观察者的运动而改变。
 
+
 ### 二、核心公式：时间膨胀公式
 {: #section-7 }
+
 通过光走斜线的几何推导，我们得出两个参考系之间时间间隔的关系式：
 
 <span class="course-math course-math-display" data-tex="\Delta t = \frac{\Delta t_0}{\sqrt{1 - v^2/c^2}}" data-display="true"><code>\Delta t = \frac{\Delta t_0}{\sqrt{1 - v^2/c^2}}</code></span>
@@ -93,8 +110,10 @@ excerpt: "大学物理（上）/（下） · Relativity - 相对论"
 *   **<span class="course-math" data-tex="\Delta t_0" data-display="false"><code>\Delta t_0</code></span> (Proper time, 固有时间/原时)**: **(易错考点！做题最核心的一步就是找准谁是原时)**
 *   **<span class="course-math" data-tex="\Delta t" data-display="false"><code>\Delta t</code></span> (Dilated time, 膨胀时间)**: 在其他相对于该事件发生地运动的参考系中测量到的时间。
 
+
 ### 三、必考概念：什么是原时 (Proper Time)?
 {: #section-8 }
+
 *(PPT 底部黑体字部分，相对论做题的灵魂所在)*
 
 1.  **物理定义：** 如果两个事件（比如灯亮和灯灭）在某一个惯性参考系中发生在**相同的空间位置 (same location)**，那么在这个参考系中测量到的时间间隔被称为**固有时间 (Proper time)**，用 <span class="course-math" data-tex="\Delta t_0" data-display="false"><code>\Delta t_0</code></span> 表示。
@@ -105,16 +124,22 @@ excerpt: "大学物理（上）/（下） · Relativity - 相对论"
 
 
 
+
 ## 长度收缩 (Length Contraction)
 {: #section-9 }
 
+
+
 ### 一、现象与本质
 {: #section-10 }
+
 *   **现象描述：** 当一个物体（或空间区间）相对于观察者运动时，观察者测量到它在**运动方向上**的长度，会比它处于静止状态时的长度要短。即：**“动尺变短”**。
 *   **推导本质：** 长度收缩是时间膨胀效应的必然空间等价物。由 <span class="course-math" data-tex="距离 = 相对速度 \times 时间" data-display="false"><code>距离 = 相对速度 \times 时间</code></span>，既然各参考系对时间 (<span class="course-math" data-tex="\Delta t" data-display="false"><code>\Delta t</code></span> vs <span class="course-math" data-tex="\Delta t_0" data-display="false"><code>\Delta t_0</code></span>) 的测量不同，导致对空间距离的测量也必然不同。
 
+
 ### 二、核心公式
 {: #section-11 }
+
 观察者测量到的运动物体的长度 <span class="course-math" data-tex="l" data-display="false"><code>l</code></span> 为：
 <span class="course-math course-math-display" data-tex="l = l_0 \sqrt{1 - \frac{v^2}{c^2}} = \frac{l_0}{\gamma}" data-display="true"><code>l = l_0 \sqrt{1 - \frac{v^2}{c^2}} = \frac{l_0}{\gamma}</code></span>
 
@@ -125,8 +150,10 @@ excerpt: "大学物理（上）/（下） · Relativity - 相对论"
 *   **<span class="course-math" data-tex="l_0" data-display="false"><code>l_0</code></span> (Proper length, 固有长度/原长)**: 在测量对象**处于静止**的参考系中测量出的长度。
 *   **<span class="course-math" data-tex="l" data-display="false"><code>l</code></span> (Contracted length, 收缩长度)**: 在测量对象处于运动状态的参考系中测量出的长度。
 
+
 ### 三、必考概念辨析与防坑指南 
 {: #section-12 }
+
 
 1.  **如何找准“原长” (Proper Length)?**
     *   谁觉得这根尺子/这段距离是**不动**的，谁量出来的就是**原长 <span class="course-math" data-tex="l_0" data-display="false"><code>l_0</code></span>**。

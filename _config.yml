@@ -16,6 +16,7 @@ assets_base_url: https://joyslog.top
 markdown: kramdown
 kramdown:
   input: GFM
+  hard_wrap: true
 permalink: /:year/:month/:day/:title/
 future: true
 

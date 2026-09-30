@@ -4,7 +4,10 @@ course_id: "logic"
 course_title: "数理逻辑导论"
 section: ""
 status: "completed"
+created_at: "2026-04-29T11:06:10+08:00"
+updated_at: "2026-06-07T23:38:17+08:00"
 reference: false
+order: 3
 layout: "course"
 permalink: "/courses/logic/fol/"
 course_page: true
@@ -15,11 +18,15 @@ excerpt: "数理逻辑导论 · FOL - 一阶逻辑"
 
 {% raw %}
 <span class="course-math course-math-display" data-tex="\mathscr{L}" data-display="true"><code>\mathscr{L}</code></span>
+
 ## 语法（Syntax）
 {: #section-1 }
 
+
+
 ### 概念
 {: #section-2 }
+
 
 Domain （论域）：一个非空的对象（Objects）的集合。
 Constant（常量）：论域中确定的（Concrete）对象。
@@ -35,8 +42,10 @@ Existential Proposition（存在命题）：<span class="course-math" data-tex="
 Function（函数）：<span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 元到一元的映射，记作 <span class="course-math" data-tex="f^{(n)}" data-display="false"><code>f^{(n)}</code></span>。
 - 例如：<span class="course-math" data-tex="m(y)" data-display="false"><code>m(y)</code></span> 表示 <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> 的母亲，是一个一元函数 （Unary Function）。
 
+
 ### 字母表
 {: #section-3 }
+
 
 Non-logical symbols（非逻辑符号）：
 - Constant symbols（个体常元）：<span class="course-math" data-tex="c_{1},c_{2},c_{3},\dots" data-display="false"><code>c_{1},c_{2},c_{3},\dots</code></span>
@@ -49,24 +58,30 @@ Logical symbols（逻辑符号）：
 - Punctuation（标点）：<span class="course-math" data-tex="(" data-display="false"><code>(</code></span> 和 <span class="course-math" data-tex=")" data-display="false"><code>)</code></span> 和 <span class="course-math" data-tex="," data-display="false"><code>,</code></span>
 - Equality（等号）：<span class="course-math" data-tex="=" data-display="false"><code>=</code></span>（一种特别的二元关系）
 
+
 ### 项
 {: #section-4 }
+
 
 Terms（项）就是 Object。严格定义为：
 - Constant symbols 和 Variables 都是 Term。
 - 若 <span class="course-math" data-tex="f^n" data-display="false"><code>f^n</code></span> 是一个 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 元函数且 <span class="course-math" data-tex="t_{1},t_{2},\dots,t_{n}" data-display="false"><code>t_{1},t_{2},\dots,t_{n}</code></span> 为 Term，则 <span class="course-math" data-tex="f^n(t_{1},t_{2},\dots,t_{n})" data-display="false"><code>f^n(t_{1},t_{2},\dots,t_{n})</code></span> 也是 Term。
 - 只有上述递归定义的结果才是 Term。
 <span class="course-math" data-tex="\text{Term}(\mathscr{L})" data-display="false"><code>\text{Term}(\mathscr{L})</code></span>
+
 ### 原子公式
 {: #section-5 }
+
 
 Atomic Formula/Atom（原子公式）为施加在项上的 **Predicate**。严格定义为，它为以下两种形式之一：
 - <span class="course-math" data-tex="P(t_{1},\dots,t_{n})" data-display="false"><code>P(t_{1},\dots,t_{n})</code></span>，其中 <span class="course-math" data-tex="P" data-display="false"><code>P</code></span> 是一个 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 元 Predicate，而 <span class="course-math" data-tex="t_{i}\in\text{Term}(\mathscr{L})" data-display="false"><code>t_{i}\in\text{Term}(\mathscr{L})</code></span>.
 - <span class="course-math" data-tex="=(t_{1},t_{2})" data-display="false"><code>=(t_{1},t_{2})</code></span> （有时写作 <span class="course-math" data-tex="t_{1}=t_{2}" data-display="false"><code>t_{1}=t_{2}</code></span>），<span class="course-math" data-tex="t_{1},t_{2}\in\text{Term}(\mathscr{L})" data-display="false"><code>t_{1},t_{2}\in\text{Term}(\mathscr{L})</code></span>。
 <span class="course-math" data-tex="\text{Atom}(\mathscr{L})" data-display="false"><code>\text{Atom}(\mathscr{L})</code></span>
 
+
 ### 公式
 {: #section-6 }
+
 
 Formula（公式）的定义为， <span class="course-math" data-tex="\alpha \in Form(\mathscr L)" data-display="false"><code>\alpha \in Form(\mathscr L)</code></span> 当且仅当它能由以下规则（有限次使用）生成：
 - <span class="course-math" data-tex="Atom(\mathscr L)\subseteq Form(\mathscr L)" data-display="false"><code>Atom(\mathscr L)\subseteq Form(\mathscr L)</code></span>。
@@ -86,8 +101,10 @@ Formula（公式）的定义为， <span class="course-math" data-tex="\alpha \i
 解析树（Parse Tree）例如 <span class="course-math" data-tex="\forall x((P(x)\to Q(x))\land S(x,y))" data-display="false"><code>\forall x((P(x)\to Q(x))\land S(x,y))</code></span>
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/FOL%20-%20%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91.png' | relative_url }}{% raw %}" alt="FOL - 一阶逻辑" width="283" loading="lazy">
 
+
 ### 形式化表达（Formalization）
 {: #section-7 }
+
 
 Every student knows math.
 <span class="course-math" data-tex="\forall x(S(x)\to K(x,\text{Math})" data-display="false"><code>\forall x(S(x)\to K(x,\text{Math})</code></span>
@@ -101,8 +118,10 @@ Every Son of my father is my brother.
 用 Predicate： <span class="course-math" data-tex="\forall x\forall y(F(x,m)\land S(y,x)\to B(y,m))" data-display="false"><code>\forall x\forall y(F(x,m)\land S(y,x)\to B(y,m))</code></span>
 用 Function：<span class="course-math" data-tex="\forall x(S(x,f(m))\to B(x,m))" data-display="false"><code>\forall x(S(x,f(m))\to B(x,m))</code></span>
 
+
 ## 语义（Semantics）
 {: #section-8 }
+
 
 Scope（作用域）：在公式 <span class="course-math" data-tex="\forall x\alpha" data-display="false"><code>\forall x\alpha</code></span> 或 <span class="course-math" data-tex="\exists x\alpha" data-display="false"><code>\exists x\alpha</code></span> 中，<span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 是量化变量（Quantified Variable），它的 Scope 就是 <span class="course-math" data-tex="\alpha" data-display="false"><code>\alpha</code></span>。例如，<span class="course-math" data-tex="\forall xP(x)\land Q(x)" data-display="false"><code>\forall xP(x)\land Q(x)</code></span> 中，<span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 的 Scope 是 <span class="course-math" data-tex="P(x)" data-display="false"><code>P(x)</code></span>。
 
@@ -156,8 +175,10 @@ Scope（作用域）：在公式 <span class="course-math" data-tex="\forall x\a
 **FOL 的不可判定性（Undecidability）**：给定一个公式，不可能用某个程序判断它是否是永真式。（可以表示为停机问题）
 而 PL 可以决定，因为可以用真值表判定。
 
+
 ### ND 证明
 {: #section-9 }
+
 
 替换（Substitution）：
 <span class="course-math course-math-display" data-tex="\alpha[t/x]" data-display="true"><code>\alpha[t/x]</code></span>

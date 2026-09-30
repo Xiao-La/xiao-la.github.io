@@ -4,7 +4,10 @@ course_id: "discrete-mathematics"
 course_title: "离散数学"
 section: ""
 status: "updating"
+created_at: "2026-09-30T19:28:05+08:00"
+updated_at: "2026-09-30T20:49:46+08:00"
 reference: false
+order: 3
 layout: "course"
 permalink: "/courses/discrete-mathematics/algorithm/"
 course_page: true
@@ -50,8 +53,10 @@ excerpt: "离散数学 · Algorithm - 算法"
 对所有足够大的 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span>。其中 <span class="course-math" data-tex="a_{1},a_{2},b_{1},b_{2},c_{1},c_{2}" data-display="false"><code>a_{1},a_{2},b_{1},b_{2},c_{1},c_{2}</code></span> 为正常数。
 
 
+
 ## P, NP
 {: #section-1 }
+
 
 对于判定性问题（Decision Problems），我们对于一个输入数据，最终输出 yes / no 两种结果。
 {% endraw %}

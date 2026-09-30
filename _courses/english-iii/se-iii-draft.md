@@ -4,7 +4,10 @@ course_id: "english-iii"
 course_title: "SUSTech English III"
 section: ""
 status: "completed"
+created_at: "2025-12-10T08:03:03+08:00"
+updated_at: "2026-05-26T20:45:09+08:00"
 reference: false
+order: 1
 layout: "course"
 permalink: "/courses/english-iii/se-iii-draft/"
 course_page: true
@@ -14,14 +17,20 @@ excerpt: "SUSTech English III · SE III Draft"
 ---
 
 {% raw %}
+
 ## Presentation I
 {: #section-1 }
+
+
 
 ### CV
 {: #section-2 }
 
+
+
 #### Joy the Magician
 {: #section-3 }
+
 **Education:** Bachelor of Engineering ｜Shenzhen University  &#124; 2003
 **Experience:**
 	2008 - Present &#124; Freelance Hitman / Stage Magician
@@ -31,8 +40,10 @@ excerpt: "SUSTech English III · SE III Draft"
 	Joyful death experience
 	Fluent in 3 Languages (including Morse Code)
 
+
 ### Problems to Answer
 {: #section-4 }
+
 
 1. **Where did you hear about the company?**
 	   I just have a feeling that you guys are here, so I came out.
@@ -59,8 +70,10 @@ excerpt: "SUSTech English III · SE III Draft"
 	   Challenging targets 
 	    Predictable - Interesting
 
+
 ## Debate Listening
 {: #section-5 }
+
 
 Resolution: Assimilation is worse than exclusion.
 

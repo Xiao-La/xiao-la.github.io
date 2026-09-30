@@ -4,7 +4,10 @@ course_id: "linear-algebra"
 course_title: "线性代数"
 section: ""
 status: "completed"
+created_at: "2026-04-03T14:42:42+08:00"
+updated_at: "2026-05-15T14:37:00+08:00"
 reference: false
+order: 6
 layout: "course"
 permalink: "/courses/linear-algebra/orthogonal/"
 course_page: true
@@ -41,8 +44,10 @@ excerpt: "线性代数 · Orthogonal - 正交"
 
 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 表示的线性变换把 <span class="course-math" data-tex="C(A^T)" data-display="false"><code>C(A^T)</code></span> 映射到 <span class="course-math" data-tex="C(A)" data-display="false"><code>C(A)</code></span> 中，把 <span class="course-math" data-tex="N(A)" data-display="false"><code>N(A)</code></span> 映射到 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>。对于任何一个 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 维向量 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span>，它可以写成 <span class="course-math" data-tex="x=x_{r}+x_{n}" data-display="false"><code>x=x_{r}+x_{n}</code></span>，而 <span class="course-math" data-tex="Ax=A(x_{r}+x_{n})=Ax_{r}" data-display="false"><code>Ax=A(x_{r}+x_{n})=Ax_{r}</code></span>。这里 <span class="course-math" data-tex="x_{r}" data-display="false"><code>x_{r}</code></span> 是行空间中的一个向量，而 <span class="course-math" data-tex="Ax_{r}" data-display="false"><code>Ax_{r}</code></span> 是列空间中的一个向量。所以从几何上看，它把自己的行空间映射到列空间。
 
+
 ## 投影与最小平方解
 {: #section-1 }
+
 
 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 在 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 上的投影（Projection）：<span class="course-math" data-tex="p= \lVert p \rVert \frac{a}{\lVert a \rVert}= \lVert b \rVert\cos\theta  \frac{a}{\lVert a \rVert}=\frac{a^Tb}{\lVert a \rVert^{2}}a" data-display="false"><code>p= \lVert p \rVert \frac{a}{\lVert a \rVert}= \lVert b \rVert\cos\theta  \frac{a}{\lVert a \rVert}=\frac{a^Tb}{\lVert a \rVert^{2}}a</code></span>。
 投影的矩阵表示： <span class="course-math" data-tex="T:\mathbb{R}^n\to \mathbb{R}^n, b \mapsto \frac{a^Tb}{\lVert a \rVert^{2}}a" data-display="false"><code>T:\mathbb{R}^n\to \mathbb{R}^n, b \mapsto \frac{a^Tb}{\lVert a \rVert^{2}}a</code></span>。所以矩阵表示就是 <span class="course-math" data-tex="\frac{aa^T}{a^Ta}" data-display="false"><code>\frac{aa^T}{a^Ta}</code></span>。
@@ -82,8 +87,10 @@ excerpt: "线性代数 · Orthogonal - 正交"
 - 也就是 <span class="course-math" data-tex="(WA)^T(WA)\hat{x_{w}}=(WA)^T(Wb" data-display="false"><code>(WA)^T(WA)\hat{x_{w}}=(WA)^T(Wb</code></span>。
 - 也就是 <span class="course-math" data-tex="A^T(W^TW)A\hat{x_{w}}=A^T(W^TW)B" data-display="false"><code>A^T(W^TW)A\hat{x_{w}}=A^T(W^TW)B</code></span>。
 
+
 ## 规范正交基与正交矩阵
 {: #section-2 }
+
 
 规定 <span class="course-math" data-tex="q_{1},q_{2},\dots,q_{s}" data-display="false"><code>q_{1},q_{2},\dots,q_{s}</code></span> 为一组向量，且满足：
   <span class="course-math course-math-display" data-tex="q_{i}^Tq_{j}=\begin{cases}&#10;1 &amp; i=j \\&#10;0 &amp; i\neq j&#10;\end{cases}" data-display="true"><code>q_{i}^Tq_{j}=\begin{cases}&#10;1 &amp; i=j \\&#10;0 &amp; i\neq j&#10;\end{cases}</code></span>
@@ -118,8 +125,10 @@ excerpt: "线性代数 · Orthogonal - 正交"
 - 【*注意这里的 <span class="course-math" data-tex="Q" data-display="false"><code>Q</code></span> 代表不一定为方阵，但列正交的情况* 】若要求 <span class="course-math" data-tex="Qx=b" data-display="false"><code>Qx=b</code></span> 的最小平方解，则 <span class="course-math" data-tex="\hat{x}=(Q^TQ)Q^Tb=Q^Tb" data-display="false"><code>\hat{x}=(Q^TQ)Q^Tb=Q^Tb</code></span>，则投影 <span class="course-math" data-tex="p=Q\hat{x}=QQ^Tb=\sum (q_{i}^Tb)q_{i}" data-display="false"><code>p=Q\hat{x}=QQ^Tb=\sum (q_{i}^Tb)q_{i}</code></span>，也就是说，投影到 <span class="course-math" data-tex="C(Q)" data-display="false"><code>C(Q)</code></span> 相当于投影到 <span class="course-math" data-tex="Q" data-display="false"><code>Q</code></span> 的列向量上再相加。
 - 投影到 <span class="course-math" data-tex="C(Q)" data-display="false"><code>C(Q)</code></span> 上的投影矩阵为 <span class="course-math" data-tex="P=Q(Q^TQ)^{-1}Q^T=QQ^T" data-display="false"><code>P=Q(Q^TQ)^{-1}Q^T=QQ^T</code></span>。
 
+
 ## Householder 变换
 {: #section-3 }
+
 
 Householder 变换：将某个向量 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 关于某个 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 维超平面  <span class="course-math" data-tex="V" data-display="false"><code>V</code></span>  做反射。假设平面的法向量为 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span>，则变换的矩阵表示为
 <span class="course-math course-math-display" data-tex="H=I_{n}-2 \frac{vv^T}{v^Tv}" data-display="true"><code>H=I_{n}-2 \frac{vv^T}{v^Tv}</code></span>
@@ -131,8 +140,10 @@ Householder 变换的意义在于，作为一个反射变换，它可以将向�
 - 例题：要找某个对称矩阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 使得 <span class="course-math" data-tex="A^{2}=I" data-display="false"><code>A^{2}=I</code></span> 且其第一列为某单位向量 <span class="course-math" data-tex="u" data-display="false"><code>u</code></span>。
 - 不妨令 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为一个 Householder 矩阵，由题意得 <span class="course-math" data-tex="Ae_{1}=u" data-display="false"><code>Ae_{1}=u</code></span>，也就是说 <span class="course-math" data-tex="e_{1}" data-display="false"><code>e_{1}</code></span> 与 <span class="course-math" data-tex="u" data-display="false"><code>u</code></span> 关于 Householder 变换的超平面对称，那么可以取法向量 <span class="course-math" data-tex="v=e_{1}-u" data-display="false"><code>v=e_{1}-u</code></span>。从而得到矩阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span>。 
 
+
 ## Gram-Schmidt 正交化
 {: #section-4 }
+
 
 若我们已经有了 <span class="course-math" data-tex="V" data-display="false"><code>V</code></span> 的一组基 <span class="course-math" data-tex="\{ a_{1},a_{2},\dots,a_{n} \}" data-display="false"><code>\{ a_{1},a_{2},\dots,a_{n} \}</code></span>，我们可以通过 Gram-Schmidt 正交化（Orthogonalization）求出 <span class="course-math" data-tex="V" data-display="false"><code>V</code></span> 的一组规范正交基 <span class="course-math" data-tex="q_{1},q_{2},\dots,q_{n}" data-display="false"><code>q_{1},q_{2},\dots,q_{n}</code></span>。
 先把 <span class="course-math" data-tex="a_{1}" data-display="false"><code>a_{1}</code></span> 归一化：
@@ -144,8 +155,10 @@ Householder 变换的意义在于，作为一个反射变换，它可以将向�
 <span class="course-math course-math-display" data-tex="q_{j+1}= \frac{A_{j+1}}{\lVert A_{j+1} \rVert }" data-display="true"><code>q_{j+1}= \frac{A_{j+1}}{\lVert A_{j+1} \rVert }</code></span>
 当然也可以到最后再做单位化，计算会简单一些。
 
+
 ### QR 分解
 {: #section-5 }
+
 
 <span class="course-math course-math-display" data-tex="A=\begin{bmatrix}&#10;a_{1} &amp; a_{2} &amp; \dots &amp; a_{n}&#10;\end{bmatrix}" data-display="true"><code>A=\begin{bmatrix}&#10;a_{1} &amp; a_{2} &amp; \dots &amp; a_{n}&#10;\end{bmatrix}</code></span>
 <span class="course-math course-math-display" data-tex="Q=\begin{bmatrix}&#10;q_{1} &amp; q_{2} &amp; \dots &amp; q_{n}&#10;\end{bmatrix}" data-display="true"><code>Q=\begin{bmatrix}&#10;q_{1} &amp; q_{2} &amp; \dots &amp; q_{n}&#10;\end{bmatrix}</code></span>
@@ -160,8 +173,10 @@ Householder 变换的意义在于，作为一个反射变换，它可以将向�
 若 <span class="course-math" data-tex="A=QR" data-display="false"><code>A=QR</code></span>，则 <span class="course-math" data-tex="Ax=b" data-display="false"><code>Ax=b</code></span> 的最小平方解： <span class="course-math" data-tex="A^TA=(QR)^T(QR)=R^TR" data-display="false"><code>A^TA=(QR)^T(QR)=R^TR</code></span>，故方程 <span class="course-math" data-tex="A^TA\hat{x}=A^Tb" data-display="false"><code>A^TA\hat{x}=A^Tb</code></span> 化简为 <span class="course-math" data-tex="R^TR\hat{x}=R^TQ^Tb" data-display="false"><code>R^TR\hat{x}=R^TQ^Tb</code></span>，由于 <span class="course-math" data-tex="R^T" data-display="false"><code>R^T</code></span> 可逆，有：
 <span class="course-math course-math-display" data-tex="R\hat{x}=Q^Tb" data-display="true"><code>R\hat{x}=Q^Tb</code></span> 这个方程比较好解，因为 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 是上三角矩阵，只需回代即可。
 
+
 ## 内积
 {: #section-6 }
+
 
 定义抽象的向量空间中的内积 <span class="course-math" data-tex="\left&lt; \cdot, \cdot \right&gt;:V\times V\to \mathbb{R}" data-display="false"><code>\left&lt; \cdot, \cdot \right&gt;:V\times V\to \mathbb{R}</code></span>，要求满足：
 - 对称性（Symmetric）：<span class="course-math" data-tex="\left&lt; v,w \right&gt; =\left&lt; w,v \right&gt;" data-display="false"><code>\left&lt; v,w \right&gt; =\left&lt; w,v \right&gt;</code></span> 

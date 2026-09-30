@@ -4,7 +4,10 @@ course_id: "linear-algebra"
 course_title: "线性代数"
 section: ""
 status: "completed"
+created_at: "2025-12-10T17:22:32+08:00"
+updated_at: "2026-03-18T17:12:13+08:00"
 reference: false
+order: 1
 layout: "course"
 permalink: "/courses/linear-algebra/matrices-and-system-of-linear-equations/"
 course_page: true
@@ -14,16 +17,20 @@ excerpt: "线性代数 · Matrices and System of Linear Equations -  矩阵与�
 ---
 
 {% raw %}
+
 ## 矩阵基本概念
 {: #section-1 }
+
 
 <span class="course-math" data-tex="m" data-display="false"><code>m</code></span> 行 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 列的矩阵可记成 <span class="course-math" data-tex="\mathbf{A}=[a_{ij}]_{m\times n}" data-display="false"><code>\mathbf{A}=[a_{ij}]_{m\times n}</code></span>
 
 矩阵的线性运算（加减，数乘）和向量是一样的，直接对对应的分量（Entry）运算。
 
 单位矩阵/恒等矩阵（Identity Matrix）：记作 <span class="course-math" data-tex="\mathbf{I}_{n}" data-display="false"><code>\mathbf{I}_{n}</code></span> ，其中 <span class="course-math" data-tex="a_{i,i}=1" data-display="false"><code>a_{i,i}=1</code></span>，其他为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 的方矩阵。
+
 ## 矩阵乘法 (Matrix Multiplication)
 {: #section-2 }
+
 
 <span class="course-math" data-tex="n\times m" data-display="false"><code>n\times m</code></span> 和 <span class="course-math" data-tex="m \times p" data-display="false"><code>m \times p</code></span> 的矩阵可以相乘得到一个 <span class="course-math" data-tex="n\times p" data-display="false"><code>n\times p</code></span> 的矩阵，矩阵 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span> 和矩阵 <span class="course-math" data-tex="\mathbf{B}" data-display="false"><code>\mathbf{B}</code></span> 相乘，得到矩阵 <span class="course-math" data-tex="\mathbf{C}" data-display="false"><code>\mathbf{C}</code></span> 中的第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 行第 <span class="course-math" data-tex="j" data-display="false"><code>j</code></span> 列的数为
 <span class="course-math course-math-display" data-tex="c_{ij}=\sum_{k}a_{ik}b_{kj}" data-display="true"><code>c_{ij}=\sum_{k}a_{ik}b_{kj}</code></span>
@@ -42,8 +49,10 @@ excerpt: "线性代数 · Matrices and System of Linear Equations -  矩阵与�
 方矩阵的幂： <span class="course-math" data-tex="\mathbf{A}^0=\mathbf{I}_{n}, \mathbf{A}^k=\mathbf{A}^{k-1}\mathbf{A}" data-display="false"><code>\mathbf{A}^0=\mathbf{I}_{n}, \mathbf{A}^k=\mathbf{A}^{k-1}\mathbf{A}</code></span>。
 一个矩阵与单位矩阵相乘会得到它自己，与零矩阵相乘会得到零矩阵。
 
+
 ### 基于乘法的特殊变换矩阵
 {: #section-3 }
+
 
 置换矩阵（Permutation Matrix）：每行每列都恰有一个 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 的矩阵。用它左乘另一个矩阵，可以交换矩阵的某些行。
 
@@ -54,30 +63,40 @@ excerpt: "线性代数 · Matrices and System of Linear Equations -  矩阵与�
 >  【左行右列】以上如果换成右乘这些变换矩阵，会变成初等列变换。
 
 
+
 ## 线性方程组（Linear System）
 {: #section-4 }
+
 
 用矩阵可以表示线性方程组：<span class="course-math" data-tex="\mathbf{A}\mathbf{x}=\mathbf{b}" data-display="false"><code>\mathbf{A}\mathbf{x}=\mathbf{b}</code></span>，其中 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span> 为线性方程组的系数矩阵（Coefficient Matrix）。 
 
 将线性方程组的系数矩阵右侧添加常数列，就构成了增广矩阵（Augmented Matrix），记作 <span class="course-math" data-tex="[\mathbf{A}&#124;\mathbf{b}]" data-display="false"><code>[\mathbf{A}&#124;\mathbf{b}]</code></span>。
 
+
 ### 行观点和列观点
 {: #section-5 }
+
 
 若线性方程组至少有一组解，则称其为相容的（Consistent），反之则为不相容的（Inconsistent）。
 - 行观点（Row Picture）：每个方程表示一个平面。线性方程组相容，当且仅当所有平面有非空交。
 - 列观点（Column Picture）：方程组表示了向量的线性组合。线性方程组相容，当且仅当常数列表示的向量落在系数列表示的向量张成的空间。
+
 ### 线性方程组的奇异性
 {: #section-6 }
+
 
 奇异（Singular）：没有解或无穷多组解。
 非奇异 （Nonsingular）：有且仅有一组解。
 从而可以定义矩阵的奇异性： <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span> 是非奇异矩阵当且仅当 <span class="course-math" data-tex="\forall \mathbf{b},\mathbf{A}\mathbf{x}=\mathbf{b}" data-display="false"><code>\forall \mathbf{b},\mathbf{A}\mathbf{x}=\mathbf{b}</code></span> 非奇异。
+
 ## 高斯消元与 LU 分解
 {: #section-7 }
 
+
+
 ### 高斯消元法
 {: #section-8 }
+
 
 保持线性方程组的解不变（Equivalent System）的线性变换叫做初等变换（Elementary Operations）。
 交换两个方程（<span class="course-math" data-tex="E_{i} \leftrightarrow E_{j}" data-display="false"><code>E_{i} \leftrightarrow E_{j}</code></span>），将某个方程乘一个非零常数（<span class="course-math" data-tex="E_{i} \gets kE_{i}" data-display="false"><code>E_{i} \gets kE_{i}</code></span>），以及把一个方程的倍数加到另一个方程上（<span class="course-math" data-tex="E_{i}\gets E_{i}+ kE_{j}" data-display="false"><code>E_{i}\gets E_{i}+ kE_{j}</code></span>），都属于初等变换。
@@ -89,8 +108,10 @@ excerpt: "线性代数 · Matrices and System of Linear Equations -  矩阵与�
 
 >  每一行中第一个非零的元素称为主元（Pivots）。
 
+
 ### LU 分解 （LU factorization）
 {: #section-9 }
+
 
 假设矩阵 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span> 进行高斯消元之后得到上三角矩阵（Upper triangular matrix） <span class="course-math" data-tex="\mathbf{U}" data-display="false"><code>\mathbf{U}</code></span>，则它可以分解为：
 <span class="course-math course-math-display" data-tex="\mathbf{A}=\mathbf{L}\mathbf{U}" data-display="true"><code>\mathbf{A}=\mathbf{L}\mathbf{U}</code></span>
@@ -112,8 +133,10 @@ excerpt: "线性代数 · Matrices and System of Linear Equations -  矩阵与�
 
 
 
+
 ### 解一般的方程组 Ax=b
 {: #section-10 }
+
 
 >  行最简形（Reduced row echelon form）：主元都是 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>，且每个主元位置所在列都只有这个主元不为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>。
 

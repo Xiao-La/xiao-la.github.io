@@ -4,7 +4,10 @@ course_id: "dsaa"
 course_title: "数据结构与算法分析"
 section: ""
 status: "updating"
+created_at: "2026-09-08T16:23:16+08:00"
+updated_at: "2026-09-29T16:24:11+08:00"
 reference: false
+order: 1
 layout: "course"
 permalink: "/courses/dsaa/introduction/"
 course_page: true
@@ -14,8 +17,10 @@ excerpt: "数据结构与算法分析 · Introduction"
 ---
 
 {% raw %}
+
 ## 算法（Algorithms）
 {: #section-1 }
+
 
 定义：一个良定义的计算步骤，接受输入（input）并产生输出（output）
 - 用于解决计算问题（Computational problem）
@@ -40,13 +45,17 @@ excerpt: "数据结构与算法分析 · Introduction"
 假设所有的操作都消耗相同的时间。
 算法的运行时间（Runtime）取决于初等操作的次数。
 
+
 ### 插入排序 
 {: #section-2 }
 
+
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Introduction.png' | relative_url }}{% raw %}" alt="Introduction" width="437" loading="lazy">
+
 
 #### 证明正确性
 {: #section-3 }
+
 
 Proof by loop invariant （通过循环不变量证明）
 - 循环不变量：在循环的过程中，一个永远正确的陈述，可以反映算法的进度。
@@ -55,8 +64,10 @@ Proof by loop invariant （通过循环不变量证明）
 >  在每次迭代开始时，子数组 <span class="course-math" data-tex="A[1\dots j-1]" data-display="false"><code>A[1\dots j-1]</code></span> 包含了原数组 <span class="course-math" data-tex="A[1\dots j-1]" data-display="false"><code>A[1\dots j-1]</code></span> 的所有元素，且是排好序的。
 - 通过说明 Initialisation, Maintenance, Termination 即可证明。
 
+
 ### 运行时间
 {: #section-4 }
+
 
 通过粗暴的对每一行计算运行的次数再求和，我们可以得到一个这样的式子：
 <span class="course-math course-math-display" data-tex="T(n)=c_{1}n+c_{2}(n-1)+c_{4}(n-1)+c_{5}\sum_{j=2}^nt_{j}+(c_{6}+c_{7})\sum_{j=2}^n (t_{j}-1) +c_{8}(n-1)" data-display="true"><code>T(n)=c_{1}n+c_{2}(n-1)+c_{4}(n-1)+c_{5}\sum_{j=2}^nt_{j}+(c_{6}+c_{7})\sum_{j=2}^n (t_{j}-1) +c_{8}(n-1)</code></span>
@@ -68,8 +79,10 @@ Proof by loop invariant （通过循环不变量证明）
 因此，最坏的情况往往很重要，它保证了算法不会花的更久。很多情况下，平均时间就和最坏情况一样坏。
 
 
+
 ### 渐进记号（Asymptotic Notation）
 {: #section-5 }
+
 
 运行时间关于 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 的增长速度只取决于最高阶的项。因此我们可以用渐进记号来表示运行时间的增长速度。例如：
 <span class="course-math course-math-display" data-tex="2n^{2}+3n=\Theta (n^{2})" data-display="true"><code>2n^{2}+3n=\Theta (n^{2})</code></span>
@@ -100,8 +113,10 @@ Proof by loop invariant （通过循环不变量证明）
 
 并不是任意两个函数都是渐进可比的。
 
+
 ### 分治算法
 {: #section-6 }
+
 
 A design paradigms: Divide-and-conquer.
 - Divide
@@ -125,8 +140,10 @@ A design paradigms: Divide-and-conquer.
 归并排序需要 <span class="course-math" data-tex="\Omega (n)" data-display="false"><code>\Omega (n)</code></span> 的额外空间，而插入排序只需要 <span class="course-math" data-tex="O(1)" data-display="false"><code>O(1)</code></span>。
 所以我们说插入排序是原地的（In place）。
 
+
 ### 解递归式
 {: #section-7 }
+
 
 有三种方式：
 - Substitution Method：先猜测一个解，再结合定义，用归纳法证明。

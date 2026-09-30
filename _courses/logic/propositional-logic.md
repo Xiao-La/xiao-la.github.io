@@ -4,7 +4,10 @@ course_id: "logic"
 course_title: "数理逻辑导论"
 section: ""
 status: "completed"
+created_at: "2026-03-11T10:39:43+08:00"
+updated_at: "2026-06-07T00:14:25+08:00"
 reference: false
+order: 2
 layout: "course"
 permalink: "/courses/logic/propositional-logic/"
 course_page: true
@@ -15,16 +18,20 @@ excerpt: "数理逻辑导论 · Propositional Logic - 命题逻辑"
 
 {% raw %}
 <span class="course-math course-math-display" data-tex="\mathscr{L}^p" data-display="true"><code>\mathscr{L}^p</code></span>
+
 ## 形式语言（Formal Language）
 {: #section-1 }
+
 
 语言（Language）：
 - 字母表（Alphabet）
 - 语法（Syntax）
 - 语义（Semantics）
 
+
 ### 字母表
 {: #section-2 }
+
 
 命题（Proposition）
 - 原子命题（Atomic Proposition, atom）：最小的不可分的命题。
@@ -39,8 +46,10 @@ excerpt: "数理逻辑导论 · Propositional Logic - 命题逻辑"
 6. 等价（If and only if, Equivalence）(<span class="course-math" data-tex="\leftrightarrow" data-display="false"><code>\leftrightarrow</code></span>)
 
 标点符号（Punctuation）
+
 ### 语法
 {: #section-3 }
+
 
 表达式 (Expression)：有限的符号组合。
 - 良构公式（Well-formed formulas, wff）
@@ -86,8 +95,10 @@ WFF 的性质：
 - 优先级（Precedence）：从高到低为 <span class="course-math" data-tex="(), \neg,\land,\lor,\to,\leftrightarrow" data-display="false"><code>(), \neg,\land,\lor,\to,\leftrightarrow</code></span>。
 - 结合性（Associativity）：<span class="course-math" data-tex="\land, \lor, \leftrightarrow" data-display="false"><code>\land, \lor, \leftrightarrow</code></span> 具有结合性。<span class="course-math" data-tex="\to" data-display="false"><code>\to</code></span> 具有右结合性。
 
+
 ### 语义
 {: #section-4 }
+
 
 **常见逻辑连接词（Logical Connectives）真值表（Truth table）**
 <span class="course-math" data-tex="\neg, \land" data-display="false"><code>\neg, \land</code></span> 的真值表显然。
@@ -169,8 +180,10 @@ WFF 的性质：
 
 定理：任意的 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 元布尔函数都可以只用一个完备集合中的连接词定义。
 
+
 ### 形式推演系统
 {: #section-5 }
+
 
 形式证明系统（Formal Proof System）
 - 语言 (符号，字母表，wff)
@@ -178,8 +191,10 @@ WFF 的性质：
 
 由前提 <span class="course-math" data-tex="\Sigma" data-display="false"><code>\Sigma</code></span> 可以推出结论 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 记作：
 <span class="course-math course-math-display" data-tex="\Sigma \vdash A" data-display="true"><code>\Sigma \vdash A</code></span>
+
 #### Hilbert-style System
 {: #section-6 }
+
 <span class="course-math course-math-display" data-tex="\mathscr{H}" data-display="true"><code>\mathscr{H}</code></span>
 线性。
 
@@ -245,8 +260,10 @@ WFF 的性质：
 (Theorem H6)
 <span class="course-math course-math-display" data-tex="\vdash (A\to \neg A)\to \neg A" data-display="true"><code>\vdash (A\to \neg A)\to \neg A</code></span>
 
+
 #### Natural Deduction System
 {: #section-7 }
+
 
 语言：
 - 字母表： <span class="course-math" data-tex="\Sigma =\{ (,),\neg,\land, \lor, \to,\leftrightarrow,p,q,r, \dots \}" data-display="false"><code>\Sigma =\{ (,),\neg,\land, \lor, \to,\leftrightarrow,p,q,r, \dots \}</code></span>
@@ -292,8 +309,10 @@ WFF 的性质：
 这些证明都是语法上的（Syntactic）。不用关心语义。
 
 
+
 ##### 可靠性和完备性
 {: #section-8 }
+
 
 可靠性（Soundness）：证明的结论（Conclusion）总是前提（Premises）的一个逻辑上的结果（Consequence）。也就是说，我们称证明系统可靠，当
 <span class="course-math course-math-display" data-tex="\Sigma\vdash A\implies \Sigma\vDash A" data-display="true"><code>\Sigma\vdash A\implies \Sigma\vDash A</code></span>
@@ -335,8 +354,10 @@ Sublemma 的证明：
    - 其他二元连接符的 Cases 也类似。
 
  
+
 #### Resolution
 {: #section-9 }
+
 
 定义单式/文字（Literal）：Atom 或 Atom 的否定。
 定义子式/子句（Clause）：

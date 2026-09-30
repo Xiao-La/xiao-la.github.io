@@ -4,7 +4,10 @@ course_id: "probability-statistics"
 course_title: "概率与统计"
 section: ""
 status: "updating"
+created_at: "2026-04-30T19:28:27+08:00"
+updated_at: "2026-09-29T11:35:04+08:00"
 reference: false
+order: 2
 layout: "course"
 permalink: "/courses/probability-statistics/random-variables/"
 course_page: true
@@ -42,8 +45,10 @@ CDF 是不降的而且是右连续的。
 
 两个离散随机变量 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 相互独立定义为，对任意取值 <span class="course-math" data-tex="X=x, Y=y" data-display="false"><code>X=x, Y=y</code></span>，有
 <span class="course-math course-math-display" data-tex="P(X=x,Y=y)=P(X=x)\cdot P(Y=y)" data-display="true"><code>P(X=x,Y=y)=P(X=x)\cdot P(Y=y)</code></span>
+
 ## 期望（Expectation）
 {: #section-1 }
+
 
 集合 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 上，概率密度函数为 <span class="course-math" data-tex="f(x)" data-display="false"><code>f(x)</code></span> 的离散随机变量 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 的期望（Expectation/Expected Value/Mean）定义为
 <span class="course-math course-math-display" data-tex="\mathrm{E}(X)=\sum_{x\in{S}} xf(x)" data-display="true"><code>\mathrm{E}(X)=\sum_{x\in{S}} xf(x)</code></span>
@@ -57,8 +62,10 @@ CDF 是不降的而且是右连续的。
 如果是连续随机变量，就定义为积分：
 <span class="course-math course-math-display" data-tex="\mathrm{E}(X)=\int_{-\infty}^{\infty}xf(x)" data-display="true"><code>\mathrm{E}(X)=\int_{-\infty}^{\infty}xf(x)</code></span>
 
+
 ## 方差（Variance）
 {: #section-2 }
+
 
 随机变量 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 方差定义为
 <span class="course-math course-math-display" data-tex="\mathrm{Var}(X)=\mathrm{E}(X-\mathrm{E}(X))^{2}" data-display="true"><code>\mathrm{Var}(X)=\mathrm{E}(X-\mathrm{E}(X))^{2}</code></span>

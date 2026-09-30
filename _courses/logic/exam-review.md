@@ -4,7 +4,10 @@ course_id: "logic"
 course_title: "数理逻辑导论"
 section: ""
 status: "completed"
+created_at: "2026-06-08T20:15:52+08:00"
+updated_at: "2026-06-08T22:25:21+08:00"
 reference: false
+order: 6
 layout: "course"
 permalink: "/courses/logic/exam-review/"
 course_page: true
@@ -21,8 +24,10 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 
 ---
 
+
 ## 目录
 {: #section-1 }
+
 
 1. [命题逻辑 — 语法](#section-2)
 2. [命题逻辑 — 语义](#section-7)
@@ -37,11 +42,15 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 
 ---
 
+
 ## 1. 命题逻辑 — 语法
 {: #section-2 }
 
+
+
 ### 核心概念
 {: #section-3 }
+
 
 | 概念 | 说明 |
 |------|------|
@@ -51,8 +60,10 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 | **主连接词 (Leading Connective)** | 解析树根节点的连接词 |
 | **子公式 (Subformula)** | 解析树中任意节点对应的公式 |
 
+
 ### WFF 的性质
 {: #section-4 }
+
 
 - **括号性质**：WFF 的任意**真前缀**中，左括号严格多于右括号；任意**真后缀**中，右括号严格多于左括号
 - 因此，真前缀和真后缀都**不是** WFF
@@ -60,8 +71,10 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 
 > 判定是 WFF → 用构造规则（解析树）；判定不是 WFF → 可用括号性质。
 
+
 ### 惯例 (Convention)
 {: #section-5 }
+
 
 - 优先级从高到低：<span class="course-math" data-tex="(), \neg, \land, \lor, \to, \leftrightarrow" data-display="false"><code>(), \neg, \land, \lor, \to, \leftrightarrow</code></span>
 - 结合性：<span class="course-math" data-tex="\land, \lor, \leftrightarrow" data-display="false"><code>\land, \lor, \leftrightarrow</code></span> 左结合；<span class="course-math" data-tex="\to" data-display="false"><code>\to</code></span> **右结合**
@@ -69,8 +82,10 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 
 ---
 
+
 ### 例题：Assignment 2
 {: #section-6 }
+
 
 **A2.1** 判断哪些是 wff（按形式定义，不考虑惯例）。
 
@@ -121,11 +136,15 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 
 ---
 
+
 ## 2. 命题逻辑 — 语义
 {: #section-7 }
 
+
+
 ### 核心概念
 {: #section-8 }
+
 
 **真值赋值 (Truth Valuation)**：<span class="course-math" data-tex="v: \text{Atom}(\mathscr{L}^P) \to \{0,1\}" data-display="false"><code>v: \text{Atom}(\mathscr{L}^P) \to \{0,1\}</code></span>
 
@@ -141,8 +160,10 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 - <span class="course-math" data-tex="\emptyset \vDash A" data-display="false"><code>\emptyset \vDash A</code></span> ⟺ <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 是永真式
 - <span class="course-math" data-tex="A \vDash B" data-display="false"><code>A \vDash B</code></span> ⟺ <span class="course-math" data-tex="A \to B" data-display="false"><code>A \to B</code></span> 是永真式
 
+
 ### 判定方法
 {: #section-9 }
+
 
 | 方法 | 适用场景 |
 |------|----------|
@@ -153,8 +174,10 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 - **证明蕴含**：真值表中 <span class="course-math" data-tex="\Sigma^v=1" data-display="false"><code>\Sigma^v=1</code></span> 的每一行都有 <span class="course-math" data-tex="\alpha^v=1" data-display="false"><code>\alpha^v=1</code></span>；或反证法
 - **证明不蕴含**：找到一个反例赋值即可
 
+
 ### 完备集 (Adequate Set)
 {: #section-10 }
+
 
 - <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 元布尔函数共有 <span class="course-math" data-tex="2^{2^n}" data-display="false"><code>2^{2^n}</code></span> 种
 - **完备集**：所有 wff 都能只用该集合中的连接词等价表示
@@ -164,8 +187,10 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 
 **证明不完备**：找到目标集合构造出的所有公式共享某个"不变性质"（如 parity），而某个连接词（如 <span class="course-math" data-tex="\land" data-display="false"><code>\land</code></span>）不具备。
 
+
 ### CNF / DNF
 {: #section-11 }
+
 
 | | CNF (合取范式) | DNF (析取范式) |
 |---|---|---|
@@ -175,16 +200,20 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 
 > 定理：任意公式都等价于某个 CNF 和某个 DNF。
 
+
 ### 代换
 {: #section-12 }
+
 
 - **代换实例**：保持一致性替换公式中的 atom。永真式的代换实例仍是永真式。
 - **代换定理**：若 <span class="course-math" data-tex="C \equiv D" data-display="false"><code>C \equiv D</code></span>，则将 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 中的 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 换为 <span class="course-math" data-tex="D" data-display="false"><code>D</code></span> 得到的 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 满足 <span class="course-math" data-tex="A \equiv B" data-display="false"><code>A \equiv B</code></span>。
 
 ---
 
+
 ### 例题：Assignment 3
 {: #section-13 }
+
 
 **A3.1** 判定公式类型（tautology / contradiction / neither）：
 
@@ -248,11 +277,15 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 
 ---
 
+
 ## 3. 命题逻辑 — 形式证明系统
 {: #section-14 }
 
+
+
 ### 3.1 Hilbert-style System (<span class="course-math" data-tex="\mathscr{H}" data-display="false"><code>\mathscr{H}</code></span>)
 {: #section-15 }
+
 
 **语言**：仅用 <span class="course-math" data-tex="\neg, \to" data-display="false"><code>\neg, \to</code></span>。
 
@@ -280,8 +313,10 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 
 ---
 
+
 ### 例题：Assignment 4.1 (Hilbert)
 {: #section-16 }
+
 
 **A4.1.1** <span class="course-math" data-tex="\vdash (\neg A \to A) \to A" data-display="false"><code>\vdash (\neg A \to A) \to A</code></span>
 
@@ -337,8 +372,10 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 
 ---
 
+
 ### 3.2 Natural Deduction (ND)
 {: #section-17 }
+
 
 **语言**：全部连接词 <span class="course-math" data-tex="\neg, \land, \lor, \to, \leftrightarrow" data-display="false"><code>\neg, \land, \lor, \to, \leftrightarrow</code></span>。
 
@@ -369,8 +406,10 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 
 ---
 
+
 ### 例题：Assignment 4.2 (ND)
 {: #section-18 }
+
 
 **A4.2.1** <span class="course-math" data-tex="\neg(\neg p \lor q) \vdash p" data-display="false"><code>\neg(\neg p \lor q) \vdash p</code></span>
 
@@ -450,8 +489,10 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 
 ---
 
+
 ### 例题：Assignment 4.3 (Soundness — <span class="course-math" data-tex="\lor" data-display="false"><code>\lor</code></span>e case)
 {: #section-19 }
+
 
 **题目**：完成 ND 可靠性证明中 <span class="course-math" data-tex="\lor" data-display="false"><code>\lor</code></span>e 情形的归纳步骤。
 
@@ -486,8 +527,10 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 
 ---
 
+
 ### 例题：Assignment 5.1 (用 Soundness 做语义论证)
 {: #section-20 }
+
 
 **A5.1** 若 <span class="course-math" data-tex="\{\alpha, \beta\} \vdash_{ND} \gamma" data-display="false"><code>\{\alpha, \beta\} \vdash_{ND} \gamma</code></span>，则 <span class="course-math" data-tex="\emptyset \vDash (\alpha \land \beta) \to \gamma" data-display="false"><code>\emptyset \vDash (\alpha \land \beta) \to \gamma</code></span>。
 
@@ -497,8 +540,10 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 
 ---
 
+
 ### 3.3 Resolution (归结)
 {: #section-21 }
+
 
 **核心思路**：要证 <span class="course-math" data-tex="\Sigma \vdash_{\text{Res}} \varphi" data-display="false"><code>\Sigma \vdash_{\text{Res}} \varphi</code></span>，转为证 <span class="course-math" data-tex="\Sigma \cup \{\neg \varphi\} \vdash_{\text{Res}} \perp" data-display="false"><code>\Sigma \cup \{\neg \varphi\} \vdash_{\text{Res}} \perp</code></span>。
 
@@ -513,8 +558,10 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 
 ---
 
+
 ### 例题：Assignment 5.2 (Resolution)
 {: #section-22 }
+
 
 **A5.2** <span class="course-math" data-tex="p \to (q \land r) \vdash_{\text{Res}} (\neg q \lor \neg r) \to \neg p" data-display="false"><code>p \to (q \land r) \vdash_{\text{Res}} (\neg q \lor \neg r) \to \neg p</code></span>
 
@@ -539,43 +586,57 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 
 ---
 
+
 ## 4. 一阶逻辑 — 语法
 {: #section-23 }
 
+
+
 ### 字母表
 {: #section-24 }
+
 
 | 类别 | 符号 |
 |------|------|
 | **逻辑符号** | 量词 <span class="course-math" data-tex="\forall, \exists" data-display="false"><code>\forall, \exists</code></span>；变量 <span class="course-math" data-tex="x,y,z,\dots" data-display="false"><code>x,y,z,\dots</code></span>；连接词 <span class="course-math" data-tex="\neg,\land,\lor,\to,\leftrightarrow" data-display="false"><code>\neg,\land,\lor,\to,\leftrightarrow</code></span>；标点 <span class="course-math" data-tex="(,),," data-display="false"><code>(,),,</code></span>；等号 <span class="course-math" data-tex="=" data-display="false"><code>=</code></span> |
 | **非逻辑符号** | 常量 <span class="course-math" data-tex="c_1,c_2,\dots" data-display="false"><code>c_1,c_2,\dots</code></span>；谓词 <span class="course-math" data-tex="P,Q,R,\dots" data-display="false"><code>P,Q,R,\dots</code></span>（带 arity）；函数 <span class="course-math" data-tex="f,g,h,\dots" data-display="false"><code>f,g,h,\dots</code></span>（带 arity） |
 
+
 ### 项的归纳定义
 {: #section-25 }
+
 1. 常量和变量都是项
 2. 若 <span class="course-math" data-tex="f^n" data-display="false"><code>f^n</code></span> 是 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 元函数，<span class="course-math" data-tex="t_1,\dots,t_n" data-display="false"><code>t_1,\dots,t_n</code></span> 是项，则 <span class="course-math" data-tex="f^n(t_1,\dots,t_n)" data-display="false"><code>f^n(t_1,\dots,t_n)</code></span> 是项
 3. 只有以上生成的才是项
 
+
 ### 原子公式 (Atom)
 {: #section-26 }
+
 - <span class="course-math" data-tex="P(t_1,\dots,t_n)" data-display="false"><code>P(t_1,\dots,t_n)</code></span>，其中 <span class="course-math" data-tex="P" data-display="false"><code>P</code></span> 是 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 元谓词，<span class="course-math" data-tex="t_i" data-display="false"><code>t_i</code></span> 是项
 - <span class="course-math" data-tex="t_1 = t_2" data-display="false"><code>t_1 = t_2</code></span>（等号是一种特殊的二元谓词）
 
+
 ### 公式的归纳定义
 {: #section-27 }
+
 1. <span class="course-math" data-tex="\text{Atom}(\mathscr{L}) \subseteq \text{Form}(\mathscr{L})" data-display="false"><code>\text{Atom}(\mathscr{L}) \subseteq \text{Form}(\mathscr{L})</code></span>
 2. 若 <span class="course-math" data-tex="\alpha \in \text{Form}" data-display="false"><code>\alpha \in \text{Form}</code></span>，则 <span class="course-math" data-tex="(\neg\alpha) \in \text{Form}" data-display="false"><code>(\neg\alpha) \in \text{Form}</code></span>
 3. 若 <span class="course-math" data-tex="\alpha,\beta \in \text{Form}" data-display="false"><code>\alpha,\beta \in \text{Form}</code></span>，则 <span class="course-math" data-tex="(\alpha * \beta) \in \text{Form}" data-display="false"><code>(\alpha * \beta) \in \text{Form}</code></span>（<span class="course-math" data-tex="* \in \{\land,\lor,\to,\leftrightarrow\}" data-display="false"><code>* \in \{\land,\lor,\to,\leftrightarrow\}</code></span>）
 4. 若 <span class="course-math" data-tex="\alpha \in \text{Form}" data-display="false"><code>\alpha \in \text{Form}</code></span> 且 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 是变量，则 <span class="course-math" data-tex="(\forall x\,\alpha), (\exists x\,\alpha) \in \text{Form}" data-display="false"><code>(\forall x\,\alpha), (\exists x\,\alpha) \in \text{Form}</code></span>
 
+
 ### 优先级
 {: #section-28 }
+
 1. 括号优先
 2. <span class="course-math" data-tex="\forall x, \exists x" data-display="false"><code>\forall x, \exists x</code></span> 与 <span class="course-math" data-tex="\neg" data-display="false"><code>\neg</code></span> 同级，高于所有二元连接词
 3. <span class="course-math" data-tex="\forall, \exists, \neg" data-display="false"><code>\forall, \exists, \neg</code></span> 之间是**右结合**
 
+
 ### 形式化关键对照
 {: #section-29 }
+
 
 | 自然语言 | FOL 模式 |
 |----------|----------|
@@ -588,8 +649,10 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 
 ---
 
+
 ### 例题：Assignment 5.3-5.5
 {: #section-30 }
+
 
 **A5.3** 判断是否是良构 FOL 公式。答案：**1, 3, 6, 8, 9**
 
@@ -629,11 +692,15 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 
 ---
 
+
 ## 5. 一阶逻辑 — 语义
 {: #section-31 }
 
+
+
 ### 核心概念
 {: #section-32 }
+
 
 | 概念 | 定义 |
 |------|------|
@@ -643,8 +710,10 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 | **阐释 (Interpretation) <span class="course-math" data-tex="\mathcal{I}" data-display="false"><code>\mathcal{I}</code></span>** | Domain + 常量/函数/谓词的具体含义 |
 | **环境 (Environment) <span class="course-math" data-tex="E" data-display="false"><code>E</code></span>** | 给自由变元赋值 |
 
+
 ### 语义定义
 {: #section-33 }
+
 
 - <span class="course-math" data-tex="t^{(\mathcal{I}, E)}" data-display="false"><code>t^{(\mathcal{I}, E)}</code></span>：项 <span class="course-math" data-tex="t" data-display="false"><code>t</code></span> 在 <span class="course-math" data-tex="(\mathcal{I}, E)" data-display="false"><code>(\mathcal{I}, E)</code></span> 下的值（对常量查 <span class="course-math" data-tex="\mathcal{I}" data-display="false"><code>\mathcal{I}</code></span>，对变量查 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span>，对函数递归计算）
 - <span class="course-math" data-tex="E[x \mapsto d]" data-display="false"><code>E[x \mapsto d]</code></span>：将 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 中 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 的值改为 <span class="course-math" data-tex="d" data-display="false"><code>d</code></span>
@@ -653,8 +722,10 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 - <span class="course-math" data-tex="(\forall x\,\alpha)^{(\mathcal{I},E)} = 1" data-display="false"><code>(\forall x\,\alpha)^{(\mathcal{I},E)} = 1</code></span> ⟺ 对**所有** <span class="course-math" data-tex="d \in" data-display="false"><code>d \in</code></span> Domain，<span class="course-math" data-tex="\alpha^{(\mathcal{I}, E[x\mapsto d])} = 1" data-display="false"><code>\alpha^{(\mathcal{I}, E[x\mapsto d])} = 1</code></span>
 - <span class="course-math" data-tex="(\exists x\,\alpha)^{(\mathcal{I},E)} = 1" data-display="false"><code>(\exists x\,\alpha)^{(\mathcal{I},E)} = 1</code></span> ⟺ **存在** <span class="course-math" data-tex="d \in" data-display="false"><code>d \in</code></span> Domain，使 <span class="course-math" data-tex="\alpha^{(\mathcal{I}, E[x\mapsto d])} = 1" data-display="false"><code>\alpha^{(\mathcal{I}, E[x\mapsto d])} = 1</code></span>
 
+
 ### 公式分类
 {: #section-34 }
+
 
 | | 定义 |
 |---|------|
@@ -664,13 +735,17 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 
 > **FOL 的不可判定性**：不存在通用算法判定任意 FOL 公式是否为 valid。（PL 可用真值表判定）
 
+
 ### 语义蕴含
 {: #section-35 }
 
+
 <span class="course-math" data-tex="\Sigma \vDash \alpha" data-display="false"><code>\Sigma \vDash \alpha</code></span> ⟺ 对所有 <span class="course-math" data-tex="\mathcal{I}, E" data-display="false"><code>\mathcal{I}, E</code></span>，若 <span class="course-math" data-tex="\mathcal{I} \vDash_E \Sigma" data-display="false"><code>\mathcal{I} \vDash_E \Sigma</code></span> 则 <span class="course-math" data-tex="\mathcal{I} \vDash_E \alpha" data-display="false"><code>\mathcal{I} \vDash_E \alpha</code></span>
+
 
 ### 重要等价
 {: #section-36 }
+
 
 | 等价关系 |
 |----------|
@@ -683,8 +758,10 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 
 ---
 
+
 ### 例题：Assignment 6.1-6.4
 {: #section-37 }
+
 
 **A6.1** 对 <span class="course-math" data-tex="\alpha = \exists x(P(y, z) \land (\forall y(\neg Q(y, x) \lor P(y, z))))" data-display="false"><code>\alpha = \exists x(P(y, z) \land (\forall y(\neg Q(y, x) \lor P(y, z))))</code></span>，画解析树并标自由/约束：
 
@@ -723,18 +800,24 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 
 ---
 
+
 ## 6. 一阶逻辑 — ND 证明
 {: #section-38 }
 
+
+
 ### 替换 (Substitution)
 {: #section-39 }
+
 
 <span class="course-math" data-tex="\alpha[t/x]" data-display="false"><code>\alpha[t/x]</code></span> 表示将 <span class="course-math" data-tex="\alpha" data-display="false"><code>\alpha</code></span> 中所有**自由出现**的 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 替换为 <span class="course-math" data-tex="t" data-display="false"><code>t</code></span>。
 
 > 避免 **capture**：若 <span class="course-math" data-tex="t" data-display="false"><code>t</code></span> 含变量 <span class="course-math" data-tex="y" data-display="false"><code>y</code></span>，而替换处 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 在 <span class="course-math" data-tex="\forall y" data-display="false"><code>\forall y</code></span> / <span class="course-math" data-tex="\exists y" data-display="false"><code>\exists y</code></span> 的作用域内，需先 rename bound variable。
 
+
 ### 量词推理规则
 {: #section-40 }
+
 
 | 规则 | 形式 | 条件 |
 |------|------|------|
@@ -747,8 +830,10 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 
 ---
 
+
 ### 例题：Assignment 6.5 (FOL ND)
 {: #section-41 }
+
 
 **A6.5.1** <span class="course-math" data-tex="\exists x P(x) \lor \exists x Q(x) \vdash \exists x (P(x) \lor Q(x))" data-display="false"><code>\exists x P(x) \lor \exists x Q(x) \vdash \exists x (P(x) \lor Q(x))</code></span>
 

@@ -4,7 +4,10 @@ course_id: "physics"
 course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
+created_at: "2026-06-05T11:43:03+08:00"
+updated_at: "2026-06-05T17:41:37+08:00"
 reference: false
+order: 16
 layout: "course"
 permalink: "/courses/physics/quantum-physics/"
 course_page: true
@@ -15,8 +18,10 @@ excerpt: "大学物理（上）/（下） · Quantum Physics - 量子物理"
 
 {% raw %}
 
+
 ## 光电效应
 {: #section-1 }
+
 
 <span class="course-math course-math-display" data-tex="hf=K+\Phi" data-display="true"><code>hf=K+\Phi</code></span>
 这里 <span class="course-math" data-tex="\Phi" data-display="false"><code>\Phi</code></span> 是材料中电子和真空中电子的能量差。必须要 <span class="course-math" data-tex="hf\geq \Phi" data-display="false"><code>hf\geq \Phi</code></span> 才能激发电子。
@@ -28,8 +33,10 @@ excerpt: "大学物理（上）/（下） · Quantum Physics - 量子物理"
 
 量子化：
 <span class="course-math course-math-display" data-tex="E=nhf" data-display="true"><code>E=nhf</code></span>
+
 ## 康普顿效应
 {: #section-2 }
+
 
 X 射线：高能电子轰击材料。
 光子碰撞 - 一个光子一个电子，弹性碰撞，动量守恒，能量守恒
@@ -40,8 +47,10 @@ X 射线：高能电子轰击材料。
 
 <span class="course-math course-math-display" data-tex="\Delta\lambda= \frac{h}{mc}(1-\cos \phi)" data-display="true"><code>\Delta\lambda= \frac{h}{mc}(1-\cos \phi)</code></span>
 
+
 ## 德布罗意波
 {: #section-3 }
+
 
 <span class="course-math course-math-display" data-tex="\lambda=\frac{h}{p}" data-display="true"><code>\lambda=\frac{h}{p}</code></span>
 能量特别高的时候（波长<1 nm），要考虑相对论效应：
@@ -49,8 +58,10 @@ X 射线：高能电子轰击材料。
 否则只需要经典物理
 <span class="course-math course-math-display" data-tex="p=mv, K=\frac{1}{2}mv^{2}=\frac{p^{2}}{2m}" data-display="true"><code>p=mv, K=\frac{1}{2}mv^{2}=\frac{p^{2}}{2m}</code></span>
 
+
 ## 海森堡不确定性原理
 {: #section-4 }
+
 
 <span class="course-math course-math-display" data-tex="\Delta x\cdot \Delta p_{x}\geq \hbar" data-display="true"><code>\Delta x\cdot \Delta p_{x}\geq \hbar</code></span>
 {% endraw %}

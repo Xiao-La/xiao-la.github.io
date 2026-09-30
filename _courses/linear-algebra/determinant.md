@@ -4,7 +4,10 @@ course_id: "linear-algebra"
 course_title: "线性代数"
 section: ""
 status: "completed"
+created_at: "2026-01-18T18:16:22+08:00"
+updated_at: "2026-04-29T18:06:01+08:00"
 reference: false
+order: 2
 layout: "course"
 permalink: "/courses/linear-algebra/determinant/"
 course_page: true
@@ -14,8 +17,10 @@ excerpt: "线性代数 · Determinant - 行列式"
 ---
 
 {% raw %}
+
 ## 行列式的性质与定义
 {: #section-1 }
+
 
 二位和三维上，几何上，行列式是一个有向的面积或体积。
 
@@ -77,18 +82,24 @@ excerpt: "线性代数 · Determinant - 行列式"
 
 *注意一般 <span class="course-math" data-tex="\det(A+B)\neq \det(A)+\det(B)" data-display="false"><code>\det(A+B)\neq \det(A)+\det(B)</code></span>，例如 <span class="course-math" data-tex="\det(2A)=2^n\det(A)" data-display="false"><code>\det(2A)=2^n\det(A)</code></span>*
 
+
 ## 行列式的求法
 {: #section-2 }
 
+
+
 #### 求二阶矩阵的行列式
 {: #section-3 }
+
 <span class="course-math course-math-display" data-tex="\mathbf{A}=\begin{bmatrix}&#10;a &amp; b \\&#10;c &amp; d&#10;\end{bmatrix}" data-display="true"><code>\mathbf{A}=\begin{bmatrix}&#10;a &amp; b \\&#10;c &amp; d&#10;\end{bmatrix}</code></span>
  的行列式为 <span class="course-math" data-tex="\det(\mathbf{A})=ad-bc" data-display="false"><code>\det(\mathbf{A})=ad-bc</code></span>。
  证明：
  <span class="course-math course-math-display" data-tex="\left&#124; \begin{matrix} a &amp; b \\&#10;c &amp; d  \end{matrix} \right&#124; = \left&#124; \begin{matrix} a &amp; 0 \\&#10;c &amp; d \end{matrix} \right&#124; + \left&#124; \begin{matrix} 0 &amp; b \\&#10;c &amp; d \end{matrix} \right&#124; =  ad \left&#124; \begin{matrix} 1 &amp; 0 \\&#10;0 &amp; 1 \end{matrix} \right&#124; +bc \left&#124; \begin{matrix} 0 &amp; 1 \\&#10;1 &amp; 0 \end{matrix} \right&#124; = ad-bc" data-display="true"><code>\left&#124; \begin{matrix} a &amp; b \\&#10;c &amp; d  \end{matrix} \right&#124; = \left&#124; \begin{matrix} a &amp; 0 \\&#10;c &amp; d \end{matrix} \right&#124; + \left&#124; \begin{matrix} 0 &amp; b \\&#10;c &amp; d \end{matrix} \right&#124; =  ad \left&#124; \begin{matrix} 1 &amp; 0 \\&#10;0 &amp; 1 \end{matrix} \right&#124; +bc \left&#124; \begin{matrix} 0 &amp; 1 \\&#10;1 &amp; 0 \end{matrix} \right&#124; = ad-bc</code></span>
  
+
 #### 求三阶矩阵的行列式
 {: #section-4 }
+
 <span class="course-math course-math-display" data-tex="\mathbf{A}=\begin{bmatrix}&#10;a_{11} &amp; a_{12} &amp; a_{13} \\&#10;a_{21} &amp; a_{22} &amp; a_{23} \\&#10;a_{31} &amp; a_{32} &amp; a_{33}&#10;\end{bmatrix}" data-display="true"><code>\mathbf{A}=\begin{bmatrix}&#10;a_{11} &amp; a_{12} &amp; a_{13} \\&#10;a_{21} &amp; a_{22} &amp; a_{23} \\&#10;a_{31} &amp; a_{32} &amp; a_{33}&#10;\end{bmatrix}</code></span>
 先定义矩阵中 <span class="course-math" data-tex="a_{ij}" data-display="false"><code>a_{ij}</code></span> 的余子式（Minor）<span class="course-math" data-tex="M_{ij}" data-display="false"><code>M_{ij}</code></span> 为删掉第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 行和第 <span class="course-math" data-tex="j" data-display="false"><code>j</code></span> 列后剩下项所组成矩阵的行列式。
 那么三阶矩阵的行列式：
@@ -97,8 +108,10 @@ excerpt: "线性代数 · Determinant - 行列式"
 把 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 用行列式的线性特性拆成 <span class="course-math" data-tex="3^3" data-display="false"><code>3^3</code></span> 个行列式之和，每个形如 <span class="course-math" data-tex="a_{1i}a_{2j}a_{3k}\left&#124; \begin{matrix} e_{i}  \\ e_{j} \\ e_{k}\end{matrix} \right&#124;" data-display="false"><code>a_{1i}a_{2j}a_{3k}\left&#124; \begin{matrix} e_{i}  \\ e_{j} \\ e_{k}\end{matrix} \right&#124;</code></span>。这里，如果有两行相同，那么行列式为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>，所以只剩下那些每行都不一样的，共有 <span class="course-math" data-tex="3! = 6" data-display="false"><code>3! = 6</code></span> 种。那么
 <span class="course-math course-math-display" data-tex="\det(A)=\sum_{(\alpha_{1},\alpha_{2},\alpha_{3})} a_{1\alpha_{1}}a_{2\alpha_{2}}a_{3\alpha_{3}}\det(P)" data-display="true"><code>\det(A)=\sum_{(\alpha_{1},\alpha_{2},\alpha_{3})} a_{1\alpha_{1}}a_{2\alpha_{2}}a_{3\alpha_{3}}\det(P)</code></span>
 
+
 #### 求一般矩阵的行列式
 {: #section-5 }
+
 
 将上面的情况推广到 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 阶：考虑 <span class="course-math" data-tex="(1,2,\dots,n)" data-display="false"><code>(1,2,\dots,n)</code></span> 的所有排列 <span class="course-math" data-tex="p=(\alpha_{1},\alpha_{2},\dots,\alpha_{n})" data-display="false"><code>p=(\alpha_{1},\alpha_{2},\dots,\alpha_{n})</code></span>，则有大公式（Big Formula）：
 <span class="course-math course-math-display" data-tex="\det(A)=\sum_{(\alpha_{1},\alpha_{2},\dots,\alpha_{n})} a_{1\alpha_{1}}a_{2\alpha_{2}}\dots a_{n\alpha _{n}}\det(P)" data-display="true"><code>\det(A)=\sum_{(\alpha_{1},\alpha_{2},\dots,\alpha_{n})} a_{1\alpha_{1}}a_{2\alpha_{2}}\dots a_{n\alpha _{n}}\det(P)</code></span>
@@ -114,8 +127,10 @@ excerpt: "线性代数 · Determinant - 行列式"
 由于 <span class="course-math" data-tex="\det(A)=\det(A^T)" data-display="false"><code>\det(A)=\det(A^T)</code></span> ，也可以对第 <span class="course-math" data-tex="j" data-display="false"><code>j</code></span> 列展开：
 <span class="course-math course-math-display" data-tex="\det(A)= \sum_{k=1}^n a_{kj}C_{kj}" data-display="true"><code>\det(A)= \sum_{k=1}^n a_{kj}C_{kj}</code></span>
 
+
 #### 用行列式求矩阵的逆
 {: #section-6 }
+
 
 构建代数余子式构成的矩阵 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span>，其中 <span class="course-math" data-tex="C_{ij}=(-1)^{i+j}\det(M_{ij})" data-display="false"><code>C_{ij}=(-1)^{i+j}\det(M_{ij})</code></span>。
 <span class="course-math course-math-display" data-tex="A^{-1}= \frac{C^T}{\det(A)}" data-display="true"><code>A^{-1}= \frac{C^T}{\det(A)}</code></span>
@@ -131,8 +146,10 @@ excerpt: "线性代数 · Determinant - 行列式"
 我们构造一个新的矩阵 <span class="course-math" data-tex="A&#x27;" data-display="false"><code>A&#x27;</code></span>，使得它的第 <span class="course-math" data-tex="j" data-display="false"><code>j</code></span> 行被替换为第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 行，那么 <span class="course-math" data-tex="\det(A&#x27;)=0" data-display="false"><code>\det(A&#x27;)=0</code></span>，但是又会发现上面这个 <span class="course-math" data-tex="(AC^T)_{ij}" data-display="false"><code>(AC^T)_{ij}</code></span> 恰好是 <span class="course-math" data-tex="A&#x27;" data-display="false"><code>A&#x27;</code></span> 的行列式对第 <span class="course-math" data-tex="j" data-display="false"><code>j</code></span> 行展开。故而有 <span class="course-math" data-tex="(AC^T)_{ij}=0" data-display="false"><code>(AC^T)_{ij}=0</code></span>。
 这就证明了原命题。
 
+
 #### 用行列式解方程
 {: #section-7 }
+
 
 对方程 <span class="course-math" data-tex="Ax=b" data-display="false"><code>Ax=b</code></span>，有 <span class="course-math" data-tex="x=A^{-1}b= \frac{C^T}{\det(A)}b" data-display="false"><code>x=A^{-1}b= \frac{C^T}{\det(A)}b</code></span>。
 <span class="course-math" data-tex="C^Tb" data-display="false"><code>C^Tb</code></span> 的第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 个分量为：
@@ -140,8 +157,10 @@ excerpt: "线性代数 · Determinant - 行列式"
 这可以看成把 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 列替换成 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> （设为 <span class="course-math" data-tex="B_{i}" data-display="false"><code>B_{i}</code></span>）然后将行列式按第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 行展开。
 这就是 **克莱姆法则（Cramer's Rule）：**
 <span class="course-math course-math-display" data-tex="x_{j}= \frac{\det(B_{j})}{\det(A)}" data-display="true"><code>x_{j}= \frac{\det(B_{j})}{\det(A)}</code></span>
+
 ### 用行列式求主元
 {: #section-8 }
+
 
 设第 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 个主元为 <span class="course-math" data-tex="d_{k}" data-display="false"><code>d_{k}</code></span>，有
 <span class="course-math course-math-display" data-tex="d_{k}= \frac{\det(A_{k})}{\det(A_{k-1})}" data-display="true"><code>d_{k}= \frac{\det(A_{k})}{\det(A_{k-1})}</code></span>

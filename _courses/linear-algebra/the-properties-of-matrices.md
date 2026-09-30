@@ -4,7 +4,10 @@ course_id: "linear-algebra"
 course_title: "线性代数"
 section: ""
 status: "completed"
+created_at: "2026-03-11T16:31:38+08:00"
+updated_at: "2026-04-29T17:06:49+08:00"
 reference: false
+order: 3
 layout: "course"
 permalink: "/courses/linear-algebra/the-properties-of-matrices/"
 course_page: true
@@ -15,8 +18,10 @@ excerpt: "线性代数 · The Properties of Matrices - 矩阵的性质"
 
 {% raw %}
 <a href="{% endraw %}{{ '/courses/linear-algebra/matrices-and-system-of-linear-equations/' | relative_url }}{% raw %}">Matrices and System of Linear Equations -  矩阵与线性方程组</a>
+
 ## 矩阵的逆
 {: #section-1 }
+
 
 矩阵的逆（Inverse）：方阵 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span> 的逆记作 <span class="course-math" data-tex="\mathbf{A}^{-1}" data-display="false"><code>\mathbf{A}^{-1}</code></span>，符合 <span class="course-math" data-tex="\mathbf{A}\mathbf{A}^{-1}= \mathbf{A}^{-1}\mathbf{A}=\mathbf{I}" data-display="false"><code>\mathbf{A}\mathbf{A}^{-1}= \mathbf{A}^{-1}\mathbf{A}=\mathbf{I}</code></span>。
 
@@ -36,8 +41,10 @@ excerpt: "线性代数 · The Properties of Matrices - 矩阵的性质"
 推论：矩阵可逆的条件为 <span class="course-math" data-tex="r=m=n" data-display="false"><code>r=m=n</code></span>。
 
 左右逆的最佳选择（Best Choices）<span class="course-math" data-tex="\mathbf{B}=(\mathbf{A}^T\mathbf{A})^{-1}\mathbf{A}^T, \mathbf{C}=\mathbf{A}^T(\mathbf{A}\mathbf{A}^T)^{-1}" data-display="false"><code>\mathbf{B}=(\mathbf{A}^T\mathbf{A})^{-1}\mathbf{A}^T, \mathbf{C}=\mathbf{A}^T(\mathbf{A}\mathbf{A}^T)^{-1}</code></span>。
+
 #### 高斯-约旦方法（Gauss-Jordan method）求逆
 {: #section-2 }
+
 
 <span class="course-math course-math-display" data-tex="\mathbf{A}\mathbf{B}=\mathbf{I}" data-display="true"><code>\mathbf{A}\mathbf{B}=\mathbf{I}</code></span>
 <span class="course-math course-math-display" data-tex="\implies  \mathbf{A}\begin{bmatrix}&#10;\mathbf{b}_{1} &amp; \mathbf{b}_{2} &amp; \dots &amp; \mathbf{b}_{n}&#10;\end{bmatrix}=\begin{bmatrix}&#10;\mathbf{e}_{1} &amp; \mathbf{e}_{2} &amp; \dots &amp; \mathbf{e}_{n}&#10;\end{bmatrix} \\" data-display="true"><code>\implies  \mathbf{A}\begin{bmatrix}&#10;\mathbf{b}_{1} &amp; \mathbf{b}_{2} &amp; \dots &amp; \mathbf{b}_{n}&#10;\end{bmatrix}=\begin{bmatrix}&#10;\mathbf{e}_{1} &amp; \mathbf{e}_{2} &amp; \dots &amp; \mathbf{e}_{n}&#10;\end{bmatrix} \\</code></span>
@@ -49,8 +56,10 @@ excerpt: "线性代数 · The Properties of Matrices - 矩阵的性质"
 那么右边的每 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 列就是第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 个方程组的解，于是得到 <span class="course-math" data-tex="\mathbf{A}^{-1}=\mathbf{B}" data-display="false"><code>\mathbf{A}^{-1}=\mathbf{B}</code></span>。
 另一种角度，设一系列初等行变换的复合 <span class="course-math" data-tex="\mathbf{T}" data-display="false"><code>\mathbf{T}</code></span> 使得 <span class="course-math" data-tex="\mathbf{T}\mathbf{A}=\mathbf{I}" data-display="false"><code>\mathbf{T}\mathbf{A}=\mathbf{I}</code></span>，那么 <span class="course-math" data-tex="\mathbf{B}=\mathbf{T}\mathbf{I}=\mathbf{T}=\mathbf{A}^{-1}" data-display="false"><code>\mathbf{B}=\mathbf{T}\mathbf{I}=\mathbf{T}=\mathbf{A}^{-1}</code></span>。
 
+
 #### 判断逆是否存在
 {: #section-3 }
+
 
 - <span class="course-math" data-tex="\mathbf{A}\text{ is invertible} \Leftrightarrow \mathbf{A}\text{ has a full set of pivots}" data-display="false"><code>\mathbf{A}\text{ is invertible} \Leftrightarrow \mathbf{A}\text{ has a full set of pivots}</code></span> 
  > Proof:
@@ -67,15 +76,19 @@ excerpt: "线性代数 · The Properties of Matrices - 矩阵的性质"
 - <span class="course-math" data-tex="\mathbf{A}\text{ is invertible} \Leftrightarrow\text{rank}(A)=n" data-display="false"><code>\mathbf{A}\text{ is invertible} \Leftrightarrow\text{rank}(A)=n</code></span>
 - <span class="course-math" data-tex="\mathbf{A}\text{ is invertible} \Leftrightarrow N(A)=\{ 0 \}" data-display="false"><code>\mathbf{A}\text{ is invertible} \Leftrightarrow N(A)=\{ 0 \}</code></span>
 - <span class="course-math" data-tex="\mathbf{A}\text{ is invertible} \Leftrightarrow\text{The columns/rows of A is linear independent}" data-display="false"><code>\mathbf{A}\text{ is invertible} \Leftrightarrow\text{The columns/rows of A is linear independent}</code></span>
+
 #### 求二阶矩阵的逆
 {: #section-4 }
+
 
 <span class="course-math course-math-display" data-tex="\mathbf{A}=\begin{bmatrix}&#10;a &amp; b \\&#10;c &amp; d&#10;\end{bmatrix}" data-display="true"><code>\mathbf{A}=\begin{bmatrix}&#10;a &amp; b \\&#10;c &amp; d&#10;\end{bmatrix}</code></span>
  的逆为 
  <span class="course-math course-math-display" data-tex="\mathbf{A}^{-1}=\frac{1}{\det(\mathbf{A})} \begin{bmatrix}&#10;d &amp; -b \\&#10;-c &amp; a&#10;\end{bmatrix}" data-display="true"><code>\mathbf{A}^{-1}=\frac{1}{\det(\mathbf{A})} \begin{bmatrix}&#10;d &amp; -b \\&#10;-c &amp; a&#10;\end{bmatrix}</code></span>
 
+
 #### 求三阶矩阵的逆
 {: #section-5 }
+
 <span class="course-math course-math-display" data-tex="\mathbf{A}=\begin{bmatrix}&#10;a_{11} &amp; a_{12} &amp; a_{13} \\&#10;a_{21} &amp; a_{22} &amp; a_{23} \\&#10;a_{31} &amp; a_{32} &amp; a_{33}&#10;\end{bmatrix}" data-display="true"><code>\mathbf{A}=\begin{bmatrix}&#10;a_{11} &amp; a_{12} &amp; a_{13} \\&#10;a_{21} &amp; a_{22} &amp; a_{23} \\&#10;a_{31} &amp; a_{32} &amp; a_{33}&#10;\end{bmatrix}</code></span>
 需要先构造余子式的矩阵
 <span class="course-math course-math-display" data-tex="\mathbf{M}= \begin{bmatrix}&#10;M_{11} &amp; M_{12} &amp; M_{13} \\&#10;M_{21} &amp; M_{22} &amp; M_{23} \\&#10;M_{31} &amp; M_{32} &amp; M_{33}&#10;\end{bmatrix}" data-display="true"><code>\mathbf{M}= \begin{bmatrix}&#10;M_{11} &amp; M_{12} &amp; M_{13} \\&#10;M_{21} &amp; M_{22} &amp; M_{23} \\&#10;M_{31} &amp; M_{32} &amp; M_{33}&#10;\end{bmatrix}</code></span>
@@ -88,8 +101,10 @@ excerpt: "线性代数 · The Properties of Matrices - 矩阵的性质"
 
 即 <span class="course-math" data-tex="a_{ij}&#x27;=\frac{1}{\det(\mathbf{A})}M_{ji} (-1)^{i+j}" data-display="false"><code>a_{ij}&#x27;=\frac{1}{\det(\mathbf{A})}M_{ji} (-1)^{i+j}</code></span> 。
 （证明见行列式）
+
 ## 矩阵的转置
 {: #section-6 }
+
 
 矩阵的转置（Transpose）：矩阵 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span> 的转置记作 <span class="course-math" data-tex="\mathbf{A}^T" data-display="false"><code>\mathbf{A}^T</code></span> ，其中 <span class="course-math" data-tex="a_{ij}&#x27;= a_{ji}" data-display="false"><code>a_{ij}&#x27;= a_{ji}</code></span>。相当于把行换成列，列换成行。转置的性质：
 - <span class="course-math" data-tex="(\mathbf{A}^T)^T=\mathbf{A}" data-display="false"><code>(\mathbf{A}^T)^T=\mathbf{A}</code></span>
@@ -105,8 +120,10 @@ excerpt: "线性代数 · The Properties of Matrices - 矩阵的性质"
 
 定理：若 <span class="course-math" data-tex="\mathbf{A}^T=\mathbf{A}" data-display="false"><code>\mathbf{A}^T=\mathbf{A}</code></span> 可以被在不用行交换的情况下分解为 <span class="course-math" data-tex="\mathbf{L}\mathbf{D}\mathbf{U}" data-display="false"><code>\mathbf{L}\mathbf{D}\mathbf{U}</code></span>，则有 <span class="course-math" data-tex="\mathbf{L}^T=\mathbf{U}" data-display="false"><code>\mathbf{L}^T=\mathbf{U}</code></span>。
 
+
 ## 分块矩阵
 {: #section-7 }
+
 
 使用分块矩阵（Partitioned Matrices）来思考矩阵的运算。也就是说，把矩阵分为若干块，每一块是一个小矩阵，则可以把这些小矩阵看成一个新的元素。
 
@@ -117,8 +134,10 @@ excerpt: "线性代数 · The Properties of Matrices - 矩阵的性质"
 <span class="course-math course-math-display" data-tex="\mathbf{A}\mathbf{B}=\mathbf{A}=\begin{bmatrix}\mathbf{a}_{1} \\ \mathbf{a}_{2} \\ \vdots \\\mathbf{a}_{n}\end{bmatrix}\begin{bmatrix}&#10;\mathbf{B}&#10;\end{bmatrix}&#10;=\mathbf{A}=\begin{bmatrix}\mathbf{a}_{1}\mathbf{B} \\ \mathbf{a}_{2}\mathbf{B} \\ \vdots \\\mathbf{a}_{n}\mathbf{B}\end{bmatrix}" data-display="true"><code>\mathbf{A}\mathbf{B}=\mathbf{A}=\begin{bmatrix}\mathbf{a}_{1} \\ \mathbf{a}_{2} \\ \vdots \\\mathbf{a}_{n}\end{bmatrix}\begin{bmatrix}&#10;\mathbf{B}&#10;\end{bmatrix}&#10;=\mathbf{A}=\begin{bmatrix}\mathbf{a}_{1}\mathbf{B} \\ \mathbf{a}_{2}\mathbf{B} \\ \vdots \\\mathbf{a}_{n}\mathbf{B}\end{bmatrix}</code></span>
 注意分块的矩阵尺寸要保证可乘。
 
+
 ## 矩阵的秩
 {: #section-8 }
+
 
 线性相关（Linear Dependent）：设 <span class="course-math" data-tex="\mathbf{v}_{1}, \mathbf{v}_{2},\dots \mathbf{v}_{n}\in V" data-display="false"><code>\mathbf{v}_{1}, \mathbf{v}_{2},\dots \mathbf{v}_{n}\in V</code></span>，若 <span class="course-math" data-tex="c_{1}\mathbf{v}_{1}+c_{2}\mathbf{v}_{2}+\dots+c_{n}\mathbf{v}_{n}=\mathbf{0}" data-display="false"><code>c_{1}\mathbf{v}_{1}+c_{2}\mathbf{v}_{2}+\dots+c_{n}\mathbf{v}_{n}=\mathbf{0}</code></span> 当且仅当 <span class="course-math" data-tex="c_{1}=c_{2}=\dots =c_{n}=0" data-display="false"><code>c_{1}=c_{2}=\dots =c_{n}=0</code></span>，则称这组向量线性无关。否则，称为线性相关。
 - 线性相关：存在 <span class="course-math" data-tex="c_{i}\neq 0" data-display="false"><code>c_{i}\neq 0</code></span> 使得 <span class="course-math" data-tex="c_{i}\mathbf{v}_{i}=\sum _{j\neq i} c_{j}\mathbf{v}_{j}" data-display="false"><code>c_{i}\mathbf{v}_{i}=\sum _{j\neq i} c_{j}\mathbf{v}_{j}</code></span>，即 <span class="course-math" data-tex="\mathbf{v}_{i}=\sum_{j\neq i} \frac{c_{j}}{c_{i}}\mathbf{v}_{j}" data-display="false"><code>\mathbf{v}_{i}=\sum_{j\neq i} \frac{c_{j}}{c_{i}}\mathbf{v}_{j}</code></span> ，即存在一个向量可以表示为其他向量的线性组合。

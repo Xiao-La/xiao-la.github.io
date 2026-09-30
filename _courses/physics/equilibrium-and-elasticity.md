@@ -4,7 +4,10 @@ course_id: "physics"
 course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
+created_at: "2025-11-01T15:58:57+08:00"
+updated_at: "2025-11-04T09:44:25+08:00"
 reference: false
+order: 3
 layout: "course"
 permalink: "/courses/physics/equilibrium-and-elasticity/"
 course_page: true
@@ -14,8 +17,10 @@ excerpt: "大学物理（上）/（下） · Equilibrium and Elasticity - 平衡
 ---
 
 {% raw %}
+
 ## 平衡 
 {: #section-1 }
+
 
 **平衡（equilibrium）** 状态需要运动状态不变，故而它的条件：
 1. 线动量为常数：<span class="course-math" data-tex="F_{net}=\frac{dp}{dt}=0" data-display="false"><code>F_{net}=\frac{dp}{dt}=0</code></span>。
@@ -28,8 +33,10 @@ excerpt: "大学物理（上）/（下） · Equilibrium and Elasticity - 平衡
 **质心（center of mass, com）** 指的是质量分布的平均位置。
 当物体受到的重力加速度处处相等时，它存在重心，而且和质心重合。
 
+
 ## 弹性
 {: #section-2 }
+
 
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Elasticity-1.png' | relative_url }}{% raw %}" alt="Elasticity-1" loading="lazy">
 上图展示了三种**应力（stress）**：拉伸力（tensile stress）/ 剪切力（shearing stress）/ 静水压力（液应力，hydraulic stress）

@@ -4,7 +4,10 @@ course_id: "calculus"
 course_title: "高等数学（上）/（下）"
 section: "上"
 status: "completed"
+created_at: "2025-11-18T17:40:33+08:00"
+updated_at: "2026-01-19T16:25:38+08:00"
 reference: false
+order: 5
 layout: "course"
 permalink: "/courses/calculus/complex-number/"
 course_page: true
@@ -14,12 +17,16 @@ excerpt: "高等数学（上）/（下） · Complex Number - 复数"
 ---
 
 {% raw %}
+
 ## 复数的不同表达形式
 {: #section-1 }
 
+
 <span class="course-math course-math-display" data-tex="z=a+bi=re^{i\theta}=r(\cos  \theta+i\sin\theta)" data-display="true"><code>z=a+bi=re^{i\theta}=r(\cos  \theta+i\sin\theta)</code></span>
+
 ## 单位根
 {: #section-2 }
+
 
 方程 <span class="course-math course-math-display" data-tex="z^n=1" data-display="true"><code>z^n=1</code></span>
 的根被称为 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 次单位根 (The <span class="course-math" data-tex="n\text{th}" data-display="false"><code>n\text{th}</code></span> roots of unity)。
@@ -35,8 +42,10 @@ excerpt: "高等数学（上）/（下） · Complex Number - 复数"
 <span class="course-math course-math-display" data-tex="1+z+z^2+\dots+z^{n-1}=\frac{1-z^n}{1-z}=0" data-display="true"><code>1+z+z^2+\dots+z^{n-1}=\frac{1-z^n}{1-z}=0</code></span>
 所有 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 次单位根的积：
 <span class="course-math course-math-display" data-tex="1\times z^1 \times z^{2}\times\dots\times z^{n-1}=\begin{cases} (z^{n})^{(n-1)/2}=1, &amp; \text{when n is odd} \\ (z^{n/2})^{n-1}=-1, &amp;  \text{when n is even} \end{cases}" data-display="true"><code>1\times z^1 \times z^{2}\times\dots\times z^{n-1}=\begin{cases} (z^{n})^{(n-1)/2}=1, &amp; \text{when n is odd} \\ (z^{n/2})^{n-1}=-1, &amp;  \text{when n is even} \end{cases}</code></span>
+
 ## 代数基本定理
 {: #section-3 }
+
 
 代数基本定理（Fundamental Theorem of Algebra）：
 - 每个次数为 <span class="course-math" data-tex="n\ge 1" data-display="false"><code>n\ge 1</code></span> 的复系数多项式可以完全分解为 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个一次因子：
@@ -45,8 +54,10 @@ excerpt: "高等数学（上）/（下） · Complex Number - 复数"
 - 若系数为实数，则根要么为实数，要么成共轭复数成对出现；并且总根数（按重数计）恰为次数 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span>。
 
 这里，若系数为实数，那么共轭复数成对出现，是因为 <span class="course-math" data-tex="p(z)=0\implies\overline{p(z)}= p(\bar{z})=0" data-display="false"><code>p(z)=0\implies\overline{p(z)}= p(\bar{z})=0</code></span>。
+
 ## 棣莫弗定理
 {: #section-4 }
+
 
 棣莫弗定理（De Moivre's Theorem）：
 

@@ -4,7 +4,10 @@ course_id: "physics"
 course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
+created_at: "2026-05-09T15:54:47+08:00"
+updated_at: "2026-05-29T16:52:05+08:00"
 reference: false
+order: 14
 layout: "course"
 permalink: "/courses/physics/optics/"
 course_page: true
@@ -14,8 +17,10 @@ excerpt: "大学物理（上）/（下） · Optics - 光学"
 ---
 
 {% raw %}
+
 ## 几何光学（Geometrical Optics）
 {: #section-1 }
+
 
  **光在介质中的传播**
 *   **折射率：** <span class="course-math" data-tex="n = \frac{c}{v}" data-display="false"><code>n = \frac{c}{v}</code></span> (光在介质中变慢，<span class="course-math" data-tex="n \ge 1" data-display="false"><code>n \ge 1</code></span>)
@@ -41,8 +46,10 @@ excerpt: "大学物理（上）/（下） · Optics - 光学"
     <span class="course-math course-math-display" data-tex="\theta_B = \tan^{-1}(\frac{n_b}{n_a})" data-display="true"><code>\theta_B = \tan^{-1}(\frac{n_b}{n_a})</code></span>
     *(其中 <span class="course-math" data-tex="n_a" data-display="false"><code>n_a</code></span> 为入射介质，<span class="course-math" data-tex="n_b" data-display="false"><code>n_b</code></span> 为折射介质)*
 
+
 ### 干涉 (Inference)
 {: #section-2 }
+
 
 1.  **相干波条件：** 相同频率 (<span class="course-math" data-tex="\omega" data-display="false"><code>\omega</code></span>)、相同振动方向、恒定相位差。
 2.  **光程 (Optical Path)：**
@@ -111,8 +118,10 @@ excerpt: "大学物理（上）/（下） · Optics - 光学"
 *   **从屏幕几何角度 <span class="course-math" data-tex="\theta" data-display="false"><code>\theta</code></span> 计算相位差 <span class="course-math" data-tex="\phi" data-display="false"><code>\phi</code></span>：**
     <span class="course-math course-math-display" data-tex="\phi = \frac{2\pi}{\lambda} (d \sin\theta)" data-display="true"><code>\phi = \frac{2\pi}{\lambda} (d \sin\theta)</code></span>
 
+
 ### 薄膜干涉
 {: #section-3 }
+
 
 **半波损失 (Phase Shift on Reflection)**
 判定反射光是否发生相位突变，只看一点：光是否在“更密”的介质表面“碰壁”反弹。
@@ -140,11 +149,15 @@ excerpt: "大学物理（上）/（下） · Optics - 光学"
 *   **结论：** 极薄膜在此条件下必定发生**相消干涉**（看起来是暗/黑的）。
 
 注意：上述的干涉为反射光的，若考虑透射光，那么由于能量守恒定律，反射光最弱相当于透射光最强，所以结论是相反的。
+
 ## 衍射
 {: #section-4 }
 
+
+
 ### 单缝衍射
 {: #section-5 }
+
 
 不同于双缝干涉，单缝衍射考虑的是**一个宽度为 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 的狭缝内无数次波的相互叠加**。
 *   **狭缝宽度：** <span class="course-math" data-tex="a" data-display="false"><code>a</code></span>
@@ -169,8 +182,10 @@ excerpt: "大学物理（上）/（下） · Optics - 光学"
 2.  **极窄极限 (<span class="course-math" data-tex="a \approx \lambda" data-display="false"><code>a \approx \lambda</code></span>)：** 第一暗纹在 <span class="course-math" data-tex="90^{\circ}" data-display="false"><code>90^{\circ}</code></span>，中央明纹无限宽敞，充满背后的整个空间。
 
 
+
 ### 双缝干涉+衍射
 {: #section-6 }
+
 
 理想双缝假设缝很窄；真实的双缝具有宽度 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span>，会引发单缝衍射的调制。
 
@@ -187,8 +202,10 @@ excerpt: "大学物理（上）/（下） · Optics - 光学"
         <span class="course-math course-math-display" data-tex="m_i = \frac{d}{a} m_d  \quad (m_d = 1, 2, 3 \dots)" data-display="true"><code>m_i = \frac{d}{a} m_d  \quad (m_d = 1, 2, 3 \dots)</code></span>
         *例如：若缝距是缝宽的 4 倍（<span class="course-math" data-tex="d=4a" data-display="false"><code>d=4a</code></span>），则代入 <span class="course-math" data-tex="m_d = 1, 2, 3" data-display="false"><code>m_d = 1, 2, 3</code></span> 后可得，<span class="course-math" data-tex="m_i = 4, 8, 12 \dots" data-display="false"><code>m_i = 4, 8, 12 \dots</code></span> 级的明纹会消失。*
     <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6-7.png' | relative_url }}{% raw %}" alt="Optics - 光学-7" width="290" loading="lazy">
+
 ### 圆孔衍射
 {: #section-7 }
+
 
 **圆孔衍射（Circular Aperture Diffraction）与分辨本领（Resolvability）**。
 

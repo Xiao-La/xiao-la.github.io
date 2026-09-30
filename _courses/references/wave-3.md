@@ -4,6 +4,8 @@ course_id: "references"
 course_title: "补充材料"
 section: ""
 status: "reference"
+created_at: "2025-12-03T18:46:23+08:00"
+updated_at: "2025-12-03T19:02:43+08:00"
 reference: true
 layout: "course"
 permalink: "/courses/references/wave-3/"

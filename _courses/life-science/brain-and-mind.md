@@ -4,7 +4,10 @@ course_id: "life-science"
 course_title: "生命科学概论"
 section: ""
 status: "completed"
+created_at: "2026-03-09T10:20:36+08:00"
+updated_at: "2026-03-23T10:39:17+08:00"
 reference: false
+order: 2
 layout: "course"
 permalink: "/courses/life-science/brain-and-mind/"
 course_page: true

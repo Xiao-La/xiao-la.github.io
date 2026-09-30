@@ -4,7 +4,10 @@ course_id: "logic"
 course_title: "数理逻辑导论"
 section: ""
 status: "completed"
+created_at: "2026-05-27T11:32:43+08:00"
+updated_at: "2026-06-03T11:45:38+08:00"
 reference: false
+order: 4
 layout: "course"
 permalink: "/courses/logic/program-verification/"
 course_page: true
@@ -14,8 +17,10 @@ excerpt: "数理逻辑导论 · Program Verification - 程序验证"
 ---
 
 {% raw %}
+
 ## Hoare Logic
 {: #section-1 }
+
 
 运行命令式程序（imperative program）可以描述为状态（state）的改变。
 
@@ -46,8 +51,10 @@ Total correctness = Partial correctness + Termination
 
 Program Variables / Logic Variables：因为程序中的变量会变，在 Hoare Triple 中，我们用 Fresh variable 来表示某些条件，例如：
 <span class="course-math course-math-display" data-tex="(\!&#124; x=x_{0} \land x \geq 0 &#124;\!) \; C \; (\!&#124; y=x_{0}! &#124;\!)" data-display="true"><code>(\!&#124; x=x_{0} \land x \geq 0 &#124;\!) \; C \; (\!&#124; y=x_{0}! &#124;\!)</code></span>
+
 ### Axioms and Rules
 {: #section-2 }
+
 
 要验证一个程序，需要构造一个证明序列：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Program%20Verification%20-%20%E7%A8%8B%E5%BA%8F%E9%AA%8C%E8%AF%81-1.png' | relative_url }}{% raw %}" alt="Program Verification - 程序验证-1" width="416" loading="lazy">

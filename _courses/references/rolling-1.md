@@ -4,6 +4,8 @@ course_id: "references"
 course_title: "补充材料"
 section: ""
 status: "reference"
+created_at: "2025-10-23T11:19:17+08:00"
+updated_at: "2025-10-23T11:39:14+08:00"
 reference: true
 layout: "course"
 permalink: "/courses/references/rolling-1/"

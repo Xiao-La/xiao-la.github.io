@@ -4,7 +4,10 @@ course_id: "physics"
 course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
+created_at: "2025-11-26T20:02:55+08:00"
+updated_at: "2025-12-28T09:55:51+08:00"
 reference: false
+order: 7
 layout: "course"
 permalink: "/courses/physics/longitudinal-wave/"
 course_page: true
@@ -41,11 +44,15 @@ excerpt: "大学物理（上）/（下） · Longitudinal Wave - 纵波"
 <span class="course-math course-math-display" data-tex="\beta=(10\text{dB})\log \frac{I}{I_{0}}" data-display="true"><code>\beta=(10\text{dB})\log \frac{I}{I_{0}}</code></span>
 其中 <span class="course-math" data-tex="I_{0}=10^{-12}\text{W/m}^2" data-display="false"><code>I_{0}=10^{-12}\text{W/m}^2</code></span>，约为人能听到的最小声强。
 
+
 ## 声波的干涉
 {: #section-1 }
 
+
+
 ### 路程差导致的相位差
 {: #section-2 }
+
 <span class="course-math course-math-display" data-tex="\begin{align}&#10;s(P,t)&amp;=s_{1}(x,t)+s_{2}(x,t) \\&#10;&amp;=s_{m}\cos(kx_{1}-\omega t)+s_{m}\cos(kx_{2}-\omega t) \\&#10;&amp;=2s_{m}\cos\left( \frac{k\Delta L}{2} \right)\cos(\omega t-\bar{\phi})&#10;\end{align}" data-display="true"><code>\begin{align}&#10;s(P,t)&amp;=s_{1}(x,t)+s_{2}(x,t) \\&#10;&amp;=s_{m}\cos(kx_{1}-\omega t)+s_{m}\cos(kx_{2}-\omega t) \\&#10;&amp;=2s_{m}\cos\left( \frac{k\Delta L}{2} \right)\cos(\omega t-\bar{\phi})&#10;\end{align}</code></span>
 其中 <span class="course-math" data-tex="\Delta L=&#124;x_{2}-x_{1}&#124;, \bar{\phi}=\frac{k(x_{1}+x_{2})}{2}" data-display="false"><code>\Delta L=&#124;x_{2}-x_{1}&#124;, \bar{\phi}=\frac{k(x_{1}+x_{2})}{2}</code></span> 。
 由于 <span class="course-math" data-tex="\frac{k\Delta L}{2}=\frac{\pi \Delta L}{\lambda}" data-display="false"><code>\frac{k\Delta L}{2}=\frac{\pi \Delta L}{\lambda}</code></span>，有：
@@ -53,21 +60,27 @@ excerpt: "大学物理（上）/（下） · Longitudinal Wave - 纵波"
 2. 若 <span class="course-math" data-tex="\Delta L" data-display="false"><code>\Delta L</code></span> 为半波长的奇数倍，则为相消干涉。
 
 
+
 ### 节拍
 {: #section-3 }
+
 
 两列波 <span class="course-math" data-tex="s_{1}=s_{m}\cos \omega_{1}t, s_{2}=s_{m} \cos \omega_{2}t" data-display="false"><code>s_{1}=s_{m}\cos \omega_{1}t, s_{2}=s_{m} \cos \omega_{2}t</code></span>，那么它们的叠加 <span class="course-math" data-tex="s = 2s_{m} \cos (\frac{\omega_{1}-\omega_{2}}{2}t)  \cos (\frac{\omega_{1}+\omega_{2}}{2}t)" data-display="false"><code>s = 2s_{m} \cos (\frac{\omega_{1}-\omega_{2}}{2}t)  \cos (\frac{\omega_{1}+\omega_{2}}{2}t)</code></span>
 叠加会形成这样的波形：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-7.png' | relative_url }}{% raw %}" alt="Wave-7" loading="lazy">
 <span class="course-math" data-tex="\omega_{\text{beat}}=&#124;\omega_{1}-\omega_{2}&#124;, f_{\text{beat}}=&#124;f_{1}-f_{2}&#124;" data-display="false"><code>\omega_{\text{beat}}=&#124;\omega_{1}-\omega_{2}&#124;, f_{\text{beat}}=&#124;f_{1}-f_{2}&#124;</code></span>
 
+
 ### 驻波
 {: #section-4 }
 
+
 同横波，注意考虑 Open End 和 Closed End。
+
 
 ## 多普勒效应
 {: #section-5 }
+
 
 波源（Source）的速度为 <span class="course-math" data-tex="v_{S}" data-display="false"><code>v_{S}</code></span> ，检测者（Detector）速度为 <span class="course-math" data-tex="v_{D}" data-display="false"><code>v_{D}</code></span> ，声音的速度为 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span>，则检测者感受到的声音频率为
 <span class="course-math course-math-display" data-tex="f&#x27;=f \frac{v\pm v_{D}}{v\pm v_{S}}" data-display="true"><code>f&#x27;=f \frac{v\pm v_{D}}{v\pm v_{S}}</code></span>

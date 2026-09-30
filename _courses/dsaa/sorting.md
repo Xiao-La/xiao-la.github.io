@@ -4,7 +4,10 @@ course_id: "dsaa"
 course_title: "数据结构与算法分析"
 section: ""
 status: "updating"
+created_at: "2026-09-29T16:21:34+08:00"
+updated_at: "2026-09-29T18:09:15+08:00"
 reference: false
+order: 2
 layout: "course"
 permalink: "/courses/dsaa/sorting/"
 course_page: true
@@ -15,8 +18,10 @@ excerpt: "数据结构与算法分析 · Sorting"
 
 {% raw %}
 
+
 ## 堆排序（Heap Sort）
 {: #section-1 }
+
 
 用堆这种数据结构来加速选择排序的过程。
 可以把数组对应到一个二叉树（Binary Tree）。

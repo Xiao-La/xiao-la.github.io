@@ -4,7 +4,10 @@ course_id: "probability-statistics"
 course_title: "概率与统计"
 section: ""
 status: "updating"
+created_at: "2026-07-25T14:57:40+08:00"
+updated_at: "2026-09-30T17:59:55+08:00"
 reference: false
+order: 3
 layout: "course"
 permalink: "/courses/probability-statistics/probability-distributions/"
 course_page: true
@@ -14,19 +17,25 @@ excerpt: "概率与统计 · Probability Distributions - 概率分布"
 ---
 
 {% raw %}
+
 ## 离散概率分布
 {: #section-1 }
 
+
+
 ### 伯努利分布（Bernoulli Distribution）
 {: #section-2 }
+
 
 伯努利试验（Bernoulli Trial）：只有成功和失败两种结果的试验。
 若成功概率为 <span class="course-math" data-tex="p" data-display="false"><code>p</code></span>，定义随机变量 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span>，满足 <span class="course-math" data-tex="P(X=1)=p, P(X=0)=1-p" data-display="false"><code>P(X=1)=p, P(X=0)=1-p</code></span>，那么说 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 服从伯努利分布： <span class="course-math" data-tex="X\sim\text{Bernoulli}(p)" data-display="false"><code>X\sim\text{Bernoulli}(p)</code></span>。
 - <span class="course-math" data-tex="\mathrm{E}(X)=p" data-display="false"><code>\mathrm{E}(X)=p</code></span>
 - <span class="course-math" data-tex="\mathrm{Var}(X)=p(1-p)" data-display="false"><code>\mathrm{Var}(X)=p(1-p)</code></span>
 
+
 ### 二项分布（Binomial Distribution）
 {: #section-3 }
+
 
 重复 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 次相互独立的伯努利试验（n-fold bernoulli trial），每次成功概率为 <span class="course-math" data-tex="p" data-display="false"><code>p</code></span>，则成功的次数服从二项分布，记作 <span class="course-math" data-tex="X\sim B(n,p)" data-display="false"><code>X\sim B(n,p)</code></span>（或 <span class="course-math" data-tex="X\sim\text{Binomial}(n,p)" data-display="false"><code>X\sim\text{Binomial}(n,p)</code></span>），其概率密度函数为：
 <span class="course-math course-math-display" data-tex="P(X=x)=\binom{n}{x}p^x(1-p)^{n-x}" data-display="true"><code>P(X=x)=\binom{n}{x}p^x(1-p)^{n-x}</code></span>
@@ -34,8 +43,10 @@ excerpt: "概率与统计 · Probability Distributions - 概率分布"
 - <span class="course-math" data-tex="\mathrm{E}(X)=np" data-display="false"><code>\mathrm{E}(X)=np</code></span>
 - <span class="course-math" data-tex="\mathrm{Var}(X)=np(1-p)" data-display="false"><code>\mathrm{Var}(X)=np(1-p)</code></span>
 - <span class="course-math" data-tex="\mathrm{SD}(X)=\sqrt{ np(1-p) }" data-display="false"><code>\mathrm{SD}(X)=\sqrt{ np(1-p) }</code></span>
+
 ### 几何分布（Geometric Distribution）
 {: #section-4 }
+
 
 重复相互独立的伯努利试验（概率为 <span class="course-math" data-tex="p" data-display="false"><code>p</code></span>），直到成功，把试验的次数记为随机变量 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span>，那么我们说 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 服从几何分布，记作 <span class="course-math" data-tex="X\sim\text{Geometric}(p)" data-display="false"><code>X\sim\text{Geometric}(p)</code></span>，其概率密度函数为：
 <span class="course-math course-math-display" data-tex="P(X=x)=p(1-p)^{x-1}, x=1,2,\dots" data-display="true"><code>P(X=x)=p(1-p)^{x-1}, x=1,2,\dots</code></span>
@@ -43,8 +54,10 @@ excerpt: "概率与统计 · Probability Distributions - 概率分布"
 - <span class="course-math" data-tex="\mathrm{E}(X)=\frac{1}{p}" data-display="false"><code>\mathrm{E}(X)=\frac{1}{p}</code></span>
 - <span class="course-math" data-tex="\mathrm{Var}(X)= \frac{1-p}{p^{2}}" data-display="false"><code>\mathrm{Var}(X)= \frac{1-p}{p^{2}}</code></span>
 - 无记忆性（Memoryless property）： <span class="course-math" data-tex="P(X&gt;m+n&#124;X&gt;m)=P(X&gt;n)" data-display="false"><code>P(X&gt;m+n&#124;X&gt;m)=P(X&gt;n)</code></span>。
+
 ### 泊松分布（Poisson Distribution）
 {: #section-5 }
+
 
 定义 <span class="course-math" data-tex="X\sim\text{Poisson}(\lambda)" data-display="false"><code>X\sim\text{Poisson}(\lambda)</code></span> 若它的 PMF 是：
 <span class="course-math course-math-display" data-tex="P(X=x)= \frac{\lambda^{x}}{x!}e^{-\lambda}" data-display="true"><code>P(X=x)= \frac{\lambda^{x}}{x!}e^{-\lambda}</code></span>
@@ -62,18 +75,24 @@ excerpt: "概率与统计 · Probability Distributions - 概率分布"
 <span class="course-math course-math-display" data-tex="P(X=x)=\lim_{ n \to \infty } \binom{n}{x}\left( \frac{\lambda}{n} \right)^{x}\left( 1-\frac{\lambda}{n} \right)^{n-x}= \frac{\lambda^{x}}{x!}e^{-\lambda}" data-display="true"><code>P(X=x)=\lim_{ n \to \infty } \binom{n}{x}\left( \frac{\lambda}{n} \right)^{x}\left( 1-\frac{\lambda}{n} \right)^{n-x}= \frac{\lambda^{x}}{x!}e^{-\lambda}</code></span>
 （这个极限被称为泊松定理，The Poisson Theorem）
 经验表明，当 <span class="course-math" data-tex="n&gt;100" data-display="false"><code>n&gt;100</code></span>，<span class="course-math" data-tex="p&lt;0.05" data-display="false"><code>p&lt;0.05</code></span> 时，可以用泊松分布来近似二项分布。
+
 ### 其他
 {: #section-6 }
+
 
 **超几何分布（Hypergeometric）：** <span class="course-math" data-tex="X\sim h(n,N,M)" data-display="false"><code>X\sim h(n,N,M)</code></span> 
 <span class="course-math course-math-display" data-tex="P(X=k)= \frac{\binom{M}{k}\binom{N-M}{n-k}}{\binom{M}{n}}" data-display="true"><code>P(X=k)= \frac{\binom{M}{k}\binom{N-M}{n-k}}{\binom{M}{n}}</code></span> 
 **负二项分布（Negative binomial）** <span class="course-math" data-tex="X\sim\text{Nb}(r,p)" data-display="false"><code>X\sim\text{Nb}(r,p)</code></span> 
 <span class="course-math course-math-display" data-tex="P(X=k)= \binom{k-1}{r-1} p^{r} \times (1-p)^{k-r}" data-display="true"><code>P(X=k)= \binom{k-1}{r-1} p^{r} \times (1-p)^{k-r}</code></span>
+
 ## 连续概率分布
 {: #section-7 }
 
+
+
 ### 连续均匀分布（Continuous Uniform Distribution）
 {: #section-8 }
+
 
 “选择一个 <span class="course-math" data-tex="a,b" data-display="false"><code>a,b</code></span> 之间的随机数” 可翻译为 “从 <span class="course-math" data-tex="[a,b]" data-display="false"><code>[a,b]</code></span> 上的连续均匀分布观察到一个值”。
 PDF：
@@ -85,8 +104,10 @@ CDF：
 <span class="course-math course-math-display" data-tex="\mathrm{E}(X)= \frac{a+b}{2}" data-display="true"><code>\mathrm{E}(X)= \frac{a+b}{2}</code></span>
 <span class="course-math course-math-display" data-tex="\mathrm{Var}(X)= \frac{(b-a)^{2}}{12}" data-display="true"><code>\mathrm{Var}(X)= \frac{(b-a)^{2}}{12}</code></span>
 
+
 ### 指数分布（Exponential Distribution）
 {: #section-9 }
+
 
 PDF：
 <span class="course-math course-math-display" data-tex="f(x)=\begin{cases}&#10;\lambda e^{-\lambda x}, &amp; x\geq 0, \\&#10;0, &amp; \text{otherwise}&#10;\end{cases}" data-display="true"><code>f(x)=\begin{cases}&#10;\lambda e^{-\lambda x}, &amp; x\geq 0, \\&#10;0, &amp; \text{otherwise}&#10;\end{cases}</code></span>
@@ -109,8 +130,10 @@ CDF：
 若 <span class="course-math" data-tex="X\sim \mathrm{Exp}(\lambda)" data-display="false"><code>X\sim \mathrm{Exp}(\lambda)</code></span>，那么 <span class="course-math" data-tex="T=\lceil X \rceil" data-display="false"><code>T=\lceil X \rceil</code></span> 服从 **几何分布**。这是因为：
 <span class="course-math course-math-display" data-tex="P(T=k)=P(k-1&lt;X\leq k)=F(k)-F(k-1)=e^{-\lambda (k-1)}-e^{-\lambda k}=(1-e^{-\lambda}) (e^{-\lambda})^{k-1}" data-display="true"><code>P(T=k)=P(k-1&lt;X\leq k)=F(k)-F(k-1)=e^{-\lambda (k-1)}-e^{-\lambda k}=(1-e^{-\lambda}) (e^{-\lambda})^{k-1}</code></span>
 
+
 ### 正态分布（Normal Distribution）
 {: #section-10 }
+
 
 也称为高斯分布（Gaussian Distribution）。
 <span class="course-math" data-tex="X\sim N(\mu,\sigma^{2})" data-display="false"><code>X\sim N(\mu,\sigma^{2})</code></span> PDF：

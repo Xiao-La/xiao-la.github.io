@@ -15,7 +15,6 @@
 .course-toc summary { cursor: pointer; }
 .course-toc ol { padding-left: 1.3em; }
 .course-toc li { margin: .35em 0; }
-.course-toc .toc-subheading { margin-left: 1em; font-size: .9em; }
 .course-content .course-image { height: auto; margin-top: 1em; margin-bottom: 1em; }
 .course-image-layout { display: flex; flex-wrap: wrap; gap: 1em; align-items: center; margin: 1.5em 0; }
 .course-image-layout .course-image { flex: 1 1 220px; min-width: 0; max-width: calc(50% - .5em); object-fit: contain; }

@@ -4,7 +4,10 @@ course_id: "discrete-mathematics"
 course_title: "离散数学"
 section: ""
 status: "updating"
+created_at: "2026-09-03T17:09:42+08:00"
+updated_at: "2026-09-30T19:27:56+08:00"
 reference: false
+order: 1
 layout: "course"
 permalink: "/courses/discrete-mathematics/set-and-function/"
 course_page: true
@@ -91,8 +94,10 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 - 那么，若 <span class="course-math" data-tex="s_{0}\in T" data-display="false"><code>s_{0}\in T</code></span>，则根据 <span class="course-math" data-tex="T" data-display="false"><code>T</code></span> 的定义，<span class="course-math" data-tex="s_{0}\not\in f(s_{0})=T" data-display="false"><code>s_{0}\not\in f(s_{0})=T</code></span>。若 <span class="course-math" data-tex="s_{0}\not\in T" data-display="false"><code>s_{0}\not\in T</code></span>，则 <span class="course-math" data-tex="s_{0}\not\in T=f(s_{0})" data-display="false"><code>s_{0}\not\in T=f(s_{0})</code></span>，那么根据 <span class="course-math" data-tex="T" data-display="false"><code>T</code></span> 的定义， <span class="course-math" data-tex="s_{0}\in T" data-display="false"><code>s_{0}\in T</code></span>。所以就产生了矛盾。（理发师悖论：<span class="course-math" data-tex="T" data-display="false"><code>T</code></span> 包含了所有不在自己的像里的元素。那么， <span class="course-math" data-tex="T" data-display="false"><code>T</code></span> 的原像在不在 <span class="course-math" data-tex="T" data-display="false"><code>T</code></span> 里？）
 
 
+
 ## 函数
 {: #section-1 }
+
 
 定义函数（function）：两个集合 <span class="course-math" data-tex="A,B" data-display="false"><code>A,B</code></span> ，则 <span class="course-math" data-tex="f:A\to B" data-display="false"><code>f:A\to B</code></span> 表示把 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 中的每个元素对应到 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 中的恰好一个元素。
 - 设 <span class="course-math" data-tex="f: A\to B" data-display="false"><code>f: A\to B</code></span> 是一个函数，则 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 称为 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 的定义域（Domain），<span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 称为 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 的陪域（Codomain），也称 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 将 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 映射到 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span>。
@@ -115,15 +120,19 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 定义一个函数是可计算的（Computable）：存在一个计算机程序可以找到函数的值。
 - 不是所有函数都是可计算的。这是因为，计算机程序的集合是可数无穷的；而函数的集合是不可数无穷的。
 
+
 ### 一些重要函数
 {: #section-2 }
+
 
 上/下取整函数 <span class="course-math" data-tex="\lceil x \rceil,\lfloor x \rfloor" data-display="false"><code>\lceil x \rceil,\lfloor x \rfloor</code></span>
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-4.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论-4" width="353" loading="lazy">
 证明取整函数相关的式子考虑拆 <span class="course-math" data-tex="x=\widetilde{x}+a" data-display="false"><code>x=\widetilde{x}+a</code></span> 其中 <span class="course-math" data-tex="\widetilde{x}" data-display="false"><code>\widetilde{x}</code></span> 为整数部分。
 
+
 ## 序列 (Sequence)
 {: #section-3 }
+
 
 序列（Sequence）的定义：一个函数，把整数的子集（通常是  <span class="course-math" data-tex="\{ 0,1,2,\dots \}" data-display="false"><code>\{ 0,1,2,\dots \}</code></span> 或 <span class="course-math" data-tex="\{ 1,2,3,\dots \}" data-display="false"><code>\{ 1,2,3,\dots \}</code></span>）映射到集合 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span>。用 <span class="course-math" data-tex="a_{n}" data-display="false"><code>a_{n}</code></span> 来表示整数 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 的像。用 <span class="course-math" data-tex="\{ a_{n} \}" data-display="false"><code>\{ a_{n} \}</code></span>  表示有序列表 <span class="course-math" data-tex="a_{1},a_{2},\dots" data-display="false"><code>a_{1},a_{2},\dots</code></span>。
 
@@ -132,8 +141,10 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 
 序列也可以用递归（Recursion）定义，例如 <span class="course-math" data-tex="f_{n}=f_{n-1}+f_{n-2}" data-display="false"><code>f_{n}=f_{n-1}+f_{n-2}</code></span> (Fibonacci Sequence)。
 
+
 ### 和式（Summations）
 {: #section-4 }
+
 
 <span class="course-math" data-tex="\sum_{j=m}^n a_{j}=a_{m}+a_{m+1}+\dots+a_{n}" data-display="false"><code>\sum_{j=m}^n a_{j}=a_{m}+a_{m+1}+\dots+a_{n}</code></span>. 其中 <span class="course-math" data-tex="m" data-display="false"><code>m</code></span> 是 Lower Limit，<span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 是 Upper Limit。
 - 和式具有线性性（Linearity）：

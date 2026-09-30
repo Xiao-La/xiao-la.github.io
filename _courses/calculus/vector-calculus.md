@@ -4,7 +4,10 @@ course_id: "calculus"
 course_title: "高等数学（上）/（下）"
 section: "下"
 status: "completed"
+created_at: "2026-05-19T17:43:41+08:00"
+updated_at: "2026-06-06T20:53:11+08:00"
 reference: false
+order: 12
 layout: "course"
 permalink: "/courses/calculus/vector-calculus/"
 course_page: true
@@ -16,8 +19,10 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 {% raw %}
 
 
+
 ## 线积分与向量场
 {: #section-1 }
+
 
 线积分（Line Integral）：沿着某条曲线 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 做函数 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 的积分：
 <span class="course-math course-math-display" data-tex="\int_{C}fds" data-display="true"><code>\int_{C}fds</code></span>
@@ -84,8 +89,10 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 我们令 <span class="course-math" data-tex="M=\frac{1}{2}x,N=\frac{1}{2}y" data-display="false"><code>M=\frac{1}{2}x,N=\frac{1}{2}y</code></span>，那么某个区域的面积有这样的计算公式
 <span class="course-math course-math-display" data-tex="A=\iint_{R} dA=\frac{1}{2}\oint_{C}xdy-ydx" data-display="true"><code>A=\iint_{R} dA=\frac{1}{2}\oint_{C}xdy-ydx</code></span>
 
+
 ## 面积分
 {: #section-2 }
+
 
 
 沿着某个曲面做积分，由于曲面有两个自由度，其参数化需要两个变元，曲面的参数方程可以写成：
@@ -142,8 +149,10 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 
 类似于之前的多重积分，还可以求曲面的质量（<span class="course-math" data-tex="\iint \delta d\sigma" data-display="false"><code>\iint \delta d\sigma</code></span>）和质心/转动惯量等。
 
+
 ### 斯托克斯定理
 {: #section-3 }
+
 
 **斯托克斯定理（Stokes Theorem）：** 流量 - 旋度。
 - 定义在一个场 <span class="course-math" data-tex="\mathbf{F}" data-display="false"><code>\mathbf{F}</code></span> 中某点的旋度（Curl）为
@@ -177,8 +186,10 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 4. **区域内处处无旋：<span class="course-math" data-tex="\nabla \times \mathbf{F} = \mathbf{0}" data-display="false"><code>\nabla \times \mathbf{F} = \mathbf{0}</code></span>**。
 
 
+
 ### 散度定理
 {: #section-4 }
+
 
 > 1. 曲面 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 必须是一个**分段平滑 (Piecewise smooth)** 的**闭合曲面 (Closed Surface)**（比如完整的球面、立方体表面、圆柱体含上下底面）。它包围着一个三维立体区域 <span class="course-math" data-tex="D" data-display="false"><code>D</code></span>。
 > 2. 法向量 <span class="course-math" data-tex="\mathbf{n}" data-display="false"><code>\mathbf{n}</code></span> 必须是**向外定向的单位法向量 (Outward unit normal vector)**。
@@ -199,8 +210,10 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 “旋度场 <span class="course-math" data-tex="\nabla \times \mathbf{F}" data-display="false"><code>\nabla \times \mathbf{F}</code></span> 必定无源（<span class="course-math" data-tex="\nabla \cdot (\nabla \times \mathbf{F}) = 0" data-display="false"><code>\nabla \cdot (\nabla \times \mathbf{F}) = 0</code></span>）”
 
 （考点：对于一个场 <span class="course-math" data-tex="\mathbf{G}" data-display="false"><code>\mathbf{G}</code></span>，是否存在某个向量场 <span class="course-math" data-tex="\mathbf{F}" data-display="false"><code>\mathbf{F}</code></span>，使得 <span class="course-math" data-tex="\mathbf{G} = \nabla \times\mathbf{F}" data-display="false"><code>\mathbf{G} = \nabla \times\mathbf{F}</code></span>？只需要去算算 <span class="course-math" data-tex="\nabla \cdot \mathbf{G}" data-display="false"><code>\nabla \cdot \mathbf{G}</code></span>，只要它不为零，就不可能存在 <span class="course-math" data-tex="\mathbf{F}" data-display="false"><code>\mathbf{F}</code></span>）。
+
 ### 总结
 {: #section-5 }
+
 
 
 | **定理名称**                                                  | **维度与几何体**                               | **内部积分 (区域上的“导数”累积)**                                                                                                      | **=**   | **边界积分 (边界上的“原函数”表现)**                                                                                         |

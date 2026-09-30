@@ -5,14 +5,17 @@
   if (!content) return;
 
   var toc = document.querySelector('.course-toc');
-  var headings = content.querySelectorAll('h1, h2, h3, h4');
+  var headings = content.querySelectorAll('h1, h2, h3, h4, h5, h6');
+  var firstLevel = headings.length ? Math.min.apply(null, Array.from(headings, function (heading) {
+    return Number(heading.tagName.slice(1));
+  })) : 1;
   headings.forEach(function (heading, index) {
     if (!heading.id) heading.id = 'section-' + (index + 1);
     var item = document.createElement('li');
     var link = document.createElement('a');
     link.href = '#' + heading.id;
     link.textContent = heading.textContent;
-    if (/H[34]/.test(heading.tagName)) item.className = 'toc-subheading';
+    item.style.marginLeft = (Number(heading.tagName.slice(1)) - firstLevel) + 'em';
     item.appendChild(link);
     toc.querySelector('ol').appendChild(item);
   });

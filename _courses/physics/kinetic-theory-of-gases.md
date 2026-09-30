@@ -4,7 +4,10 @@ course_id: "physics"
 course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
+created_at: "2025-12-20T17:42:17+08:00"
+updated_at: "2025-12-24T19:38:16+08:00"
 reference: false
+order: 9
 layout: "course"
 permalink: "/courses/physics/kinetic-theory-of-gases/"
 course_page: true
@@ -25,8 +28,10 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 <span class="course-math course-math-display" data-tex="pV=nRT=NkT" data-display="true"><code>pV=nRT=NkT</code></span>
 其中 <span class="course-math" data-tex="k=1.38\times {10}^{23} \text{J/K}" data-display="false"><code>k=1.38\times {10}^{23} \text{J/K}</code></span> 为玻尔兹曼常数，<span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 为气体常数，它们之间满足 <span class="course-math" data-tex="kN_{A}=R" data-display="false"><code>kN_{A}=R</code></span>。
 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 在数值上等于 <span class="course-math" data-tex="8.31" data-display="false"><code>8.31</code></span>。
+
 ### 理想气体的分子速率分布
 {: #section-1 }
+
 
 理想气体的均方根（Root mean square）速度：
 <span class="course-math course-math-display" data-tex="v_{\text{rms}}= \sqrt{ \frac{3RT}{M} }" data-display="true"><code>v_{\text{rms}}= \sqrt{ \frac{3RT}{M} }</code></span>
@@ -41,8 +46,10 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 2. 均方根速率（Root-Mean-Square Speed） <span class="course-math" data-tex="v_{\text{rms}}=\sqrt{ \frac{3RT}{M} }" data-display="false"><code>v_{\text{rms}}=\sqrt{ \frac{3RT}{M} }</code></span>
 3. 最可几速率 (Most Probable Speed) <span class="course-math" data-tex="v_{P}=\sqrt{ \frac{2RT}{M} }" data-display="false"><code>v_{P}=\sqrt{ \frac{2RT}{M} }</code></span>
 
+
 ### 理想气体之间的碰撞
 {: #section-2 }
+
 
 <span class="course-math" data-tex="\Delta t" data-display="false"><code>\Delta t</code></span> 时间内一个气体分子会走过 <span class="course-math" data-tex="L=v_{\text{avg}}\Delta t" data-display="false"><code>L=v_{\text{avg}}\Delta t</code></span>，会发生的碰撞次数为 <span class="course-math" data-tex="N_{\text{col}}=(N / V) (\pi d^2 )v_{\text{rel}} \Delta t" data-display="false"><code>N_{\text{col}}=(N / V) (\pi d^2 )v_{\text{rel}} \Delta t</code></span>。
 可以证明 <span class="course-math" data-tex="v_{\text{rel}}=\sqrt{ 2 } v_{\text{avg}}" data-display="false"><code>v_{\text{rel}}=\sqrt{ 2 } v_{\text{avg}}</code></span>。
@@ -53,14 +60,18 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 <span class="course-math course-math-display" data-tex="t=\frac{\lambda}{v_{\text{avg}}}" data-display="true"><code>t=\frac{\lambda}{v_{\text{avg}}}</code></span>
 碰撞频率（Collision Rate） <span class="course-math" data-tex="f=\frac{1}{t}=\frac{v_{\text{avg}}}{\lambda}" data-display="false"><code>f=\frac{1}{t}=\frac{v_{\text{avg}}}{\lambda}</code></span>
 
+
 ### 摩尔热容
 {: #section-3 }
+
 
 摩尔热容（Molar Specific Heats） 指的是每摩尔气体分子的热容量。
 摩尔热容是路径依赖的。对于恒容过程有恒容摩尔热容 <span class="course-math" data-tex="C_{v}" data-display="false"><code>C_{v}</code></span>，对于恒压过程有恒压摩尔热容 <span class="course-math" data-tex="C_{P}" data-display="false"><code>C_{P}</code></span>。
 那么有：
+
 #### 恒容 
 {: #section-4 }
+
   <span class="course-math course-math-display" data-tex="Q=nC_{v} \Delta T" data-display="true"><code>Q=nC_{v} \Delta T</code></span>
 由于 <span class="course-math" data-tex="W=0" data-display="false"><code>W=0</code></span>，有
 
@@ -72,8 +83,10 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 <span class="course-math course-math-display" data-tex="E_{\text{int}}=NK_{\text{avg}}=N \frac{3}{2}kT=\frac{3}{2}nRT" data-display="true"><code>E_{\text{int}}=NK_{\text{avg}}=N \frac{3}{2}kT=\frac{3}{2}nRT</code></span>
 对比得 <span class="course-math" data-tex="C_{v}=\frac{3}{2}R" data-display="false"><code>C_{v}=\frac{3}{2}R</code></span>。
 
+
 #### 恒压
 {: #section-5 }
+
 
 <span class="course-math course-math-display" data-tex="Q=nC_{p}\Delta T" data-display="true"><code>Q=nC_{p}\Delta T</code></span>
 考虑到 <span class="course-math" data-tex="p" data-display="false"><code>p</code></span> 为常数，有
@@ -84,8 +97,10 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 <span class="course-math course-math-display" data-tex="\Delta E_{\text{int}}=nC_{v} \Delta T" data-display="true"><code>\Delta E_{\text{int}}=nC_{v} \Delta T</code></span>
 那么可以导出理想气体的一个重要属性：
 <span class="course-math course-math-display" data-tex="C_{P}=C_{v}+R" data-display="true"><code>C_{P}=C_{v}+R</code></span>
+
 #### 多原子分子的情况
 {: #section-6 }
+
 既要考虑平动动能，又要考虑振动动能和转动动能。
 
 <span class="course-math" data-tex="N" data-display="false"><code>N</code></span> 原子气体分子：
@@ -103,31 +118,41 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Gas-Kinetics-1.png' | relative_url }}{% raw %}" alt="Gas-Kinetics-1" loading="lazy">
 基于**能量均分定理**，可通过自由度的比例算出动能大小，例如对于双原子分子，平动动能为 <span class="course-math" data-tex="\frac{3}{5}E_{\text{int}}" data-display="false"><code>\frac{3}{5}E_{\text{int}}</code></span>。
 
+
 ### 热力学过程计算
 {: #section-7 }
+
+
 
 #### 恒温 (Isothermic)
 {: #section-8 }
 
+
 <span class="course-math course-math-display" data-tex="W=\int_{V_{1}}^{V_{2}} pdV=\int_{V_{1}}^{V_{2}} \frac{nRT}{V}dV=nRT\ln \frac{V_{2}}{V_{1}}" data-display="true"><code>W=\int_{V_{1}}^{V_{2}} pdV=\int_{V_{1}}^{V_{2}} \frac{nRT}{V}dV=nRT\ln \frac{V_{2}}{V_{1}}</code></span>
 由于过程等温，<span class="course-math" data-tex="\Delta E_{\text{int}}=0" data-display="false"><code>\Delta E_{\text{int}}=0</code></span>，从而可以推出 <span class="course-math" data-tex="Q" data-display="false"><code>Q</code></span> 的值。
 
+
 #### 恒容（Isochoric）
 {: #section-9 }
+
 
 <span class="course-math course-math-display" data-tex="W=0" data-display="true"><code>W=0</code></span>
 <span class="course-math course-math-display" data-tex="Q=nC_{v}\Delta T = \left( \frac{C_{v}}{R} \right)V \Delta p" data-display="true"><code>Q=nC_{v}\Delta T = \left( \frac{C_{v}}{R} \right)V \Delta p</code></span>
 也就是说 <span class="course-math" data-tex="\Delta E_{\text{int}}= (C_{v} / R) V\Delta p" data-display="false"><code>\Delta E_{\text{int}}= (C_{v} / R) V\Delta p</code></span>。
 
+
 #### 恒压（Isobaric）
 {: #section-10 }
+
 
 <span class="course-math course-math-display" data-tex="W=\int p dV = p \int dV=p\Delta V=nR\Delta T" data-display="true"><code>W=\int p dV = p \int dV=p\Delta V=nR\Delta T</code></span>
 <span class="course-math course-math-display" data-tex="Q=nC_{p}\Delta T= (\frac{C_{p}}{R}) p\Delta V" data-display="true"><code>Q=nC_{p}\Delta T= (\frac{C_{p}}{R}) p\Delta V</code></span>
 从而有
 <span class="course-math course-math-display" data-tex="\Delta E_{\text{int}}=Q-W=\left( \frac{C_{v}}{R} \right)p\Delta V=nC_{v}\Delta T" data-display="true"><code>\Delta E_{\text{int}}=Q-W=\left( \frac{C_{v}}{R} \right)p\Delta V=nC_{v}\Delta T</code></span> 
+
 #### 绝热（Adiabatic）
 {: #section-11 }
+
 <span class="course-math course-math-display" data-tex="Q=0" data-display="true"><code>Q=0</code></span>
 <span class="course-math course-math-display" data-tex="W=-\Delta E_{\text{int}}=-nC_{v}\Delta T=\frac{C_{v}}{R}(p_{i}V_{i}-p_{f}V_{f})" data-display="true"><code>W=-\Delta E_{\text{int}}=-nC_{v}\Delta T=\frac{C_{v}}{R}(p_{i}V_{i}-p_{f}V_{f})</code></span>
 绝热过程的过程方程为
@@ -136,8 +161,10 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 <span class="course-math course-math-display" data-tex="TV^{\gamma-1}=1" data-display="true"><code>TV^{\gamma-1}=1</code></span>
 其中 <span class="course-math" data-tex="\gamma=\frac{C_{p}}{C_{v}}&gt;1" data-display="false"><code>\gamma=\frac{C_{p}}{C_{v}}&gt;1</code></span> ，那么绝热过程的曲线比等温过程的曲线更陡峭。
 
+
 #### 自由膨胀（Free Expansion）
 {: #section-12 }
+
 <span class="course-math course-math-display" data-tex="W=0,Q=0, E_{\text{int}}=0" data-display="true"><code>W=0,Q=0, E_{\text{int}}=0</code></span>
 那么 <span class="course-math" data-tex="\Delta T=0, \Delta(pV)=0" data-display="false"><code>\Delta T=0, \Delta(pV)=0</code></span>。
 {% endraw %}

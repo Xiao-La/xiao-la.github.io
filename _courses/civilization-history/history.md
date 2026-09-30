@@ -4,7 +4,10 @@ course_id: "civilization-history"
 course_title: "科学与文明史概论"
 section: ""
 status: "completed"
+created_at: "2026-03-03T12:07:59+08:00"
+updated_at: "2026-05-26T11:07:02+08:00"
 reference: false
+order: 1
 layout: "course"
 permalink: "/courses/civilization-history/history/"
 course_page: true

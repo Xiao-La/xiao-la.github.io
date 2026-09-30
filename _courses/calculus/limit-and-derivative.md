@@ -4,7 +4,10 @@ course_id: "calculus"
 course_title: "高等数学（上）/（下）"
 section: "上"
 status: "completed"
+created_at: "2025-10-26T18:15:02+08:00"
+updated_at: "2026-03-26T18:28:11+08:00"
 reference: false
+order: 1
 layout: "course"
 permalink: "/courses/calculus/limit-and-derivative/"
 course_page: true
@@ -15,8 +18,10 @@ excerpt: "高等数学（上）/（下） · Limit and Derivative - 极限与导
 
 {% raw %}
 
+
 ## 概念与定义
 {: #section-1 }
+
 
 函数连续（Continuous）的定义： <span class="course-math" data-tex="\lim_{ x \to c }f(x)=f(c)" data-display="false"><code>\lim_{ x \to c }f(x)=f(c)</code></span>
 
@@ -38,8 +43,10 @@ Concave Up 和 Concave Down：<span class="course-math" data-tex="f&#x27;&#x27;(
 
 大 O 记号（big-oh Notation）： <span class="course-math" data-tex="f=O(g)" data-display="false"><code>f=O(g)</code></span>（“<span class="course-math" data-tex="f" data-display="false"><code>f</code></span> is big-oh of <span class="course-math" data-tex="g" data-display="false"><code>g</code></span>”），当的阶小于或等于 <span class="course-math" data-tex="g" data-display="false"><code>g</code></span>  的阶，即 <span class="course-math" data-tex="\lim\limits_{x\to\infty}\frac{f(x)}{g(x)}\le M" data-display="false"><code>\lim\limits_{x\to\infty}\frac{f(x)}{g(x)}\le M</code></span>
 
+
 ## 定理
 {: #section-2 }
+
 
 - **夹逼定理（The Sandwich Theorem）**：
   - 适用条件：存在 <span class="course-math" data-tex="a\in\mathbb{R}" data-display="false"><code>a\in\mathbb{R}</code></span>，在 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 的某去心邻域内有
@@ -85,8 +92,10 @@ Concave Up 和 Concave Down：<span class="course-math" data-tex="f&#x27;&#x27;(
     存在（有限或为 <span class="course-math" data-tex="\pm\infty" data-display="false"><code>\pm\infty</code></span>）。
   - 结论：
     <span class="course-math course-math-display" data-tex="\lim_{x\to a}\frac{f(x)}{g(x)} \;=\; \lim_{x\to a}\frac{f&#x27;(x)}{g&#x27;(x)}." data-display="true"><code>\lim_{x\to a}\frac{f(x)}{g(x)} \;=\; \lim_{x\to a}\frac{f&#x27;(x)}{g&#x27;(x)}.</code></span>
+
 ## 经典反例
 {: #section-3 }
+
 
 1. <span class="course-math" data-tex="f(x)=\begin{cases}x^2\sin \left( \frac{1}{x} \right) &amp; x\neq 0 \\ 0 &amp; x=0\end{cases}" data-display="false"><code>f(x)=\begin{cases}x^2\sin \left( \frac{1}{x} \right) &amp; x\neq 0 \\ 0 &amp; x=0\end{cases}</code></span>
 	<span class="course-math" data-tex="f(x)" data-display="false"><code>f(x)</code></span> 连续且处处可导，但 <span class="course-math" data-tex="f&#x27;(x)" data-display="false"><code>f&#x27;(x)</code></span> 在 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 处不连续，因为 <span class="course-math" data-tex="\lim_{ x \to 0 }f&#x27;(x)" data-display="false"><code>\lim_{ x \to 0 }f&#x27;(x)</code></span> 不存在。
@@ -95,8 +104,10 @@ Concave Up 和 Concave Down：<span class="course-math" data-tex="f&#x27;&#x27;(
 2.  <span class="course-math" data-tex="f(x)=\begin{cases}1 &amp; x\neq 0 \\ 0 &amp; x=0\end{cases}" data-display="false"><code>f(x)=\begin{cases}1 &amp; x\neq 0 \\ 0 &amp; x=0\end{cases}</code></span>
 	和第 1 条类似但稍弱一些，说明 <span class="course-math" data-tex="f&#x27;(0)" data-display="false"><code>f&#x27;(0)</code></span> 和 <span class="course-math" data-tex="\lim_{ x \to 0 }f&#x27;(x)" data-display="false"><code>\lim_{ x \to 0 }f&#x27;(x)</code></span> 不是一回事。
 
+
 ## 杂类
 {: #section-4 }
+
 
 **"函数在 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 处连续" 是 "函数在 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 处可导" 的必要不充分条件。**
 
@@ -117,8 +128,10 @@ Concave Up 和 Concave Down：<span class="course-math" data-tex="f&#x27;&#x27;(
 
 对**向量值函数（Vector-Valued Functions）** 求导：只需对向量的各组成部分分别求导。
 
+
 ## 泰勒公式
 {: #section-5 }
+
 
 若函数 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在包含 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 的开区间 <span class="course-math" data-tex="I" data-display="false"><code>I</code></span> 上存在各阶导数，则对任意正整数 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 及任意 <span class="course-math" data-tex="x\in I" data-display="false"><code>x\in I</code></span>，有泰勒展开
 

@@ -4,7 +4,10 @@ course_id: "calculus"
 course_title: "高等数学（上）/（下）"
 section: "上"
 status: "completed"
+created_at: "2025-10-28T17:03:23+08:00"
+updated_at: "2026-03-03T16:38:22+08:00"
 reference: false
+order: 2
 layout: "course"
 permalink: "/courses/calculus/antiderivative-and-integral/"
 course_page: true
@@ -15,8 +18,10 @@ excerpt: "高等数学（上）/（下） · Antiderivative and Integral - 积�
 
 {% raw %}
 前置： <a href="{% endraw %}{{ '/courses/calculus/limit-and-derivative/' | relative_url }}{% raw %}">Limit and Derivative - 极限与导数</a>
+
 ## 概念与定义
 {: #section-1 }
+
 
 定积分的定义：对黎曼和 <span class="course-math" data-tex="\sum^{n}_{i=1}f\left( a+ \frac{b-a}{n} i \right) \times \frac{b-a}{n}" data-display="false"><code>\sum^{n}_{i=1}f\left( a+ \frac{b-a}{n} i \right) \times \frac{b-a}{n}</code></span> 取极限。
 **Lower / Upper Sum**：取区间的最小值/最大值为代表做黎曼和。
@@ -26,8 +31,10 @@ excerpt: "高等数学（上）/（下） · Antiderivative and Integral - 积�
 1. Type 1： <span class="course-math" data-tex="\int_{b}^{\infty}ydx=\lim_{ a \to \infty } \int _b^a  ydx" data-display="false"><code>\int_{b}^{\infty}ydx=\lim_{ a \to \infty } \int _b^a  ydx</code></span>
 2. Type 2：定义在 <span class="course-math" data-tex="\left [ b,a \right)" data-display="false"><code>\left [ b,a \right)</code></span> 上的函数 <span class="course-math" data-tex="y(x)" data-display="false"><code>y(x)</code></span> ， <span class="course-math" data-tex="\int_{b}^a ydx= \lim_{ c \to a^- } \int_{b}^c ydx" data-display="false"><code>\int_{b}^a ydx= \lim_{ c \to a^- } \int_{b}^c ydx</code></span>
 
+
 ## 定理
 {: #section-2 }
+
 
 - 积分中值定理（First Mean Value Theorem for Integrals）：
   - 适用条件：<span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在 <span class="course-math" data-tex="[a,b]" data-display="false"><code>[a,b]</code></span> 上连续。
@@ -49,8 +56,10 @@ excerpt: "高等数学（上）/（下） · Antiderivative and Integral - 积�
   - 结论：
     <span class="course-math course-math-display" data-tex="\frac{d}{dx}\int_{u(x)}^{v(x)} f(t)\,dt&#10;    = f\!\big(v(x)\big)\,v&#x27;(x) \;-\; f\!\big(u(x)\big)\,u&#x27;(x)." data-display="true"><code>\frac{d}{dx}\int_{u(x)}^{v(x)} f(t)\,dt&#10;    = f\!\big(v(x)\big)\,v&#x27;(x) \;-\; f\!\big(u(x)\big)\,u&#x27;(x).</code></span>
 
+
 ## 判断反常积分敛散性
 {: #section-3 }
+
 
 1. 对于可积函数，积出来之后根据反常积分的定义，判断极限是否存在即可。
 2. 若其恒小于一个收敛的反常积分，则该积分也收敛。
@@ -60,8 +69,10 @@ excerpt: "高等数学（上）/（下） · Antiderivative and Integral - 积�
 5. 特例：
    <span class="course-math" data-tex="\int_{0}^t \frac{1}{x^p}dx" data-display="false"><code>\int_{0}^t \frac{1}{x^p}dx</code></span> 收敛当且仅当  <span class="course-math" data-tex="p&lt;1" data-display="false"><code>p&lt;1</code></span>；<span class="course-math" data-tex="\int_{t}^{\infty} \frac{1}{x^p}dx" data-display="false"><code>\int_{t}^{\infty} \frac{1}{x^p}dx</code></span> 收敛当且仅当 <span class="course-math" data-tex="p&gt;1" data-display="false"><code>p&gt;1</code></span>。
 
+
 ## 积分应用
 {: #section-4 }
+
 
 求体积
 - Washer Method: 对截面进行积分 <span class="course-math" data-tex="V=\int \text{截面面积}(x)dx" data-display="false"><code>V=\int \text{截面面积}(x)dx</code></span>

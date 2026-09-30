@@ -4,7 +4,10 @@ course_id: "calculus"
 course_title: "高等数学（上）/（下）"
 section: "下"
 status: "completed"
+created_at: "2026-04-07T16:57:39+08:00"
+updated_at: "2026-06-06T16:57:04+08:00"
 reference: false
+order: 10
 layout: "course"
 permalink: "/courses/calculus/partial-derivatives/"
 course_page: true
@@ -15,11 +18,15 @@ excerpt: "高等数学（上）/（下） · Partial Derivatives -  偏导数"
 
 {% raw %}
 
+
 ## 定义与概念
 {: #section-1 }
 
+
+
 ### 多元函数及其极限
 {: #section-2 }
+
 
 实值函数（Real-valued Function）<span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 将 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 元组 <span class="course-math" data-tex="(x_{1},x_{2},\dots,x_{n})" data-display="false"><code>(x_{1},x_{2},\dots,x_{n})</code></span> 映射到一个实数 <span class="course-math" data-tex="w" data-display="false"><code>w</code></span>。称 <span class="course-math" data-tex="w" data-display="false"><code>w</code></span> 为因变量/输入变量（Dependent Variable/Output Variable），<span class="course-math" data-tex="x_{1},x_{2},\dots,x_{n}" data-display="false"><code>x_{1},x_{2},\dots,x_{n}</code></span> 为自变量/输出变量（Independent Variables/Input Variables）。
 
@@ -44,8 +51,10 @@ excerpt: "高等数学（上）/（下） · Partial Derivatives -  偏导数"
 
 极坐标代换：当出现 <span class="course-math" data-tex="x^{2}+y^{2}" data-display="false"><code>x^{2}+y^{2}</code></span>，或分子次数大于分母次数时，或想要证明极限为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 时，考虑令 <span class="course-math" data-tex="x=r\cos\theta,y=r\sin\theta" data-display="false"><code>x=r\cos\theta,y=r\sin\theta</code></span>，则 <span class="course-math" data-tex="\lim_{ (x,y) \to (0,0) }f(x,y)=\lim_{ r \to 0 }f(r,\theta)" data-display="false"><code>\lim_{ (x,y) \to (0,0) }f(x,y)=\lim_{ r \to 0 }f(r,\theta)</code></span>。
 - 注意，这里不能简单地把 <span class="course-math" data-tex="\theta" data-display="false"><code>\theta</code></span> 视为常数然后求 <span class="course-math" data-tex="r\to 0" data-display="false"><code>r\to 0</code></span> 处的极限，因为这样相当于只走直线路径 <span class="course-math" data-tex="y=\tan\theta" data-display="false"><code>y=\tan\theta</code></span>。可以先猜测极限为 <span class="course-math" data-tex="L" data-display="false"><code>L</code></span>，然后再用 <span class="course-math" data-tex="\varepsilon-\delta" data-display="false"><code>\varepsilon-\delta</code></span> 语言严格证明 <span class="course-math" data-tex="\forall\varepsilon&gt;0, \exists \delta&gt;0,s.t." data-display="false"><code>\forall\varepsilon&gt;0, \exists \delta&gt;0,s.t.</code></span> <span class="course-math course-math-display" data-tex="&#124;r&#124;&lt;\delta \implies&#124;f(r,\theta)-L&#124;&lt;\varepsilon" data-display="true"><code>&#124;r&#124;&lt;\delta \implies&#124;f(r,\theta)-L&#124;&lt;\varepsilon</code></span>
+
 ### 求二元多项式之比的极限
 {: #section-3 }
+
 
 面对 <span class="course-math" data-tex="\lim_{(x,y)\to(0,0)} \frac{P(x,y)}{Q(x,y)}" data-display="false"><code>\lim_{(x,y)\to(0,0)} \frac{P(x,y)}{Q(x,y)}</code></span>：
 
@@ -70,8 +79,10 @@ excerpt: "高等数学（上）/（下） · Partial Derivatives -  偏导数"
 
 **特例：分母非正定**（分母为 0 不对应 <span class="course-math" data-tex="x=0,y=0" data-display="false"><code>x=0,y=0</code></span>，而对一整个曲线成立），那么极限大概率不存在，因为只要贴近这个曲线再加上一个高阶无穷小，就能使极限不存在。例如 <span class="course-math" data-tex="\frac{x^{3}+y^{3}}{x^{2}+y}" data-display="false"><code>\frac{x^{3}+y^{3}}{x^{2}+y}</code></span>，只要令 <span class="course-math" data-tex="y=-x^{2}+x^{3}" data-display="false"><code>y=-x^{2}+x^{3}</code></span>，则变成 <span class="course-math" data-tex="\frac{x^{3}+(-x^{2}+x^{3})^{3}}{x^{3}}\to 1" data-display="false"><code>\frac{x^{3}+(-x^{2}+x^{3})^{3}}{x^{3}}\to 1</code></span>, 令 <span class="course-math" data-tex="y=-x^2+x^4" data-display="false"><code>y=-x^2+x^4</code></span>  就趋于无穷。
 
+
 ### 连续与可微
 {: #section-4 }
+
 
 复合函数的连续性：若 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在 <span class="course-math" data-tex="(x_{0},y_{0})" data-display="false"><code>(x_{0},y_{0})</code></span> 处连续，<span class="course-math" data-tex="g" data-display="false"><code>g</code></span> 在 <span class="course-math" data-tex="f(x_{0},y_{0})" data-display="false"><code>f(x_{0},y_{0})</code></span> 处连续，则 <span class="course-math" data-tex="g\circ f" data-display="false"><code>g\circ f</code></span> 在 <span class="course-math" data-tex="(x_{0},y_{0})" data-display="false"><code>(x_{0},y_{0})</code></span> 处连续。
 以上这些对于二元函数的定义对于多元函数也类似。
@@ -93,8 +104,10 @@ excerpt: "高等数学（上）/（下） · Partial Derivatives -  偏导数"
 
 <span class="course-math course-math-display" data-tex="偏导数连续    \implies可微    \implies连续 且 偏导数存在。" data-display="true"><code>偏导数连续    \implies可微    \implies连续 且 偏导数存在。</code></span>
 
+
 ### 链式法则
 {: #section-5 }
+
 
 链式法则（Chain Rule）：
 - 一元自变量 + 二个中间变量：若 <span class="course-math" data-tex="w=f(x,y)" data-display="false"><code>w=f(x,y)</code></span> 可微，且 <span class="course-math" data-tex="x=x(t),\ y=y(t)" data-display="false"><code>x=x(t),\ y=y(t)</code></span> 是关于 <span class="course-math" data-tex="t" data-display="false"><code>t</code></span> 的可微函数，则复合函数 <span class="course-math" data-tex="w=f(x(t),y(t))" data-display="false"><code>w=f(x(t),y(t))</code></span> 关于 <span class="course-math" data-tex="t" data-display="false"><code>t</code></span> 可微，且有 <span class="course-math course-math-display" data-tex="\frac{dw}{dt}=\frac{\partial f}{\partial x}\frac{dx}{dt}+\frac{\partial f}{\partial y}\frac{dy}{dt}." data-display="true"><code>\frac{dw}{dt}=\frac{\partial f}{\partial x}\frac{dx}{dt}+\frac{\partial f}{\partial y}\frac{dy}{dt}.</code></span>
@@ -105,8 +118,10 @@ excerpt: "高等数学（上）/（下） · Partial Derivatives -  偏导数"
 隐函数求导公式（Implicit Differentiation）：设 <span class="course-math" data-tex="F(x,y)" data-display="false"><code>F(x,y)</code></span> 可微，且方程 <span class="course-math" data-tex="F(x,y)=0" data-display="false"><code>F(x,y)=0</code></span> 将 <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> 定义为 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 的可微函数；则在任意满足 <span class="course-math" data-tex="F_y\neq 0" data-display="false"><code>F_y\neq 0</code></span> 的点处，<span class="course-math course-math-display" data-tex="\frac{dy}{dx}=-\frac{F_x}{F_y}." data-display="true"><code>\frac{dy}{dx}=-\frac{F_x}{F_y}.</code></span>
 这个可以从链式法则直接推导出来。
 
+
 ### 方向导数与梯度
 {: #section-6 }
+
 
 二元函数 <span class="course-math" data-tex="f(x,y)" data-display="false"><code>f(x,y)</code></span> 在 <span class="course-math" data-tex="P_{0}(x_{0},y_{0})" data-display="false"><code>P_{0}(x_{0},y_{0})</code></span> 处，在单位向量 <span class="course-math" data-tex="\mathbf{u}=u_{1}\mathbf{i}+u_{2}\mathbf{j}" data-display="false"><code>\mathbf{u}=u_{1}\mathbf{i}+u_{2}\mathbf{j}</code></span> 的方向的导数定义为：
 <span class="course-math course-math-display" data-tex="\left( \frac{df}{ds} \right)_{\mathbf{u},P_{0}}= \lim_{ s \to 0 } \frac{f(x_{0}+su_{1}, y_{0}+su_{2})-f(x_{0},y_{0})}{s}" data-display="true"><code>\left( \frac{df}{ds} \right)_{\mathbf{u},P_{0}}= \lim_{ s \to 0 } \frac{f(x_{0}+su_{1}, y_{0}+su_{2})-f(x_{0},y_{0})}{s}</code></span>
@@ -132,8 +147,10 @@ excerpt: "高等数学（上）/（下） · Partial Derivatives -  偏导数"
 <span class="course-math course-math-display" data-tex="x=x_{0}+f_{x}t, y= y_{0}+f_{y}t, z=z_{0}+f_{z}t" data-display="true"><code>x=x_{0}+f_{x}t, y= y_{0}+f_{y}t, z=z_{0}+f_{z}t</code></span>
 要求曲面 <span class="course-math" data-tex="z=f(x,y)" data-display="false"><code>z=f(x,y)</code></span> 的切面和法线，可以转化为 <span class="course-math" data-tex="F(x,y,z)=f(x,y)-z=0" data-display="false"><code>F(x,y,z)=f(x,y)-z=0</code></span> 然后用上面的公式。
 
+
 ### 多元函数的线性化
 {: #section-7 }
+
 
 可以估计多元函数在某个方向的增量：
 <span class="course-math course-math-display" data-tex="df=(D_{\mathbf{u}}f)_{P_{0}} ds=((\nabla f)_{{P_{0}}} \cdot \mathbf{u})s" data-display="true"><code>df=(D_{\mathbf{u}}f)_{P_{0}} ds=((\nabla f)_{{P_{0}}} \cdot \mathbf{u})s</code></span>
@@ -146,8 +163,10 @@ excerpt: "高等数学（上）/（下） · Partial Derivatives -  偏导数"
 <span class="course-math course-math-display" data-tex="df=f_{x}dx+f_{y}dy" data-display="true"><code>df=f_{x}dx+f_{y}dy</code></span>
 更多元的情况也类似。
 
+
 ### 极值
 {: #section-8 }
+
 
 一阶导测试（First Derivative Test）：若二元函数 <span class="course-math" data-tex="f(x,y)" data-display="false"><code>f(x,y)</code></span> 在某内点处存在极值，且该点偏导存在，则该点处 <span class="course-math" data-tex="f_{x}=0,f_{y}=0" data-display="false"><code>f_{x}=0,f_{y}=0</code></span>。
 
@@ -166,8 +185,10 @@ excerpt: "高等数学（上）/（下） · Partial Derivatives -  偏导数"
 
 若要找全局的最值，则应列出所有关键点处的值以及边界上的极值，然后找出最小和最大的。
 
+
 ### 拉格朗日乘子
 {: #section-9 }
+
 
 拉格朗日乘子法（The Method of Lagrange Multipliers）：在条件 <span class="course-math" data-tex="g(x,y,z)=0" data-display="false"><code>g(x,y,z)=0</code></span> 的限制下求 <span class="course-math" data-tex="f(x,y,z)" data-display="false"><code>f(x,y,z)</code></span> 的极值，则在极值点处，有方程
 <span class="course-math course-math-display" data-tex="\nabla f=\lambda \nabla g" data-display="true"><code>\nabla f=\lambda \nabla g</code></span>
@@ -180,8 +201,10 @@ excerpt: "高等数学（上）/（下） · Partial Derivatives -  偏导数"
 几何解释：在 <span class="course-math" data-tex="g_{1}=0" data-display="false"><code>g_{1}=0</code></span>，<span class="course-math" data-tex="g_{2}=0" data-display="false"><code>g_{2}=0</code></span> 的交线 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 上， <span class="course-math" data-tex="\nabla g_{1}" data-display="false"><code>\nabla g_{1}</code></span> 与 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 垂直，<span class="course-math" data-tex="\nabla g_{2}" data-display="false"><code>\nabla g_{2}</code></span> 也与 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 垂直。于是 <span class="course-math" data-tex="\nabla f" data-display="false"><code>\nabla f</code></span> 要处在它们构成的平面内，才能使 <span class="course-math" data-tex="\nabla f" data-display="false"><code>\nabla f</code></span> 垂直于曲线 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 的切向量。
 
 
+
 ### 二元函数的泰勒公式
 {: #section-10 }
+
 
 在 <span class="course-math" data-tex="(a,b)" data-display="false"><code>(a,b)</code></span> 处的 <span class="course-math" data-tex="n+1" data-display="false"><code>n+1</code></span> 阶泰勒公式：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Partial%20Derivatives%20-%20%20%E5%81%8F%E5%AF%BC%E6%95%B0.png' | relative_url }}{% raw %}" alt="Partial Derivatives -  偏导数" loading="lazy">

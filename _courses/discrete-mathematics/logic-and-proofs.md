@@ -4,7 +4,10 @@ course_id: "discrete-mathematics"
 course_title: "离散数学"
 section: ""
 status: "updating"
+created_at: "2026-09-07T15:27:48+08:00"
+updated_at: "2026-09-28T12:58:13+08:00"
 reference: false
+order: 2
 layout: "course"
 permalink: "/courses/discrete-mathematics/logic-and-proofs/"
 course_page: true
@@ -14,8 +17,10 @@ excerpt: "离散数学 · Logic and Proofs - 逻辑与证明"
 ---
 
 {% raw %}
+
 ## Propositional Logic
 {: #section-1 }
+
 
 命题（Proposition）的定义：
 - 陈述性（Declarative）
@@ -106,8 +111,10 @@ Negation Laws
 - Truth table
 - Logical Equivalence inference
 - By discussion
+
 ## Predicate Logic / First Order Logic
 {: #section-2 }
+
 
 有量词的逻辑。
 - Existential Quantifier：<span class="course-math" data-tex="\exists" data-display="false"><code>\exists</code></span>
@@ -134,8 +141,10 @@ Predicate <span class="course-math" data-tex="P(x_{1},\dots,x_{n})" data-display
 <span class="course-math course-math-display" data-tex="\exists y(\forall xL(x,y) \land \forall z(\forall xL(x,z)\to z=y))" data-display="true"><code>\exists y(\forall xL(x,y) \land \forall z(\forall xL(x,z)\to z=y))</code></span>
 
 
+
 ## Inference
 {: #section-3 }
+
 
 对于命题逻辑有如下的 **Inference Rules:**
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-1.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-1" width="433" loading="lazy">
@@ -146,8 +155,10 @@ Predicate <span class="course-math" data-tex="P(x_{1},\dots,x_{n})" data-display
 对于一阶逻辑：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-5.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-5" width="437" loading="lazy">
 
+
 ## 数学证明（Mathematical Proof）
 {: #section-4 }
+
 **Axiom（公理）：** 不证自明的命题。
 **Theorem（定理）：** 可以证明的命题。
 **Lemma（引理）：** 可以证明的命题，用于证明其他命题。

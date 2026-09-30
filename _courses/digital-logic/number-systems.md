@@ -4,7 +4,10 @@ course_id: "digital-logic"
 course_title: "数字逻辑"
 section: ""
 status: "updating"
+created_at: "2026-09-08T13:58:29+08:00"
+updated_at: "2026-09-26T21:24:05+08:00"
 reference: false
+order: 1
 layout: "course"
 permalink: "/courses/digital-logic/number-systems/"
 course_page: true
@@ -14,8 +17,10 @@ excerpt: "数字逻辑 · Number Systems - 数字系统"
 ---
 
 {% raw %}
+
 ## 导论
 {: #section-1 }
+
 
 信号（Signal）：可表示和用于传递信息。
 - 模拟信号（Analog signals）：有各种幅值和频率，连续的
@@ -28,25 +33,33 @@ excerpt: "数字逻辑 · Number Systems - 数字系统"
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems.png' | relative_url }}{% raw %}" alt="Number Systems" width="428" loading="lazy">
 Physical Layer -> transistor -> logic gate -> mircroarchitecture -> system
 
+
 ## 数字系统
 {: #section-2 }
+
 
 十进制（Decimal）/ 二进制（Binary） / 八进制（Octal） / 十六进制（Hexadecimal）
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统" width="347" loading="lazy">
 
+
 ## 进制转换
 {: #section-3 }
 
+
+
 ### 向十进制转换
 {: #section-4 }
+
 
 若基数（Radix / Base） 为 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span>，则 <span class="course-math" data-tex="n+m" data-display="false"><code>n+m</code></span> 位数字
 <span class="course-math course-math-display" data-tex="D=d_{n-1}d_{n-2}\dots d_{0}.d_{-1}d_{-2}\dots d_{-m}" data-display="true"><code>D=d_{n-1}d_{n-2}\dots d_{0}.d_{-1}d_{-2}\dots d_{-m}</code></span>
 的十进制值为
 <span class="course-math course-math-display" data-tex="D=\sum_{i=-m}^{n-1} d_{i}r^i" data-display="true"><code>D=\sum_{i=-m}^{n-1} d_{i}r^i</code></span>
 
+
 ### 从十进制转换
 {: #section-5 }
+
 
 整数部分：不断去除以 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> ，考察每次的余数。
 小数部分：不断去乘以 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span>，考察每次的整数部分。
@@ -55,8 +68,10 @@ LSD（Least-significant Digit）：权重最低的位。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-3.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-3" width="383" loading="lazy">
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-4.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-4" width="386" loading="lazy">
 
+
 ### 其他进制之间转换
 {: #section-6 }
+
 
 二进制转换为八进制或十六进制：直接分组看，八进制就是三位一组，十六进制就是四位一组。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-5.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-5" width="439" loading="lazy">
@@ -68,16 +83,20 @@ KB 与 B 的转换，是以 1024 为基数：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-7.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-7" width="282" loading="lazy">
 
 
+
 ## BCD 码
 {: #section-7 }
+
 
 用四个比特来表示一个十进制数位，例如用 0011 1001 0110 表示 396。
 用 BCD 码表示的数，加法应该使用十进制的办法来加。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-8.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-8" width="453" loading="lazy">
 做减法可以转换为做 10's complement 再加。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-12.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-12" loading="lazy">
+
 ## 格雷码
 {: #section-8 }
+
 
 最小改变的编码方式：变化到相邻的数，格雷码只变化一位。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-9.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-9" width="214" loading="lazy">
@@ -93,24 +112,32 @@ KB 与 B 的转换，是以 1024 为基数：
 - 以此类推。
 - <span class="course-math" data-tex="G_{n}=B_{n},G_{i-1}=B_{i}\oplus B_{i-1}" data-display="false"><code>G_{n}=B_{n},G_{i-1}=B_{i}\oplus B_{i-1}</code></span>
 
+
 ## ASCII 码
 {: #section-9 }
 
+
 American Standard Code for Information Interchange ：编码字符。
+
 
 ## 校验码
 {: #section-10 }
+
 
 Error-Detecting Code：
 - 奇偶校验码：提前规定好奇校验/偶校验，放在信息的某一位，代表我 1 的数量是奇数还是偶数，这样可以检验出 1 比特的错误。
 
 
 
+
 ## 原码，反码与补码
 {: #section-11 }
 
+
+
 ## 2 进制
 {: #section-12 }
+
 
 为了表示 <span class="course-math" data-tex="0110_{2}" data-display="false"><code>0110_{2}</code></span> （<span class="course-math" data-tex="6_{10}" data-display="false"><code>6_{10}</code></span>）的相反数：
 原码（Signed Magnitude）：符号位+符值： <span class="course-math" data-tex="1&#124;110" data-display="false"><code>1&#124;110</code></span>，第一位表示符号为负，剩下不变。
@@ -122,8 +149,10 @@ Error-Detecting Code：
 而十进制中的求对 <span class="course-math" data-tex="2^n" data-display="false"><code>2^n</code></span> 的余数，又相当于按位取反再加一（假设 <span class="course-math" data-tex="a&#x27;" data-display="false"><code>a&#x27;</code></span> 为 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 的反码，<span class="course-math" data-tex="-a" data-display="false"><code>-a</code></span> 为补码）：
 <span class="course-math course-math-display" data-tex="a+(-a)-1\equiv 2^{n}-1\equiv a+a&#x27;\implies -a=a&#x27;+1" data-display="true"><code>a+(-a)-1\equiv 2^{n}-1\equiv a+a&#x27;\implies -a=a&#x27;+1</code></span>
 
+
 ## <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> 进制
 {: #section-13 }
+
 
 同样可以定义：
 反码（<span class="course-math" data-tex="(r-1)" data-display="false"><code>(r-1)</code></span> 's complement）： <span class="course-math" data-tex="(r^n-1)-x" data-display="false"><code>(r^n-1)-x</code></span>

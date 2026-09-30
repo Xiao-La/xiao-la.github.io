@@ -4,7 +4,10 @@ course_id: "linear-algebra"
 course_title: "线性代数"
 section: ""
 status: "completed"
+created_at: "2026-03-11T17:54:23+08:00"
+updated_at: "2026-05-13T16:56:15+08:00"
 reference: false
+order: 4
 layout: "course"
 permalink: "/courses/linear-algebra/vector-space/"
 course_page: true
@@ -39,8 +42,10 @@ excerpt: "线性代数 · Vector Space - 向量空间"
 - 数乘封闭性：若 <span class="course-math" data-tex="\mathbf{x} \in W, c\in \mathbb{R}" data-display="false"><code>\mathbf{x} \in W, c\in \mathbb{R}</code></span>，则 <span class="course-math" data-tex="c \mathbf{x}\in W" data-display="false"><code>c \mathbf{x}\in W</code></span>
 例如，对空间 <span class="course-math" data-tex="\mathbb{R}^{3}" data-display="false"><code>\mathbb{R}^{3}</code></span>，可能的子空间为零空间，通过原点的直线，通过原点的面，以及它本身。
 
+
 ### 四大基本空间
 {: #section-1 }
+
 
 对于一个 <span class="course-math" data-tex="m\times n" data-display="false"><code>m\times n</code></span> 矩阵 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span>，它的：
 
@@ -55,8 +60,10 @@ excerpt: "线性代数 · Vector Space - 向量空间"
 - **左零空间（Left Nullspace）：** ****<span class="course-math" data-tex="N(\mathbf{A}^T)\subset \mathbb{R}^m" data-display="false"><code>N(\mathbf{A}^T)\subset \mathbb{R}^m</code></span>
 
 
+
 ### 向量张成的空间
 {: #section-2 }
+
 
 被向量 <span class="course-math" data-tex="\mathbf{w}_{1},\mathbf{w}_{2},\dots,\mathbf{w}_{l}" data-display="false"><code>\mathbf{w}_{1},\mathbf{w}_{2},\dots,\mathbf{w}_{l}</code></span> 张成的空间（Spanned by <span class="course-math" data-tex="\mathbf{w}_{1},\mathbf{w}_{2},\dots \mathbf{w}_{l}" data-display="false"><code>\mathbf{w}_{1},\mathbf{w}_{2},\dots \mathbf{w}_{l}</code></span>）为这些向量的所有线性组合构成的集合。
 
@@ -72,8 +79,10 @@ excerpt: "线性代数 · Vector Space - 向量空间"
 
 定理：若向量空间 <span class="course-math" data-tex="V" data-display="false"><code>V</code></span> 存在两组基 <span class="course-math" data-tex="\mathbf{v}_{1},\mathbf{v}_{2},\dots,\mathbf{v}_{n}" data-display="false"><code>\mathbf{v}_{1},\mathbf{v}_{2},\dots,\mathbf{v}_{n}</code></span> 和 <span class="course-math" data-tex="\mathbf{w}_{1},\mathbf{w}_{2},\dots,\mathbf{w}_{n}" data-display="false"><code>\mathbf{w}_{1},\mathbf{w}_{2},\dots,\mathbf{w}_{n}</code></span>，则 <span class="course-math" data-tex="m=n" data-display="false"><code>m=n</code></span>。这里 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 定义为向量空间 <span class="course-math" data-tex="V" data-display="false"><code>V</code></span> 的维数（dimension）<span class="course-math" data-tex="\text{dim}V" data-display="false"><code>\text{dim}V</code></span>。
 
+
 ### 基本空间的基
 {: #section-3 }
+
 
 对于 <span class="course-math" data-tex="m\times n" data-display="false"><code>m\times n</code></span> 矩阵 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span>：
 **找 <span class="course-math" data-tex="C(\mathbf{A})" data-display="false"><code>C(\mathbf{A})</code></span> 的基：**

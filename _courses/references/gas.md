@@ -4,6 +4,8 @@ course_id: "references"
 course_title: "补充材料"
 section: ""
 status: "reference"
+created_at: "2025-12-20T18:15:18+08:00"
+updated_at: "2025-12-20T19:44:01+08:00"
 reference: true
 layout: "course"
 permalink: "/courses/references/gas/"

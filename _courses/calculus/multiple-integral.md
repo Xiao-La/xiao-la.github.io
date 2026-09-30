@@ -4,7 +4,10 @@ course_id: "calculus"
 course_title: "高等数学（上）/（下）"
 section: "下"
 status: "completed"
+created_at: "2026-05-07T12:53:21+08:00"
+updated_at: "2026-05-12T18:25:27+08:00"
 reference: false
+order: 11
 layout: "course"
 permalink: "/courses/calculus/multiple-integral/"
 course_page: true

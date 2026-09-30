@@ -4,7 +4,10 @@ course_id: "physics"
 course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
+created_at: "2026-04-28T15:01:35+08:00"
+updated_at: "2026-06-05T20:45:40+08:00"
 reference: false
+order: 13
 layout: "course"
 permalink: "/courses/physics/synthesis-of-electromagnetism/"
 course_page: true
@@ -15,8 +18,10 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 
 {% raw %}
 
+
 ### LC 振荡电路 （LC Oscillator）
 {: #section-1 }
+
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88.png' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合" loading="lazy">
 能量守恒：
 <span class="course-math course-math-display" data-tex="\frac{Q^{2}}{2C}+ \frac{1}{2}Li^{2}=U" data-display="true"><code>\frac{Q^{2}}{2C}+ \frac{1}{2}Li^{2}=U</code></span>
@@ -50,16 +55,20 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 
 另外，定义 **功率因数（Power Factor）** 为 <span class="course-math" data-tex="\cos \phi=\frac{R}{Z}" data-display="false"><code>\cos \phi=\frac{R}{Z}</code></span>，即有功功率和总功率的比值。
 
+
 ### 交流电路（AC）中的功率
 {: #section-2 }
+
 
 <span class="course-math course-math-display" data-tex="I_{\text{rms}}=\frac{I}{\sqrt{ 2 }}, V_{\text{rms}}= \frac{V}{\sqrt{ 2 }}, \varepsilon_{\text{rms}} = \frac{\varepsilon _{m}}{\sqrt{ 2 }}" data-display="true"><code>I_{\text{rms}}=\frac{I}{\sqrt{ 2 }}, V_{\text{rms}}= \frac{V}{\sqrt{ 2 }}, \varepsilon_{\text{rms}} = \frac{\varepsilon _{m}}{\sqrt{ 2 }}</code></span>
 <span class="course-math course-math-display" data-tex="P_{\text{avg}}=I^{2}_{\text{rms}}R" data-display="true"><code>P_{\text{avg}}=I^{2}_{\text{rms}}R</code></span>
 在包含 <span class="course-math" data-tex="\varepsilon,C,L,R" data-display="false"><code>\varepsilon,C,L,R</code></span> 的电路中：
 
 <span class="course-math course-math-display" data-tex="P_{\text{avg}}=I_{\text{rms}}^{2}R= \frac{\varepsilon_{\text{rms}}}{Z}I_{\text{rms}}R=\varepsilon_{\text{rms}}I_{\text{rms}}\cos \phi" data-display="true"><code>P_{\text{avg}}=I_{\text{rms}}^{2}R= \frac{\varepsilon_{\text{rms}}}{Z}I_{\text{rms}}R=\varepsilon_{\text{rms}}I_{\text{rms}}\cos \phi</code></span>
+
 ### 变压器（Transformer）
 {: #section-3 }
+
 
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-4.png' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合-4" width="294" loading="lazy">
 电压关系：
@@ -68,8 +77,10 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 <span class="course-math course-math-display" data-tex="V_{1}I_{1}=V_{2}I_{2}" data-display="true"><code>V_{1}I_{1}=V_{2}I_{2}</code></span>
 因此在电源端的等效电阻为
 <span class="course-math course-math-display" data-tex="\frac{V_{1}}{I_{1}}= \frac{R}{\left( \frac{N_{2}}{N_{1}} \right)^{2}}" data-display="true"><code>\frac{V_{1}}{I_{1}}= \frac{R}{\left( \frac{N_{2}}{N_{1}} \right)^{2}}</code></span>
+
 ### 位移电流
 {: #section-4 }
+
 
 位移电流（Displacement Current）为空间中的电场变化的等效电流，它会产生磁场：
 <span class="course-math course-math-display" data-tex="i_{D}=\varepsilon_{0} \frac{d\Phi_{E}}{dt}=\varepsilon_{0} \frac{d}{dt}\int \vec{E}\cdot d\vec{A}" data-display="true"><code>i_{D}=\varepsilon_{0} \frac{d\Phi_{E}}{dt}=\varepsilon_{0} \frac{d}{dt}\int \vec{E}\cdot d\vec{A}</code></span>
@@ -77,8 +88,10 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 根据麦克斯韦理论，为了保持闭合电路中“电流”的连续性，流入电容器极板的传导电流等于极板间的位移电流。
 麦克斯韦修正后的安培定律：
 <span class="course-math course-math-display" data-tex="\int \vec{B}\cdot d\vec{l}=\mu_{0}(i+i_{D})" data-display="true"><code>\int \vec{B}\cdot d\vec{l}=\mu_{0}(i+i_{D})</code></span>
+
 ## 麦克斯韦方程组
 {: #section-5 }
+
 
 电磁波是横波 (EM waves <span class="course-math" data-tex="\rightarrow" data-display="false"><code>\rightarrow</code></span> Transverse waves)。
 
@@ -125,8 +138,10 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 <span class="course-math course-math-display" data-tex="I = \frac{\text{average power}}{4\pi r^2} \propto \frac{1}{r^2}" data-display="true"><code>I = \frac{\text{average power}}{4\pi r^2} \propto \frac{1}{r^2}</code></span>
 因此来自点源的电磁波强度与距离的平方成反比（<span class="course-math" data-tex="I \propto 1/r^2" data-display="false"><code>I \propto 1/r^2</code></span>）。
 
+
 ### 光子动量与辐射压（Radiation Pressure）
 {: #section-6 }
+
 
 除了波动性，光（电磁波）也具有粒子性。光子（Photons）静止质量为零，但携带着能量和**动量**。
 
@@ -159,8 +174,10 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 由于 **<span class="course-math" data-tex="\text{energy} / c = \text{momentum}" data-display="false"><code>\text{energy} / c = \text{momentum}</code></span> (能量/光速 = 动量)**，上式可理解为：
 **单位时间、单位面积上所传递的动量**。由动量定理可知，这正是**压强 (pressure)** 的物理定义。
 
+
 ### 偏振（Polarization）
 {: #section-7 }
+
 
 *   **偏振面定义：** 电磁波中**电场 <span class="course-math" data-tex="\vec{E}" data-display="false"><code>\vec{E}</code></span>** 振动所在的平面。
 *   **线偏振光：** 电场 <span class="course-math" data-tex="\vec{E}" data-display="false"><code>\vec{E}</code></span> 只在单一固定方向上振动的光。

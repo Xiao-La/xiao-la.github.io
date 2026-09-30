@@ -4,7 +4,10 @@ course_id: "calculus"
 course_title: "高等数学（上）/（下）"
 section: "下"
 status: "completed"
+created_at: "2026-02-21T11:22:04+08:00"
+updated_at: "2026-04-23T23:40:50+08:00"
 reference: false
+order: 7
 layout: "course"
 permalink: "/courses/calculus/polar-coordinates/"
 course_page: true
@@ -14,8 +17,10 @@ excerpt: "高等数学（上）/（下） · Polar Coordinates - 极坐标"
 ---
 
 {% raw %}
+
 ## 参数方程（Parametrized Coordinates）
 {: #section-1 }
+
 
 <span class="course-math" data-tex="x=f(t), y=g(t)" data-display="false"><code>x=f(t), y=g(t)</code></span> 
 
@@ -44,13 +49,17 @@ excerpt: "高等数学（上）/（下） · Polar Coordinates - 极坐标"
 - 那么 <span class="course-math" data-tex="\mathbf{v}=\mathbf{i}+f&#x27;(t)\mathbf{j}" data-display="false"><code>\mathbf{v}=\mathbf{i}+f&#x27;(t)\mathbf{j}</code></span>。
 - 那么 <span class="course-math" data-tex="\lvert \mathbf{v} \rvert=\sqrt{ 1+[f&#x27;(t)]^{2} }" data-display="false"><code>\lvert \mathbf{v} \rvert=\sqrt{ 1+[f&#x27;(t)]^{2} }</code></span>，且有 <span class="course-math" data-tex="\mathbf{T}=\mathbf{v} / \lvert  \mathbf{v} \rvert" data-display="false"><code>\mathbf{T}=\mathbf{v} / \lvert  \mathbf{v} \rvert</code></span>。
 - 最终可以推出  <span class="course-math course-math-display" data-tex="\kappa=\frac{1}{\lvert \mathbf{v} \rvert} &#124; \frac{d\mathbf{T}}{dt}&#124;= \frac{\lvert y&#x27;&#x27; \rvert}{(1+(y&#x27;)^{2})^{3/2}}" data-display="true"><code>\kappa=\frac{1}{\lvert \mathbf{v} \rvert} &#124; \frac{d\mathbf{T}}{dt}&#124;= \frac{\lvert y&#x27;&#x27; \rvert}{(1+(y&#x27;)^{2})^{3/2}}</code></span>
+
 ### 求闭合曲线面积
 {: #section-2 }
 
+
 <span class="course-math course-math-display" data-tex="A=\frac{1}{2}\oint(xdy-ydx)&#10;=\frac{1}{2}\oint\left( x \frac{dy}{dt} -y \frac{dx}{dt}\right)dt" data-display="true"><code>A=\frac{1}{2}\oint(xdy-ydx)&#10;=\frac{1}{2}\oint\left( x \frac{dy}{dt} -y \frac{dx}{dt}\right)dt</code></span>
+
 
 ## 极坐标
 {: #section-3 }
+
 笛卡尔坐标（Cartesian Coordinates）用笛卡尔平面的 <span class="course-math" data-tex="x,y" data-display="false"><code>x,y</code></span> 坐标记作 <span class="course-math" data-tex="(x,y)" data-display="false"><code>(x,y)</code></span>。
 极坐标（Polar Coordinates）用到原点的距离 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> 和极角 <span class="course-math" data-tex="\theta" data-display="false"><code>\theta</code></span> 记作 <span class="course-math" data-tex="(r,\theta)" data-display="false"><code>(r,\theta)</code></span>。
 有如下关系：
@@ -60,16 +69,22 @@ excerpt: "高等数学（上）/（下） · Polar Coordinates - 极坐标"
 <span class="course-math course-math-display" data-tex="y=r\sin\theta" data-display="true"><code>y=r\sin\theta</code></span>
 <span class="course-math course-math-display" data-tex="x=r\cos\theta" data-display="true"><code>x=r\cos\theta</code></span>
 
+
 ### 求切线斜率
 {: #section-4 }
 
+
 <span class="course-math course-math-display" data-tex="\frac{dy}{dx}= \frac{\frac{dy}{d\theta}}{\frac{dx}{d\theta}}=\frac{r&#x27;(\theta)\sin\theta+r(\theta)\cos\theta}{r&#x27;(\theta)\cos\theta-r(\theta)\sin\theta}" data-display="true"><code>\frac{dy}{dx}= \frac{\frac{dy}{d\theta}}{\frac{dx}{d\theta}}=\frac{r&#x27;(\theta)\sin\theta+r(\theta)\cos\theta}{r&#x27;(\theta)\cos\theta-r(\theta)\sin\theta}</code></span>
+
 ### 求面积
 {: #section-5 }
 
+
 <span class="course-math course-math-display" data-tex="A=\frac{1}{2}\int_{\theta_{1}}^{\theta_{2}} r^2d\theta" data-display="true"><code>A=\frac{1}{2}\int_{\theta_{1}}^{\theta_{2}} r^2d\theta</code></span>
+
 ### 求弧长
 {: #section-6 }
+
 
 <span class="course-math course-math-display" data-tex="L= \int_{\theta_{1}}^{\theta_{2}} \sqrt{ r^{2}+\left( \frac{dr}{d\theta} \right)^{2} } d\theta" data-display="true"><code>L= \int_{\theta_{1}}^{\theta_{2}} \sqrt{ r^{2}+\left( \frac{dr}{d\theta} \right)^{2} } d\theta</code></span>
 {% endraw %}

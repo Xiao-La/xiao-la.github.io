@@ -4,7 +4,10 @@ course_id: "linear-algebra"
 course_title: "线性代数"
 section: ""
 status: "completed"
+created_at: "2026-06-12T01:12:17+08:00"
+updated_at: "2026-06-14T23:39:13+08:00"
 reference: false
+order: 10
 layout: "course"
 permalink: "/courses/linear-algebra/final-review/"
 course_page: true
@@ -25,16 +28,22 @@ excerpt: "线性代数 · Final Review - 期末复习"
 迹的循环性质：<span class="course-math" data-tex="tr(AB)=tr(BA)" data-display="false"><code>tr(AB)=tr(BA)</code></span>（可以从非零特征值来理解）。
 
 <span class="course-math" data-tex="&#124;I+uv^T&#124; = 1+v^Tu" data-display="false"><code>&#124;I+uv^T&#124; = 1+v^Tu</code></span>
+
 ## 1 Matrices and Gaussian Elimination
 {: #section-1 }
+
+
 
 ### 1.1 Introduction
 {: #section-2 }
 
+
 （略）
+
 
 ### 1.2 The Geometry of Linear Equations
 {: #section-3 }
+
 
 - **矩阵形式：** <span class="course-math" data-tex="A\mathbf{x} = \mathbf{b}" data-display="false"><code>A\mathbf{x} = \mathbf{b}</code></span>，<span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为系数矩阵
 - **增广矩阵：** <span class="course-math" data-tex="[A \mid \mathbf{b}]" data-display="false"><code>[A \mid \mathbf{b}]</code></span>
@@ -50,8 +59,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 - 非奇异（Nonsingular）：有且仅有一组解
 - <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 非奇异 <span class="course-math" data-tex="\iff" data-display="false"><code>\iff</code></span> <span class="course-math" data-tex="\forall \mathbf{b},\ A\mathbf{x}=\mathbf{b}" data-display="false"><code>\forall \mathbf{b},\ A\mathbf{x}=\mathbf{b}</code></span> 非奇异
 
+
 ### 1.3 An Example of Gaussian Elimination
 {: #section-4 }
+
 
 **初等行变换（Elementary Row Operations）——保持解不变：**
 1. <span class="course-math" data-tex="E_i \leftrightarrow E_j" data-display="false"><code>E_i \leftrightarrow E_j</code></span>（交换两行）
@@ -64,8 +75,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 > 每一行第一个非零元素称为**主元（Pivot）**
 
+
 ### 1.4 Matrix Notation and Matrix Multiplication
 {: #section-5 }
+
 
 矩阵 <span class="course-math" data-tex="\mathbf{A} = [a_{ij}]_{m\times n}" data-display="false"><code>\mathbf{A} = [a_{ij}]_{m\times n}</code></span>。线性运算（加减、数乘）逐分量进行。<span class="course-math" data-tex="\mathbf{I}_n" data-display="false"><code>\mathbf{I}_n</code></span> 为单位矩阵。
 
@@ -93,8 +106,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 > **【左行右列】**：左乘 → 行变换，右乘 → 列变换
 
+
 ### 1.5 Triangular Factors and Row Exchanges
 {: #section-6 }
+
 
 **LU 分解：** 若 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 消元后（无需行交换）得 <span class="course-math" data-tex="U" data-display="false"><code>U</code></span>，则
 <span class="course-math course-math-display" data-tex="A = LU" data-display="true"><code>A = LU</code></span>
@@ -116,8 +131,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 **LDU 分解：** 提取主元到对角矩阵 <span class="course-math" data-tex="D" data-display="false"><code>D</code></span>，使 <span class="course-math" data-tex="L, U" data-display="false"><code>L, U</code></span> 对角元都为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>：<span class="course-math" data-tex="A = LDU" data-display="false"><code>A = LDU</code></span>
 
+
 ### 1.6 Inverses and Transposes
 {: #section-7 }
+
 
 **矩阵的逆：** 方阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的逆 <span class="course-math" data-tex="A^{-1}" data-display="false"><code>A^{-1}</code></span> 满足 <span class="course-math" data-tex="AA^{-1} = A^{-1}A = I" data-display="false"><code>AA^{-1} = A^{-1}A = I</code></span>
 
@@ -166,16 +183,22 @@ excerpt: "线性代数 · Final Review - 期末复习"
 - <span class="course-math" data-tex="AB = [A\mathbf{b}_1 \cdots A\mathbf{b}_n] = \begin{bmatrix} \mathbf{a}_1 B \\ \vdots \\ \mathbf{a}_n B \end{bmatrix}" data-display="false"><code>AB = [A\mathbf{b}_1 \cdots A\mathbf{b}_n] = \begin{bmatrix} \mathbf{a}_1 B \\ \vdots \\ \mathbf{a}_n B \end{bmatrix}</code></span>
 - **注意分块尺寸必须可乘**
 
+
 ### 1.7 Special Matrices and Applications（不考）
 {: #section-8 }
 
+
 ---
+
 
 ## 2 Vector Spaces
 {: #section-9 }
 
+
+
 ### 2.1 Vector Spaces and Subspaces
 {: #section-10 }
+
 
 向量空间 <span class="course-math" data-tex="(V, +, \cdot)" data-display="false"><code>(V, +, \cdot)</code></span> 满足 8 条性质（加法交换/结合/零元/负元 + 数乘结合/分配/单位元）。向量不限于 <span class="course-math" data-tex="\mathbb{R}^n" data-display="false"><code>\mathbb{R}^n</code></span> 的数字列向量——矩阵、函数等只要能做线性组合即可。
 
@@ -192,8 +215,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 > <span class="course-math" data-tex="\mathbb{R}^3" data-display="false"><code>\mathbb{R}^3</code></span> 的子空间只有：<span class="course-math" data-tex="\{\mathbf{0}\}" data-display="false"><code>\{\mathbf{0}\}</code></span>、过原点的直线、过原点的平面、<span class="course-math" data-tex="\mathbb{R}^3" data-display="false"><code>\mathbb{R}^3</code></span> 本身
 
+
 ### 2.2 Solving <span class="course-math" data-tex="A\mathbf{x} = \mathbf{0}" data-display="false"><code>A\mathbf{x} = \mathbf{0}</code></span> and <span class="course-math" data-tex="A\mathbf{x} = \mathbf{b}" data-display="false"><code>A\mathbf{x} = \mathbf{b}</code></span>
 {: #section-11 }
+
 
 **齐次方程 <span class="course-math" data-tex="A\mathbf{x} = \mathbf{0}" data-display="false"><code>A\mathbf{x} = \mathbf{0}</code></span>：**
 - 化为行最简形（Reduced Row Echelon Form）<span class="course-math" data-tex="R\mathbf{x} = \mathbf{0}" data-display="false"><code>R\mathbf{x} = \mathbf{0}</code></span>：主元为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>，主元列其余为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>
@@ -209,8 +234,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
   - <span class="course-math" data-tex="\mathbf{x}_p" data-display="false"><code>\mathbf{x}_p</code></span>：令所有自由变量为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 的特解
   - <span class="course-math" data-tex="\mathbf{x}_n \in N(A)" data-display="false"><code>\mathbf{x}_n \in N(A)</code></span>：解 <span class="course-math" data-tex="A\mathbf{x}=0" data-display="false"><code>A\mathbf{x}=0</code></span> 将自由变量依次置 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 得到的 <span class="course-math" data-tex="n-r" data-display="false"><code>n-r</code></span> 个特解的线性组合
 
+
 ### 2.3 Linear Independence, Basis, and Dimension
 {: #section-12 }
+
 
 **线性无关（Linearly Independent）：**
 <span class="course-math course-math-display" data-tex="c_1\mathbf{v}_1 + \cdots + c_n\mathbf{v}_n = \mathbf{0} \iff c_1 = \cdots = c_n = 0" data-display="true"><code>c_1\mathbf{v}_1 + \cdots + c_n\mathbf{v}_n = \mathbf{0} \iff c_1 = \cdots = c_n = 0</code></span>
@@ -243,8 +270,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 - **定理：** <span class="course-math" data-tex="\mathbf{v}_1,\dots,\mathbf{v}_n \in \mathbb{R}^n" data-display="false"><code>\mathbf{v}_1,\dots,\mathbf{v}_n \in \mathbb{R}^n</code></span> 是 <span class="course-math" data-tex="\mathbb{R}^n" data-display="false"><code>\mathbb{R}^n</code></span> 的基 <span class="course-math" data-tex="\iff" data-display="false"><code>\iff</code></span> <span class="course-math" data-tex="[\mathbf{v}_1 \cdots \mathbf{v}_n]" data-display="false"><code>[\mathbf{v}_1 \cdots \mathbf{v}_n]</code></span> 可逆
 - 多项式空间 <span class="course-math" data-tex="\mathbb{R}[x]_{\leq n}" data-display="false"><code>\mathbb{R}[x]_{\leq n}</code></span> 的一组基：<span class="course-math" data-tex="1, x, x^2, \dots, x^n" data-display="false"><code>1, x, x^2, \dots, x^n</code></span>
 
+
 ### 2.4 The Four Fundamental Subspaces
 {: #section-13 }
+
 
 对 <span class="course-math" data-tex="m\times n" data-display="false"><code>m\times n</code></span> 矩阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span>：
 
@@ -271,11 +300,15 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 > 行变换**不改变**行空间（<span class="course-math" data-tex="C(A^T) = C(U^T)" data-display="false"><code>C(A^T) = C(U^T)</code></span>），但**改变**列空间。主元列的**列标**不变，但列向量本身变了。
 
+
 ### 2.5 Graphs and Networks（不考）
 {: #section-14 }
 
+
+
 ### 2.6 Linear Transformations
 {: #section-15 }
+
 
 **定义：** <span class="course-math" data-tex="T: V \to W" data-display="false"><code>T: V \to W</code></span> 是线性变换，若满足：
 <span class="course-math course-math-display" data-tex="T(\mathbf{a}+\mathbf{b}) = T(\mathbf{a}) + T(\mathbf{b}), \quad T(k\mathbf{a}) = kT(\mathbf{a})" data-display="true"><code>T(\mathbf{a}+\mathbf{b}) = T(\mathbf{a}) + T(\mathbf{b}), \quad T(k\mathbf{a}) = kT(\mathbf{a})</code></span>
@@ -308,11 +341,15 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 ---
 
+
 ## 3 Orthogonality
 {: #section-16 }
 
+
+
 ### 3.1 Orthogonal Vectors and Subspaces
 {: #section-17 }
+
 
 - **内积/点乘：** <span class="course-math" data-tex="\mathbf{u}^T\mathbf{v} = \sum u_i v_i" data-display="false"><code>\mathbf{u}^T\mathbf{v} = \sum u_i v_i</code></span>
 - **正交：** <span class="course-math" data-tex="\mathbf{u}^T\mathbf{v} = 0" data-display="false"><code>\mathbf{u}^T\mathbf{v} = 0</code></span>
@@ -339,8 +376,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 **几何意义：** <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 将行空间 <span class="course-math" data-tex="C(A^T)" data-display="false"><code>C(A^T)</code></span> 一一映射到列空间 <span class="course-math" data-tex="C(A)" data-display="false"><code>C(A)</code></span>，将零空间 <span class="course-math" data-tex="N(A)" data-display="false"><code>N(A)</code></span> 映射到 <span class="course-math" data-tex="\mathbf{0}" data-display="false"><code>\mathbf{0}</code></span>。任意 <span class="course-math" data-tex="\mathbf{x} = \mathbf{x}_r + \mathbf{x}_n" data-display="false"><code>\mathbf{x} = \mathbf{x}_r + \mathbf{x}_n</code></span>（<span class="course-math" data-tex="\mathbf{x}_r \in C(A^T), \mathbf{x}_n \in N(A)" data-display="false"><code>\mathbf{x}_r \in C(A^T), \mathbf{x}_n \in N(A)</code></span>），<span class="course-math" data-tex="A\mathbf{x} = A\mathbf{x}_r" data-display="false"><code>A\mathbf{x} = A\mathbf{x}_r</code></span>。
 
+
 ### 3.2 Cosines and Projections onto Lines
 {: #section-18 }
+
 
 **向量 <span class="course-math" data-tex="\mathbf{b}" data-display="false"><code>\mathbf{b}</code></span> 在向量 <span class="course-math" data-tex="\mathbf{a}" data-display="false"><code>\mathbf{a}</code></span> 上的投影：**
 <span class="course-math course-math-display" data-tex="\mathbf{p} = \&#124;\mathbf{b}\&#124;\cos\theta \cdot \frac{\mathbf{a}}{\&#124;\mathbf{a}\&#124;} = \frac{\mathbf{a}^T\mathbf{b}}{\mathbf{a}^T\mathbf{a}} \mathbf{a}" data-display="true"><code>\mathbf{p} = \&#124;\mathbf{b}\&#124;\cos\theta \cdot \frac{\mathbf{a}}{\&#124;\mathbf{a}\&#124;} = \frac{\mathbf{a}^T\mathbf{b}}{\mathbf{a}^T\mathbf{a}} \mathbf{a}</code></span>
@@ -351,8 +390,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 - <span class="course-math" data-tex="P" data-display="false"><code>P</code></span> 是对称的秩一矩阵
 - <span class="course-math" data-tex="P^2 = P" data-display="false"><code>P^2 = P</code></span>（投影两次等于投影一次）
 
+
 ### 3.3 Projections and Least Squares
 {: #section-19 }
+
 
 **最小二乘问题：** 求 <span class="course-math" data-tex="\min \&#124;A\mathbf{x} - \mathbf{b}\&#124;^2" data-display="false"><code>\min \&#124;A\mathbf{x} - \mathbf{b}\&#124;^2</code></span>
 
@@ -390,8 +431,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 - 构造对角权矩阵 <span class="course-math" data-tex="W = \text{diag}(w_1,\dots,w_n)" data-display="false"><code>W = \text{diag}(w_1,\dots,w_n)</code></span>，化为 <span class="course-math" data-tex="\min \&#124;WA\hat{\mathbf{x}} - W\mathbf{b}\&#124;^2" data-display="false"><code>\min \&#124;WA\hat{\mathbf{x}} - W\mathbf{b}\&#124;^2</code></span>
 - 法方程：<span class="course-math" data-tex="A^T(W^TW)A\hat{\mathbf{x}} = A^T(W^TW)\mathbf{b}" data-display="false"><code>A^T(W^TW)A\hat{\mathbf{x}} = A^T(W^TW)\mathbf{b}</code></span>
 
+
 ### 3.4 Orthogonal Bases and Gram-Schmidt
 {: #section-20 }
+
 
 **规范正交基（Orthonormal Basis）：**
 <span class="course-math course-math-display" data-tex="q_i^T q_j = \begin{cases} 1 &amp; i=j \\ 0 &amp; i\neq j \end{cases}" data-display="true"><code>q_i^T q_j = \begin{cases} 1 &amp; i=j \\ 0 &amp; i\neq j \end{cases}</code></span>
@@ -452,21 +495,29 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 例——函数拟合：定义 <span class="course-math" data-tex="\langle f,g\rangle = \int_0^1 f(t)g(t)dt" data-display="false"><code>\langle f,g\rangle = \int_0^1 f(t)g(t)dt</code></span>，用 Gram-Schmidt 找 <span class="course-math" data-tex="\{1, t\}" data-display="false"><code>\{1, t\}</code></span> 的正交基 <span class="course-math" data-tex="\{1, t-\frac{1}{2}\}" data-display="false"><code>\{1, t-\frac{1}{2}\}</code></span>，则可直接投影。
 
+
 ### 3.5 The Fast Fourier Transform（不考）
 {: #section-21 }
 
+
 ---
+
 
 ## 4 Determinants
 {: #section-22 }
 
+
+
 ### 4.1 Introduction
 {: #section-23 }
 
+
 （二维、三维上，行列式是有向面积/体积。高维行列式从性质出发定义。）
+
 
 ### 4.2 Properties of the Determinant
 {: #section-24 }
+
 
 **定义性质：**
 1. <span class="course-math" data-tex="\det(I) = 1" data-display="false"><code>\det(I) = 1</code></span>
@@ -488,8 +539,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 **几何意义（<span class="course-math" data-tex="A = QR" data-display="false"><code>A = QR</code></span>）：** <span class="course-math" data-tex="\det(A) = \det(Q)\det(R) = \pm \prod q_i^T a_i" data-display="false"><code>\det(A) = \det(Q)\det(R) = \pm \prod q_i^T a_i</code></span>，相当于"底 <span class="course-math" data-tex="\times" data-display="false"><code>\times</code></span> 高 <span class="course-math" data-tex="\times" data-display="false"><code>\times</code></span> 高 <span class="course-math" data-tex="\times \cdots" data-display="false"><code>\times \cdots</code></span>"，即高维体积。
 
+
 ### 4.3 Formulas for the Determinant
 {: #section-25 }
+
 
 **大公式（Big Formula）：**
 <span class="course-math course-math-display" data-tex="\det(A) = \sum_{(\alpha_1,\dots,\alpha_n)} a_{1\alpha_1}a_{2\alpha_2}\cdots a_{n\alpha_n} \cdot (-1)^{\text{inv}(\alpha)}" data-display="true"><code>\det(A) = \sum_{(\alpha_1,\dots,\alpha_n)} a_{1\alpha_1}a_{2\alpha_2}\cdots a_{n\alpha_n} \cdot (-1)^{\text{inv}(\alpha)}</code></span>
@@ -509,8 +562,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 （由大公式固定展开行/列即得）
 
+
 ### 4.4 Applications of Determinants
 {: #section-26 }
+
 
 **用行列式求逆：**
 <span class="course-math course-math-display" data-tex="A^{-1} = \frac{C^T}{\det(A)}" data-display="true"><code>A^{-1} = \frac{C^T}{\det(A)}</code></span>
@@ -537,11 +592,15 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 ---
 
+
 ## 5 Eigenvalues and Eigenvectors
 {: #section-27 }
 
+
+
 ### 5.1 Introduction
 {: #section-28 }
+
 
 **定义：** <span class="course-math" data-tex="A\mathbf{x} = \lambda \mathbf{x}" data-display="false"><code>A\mathbf{x} = \lambda \mathbf{x}</code></span>（<span class="course-math" data-tex="\mathbf{x} \neq \mathbf{0}" data-display="false"><code>\mathbf{x} \neq \mathbf{0}</code></span>）
 - <span class="course-math" data-tex="\lambda" data-display="false"><code>\lambda</code></span>：特征值（Eigenvalue）
@@ -558,8 +617,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 <span class="course-math course-math-display" data-tex="\sum_{i=1}^n \lambda_i = \text{tr}(A) = \sum a_{ii}" data-display="true"><code>\sum_{i=1}^n \lambda_i = \text{tr}(A) = \sum a_{ii}</code></span>
 <span class="course-math course-math-display" data-tex="\prod_{i=1}^n \lambda_i = \det(A)" data-display="true"><code>\prod_{i=1}^n \lambda_i = \det(A)</code></span>
 
+
 ### 5.2 Diagonalization of a Matrix
 {: #section-29 }
+
 
 若 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 有 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个线性无关的特征向量 <span class="course-math" data-tex="\mathbf{v}_1, \dots, \mathbf{v}_n" data-display="false"><code>\mathbf{v}_1, \dots, \mathbf{v}_n</code></span>：
 <span class="course-math course-math-display" data-tex="A = S\Lambda S^{-1}" data-display="true"><code>A = S\Lambda S^{-1}</code></span>
@@ -596,8 +657,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 **秩一矩阵的特征值：** 必有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 个特征值为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>（<span class="course-math" data-tex="N(A)" data-display="false"><code>N(A)</code></span> 有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 维）。
 
+
 ### 5.3 Difference Equations and Powers <span class="course-math" data-tex="A^k" data-display="false"><code>A^k</code></span>
 {: #section-30 }
+
 
 **递推数列 <span class="course-math" data-tex="u_{k+1} = A u_k" data-display="false"><code>u_{k+1} = A u_k</code></span> 解法：**
 
@@ -623,11 +686,15 @@ excerpt: "线性代数 · Final Review - 期末复习"
   - 其余特征值 <span class="course-math" data-tex="&#124;\lambda_i&#124; \leq 1" data-display="false"><code>&#124;\lambda_i&#124; \leq 1</code></span>
   - 若所有 <span class="course-math" data-tex="a_{ij} &gt; 0" data-display="false"><code>a_{ij} &gt; 0</code></span>，则其余 <span class="course-math" data-tex="&#124;\lambda_i&#124; &lt; 1" data-display="false"><code>&#124;\lambda_i&#124; &lt; 1</code></span>
 
+
 ### 5.4 Differential Equations and <span class="course-math" data-tex="e^{At}" data-display="false"><code>e^{At}</code></span>（不考）
 {: #section-31 }
 
+
+
 ### 5.5 Complex Matrices
 {: #section-32 }
+
 
 **复向量空间 <span class="course-math" data-tex="\mathbb{C}^n" data-display="false"><code>\mathbb{C}^n</code></span>：** 分量 <span class="course-math" data-tex="x_i \in \mathbb{C}" data-display="false"><code>x_i \in \mathbb{C}</code></span>，共轭 <span class="course-math" data-tex="\bar{\mathbf{x}}" data-display="false"><code>\bar{\mathbf{x}}</code></span>。内积定义为：
 <span class="course-math course-math-display" data-tex="\langle \mathbf{x}, \mathbf{y} \rangle = \bar{\mathbf{x}}^T \mathbf{y} = \overline{x_1}y_1 + \cdots + \overline{x_n}y_n" data-display="true"><code>\langle \mathbf{x}, \mathbf{y} \rangle = \bar{\mathbf{x}}^T \mathbf{y} = \overline{x_1}y_1 + \cdots + \overline{x_n}y_n</code></span>
@@ -674,8 +741,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 | 正交 <span class="course-math" data-tex="Q^T Q = I" data-display="false"><code>Q^T Q = I</code></span> | 酉 <span class="course-math" data-tex="U^H U = I" data-display="false"><code>U^H U = I</code></span> |
 | 斜对称 <span class="course-math" data-tex="A^T = -A" data-display="false"><code>A^T = -A</code></span> | 斜 Hermitian <span class="course-math" data-tex="A^H = -A" data-display="false"><code>A^H = -A</code></span> |
 
+
 ### 5.6 Similarity Transformations
 {: #section-33 }
+
 
 **相似矩阵：** <span class="course-math" data-tex="A \sim B" data-display="false"><code>A \sim B</code></span> 若 <span class="course-math" data-tex="\exists" data-display="false"><code>\exists</code></span> 可逆 <span class="course-math" data-tex="M" data-display="false"><code>M</code></span> 使得 <span class="course-math" data-tex="B = M^{-1}AM" data-display="false"><code>B = M^{-1}AM</code></span>
 
@@ -715,11 +784,15 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 ---
 
+
 ## 6 Positive Definite Matrices
 {: #section-34 }
 
+
+
 ### 6.1 Minima, Maxima, and Saddle Points
 {: #section-35 }
+
 
 **二元二次型 <span class="course-math" data-tex="f(x,y) = ax^2 + 2bxy + cy^2" data-display="false"><code>f(x,y) = ax^2 + 2bxy + cy^2</code></span>** 在原点处都是驻点。
 
@@ -739,8 +812,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 其中 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为实对称矩阵（二次型矩阵）。交叉项 <span class="course-math" data-tex="x_i x_j" data-display="false"><code>x_i x_j</code></span>（<span class="course-math" data-tex="i\neq j" data-display="false"><code>i\neq j</code></span>）的系数除以 <span class="course-math" data-tex="2" data-display="false"><code>2</code></span> 才是 <span class="course-math" data-tex="a_{ij} = a_{ji}" data-display="false"><code>a_{ij} = a_{ji}</code></span>。
 
+
 ### 6.2 Tests for Positive Definiteness
 {: #section-36 }
+
 
 **定义：** 对称矩阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 正定（<span class="course-math" data-tex="A &gt; 0" data-display="false"><code>A &gt; 0</code></span>）<span class="course-math" data-tex="\iff" data-display="false"><code>\iff</code></span> <span class="course-math" data-tex="\forall \mathbf{x} \neq \mathbf{0},\ \mathbf{x}^T A \mathbf{x} &gt; 0" data-display="false"><code>\forall \mathbf{x} \neq \mathbf{0},\ \mathbf{x}^T A \mathbf{x} &gt; 0</code></span>
 
@@ -780,8 +855,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 **负定：** <span class="course-math" data-tex="A &lt; 0" data-display="false"><code>A &lt; 0</code></span> 若 <span class="course-math" data-tex="-A &gt; 0" data-display="false"><code>-A &gt; 0</code></span>。等价于 <span class="course-math" data-tex="\mathbf{x}^T A \mathbf{x} &lt; 0" data-display="false"><code>\mathbf{x}^T A \mathbf{x} &lt; 0</code></span>。
 
+
 ### 6.3 Singular Value Decomposition
 {: #section-37 }
+
 
 **定理：** 任意 <span class="course-math" data-tex="m\times n" data-display="false"><code>m\times n</code></span> 矩阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 可分解为
 <span class="course-math course-math-display" data-tex="A = U\Sigma V^T" data-display="true"><code>A = U\Sigma V^T</code></span>
@@ -837,18 +914,26 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 **图片降噪（Noise Reduction）：** 丢弃相对很小的奇异值及其分量。
 
+
 ### 6.4 Minimum Principles（不考）
 {: #section-38 }
+
+
 ### 6.5 The Finite Element Method（不考）
 {: #section-39 }
 
+
 ---
+
 
 ## 补充：合同矩阵与二次超曲面
 {: #section-40 }
 
+
+
 ### 合同（Congruence）
 {: #section-41 }
+
 
 <span class="course-math" data-tex="B = C^T A C" data-display="false"><code>B = C^T A C</code></span>（<span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 可逆），称 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 与 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 合同。
 - 对称矩阵的合同矩阵仍对称
@@ -868,8 +953,10 @@ excerpt: "线性代数 · Final Review - 期末复习"
 - 有平方项 <span class="course-math" data-tex="\to" data-display="false"><code>\to</code></span> 直接配方，迭代
 - 无平方项但有交叉项（如 <span class="course-math" data-tex="x_1 x_2" data-display="false"><code>x_1 x_2</code></span>）<span class="course-math" data-tex="\to" data-display="false"><code>\to</code></span> 令 <span class="course-math" data-tex="x_1 = y_1+y_2,\ x_2 = y_1-y_2" data-display="false"><code>x_1 = y_1+y_2,\ x_2 = y_1-y_2</code></span>，创造平方差
 
+
 ### 二次超曲面（Quadric Surface）
 {: #section-42 }
+
 
 方程：<span class="course-math" data-tex="\mathbf{x}^T A\mathbf{x} = 1" data-display="false"><code>\mathbf{x}^T A\mathbf{x} = 1</code></span>（<span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 对称）
 

@@ -4,7 +4,10 @@ course_id: "linear-algebra"
 course_title: "线性代数"
 section: ""
 status: "completed"
+created_at: "2026-05-06T16:22:03+08:00"
+updated_at: "2026-05-29T15:51:45+08:00"
 reference: false
+order: 7
 layout: "course"
 permalink: "/courses/linear-algebra/eigenvalues-and-eigenvectors/"
 course_page: true
@@ -31,8 +34,10 @@ excerpt: "线性代数 · Eigenvalues and Eigenvectors - 特征值和特征向�
 那么对于方程 <span class="course-math" data-tex="f(\lambda)=0" data-display="false"><code>f(\lambda)=0</code></span>，通过考察其 <span class="course-math" data-tex="\lambda^{n-1}" data-display="false"><code>\lambda^{n-1}</code></span> 与 <span class="course-math" data-tex="\lambda^0" data-display="false"><code>\lambda^0</code></span> 的系数，根据韦达定理有
 <span class="course-math course-math-display" data-tex="\sum \lambda_{i}=\text{tr}(A)" data-display="true"><code>\sum \lambda_{i}=\text{tr}(A)</code></span>
 <span class="course-math course-math-display" data-tex="\prod \lambda_{i}=\det(A)" data-display="true"><code>\prod \lambda_{i}=\det(A)</code></span>
+
 ### 对角化
 {: #section-1 }
+
 
 **利用特征值和特征向量，可以将 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 阶矩阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 进行对角化（Diagonalization）：**
 - 假设 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 有 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个相互独立的特征向量 <span class="course-math" data-tex="v_{1},v_{2},\dots,v_{n}" data-display="false"><code>v_{1},v_{2},\dots,v_{n}</code></span>，令 <span class="course-math" data-tex="S=\begin{bmatrix}v_{1} &amp; v_{2} &amp; \dots &amp; v_{n}\end{bmatrix}" data-display="false"><code>S=\begin{bmatrix}v_{1} &amp; v_{2} &amp; \dots &amp; v_{n}\end{bmatrix}</code></span>。
@@ -72,8 +77,10 @@ excerpt: "线性代数 · Eigenvalues and Eigenvectors - 特征值和特征向�
 其中 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为 <span class="course-math" data-tex="m\times n" data-display="false"><code>m\times n</code></span> 矩阵， <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 为 <span class="course-math" data-tex="n\times m" data-display="false"><code>n\times m</code></span> 矩阵。
 
 **结论：秩为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 的矩阵必然有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 个特征值为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>。（<span class="course-math" data-tex="N(A)" data-display="false"><code>N(A)</code></span> 有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 维，对应特征值为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 的特征向量）**
+
 ### 递推数列与 Markov 矩阵
 {: #section-2 }
+
 
 **应用：推导斐波那契数列通项公式**
 斐波那契数列：<span class="course-math" data-tex="F_{0}=0,F_{1}=1" data-display="false"><code>F_{0}=0,F_{1}=1</code></span>，且有

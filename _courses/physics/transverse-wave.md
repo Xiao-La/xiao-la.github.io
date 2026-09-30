@@ -4,7 +4,10 @@ course_id: "physics"
 course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
+created_at: "2025-11-26T11:11:49+08:00"
+updated_at: "2025-12-09T08:58:37+08:00"
 reference: false
+order: 6
 layout: "course"
 permalink: "/courses/physics/transverse-wave/"
 course_page: true
@@ -18,8 +21,10 @@ excerpt: "大学物理（上）/（下） · Transverse Wave - 横波"
 **横波（Transverse Wave）** 指质点振动方向与波传播方向相反的波。
 
 向右传播的波可以写成 <span class="course-math" data-tex="y(x,t)=f(x - vt)" data-display="false"><code>y(x,t)=f(x - vt)</code></span> 的形式。
+
 ## 谐波
 {: #section-1 }
+
 
 **谐波（Harmonic/Sinusoidal Waves）** 指 <span class="course-math" data-tex="f(x)" data-display="false"><code>f(x)</code></span> 是正弦函数的情况：
 
@@ -30,8 +35,10 @@ excerpt: "大学物理（上）/（下） · Transverse Wave - 横波"
 故谐波的**标准形式**：
 <span class="course-math course-math-display" data-tex="y(x,t)=y_{m}\sin(kx\pm\omega t)" data-display="true"><code>y(x,t)=y_{m}\sin(kx\pm\omega t)</code></span>
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-1.png' | relative_url }}{% raw %}" alt="Wave-1" loading="lazy">
+
 ## 绷紧弦上的波
 {: #section-2 }
+
 
 绷紧弦（Stretched String）上的波速
 <span class="course-math course-math-display" data-tex="v=\sqrt{ \frac{\tau}{\mu} }" data-display="true"><code>v=\sqrt{ \frac{\tau}{\mu} }</code></span>
@@ -41,29 +48,37 @@ excerpt: "大学物理（上）/（下） · Transverse Wave - 横波"
 <span class="course-math course-math-display" data-tex="P_{\text{avg}} = \frac{1}{2}\mu v\omega^2y_{m}^2" data-display="true"><code>P_{\text{avg}} = \frac{1}{2}\mu v\omega^2y_{m}^2</code></span>
 证明：<a href="{% endraw %}{{ '/courses/references/wave-2/' | relative_url }}{% raw %}">Wave-2</a>
 
+
 ##  谐波的叠加
 {: #section-3 }
+
 
 两列谐波的叠加（Superposition）只需简单相加：
 <span class="course-math course-math-display" data-tex="y(x,t)=y_{1}(x,t)+y_{2}(x,t)" data-display="true"><code>y(x,t)=y_{1}(x,t)+y_{2}(x,t)</code></span>
 稳定的叠加叫做干涉（Interference）。
+
 #### 差某个相位的情况
 {: #section-4 }
+
 
 若两列波振幅，波长和频率相同，只差一个相位 <span class="course-math" data-tex="\phi" data-display="false"><code>\phi</code></span>，那么它们的叠加：
 <span class="course-math course-math-display" data-tex="\begin{align}&#10;y(x,t)&amp;=y_{m}\sin(kx-\omega t)+y_{m}\sin(kx-\omega t+\phi) \\&#10;&amp;=2y_{m}\cos\left( \frac{\phi}{2} \right)\sin\left( kx-\omega t+\frac{\phi}{2} \right)&#10;\end{align}" data-display="true"><code>\begin{align}&#10;y(x,t)&amp;=y_{m}\sin(kx-\omega t)+y_{m}\sin(kx-\omega t+\phi) \\&#10;&amp;=2y_{m}\cos\left( \frac{\phi}{2} \right)\sin\left( kx-\omega t+\frac{\phi}{2} \right)&#10;\end{align}</code></span>
 1. 若 <span class="course-math" data-tex="\cos\left( \frac{\phi}{2} \right)=0" data-display="false"><code>\cos\left( \frac{\phi}{2} \right)=0</code></span>，则两列波反相（Out of phase），称为相消干涉（Destructive Interference）。
 2. 若 <span class="course-math" data-tex="\cos\left( \frac{\phi}{2} \right)=\pm 1" data-display="false"><code>\cos\left( \frac{\phi}{2} \right)=\pm 1</code></span>，则两列波同相（In phase），称为相长干涉（Constructive Interference）。
+
 #### 传播方向相反的情况
 {: #section-5 }
+
 
 若两列波振幅，波长和频率相同，但传播方向相反，那么它们的叠加：
 <span class="course-math course-math-display" data-tex="\begin{align}&#10;y(x,t)&amp;=y_{m} \sin (kx-\omega t) + y_{m} \sin(kx+\omega t) \\&#10;&amp;=2y_{m} \sin kx&#10; \cos\omega t\end{align}" data-display="true"><code>\begin{align}&#10;y(x,t)&amp;=y_{m} \sin (kx-\omega t) + y_{m} \sin(kx+\omega t) \\&#10;&amp;=2y_{m} \sin kx&#10; \cos\omega t\end{align}</code></span>
 是一个**驻波（Standing Wave）**。
 1. 若 <span class="course-math" data-tex="\sin kx=0" data-display="false"><code>\sin kx=0</code></span>，即 <span class="course-math" data-tex="x=n \frac{\lambda}{2}" data-display="false"><code>x=n \frac{\lambda}{2}</code></span>，这些点永远不动，叫做节点（Nodes）。
 2. 若 <span class="course-math" data-tex="\sin kx=\pm 1" data-display="false"><code>\sin kx=\pm 1</code></span>，即 <span class="course-math" data-tex="x=\left( n+\frac{1}{2} \right) \frac{\lambda}{2}" data-display="false"><code>x=\left( n+\frac{1}{2} \right) \frac{\lambda}{2}</code></span>，这些点振幅最大，叫做负点（Antinodes）。
+
 ## 波的反射
 {: #section-6 }
+
 
 如果一个波撞到“硬边界”（Hard boundary），会发生半波损，波会跳跃半个相位后反射回来。
 如果一个波撞到“软边界”（Soft boundary），会直接反射回来。

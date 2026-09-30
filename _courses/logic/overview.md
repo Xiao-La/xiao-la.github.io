@@ -4,7 +4,10 @@ course_id: "logic"
 course_title: "数理逻辑导论"
 section: ""
 status: "completed"
+created_at: "2026-06-03T11:50:52+08:00"
+updated_at: "2026-06-08T17:04:12+08:00"
 reference: false
+order: 5
 layout: "course"
 permalink: "/courses/logic/overview/"
 course_page: true

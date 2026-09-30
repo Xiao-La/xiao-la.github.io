@@ -4,7 +4,10 @@ course_id: "calculus"
 course_title: "高等数学（上）/（下）"
 section: "上"
 status: "completed"
+created_at: "2025-11-18T16:29:25+08:00"
+updated_at: "2025-12-20T17:44:07+08:00"
 reference: false
+order: 4
 layout: "course"
 permalink: "/courses/calculus/transcendental-function/"
 course_page: true

@@ -4,7 +4,10 @@ course_id: "physics"
 course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
+created_at: "2026-04-01T21:34:20+08:00"
+updated_at: "2026-06-05T20:25:23+08:00"
 reference: false
+order: 11
 layout: "course"
 permalink: "/courses/physics/dc-circuits/"
 course_page: true
@@ -15,8 +18,10 @@ excerpt: "大学物理（上）/（下） · DC Circuits - 直流电路"
 
 {% raw %}
 
+
 ## 电流 
 {: #section-1 }
+
  
 电流为电荷因电场作用在导体中定向移动产生的，定义为单位时间内通过一个截面的正电荷量。
 <span class="course-math course-math-display" data-tex="i=\frac{dq}{dt}" data-display="true"><code>i=\frac{dq}{dt}</code></span>
@@ -28,8 +33,10 @@ excerpt: "大学物理（上）/（下） · DC Circuits - 直流电路"
 那么有 
 <span class="course-math course-math-display" data-tex="di=\vec{J}d\vec{A}" data-display="true"><code>di=\vec{J}d\vec{A}</code></span>
 
+
 ## 电阻
 {: #section-2 }
+
 
 定义电阻率（Resistivity）为电场强度与电流密度的比值，它只与材料有关：
 <span class="course-math course-math-display" data-tex="\rho=\frac{E}{J}" data-display="true"><code>\rho=\frac{E}{J}</code></span>
@@ -56,15 +63,19 @@ excerpt: "大学物理（上）/（下） · DC Circuits - 直流电路"
 <span class="course-math course-math-display" data-tex="R=R_{1}+R_{2}+\dots +R_{n}" data-display="true"><code>R=R_{1}+R_{2}+\dots +R_{n}</code></span>
 并联：
 <span class="course-math course-math-display" data-tex="R=\frac{1}{R_{1}}+\frac{1}{R_{2}}+\dots+\frac{1}{R_{n}}" data-display="true"><code>R=\frac{1}{R_{1}}+\frac{1}{R_{2}}+\dots+\frac{1}{R_{n}}</code></span>
+
 ## 电功率
 {: #section-3 }
+
 
 <span class="course-math course-math-display" data-tex="U=qV\implies dU=Vdq=VIdt" data-display="true"><code>U=qV\implies dU=Vdq=VIdt</code></span>
 <span class="course-math course-math-display" data-tex="\implies P=\frac{dU}{dt}=IV" data-display="true"><code>\implies P=\frac{dU}{dt}=IV</code></span>
 在纯电阻的情况下, 应用欧姆定律有：
 <span class="course-math course-math-display" data-tex="P=I^{2}R=\frac{V}{R}" data-display="true"><code>P=I^{2}R=\frac{V}{R}</code></span>
+
 ## 电路
 {: #section-4 }
+
 
 电动势（Electromotive Force, emf）<span class="course-math" data-tex="\varepsilon" data-display="false"><code>\varepsilon</code></span> 为将电流从低电势转换为高电势的影响。一个理想的 emf 可以保持恒定的电势差。
 真实的电池会存在内阻 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span>，那么对于整个回路有
@@ -75,8 +86,10 @@ excerpt: "大学物理（上）/（下） · DC Circuits - 直流电路"
 - 基尔霍夫回路定则（Kirchhoff's Loop Rule）：对于电路中任意的回路，从某一个点经过一圈回到原点，有 <span class="course-math" data-tex="\sum V=0" data-display="false"><code>\sum V=0</code></span>。（例如，沿着电流方向经过电阻，电势减小；从电池的负极穿到正极，电势上升）。
 电流的方向可以随便假设，最后看算出来数值的正负来确定实际方向。
 
+
 ### RC 电路
 {: #section-5 }
+
 
 （电容器充电）存在一个电动势 <span class="course-math" data-tex="\varepsilon" data-display="false"><code>\varepsilon</code></span>，一个电阻 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span>  和一个电容器 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 的回路中，由基尔霍夫回路定则得：
 <span class="course-math course-math-display" data-tex="\varepsilon-iR-\frac{q}{C}=0" data-display="true"><code>\varepsilon-iR-\frac{q}{C}=0</code></span>

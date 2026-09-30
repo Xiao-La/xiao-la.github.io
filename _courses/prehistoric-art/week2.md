@@ -4,7 +4,10 @@ course_id: "prehistoric-art"
 course_title: "旧石器艺术与符号"
 section: ""
 status: "updating"
+created_at: "2026-09-16T10:25:04+08:00"
+updated_at: "2026-09-23T11:00:33+08:00"
 reference: false
+order: 2
 layout: "course"
 permalink: "/courses/prehistoric-art/week2/"
 course_page: true
@@ -48,8 +51,10 @@ Human uniqueness - working memory
 - Hold information in attention
 
 
+
 ## Academic Sources
 {: #section-1 }
+
 
 Peer-reviewed publications
 Academic journals. (specific topics)

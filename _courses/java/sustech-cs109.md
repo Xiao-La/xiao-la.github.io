@@ -4,7 +4,10 @@ course_id: "java"
 course_title: "计算机程序设计基础/JavaA"
 section: ""
 status: "completed"
+created_at: "2025-12-22T14:23:58+08:00"
+updated_at: "2026-02-06T13:42:23+08:00"
 reference: false
+order: 1
 layout: "course"
 permalink: "/courses/java/sustech-cs109/"
 course_page: true
@@ -15,8 +18,10 @@ excerpt: "计算机程序设计基础/JavaA · SUSTech CS109 - Java"
 
 {% raw %}
 
+
 ## Java 简介（Introduction to Java）
 {: #section-1 }
+
 
 Java 是一门基于 **C++** 的编程语言。
 
@@ -42,8 +47,10 @@ JDK：Java Development Kit = JRE + 开发工具
 
 转义字符（Escape Character）：`\n` 换行，`\t` Tab，`\"` 转义 `"` 字符。
 
+
 ## 数据类型与计算 (Data Type and Calculation)
 {: #section-2 }
+
 
 - 基础数据类型（Primitive Data Type），共有八种：
   ```java
@@ -75,8 +82,10 @@ JDK：Java Development Kit = JRE + 开发工具
 `ArrayList<Integer> list = new Arraylist<Integer>();`
 `Map<Integer, String>`
 
+
 ## 控制语句（Control Statement）
 {: #section-3 }
+
 
 注意 `if` 如果不加花括号的话只看它的下一句
 ```java
@@ -107,8 +116,10 @@ switch (a) {
 ```
 
 循环：`for, while, do...while`。
+
 ## 数组（Array）
 {: #section-4 }
+
 
 数组 `int[] a = new int[10];`  其中 `10` 为数组的大小。
 创建后大小不能更改，大小通过 `a.length` 可以获取。
@@ -143,8 +154,10 @@ int[][] arr = new int[3][4];
 int[][] arr1 = {{1, 2}, {3, 4, 5}};
 ```
 
+
 ## 方法（Method）
 {: #section-5 }
+
 
 函数中的传参数：基础类型是传值本身，引用类型是传引用。参数也会隐式提升。
 
@@ -153,8 +166,10 @@ int[][] arr1 = {{1, 2}, {3, 4, 5}};
 可变数量参数 `public static double sum(double... numbers)`
 
 调用栈（Method-Call Stack）：调用方法时会创建栈帧，推入调用栈，然后在栈顶执行，执行完会弹出栈顶。
+
 ## 字符串与包装类（String and Wrapper Classes）
 {: #section-6 }
+
 
 不可变字符串 `String` 是 Java 预定义的类（Predefined Class），也是引用类型。
 
@@ -232,8 +247,10 @@ int a = 1;
 Integer b = a; // auto-boxing
 int c = b; // auto-unboxing
 ```
+
 ## 类与对象（Class and Object）
 {: #section-7 }
+
 
 类（Class）的属性（Attributes）：
 1. 生命周期（Lifespan）：实例从创建到销毁的时间。
@@ -275,8 +292,10 @@ Collections.reverse(list);
 
 考虑  `static` 关键字修饰变量或修饰方法的作用。
 
+
 ## 继承（Inheritance）
 {: #section-8 }
+
 
 子类（Subclass）继承自超类（Superclass）。
 子类可以被当成超类（is-a relationship）。也就是说，父类变量可以放子类对象。
@@ -327,8 +346,10 @@ Child.staticMethod(); // 输出 "Child static"
 
 ```
 
+
 ## 多态（Polymorphism）
 {: #section-9 }
+
 
 父类变量可以放子类对象。
 
@@ -366,8 +387,10 @@ p.staticMethod(); // 输出 "Parent static"
   ```
 
 
+
 ## 接口（Interface）
 {: #section-10 }
+
 
 接口是一种特殊的类，与公共的抽象类类似。使用 `interface` 关键字。
 接口不可以包含构造方法。
@@ -382,8 +405,10 @@ Payable p1 = new Alipay();
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109%20-%205.png' | relative_url }}{% raw %}" alt="CS109 - 5" loading="lazy">
 
 
+
 ## 泛型（Generic Methods）
 {: #section-11 }
+
 
 注意 `T` 只能是引用类型。
 ```java

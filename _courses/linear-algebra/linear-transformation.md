@@ -4,7 +4,10 @@ course_id: "linear-algebra"
 course_title: "线性代数"
 section: ""
 status: "completed"
+created_at: "2026-01-23T16:59:59+08:00"
+updated_at: "2026-05-15T16:16:05+08:00"
 reference: false
+order: 5
 layout: "course"
 permalink: "/courses/linear-algebra/linear-transformation/"
 course_page: true

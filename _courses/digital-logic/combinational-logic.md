@@ -4,7 +4,10 @@ course_id: "digital-logic"
 course_title: "数字逻辑"
 section: ""
 status: "updating"
+created_at: "2026-09-29T14:11:02+08:00"
+updated_at: "2026-09-29T15:21:20+08:00"
 reference: false
+order: 3
 layout: "course"
 permalink: "/courses/digital-logic/combinational-logic/"
 course_page: true

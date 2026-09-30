@@ -4,7 +4,10 @@ course_id: "philosophy-science"
 course_title: "科学哲学"
 section: ""
 status: "updating"
+created_at: "2026-09-11T14:01:00+08:00"
+updated_at: "2026-09-20T15:24:53+08:00"
 reference: false
+order: 1
 layout: "course"
 permalink: "/courses/philosophy-science/lecture/"
 course_page: true
@@ -36,8 +39,10 @@ Reference
 - 思考/逻辑： 认知上的确定性
 - 自然/宇宙： 物理上的正确性
 
+
 ## 语言
 {: #section-1 }
+
 
 维特根斯坦（早年）：语言的边界就是世界的边界。
 
@@ -61,8 +66,10 @@ Reference
 
 语言 - 智人思考的前提
 
+
 ## 宗教
 {: #section-2 }
+
 
 对确定性的追求
 
@@ -102,8 +109,10 @@ Reference
 - 英格兰内战，牛津大学
 - Proctor 大学的执法者
 
+
 ## 哲学
 {: #section-3 }
+
 
 罗素：哲学介于神学和科学之间。
 

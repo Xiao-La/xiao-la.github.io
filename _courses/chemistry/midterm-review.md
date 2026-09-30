@@ -4,7 +4,10 @@ course_id: "chemistry"
 course_title: "大学化学"
 section: ""
 status: "completed"
+created_at: "2025-11-04T10:04:38+08:00"
+updated_at: "2025-11-08T21:05:15+08:00"
 reference: false
+order: 1
 layout: "course"
 permalink: "/courses/chemistry/midterm-review/"
 course_page: true
@@ -14,8 +17,10 @@ excerpt: "大学化学 · 大化 Midterm Review"
 ---
 
 {% raw %}
+
 ## Chapter 1
 {: #section-1 }
+
 
 **Classification of Matter**
 - Heterogeneous
@@ -37,8 +42,10 @@ excerpt: "大学化学 · 大化 Midterm Review"
 - <span class="course-math" data-tex="+/-" data-display="false"><code>+/-</code></span> : Lowest significant decimal places
 - <span class="course-math" data-tex="\times / \div" data-display="false"><code>\times / \div</code></span> : Lowest significant numbers
 
+
 ## Chapter 2
 {: #section-2 }
+
 
 **Atom**
 - Proton
@@ -71,8 +78,10 @@ excerpt: "大学化学 · 大化 Midterm Review"
   - Deca-
 
 
+
 ## Chapter 3
 {: #section-3 }
+
 
 **Formula weight and molecular weight**
 
@@ -83,8 +92,10 @@ excerpt: "大学化学 · 大化 Midterm Review"
 **Theoretical Yield / Actual Yields**
 - %Yield
 
+
 ## Chapter 4
 {: #section-4 }
+
 
 **Solutions**
 - Solutes
@@ -126,8 +137,10 @@ excerpt: "大学化学 · 大化 Midterm Review"
 
 **Titration**
 
+
 ## Chapter 6
 {: #section-5 }
+
 
 
 **Wavelength of different radiation(increasing order)**
@@ -164,8 +177,10 @@ excerpt: "大学化学 · 大化 Midterm Review"
 - Condensed Electron Configuration
 Exception <span class="course-math" data-tex="\ce{[Ar] 3d^5 4s^1, [Ar] 3d^10 4s^1}" data-display="false"><code>\ce{[Ar] 3d^5 4s^1, [Ar] 3d^10 4s^1}</code></span>
 
+
 ## Chapter 7
 {: #section-6 }
+
 
 **Effective Nuclear Charge** <span class="course-math" data-tex="Z_{\text{eff}}=Z-S" data-display="false"><code>Z_{\text{eff}}=Z-S</code></span>
 - Calculation is not required , as Chapter 8 & 9 are harder
@@ -191,8 +206,10 @@ Exception <span class="course-math" data-tex="\ce{[Ar] 3d^5 4s^1, [Ar] 3d^10 4s^
 **Groups**
 - Alkali metals, Alkaline earth metals, Boron group, Carbon group, Nitrogen group, Chalcogens, Halogens, noble gases
 
+
 ## Chapter 8
 {: #section-7 }
+
 
 **Chemical bonds**
 - Ionic bonds
@@ -229,8 +246,10 @@ Exception <span class="course-math" data-tex="\ce{[Ar] 3d^5 4s^1, [Ar] 3d^10 4s^
 **Bond Enthalpy**
 - <span class="course-math" data-tex="\Delta H_{\text{rxn}}=\sum \Delta H(\text{bonds broken}) +\sum \Delta H(\text{bonds formed})" data-display="false"><code>\Delta H_{\text{rxn}}=\sum \Delta H(\text{bonds broken}) +\sum \Delta H(\text{bonds formed})</code></span>
 
+
 ## Chapter 9
 {: #section-8 }
+
 
 **VSEPR Theory**
 

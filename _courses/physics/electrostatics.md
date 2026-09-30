@@ -4,7 +4,10 @@ course_id: "physics"
 course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
+created_at: "2026-02-27T16:45:43+08:00"
+updated_at: "2026-04-13T20:17:01+08:00"
 reference: false
+order: 10
 layout: "course"
 permalink: "/courses/physics/electrostatics/"
 course_page: true
@@ -14,8 +17,10 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 ---
 
 {% raw %}
+
 ## 库仑定律（Coulomb's Law）
 {: #section-1 }
+
 
 元电荷 <span class="course-math" data-tex="e=1.60 \times 10^{-19}\,\text{C}" data-display="false"><code>e=1.60 \times 10^{-19}\,\text{C}</code></span>，宏观的电荷 <span class="course-math" data-tex="q=ne" data-display="false"><code>q=ne</code></span>，其中 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 为整数。
 
@@ -29,8 +34,10 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 并有 <span class="course-math" data-tex="k=\frac{1}{4\pi \varepsilon_{0}}(=8.99\times 10^9\, \text{N}\times\text{m}^2\text{/C}^2)" data-display="false"><code>k=\frac{1}{4\pi \varepsilon_{0}}(=8.99\times 10^9\, \text{N}\times\text{m}^2\text{/C}^2)</code></span>，其中 <span class="course-math" data-tex="\varepsilon_{0}" data-display="false"><code>\varepsilon_{0}</code></span> 为真空介电常数。
 矢量形式：
 <span class="course-math course-math-display" data-tex="\vec{F}\text{(on 2)}=k \frac{q_{1}q_{2}}{&#124;\vec{r_{2}}-\vec{r_{1}}&#124;^3} (\vec{r_{2}}-\vec{r_{1}})" data-display="true"><code>\vec{F}\text{(on 2)}=k \frac{q_{1}q_{2}}{&#124;\vec{r_{2}}-\vec{r_{1}}&#124;^3} (\vec{r_{2}}-\vec{r_{1}})</code></span>
+
 ## 电场 （Electric Field）
 {: #section-2 }
+
 
 场（Field）是一种具有能量，质量和动量的客观存在的物质。
 用场线（Field Lines）可以描述场的方向，也可用线的疏密，定性描述场的强度。
@@ -53,8 +60,10 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 - 导体的内部电场为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>。
 - 导体的电荷都分布在表面。
 - 导体四周的电场与导体表面垂直。
+
 ### 电偶极子（Electric Dipole）
 {: #section-3 }
+
 
 电偶极子指一对大小相等，方向相反，距离为 <span class="course-math" data-tex="d" data-display="false"><code>d</code></span> 的电荷体系。
 定义电偶极矩（Electric Dipole Moment）<span class="course-math" data-tex="&#124;\vec{p}&#124;=qd" data-display="false"><code>&#124;\vec{p}&#124;=qd</code></span>，方向由负电荷指向正电荷。
@@ -68,8 +77,10 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 并且有 <span class="course-math" data-tex="\vec{\tau}=\vec{p}\times \vec{E}" data-display="false"><code>\vec{\tau}=\vec{p}\times \vec{E}</code></span>，<span class="course-math" data-tex="U=-W=-\int \tau d\theta=-\vec{p}\cdot \vec{E}" data-display="false"><code>U=-W=-\int \tau d\theta=-\vec{p}\cdot \vec{E}</code></span>。
 微波炉的原理就是水分子作为电偶极子会在电场中旋转产生动能。
 
+
 ### 电通量（Electric Flux）
 {: #section-4 }
+
 
 对于一个面，可以定义它的**面积矢量（Surface Area）**，矢量的大小为面积的大小，方向为法线的方向之一。我们规定：
 - 若面是有向的线围成的，则使用右手定则确定矢量方向。
@@ -95,8 +106,10 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 
 注意导体内部的电场恒为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>，也就是说，任取一个导体内的高斯曲面，它所包的电荷量都为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>。
 
+
 ### 电势（Electric Potential）
 {: #section-5 }
+
 
 电势能 <span class="course-math" data-tex="\Delta U=-W=-q_{0}\int_{i}^f \vec{E}\cdot d\vec{s}" data-display="false"><code>\Delta U=-W=-q_{0}\int_{i}^f \vec{E}\cdot d\vec{s}</code></span>。
 定义电势 <span class="course-math" data-tex="V=\frac{U}{q_{0}}" data-display="false"><code>V=\frac{U}{q_{0}}</code></span>，故有 <span class="course-math" data-tex="\Delta V=-\int_{i}^f \vec{E}\cdot d\vec{s}" data-display="false"><code>\Delta V=-\int_{i}^f \vec{E}\cdot d\vec{s}</code></span>。电势的单位为伏特（Volt）。
@@ -118,13 +131,17 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 <span class="course-math course-math-display" data-tex="\begin{cases}&#10;\frac{kQ_{1}}{R_{1}}=\frac{kQ_{2}}{R_{2}} (\text{电势相等}) \\&#10;4\pi R_{1}^2 E_{1}=\frac{Q_{1}}{\varepsilon_{0}}(\text{对小球列高斯定理}) \\&#10;4\pi R_{2}^{2}E_{2}=\frac{Q_{2}}{\varepsilon_{0}}(\text{对大球列高斯定理})&#10;\end{cases}" data-display="true"><code>\begin{cases}&#10;\frac{kQ_{1}}{R_{1}}=\frac{kQ_{2}}{R_{2}} (\text{电势相等}) \\&#10;4\pi R_{1}^2 E_{1}=\frac{Q_{1}}{\varepsilon_{0}}(\text{对小球列高斯定理}) \\&#10;4\pi R_{2}^{2}E_{2}=\frac{Q_{2}}{\varepsilon_{0}}(\text{对大球列高斯定理})&#10;\end{cases}</code></span>
 则可以推出 <span class="course-math" data-tex="E_{1}R_{1}=E_{2}R_{2}" data-display="false"><code>E_{1}R_{1}=E_{2}R_{2}</code></span>，且 <span class="course-math" data-tex="\sigma_{1}R_{1}=\sigma_{2}R_{2}" data-display="false"><code>\sigma_{1}R_{1}=\sigma_{2}R_{2}</code></span>。可以理解为，导体中，表面曲率半径小的地方，所带的电荷更多，电场也更大。
 
+
 #### 电偶极子的电势
 {: #section-6 }
 
+
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6-2.png' | relative_url }}{% raw %}" alt="Electrostatics - 静电学-2" width="204" loading="lazy"> 
 <span class="course-math course-math-display" data-tex="\begin{align}&#10;V&amp;=V_{(+)}+V_{(-)}=k\left( \frac{q}{r_{(+)}}-\frac{q}{r_{(-)}} \right) \\&#10;&amp;=kq \frac{r_{(-)}-r_{(+)}}{r_{(+)}r_{{(-)}}}\\&#10;&amp;\xlongequal{r\gg d} kq \frac{d\cos\theta}{r^{2}}\\&#10;&amp;= \frac{1}{4\pi\varepsilon_{0}} \frac{p\cos\theta}{r^{2}}&#10;\end{align}" data-display="true"><code>\begin{align}&#10;V&amp;=V_{(+)}+V_{(-)}=k\left( \frac{q}{r_{(+)}}-\frac{q}{r_{(-)}} \right) \\&#10;&amp;=kq \frac{r_{(-)}-r_{(+)}}{r_{(+)}r_{{(-)}}}\\&#10;&amp;\xlongequal{r\gg d} kq \frac{d\cos\theta}{r^{2}}\\&#10;&amp;= \frac{1}{4\pi\varepsilon_{0}} \frac{p\cos\theta}{r^{2}}&#10;\end{align}</code></span>
+
 ## 电容器（Capacitor）
 {: #section-7 }
+
 
 电容（Capacitance）<span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 的单位为法拉（Farad, F）。定义式：
 <span class="course-math course-math-display" data-tex="C=\frac{q}{V}" data-display="true"><code>C=\frac{q}{V}</code></span>

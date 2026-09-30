@@ -4,7 +4,10 @@ course_id: "physics"
 course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
+created_at: "2025-10-23T11:02:29+08:00"
+updated_at: "2025-11-01T15:56:09+08:00"
 reference: false
+order: 2
 layout: "course"
 permalink: "/courses/physics/rolling-and-precession/"
 course_page: true
@@ -15,8 +18,10 @@ excerpt: "大学物理（上）/（下） · Rolling and Precession - 滚动和�
 
 {% raw %}
 前置： <a href="{% endraw %}{{ '/courses/physics/rotation/' | relative_url }}{% raw %}">Rotation - 定轴转动</a>
+
 ## 滚动
 {: #section-1 }
+
 
 纯滚动 (Smooth Rolling) = 纯平动 + 纯转动。
 其中平动和转动的关系满足 <span class="course-math" data-tex="v_{com}=\omega R" data-display="false"><code>v_{com}=\omega R</code></span>，这可以用位移求导得出。
@@ -34,8 +39,10 @@ excerpt: "大学物理（上）/（下） · Rolling and Precession - 滚动和�
 质心系：<span class="course-math" data-tex="L_{tot}=\vec{R}\times M\vec{v}+L_{com}" data-display="false"><code>L_{tot}=\vec{R}\times M\vec{v}+L_{com}</code></span>。
 
 计算中常用 <span class="course-math" data-tex="\gamma =\frac{I^2}{MR^2}" data-display="false"><code>\gamma =\frac{I^2}{MR^2}</code></span> 简化表达式。
+
 ## 进动
 {: #section-2 }
+
 
 **进动（Precession）** 是指自转刚体受外力作用时自转轴绕某一中心旋转的现象。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Precesssion-1.png' | relative_url }}{% raw %}" alt="Precesssion-1" loading="lazy">

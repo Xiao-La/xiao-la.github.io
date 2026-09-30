@@ -4,7 +4,10 @@ course_id: "physics"
 course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
+created_at: "2025-10-21T20:46:07+08:00"
+updated_at: "2025-12-24T14:26:50+08:00"
 reference: false
+order: 1
 layout: "course"
 permalink: "/courses/physics/rotation/"
 course_page: true

@@ -4,7 +4,10 @@ course_id: "life-science"
 course_title: "生命科学概论"
 section: ""
 status: "completed"
+created_at: "2026-02-25T08:08:59+08:00"
+updated_at: "2026-03-02T11:38:25+08:00"
 reference: false
+order: 1
 layout: "course"
 permalink: "/courses/life-science/cell-biology/"
 course_page: true
@@ -15,8 +18,10 @@ excerpt: "生命科学概论 · Cell Biology - 细胞生物学"
 
 {% raw %}
 * emergence（涌现）
+
 ### The history of cell biology
 {: #section-1 }
+
 
 - The size of a cell: <span class="course-math" data-tex="100 \mu m" data-display="false"><code>100 \mu m</code></span>
 - The invention of **microscope** 
@@ -50,8 +55,10 @@ CRISPR/Cas 9
 
 Green Fluorescent Protein (GFP)
 
+
 ### The coronavirus（冠状病毒）
 {: #section-2 }
+
 
 In 1895, Overton proposed that biomembranes (生物膜) are made up of lipids.
 
@@ -74,6 +81,7 @@ Secretion (分泌)
 Endoplasmic ReticulumER（内质网）
 -  Rough ER
 - Smooth ER
+
 ### Cancer
 {: #section-3 }
 {% endraw %}

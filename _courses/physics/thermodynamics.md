@@ -4,7 +4,10 @@ course_id: "physics"
 course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
+created_at: "2025-12-11T10:26:58+08:00"
+updated_at: "2025-12-26T10:52:03+08:00"
 reference: false
+order: 8
 layout: "course"
 permalink: "/courses/physics/thermodynamics/"
 course_page: true
@@ -15,8 +18,10 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 
 {% raw %}
 
+
 ### 热力学系统
 {: #section-1 }
+
 
 热力学系统（Thermodynamic System）由状态参量（State Quantities）描述。
 状态参量分为广延量（Extensive Quantity）和强度量（Intensive Quantity）。
@@ -37,15 +42,19 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 2. 多组分系统（Multi-Component System）
 
 
+
 ### 热平衡
 {: #section-2 }
+
 
 平衡态（Equilibrium State）的定义：
 1. 宏观物理量不随时间变化。
 2. 不存在稳定的能流或物质流。
 
+
 ### 热力学第零定律
 {: #section-3 }
+
 
 **热力学第零定律（Zeroth law of thermodynamics and temperature）：**
 1. 热平衡是可以传递的。
@@ -57,8 +66,10 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 
 用压强测温度：依赖于 <span class="course-math" data-tex="T=Cp" data-display="false"><code>T=Cp</code></span>（理想气体），则 <span class="course-math" data-tex="T=T_{3} \frac{p}{p_{3}}" data-display="false"><code>T=T_{3} \frac{p}{p_{3}}</code></span>，其中 <span class="course-math" data-tex="T_{3}, p_{3}" data-display="false"><code>T_{3}, p_{3}</code></span> 为水的三相点的温度与压强。
 
+
 ### 热膨胀
 {: #section-4 }
+
 
 **二维情形：**
 
@@ -69,22 +80,28 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 <span class="course-math course-math-display" data-tex="\frac{\Delta V}{V}=\beta \Delta T" data-display="true"><code>\frac{\Delta V}{V}=\beta \Delta T</code></span>
 其中 <span class="course-math" data-tex="\beta" data-display="false"><code>\beta</code></span> 为体膨胀系数，这里有关系 <span class="course-math" data-tex="\beta=3\alpha" data-display="false"><code>\beta=3\alpha</code></span>。
 
+
 ### 物态方程
 {: #section-5 }
+
 
 物态方程（The Equation of State）
 <span class="course-math course-math-display" data-tex="f(p,V,T)=0" data-display="true"><code>f(p,V,T)=0</code></span>
 对于理想气体（Ideal Gas）：
 <span class="course-math course-math-display" data-tex="pV-nRT=0" data-display="true"><code>pV-nRT=0</code></span>
 
+
 ### 热传递
 {: #section-6 }
+
 
 热（Heat）是由于温度差异自发传递的能量。
 
 热传递（Heat Transfer）的方法：
+
 #### 热传导
 {: #section-7 }
+
 
 热传导速率（Thermal Conduction Rate）：
 <span class="course-math course-math-display" data-tex="P_{\text{cond}}=\frac{Q}{t}=kA \frac{T_{H}-T_{C}}{L} = \frac{\Delta T}{R}" data-display="true"><code>P_{\text{cond}}=\frac{Q}{t}=kA \frac{T_{H}-T_{C}}{L} = \frac{\Delta T}{R}</code></span>
@@ -93,12 +110,16 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 
 **稳态**：两个热源之间的热流（<span class="course-math" data-tex="P_{\text{cond}}" data-display="false"><code>P_{\text{cond}}</code></span>）不变且处处一致。注意热源是温度保持不变的热库。
 
+
 #### 对流 
 {: #section-8 }
 
+
 流体热胀冷缩导致其流动，从而传递热量。
+
 #### 辐射 
 {: #section-9 }
+
 
 物体向外辐射的热功率：
 <span class="course-math course-math-display" data-tex="P_{\text{rad}}=\sigma \varepsilon A T^4" data-display="true"><code>P_{\text{rad}}=\sigma \varepsilon A T^4</code></span>
@@ -109,23 +130,31 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 其中 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为物体表面积，<span class="course-math" data-tex="T" data-display="false"><code>T</code></span> 为物体温度，<span class="course-math" data-tex="\sigma" data-display="false"><code>\sigma</code></span> 为斯忒藩-玻尔兹曼常数（Stefan-Boltzmann Constant），<span class="course-math" data-tex="\varepsilon" data-display="false"><code>\varepsilon</code></span> 为与物体材料有关的介于 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 和 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 之间的量。
 对黑体（Blackbody）来说，<span class="course-math" data-tex="\varepsilon=1" data-display="false"><code>\varepsilon=1</code></span>，即物体吸收和发射辐射能力都最强。
 
+
 #### 热传递导致温度变化
 {: #section-10 }
+
 
 <span class="course-math course-math-display" data-tex="Q=C\Delta T=cm\Delta T" data-display="true"><code>Q=C\Delta T=cm\Delta T</code></span>
 其中 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 为热容量（Heat Capacity），<span class="course-math" data-tex="c=\frac{C}{m}" data-display="false"><code>c=\frac{C}{m}</code></span> 为比热容（Specific Heat）。
 
+
 #### 热传递导致相变
 {: #section-11 }
+
 
 <span class="course-math course-math-display" data-tex="Q=Lm" data-display="true"><code>Q=Lm</code></span>
 其中 <span class="course-math" data-tex="L" data-display="false"><code>L</code></span> 为相变潜热（Latent Heat）。
 
 
+
 ### 热力学第一定律
 {: #section-12 }
+
+
 #### 热力学过程
 {: #section-13 }
+
 
 <span class="course-math course-math-display" data-tex="(p_{i}, V_{i}, T_{i})\to (p_{f}, V_{f}, T_{f})" data-display="true"><code>(p_{i}, V_{i}, T_{i})\to (p_{f}, V_{f}, T_{f})</code></span>
 过程分为不可逆过程（Irreversible Process）和可逆过程（Reversible Process）。
@@ -135,21 +164,27 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 绝热过程（Adiabatic Process）：<span class="course-math" data-tex="Q=0" data-display="false"><code>Q=0</code></span>。
 恒容过程（Isochoric / Constant-volume Process）：<span class="course-math" data-tex="W=0" data-display="false"><code>W=0</code></span>。
 循环过程(Cyclical / Loop Process)：<span class="course-math" data-tex="\Delta E_{\text{int}}=0" data-display="false"><code>\Delta E_{\text{int}}=0</code></span>。
+
 #### 热力学过程中的功
 {: #section-14 }
 
+
 将系统对外界做的功（Work done by the system）定义为正：
 <span class="course-math course-math-display" data-tex="W_{\text{by}}=\int_{V_{i}}^{V_{f}} pdV" data-display="true"><code>W_{\text{by}}=\int_{V_{i}}^{V_{f}} pdV</code></span>
+
 #### 热力学过程中的热
 {: #section-15 }
+
 
 将系统从外界吸收的热定义为正：
 
 <span class="course-math course-math-display" data-tex="Q=C_{\text{process}} \Delta T" data-display="true"><code>Q=C_{\text{process}} \Delta T</code></span>
 其中 <span class="course-math" data-tex="C_{\text{process}}" data-display="false"><code>C_{\text{process}}</code></span> 和过程强相关。
 
+
 #### 内能
 {: #section-16 }
+
 
 热力学第一定律指出，能量是守恒的，那么热力学过程中剩下的能量会跑到系统内部，这被称为系统的内能（Internal Energy）：
 
@@ -157,8 +192,10 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 也就是说，不存在第一类永动机。
 自由膨胀（Free Expansion）中，<span class="course-math" data-tex="Q=W=0" data-display="false"><code>Q=W=0</code></span>。
 
+
 ### 热机
 {: #section-17 }
+
 
 利用循环过程做功，这需要过程的 <span class="course-math" data-tex="\text{p-V}" data-display="false"><code>\text{p-V}</code></span> 图线是顺时针方向的闭合曲线。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Thermodynamics-1.png' | relative_url }}{% raw %}" alt="Thermodynamics-1" loading="lazy">
@@ -171,14 +208,18 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 那么 <span class="course-math" data-tex="0\leq \varepsilon = 1- \frac{T_{C}}{T_{H}}&lt;1" data-display="false"><code>0\leq \varepsilon = 1- \frac{T_{C}}{T_{H}}&lt;1</code></span> 。
 
 卡诺指出，不同的热机在冷源和热源温度一致时，卡诺热机的效率是最高的。
+
 ### 制冷机
 {: #section-18 }
+
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Thermodynamics-3.png' | relative_url }}{% raw %}" alt="Thermodynamics-3" loading="lazy">
 <span class="course-math" data-tex="K= \frac{&#124;Q_{L}&#124;}{&#124;W&#124;}=\frac{&#124;Q_{L}&#124;}{&#124;Q_{H}&#124;-&#124;Q_{L}&#124;}= \frac{T_{L}}{T_{H}-T_{L}}" data-display="false"><code>K= \frac{&#124;Q_{L}&#124;}{&#124;W&#124;}=\frac{&#124;Q_{L}&#124;}{&#124;Q_{H}&#124;-&#124;Q_{L}&#124;}= \frac{T_{L}}{T_{H}-T_{L}}</code></span>。
 
 
+
 ### 热力学第二定律
 {: #section-19 }
+
 
 克劳修斯表述：热量不能自发地从低温物体传递到高温物体。
 
@@ -186,8 +227,10 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 
 实质：自发发生的热现象有方向性，一切与热现象的实际过程都是不可逆的。
 
+
 #### 熵
 {: #section-20 }
+
 
 定义熵变（Entropy Change）：
 

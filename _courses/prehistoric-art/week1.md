@@ -4,7 +4,10 @@ course_id: "prehistoric-art"
 course_title: "旧石器艺术与符号"
 section: ""
 status: "updating"
+created_at: "2026-09-09T10:24:19+08:00"
+updated_at: "2026-09-09T11:57:00+08:00"
 reference: false
+order: 1
 layout: "course"
 permalink: "/courses/prehistoric-art/week1/"
 course_page: true
