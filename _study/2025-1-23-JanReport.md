@@ -4,6 +4,9 @@ title: 2025 年 1 月学习报告（高三上学期总结）
 categories: study
 description: study
 keywords: report
+date: 2025-01-23
+learning_kind: record
+learning_stage: high-school
 ---
 
 本月经历 2 次大考，数据如下。

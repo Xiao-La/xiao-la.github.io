@@ -1,0 +1,17 @@
+.learning-entry, .learning-active a, .learning-section-nav a, .learning-breadcrumb a { word-break: normal; overflow-wrap: anywhere; }
+.learning-breadcrumb { font-size: .85em; color: #777; margin-bottom: 1em; line-height: 1.8; }
+.learning-entries { margin: 2em 0; border-top: 1px solid #d8d8d8; }
+.learning-entry { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: .25em 1em; border-bottom: 1px solid #e4e4e4; padding: .85em .2em; }
+.learning-entry:hover h2, .learning-entry:focus-visible h2 { text-decoration: underline; }
+.learning-entry:hover { text-decoration: none; }
+.learning-entry h2 { font-size: 1.1em; padding: 0; border: 0; margin: 0; color: inherit; width: auto; }
+.learning-entry p { grid-column: 1 / -1; margin: 0; color: #777; font-size: .85em; }
+.learning-entry > span { grid-column: 2; grid-row: 1; color: #777; font-size: .75em; white-space: nowrap; }
+.learning-active ul { display: flex; flex-wrap: wrap; gap: .65em 1.5em; list-style: none; padding: 0; }
+.learning-section-nav { display: flex; flex-wrap: wrap; gap: .75em 1.5em; margin: 2em 0; }
+.learning-section-nav small { color: #777; margin-left: .4em; }
+.learning-section { scroll-margin-top: 1em; margin-top: 2.5em; }
+.learning-article-list { list-style: none; padding: 0; margin: 0; }
+@media (max-width: 720px) {
+  .learning-section-nav { gap: .75em 1em; }
+}

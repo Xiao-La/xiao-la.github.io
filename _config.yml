@@ -31,6 +31,9 @@ plugins:
   - jemoji
 
 collections:
+  courses:
+    output: true
+    permalink: /courses/:path/
   study:
     output: true
     permalink: /study/:path/
@@ -46,6 +49,12 @@ defaults:
       type: study
     values:
       layout: study
+  - scope:
+      path: ""
+      type: courses
+    values:
+      layout: course
+      course_page: true
 
 # External services are configured here instead of inside templates.
 comments:
@@ -60,3 +69,7 @@ exclude:
   - Gemfile.lock
   - README.md
   - vendor
+  - scripts
+  - tests
+  - docs
+  - reports/courses-sync.json

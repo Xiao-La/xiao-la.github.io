@@ -4,6 +4,9 @@ title: OI 笔记 | 线段树合并笔记
 categories: Note
 description: Note
 keywords: NOIP, OI, Note
+learning_kind: topic
+learning_topic: algorithms
+learning_format: notes
 ---
 
 线段树合并是一种能够将两棵线段树在 $\mathcal{O}(n\log n)$ 的时间内合并信息的算法。

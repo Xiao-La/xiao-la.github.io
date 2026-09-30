@@ -1,0 +1,19 @@
+topics:
+  - id: mathematics
+    title: 数学
+  - id: algorithms
+    title: 算法与信息学竞赛
+formats:
+  - id: notes
+    title: 知识专题
+  - id: solutions
+    title: 题解与刷题
+stages:
+  - id: high-school
+    title: 高三 · 2024—2025
+  - id: oi
+    title: 信息学竞赛 · 2022—2023
+  - id: methods
+    title: 学习方法
+  - id: early
+    title: 早期记录

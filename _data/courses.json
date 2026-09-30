@@ -1,0 +1,918 @@
+[
+  {
+    "id": "physics",
+    "title": "大学物理（上）/（下）",
+    "coverage": "全",
+    "status": "completed",
+    "url": "/courses/physics/",
+    "count": 16,
+    "notes": [
+      {
+        "title": "Equilibrium and Elasticity - 平衡和弹性",
+        "url": "/courses/physics/equilibrium-and-elasticity/",
+        "course_id": "physics",
+        "course_title": "大学物理（上）/（下）",
+        "section": "上",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Gravitation - 引力",
+        "url": "/courses/physics/gravitation/",
+        "course_id": "physics",
+        "course_title": "大学物理（上）/（下）",
+        "section": "上",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Kinetic Theory of Gases - 气体动力学理论",
+        "url": "/courses/physics/kinetic-theory-of-gases/",
+        "course_id": "physics",
+        "course_title": "大学物理（上）/（下）",
+        "section": "上",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Longitudinal Wave - 纵波",
+        "url": "/courses/physics/longitudinal-wave/",
+        "course_id": "physics",
+        "course_title": "大学物理（上）/（下）",
+        "section": "上",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Oscillations - 振动",
+        "url": "/courses/physics/oscillations/",
+        "course_id": "physics",
+        "course_title": "大学物理（上）/（下）",
+        "section": "上",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Rolling and Precession - 滚动和进动",
+        "url": "/courses/physics/rolling-and-precession/",
+        "course_id": "physics",
+        "course_title": "大学物理（上）/（下）",
+        "section": "上",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Rotation - 定轴转动",
+        "url": "/courses/physics/rotation/",
+        "course_id": "physics",
+        "course_title": "大学物理（上）/（下）",
+        "section": "上",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Thermodynamics - 热力学",
+        "url": "/courses/physics/thermodynamics/",
+        "course_id": "physics",
+        "course_title": "大学物理（上）/（下）",
+        "section": "上",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Transverse Wave - 横波",
+        "url": "/courses/physics/transverse-wave/",
+        "course_id": "physics",
+        "course_title": "大学物理（上）/（下）",
+        "section": "上",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "DC Circuits - 直流电路",
+        "url": "/courses/physics/dc-circuits/",
+        "course_id": "physics",
+        "course_title": "大学物理（上）/（下）",
+        "section": "下",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Electrostatics - 静电学",
+        "url": "/courses/physics/electrostatics/",
+        "course_id": "physics",
+        "course_title": "大学物理（上）/（下）",
+        "section": "下",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Magnetism and Induction - 磁学与电磁感应",
+        "url": "/courses/physics/magnetism-and-induction/",
+        "course_id": "physics",
+        "course_title": "大学物理（上）/（下）",
+        "section": "下",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Optics - 光学",
+        "url": "/courses/physics/optics/",
+        "course_id": "physics",
+        "course_title": "大学物理（上）/（下）",
+        "section": "下",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Quantum Physics - 量子物理",
+        "url": "/courses/physics/quantum-physics/",
+        "course_id": "physics",
+        "course_title": "大学物理（上）/（下）",
+        "section": "下",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Relativity - 相对论",
+        "url": "/courses/physics/relativity/",
+        "course_id": "physics",
+        "course_title": "大学物理（上）/（下）",
+        "section": "下",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Synthesis of Electromagnetism - 电磁学综合",
+        "url": "/courses/physics/synthesis-of-electromagnetism/",
+        "course_id": "physics",
+        "course_title": "大学物理（上）/（下）",
+        "section": "下",
+        "status": "completed",
+        "reference": false
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "calculus",
+    "title": "高等数学（上）/（下）",
+    "coverage": "全",
+    "status": "completed",
+    "url": "/courses/calculus/",
+    "count": 12,
+    "notes": [
+      {
+        "title": "Antiderivative and Integral - 积分",
+        "url": "/courses/calculus/antiderivative-and-integral/",
+        "course_id": "calculus",
+        "course_title": "高等数学（上）/（下）",
+        "section": "上",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Complex Number - 复数",
+        "url": "/courses/calculus/complex-number/",
+        "course_id": "calculus",
+        "course_title": "高等数学（上）/（下）",
+        "section": "上",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Differential Equation - 微分方程",
+        "url": "/courses/calculus/differential-equation/",
+        "course_id": "calculus",
+        "course_title": "高等数学（上）/（下）",
+        "section": "上",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Integral Techniques - 积分技巧",
+        "url": "/courses/calculus/integral-techniques/",
+        "course_id": "calculus",
+        "course_title": "高等数学（上）/（下）",
+        "section": "上",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Limit and Derivative - 极限与导数",
+        "url": "/courses/calculus/limit-and-derivative/",
+        "course_id": "calculus",
+        "course_title": "高等数学（上）/（下）",
+        "section": "上",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Transcendental Function - 超越函数",
+        "url": "/courses/calculus/transcendental-function/",
+        "course_id": "calculus",
+        "course_title": "高等数学（上）/（下）",
+        "section": "上",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Multiple Integral - 多重积分",
+        "url": "/courses/calculus/multiple-integral/",
+        "course_id": "calculus",
+        "course_title": "高等数学（上）/（下）",
+        "section": "下",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Partial Derivatives -  偏导数",
+        "url": "/courses/calculus/partial-derivatives/",
+        "course_id": "calculus",
+        "course_title": "高等数学（上）/（下）",
+        "section": "下",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Polar Coordinates - 极坐标",
+        "url": "/courses/calculus/polar-coordinates/",
+        "course_id": "calculus",
+        "course_title": "高等数学（上）/（下）",
+        "section": "下",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Quadric Surfaces - 二次曲面",
+        "url": "/courses/calculus/quadric-surfaces/",
+        "course_id": "calculus",
+        "course_title": "高等数学（上）/（下）",
+        "section": "下",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Sequence and Series - 数列与级数",
+        "url": "/courses/calculus/sequence-and-series/",
+        "course_id": "calculus",
+        "course_title": "高等数学（上）/（下）",
+        "section": "下",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Vector Calculus - 向量微积分",
+        "url": "/courses/calculus/vector-calculus/",
+        "course_id": "calculus",
+        "course_title": "高等数学（上）/（下）",
+        "section": "下",
+        "status": "completed",
+        "reference": false
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "linear-algebra",
+    "title": "线性代数",
+    "coverage": "全",
+    "status": "completed",
+    "url": "/courses/linear-algebra/",
+    "count": 10,
+    "notes": [
+      {
+        "title": "Complex Matrices - 复矩阵",
+        "url": "/courses/linear-algebra/complex-matrices/",
+        "course_id": "linear-algebra",
+        "course_title": "线性代数",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Determinant - 行列式",
+        "url": "/courses/linear-algebra/determinant/",
+        "course_id": "linear-algebra",
+        "course_title": "线性代数",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Eigenvalues and Eigenvectors - 特征值和特征向量",
+        "url": "/courses/linear-algebra/eigenvalues-and-eigenvectors/",
+        "course_id": "linear-algebra",
+        "course_title": "线性代数",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Final Review - 期末复习",
+        "url": "/courses/linear-algebra/final-review/",
+        "course_id": "linear-algebra",
+        "course_title": "线性代数",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Linear Transformation - 线性变换",
+        "url": "/courses/linear-algebra/linear-transformation/",
+        "course_id": "linear-algebra",
+        "course_title": "线性代数",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Matrices and System of Linear Equations -  矩阵与线性方程组",
+        "url": "/courses/linear-algebra/matrices-and-system-of-linear-equations/",
+        "course_id": "linear-algebra",
+        "course_title": "线性代数",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Orthogonal - 正交",
+        "url": "/courses/linear-algebra/orthogonal/",
+        "course_id": "linear-algebra",
+        "course_title": "线性代数",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Positive Definite Matrices - 正定矩阵",
+        "url": "/courses/linear-algebra/positive-definite-matrices/",
+        "course_id": "linear-algebra",
+        "course_title": "线性代数",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "The Properties of Matrices - 矩阵的性质",
+        "url": "/courses/linear-algebra/the-properties-of-matrices/",
+        "course_id": "linear-algebra",
+        "course_title": "线性代数",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Vector Space - 向量空间",
+        "url": "/courses/linear-algebra/vector-space/",
+        "course_id": "linear-algebra",
+        "course_title": "线性代数",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "civilization-history",
+    "title": "科学与文明史概论",
+    "coverage": "全",
+    "status": "completed",
+    "url": "/courses/civilization-history/",
+    "count": 4,
+    "notes": [
+      {
+        "title": "History",
+        "url": "/courses/civilization-history/history/",
+        "course_id": "civilization-history",
+        "course_title": "科学与文明史概论",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Insights",
+        "url": "/courses/civilization-history/insights/",
+        "course_id": "civilization-history",
+        "course_title": "科学与文明史概论",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Review",
+        "url": "/courses/civilization-history/review/",
+        "course_id": "civilization-history",
+        "course_title": "科学与文明史概论",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Special Lecture",
+        "url": "/courses/civilization-history/special-lecture/",
+        "course_id": "civilization-history",
+        "course_title": "科学与文明史概论",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "java",
+    "title": "计算机程序设计基础/JavaA",
+    "coverage": "仅期末复习",
+    "status": "completed",
+    "url": "/courses/java/",
+    "count": 1,
+    "notes": [
+      {
+        "title": "SUSTech CS109 - Java",
+        "url": "/courses/java/sustech-cs109/",
+        "course_id": "java",
+        "course_title": "计算机程序设计基础/JavaA",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "life-science",
+    "title": "生命科学概论",
+    "coverage": "仅期末复习",
+    "status": "completed",
+    "url": "/courses/life-science/",
+    "count": 3,
+    "notes": [
+      {
+        "title": "Brain and Mind - 脑与心智",
+        "url": "/courses/life-science/brain-and-mind/",
+        "course_id": "life-science",
+        "course_title": "生命科学概论",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Cell Biology - 细胞生物学",
+        "url": "/courses/life-science/cell-biology/",
+        "course_id": "life-science",
+        "course_title": "生命科学概论",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Plants - 植物",
+        "url": "/courses/life-science/plants/",
+        "course_id": "life-science",
+        "course_title": "生命科学概论",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      }
+    ],
+    "resources": [
+      {
+        "title": "总复习",
+        "url": "/assets/courses/%E5%85%B6%E4%BB%96%E9%80%9A%E8%AF%86%E8%AF%BE/%E7%94%9F%E5%91%BD%E7%A7%91%E5%AD%A6%E6%A6%82%E8%AE%BA/%E6%80%BB%E5%A4%8D%E4%B9%A0.pdf"
+      },
+      {
+        "title": "考前速记",
+        "url": "/assets/courses/%E5%85%B6%E4%BB%96%E9%80%9A%E8%AF%86%E8%AF%BE/%E7%94%9F%E5%91%BD%E7%A7%91%E5%AD%A6%E6%A6%82%E8%AE%BA/%E8%80%83%E5%89%8D%E9%80%9F%E8%AE%B0.pdf"
+      }
+    ]
+  },
+  {
+    "id": "chemistry",
+    "title": "大学化学",
+    "coverage": "仅期中复习",
+    "status": "completed",
+    "url": "/courses/chemistry/",
+    "count": 1,
+    "notes": [
+      {
+        "title": "大化 Midterm Review",
+        "url": "/courses/chemistry/midterm-review/",
+        "course_id": "chemistry",
+        "course_title": "大学化学",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "english-iii",
+    "title": "SUSTech English III",
+    "coverage": "仅少量草稿",
+    "status": "completed",
+    "url": "/courses/english-iii/",
+    "count": 1,
+    "notes": [
+      {
+        "title": "SE III Draft",
+        "url": "/courses/english-iii/se-iii-draft/",
+        "course_id": "english-iii",
+        "course_title": "SUSTech English III",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "logic",
+    "title": "数理逻辑导论",
+    "coverage": "全",
+    "status": "completed",
+    "url": "/courses/logic/",
+    "count": 6,
+    "notes": [
+      {
+        "title": "Exam Review - 考试复习",
+        "url": "/courses/logic/exam-review/",
+        "course_id": "logic",
+        "course_title": "数理逻辑导论",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "FOL - 一阶逻辑",
+        "url": "/courses/logic/fol/",
+        "course_id": "logic",
+        "course_title": "数理逻辑导论",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Overview - 概览",
+        "url": "/courses/logic/overview/",
+        "course_id": "logic",
+        "course_title": "数理逻辑导论",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Prerequisite Knowledge - 预备知识",
+        "url": "/courses/logic/prerequisite-knowledge/",
+        "course_id": "logic",
+        "course_title": "数理逻辑导论",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Program Verification - 程序验证",
+        "url": "/courses/logic/program-verification/",
+        "course_id": "logic",
+        "course_title": "数理逻辑导论",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Propositional Logic - 命题逻辑",
+        "url": "/courses/logic/propositional-logic/",
+        "course_id": "logic",
+        "course_title": "数理逻辑导论",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "cs50-ai",
+    "title": "CS50's Introduction to Artificial Intelligence with Python",
+    "coverage": "全",
+    "status": "completed",
+    "url": "/courses/cs50-ai/",
+    "count": 7,
+    "notes": [
+      {
+        "title": "0 - Search",
+        "url": "/courses/cs50-ai/0/",
+        "course_id": "cs50-ai",
+        "course_title": "CS50's Introduction to Artificial Intelligence with Python",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "1 - Knowledge",
+        "url": "/courses/cs50-ai/1/",
+        "course_id": "cs50-ai",
+        "course_title": "CS50's Introduction to Artificial Intelligence with Python",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "2 - Uncertainty",
+        "url": "/courses/cs50-ai/2/",
+        "course_id": "cs50-ai",
+        "course_title": "CS50's Introduction to Artificial Intelligence with Python",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "3 - Optimization",
+        "url": "/courses/cs50-ai/3/",
+        "course_id": "cs50-ai",
+        "course_title": "CS50's Introduction to Artificial Intelligence with Python",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "4 - Learning",
+        "url": "/courses/cs50-ai/4/",
+        "course_id": "cs50-ai",
+        "course_title": "CS50's Introduction to Artificial Intelligence with Python",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "5 - Neural Networks",
+        "url": "/courses/cs50-ai/5/",
+        "course_id": "cs50-ai",
+        "course_title": "CS50's Introduction to Artificial Intelligence with Python",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "6 - Language",
+        "url": "/courses/cs50-ai/6/",
+        "course_id": "cs50-ai",
+        "course_title": "CS50's Introduction to Artificial Intelligence with Python",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "missing-semester",
+    "title": "MIT Missing Semester",
+    "coverage": "仅重点",
+    "status": "completed",
+    "url": "/courses/missing-semester/",
+    "count": 3,
+    "notes": [
+      {
+        "title": "Basic Cryptography - 基础密码学",
+        "url": "/courses/missing-semester/basic-cryptography/",
+        "course_id": "missing-semester",
+        "course_title": "MIT Missing Semester",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Git - 版本控制",
+        "url": "/courses/missing-semester/git/",
+        "course_id": "missing-semester",
+        "course_title": "MIT Missing Semester",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      },
+      {
+        "title": "Metaprogramming - 元编程",
+        "url": "/courses/missing-semester/metaprogramming/",
+        "course_id": "missing-semester",
+        "course_title": "MIT Missing Semester",
+        "section": "",
+        "status": "completed",
+        "reference": false
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "probability-statistics",
+    "title": "概率与统计",
+    "coverage": "持续补充",
+    "status": "updating",
+    "url": "/courses/probability-statistics/",
+    "count": 3,
+    "notes": [
+      {
+        "title": "Probability Basic - 概率基础",
+        "url": "/courses/probability-statistics/probability-basic/",
+        "course_id": "probability-statistics",
+        "course_title": "概率与统计",
+        "section": "",
+        "status": "updating",
+        "reference": false
+      },
+      {
+        "title": "Probability Distributions - 概率分布",
+        "url": "/courses/probability-statistics/probability-distributions/",
+        "course_id": "probability-statistics",
+        "course_title": "概率与统计",
+        "section": "",
+        "status": "updating",
+        "reference": false
+      },
+      {
+        "title": "Random Variables - 随机变量",
+        "url": "/courses/probability-statistics/random-variables/",
+        "course_id": "probability-statistics",
+        "course_title": "概率与统计",
+        "section": "",
+        "status": "updating",
+        "reference": false
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "discrete-mathematics",
+    "title": "离散数学",
+    "coverage": "持续补充",
+    "status": "updating",
+    "url": "/courses/discrete-mathematics/",
+    "count": 3,
+    "notes": [
+      {
+        "title": "Algorithm - 算法",
+        "url": "/courses/discrete-mathematics/algorithm/",
+        "course_id": "discrete-mathematics",
+        "course_title": "离散数学",
+        "section": "",
+        "status": "updating",
+        "reference": false
+      },
+      {
+        "title": "Logic and Proofs - 逻辑与证明",
+        "url": "/courses/discrete-mathematics/logic-and-proofs/",
+        "course_id": "discrete-mathematics",
+        "course_title": "离散数学",
+        "section": "",
+        "status": "updating",
+        "reference": false
+      },
+      {
+        "title": "Set and Function - 集合与函数",
+        "url": "/courses/discrete-mathematics/set-and-function/",
+        "course_id": "discrete-mathematics",
+        "course_title": "离散数学",
+        "section": "",
+        "status": "updating",
+        "reference": false
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "digital-logic",
+    "title": "数字逻辑",
+    "coverage": "持续补充",
+    "status": "updating",
+    "url": "/courses/digital-logic/",
+    "count": 3,
+    "notes": [
+      {
+        "title": "Boolean Algebra - 布尔代数",
+        "url": "/courses/digital-logic/boolean-algebra/",
+        "course_id": "digital-logic",
+        "course_title": "数字逻辑",
+        "section": "",
+        "status": "updating",
+        "reference": false
+      },
+      {
+        "title": "Combinational Logic - 组合逻辑",
+        "url": "/courses/digital-logic/combinational-logic/",
+        "course_id": "digital-logic",
+        "course_title": "数字逻辑",
+        "section": "",
+        "status": "updating",
+        "reference": false
+      },
+      {
+        "title": "Number Systems - 数字系统",
+        "url": "/courses/digital-logic/number-systems/",
+        "course_id": "digital-logic",
+        "course_title": "数字逻辑",
+        "section": "",
+        "status": "updating",
+        "reference": false
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "dsaa",
+    "title": "数据结构与算法分析",
+    "coverage": "持续补充",
+    "status": "updating",
+    "url": "/courses/dsaa/",
+    "count": 2,
+    "notes": [
+      {
+        "title": "Introduction",
+        "url": "/courses/dsaa/introduction/",
+        "course_id": "dsaa",
+        "course_title": "数据结构与算法分析",
+        "section": "",
+        "status": "updating",
+        "reference": false
+      },
+      {
+        "title": "Sorting",
+        "url": "/courses/dsaa/sorting/",
+        "course_id": "dsaa",
+        "course_title": "数据结构与算法分析",
+        "section": "",
+        "status": "updating",
+        "reference": false
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "prehistoric-art",
+    "title": "旧石器艺术与符号",
+    "coverage": "持续补充",
+    "status": "updating",
+    "url": "/courses/prehistoric-art/",
+    "count": 4,
+    "notes": [
+      {
+        "title": "Week1",
+        "url": "/courses/prehistoric-art/week1/",
+        "course_id": "prehistoric-art",
+        "course_title": "旧石器艺术与符号",
+        "section": "",
+        "status": "updating",
+        "reference": false
+      },
+      {
+        "title": "Week2",
+        "url": "/courses/prehistoric-art/week2/",
+        "course_id": "prehistoric-art",
+        "course_title": "旧石器艺术与符号",
+        "section": "",
+        "status": "updating",
+        "reference": false
+      },
+      {
+        "title": "Week3",
+        "url": "/courses/prehistoric-art/week3/",
+        "course_id": "prehistoric-art",
+        "course_title": "旧石器艺术与符号",
+        "section": "",
+        "status": "updating",
+        "reference": false
+      },
+      {
+        "title": "Week4",
+        "url": "/courses/prehistoric-art/week4/",
+        "course_id": "prehistoric-art",
+        "course_title": "旧石器艺术与符号",
+        "section": "",
+        "status": "updating",
+        "reference": false
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "philosophy-science",
+    "title": "科学哲学",
+    "coverage": "持续补充",
+    "status": "updating",
+    "url": "/courses/philosophy-science/",
+    "count": 1,
+    "notes": [
+      {
+        "title": "Lecture",
+        "url": "/courses/philosophy-science/lecture/",
+        "course_id": "philosophy-science",
+        "course_title": "科学哲学",
+        "section": "",
+        "status": "updating",
+        "reference": false
+      }
+    ],
+    "resources": []
+  }
+]

@@ -1,0 +1,37 @@
+.course-breadcrumb, .course-meta { color: #777; font-size: .85em; }
+.course-status { color: inherit; }
+.course-breadcrumb { line-height: 1.8; }
+.course-catalog { border-top: 1px solid #d8d8d8; }
+.course-card { padding: .85em .2em; border-bottom: 1px solid #e4e4e4; }
+.course-card h2 { font-size: 1.1em; margin: 0; padding: 0; border: 0; width: auto; }
+.course-card p { font-size: .85em; color: #777; margin: .35em 0 0; }
+.course-note-list { padding-left: 1.4em; }
+.course-note-list li { margin: .5em 0; }
+.course-note a, .course-index a, .course-catalog a { word-break: normal; overflow-wrap: anywhere; }
+.course-note h1 { overflow-wrap: anywhere; }
+.course-content { min-width: 0; overflow-wrap: anywhere; }
+.course-content h2, .course-content h3, .course-content h4 { scroll-margin-top: 1em; }
+.course-toc { border-top: 1px solid #d8d8d8; border-bottom: 1px solid #e4e4e4; padding: .65em .2em; margin: 1.5em 0; color: #555; font-size: .9em; }
+.course-toc summary { cursor: pointer; }
+.course-toc ol { padding-left: 1.3em; }
+.course-toc li { margin: .35em 0; }
+.course-toc .toc-subheading { margin-left: 1em; font-size: .9em; }
+.course-content .course-image { height: auto; margin-top: 1em; margin-bottom: 1em; }
+.course-image-layout { display: flex; flex-wrap: wrap; gap: 1em; align-items: center; margin: 1.5em 0; }
+.course-image-layout .course-image { flex: 1 1 220px; min-width: 0; max-width: calc(50% - .5em); object-fit: contain; }
+.course-math { display: inline-block; max-width: 100%; vertical-align: middle; overflow-x: auto; overflow-y: hidden; }
+.course-math-display { display: block; margin: 1em 0; text-align: center; }
+.course-math > mjx-container { margin: 0 !important; }
+.course-math > code { white-space: pre-wrap; }
+.course-math-error { outline: 1px solid #b33; }
+.course-table-scroll { overflow-x: auto; max-width: 100%; margin: 1em 0; }
+.course-table-scroll table { min-width: 100%; overflow-wrap: normal; word-break: normal; }
+.course-content .ps-root { overflow-x: auto; max-width: 100%; padding: .8em 0; font-size: .9em; }
+.course-content .ps-root .ps-algorithm { min-width: max-content; }
+.course-neighbors { border-top: 1px solid #ddd; margin-top: 3em; padding-top: 1em; display: flex; justify-content: space-between; gap: 1.5em; }
+.course-neighbors a { flex: 1; }
+.course-neighbors a:last-child { text-align: right; }
+@media (max-width: 720px) {
+  .course-image-layout .course-image { max-width: 100%; flex-basis: 100%; }
+  .course-neighbors { flex-direction: column; }
+}

@@ -4,6 +4,9 @@ title: 2024 年 10 月学习报告
 categories: study
 description: study
 keywords: report
+date: 2024-11-20
+learning_kind: record
+learning_stage: high-school
 ---
 
 本月经历 0 次大考。

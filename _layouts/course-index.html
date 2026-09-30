@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{% assign course = site.data.courses | where: 'id', page.course_id | first %}
+<article class="course-index">
+  <p class="course-breadcrumb"><a href="{{ '/study/' | relative_url }}">学习</a> / <a href="{{ '/courses/' | relative_url }}">课程笔记</a> / {{ page.title | escape }}</p>
+  <h1>{{ page.title | escape }}</h1>
+  <p class="course-meta"><span class="course-status">{% if course.status == 'updating' %}更新中{% else %}已完成{% endif %}</span> · {{ course.coverage | escape }} · {{ course.count }} 篇笔记</p>
+  {% assign sections = course.notes | group_by: 'section' %}
+  {% for section in sections %}
+    {% if section.name != '' %}<h2>{{ section.name | escape }}</h2>{% endif %}
+    <ul class="course-note-list">
+    {% for note in section.items %}
+      <li><a href="{{ note.url | relative_url }}">{{ note.title | escape }}</a></li>
+    {% endfor %}
+    </ul>
+  {% endfor %}
+  {% if course.resources.size > 0 %}
+    <h2>复习资料</h2>
+    <ul class="course-resource-list">
+      {% for resource in course.resources %}
+        <li><a href="{{ resource.url | relative_url }}">{{ resource.title | escape }}（PDF）</a></li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</article>

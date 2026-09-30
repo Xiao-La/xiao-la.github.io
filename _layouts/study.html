@@ -2,7 +2,8 @@
 layout: default
 ---
 <article>
-  <h2>{{ page.title }}</h2>
+  {% if page.learning_kind %}{% include learning-breadcrumb.html %}{% endif %}
+  <h1>{{ page.title }}</h1>
   {{ content }}
 </article>
 {% include comments.html %}

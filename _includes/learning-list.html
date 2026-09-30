@@ -1,0 +1,7 @@
+<ol class="learning-article-list">
+  {% for article in include.documents limit: include.limit %}
+    <li>
+      {% include article-overview.html article=article %}
+    </li>
+  {% endfor %}
+</ol>

@@ -2,14 +2,15 @@
 layout: null
 ---
 [
-  {% for post in site.posts %}
+  {% assign search_documents = site.posts | concat: site.courses | concat: site.study %}
+  {% for post in search_documents %}
     {
       "title": {{ post.title | jsonify }},
-      "category": {{ post.categories | join: ', ' | jsonify }},
+      "category": {% if post.collection == 'courses' %}{{ post.course_title | default: '课程笔记' | jsonify }}{% elsif post.learning_kind == 'topic' %}"专题笔记"{% elsif post.learning_kind == 'record' %}"学习记录"{% else %}{{ post.categories | join: ', ' | jsonify }}{% endif %},
       "tags": {{ post.tags | join: ', ' | jsonify }},
       "description": {{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 160 | jsonify }},
       "url": {{ post.url | relative_url | jsonify }},
-      "date": {{ post.date | date_to_xmlschema | jsonify }}
+      "date": {% if post.collection == 'courses' %}null{% else %}{{ post.date | date_to_xmlschema | jsonify }}{% endif %}
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]

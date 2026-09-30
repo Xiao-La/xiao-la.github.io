@@ -19,10 +19,7 @@ keywords: joy, joyslog, blog, python, oi, noip
   <h2 class="pconly">Article</h2>
   <h2 class="monly">Joy's Blog</h2>
   {% for post in paginator.posts %}
-  <div class="overview">
-    <div class="date">{{ post.date | date: "%b %d, %Y" }}</div>
-    <div class="detail"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></div>
-  </div>
+  {% include article-overview.html article=post %}
   {% endfor %}
 </div>
 {% include pagination.html %}

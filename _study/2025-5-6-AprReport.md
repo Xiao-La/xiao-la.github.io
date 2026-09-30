@@ -4,6 +4,9 @@ title: 2025 年 4 月学习报告
 categories: study
 description: study
 keywords: report
+date: 2025-05-06
+learning_kind: record
+learning_stage: high-school
 ---
 
 本月经历 3 次大考，数据如下。

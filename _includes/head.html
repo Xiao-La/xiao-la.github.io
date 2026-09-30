@@ -17,7 +17,28 @@
   <link rel="stylesheet" href="{{ '/css/small.css' | relative_url }}" media="(max-width: 720px)">
   <link rel="stylesheet" href="{{ '/css/syntax.css' | relative_url }}">
   <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon">
+  {% if page.learning_page or page.learning_kind %}
+    <link rel="stylesheet" href="{{ '/css/learning.css' | relative_url }}">
+  {% endif %}
 
+  {% if page.course_page %}
+    <link rel="stylesheet" href="{{ '/css/courses.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/vendor/pseudocode/pseudocode.min.css' | relative_url }}">
+    <script>
+      window.MathJax = {
+        loader: {
+          paths: { mathjax: {{ '/assets/vendor/mathjax' | relative_url | jsonify }} },
+          load: ['[tex]/mhchem']
+        },
+        tex: { packages: { '[+]': ['mhchem'] } },
+        svg: { fontCache: 'local' },
+        startup: { typeset: false }
+      };
+    </script>
+    <script defer src="{{ '/assets/vendor/mathjax/tex-svg-full.js' | relative_url }}"></script>
+    <script defer src="{{ '/assets/vendor/pseudocode/pseudocode.min.js' | relative_url }}"></script>
+    <script defer src="{{ '/js/courses.js' | relative_url }}"></script>
+  {% else %}
   <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
       TeX: { equationNumbers: { autoNumber: "AMS" } },
@@ -32,4 +53,5 @@
     });
   </script>
   <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+  {% endif %}
 </head>

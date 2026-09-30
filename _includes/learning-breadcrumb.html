@@ -1,0 +1,12 @@
+<nav class="learning-breadcrumb" aria-label="当前位置">
+  <a href="{{ '/study/' | relative_url }}">学习</a> /
+  {% if page.learning_kind == 'topic' %}
+    {% assign learning_topic = site.data.learning.topics | where: 'id', page.learning_topic | first %}
+    <a href="{{ '/study/topics/' | relative_url }}">专题笔记</a>
+    {% if learning_topic %} / <a href="{{ '/study/topics/' | relative_url }}#{{ learning_topic.id }}">{{ learning_topic.title | escape }}</a>{% endif %}
+  {% else %}
+    {% assign learning_stage = site.data.learning.stages | where: 'id', page.learning_stage | first %}
+    <a href="{{ '/study/records/' | relative_url }}">学习记录</a>
+    {% if learning_stage %} / <a href="{{ '/study/records/' | relative_url }}#{{ learning_stage.id }}">{{ learning_stage.title | escape }}</a>{% endif %}
+  {% endif %}
+</nav>

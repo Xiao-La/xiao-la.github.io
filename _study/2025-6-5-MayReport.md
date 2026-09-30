@@ -4,6 +4,9 @@ title: 2025 年 5 月学习报告
 categories: study
 description: study
 keywords: report
+date: 2025-06-05
+learning_kind: record
+learning_stage: high-school
 ---
 
 本月模拟考发挥一般，故不在此整理。

@@ -4,6 +4,9 @@ title: 2024 年 11 月学习报告
 categories: study
 description: study
 keywords: report
+date: 2024-12-05
+learning_kind: record
+learning_stage: high-school
 ---
 
 本月经历 1 次大考，数据如下。

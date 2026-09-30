@@ -6,3 +6,16 @@
 .jekyll-metadata
 _site/
 vendor/
+!assets/vendor/
+assets/vendor/*
+!assets/vendor/mathjax/
+!assets/vendor/mathjax/**
+!assets/vendor/pseudocode/
+!assets/vendor/pseudocode/**
+.course-test-results/
+node_modules/
+__pycache__/
+/scripts/
+/tests/
+/docs/
+/reports/courses-sync.json
