@@ -5,6 +5,26 @@ body {
   font-size: 100%;
 }
 
+.article-table-scroll, .article-math-display {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.article-table-scroll {
+  margin: 1em 0;
+}
+
+.article-table-scroll th, .article-table-scroll td:first-child {
+  white-space: nowrap;
+}
+
+.article-math-inline {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+  vertical-align: middle;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
