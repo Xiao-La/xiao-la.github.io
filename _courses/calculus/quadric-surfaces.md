@@ -58,5 +58,5 @@ excerpt: "高等数学（上）/（下） · Quadric Surfaces - 二次曲面"
 <span class="course-math course-math-display" data-tex="\frac{z^2}{c^2}=\frac{x^2}{a^2}+\frac{y^2}{b^2}" data-display="true"><code>\frac{z^2}{c^2}=\frac{x^2}{a^2}+\frac{y^2}{b^2}</code></span>
 
 
- <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Quadric%20Surfaces%20-%20%E4%BA%8C%E6%AC%A1%E6%9B%B2%E9%9D%A2.png' | relative_url }}{% raw %}" alt="Quadric Surfaces - 二次曲面" loading="lazy">
+ <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Quadric%20Surfaces%20-%20%E4%BA%8C%E6%AC%A1%E6%9B%B2%E9%9D%A2.png' | relative_url }}{% raw %}" alt="Quadric Surfaces - 二次曲面" width="1228" height="1414" loading="lazy" decoding="async">
 {% endraw %}

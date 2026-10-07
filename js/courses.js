@@ -32,6 +32,10 @@
   });
 
   window.courseRenderErrors = [];
+  if (!content.querySelector('.course-math, .course-pseudocode')) {
+    content.dataset.rendered = 'true';
+    return;
+  }
   window.courseRendering = Promise.resolve(window.MathJax && MathJax.startup.promise)
     .then(async function () {
       if (!window.MathJax || !MathJax.tex2svgPromise) throw new Error('公式渲染器未加载');

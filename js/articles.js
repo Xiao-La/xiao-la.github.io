@@ -8,10 +8,10 @@
   }
 
   window.formatArticleMath = function () {
-    document.querySelectorAll('main article .MJXc-display, main article .MathJax_Display').forEach(function (math) {
+    document.querySelectorAll('main article mjx-container[display="true"]').forEach(function (math) {
       wrap(math, 'article-math-display', 'div');
     });
-    document.querySelectorAll('main article .MathJax_CHTML, main article .MathJax').forEach(function (math) {
+    document.querySelectorAll('main article mjx-container:not([display="true"])').forEach(function (math) {
       if (!math.closest('.article-math-display')) wrap(math, 'article-math-inline', 'span');
     });
   };
@@ -20,7 +20,16 @@
     wrap(table, 'article-table-scroll', 'div');
   });
 
-  if (window.MathJax && window.MathJax.Hub) {
-    window.MathJax.Hub.Register.StartupHook('End', window.formatArticleMath);
-  }
+  // MathJax can finish before this deferred script on a cached page.
+  window.formatArticleMath();
+
+  document.querySelectorAll('video[data-animated]').forEach(function (video) {
+    video.muted = true;
+    if (!window.IntersectionObserver) return;
+    var observer = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) video.play().catch(function () {});
+      else video.pause();
+    });
+    observer.observe(video);
+  });
 }());

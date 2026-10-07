@@ -65,5 +65,5 @@ Peircian levels
 - Icon - imitate and resemble
 - Index - some physical link / causal relationship
 - Symbol - Arbitrary relationship
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Week1.png' | relative_url }}{% raw %}" alt="Week1" width="189" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Week1.png' | relative_url }}{% raw %}" alt="Week1" width="189" height="281" loading="lazy" decoding="async">
 {% endraw %}

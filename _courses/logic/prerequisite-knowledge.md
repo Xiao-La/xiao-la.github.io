@@ -134,7 +134,7 @@ excerpt: "数理逻辑导论 · Prerequisite Knowledge - 预备知识"
 - 双射（Bijective, one-to-one correspondence）：既满足单射也满足满射。
 
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Prerequisite%20Knowledge%20-%20%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86.png' | relative_url }}{% raw %}" alt="Prerequisite Knowledge - 预备知识" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Prerequisite%20Knowledge%20-%20%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86.png' | relative_url }}{% raw %}" alt="Prerequisite Knowledge - 预备知识" width="1312" height="1330" loading="lazy" decoding="async">
 
 
 ## 数学定义与证明（Mathematical Definitions and Proof）

@@ -29,3 +29,8 @@ JEKYLL_ENV=production bundle exec jekyll build
 - `css/`、`js/`、`images/`：静态资源
 
 站点级信息、插件和第三方服务统一在 `_config.yml` 中配置。
+
+文章中的 `description` 应填写具体摘要，`keywords` 用于站内搜索。
+含数学公式的文章请在 front matter 中设置 `math: true`，以按需加载本地 MathJax。
+课程笔记由同步工具自动处理公式和图片尺寸。
+分类的内部名称保持兼容，展示名称在 `_data/categories.yml` 中维护。

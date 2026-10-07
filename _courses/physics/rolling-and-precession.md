@@ -27,7 +27,7 @@ excerpt: "大学物理（上）/（下） · Rolling and Precession - 滚动和�
 其中平动和转动的关系满足 <span class="course-math" data-tex="v_{com}=\omega R" data-display="false"><code>v_{com}=\omega R</code></span>，这可以用位移求导得出。
 在每一个瞬间，也可以看作绕着点 P 的纯转动。
 证明： <a href="{% endraw %}{{ '/courses/references/rolling-1/' | relative_url }}{% raw %}">Rolling-1</a>
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Rolling-1.png' | relative_url }}{% raw %}" alt="Rolling-1" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Rolling-1.png' | relative_url }}{% raw %}" alt="Rolling-1" width="338" height="406" loading="lazy" decoding="async">
 
 纯滚动的动能 <span class="course-math" data-tex="K=K_{translation}+K_{rotation}=\frac{1}{2}mv_{com}^2 + \frac{1}{2} I_{com} \omega^2" data-display="false"><code>K=K_{translation}+K_{rotation}=\frac{1}{2}mv_{com}^2 + \frac{1}{2} I_{com} \omega^2</code></span>。
 力矩 <span class="course-math" data-tex="\tau_{net}=I_{com}\alpha" data-display="false"><code>\tau_{net}=I_{com}\alpha</code></span>。
@@ -45,10 +45,10 @@ excerpt: "大学物理（上）/（下） · Rolling and Precession - 滚动和�
 
 
 **进动（Precession）** 是指自转刚体受外力作用时自转轴绕某一中心旋转的现象。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Precesssion-1.png' | relative_url }}{% raw %}" alt="Precesssion-1" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Precesssion-1.png' | relative_url }}{% raw %}" alt="Precesssion-1" width="522" height="658" loading="lazy" decoding="async">
 <div class="course-image-layout">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Precession-2.png' | relative_url }}{% raw %}" alt="Precession-2" loading="lazy">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Precession-3.png' | relative_url }}{% raw %}" alt="Precession-3" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Precession-2.png' | relative_url }}{% raw %}" alt="Precession-2" width="660" height="514" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Precession-3.png' | relative_url }}{% raw %}" alt="Precession-3" width="612" height="334" loading="lazy" decoding="async">
 </div>
 
 过程中，进动角速度 <span class="course-math" data-tex="\Omega=\frac{d\phi}{dt}=\frac{\frac{dL}{L}}{dt}=\frac{\tau}{L}= \frac{Mgr}{I\omega}" data-display="false"><code>\Omega=\frac{d\phi}{dt}=\frac{\frac{dL}{L}}{dt}=\frac{\tau}{L}= \frac{Mgr}{I\omega}</code></span>。

@@ -35,7 +35,7 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 <span class="course-math course-math-display" data-tex="\vec{F}=q(\vec{E}+\vec{v}\times \vec{B})" data-display="true"><code>\vec{F}=q(\vec{E}+\vec{v}\times \vec{B})</code></span>
 霍尔效应（The Hall Effect）：
 <span class="course-math course-math-display" data-tex="\begin{cases}&#10;qE=qv_{d}B \\&#10;v_{d}=\frac{J}{ne}=\frac{i}{neA} \\&#10;V=Ed \\&#10;A=dl&#10;\end{cases}&#10;\implies n=\frac{Bi}{Vle}" data-display="true"><code>\begin{cases}&#10;qE=qv_{d}B \\&#10;v_{d}=\frac{J}{ne}=\frac{i}{neA} \\&#10;V=Ed \\&#10;A=dl&#10;\end{cases}&#10;\implies n=\frac{Bi}{Vle}</code></span>
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20-%20%E7%A3%81%E5%AD%A6.png' | relative_url }}{% raw %}" alt="Magnetism - 磁学" width="464" loading="lazy"> 
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20-%20%E7%A3%81%E5%AD%A6.png' | relative_url }}{% raw %}" alt="Magnetism - 磁学" width="464" height="233" loading="lazy" decoding="async">
 这里 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 是单位体积内载流子的数量。载流子为正电或者负电，其受力方向是一致的，但导致的电势高低是不一样的。
 
 显然带电粒子垂直于磁场入射，所受的磁场力会使其做匀速圆周运动。
@@ -60,7 +60,7 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 {: #section-4 }
 
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20-%20%E7%A3%81%E5%AD%A6-1.png' | relative_url }}{% raw %}" alt="Magnetism - 磁学-1" width="538" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20-%20%E7%A3%81%E5%AD%A6-1.png' | relative_url }}{% raw %}" alt="Magnetism - 磁学-1" width="538" height="198" loading="lazy" decoding="async">
 
 <span class="course-math course-math-display" data-tex="F_{\text{side}}=aIB" data-display="true"><code>F_{\text{side}}=aIB</code></span>
 <span class="course-math course-math-display" data-tex="\tau=2\times\frac{1}{2}baIB\sin\theta=baIB\sin\theta" data-display="true"><code>\tau=2\times\frac{1}{2}baIB\sin\theta=baIB\sin\theta</code></span>
@@ -110,15 +110,15 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 定律使用的条件：电流稳定，没有磁性材料，且没有随时间变化的电场。
 *或者，定义磁场强度（The Intensity of a magnetic field）为 <span class="course-math" data-tex="H" data-display="false"><code>H</code></span>，有 <span class="course-math" data-tex="\oint \vec{H}\cdot d\vec{l}=I_{\text{enc}}" data-display="false"><code>\oint \vec{H}\cdot d\vec{l}=I_{\text{enc}}</code></span>.
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20-%20%E7%A3%81%E5%AD%A6-2.png' | relative_url }}{% raw %}" alt="Magnetism - 磁学-2" width="438" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20-%20%E7%A3%81%E5%AD%A6-2.png' | relative_url }}{% raw %}" alt="Magnetism - 磁学-2" width="438" height="307" loading="lazy" decoding="async">
 理想的螺线管 (Solenoid)：
 <span class="course-math course-math-display" data-tex="\oint \vec{B}\cdot d\vec{l}=BL=\mu_{0} nLI\implies B=\mu_{0}nI" data-display="true"><code>\oint \vec{B}\cdot d\vec{l}=BL=\mu_{0} nLI\implies B=\mu_{0}nI</code></span>
 其中 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 为匝数的线密度（<span class="course-math" data-tex="\text{/m}" data-display="false"><code>\text{/m}</code></span>）。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20-%20%E7%A3%81%E5%AD%A6-3.png' | relative_url }}{% raw %}" alt="Magnetism - 磁学-3" width="530" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20-%20%E7%A3%81%E5%AD%A6-3.png' | relative_url }}{% raw %}" alt="Magnetism - 磁学-3" width="530" height="232" loading="lazy" decoding="async">
 环形螺线管（Toroid / Toroidal Solenoid），在螺线管内部：
 <span class="course-math course-math-display" data-tex="\oint \vec{B}\cdot d\vec{l}=2\pi rB=\mu_{0}NI\implies B=\frac{\mu_{0}NI}{2\pi r}" data-display="true"><code>\oint \vec{B}\cdot d\vec{l}=2\pi rB=\mu_{0}NI\implies B=\frac{\mu_{0}NI}{2\pi r}</code></span>
 其中 <span class="course-math" data-tex="N" data-display="false"><code>N</code></span> 为总匝数。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20-%20%E7%A3%81%E5%AD%A6-4.png' | relative_url }}{% raw %}" alt="Magnetism - 磁学-4" width="510" loading="lazy"> 
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20-%20%E7%A3%81%E5%AD%A6-4.png' | relative_url }}{% raw %}" alt="Magnetism - 磁学-4" width="510" height="320" loading="lazy" decoding="async">
 电流平板（Current Sheet）：假设电流线密度均匀且为 <span class="course-math" data-tex="J_{S}" data-display="false"><code>J_{S}</code></span>，有
 <span class="course-math course-math-display" data-tex="\oint \vec{B}\cdot d\vec{r}=2BL=\mu_{0} (J_{S}L)\implies B=\frac{1}{2}\mu_{0}J_{S}" data-display="true"><code>\oint \vec{B}\cdot d\vec{r}=2BL=\mu_{0} (J_{S}L)\implies B=\frac{1}{2}\mu_{0}J_{S}</code></span>
 
@@ -157,10 +157,10 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 <span class="course-math course-math-display" data-tex="L= \frac{N\Phi_{B}}{i}=\frac{(nl)(\mu_{0}in)A}{i}=\mu_{0}n^{2}lA" data-display="true"><code>L= \frac{N\Phi_{B}}{i}=\frac{(nl)(\mu_{0}in)A}{i}=\mu_{0}n^{2}lA</code></span>
 RL 电路：
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20and%20Induction%20-%20%E7%A3%81%E5%AD%A6%E4%B8%8E%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94.png' | relative_url }}{% raw %}" alt="Magnetism and Induction - 磁学与电磁感应" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20and%20Induction%20-%20%E7%A3%81%E5%AD%A6%E4%B8%8E%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94.png' | relative_url }}{% raw %}" alt="Magnetism and Induction - 磁学与电磁感应" width="2210" height="624" loading="lazy" decoding="async">
 令时间常数 <span class="course-math" data-tex="\tau=\frac{L}{R}" data-display="false"><code>\tau=\frac{L}{R}</code></span>，时间常数大，电流就变化得慢。
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20and%20Induction%20-%20%E7%A3%81%E5%AD%A6%E4%B8%8E%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94-1.png' | relative_url }}{% raw %}" alt="Magnetism and Induction - 磁学与电磁感应-1" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20and%20Induction%20-%20%E7%A3%81%E5%AD%A6%E4%B8%8E%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94-1.png' | relative_url }}{% raw %}" alt="Magnetism and Induction - 磁学与电磁感应-1" width="2212" height="728" loading="lazy" decoding="async">
 
 电感器件的磁场中可以存储能量：
 <span class="course-math course-math-display" data-tex="\frac{dU_{B}}{dt}=iL \frac{di}{dt}" data-display="true"><code>\frac{dU_{B}}{dt}=iL \frac{di}{dt}</code></span>

@@ -30,7 +30,7 @@ excerpt: "数字逻辑 · Number Systems - 数字系统"
 - 0: LOW (FALSE)
 编码（Codes）：比特的组合。
 数字系统（Digital Systems）：处理数字信号或数据的系统。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems.png' | relative_url }}{% raw %}" alt="Number Systems" width="428" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems.png' | relative_url }}{% raw %}" alt="Number Systems" width="428" height="226" loading="lazy" decoding="async">
 Physical Layer -> transistor -> logic gate -> mircroarchitecture -> system
 
 
@@ -39,7 +39,7 @@ Physical Layer -> transistor -> logic gate -> mircroarchitecture -> system
 
 
 十进制（Decimal）/ 二进制（Binary） / 八进制（Octal） / 十六进制（Hexadecimal）
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统" width="347" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统" width="347" height="282" loading="lazy" decoding="async">
 
 
 ## 进制转换
@@ -65,8 +65,8 @@ Physical Layer -> transistor -> logic gate -> mircroarchitecture -> system
 小数部分：不断去乘以 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span>，考察每次的整数部分。
 MSD (Most-significant Digit)：权重最高的位。
 LSD（Least-significant Digit）：权重最低的位。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-3.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-3" width="383" loading="lazy">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-4.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-4" width="386" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-3.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-3" width="383" height="245" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-4.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-4" width="386" height="249" loading="lazy" decoding="async">
 
 
 ### 其他进制之间转换
@@ -74,13 +74,13 @@ LSD（Least-significant Digit）：权重最低的位。
 
 
 二进制转换为八进制或十六进制：直接分组看，八进制就是三位一组，十六进制就是四位一组。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-5.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-5" width="439" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-5.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-5" width="439" height="176" loading="lazy" decoding="async">
 八个位（bit）就是一个字节（byte）。
 
 十六进制表示（Hexadecimal representation）：两个十六进制位表示一个字节。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-6.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-6" width="219" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-6.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-6" width="219" height="110" loading="lazy" decoding="async">
 KB 与 B 的转换，是以 1024 为基数：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-7.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-7" width="282" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-7.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-7" width="282" height="284" loading="lazy" decoding="async">
 
 
 
@@ -90,16 +90,16 @@ KB 与 B 的转换，是以 1024 为基数：
 
 用四个比特来表示一个十进制数位，例如用 0011 1001 0110 表示 396。
 用 BCD 码表示的数，加法应该使用十进制的办法来加。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-8.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-8" width="453" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-8.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-8" width="453" height="216" loading="lazy" decoding="async">
 做减法可以转换为做 10's complement 再加。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-12.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-12" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-12.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-12" width="1852" height="704" loading="lazy" decoding="async">
 
 ## 格雷码
 {: #section-8 }
 
 
 最小改变的编码方式：变化到相邻的数，格雷码只变化一位。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-9.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-9" width="214" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-9.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-9" width="214" height="291" loading="lazy" decoding="async">
 
 格雷码转二进制：
 - 把格雷码的最高位作为二进制的最高位。
@@ -143,7 +143,7 @@ Error-Detecting Code：
 原码（Signed Magnitude）：符号位+符值： <span class="course-math" data-tex="1&#124;110" data-display="false"><code>1&#124;110</code></span>，第一位表示符号为负，剩下不变。
 反码（1's complement / Diminished radix complement）：<span class="course-math" data-tex="1001" data-display="false"><code>1001</code></span>  按位取反。
 补码（2's complement / Radix Complement）： <span class="course-math" data-tex="1010" data-display="false"><code>1010</code></span>，按位取反再加一。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-11.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-11" width="376" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-11.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-11" width="376" height="306" loading="lazy" decoding="async">
 一般地，<span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 位补码可以表示的范围为 <span class="course-math" data-tex="-2^{n-1}\sim 2^{n-1}-1" data-display="false"><code>-2^{n-1}\sim 2^{n-1}-1</code></span>。
 使用补码可以统一表示所有带符号数的加减法，本质上 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 位补码相当于统一在模 <span class="course-math" data-tex="2^n" data-display="false"><code>2^n</code></span> 的整数环上做加减法，模运算保持加减法正确。例如，在上表中 <span class="course-math" data-tex="-2_{10}\equiv 14_{10}\equiv 1110_{2} \pmod{16}" data-display="false"><code>-2_{10}\equiv 14_{10}\equiv 1110_{2} \pmod{16}</code></span>。
 而十进制中的求对 <span class="course-math" data-tex="2^n" data-display="false"><code>2^n</code></span> 的余数，又相当于按位取反再加一（假设 <span class="course-math" data-tex="a&#x27;" data-display="false"><code>a&#x27;</code></span> 为 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 的反码，<span class="course-math" data-tex="-a" data-display="false"><code>-a</code></span> 为补码）：

@@ -1,12 +1,12 @@
 ---
 layout: page
-title: I'm Joy
-description: Joy
+title: 关于 Joy
+description: Joy 的个人简介、博客内容与联系方式。
 keywords: About, Joy
 permalink: /about/
 ---
 
-这里是 Joy，目前（2025 年）就读于南方科技大学。
+这里是 Joy，2025 年入学南方科技大学。
 
 ### 联系我
 
@@ -20,6 +20,8 @@ permalink: /about/
 
 - 高考期间的学习记录
 
+- 大学课程与公开课的学习笔记
+
 - 一些学术、技术问题的讨论
 
-你可以在[这里]({{ assets_base_url }}/reports/202508footprint.html)看到我曾旅游过的中国的城市。
+你可以在[这里]({{ '/reports/202508footprint.html' | relative_url }})看到我曾旅游过的中国的城市。

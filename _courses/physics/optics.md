@@ -59,7 +59,7 @@ excerpt: "大学物理（上）/（下） · Optics - 光学"
     <span class="course-math course-math-display" data-tex="\Delta\phi = \frac{2\pi}{\lambda} \cdot (n_1 L_1 - n_2 L_2) = \frac{2\pi}{\lambda} \cdot \delta" data-display="true"><code>\Delta\phi = \frac{2\pi}{\lambda} \cdot (n_1 L_1 - n_2 L_2) = \frac{2\pi}{\lambda} \cdot \delta</code></span>
     *(注：<span class="course-math" data-tex="\lambda" data-display="false"><code>\lambda</code></span> 始终代指光在真空中的波长)*
 
->  推导：将电磁波写成 <span class="course-math" data-tex="E_{p}=E_{1}+E_{2}" data-display="false"><code>E_{p}=E_{1}+E_{2}</code></span> （矢量），<span class="course-math" data-tex="E=\cos(kL-\omega t+\phi)" data-display="false"><code>E=\cos(kL-\omega t+\phi)</code></span>：<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6.png' | relative_url }}{% raw %}" alt="Optics - 光学" loading="lazy">
+>  推导：将电磁波写成 <span class="course-math" data-tex="E_{p}=E_{1}+E_{2}" data-display="false"><code>E_{p}=E_{1}+E_{2}</code></span> （矢量），<span class="course-math" data-tex="E=\cos(kL-\omega t+\phi)" data-display="false"><code>E=\cos(kL-\omega t+\phi)</code></span>：<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6.png' | relative_url }}{% raw %}" alt="Optics - 光学" width="1634" height="228" loading="lazy" decoding="async">
 >  这里 <span class="course-math" data-tex="\Delta \phi=k_{1}L_{1}-k_{2}L_{2}=\frac{2\pi}{\lambda_{1}}L_{1}-\frac{2\pi}{\lambda_{2}}L_{2}=\frac{2\pi}{\lambda}(n_{1}L_{1}-n_{2}L_{2})" data-display="false"><code>\Delta \phi=k_{1}L_{1}-k_{2}L_{2}=\frac{2\pi}{\lambda_{1}}L_{1}-\frac{2\pi}{\lambda_{2}}L_{2}=\frac{2\pi}{\lambda}(n_{1}L_{1}-n_{2}L_{2})</code></span>，其中 <span class="course-math" data-tex="\lambda" data-display="false"><code>\lambda</code></span> 为真空中的波长。
 >  那么从上面的图可以得到 <span class="course-math" data-tex="E_{p}=2E_{0}\cos \frac{\Delta \phi}{2}" data-display="false"><code>E_{p}=2E_{0}\cos \frac{\Delta \phi}{2}</code></span>，进而 <span class="course-math" data-tex="I_{P}=4I_{0}\cos ^{2} \frac{\Delta \phi}{2}" data-display="false"><code>I_{P}=4I_{0}\cos ^{2} \frac{\Delta \phi}{2}</code></span>
 
@@ -92,7 +92,7 @@ excerpt: "大学物理（上）/（下） · Optics - 光学"
     *   **亮条纹 (Constructive)：** 波前同相到达，相互加强。条件是光程差 <span class="course-math" data-tex="\delta = m\lambda" data-display="false"><code>\delta = m\lambda</code></span>。
     *   **暗条纹 (Destructive)：** 波前反相到达，相互抵消。条件是光程差 <span class="course-math" data-tex="\delta = (m + \frac{1}{2})\lambda" data-display="false"><code>\delta = (m + \frac{1}{2})\lambda</code></span>。
 *   **关键尺寸量级考点：** 缝宽及波长通常在微米 (<span class="course-math" data-tex="\mu\text{m}" data-display="false"><code>\mu\text{m}</code></span>) 级，缝间距数十到上百微米，而屏幕距离通常在米 (<span class="course-math" data-tex="\text{m}" data-display="false"><code>\text{m}</code></span>) 级。（满足远场近似条件）。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6-1.png' | relative_url }}{% raw %}" alt="Optics - 光学-1" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6-1.png' | relative_url }}{% raw %}" alt="Optics - 光学-1" width="1644" height="790" loading="lazy" decoding="async">
 
 **路径差公式的几何推导 (关键前提: <span class="course-math" data-tex="D \gg d" data-display="false"><code>D \gg d</code></span>)**
 当屏幕很远时，两束光线近似平行。
@@ -108,8 +108,8 @@ excerpt: "大学物理（上）/（下） · Optics - 光学"
 
 小角度近似：<span class="course-math" data-tex="\sin\theta =\tan\theta=\frac{y}{D}" data-display="false"><code>\sin\theta =\tan\theta=\frac{y}{D}</code></span>
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6-2.png' | relative_url }}{% raw %}" alt="Optics - 光学-2" width="333" loading="lazy">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6-3.png' | relative_url }}{% raw %}" alt="Optics - 光学-3" width="357" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6-2.png' | relative_url }}{% raw %}" alt="Optics - 光学-2" width="333" height="383" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6-3.png' | relative_url }}{% raw %}" alt="Optics - 光学-3" width="357" height="260" loading="lazy" decoding="async">
 利用相量法 (两个同幅矢量夹角为 <span class="course-math" data-tex="\phi" data-display="false"><code>\phi</code></span>) 推导合成光强。
 *   **合电场振幅：** <span class="course-math" data-tex="E = 2E_0 \cos(\frac{\phi}{2})" data-display="false"><code>E = 2E_0 \cos(\frac{\phi}{2})</code></span>
 *   **总光强公式：** 
@@ -133,7 +133,7 @@ excerpt: "大学物理（上）/（下） · Optics - 光学"
 <span class="course-math course-math-display" data-tex="\text{总光程差} \Delta L = 2L n_{薄膜} \pm \Delta_{附加}" data-display="true"><code>\text{总光程差} \Delta L = 2L n_{薄膜} \pm \Delta_{附加}</code></span>
 *(需分别判断上下表面是否发生半波损失来确定 <span class="course-math" data-tex="\Delta_{附加}" data-display="false"><code>\Delta_{附加}</code></span> 是否为 <span class="course-math" data-tex="\frac{\lambda}{2}" data-display="false"><code>\frac{\lambda}{2}</code></span>)*
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6-4.png' | relative_url }}{% raw %}" alt="Optics - 光学-4" width="291" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6-4.png' | relative_url }}{% raw %}" alt="Optics - 光学-4" width="291" height="250" loading="lazy" decoding="async">
 
 **特定条件下的薄膜极值公式** 
 **适用条件：** <span class="course-math" data-tex="n_1 &gt; n_2 &lt; n_3" data-display="false"><code>n_1 &gt; n_2 &lt; n_3</code></span> 或 <span class="course-math" data-tex="n_1 &lt; n_2 &gt; n_3" data-display="false"><code>n_1 &lt; n_2 &gt; n_3</code></span> (即**有且仅有一侧**发生半波损失)。
@@ -164,8 +164,8 @@ excerpt: "大学物理（上）/（下） · Optics - 光学"
 *   **上下边缘光束的光程差：** <span class="course-math" data-tex="\Delta L = a \sin\theta" data-display="false"><code>\Delta L = a \sin\theta</code></span>
 *   **上下边缘光束的相位差：** <span class="course-math" data-tex="\beta = \frac{2\pi}{\lambda} a \sin\theta" data-display="false"><code>\beta = \frac{2\pi}{\lambda} a \sin\theta</code></span>
 *   **常用无量纲参数：** <span class="course-math" data-tex="\alpha = \frac{\beta}{2} = \frac{\pi a \sin\theta}{\lambda}" data-display="false"><code>\alpha = \frac{\beta}{2} = \frac{\pi a \sin\theta}{\lambda}</code></span>
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6-6.png' | relative_url }}{% raw %}" alt="Optics - 光学-6" width="448" loading="lazy">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6-5.png' | relative_url }}{% raw %}" alt="Optics - 光学-5" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6-6.png' | relative_url }}{% raw %}" alt="Optics - 光学-6" width="448" height="326" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6-5.png' | relative_url }}{% raw %}" alt="Optics - 光学-5" width="2040" height="1320" loading="lazy" decoding="async">
 
 **易错：** 单缝衍射的 <span class="course-math" data-tex="a \sin\theta = m\lambda" data-display="false"><code>a \sin\theta = m\lambda</code></span> 算出的是**暗纹**！（双缝干涉中 <span class="course-math" data-tex="d \sin\theta = m\lambda" data-display="false"><code>d \sin\theta = m\lambda</code></span> 算出的是亮纹）。
 *   **公式：** <span class="course-math course-math-display" data-tex="\sin\theta = \frac{m\lambda}{a}" data-display="true"><code>\sin\theta = \frac{m\lambda}{a}</code></span>
@@ -201,7 +201,7 @@ excerpt: "大学物理（上）/（下） · Optics - 光学"
     *   **缺级条件公式：** 联立二者消去 <span class="course-math" data-tex="\sin\theta/\lambda" data-display="false"><code>\sin\theta/\lambda</code></span>，得到关系式：
         <span class="course-math course-math-display" data-tex="m_i = \frac{d}{a} m_d  \quad (m_d = 1, 2, 3 \dots)" data-display="true"><code>m_i = \frac{d}{a} m_d  \quad (m_d = 1, 2, 3 \dots)</code></span>
         *例如：若缝距是缝宽的 4 倍（<span class="course-math" data-tex="d=4a" data-display="false"><code>d=4a</code></span>），则代入 <span class="course-math" data-tex="m_d = 1, 2, 3" data-display="false"><code>m_d = 1, 2, 3</code></span> 后可得，<span class="course-math" data-tex="m_i = 4, 8, 12 \dots" data-display="false"><code>m_i = 4, 8, 12 \dots</code></span> 级的明纹会消失。*
-    <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6-7.png' | relative_url }}{% raw %}" alt="Optics - 光学-7" width="290" loading="lazy">
+    <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Optics%20-%20%E5%85%89%E5%AD%A6-7.png' | relative_url }}{% raw %}" alt="Optics - 光学-7" width="290" height="462" loading="lazy" decoding="async">
 
 ### 圆孔衍射
 {: #section-7 }

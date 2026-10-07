@@ -198,11 +198,11 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 
 
 利用循环过程做功，这需要过程的 <span class="course-math" data-tex="\text{p-V}" data-display="false"><code>\text{p-V}</code></span> 图线是顺时针方向的闭合曲线。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Thermodynamics-1.png' | relative_url }}{% raw %}" alt="Thermodynamics-1" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Thermodynamics-1.png' | relative_url }}{% raw %}" alt="Thermodynamics-1" width="262" height="312" loading="lazy" decoding="async">
 
 热机效率 <span class="course-math" data-tex="\varepsilon= \frac{&#124;W&#124;}{&#124;Q_{H}&#124;}=1-\frac{&#124;Q_{L}&#124;}{&#124;Q_{H}&#124;}" data-display="false"><code>\varepsilon= \frac{&#124;W&#124;}{&#124;Q_{H}&#124;}=1-\frac{&#124;Q_{L}&#124;}{&#124;Q_{H}&#124;}</code></span>。
 对于理想卡诺热机：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Thermodynamics-2.png' | relative_url }}{% raw %}" alt="Thermodynamics-2" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Thermodynamics-2.png' | relative_url }}{% raw %}" alt="Thermodynamics-2" width="446" height="394" loading="lazy" decoding="async">
 对整个过程，<span class="course-math" data-tex="&#124;Q&#124;=&#124;W&#124;=Q_{\text{in}}-Q_{\text{out}}" data-display="false"><code>&#124;Q&#124;=&#124;W&#124;=Q_{\text{in}}-Q_{\text{out}}</code></span>。而且通过绝热过程的方程可推 <span class="course-math" data-tex="\frac{V_{2}}{V_{1}}=\frac{V_{3}}{V_{4}}" data-display="false"><code>\frac{V_{2}}{V_{1}}=\frac{V_{3}}{V_{4}}</code></span>。
 有 <span class="course-math" data-tex="W=RT_{H}\ln \frac{V_{2}}{V_{1}}-RT_{L} \frac{V_{3}}{V_{4}}=R(T_{H}-T_{C})\ln \frac{V_{2}}{V_{1}}" data-display="false"><code>W=RT_{H}\ln \frac{V_{2}}{V_{1}}-RT_{L} \frac{V_{3}}{V_{4}}=R(T_{H}-T_{C})\ln \frac{V_{2}}{V_{1}}</code></span>，<span class="course-math" data-tex="Q_{H}=RT_{H}\ln \frac{V_{2}}{V_{1}}" data-display="false"><code>Q_{H}=RT_{H}\ln \frac{V_{2}}{V_{1}}</code></span>。
 那么 <span class="course-math" data-tex="0\leq \varepsilon = 1- \frac{T_{C}}{T_{H}}&lt;1" data-display="false"><code>0\leq \varepsilon = 1- \frac{T_{C}}{T_{H}}&lt;1</code></span> 。
@@ -212,7 +212,7 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 ### 制冷机
 {: #section-18 }
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Thermodynamics-3.png' | relative_url }}{% raw %}" alt="Thermodynamics-3" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Thermodynamics-3.png' | relative_url }}{% raw %}" alt="Thermodynamics-3" width="270" height="320" loading="lazy" decoding="async">
 <span class="course-math" data-tex="K= \frac{&#124;Q_{L}&#124;}{&#124;W&#124;}=\frac{&#124;Q_{L}&#124;}{&#124;Q_{H}&#124;-&#124;Q_{L}&#124;}= \frac{T_{L}}{T_{H}-T_{L}}" data-display="false"><code>K= \frac{&#124;Q_{L}&#124;}{&#124;W&#124;}=\frac{&#124;Q_{L}&#124;}{&#124;Q_{H}&#124;-&#124;Q_{L}&#124;}= \frac{T_{L}}{T_{H}-T_{L}}</code></span>。
 
 

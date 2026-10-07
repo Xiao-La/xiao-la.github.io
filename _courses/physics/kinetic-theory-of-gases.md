@@ -115,7 +115,7 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 对比 <span class="course-math" data-tex="E_{\text{int}}=nC_{v}T" data-display="false"><code>E_{\text{int}}=nC_{v}T</code></span> 可得
 <span class="course-math course-math-display" data-tex="C_{v}=\frac{f}{2}R, C_{p}=\left( \frac{f}{2}+1 \right)R" data-display="true"><code>C_{v}=\frac{f}{2}R, C_{p}=\left( \frac{f}{2}+1 \right)R</code></span>
 实际上，气体分子的自由度还和温度有关。在低温状态下，转动和振动自由度会被冻结。温度升高之后，转动自由度会先解冻，然后是振动自由度。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Gas-Kinetics-1.png' | relative_url }}{% raw %}" alt="Gas-Kinetics-1" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Gas-Kinetics-1.png' | relative_url }}{% raw %}" alt="Gas-Kinetics-1" width="1702" height="558" loading="lazy" decoding="async">
 基于**能量均分定理**，可通过自由度的比例算出动能大小，例如对于双原子分子，平动动能为 <span class="course-math" data-tex="\frac{3}{5}E_{\text{int}}" data-display="false"><code>\frac{3}{5}E_{\text{int}}</code></span>。
 
 

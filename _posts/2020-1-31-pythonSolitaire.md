@@ -15,7 +15,7 @@ keywords: python, pypinyin, 成语接龙, 一个顶俩, 接龙红包, 成语词�
 
 > [@dmitri 喜欢喵喵喵](https://www.zhihu.com/people/laoqiu-57) : [《帮助你在成语接龙里逼死别人的工具》](https://zhuanlan.zhihu.com/p/78416952)
 >
-> ![Chengyu.png]({{ assets_base_url }}/images/20467337.png)
+> ![Chengyu.png]({{ '/images/20467337.png' | relative_url }}){: loading="lazy" decoding="async" width="649" height="518" }
 
 我觉得也能写出类似的小玩意出来（像那样开线程确实不敢啊哈哈），就找到了文章中用到的成语词典并下载下来——[THUOCL：清华大学开放中文词库](http://thuocl.thunlp.org/) 
 
@@ -24,11 +24,11 @@ keywords: python, pypinyin, 成语接龙, 一个顶俩, 接龙红包, 成语词�
 
 下载下来是一个**txt 文档**：
 
-![Chengyu_1.png]({{ assets_base_url }}/images/88386728.png)
+![Chengyu_1.png]({{ '/images/88386728.png' | relative_url }}){: loading="lazy" decoding="async" width="999" height="607" }
 
 每一行都是 `成语+空格+词频` 的格式，为了实现功能，需要稍微处理一下：
 
-![Chengyu_2.png]({{ assets_base_url }}/images/47244349.png)
+![Chengyu_2.png]({{ '/images/47244349.png' | relative_url }}){: loading="lazy" decoding="async" width="1020" height="53" }
 
 ```python
 words = {'成语':'词频','成语':'词频', ...}#词频用于接龙时挑选使用频率最高的词语

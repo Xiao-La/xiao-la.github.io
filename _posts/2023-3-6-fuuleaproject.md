@@ -4,6 +4,7 @@ title: 使用 Python 下载辅立码课的文件
 categories: python
 description: python
 keywords: python, fuulea
+math: true
 ---
 
 ## 3.6
@@ -48,7 +49,10 @@ if __name__ == "__main__" :
 
 已经可以实现输入提取码后直接下载并打开本地文件，非常直接快速：
 
-![GIF]({{ assets_base_url }}/images/anime.gif)
+<video data-animated controls loop muted playsinline preload="none" width="960" height="548" poster="{{ '/images/anime-poster.webp' | relative_url }}" aria-label="辅立码课下载工具运行演示">
+  <source src="{{ '/images/anime.mp4' | relative_url }}" type="video/mp4">
+  <a href="{{ '/images/anime.mp4' | relative_url }}">观看工具运行演示</a>
+</video>
 
 ### TODO
 
@@ -62,7 +66,7 @@ if __name__ == "__main__" :
 
 更新了对多个文件的识别。
 
-辅立码课的提取码从**6 位**变成**7 位**了，不太知道是为了什么。6 位可以表示 $6^{36}(\approx 10^{28})$ 个文件了，难道有什么内部规则，使得提取码之间必须不能太相似，导致可用的提取码数很少？
+辅立码课的提取码从**6 位**变成**7 位**了，不太知道是为了什么。如果每位有 36 种可用字符，6 位可以表示 $36^6=2,176,782,336$ 种不同的提取码了，难道有什么内部规则，使得提取码之间必须不能太相似，导致可用的提取码数很少？
 
 总之，鉴于现在的代码长度还很短，直接在这里附上新版本的代码。
 

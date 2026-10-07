@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-<h2 id="jinrishici-sentence">Loading</h2>
+<h1>{{ page.title | escape }}</h1>
+<p class="daily-poem" id="jinrishici-sentence">记录生活，分享所学。</p>
 {% include daily-poem.html %}
 {{ content }}
 {% include comments.html %}

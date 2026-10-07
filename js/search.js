@@ -39,8 +39,12 @@
             item.searchText = normalize([
               item.title,
               item.category,
+              item.categories,
+              item.kind,
               item.tags,
-              item.description
+              item.keywords,
+              item.description,
+              item.body
             ].join(' '));
             item.normalizedTitle = normalize(item.title);
             return item;
@@ -86,6 +90,7 @@
       if (item.normalizedTitle.indexOf(token) !== -1) value += 20;
       if (normalize(item.category).indexOf(token) !== -1) value += 8;
       if (normalize(item.tags).indexOf(token) !== -1) value += 6;
+      if (normalize(item.keywords).indexOf(token) !== -1) value += 6;
     });
 
     return value;
@@ -107,7 +112,7 @@
     description.className = 'search-result-description';
     description.textContent = item.description || '暂无摘要';
     meta.className = 'search-result-meta';
-    meta.textContent = [date, category].filter(Boolean).join(' · ');
+    meta.textContent = [date, item.kind, category].filter(Boolean).join(' · ');
 
     link.appendChild(title);
     link.appendChild(description);

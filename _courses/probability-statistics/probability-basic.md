@@ -86,7 +86,7 @@ excerpt: "概率与统计 · Probability Basic - 概率基础"
 其中 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 是事件 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 包含的样本点个数。
 
 >  Simpson's Paradox：即使第一行的两个盒子中，红球比例都比第二行的两个盒子高，合起来时反而是下面的盒子红球比例更高。
->  <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Probability%20Basic%20-%20%E6%A6%82%E7%8E%87%E5%9F%BA%E7%A1%80.png' | relative_url }}{% raw %}" alt="Probability Basic - 概率基础" width="415" loading="lazy">
+>  <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Probability%20Basic%20-%20%E6%A6%82%E7%8E%87%E5%9F%BA%E7%A1%80.png' | relative_url }}{% raw %}" alt="Probability Basic - 概率基础" width="415" height="139" loading="lazy" decoding="async">
 
 计算概率
 - 加法原理（Addition principle）：分类

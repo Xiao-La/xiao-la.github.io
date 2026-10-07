@@ -24,10 +24,10 @@ Edward Tylor and Lewis Henry Morgan
 
 Natural Selection (Charles Darwin & **Alfred Russel Wallace**)
 -> Genetic and cultural inheritance
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Week2.png' | relative_url }}{% raw %}" alt="Week2" width="344" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Week2.png' | relative_url }}{% raw %}" alt="Week2" width="344" height="150" loading="lazy" decoding="async">
 
 **Primates**
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Week2-1.png' | relative_url }}{% raw %}" alt="Week2-1" width="364" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Week2-1.png' | relative_url }}{% raw %}" alt="Week2-1" width="364" height="228" loading="lazy" decoding="async">
 Non-human primates learn by:
 - **imitation and emulation**.
 - Individual - trial and error
@@ -73,5 +73,5 @@ Peer-review process
   - Reject.
 - (E) Co-authors complete revisions
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Week2-2.png' | relative_url }}{% raw %}" alt="Week2-2" width="422" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Week2-2.png' | relative_url }}{% raw %}" alt="Week2-2" width="422" height="254" loading="lazy" decoding="async">
 {% endraw %}

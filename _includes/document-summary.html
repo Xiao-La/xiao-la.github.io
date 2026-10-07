@@ -1,0 +1,9 @@
+{%- assign summary_document = include.document -%}
+{%- assign generic_descriptions = 'Note|study|OI Diary|python|life' | split: '|' -%}
+{%- assign document_summary = summary_document.description -%}
+{%- if summary_document.doc_type == 'note' -%}
+  {%- assign document_summary = summary_document.content -%}
+{%- elsif document_summary == nil or document_summary == '' or generic_descriptions contains document_summary -%}
+  {%- assign document_summary = summary_document.excerpt | default: summary_document.content -%}
+{%- endif -%}
+{%- assign document_summary = document_summary | strip_html | normalize_whitespace | truncate: 160 -%}

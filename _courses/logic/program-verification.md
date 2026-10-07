@@ -57,12 +57,12 @@ Program Variables / Logic Variables：因为程序中的变量会变，在 Hoare
 
 
 要验证一个程序，需要构造一个证明序列：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Program%20Verification%20-%20%E7%A8%8B%E5%BA%8F%E9%AA%8C%E8%AF%81-1.png' | relative_url }}{% raw %}" alt="Program Verification - 程序验证-1" width="416" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Program%20Verification%20-%20%E7%A8%8B%E5%BA%8F%E9%AA%8C%E8%AF%81-1.png' | relative_url }}{% raw %}" alt="Program Verification - 程序验证-1" width="416" height="366" loading="lazy" decoding="async">
 （Axiom）
 - Assignment： <span class="course-math course-math-display" data-tex="\dfrac{}{(\!&#124;  Q[E/x] &#124;\!) \; x=E \; (\!&#124; Q(x) &#124;\!)}" data-display="true"><code>\dfrac{}{(\!&#124;  Q[E/x] &#124;\!) \; x=E \; (\!&#124; Q(x) &#124;\!)}</code></span>
 也就是，若要再执行赋值 `x=E` 后 <span class="course-math" data-tex="Q(x)" data-display="false"><code>Q(x)</code></span> 成立，则原来把 <span class="course-math" data-tex="Q" data-display="false"><code>Q</code></span> 中的 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 替换为 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 一定成立。
 例如，在图中 <span class="course-math" data-tex="\phi" data-display="false"><code>\phi</code></span> 应该是 <span class="course-math" data-tex="x+1&gt;0\land y&gt;0" data-display="false"><code>x+1&gt;0\land y&gt;0</code></span>。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Program%20Verification%20-%20%E7%A8%8B%E5%BA%8F%E9%AA%8C%E8%AF%81-2.png' | relative_url }}{% raw %}" alt="Program Verification - 程序验证-2" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Program%20Verification%20-%20%E7%A8%8B%E5%BA%8F%E9%AA%8C%E8%AF%81-2.png' | relative_url }}{% raw %}" alt="Program Verification - 程序验证-2" width="844" height="88" loading="lazy" decoding="async">
 
 （Implied Rule）
 - Precondition Strengthening
@@ -74,11 +74,11 @@ Program Variables / Logic Variables：因为程序中的变量会变，在 Hoare
 <span class="course-math course-math-display" data-tex="\dfrac{(\!&#124;  P &#124;\!) \; C_{1} \; (\!&#124; Q &#124;\!) \;\; (\!&#124;  Q &#124;\!) \; C_{2} \; (\!&#124; R &#124;\!)}{(\!&#124;  P &#124;\!) \; C_{1},C_{2} \; (\!&#124; R &#124;\!)}" data-display="true"><code>\dfrac{(\!&#124;  P &#124;\!) \; C_{1} \; (\!&#124; Q &#124;\!) \;\; (\!&#124;  Q &#124;\!) \; C_{2} \; (\!&#124; R &#124;\!)}{(\!&#124;  P &#124;\!) \; C_{1},C_{2} \; (\!&#124; R &#124;\!)}</code></span>
 - If statements
 <span class="course-math course-math-display" data-tex="\frac{&#10;    (\!&#124; P \land B &#124;\!) \; C_1 \; (\!&#124; Q &#124;\!) \qquad (\!&#124; P \land \neg B &#124;\!) \; C_2 \; (\!&#124; Q &#124;\!)&#10;}{&#10;    (\!&#124; P &#124;\!) \text{ if } B \; \{C_1\} \text{ else } \{C_2\} \; (\!&#124; Q &#124;\!)&#10;}" data-display="true"><code>\frac{&#10;    (\!&#124; P \land B &#124;\!) \; C_1 \; (\!&#124; Q &#124;\!) \qquad (\!&#124; P \land \neg B &#124;\!) \; C_2 \; (\!&#124; Q &#124;\!)&#10;}{&#10;    (\!&#124; P &#124;\!) \text{ if } B \; \{C_1\} \text{ else } \{C_2\} \; (\!&#124; Q &#124;\!)&#10;}</code></span>
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Program%20Verification%20-%20%E7%A8%8B%E5%BA%8F%E9%AA%8C%E8%AF%81-3.png' | relative_url }}{% raw %}" alt="Program Verification - 程序验证-3" width="559" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Program%20Verification%20-%20%E7%A8%8B%E5%BA%8F%E9%AA%8C%E8%AF%81-3.png' | relative_url }}{% raw %}" alt="Program Verification - 程序验证-3" width="559" height="257" loading="lazy" decoding="async">
 
 **Loop Invariant（循环不变式）**：在循环中始终成立。
 - Partial-While：
 <span class="course-math course-math-display" data-tex="\frac{&#10;    (\!&#124; I \land B &#124;\!) \; C \; (\!&#124; I &#124;\!)&#10;}{&#10;    (\!&#124; I &#124;\!) \text{ while } B \; \{C\} \; (\!&#124; I \land \neg B &#124;\!)&#10;}" data-display="true"><code>\frac{&#10;    (\!&#124; I \land B &#124;\!) \; C \; (\!&#124; I &#124;\!)&#10;}{&#10;    (\!&#124; I &#124;\!) \text{ while } B \; \{C\} \; (\!&#124; I \land \neg B &#124;\!)&#10;}</code></span>
 这里 <span class="course-math" data-tex="I" data-display="false"><code>I</code></span> 就是一个 Loop Invariant。需要合适地选取一个循环不变式，用来完成我们的证明。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Program%20Verification%20-%20%E7%A8%8B%E5%BA%8F%E9%AA%8C%E8%AF%81-4.png' | relative_url }}{% raw %}" alt="Program Verification - 程序验证-4" width="487" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Program%20Verification%20-%20%E7%A8%8B%E5%BA%8F%E9%AA%8C%E8%AF%81-4.png' | relative_url }}{% raw %}" alt="Program Verification - 程序验证-4" width="487" height="409" loading="lazy" decoding="async">
 {% endraw %}

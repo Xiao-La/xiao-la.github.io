@@ -6,6 +6,7 @@ description: Note
 keywords: NOIP, OI, Note
 learning_kind: record
 learning_stage: methods
+math: true
 ---
 
 ### 写在前面

@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.1/dist/echarts.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+  <title>旅行足迹 · Joy</title>
+  <style>
+    html, body { margin: 0; }
+    #main { width: 100%; height: 100vh; height: 100dvh; min-height: 360px; }
+    #map-status { position: absolute; top: 3.5em; left: 1em; right: 1em; margin: 0; font: 14px/1.6 sans-serif; }
+  </style>
 </head>
 
 <body id="page">
-  <!--style中定义视图的长宽尺寸-->
-  <div id="main" style="width: 2000px;height:1200px;"></div>
+  <div id="main" role="img" aria-label="Joy 的中国旅行足迹地图，可拖动和缩放"></div>
+  <p id="map-status" role="status" hidden></p>
   <script type="text/javascript">
+    (function () {
+    var status = document.getElementById('map-status');
+    function showError() {
+      status.hidden = false;
+      status.textContent = '地图暂时无法加载，请刷新页面重试。';
+    }
+    if (!window.echarts) { showError(); return; }
 
     let blackStyle = [
       "#343233",  // 背景和省份颜色
@@ -34,11 +46,16 @@
     document.getElementById("page").style.background = style[0];
     var myChart = echarts.init(document.getElementById('main'));
     myChart.showLoading();
-  $.get('./100000_full.json', function (geoJson) {
+  fetch('./100000_full.json')
+    .then(function (response) {
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      return response.json();
+    })
+    .then(function (geoJson) {
       myChart.hideLoading();
       echarts.registerMap('china', geoJson);
       myChart.setOption(
-        option = {
+        {
           title: {
             text: '旅行足迹'
           },
@@ -80,6 +97,7 @@
           series: {
             name: '标记点',
             type: 'scatter',
+            labelLayout: { hideOverlap: true },
             animation: false,   // 缩放时标签高频重排，不做过渡动画
             coordinateSystem: 'geo',
             // 去过的城市，对应的经纬度
@@ -161,7 +179,11 @@
         }
       )
       layoutLabels();   // 数据到位后做第一次布局校准
-    })
+    }).catch(function (error) {
+      myChart.hideLoading();
+      showError();
+      console.error('Map failed to load:', error);
+    });
 
     myChart.on('click', function (params) {
       // 在用户点击后控制台打印数据的名称
@@ -181,7 +203,7 @@
     var LABEL_H = 12.5;       // 12px 加粗汉字的墨水高度（含少量余量）
     var LABEL_DY = 8.5;       // offset 为 [0,0] 时文字顶部距圆点中心的像素距离
     var GAP_MIN = 2;          // 文字/圆点之间要求的最小间隙(px)
-    var VIEW_W = 2000, VIEW_H = 1200;   // 与 #main 的尺寸一致
+    var VIEW_W, VIEW_H;
 
     // 候选错开位置，按"离圆点近"排序；优先保持在圆点下方（dy >= 0）
     var OFFSETS = [];
@@ -229,6 +251,8 @@
       return n;
     }
     function layoutLabels() {
+      VIEW_W = myChart.getWidth();
+      VIEW_H = myChart.getHeight();
       if (!cityList) {
         cityList = myChart.getOption().series[0].data.map(function (d) {
           return {
@@ -283,6 +307,13 @@
         layoutLabels();
       }, 120);
     });
+
+    window.addEventListener('resize', function () {
+      myChart.resize();
+      var option = myChart.getOption();
+      if (option.series && option.series.length) layoutLabels();
+    });
+    }());
 
   </script>
 </body>

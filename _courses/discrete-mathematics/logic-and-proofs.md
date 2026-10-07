@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-09-07T15:27:48+08:00"
-updated_at: "2026-09-28T12:58:13+08:00"
+updated_at: "2026-10-07T20:21:26+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -28,7 +28,7 @@ excerpt: "离散数学 · Logic and Proofs - 逻辑与证明"
 
 逻辑连接符（Logic Connectives）：
 - Negation <span class="course-math" data-tex="\neg" data-display="false"><code>\neg</code></span>
-- Conjuntion/and <span class="course-math" data-tex="\land" data-display="false"><code>\land</code></span>
+- Conjunction/and <span class="course-math" data-tex="\land" data-display="false"><code>\land</code></span>
 - Disjunction/or <span class="course-math" data-tex="\lor" data-display="false"><code>\lor</code></span>
 - Exclusive or <span class="course-math" data-tex="\oplus" data-display="false"><code>\oplus</code></span>
 - Implication <span class="course-math" data-tex="\to" data-display="false"><code>\to</code></span>
@@ -37,7 +37,7 @@ excerpt: "离散数学 · Logic and Proofs - 逻辑与证明"
 真值表（Truth table）：表示不同的命题之间，所有真值（T/F）之间的关系。
 - 行数：若涉及 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个命题，则有 <span class="course-math" data-tex="2^{n}" data-display="false"><code>2^{n}</code></span> 行。
 例如异或的真值表：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91.png' | relative_url }}{% raw %}" alt="Logic - 逻辑" width="233" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91.png' | relative_url }}{% raw %}" alt="Logic - 逻辑" width="233" height="179" loading="lazy" decoding="async">
 - <span class="course-math" data-tex="p\oplus q\equiv \neg(p\leftrightarrow q)" data-display="false"><code>p\oplus q\equiv \neg(p\leftrightarrow q)</code></span>
 - <span class="course-math" data-tex="p\to q \equiv \neg p\lor q" data-display="false"><code>p\to q \equiv \neg p\lor q</code></span> (Useful Law)
 
@@ -64,9 +64,6 @@ Contingency：可真可假。
 - 另一种定义：<span class="course-math" data-tex="p\leftrightarrow q" data-display="false"><code>p\leftrightarrow q</code></span> 是永真式。
 - 记作 <span class="course-math" data-tex="p\equiv q" data-display="false"><code>p\equiv q</code></span> 或 <span class="course-math" data-tex="p \iff q" data-display="false"><code>p \iff q</code></span>。
 
-分配率：
-- <span class="course-math" data-tex="(w\land(u\lor v))\equiv(w\land u)\lor(w\land v)" data-display="false"><code>(w\land(u\lor v))\equiv(w\land u)\lor(w\land v)</code></span>
-- <span class="course-math" data-tex="(w\lor(u\land v))\equiv(w\lor u)\land(w\lor v)" data-display="false"><code>(w\lor(u\land v))\equiv(w\lor u)\land(w\lor v)</code></span>。
 
 De Morgan's Law：
 - <span class="course-math" data-tex="\neg(p\lor q)\equiv \neg p\land \neg q" data-display="false"><code>\neg(p\lor q)\equiv \neg p\land \neg q</code></span>
@@ -91,13 +88,13 @@ Commutative Laws:
 - <span class="course-math" data-tex="p\lor q\equiv q\lor p" data-display="false"><code>p\lor q\equiv q\lor p</code></span>
 - <span class="course-math" data-tex="p\land q\equiv q\land p" data-display="false"><code>p\land q\equiv q\land p</code></span>
 
-Associatie Laws:
+Associative Laws:
 - <span class="course-math" data-tex="(p\lor q)\lor r\equiv p\lor(q\lor r)" data-display="false"><code>(p\lor q)\lor r\equiv p\lor(q\lor r)</code></span>
 - <span class="course-math" data-tex="(p\land q)\land r\equiv p\land(q\land r)" data-display="false"><code>(p\land q)\land r\equiv p\land(q\land r)</code></span>
 
 Distributive Laws:
 - <span class="course-math" data-tex="p\lor(q\land r)\equiv(p\lor q)\land(p\lor r)" data-display="false"><code>p\lor(q\land r)\equiv(p\lor q)\land(p\lor r)</code></span>
-- <span class="course-math" data-tex="p\land(p\lor r)\equiv(p\land q)\lor(p\land r)" data-display="false"><code>p\land(p\lor r)\equiv(p\land q)\lor(p\land r)</code></span>
+- <span class="course-math" data-tex="p\land(q\lor r)\equiv(p\land q)\lor(p\land r)" data-display="false"><code>p\land(q\lor r)\equiv(p\land q)\lor(p\land r)</code></span>
 
 Absorption Laws
 - <span class="course-math" data-tex="p\lor(p\land q)\equiv p" data-display="false"><code>p\lor(p\land q)\equiv p</code></span>
@@ -147,13 +144,13 @@ Predicate <span class="course-math" data-tex="P(x_{1},\dots,x_{n})" data-display
 
 
 对于命题逻辑有如下的 **Inference Rules:**
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-1.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-1" width="433" loading="lazy">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-2.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-2" width="432" loading="lazy">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-3.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-3" width="434" loading="lazy">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-4.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-4" width="436" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-1.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-1" width="433" height="108" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-2.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-2" width="432" height="260" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-3.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-3" width="434" height="356" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-4.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-4" width="436" height="259" loading="lazy" decoding="async">
 
 对于一阶逻辑：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-5.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-5" width="437" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-5.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-5" width="437" height="395" loading="lazy" decoding="async">
 
 
 ## 数学证明（Mathematical Proof）

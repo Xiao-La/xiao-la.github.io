@@ -19,4 +19,4 @@ learning_stage: high-school
 | 年段排名(估算/共790人) | 49 | 223 | 17 | 28 | 116  | 236 | 203 |
 
 
-部分学习时长记录见 [链接]({{ assets_base_url }}/reports/2024-11-report.html)。
+部分学习时长记录见 [链接]({{ '/reports/2024-11-report.html' | relative_url }})。

@@ -89,4 +89,4 @@ keywords: blog, github pages, removal
 
 这应该会持续运行一年左右，只需要在 minecraft 多人游戏中加入 `hypixel.joyslog.top` 即可使用。
 
-![]({{ assets_base_url }}/images/mc.png)
+![]({{ '/images/mc.png' | relative_url }}){: loading="lazy" decoding="async" width="650" height="78" }

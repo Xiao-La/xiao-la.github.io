@@ -68,7 +68,7 @@ JDK：Java Development Kit = JRE + 开发工具
 `&& or ||` 和 `& or |` 的区别：前者会短路，后者不会短路。
 
 **运算符优先级：** 四则 > 比较 > 赋值。细则看这个图：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109%20-%202.png' | relative_url }}{% raw %}" alt="CS109 - 2" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109%20-%202.png' | relative_url }}{% raw %}" alt="CS109 - 2" width="1280" height="686" loading="lazy" decoding="async">
 
 `String.format("%d", 1)` 返回格式化后的字符串 `"1"`。
 
@@ -76,7 +76,7 @@ JDK：Java Development Kit = JRE + 开发工具
 
 提升需要不丢精度，比如 `float` 可以提升为 `double`，`short` 可以提升为 `long`，反过来却不安全。
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109%20-%203.png' | relative_url }}{% raw %}" alt="CS109 - 3" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109%20-%203.png' | relative_url }}{% raw %}" alt="CS109 - 3" width="1396" height="630" loading="lazy" decoding="async">
 
 八大基础类型有对应的 Wrapper Classes
 `ArrayList<Integer> list = new Arraylist<Integer>();`
@@ -227,7 +227,7 @@ String concated1 = "hello" + " world";
 
 可变字符串 `StringBuilder` 的操作效率比较高。
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109%20-%204.png' | relative_url }}{% raw %}" alt="CS109 - 4" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109%20-%204.png' | relative_url }}{% raw %}" alt="CS109 - 4" width="1302" height="760" loading="lazy" decoding="async">
 
 包装类（Wrapper Class）可以将八大基础类型作为对象处理：
 ```java
@@ -303,7 +303,7 @@ Collections.reverse(list);
 一个类只能有一个直接超类。
 修饰符：
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109-1.png' | relative_url }}{% raw %}" alt="CS109-1" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109-1.png' | relative_url }}{% raw %}" alt="CS109-1" width="1956" height="652" loading="lazy" decoding="async">
 子类会不会“继承“超类 `private` 成员具有争议。一个比较有共识的说法是，子类会继承超类的所有成员，但是会隐藏 `private` 成员。
 子类可以通过 `super` 关键字调用（invoke）超类的构造方法。
 没有标识符（no modifier）相当于 `package-private`。
@@ -402,7 +402,7 @@ Payable p1 = new Alipay();
 ```
 一个类只能继承 `extends`  一个类，但可以实现 ` implements `  很多个接口。
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109%20-%205.png' | relative_url }}{% raw %}" alt="CS109 - 5" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109%20-%205.png' | relative_url }}{% raw %}" alt="CS109 - 5" width="1382" height="556" loading="lazy" decoding="async">
 
 
 

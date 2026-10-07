@@ -67,7 +67,7 @@ excerpt: "大学物理（上）/（下） · Longitudinal Wave - 纵波"
 
 两列波 <span class="course-math" data-tex="s_{1}=s_{m}\cos \omega_{1}t, s_{2}=s_{m} \cos \omega_{2}t" data-display="false"><code>s_{1}=s_{m}\cos \omega_{1}t, s_{2}=s_{m} \cos \omega_{2}t</code></span>，那么它们的叠加 <span class="course-math" data-tex="s = 2s_{m} \cos (\frac{\omega_{1}-\omega_{2}}{2}t)  \cos (\frac{\omega_{1}+\omega_{2}}{2}t)" data-display="false"><code>s = 2s_{m} \cos (\frac{\omega_{1}-\omega_{2}}{2}t)  \cos (\frac{\omega_{1}+\omega_{2}}{2}t)</code></span>
 叠加会形成这样的波形：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-7.png' | relative_url }}{% raw %}" alt="Wave-7" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-7.png' | relative_url }}{% raw %}" alt="Wave-7" width="984" height="176" loading="lazy" decoding="async">
 <span class="course-math" data-tex="\omega_{\text{beat}}=&#124;\omega_{1}-\omega_{2}&#124;, f_{\text{beat}}=&#124;f_{1}-f_{2}&#124;" data-display="false"><code>\omega_{\text{beat}}=&#124;\omega_{1}-\omega_{2}&#124;, f_{\text{beat}}=&#124;f_{1}-f_{2}&#124;</code></span>
 
 
@@ -89,6 +89,6 @@ excerpt: "大学物理（上）/（下） · Longitudinal Wave - 纵波"
 
 超音速（Supersonic）：<span class="course-math" data-tex="v_{S}&gt;v" data-display="false"><code>v_{S}&gt;v</code></span> 的情形，会引发激波（Shock Wave）.
 马赫数（Mach Number）：<span class="course-math" data-tex="\frac{v_{S}}{v}" data-display="false"><code>\frac{v_{S}}{v}</code></span>。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-8.png' | relative_url }}{% raw %}" alt="Wave-8" loading="lazy"> 
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-8.png' | relative_url }}{% raw %}" alt="Wave-8" width="260" height="209" loading="lazy" decoding="async">
 <span class="course-math course-math-display" data-tex="\sin \theta= \frac{v}{v_{S}}" data-display="true"><code>\sin \theta= \frac{v}{v_{S}}</code></span>
 {% endraw %}

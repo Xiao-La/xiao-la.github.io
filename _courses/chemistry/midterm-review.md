@@ -292,5 +292,5 @@ Exception <span class="course-math" data-tex="\ce{[Ar] 3d^5 4s^1, [Ar] 3d^10 4s^
 - LUMO : lowest unoccupied molecular orbital 
 - Paramagnetism: have unpaired electrons
 - Diamagnetism: no unpaired electrons
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Chemistry-Midterm-Review-1.png' | relative_url }}{% raw %}" alt="Chemistry-Midterm-Review-1" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Chemistry-Midterm-Review-1.png' | relative_url }}{% raw %}" alt="Chemistry-Midterm-Review-1" width="976" height="501" loading="lazy" decoding="async">
 {% endraw %}

@@ -207,9 +207,9 @@ excerpt: "高等数学（上）/（下） · Partial Derivatives -  偏导数"
 
 
 在 <span class="course-math" data-tex="(a,b)" data-display="false"><code>(a,b)</code></span> 处的 <span class="course-math" data-tex="n+1" data-display="false"><code>n+1</code></span> 阶泰勒公式：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Partial%20Derivatives%20-%20%20%E5%81%8F%E5%AF%BC%E6%95%B0.png' | relative_url }}{% raw %}" alt="Partial Derivatives -  偏导数" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Partial%20Derivatives%20-%20%20%E5%81%8F%E5%AF%BC%E6%95%B0.png' | relative_url }}{% raw %}" alt="Partial Derivatives -  偏导数" width="2108" height="468" loading="lazy" decoding="async">
 把这里的 <span class="course-math" data-tex="h,k" data-display="false"><code>h,k</code></span> 换成 <span class="course-math" data-tex="x,y" data-display="false"><code>x,y</code></span>，可以写出在原点处的 <span class="course-math" data-tex="n+1" data-display="false"><code>n+1</code></span> 阶泰勒公式：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Partial%20Derivatives%20-%20%20%E5%81%8F%E5%AF%BC%E6%95%B0-1.png' | relative_url }}{% raw %}" alt="Partial Derivatives -  偏导数-1" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Partial%20Derivatives%20-%20%20%E5%81%8F%E5%AF%BC%E6%95%B0-1.png' | relative_url }}{% raw %}" alt="Partial Derivatives -  偏导数-1" width="2200" height="424" loading="lazy" decoding="async">
 也就是说
 <span class="course-math course-math-display" data-tex="f(x,y)=\left( \sum_{k=0}^{n} \frac{1}{k!}\left( x \frac{ \partial  }{ \partial x } +y \frac{ \partial  }{ \partial y }  \right)^{k}f   \right)+ \left( \frac{1}{(n+1)!}\left( x\frac{ \partial  }{ \partial x } +y\frac{ \partial  }{ \partial y }  \right)^{n+1} f\right)_{(cx, cy)}" data-display="true"><code>f(x,y)=\left( \sum_{k=0}^{n} \frac{1}{k!}\left( x \frac{ \partial  }{ \partial x } +y \frac{ \partial  }{ \partial y }  \right)^{k}f   \right)+ \left( \frac{1}{(n+1)!}\left( x\frac{ \partial  }{ \partial x } +y\frac{ \partial  }{ \partial y }  \right)^{n+1} f\right)_{(cx, cy)}</code></span>
 {% endraw %}

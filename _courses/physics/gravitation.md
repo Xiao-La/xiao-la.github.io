@@ -46,7 +46,7 @@ excerpt: "大学物理（上）/（下） · Gravitation - 引力"
 {: #section-3 }
 
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Gravitation-1.png' | relative_url }}{% raw %}" alt="Gravitation-1" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Gravitation-1.png' | relative_url }}{% raw %}" alt="Gravitation-1" width="152" height="200" loading="lazy" decoding="async">
 实际上，支持力 <span class="course-math" data-tex="\vec{N}" data-display="false"><code>\vec{N}</code></span> 和 <span class="course-math" data-tex="\vec{F_{g}}" data-display="false"><code>\vec{F_{g}}</code></span> 一起提供自转的向心力，而 <span class="course-math" data-tex="\vec{N}" data-display="false"><code>\vec{N}</code></span> 和 <span class="course-math" data-tex="m\vec{g}" data-display="false"><code>m\vec{g}</code></span> 相等。故有 <span class="course-math" data-tex="\vec{F_{g}}=m \vec{a_{c}} + m \vec{g}" data-display="false"><code>\vec{F_{g}}=m \vec{a_{c}} + m \vec{g}</code></span>。
 
 
@@ -69,5 +69,5 @@ excerpt: "大学物理（上）/（下） · Gravitation - 引力"
 1. 轨道定律：所有行星走椭圆轨道 <span class="course-math" data-tex="r=\frac{p}{1+e\cos\theta}" data-display="false"><code>r=\frac{p}{1+e\cos\theta}</code></span>。
 2. 面积定律：太阳和行星连线扫过的面积随时间均匀变化：<span class="course-math course-math-display" data-tex="\frac{dA}{dt}=\frac{1}{2}r^2 \frac{d\theta}{dt}=\frac{1}{2}\omega r^2=\frac{L}{2m}=\text{constant}" data-display="true"><code>\frac{dA}{dt}=\frac{1}{2}r^2 \frac{d\theta}{dt}=\frac{1}{2}\omega r^2=\frac{L}{2m}=\text{constant}</code></span>
 3. 周期定律：行星运动满足 <span class="course-math" data-tex="\frac{T^2}{a^3}=\text{constant}\left( = \frac{4\pi^2}{GM} \right)" data-display="false"><code>\frac{T^2}{a^3}=\text{constant}\left( = \frac{4\pi^2}{GM} \right)</code></span>，其中 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 是椭圆半长轴长度，<span class="course-math" data-tex="T" data-display="false"><code>T</code></span> 为行星运动的周期。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Gravitation-2.png' | relative_url }}{% raw %}" alt="Gravitation-2" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Gravitation-2.png' | relative_url }}{% raw %}" alt="Gravitation-2" width="1896" height="1298" loading="lazy" decoding="async">
 {% endraw %}

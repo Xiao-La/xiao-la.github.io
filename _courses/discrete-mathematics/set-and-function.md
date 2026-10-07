@@ -39,7 +39,7 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 - 要证明可数，只需说明用一个序列可以把这个集合列尽。
 - <span class="course-math" data-tex="\mathbb{Z}" data-display="false"><code>\mathbb{Z}</code></span> 可数。可以列一个序列 <span class="course-math" data-tex="0,1,-1,2,-2,\dots" data-display="false"><code>0,1,-1,2,-2,\dots</code></span>
 - <span class="course-math" data-tex="\mathbb{Q}^{+}" data-display="false"><code>\mathbb{Q}^{+}</code></span> 可数。可以按这个来列举（依次去列 <span class="course-math" data-tex="p+q=2" data-display="false"><code>p+q=2</code></span> ，<span class="course-math" data-tex="p+q=3" data-display="false"><code>p+q=3</code></span> ... 的 <span class="course-math" data-tex="p / q" data-display="false"><code>p / q</code></span>，再加一个 filter 要求 <span class="course-math" data-tex="p,q" data-display="false"><code>p,q</code></span> 不可约）：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20and%20Function%20-%20%E9%9B%86%E5%90%88%E4%B8%8E%E5%87%BD%E6%95%B0.png' | relative_url }}{% raw %}" alt="Set and Function - 集合与函数" width="190" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20and%20Function%20-%20%E9%9B%86%E5%90%88%E4%B8%8E%E5%87%BD%E6%95%B0.png' | relative_url }}{% raw %}" alt="Set and Function - 集合与函数" width="190" height="182" loading="lazy" decoding="async">
 - 若 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 可数，则 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 的任意子集都可数。（加一个 filter 去掉不在子集里的，形成新的序列）
 - 有限字母表 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 上的有限字符串集 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 是可数无穷的。用字典序去形成序列即可。
 - 从上面这条，可以推出，所有 Java 程序组成的集合是可数的。（加一个 filter: Java Compiler）。
@@ -69,12 +69,12 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 
 定义 **Disjoint**：两个集合无交。
 集合恒等式：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论" width="298" loading="lazy">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-1.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论-1" width="299" loading="lazy">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-2.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论-2" width="302" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论" width="298" height="362" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-1.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论-1" width="299" height="272" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-2.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论-2" width="302" height="226" loading="lazy" decoding="async">
 要证明这些恒等式：
 - 与真值表相对的，使用成员表（其中 0 表示不在集合中，1 表示在集合中）：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-3.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论-3" width="383" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-3.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论-3" width="383" height="162" loading="lazy" decoding="async">
 - 也可以通过证明对应的逻辑表达式 <span class="course-math" data-tex="\forall x (x\in LHS\leftrightarrow x\in RHS)" data-display="false"><code>\forall x (x\in LHS\leftrightarrow x\in RHS)</code></span>
 - 也可以结合 Set builder 和逻辑等价律。
 计算机中若全集确定且有限，可以通过一个比特串表示集合。
@@ -114,7 +114,7 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 
 可以定义反函数（Inverse Function） <span class="course-math" data-tex="f^{-1}(b)=a" data-display="false"><code>f^{-1}(b)=a</code></span> ，当且仅当 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 是双射。
 定义复合函数 <span class="course-math" data-tex="(f\circ g)(x)=f(g(x))" data-display="false"><code>(f\circ g)(x)=f(g(x))</code></span>。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-5.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论-5" width="609" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-5.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论-5" width="609" height="292" loading="lazy" decoding="async">
 若 <span class="course-math" data-tex="f:A\to B" data-display="false"><code>f:A\to B</code></span> 是双射，那么可以记集合 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 中的恒等函数（Identity Function）：<span class="course-math" data-tex="I_{A}=f^{-1}\circ f" data-display="false"><code>I_{A}=f^{-1}\circ f</code></span>。
 
 定义一个函数是可计算的（Computable）：存在一个计算机程序可以找到函数的值。
@@ -126,7 +126,7 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 
 
 上/下取整函数 <span class="course-math" data-tex="\lceil x \rceil,\lfloor x \rfloor" data-display="false"><code>\lceil x \rceil,\lfloor x \rfloor</code></span>
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-4.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论-4" width="353" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-4.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论-4" width="353" height="293" loading="lazy" decoding="async">
 证明取整函数相关的式子考虑拆 <span class="course-math" data-tex="x=\widetilde{x}+a" data-display="false"><code>x=\widetilde{x}+a</code></span> 其中 <span class="course-math" data-tex="\widetilde{x}" data-display="false"><code>\widetilde{x}</code></span> 为整数部分。
 
 

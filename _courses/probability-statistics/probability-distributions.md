@@ -113,14 +113,14 @@ PDF：
 <span class="course-math course-math-display" data-tex="f(x)=\begin{cases}&#10;\lambda e^{-\lambda x}, &amp; x\geq 0, \\&#10;0, &amp; \text{otherwise}&#10;\end{cases}" data-display="true"><code>f(x)=\begin{cases}&#10;\lambda e^{-\lambda x}, &amp; x\geq 0, \\&#10;0, &amp; \text{otherwise}&#10;\end{cases}</code></span>
 CDF：
 <span class="course-math course-math-display" data-tex="F(x)=\begin{cases}&#10;1-e^{-\lambda x},  &amp; x\geq 0, \\&#10;0, &amp; \text{otherwise}&#10;\end{cases}" data-display="true"><code>F(x)=\begin{cases}&#10;1-e^{-\lambda x},  &amp; x\geq 0, \\&#10;0, &amp; \text{otherwise}&#10;\end{cases}</code></span>
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Probability%20Distributions%20-%20%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83.png' | relative_url }}{% raw %}" alt="Probability Distributions - 概率分布" width="197" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Probability%20Distributions%20-%20%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83.png' | relative_url }}{% raw %}" alt="Probability Distributions - 概率分布" width="197" height="301" loading="lazy" decoding="async">
 通常，指数分布用于描述到某个事件发生为止经过的时间。
 - 指数分布可以描述泊松过程中，时间区间的分布。
 - 定义泊松过程（Poisson Process）：一系列独立的随机事件，以匀速发生（这和泊松分布中描述的一致）。也就是说，对于泊松过程，若单位时间内发生次数服从 <span class="course-math" data-tex="\text{Poisson}(\lambda)" data-display="false"><code>\text{Poisson}(\lambda)</code></span>，则 <span class="course-math" data-tex="[0,t]" data-display="false"><code>[0,t]</code></span> 上发生次数服从 <span class="course-math" data-tex="\text{Poisson}(\lambda t)" data-display="false"><code>\text{Poisson}(\lambda t)</code></span>。
 - 设 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 是泊松过程中，到事件发生为止经过的时间，则
 <span class="course-math course-math-display" data-tex="P(X\leq t) =1-P(X&gt;t)=1-P(\text{no event occured in} [0,t])=1- \frac{(\lambda t)^{0}}{0!}e^{-\lambda t}=1-e^{-\lambda t}" data-display="true"><code>P(X\leq t) =1-P(X&gt;t)=1-P(\text{no event occured in} [0,t])=1- \frac{(\lambda t)^{0}}{0!}e^{-\lambda t}=1-e^{-\lambda t}</code></span>
 - 也就是说 <span class="course-math" data-tex="X\sim\text{Exp}(\lambda)" data-display="false"><code>X\sim\text{Exp}(\lambda)</code></span>。这个参数 <span class="course-math" data-tex="\lambda" data-display="false"><code>\lambda</code></span> 就是泊松分布中的 <span class="course-math" data-tex="\lambda" data-display="false"><code>\lambda</code></span>。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Probability%20Distributions%20-%20%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83-1.png' | relative_url }}{% raw %}" alt="Probability Distributions - 概率分布-1" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Probability%20Distributions%20-%20%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83-1.png' | relative_url }}{% raw %}" alt="Probability Distributions - 概率分布-1" width="1802" height="242" loading="lazy" decoding="async">
 期望与方差：
 <span class="course-math course-math-display" data-tex="\mathrm{E}(X)= \frac{1}{\lambda}" data-display="true"><code>\mathrm{E}(X)= \frac{1}{\lambda}</code></span>
 <span class="course-math course-math-display" data-tex="\mathrm{Var}(X)= \frac{1}{\lambda^{2}}" data-display="true"><code>\mathrm{Var}(X)= \frac{1}{\lambda^{2}}</code></span>
@@ -143,7 +143,7 @@ CDF：
 标准正态分布的 CDF 没有显式表达式，但它很常用，所以我们记它的 CDF  为 <span class="course-math" data-tex="\Phi(x)" data-display="false"><code>\Phi(x)</code></span>：
 <span class="course-math course-math-display" data-tex="\Phi(x)=P(X\leq x)=\int_{-\infty}^{x} \frac{1}{\sqrt{ 2\pi }} e^{-u^{2}/2}du" data-display="true"><code>\Phi(x)=P(X\leq x)=\int_{-\infty}^{x} \frac{1}{\sqrt{ 2\pi }} e^{-u^{2}/2}du</code></span>
 其 PDF 是一个钟形曲线：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Probability%20Distributions%20-%20%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83-2.png' | relative_url }}{% raw %}" alt="Probability Distributions - 概率分布-2" width="381" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Probability%20Distributions%20-%20%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83-2.png' | relative_url }}{% raw %}" alt="Probability Distributions - 概率分布-2" width="381" height="263" loading="lazy" decoding="async">
 对 <span class="course-math" data-tex="X\sim N(\mu,\sigma)" data-display="false"><code>X\sim N(\mu,\sigma)</code></span>，可以做标准化：令 <span class="course-math" data-tex="Z= \frac{X-\mu}{\sigma}" data-display="false"><code>Z= \frac{X-\mu}{\sigma}</code></span>，则 <span class="course-math" data-tex="Z\sim N(0,1)" data-display="false"><code>Z\sim N(0,1)</code></span>。
 期望与方差：
 <span class="course-math course-math-display" data-tex="\mathrm{E}(X)=\mu" data-display="true"><code>\mathrm{E}(X)=\mu</code></span>

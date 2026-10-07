@@ -148,5 +148,5 @@ card_html = card_html.replace(field, value)
 
 最后贴一张解决了上述各种坑点的效果图：
 
-![](https://s2.loli.net/2024/07/31/2iokgMV9xnSJqjQ.png)
+![](https://s2.loli.net/2024/07/31/2iokgMV9xnSJqjQ.png){: loading="lazy" decoding="async" }
 

@@ -23,8 +23,8 @@ excerpt: "数字逻辑 · Boolean Algebra - 布尔代数"
 
 
 逻辑门的真值表/符号/画图：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-6.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-6" width="479" loading="lazy">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-7.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-7" width="483" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-6.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-6" width="479" height="307" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-7.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-7" width="483" height="365" loading="lazy" decoding="async">
 逻辑门（AND, OR, NOT, NAND, NOR, XOR）。
 0, 1; L, H; T, F。
 
@@ -38,11 +38,11 @@ excerpt: "数字逻辑 · Boolean Algebra - 布尔代数"
 - 一些公理和定理
 公理和定理都保持对偶性（Duality）。
 - 把 <span class="course-math" data-tex="\cdot" data-display="false"><code>\cdot</code></span> 替换为 <span class="course-math" data-tex="+" data-display="false"><code>+</code></span>，同时把 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 替换为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>，等号仍然成立。
- <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数" width="474" loading="lazy">
+ <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数" width="474" height="162" loading="lazy" decoding="async">
 运算优先级
 - 括号>NOT>AND>OR
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-1.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-1" width="473" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-1.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-1" width="473" height="258" loading="lazy" decoding="async">
 
 这些定理可以用真值表或代数方法证明。
 
@@ -64,7 +64,7 @@ excerpt: "数字逻辑 · Boolean Algebra - 布尔代数"
 - 最大项（Maxterm）：包含了所有的 Literals （包括补的形式）的 OR 项。
   - 例如，对两个变量 <span class="course-math" data-tex="x,y" data-display="false"><code>x,y</code></span> ，最大项： <span class="course-math" data-tex="x+y,x+y&#x27;,x&#x27;+y,x&#x27;+y&#x27;(M_{0}\sim M_{3})" data-display="false"><code>x+y,x+y&#x27;,x&#x27;+y,x&#x27;+y&#x27;(M_{0}\sim M_{3})</code></span>。 
 这个编号就是对应变量的十进制值。另外有 <span class="course-math" data-tex="M_{i}=m_{i}&#x27;" data-display="false"><code>M_{i}=m_{i}&#x27;</code></span>。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-2.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-2" width="521" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-2.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-2" width="521" height="231" loading="lazy" decoding="async">
 Standard Form（不唯一）
 - Sum of product (sop) 例如 <span class="course-math" data-tex="F=y&#x27;+xy+x&#x27;yz&#x27;" data-display="false"><code>F=y&#x27;+xy+x&#x27;yz&#x27;</code></span>
 - Product of sum (pos) 例如 <span class="course-math" data-tex="F=x(y&#x27;+z)(x&#x27;+y+z&#x27;)" data-display="false"><code>F=x(y&#x27;+z)(x&#x27;+y+z&#x27;)</code></span>
@@ -72,16 +72,16 @@ Standard Form（不唯一）
 那么一个真值表可以表达成 Canonical Form（唯一）：
 - Sum-of-minterms (som)。
 - Product-of-maxterms (pom)。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-3.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-3" width="69" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-3.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-3" width="69" height="141" loading="lazy" decoding="async">
 例如这个函数 <span class="course-math" data-tex="F" data-display="false"><code>F</code></span> 可以写成：
 - Som：<span class="course-math" data-tex="F=m_{1}+m_{3}+m_{6}+m_{7}=\sum(1,3,6,7)" data-display="false"><code>F=m_{1}+m_{3}+m_{6}+m_{7}=\sum(1,3,6,7)</code></span>
 - Pom：<span class="course-math" data-tex="F=(x+y+z)(x+y&#x27;+z)(x&#x27;+y+z)(x&#x27;+y+z&#x27;)=M_{0}\cdot M_{2}\cdot M_{4}\cdot M_{5}=\prod(0,2,4,5)" data-display="false"><code>F=(x+y+z)(x+y&#x27;+z)(x&#x27;+y+z)(x&#x27;+y+z&#x27;)=M_{0}\cdot M_{2}\cdot M_{4}\cdot M_{5}=\prod(0,2,4,5)</code></span> 
 把一个布尔函数写成 Canonical Form（Expand）：把每一项都变成含所有 variable 的形式
 - 例： <span class="course-math" data-tex="F=A+B&#x27;C=A(B+B&#x27;)(C+C&#x27;)+(A+A&#x27;)B&#x27;C=\dots=\sum(1,4,5,6,7)" data-display="false"><code>F=A+B&#x27;C=A(B+B&#x27;)(C+C&#x27;)+(A+A&#x27;)B&#x27;C=\dots=\sum(1,4,5,6,7)</code></span>
-- 例：<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-4.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-4" width="499" loading="lazy">
+- 例：<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-4.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-4" width="499" height="213" loading="lazy" decoding="async">
 
 在所有 16 种二元布尔函数中，有 8 种是标准的逻辑门：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-5.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-5" width="345" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-5.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-5" width="345" height="216" loading="lazy" decoding="async">
 
 
 ## 卡诺图（Karnaugh Map, K-map）
@@ -90,17 +90,17 @@ Standard Form（不唯一）
 
 把真值表转换为方格，便于化简成 **minimum** sum of products 以减少逻辑门的数量。
 二元：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-8.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-8" width="204" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-8.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-8" width="204" height="203" loading="lazy" decoding="async">
 那么重叠的部分可以直接合并，即上图表示 <span class="course-math" data-tex="A+B" data-display="false"><code>A+B</code></span>。
 
 三元：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-9.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-9" width="385" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-9.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-9" width="385" height="255" loading="lazy" decoding="async">
 注意这里 <span class="course-math" data-tex="BC" data-display="false"><code>BC</code></span> 按照 <span class="course-math" data-tex="00,01,11,10" data-display="false"><code>00,01,11,10</code></span> 的顺序（即格雷码），保证相邻的方格只变化一位。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-12.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-12" width="302" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-12.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-12" width="302" height="233" loading="lazy" decoding="async">
 有几个圈就对应几个 term，因此我们想要圈的数量越少越好（圈越大越好），重叠也越少越好。（圈住的方格数都是二的幂次）
 
 四元：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-13.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-13" width="269" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-13.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-13" width="269" height="258" loading="lazy" decoding="async">
 
 Implicant（蕴含）：让 <span class="course-math" data-tex="F" data-display="false"><code>F</code></span> 为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 的 product term。
 Prime implicant（PI, 质蕴含）：极大的圈。

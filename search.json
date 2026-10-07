@@ -4,13 +4,19 @@ layout: null
 [
   {% assign search_documents = site.posts | concat: site.courses | concat: site.study %}
   {% for post in search_documents %}
+    {% include document-summary.html document=post %}
+    {% capture category_names %}{% for category in post.categories %}{{ site.data.categories[category] | default: category }} {% endfor %}{% endcapture %}
     {
       "title": {{ post.title | jsonify }},
-      "category": {% if post.collection == 'courses' %}{{ post.course_title | default: '课程笔记' | jsonify }}{% elsif post.learning_kind == 'topic' %}"专题笔记"{% elsif post.learning_kind == 'record' %}"学习记录"{% else %}{{ post.categories | join: ', ' | jsonify }}{% endif %},
+      "category": {% if post.collection == 'courses' %}{{ post.course_title | default: post.title | jsonify }}{% else %}{{ category_names | strip | jsonify }}{% endif %},
+      "categories": {{ post.categories | join: ', ' | jsonify }},
+      "kind": {% if post.collection == 'courses' %}"课程笔记"{% elsif post.learning_kind == 'topic' %}"专题笔记"{% elsif post.learning_kind == 'record' %}"学习记录"{% else %}"博客文章"{% endif %},
       "tags": {{ post.tags | join: ', ' | jsonify }},
-      "description": {{ post.description | default: post.excerpt | strip_html | normalize_whitespace | truncate: 160 | jsonify }},
+      "keywords": {{ post.keywords | join: ', ' | jsonify }},
+      "description": {{ document_summary | jsonify }},
+      "body": {{ post.content | strip_html | normalize_whitespace | jsonify }},
       "url": {{ post.url | relative_url | jsonify }},
-      "date": {% if post.collection == 'courses' %}null{% else %}{{ post.date | date_to_xmlschema | jsonify }}{% endif %}
+      "date": {% if post.doc_type == 'index' %}null{% else %}{{ post.updated_at | default: post.date | date_to_xmlschema | jsonify }}{% endif %}
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]

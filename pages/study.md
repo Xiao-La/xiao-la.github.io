@@ -40,7 +40,17 @@ learning_page: true
   {% endif %}
   <section class="learning-recent">
     <h2>最近的笔记与记录</h2>
-    {% assign recent = learning_documents | where_exp: 'article', 'article.learning_kind' | sort: 'date' | reverse %}
-    {% include learning-list.html documents=recent limit=5 %}
+    {% assign learning_articles = learning_documents | where_exp: 'article', 'article.learning_kind' %}
+    {% assign course_articles = site.courses | where: 'doc_type', 'note' %}
+    {% assign recent_documents = learning_articles | concat: course_articles %}
+    {% capture recent_keys %}{% for document in recent_documents %}{{ document.updated_at | default: document.date | date: '%Y%m%d%H%M%S' }}::{{ document.url }}|{% endfor %}{% endcapture %}
+    {% assign recent_keys = recent_keys | split: '|' | sort | reverse %}
+    <ol class="learning-article-list">
+      {% for key in recent_keys limit: 5 %}
+        {% assign document_url = key | split: '::' | last %}
+        {% assign document = recent_documents | where: 'url', document_url | first %}
+        <li>{% include article-overview.html article=document %}</li>
+      {% endfor %}
+    </ol>
   </section>
 </article>

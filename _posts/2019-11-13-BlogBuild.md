@@ -54,13 +54,13 @@ keywords: about, blog, github, free, 免费, githubpages
 
 如果你得到的是一个来自 github.com 的 Github Pages 模板，你只需要点击页面中的`Fork`按钮即可。
 
-![2019-11-13-1.png]({{ assets_base_url }}/images/36076488.png)
+![2019-11-13-1.png]({{ '/images/36076488.png' | relative_url }}){: loading="lazy" decoding="async" width="987" height="628" }
 
 Fork 后，打开你仓库里的那份 fork 的设置（Setting）。
 
 将 Repository name 修改为 Username.github.io（同理，Username 为你的用户名）
 
-![2019-11-13-2.png]({{ assets_base_url }}/images/11257534.png)
+![2019-11-13-2.png]({{ '/images/11257534.png' | relative_url }}){: loading="lazy" decoding="async" width="999" height="657" }
 
 等待一会儿，打开 username.github.io，**你应该就可以看到一个页面了**。
 

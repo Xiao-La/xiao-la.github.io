@@ -4,7 +4,8 @@
   <meta name="baidu-site-verification" content="codeva-DcKrElkAD6">
 
   {% assign page_title = page.title | default: site.title %}
-  {% assign page_description = page.description | default: site.description %}
+  {% include document-summary.html document=page %}
+  {% assign page_description = document_summary | default: site.description %}
   <title>{{ page_title | escape }}</title>
   <meta name="description" content="{{ page_description | strip_html | normalize_whitespace | escape }}">
   {% if page.keywords %}
@@ -23,39 +24,55 @@
 
   {% if page.course_page %}
     <link rel="stylesheet" href="{{ '/css/courses.css' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/assets/vendor/pseudocode/pseudocode.min.css' | relative_url }}">
+  {% endif %}
+  {% assign needs_course_math = false %}
+  {% if page.doc_type == 'note' %}
+    {% if content contains 'course-math' or content contains 'course-pseudocode' %}{% assign needs_course_math = true %}{% endif %}
+  {% endif %}
+  {% if page.math or needs_course_math %}
     <script>
       window.MathJax = {
         loader: {
           paths: { mathjax: {{ '/assets/vendor/mathjax' | relative_url | jsonify }} },
           load: ['[tex]/mhchem']
         },
-        tex: { packages: { '[+]': ['mhchem'] } },
+        tex: {
+          packages: { '[+]': ['mhchem'] },
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          tags: {% if page.doc_type == 'note' %}'none'{% else %}'ams'{% endif %}
+        },
         svg: { fontCache: 'local' },
-        startup: { typeset: false }
+        startup: {
+          {% if page.doc_type == 'note' %}
+          typeset: false
+          {% else %}
+          elements: ['main article'],
+          pageReady: function () {
+            return MathJax.startup.defaultPageReady().then(function () {
+              if (window.formatArticleMath) window.formatArticleMath();
+              var article = document.querySelector('main article');
+              if (article) article.dataset.rendered = 'true';
+            }).catch(function (error) {
+              var article = document.querySelector('main article');
+              if (article) article.dataset.rendered = 'failed';
+              console.error('Article math failed to render:', error);
+            });
+          }
+          {% endif %}
+        }
       };
     </script>
     <script defer src="{{ '/assets/vendor/mathjax/tex-svg-full.js' | relative_url }}"></script>
-    <script defer src="{{ '/assets/vendor/pseudocode/pseudocode.min.js' | relative_url }}"></script>
+  {% endif %}
+  {% if page.doc_type == 'note' %}
+    {% if content contains 'course-pseudocode' %}
+      <link rel="stylesheet" href="{{ '/assets/vendor/pseudocode/pseudocode.min.css' | relative_url }}">
+      <script defer src="{{ '/assets/vendor/pseudocode/pseudocode.min.js' | relative_url }}"></script>
+    {% endif %}
     <script defer src="{{ '/js/courses.js' | relative_url }}"></script>
   {% else %}
-  <script defer src="{{ '/js/articles.js' | relative_url }}"></script>
-  <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      TeX: { equationNumbers: { autoNumber: "AMS" } },
-      extensions: ["tex2jax.js"],
-      jax: ["input/TeX", "output/HTML-CSS"],
-      tex2jax: {
-        inlineMath: [["$", "$"], ["\\(", "\\)"]],
-        displayMath: [["$$", "$$"], ["\\[", "\\]"]],
-        processEscapes: true
-      },
-      "HTML-CSS": { fonts: ["TeX"] }
-    });
-    MathJax.Hub.Register.StartupHook("End", function () {
-      if (window.formatArticleMath) window.formatArticleMath();
-    });
-  </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script defer src="{{ '/js/articles.js' | relative_url }}"></script>
   {% endif %}
 </head>

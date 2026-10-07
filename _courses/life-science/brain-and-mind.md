@@ -35,7 +35,7 @@ excerpt: "生命科学概论 · Brain and Mind - 脑与心智"
     - Electrical synapse（电突触）- Gap junction（间隙连接）
     - Chemical synapse（化学突触）- Neurotransmitters（神经递质）
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Brain%20and%20Mind%20-%20%E8%84%91%E4%B8%8E%E5%BF%83%E6%99%BA.png' | relative_url }}{% raw %}" alt="Brain and Mind - 脑与心智" width="697" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Brain%20and%20Mind%20-%20%E8%84%91%E4%B8%8E%E5%BF%83%E6%99%BA.png' | relative_url }}{% raw %}" alt="Brain and Mind - 脑与心智" width="697" height="436" loading="lazy" decoding="async">
 
 感觉的传导
 - Sensory Receptor（受体）
@@ -44,7 +44,7 @@ excerpt: "生命科学概论 · Brain and Mind - 脑与心智"
   - Ion channels（离子通道）
 - Receptor potential（受体电位） *分级，叠加*
 - Action potential（动作电位） *全或无*
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Brain%20and%20Mind%20-%20%E8%84%91%E4%B8%8E%E5%BF%83%E6%99%BA-1.png' | relative_url }}{% raw %}" alt="Brain and Mind - 脑与心智-1" width="622" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Brain%20and%20Mind%20-%20%E8%84%91%E4%B8%8E%E5%BF%83%E6%99%BA-1.png' | relative_url }}{% raw %}" alt="Brain and Mind - 脑与心智-1" width="622" height="267" loading="lazy" decoding="async">
 Sensory adaptation
 - Tonic 紧张型 - 持续持续
 - Phasic 瞬变型 - 感受变化

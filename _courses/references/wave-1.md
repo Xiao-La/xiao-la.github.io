@@ -16,5 +16,5 @@ excerpt: "补充材料 · Wave-1"
 ---
 
 {% raw %}
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-2.png' | relative_url }}{% raw %}" alt="Wave-2" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-2.png' | relative_url }}{% raw %}" alt="Wave-2" width="898" height="495" loading="lazy" decoding="async">
 {% endraw %}

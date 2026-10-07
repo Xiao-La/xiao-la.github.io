@@ -9,9 +9,6 @@ url: https://joyslog.top
 baseurl: ""
 repository: Xiao-La/xiao-la.github.io
 
-# Kept for compatibility with image links in existing articles.
-assets_base_url: https://joyslog.top
-
 # Content and URLs
 markdown: kramdown
 kramdown:

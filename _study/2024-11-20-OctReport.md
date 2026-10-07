@@ -13,4 +13,4 @@ learning_stage: high-school
 
 因参加南方科技大学体验营，半期考（**三检**）申请免考。
 
-部分学习时长记录见 [链接]({{ assets_base_url }}/reports/2024-10-report.html)。
+部分学习时长记录见 [链接]({{ '/reports/2024-10-report.html' | relative_url }})。

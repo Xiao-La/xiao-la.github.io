@@ -1,4 +1,5 @@
 <div class="overview">
-  <div class="date"><time datetime="{{ include.article.date | date_to_xmlschema }}">{{ include.article.date | date: "%b %d, %Y" }}</time></div>
+  {% assign article_date = include.article.updated_at | default: include.article.date %}
+  <div class="date"><time datetime="{{ article_date | date_to_xmlschema }}">{{ article_date | date: "%Y-%m-%d" }}</time></div>
   <div class="detail"><a href="{{ include.article.url | relative_url }}">{{ include.article.title | escape }}</a></div>
 </div>

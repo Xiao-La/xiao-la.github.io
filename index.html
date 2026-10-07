@@ -1,22 +1,22 @@
 ---
 layout: default
-description: Joy's Blog
+description: Joy 的个人博客，记录生活、学习与技术笔记。
 keywords: joy, joyslog, blog, python, oi, noip
 ---
 
 <div class="info">
-  <h2>Info</h2>
+  <h2>博客信息</h2>
   <div class="overview">
-    <div class="date">Blog By</div>
+    <div class="date">作者</div>
     <div class="detail"><a href="{{ '/about/' | relative_url }}">Joy</a></div>
     <br>
     <div class="date">每日诗词</div>
-    <div class="detail"><a href="https://www.jinrishici.com/" id="jinrishici-sentence">Loading</a></div>
+    <div class="detail"><a href="https://www.jinrishici.com/" id="jinrishici-sentence">记录生活，分享所学。</a></div>
     {% include daily-poem.html %}
   </div>
 </div>
 <div class="postlist">
-  <h2 class="pconly">Article</h2>
+  <h2 class="pconly">文章</h2>
   <h2 class="monly">Joy's Blog</h2>
   {% for post in paginator.posts %}
   {% include article-overview.html article=post %}

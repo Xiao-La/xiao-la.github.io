@@ -70,7 +70,7 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 当距离电偶极子很远的时候：
 <span class="course-math course-math-display" data-tex="E=\frac{1}{2\pi \varepsilon_{0}} \frac{p}{z^{3}}\text{(electric dipole)}" data-display="true"><code>E=\frac{1}{2\pi \varepsilon_{0}} \frac{p}{z^{3}}\text{(electric dipole)}</code></span>
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6.png' | relative_url }}{% raw %}" alt="Electrostatics - 静电学" width="298" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6.png' | relative_url }}{% raw %}" alt="Electrostatics - 静电学" width="298" height="308" loading="lazy" decoding="async">
 则可以推出：
 - 当 <span class="course-math" data-tex="y\gg d" data-display="false"><code>y\gg d</code></span> 时， <span class="course-math" data-tex="E(y)= \frac{\vec{p}}{2\pi \varepsilon_{0}y^3}" data-display="false"><code>E(y)= \frac{\vec{p}}{2\pi \varepsilon_{0}y^3}</code></span>。
 - 当 <span class="course-math" data-tex="x\gg d" data-display="false"><code>x\gg d</code></span> 时，<span class="course-math" data-tex="E(x)=- \frac{\vec{p}}{4\pi \varepsilon_{0}x^3}" data-display="false"><code>E(x)=- \frac{\vec{p}}{4\pi \varepsilon_{0}x^3}</code></span>。 
@@ -96,7 +96,7 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 <span class="course-math course-math-display" data-tex="\Phi= \frac{q_{\text{enc}}}{\varepsilon_{0}}" data-display="true"><code>\Phi= \frac{q_{\text{enc}}}{\varepsilon_{0}}</code></span>
 或
 <span class="course-math course-math-display" data-tex="\varepsilon_{0} \oint \vec{E}\cdot d\vec{A}=q_{\text{enc}}" data-display="true"><code>\varepsilon_{0} \oint \vec{E}\cdot d\vec{A}=q_{\text{enc}}</code></span>
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6-1.png' | relative_url }}{% raw %}" alt="Electrostatics - 静电学-1" width="364" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6-1.png' | relative_url }}{% raw %}" alt="Electrostatics - 静电学-1" width="364" height="207" loading="lazy" decoding="async">
 例如无穷大均匀带电面的电场，满足 <span class="course-math" data-tex="q_{\text{enc}}=\sigma A=\varepsilon_{0} \oint EdA=\varepsilon_{0} E (2A)\implies E=\frac{\sigma}{2\varepsilon_{0}}" data-display="false"><code>q_{\text{enc}}=\sigma A=\varepsilon_{0} \oint EdA=\varepsilon_{0} E (2A)\implies E=\frac{\sigma}{2\varepsilon_{0}}</code></span>。
 从而平行板电容器的电场 <span class="course-math" data-tex="E=\frac{\sigma}{\varepsilon_{0}}" data-display="false"><code>E=\frac{\sigma}{\varepsilon_{0}}</code></span>。 
 导体表面的电场也为 <span class="course-math" data-tex="E=\frac{\sigma}{\varepsilon_{0}}" data-display="false"><code>E=\frac{\sigma}{\varepsilon_{0}}</code></span> 。
@@ -136,7 +136,7 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 {: #section-6 }
 
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6-2.png' | relative_url }}{% raw %}" alt="Electrostatics - 静电学-2" width="204" loading="lazy"> 
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6-2.png' | relative_url }}{% raw %}" alt="Electrostatics - 静电学-2" width="204" height="271" loading="lazy" decoding="async">
 <span class="course-math course-math-display" data-tex="\begin{align}&#10;V&amp;=V_{(+)}+V_{(-)}=k\left( \frac{q}{r_{(+)}}-\frac{q}{r_{(-)}} \right) \\&#10;&amp;=kq \frac{r_{(-)}-r_{(+)}}{r_{(+)}r_{{(-)}}}\\&#10;&amp;\xlongequal{r\gg d} kq \frac{d\cos\theta}{r^{2}}\\&#10;&amp;= \frac{1}{4\pi\varepsilon_{0}} \frac{p\cos\theta}{r^{2}}&#10;\end{align}" data-display="true"><code>\begin{align}&#10;V&amp;=V_{(+)}+V_{(-)}=k\left( \frac{q}{r_{(+)}}-\frac{q}{r_{(-)}} \right) \\&#10;&amp;=kq \frac{r_{(-)}-r_{(+)}}{r_{(+)}r_{{(-)}}}\\&#10;&amp;\xlongequal{r\gg d} kq \frac{d\cos\theta}{r^{2}}\\&#10;&amp;= \frac{1}{4\pi\varepsilon_{0}} \frac{p\cos\theta}{r^{2}}&#10;\end{align}</code></span>
 
 ## 电容器（Capacitor）
@@ -157,7 +157,7 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 <span class="course-math course-math-display" data-tex="\begin{align}&#10;&amp;W=\int vdq=\frac{1}{C}\int qdq=\frac{Q^{2}}{2C}\\&#10;\implies&amp; U=\frac{Q^{2}}{2C}=\frac{1}{2}CV^{2}=\frac{1}{2}QV&#10;\end{align}" data-display="true"><code>\begin{align}&#10;&amp;W=\int vdq=\frac{1}{C}\int qdq=\frac{Q^{2}}{2C}\\&#10;\implies&amp; U=\frac{Q^{2}}{2C}=\frac{1}{2}CV^{2}=\frac{1}{2}QV&#10;\end{align}</code></span>
 能量密度 
 <span class="course-math course-math-display" data-tex="u=\frac{U}{Ad}=\frac{\frac{1}{2}CV^{2}}{Ad}=\frac{1}{2}\varepsilon_{0}E^{2}" data-display="true"><code>u=\frac{U}{Ad}=\frac{\frac{1}{2}CV^{2}}{Ad}=\frac{1}{2}\varepsilon_{0}E^{2}</code></span>
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6-3.png' | relative_url }}{% raw %}" alt="Electrostatics - 静电学-3" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6-3.png' | relative_url }}{% raw %}" alt="Electrostatics - 静电学-3" width="403" height="549" loading="lazy" decoding="async">
 若存在电介质（dielectric）：
 <span class="course-math course-math-display" data-tex="E= \frac{\sigma-\sigma_{i}}{\varepsilon_{0}}=\frac{E_{0}}{\frac{\sigma}{\sigma-\sigma_{i}}}=\frac{E_{0}}{\kappa}" data-display="true"><code>E= \frac{\sigma-\sigma_{i}}{\varepsilon_{0}}=\frac{E_{0}}{\frac{\sigma}{\sigma-\sigma_{i}}}=\frac{E_{0}}{\kappa}</code></span>
 其中 <span class="course-math" data-tex="\kappa=\frac{\sigma}{\sigma-\sigma _{i}}&gt;1" data-display="false"><code>\kappa=\frac{\sigma}{\sigma-\sigma _{i}}&gt;1</code></span> 为介电常数（dielectric constant）。 

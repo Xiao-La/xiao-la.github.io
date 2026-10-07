@@ -3,15 +3,15 @@ layout: default
 ---
 <article>
   {% if page.learning_kind %}{% include learning-breadcrumb.html %}{% endif %}
-  <h2>{{ page.title }}</h2>
+  <h1>{{ page.title | escape }}</h1>
   {{ content }}
 
   {% if page.categories %}
     <div class="post_footer">
       <p>
-        Published on {{ page.date | date: "%b %d, %Y" }} in categories
+        发布于 {{ page.date | date: "%Y 年 %-m 月 %-d 日" }} · 分类：
         {% for category in page.categories %}
-          <a href="{{ '/categories/' | relative_url }}#{{ category | slugify }}" title="{{ category }}">{{ category }}</a>&nbsp;
+          <a href="{{ '/categories/' | relative_url }}#{{ category | slugify }}">{{ site.data.categories[category] | default: category | escape }}</a>&nbsp;
         {% endfor %}
       </p>
     </div>

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 友情链接
-description: LINKS
+description: 友人站点与 Joy 的联系方式。
 keywords: 友情链接
 permalink: /links/
 ---

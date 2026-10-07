@@ -70,7 +70,7 @@ excerpt: "科学与文明史概论 · History"
 
 **拉斐尔《雅典学园》**
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/History.png' | relative_url }}{% raw %}" alt="History" loading="lazy">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/History.png' | relative_url }}{% raw %}" alt="History" width="1542" height="1530" loading="lazy" decoding="async">
 *希腊化*
 阿基米德
 - 镜子

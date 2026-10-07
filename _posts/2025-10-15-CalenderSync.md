@@ -18,4 +18,4 @@ keywords: calender, android, apple, icloud, mac
 
 效果大概是这样：
 
-![]({{ assets_base_url }}/images/Calender.png)
+![]({{ '/images/Calender.png' | relative_url }}){: loading="lazy" decoding="async" width="2490" height="672" }

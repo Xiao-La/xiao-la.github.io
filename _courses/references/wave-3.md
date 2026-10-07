@@ -16,7 +16,7 @@ excerpt: "补充材料 · Wave-3"
 ---
 
 {% raw %}
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-6.png' | relative_url }}{% raw %}" alt="Wave-6" loading="lazy"> 
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-6.png' | relative_url }}{% raw %}" alt="Wave-6" width="524" height="692" loading="lazy" decoding="async">
 
 取极小的一段空气柱进行分析，则当声波传播时，空气柱压强的变化量：
 <span class="course-math course-math-display" data-tex="\begin{align}&#10;\Delta p &amp;=-B \frac{\Delta V}{V}\\ \\&#10;&amp;=-B \frac{(x_{2}+s_{2}-x_{1}-s_{1})-(x_{2}-x_{1})}{x_{2}-x_{1}} \\&#10;&amp;=-B \frac{\Delta s}{\Delta x}&#10;\end{align}" data-display="true"><code>\begin{align}&#10;\Delta p &amp;=-B \frac{\Delta V}{V}\\ \\&#10;&amp;=-B \frac{(x_{2}+s_{2}-x_{1}-s_{1})-(x_{2}-x_{1})}{x_{2}-x_{1}} \\&#10;&amp;=-B \frac{\Delta s}{\Delta x}&#10;\end{align}</code></span>
