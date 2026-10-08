@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-10-23T11:02:29+08:00"
-updated_at: "2025-11-01T15:56:09+08:00"
+updated_at: "2026-10-08T20:57:10+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -38,7 +38,7 @@ excerpt: "大学物理（上）/（下） · Rolling and Precession - 滚动和�
 容易推出 <span class="course-math" data-tex="\tau=\frac{d\mathscr{\vec{l}}}{dt}" data-display="false"><code>\tau=\frac{d\mathscr{\vec{l}}}{dt}</code></span>。进一步的，若 <span class="course-math" data-tex="\tau" data-display="false"><code>\tau</code></span> 为 0，则 <span class="course-math" data-tex="\mathscr{l}" data-display="false"><code>\mathscr{l}</code></span> 不变。
 质心系：<span class="course-math" data-tex="L_{tot}=\vec{R}\times M\vec{v}+L_{com}" data-display="false"><code>L_{tot}=\vec{R}\times M\vec{v}+L_{com}</code></span>。
 
-计算中常用 <span class="course-math" data-tex="\gamma =\frac{I^2}{MR^2}" data-display="false"><code>\gamma =\frac{I^2}{MR^2}</code></span> 简化表达式。
+计算中常用 <span class="course-math" data-tex="\gamma =\frac{I_{com}}{MR^2}" data-display="false"><code>\gamma =\frac{I_{com}}{MR^2}</code></span> 简化表达式。
 
 ## 进动
 {: #section-2 }

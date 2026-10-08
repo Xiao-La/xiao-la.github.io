@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-11-07T10:47:03+08:00"
-updated_at: "2026-01-30T15:30:16+08:00"
+updated_at: "2026-10-08T21:09:46+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -30,7 +30,7 @@ excerpt: "高等数学（上）/（下） · Integral Techniques - 积分技巧"
 - 注意是否区间关于 0 对称而且被积函数是奇函数。
 - 区间再现： <span class="course-math course-math-display" data-tex="\int^{\pi/2}_{0}f(\sin x) dx=\int^{\pi/2}_{0}f(\cos x)dx" data-display="true"><code>\int^{\pi/2}_{0}f(\sin x) dx=\int^{\pi/2}_{0}f(\cos x)dx</code></span> 
 -  更一般的，<span class="course-math course-math-display" data-tex="\int^{a}_{0}f(x)dx=\frac{1}{2}  \int^{a}_{0} \left[f(x)+f(a-x)\right]dx" data-display="true"><code>\int^{a}_{0}f(x)dx=\frac{1}{2}  \int^{a}_{0} \left[f(x)+f(a-x)\right]dx</code></span>
-- 类似的，<span class="course-math course-math-display" data-tex="\int^{a}_{\frac{1}{a}} f(x)dx=\frac{1}{2} \int^{a}_{\frac{1}{a}} \left[f(x)+\frac{1}{x^2}f\left( \frac{1}{x} \right)\right]dx" data-display="true"><code>\int^{a}_{\frac{1}{a}} f(x)dx=\frac{1}{2} \int^{a}_{\frac{1}{a}} \left[f(x)+\frac{1}{x^2}f\left( \frac{1}{x} \right)\right]dx</code></span>
+- 类似的，当 <span class="course-math" data-tex="a&gt;0" data-display="false"><code>a&gt;0</code></span> 时，<span class="course-math course-math-display" data-tex="\int^{a}_{\frac{1}{a}} f(x)dx=\frac{1}{2} \int^{a}_{\frac{1}{a}} \left[f(x)+\frac{1}{x^2}f\left( \frac{1}{x} \right)\right]dx" data-display="true"><code>\int^{a}_{\frac{1}{a}} f(x)dx=\frac{1}{2} \int^{a}_{\frac{1}{a}} \left[f(x)+\frac{1}{x^2}f\left( \frac{1}{x} \right)\right]dx</code></span>
 
 #### 不定积分
 {: #section-3 }
@@ -43,7 +43,7 @@ excerpt: "高等数学（上）/（下） · Integral Techniques - 积分技巧"
 - 对于这个形式，使用倒数代换 <span class="course-math" data-tex="u=\frac{1}{ax+b}" data-display="false"><code>u=\frac{1}{ax+b}</code></span> 往往能消掉一次项：
   <span class="course-math course-math-display" data-tex="\int \frac{1}{(ax+b)\sqrt{ cx^2+dx+e }} dx" data-display="true"><code>\int \frac{1}{(ax+b)\sqrt{ cx^2+dx+e }} dx</code></span>
 - 以下公式最好直接背，因为三角换元容易造成难以处理的绝对值：
-  <span class="course-math course-math-display" data-tex="\frac{1}{\sqrt{ x^2\pm a^2}} = \ln&#124;x+\sqrt{ x^2\pm a^2 }&#124;" data-display="true"><code>\frac{1}{\sqrt{ x^2\pm a^2}} = \ln&#124;x+\sqrt{ x^2\pm a^2 }&#124;</code></span>
+  <span class="course-math course-math-display" data-tex="\int\frac{dx}{\sqrt{ x^2\pm a^2}} = \ln&#124;x+\sqrt{ x^2\pm a^2 }&#124;+C" data-display="true"><code>\int\frac{dx}{\sqrt{ x^2\pm a^2}} = \ln&#124;x+\sqrt{ x^2\pm a^2 }&#124;+C</code></span>
 
 ### 换元（Substitution）
 {: #section-4 }
@@ -57,7 +57,7 @@ excerpt: "高等数学（上）/（下） · Integral Techniques - 积分技巧"
 关于三角函数的经验凑微分技巧：
 1. 若将 <span class="course-math" data-tex="\sin x" data-display="false"><code>\sin x</code></span> 换成 <span class="course-math" data-tex="-\sin x" data-display="false"><code>-\sin x</code></span> 后，原式变为其相反数，则凑 <span class="course-math" data-tex="\sin x dx=-d\cos x" data-display="false"><code>\sin x dx=-d\cos x</code></span>。
 2. 若将 <span class="course-math" data-tex="\cos x" data-display="false"><code>\cos x</code></span> 换成 <span class="course-math" data-tex="-\cos x" data-display="false"><code>-\cos x</code></span> 后，原式变为其相反数，则凑 <span class="course-math" data-tex="\cos xdx=d\sin x" data-display="false"><code>\cos xdx=d\sin x</code></span>。
-3. 若将 <span class="course-math" data-tex="\sin x" data-display="false"><code>\sin x</code></span> 和 <span class="course-math" data-tex="\cos x" data-display="false"><code>\cos x</code></span> 换成 <span class="course-math" data-tex="-\sin x" data-display="false"><code>-\sin x</code></span> 和 <span class="course-math" data-tex="-\cos x" data-display="false"><code>-\cos x</code></span> 后，原式不变，则凑 <span class="course-math" data-tex="\sec^2dx=d\tan x" data-display="false"><code>\sec^2dx=d\tan x</code></span>。
+3. 若将 <span class="course-math" data-tex="\sin x" data-display="false"><code>\sin x</code></span> 和 <span class="course-math" data-tex="\cos x" data-display="false"><code>\cos x</code></span> 换成 <span class="course-math" data-tex="-\sin x" data-display="false"><code>-\sin x</code></span> 和 <span class="course-math" data-tex="-\cos x" data-display="false"><code>-\cos x</code></span> 后，原式不变，则凑 <span class="course-math" data-tex="\sec^2 x\,dx=d\tan x" data-display="false"><code>\sec^2 x\,dx=d\tan x</code></span>。
 4. 也可考虑万能公式。
 
 #### 第二类（去根号）
@@ -93,7 +93,7 @@ excerpt: "高等数学（上）/（下） · Integral Techniques - 积分技巧"
 
 当 <span class="course-math" data-tex="F(x)" data-display="false"><code>F(x)</code></span> 的次数小于 <span class="course-math" data-tex="G(x)" data-display="false"><code>G(x)</code></span> 时，可以将这个有理分式拆开：
 
-<span class="course-math course-math-display" data-tex="\frac{F(x)}{G(x)=\prod_{i} (x-x_{i})^{a_{i}}}=\sum_{i} \sum _{1\leq k\leq a_{i}} \frac{t_{i}}{(x-x_{0})^k}" data-display="true"><code>\frac{F(x)}{G(x)=\prod_{i} (x-x_{i})^{a_{i}}}=\sum_{i} \sum _{1\leq k\leq a_{i}} \frac{t_{i}}{(x-x_{0})^k}</code></span>
+<span class="course-math course-math-display" data-tex="\frac{F(x)}{G(x)=\prod_{i} (x-x_{i})^{a_{i}}}=\sum_{i} \sum _{1\leq k\leq a_{i}} \frac{t_{ik}}{(x-x_{i})^k}" data-display="true"><code>\frac{F(x)}{G(x)=\prod_{i} (x-x_{i})^{a_{i}}}=\sum_{i} \sum _{1\leq k\leq a_{i}} \frac{t_{ik}}{(x-x_{i})^k}</code></span>
 注意如果分母包含不可约的二次因式如 <span class="course-math" data-tex="x^2+x+1" data-display="false"><code>x^2+x+1</code></span>，那么对它拆的时候分子待定系数为 <span class="course-math" data-tex="Ax+B" data-display="false"><code>Ax+B</code></span>，而不是简单的常数。
 任何实系数多项式都可以分解成若干一次因式和二次因式的乘积，例如
 <span class="course-math course-math-display" data-tex="\frac{1}{x^4+1}=\frac{1}{(x^2+1-\sqrt{ 2 }x)(x^2+1+\sqrt{ 2 }x)}" data-display="true"><code>\frac{1}{x^4+1}=\frac{1}{(x^2+1-\sqrt{ 2 }x)(x^2+1+\sqrt{ 2 }x)}</code></span>

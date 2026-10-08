@@ -18,8 +18,7 @@
 .course-content .course-image { height: auto; margin-top: 1em; margin-bottom: 1em; }
 .course-image-layout { display: flex; flex-wrap: wrap; gap: 1em; align-items: center; margin: 1.5em 0; }
 .course-image-layout .course-image { flex: 1 1 220px; min-width: 0; max-width: calc(50% - .5em); object-fit: contain; }
-.course-math { display: inline-block; max-width: 100%; vertical-align: middle; overflow-x: auto; overflow-y: hidden; }
-.course-math-display { display: block; margin: 1em 0; text-align: center; }
+.course-math-display { display: block; max-width: 100%; margin: 1em 0; text-align: center; overflow-x: auto; overflow-y: hidden; }
 .course-math > mjx-container { margin: 0 !important; }
 .course-math > code { white-space: pre-wrap; }
 .course-math-error { outline: 1px solid #b33; }

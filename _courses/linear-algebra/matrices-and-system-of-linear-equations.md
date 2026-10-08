@@ -5,7 +5,7 @@ course_title: "线性代数"
 section: ""
 status: "completed"
 created_at: "2025-12-10T17:22:32+08:00"
-updated_at: "2026-03-18T17:12:13+08:00"
+updated_at: "2026-10-08T21:08:23+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -54,12 +54,12 @@ excerpt: "线性代数 · Matrices and System of Linear Equations -  矩阵与�
 {: #section-3 }
 
 
-置换矩阵（Permutation Matrix）：每行每列都恰有一个 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 的矩阵。用它左乘另一个矩阵，可以交换矩阵的某些行。
+置换矩阵（Permutation Matrix）：每行每列都恰有一个 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>、其余元素均为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 的方阵。用它左乘另一个矩阵，可以交换矩阵的某些行。
 
 **初等矩阵：**
 - 可交换两行的置换矩阵。
-- 将 <span class="course-math" data-tex="\mathbf{I}_{n}" data-display="false"><code>\mathbf{I}_{n}</code></span> 中的 <span class="course-math" data-tex="(i,j)" data-display="false"><code>(i,j)</code></span> 位置替换为 <span class="course-math" data-tex="l" data-display="false"><code>l</code></span> 得到的矩阵。用它左乘另一个矩阵，可以把该矩阵的第 <span class="course-math" data-tex="j" data-display="false"><code>j</code></span> 行乘以 <span class="course-math" data-tex="l" data-display="false"><code>l</code></span> 加到第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 行上去。
-- 将单位矩阵中第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 行的 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 替换为 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 的到的矩阵。用它左乘以另一个矩阵，可以把该矩阵的第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 行乘以 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span>。
+- 将 <span class="course-math" data-tex="\mathbf{I}_{n}" data-display="false"><code>\mathbf{I}_{n}</code></span> 中的 <span class="course-math" data-tex="(i,j)" data-display="false"><code>(i,j)</code></span> 位置（<span class="course-math" data-tex="i\neq j" data-display="false"><code>i\neq j</code></span>）替换为 <span class="course-math" data-tex="l" data-display="false"><code>l</code></span> 得到的矩阵。用它左乘另一个矩阵，可以把该矩阵的第 <span class="course-math" data-tex="j" data-display="false"><code>j</code></span> 行乘以 <span class="course-math" data-tex="l" data-display="false"><code>l</code></span> 加到第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 行上去。
+- 将单位矩阵中第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 行的 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 替换为 <span class="course-math" data-tex="k\neq 0" data-display="false"><code>k\neq 0</code></span> 得到的矩阵。用它左乘以另一个矩阵，可以把该矩阵的第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 行乘以 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span>。
 >  【左行右列】以上如果换成右乘这些变换矩阵，会变成初等列变换。
 
 
@@ -124,9 +124,9 @@ excerpt: "线性代数 · Matrices and System of Linear Equations -  矩阵与�
 
 若已知 LU 分解，则可以把方程 <span class="course-math" data-tex="\mathbf{A}\mathbf{x}=\mathbf{b}" data-display="false"><code>\mathbf{A}\mathbf{x}=\mathbf{b}</code></span> 转换为：
 <span class="course-math course-math-display" data-tex="\begin{cases}&#10; \mathbf{U}\mathbf{x}=\mathbf{c} \\&#10;\mathbf{Lc}=\mathbf{b}&#10;\end{cases}" data-display="true"><code>\begin{cases}&#10; \mathbf{U}\mathbf{x}=\mathbf{c} \\&#10;\mathbf{Lc}=\mathbf{b}&#10;\end{cases}</code></span>
-这两个方程都是行阶梯形的，非常好解。
+这两个方程分别为下三角和上三角方程组，可以用前代与回代求解。
 
->  LU 分解的唯一性：若 <span class="course-math" data-tex="\mathbf{A}=\mathbf{L}_{1}\mathbf{U}_{1}=\mathbf{L}_{2}\mathbf{U}_{2}" data-display="false"><code>\mathbf{A}=\mathbf{L}_{1}\mathbf{U}_{1}=\mathbf{L}_{2}\mathbf{U}_{2}</code></span>，且 <span class="course-math" data-tex="\mathbf{L}_{1}, \mathbf{L}_{2}" data-display="false"><code>\mathbf{L}_{1}, \mathbf{L}_{2}</code></span> 的对角元素都是 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>，则 <span class="course-math" data-tex="\mathbf{L}_{1}=\mathbf{L}_{2}, \mathbf{R}_{1}=\mathbf{R}_{2}" data-display="false"><code>\mathbf{L}_{1}=\mathbf{L}_{2}, \mathbf{R}_{1}=\mathbf{R}_{2}</code></span>。
+>  LU 分解的唯一性：若 <span class="course-math" data-tex="\mathbf A" data-display="false"><code>\mathbf A</code></span> 可逆，且 <span class="course-math" data-tex="\mathbf{A}=\mathbf{L}_{1}\mathbf{U}_{1}=\mathbf{L}_{2}\mathbf{U}_{2}" data-display="false"><code>\mathbf{A}=\mathbf{L}_{1}\mathbf{U}_{1}=\mathbf{L}_{2}\mathbf{U}_{2}</code></span>，且 <span class="course-math" data-tex="\mathbf{L}_{1}, \mathbf{L}_{2}" data-display="false"><code>\mathbf{L}_{1}, \mathbf{L}_{2}</code></span> 的对角元素都是 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>，则 <span class="course-math" data-tex="\mathbf{L}_{1}=\mathbf{L}_{2}, \mathbf{U}_{1}=\mathbf{U}_{2}" data-display="false"><code>\mathbf{L}_{1}=\mathbf{L}_{2}, \mathbf{U}_{1}=\mathbf{U}_{2}</code></span>。
 
 >  LDU 分解：使用对角矩阵 <span class="course-math" data-tex="\mathbf{D}" data-display="false"><code>\mathbf{D}</code></span> （对角元素为主元）使得 <span class="course-math" data-tex="\mathbf{L}, \mathbf{U}" data-display="false"><code>\mathbf{L}, \mathbf{U}</code></span> 的对角元素都是 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>。
 

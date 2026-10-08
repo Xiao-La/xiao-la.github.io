@@ -3,6 +3,9 @@ body {
   font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   background-color: white;
   font-size: 100%;
+  color: #222;
+  margin: 0;
+  padding: 8px;
 }
 
 .article-table-scroll, .article-math-display {
@@ -14,15 +17,25 @@ body {
   margin: 1em 0;
 }
 
-.article-table-scroll th, .article-table-scroll td:first-child {
-  white-space: nowrap;
+.article-math-inline, .course-math:not(.course-math-display) {
+  /* Keep MathJax's per-formula SVG baseline, including subscripts. */
+  display: inline;
+  vertical-align: baseline;
 }
 
-.article-math-inline {
-  display: inline-block;
+.article-math-inline.math-inline-scroll,
+.course-math.math-inline-scroll {
+  display: block;
   max-width: 100%;
   overflow-x: auto;
-  vertical-align: middle;
+  overflow-y: hidden;
+  margin: .5em 0;
+  padding: .25em 0;
+}
+
+.math-inline-scroll:focus-visible {
+  outline: 1px solid #777;
+  outline-offset: 2px;
 }
 
 .visually-hidden {
@@ -44,31 +57,41 @@ body {
 .main {
   box-sizing: border-box;
   margin: auto;
-  padding: 2% 5% 5% 5%;
+  padding: 32px clamp(20px, 4vw, 40px) 64px;
   width: 100%;
-  max-width: 860px;
-  line-height: 150%;
+  max-width: 800px;
+  font-size: 1.125rem;
+  line-height: 1.75;
   border: 1px solid LightGrey;
 }
 
-H1, H2, H3, H4 {
+h1, h2, h3, h4, h5, h6 {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
-  width: 98%;
-  line-height: 150%;
-  color: #666666;
+  width: auto;
+  line-height: 1.35;
+  color: #343434;
+  font-weight: 600;
 }
 
-H1, H2 {
-  margin-bottom: 1.67em;
-  padding: 0.2em;
-  border-bottom: 2px LightGrey solid;
+h1 {
+  font-size: 2em;
+  margin: .25em 0 1em;
+  padding: 0 0 .45em;
+  border-bottom: 1px solid #ddd;
 }
 
-H3, H4 {
-  margin-top: 2.14em;
-  margin-bottom: 1.5em;
-  border-bottom: 1px LightGrey solid;
+h2 {
+  font-size: 1.5em;
+  margin: 2em 0 .8em;
 }
+
+h3 { font-size: 1.2em; margin: 1.6em 0 .65em; }
+h4 { font-size: 1.06em; margin: 1.35em 0 .55em; }
+h5, h6 { font-size: 1em; margin: 1.25em 0 .5em; }
+
+.main :where(p) { margin: 0 0 1.1em; }
+.main :where(ul, ol) { margin: .75em 0 1.2em; padding-left: 1.5em; }
+.main :where(li + li) { margin-top: .35em; }
 
 blockquote {
   margin: 0 0 0 0.25em;
@@ -77,42 +100,48 @@ blockquote {
 }
 
 pre {
-  font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   border: solid 1px #ddd;
   border-radius: 3px;
   background-color: #f8f8ff;
-  padding: 6px 10px;
-  font-size: 1em;
-  line-height: 100%;
+  padding: 1em 1.1em;
+  font-size: .88em;
+  line-height: 1.55;
   overflow: auto;
 }
 
 code {
-  font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
-  font-size: 0.75em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: .88em;
   border: solid 1px #ddd;
   border-radius: 3px;
   background-color: #f8f8ff;
-  margin: 0 2px;
-  padding: 0px 5px;
-  word-wrap: break-word;
-  word-break: break-all;
+  margin: 0 .1em;
+  padding: .1em .35em;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 pre code {
+  font-size: inherit;
+  line-height: inherit;
   border: none;
   margin: 0;
   padding: 0;
   background-color: transparent;
   word-wrap: normal;
+  word-break: normal;
+  white-space: pre;
 }
+
+.main pre { background-color: #f6f8fa; border-color: #dde2e7; border-radius: 5px; }
 
 a {
   text-decoration: none;
   padding: 1px;
   color: #204A87;
-  word-wrap: break-word;
-  word-break: break-all;
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
 a:hover {
@@ -241,10 +270,10 @@ div.tag_cloud a {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 860px;
+  max-width: 800px;
   min-height: 1.5em;
   margin: auto;
-  padding: 0 5%;
+  padding: 0 clamp(20px, 4vw, 40px);
   border-top: 1px solid #d4d4d4;
   border-right: 1px solid #d4d4d4;
   border-left: 1px solid #d4d4d4;
@@ -547,7 +576,7 @@ hr {
 }
 
 strong {
-  color: #666666;
+  color: inherit;
 }
 
 div.overview {
@@ -884,19 +913,23 @@ a.contact-item small,
 
 table {
   border-collapse: collapse;
+  width: 100%;
+  font-size: .92em;
+  line-height: 1.6;
+}
+
+th, td {
+  padding: .65em .85em;
+  border: 1px solid #ddd;
+  vertical-align: top;
 }
 
 th {
-  padding: 0.375em 0.8125em;
-  border: 1px solid #ddd;
-  font-weight: bold;
+  font-weight: 600;
+  background-color: #f0f3f6;
+  border-bottom: 2px solid #cfd7df;
 }
 
-td {
-  padding: 0.375em 0.8125em;
-  border: 1px solid #ddd;
-}
-
-tr:nth-child(2n) {
-  background-color: #f8f8f8;
+tbody tr:nth-child(2n) {
+  background-color: #fafbfc;
 }

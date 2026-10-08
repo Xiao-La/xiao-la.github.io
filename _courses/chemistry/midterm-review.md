@@ -5,7 +5,7 @@ course_title: "大学化学"
 section: ""
 status: "completed"
 created_at: "2025-11-04T10:04:38+08:00"
-updated_at: "2025-11-08T21:05:15+08:00"
+updated_at: "2026-10-08T21:33:39+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -109,7 +109,7 @@ excerpt: "大学化学 · 大化 Midterm Review"
 - Common Soluble Compounds:
   - <span class="course-math" data-tex="\ce{NO_{3}- / CH_{3}COO-}" data-display="false"><code>\ce{NO_{3}- / CH_{3}COO-}</code></span>: No exception
   -  <span class="course-math" data-tex="\ce{Cl- / Br- / I- :Ag+, Hg_{2}^2+, Pb^2+}" data-display="false"><code>\ce{Cl- / Br- / I- :Ag+, Hg_{2}^2+, Pb^2+}</code></span>  Precipitation
-  - <span class="course-math" data-tex="\ce{SO_{4}^2-  : Sr^2+, Ba^2+, Hg_{2}+, Pb^2+}" data-display="false"><code>\ce{SO_{4}^2-  : Sr^2+, Ba^2+, Hg_{2}+, Pb^2+}</code></span> Precipitation
+  - <span class="course-math" data-tex="\ce{SO_{4}^2-  : Sr^2+, Ba^2+, Hg_{2}^2+, Pb^2+}" data-display="false"><code>\ce{SO_{4}^2-  : Sr^2+, Ba^2+, Hg_{2}^2+, Pb^2+}</code></span> Precipitation
 - Common Insoluble Compounds
   - <span class="course-math" data-tex="\ce{S^2- / OH- : NH_{4}+, \text{alkali metal cations}, Ca^2+, Sr^2+, Ba^2+}" data-display="false"><code>\ce{S^2- / OH- : NH_{4}+, \text{alkali metal cations}, Ca^2+, Sr^2+, Ba^2+}</code></span> Soluble
   - <span class="course-math" data-tex="\ce{CO_{3}^2- / PO_{4}^3- : NH_{4}+, \text{alkali metal cations}}" data-display="false"><code>\ce{CO_{3}^2- / PO_{4}^3- : NH_{4}+, \text{alkali metal cations}}</code></span> Soluble
@@ -127,7 +127,7 @@ excerpt: "大学化学 · 大化 Midterm Review"
 - Arrhenius (increase <span class="course-math" data-tex="\ce{[H+] / [OH-]}" data-display="false"><code>\ce{[H+] / [OH-]}</code></span>) / Brønsted (Donate / Accept Protons)
 - Strong / Weak
   - Strong Acids: <span class="course-math" data-tex="\ce{HCl, HBr, HI, HClO_{3}, HClO_{4}, HNO_{3}, H_{2}SO_{4}}" data-display="false"><code>\ce{HCl, HBr, HI, HClO_{3}, HClO_{4}, HNO_{3}, H_{2}SO_{4}}</code></span>
-  - Strong Bases: <span class="course-math" data-tex="\ce{LiOH, NaOH, KOH, RbOH, CsOh, Ca(OH)2, Sr(OH)2, Ba(OH)2}" data-display="false"><code>\ce{LiOH, NaOH, KOH, RbOH, CsOh, Ca(OH)2, Sr(OH)2, Ba(OH)2}</code></span>
+  - Strong Bases: <span class="course-math" data-tex="\ce{LiOH, NaOH, KOH, RbOH, CsOH, Ca(OH)2, Sr(OH)2, Ba(OH)2}" data-display="false"><code>\ce{LiOH, NaOH, KOH, RbOH, CsOH, Ca(OH)2, Sr(OH)2, Ba(OH)2}</code></span>
 
 **Oxidation Numbers**
 
@@ -162,10 +162,10 @@ excerpt: "大学化学 · 大化 Midterm Review"
 
 **Heisenberg's uncertainty principle** <span class="course-math" data-tex="(\Delta x)(\Delta p)\geq \frac{h}{4\pi}" data-display="false"><code>(\Delta x)(\Delta p)\geq \frac{h}{4\pi}</code></span>
 
-**<span class="course-math" data-tex="\psi^2" data-display="false"><code>\psi^2</code></span> gives electron density**
+**<span class="course-math" data-tex="&#124;\psi&#124;^2=\psi^*\psi" data-display="false"><code>&#124;\psi&#124;^2=\psi^*\psi</code></span> gives electron probability density**
 
 **Quantum Numbers**
-- Principle quantum number - shells/orbitals - <span class="course-math" data-tex="n" data-display="false"><code>n</code></span>
+- Principal quantum number - shells/orbitals - <span class="course-math" data-tex="n" data-display="false"><code>n</code></span>
 - Angular quantum number - subshells - <span class="course-math" data-tex="l(0\leq l\leq n-1)" data-display="false"><code>l(0\leq l\leq n-1)</code></span>
 - Magnetic quantum number  - <span class="course-math" data-tex="m_{l} (-l\leq m_{l} \leq l)" data-display="false"><code>m_{l} (-l\leq m_{l} \leq l)</code></span>
 - Spin quantum number - <span class="course-math" data-tex="m_{s}(\frac{1}{2} / -\frac{1}{2})" data-display="false"><code>m_{s}(\frac{1}{2} / -\frac{1}{2})</code></span>
@@ -190,7 +190,7 @@ Exception <span class="course-math" data-tex="\ce{[Ar] 3d^5 4s^1, [Ar] 3d^10 4s^
 - Isoelectronic Series <- Judge from Nuclear Charge
 
 **Ionization Energy**
-- <span class="course-math" data-tex="I_{n}" data-display="false"><code>I_{n}</code></span> Energy required to remove the nth election 
+- <span class="course-math" data-tex="I_{n}" data-display="false"><code>I_{n}</code></span> Energy required to remove the nth electron
 - Judge group of a element (e.g. Al has a sharp increase from <span class="course-math" data-tex="I_{3}" data-display="false"><code>I_{3}</code></span> to <span class="course-math" data-tex="I_{4}" data-display="false"><code>I_{4}</code></span>)
 - Always **endothermic**
 
@@ -232,7 +232,7 @@ Exception <span class="course-math" data-tex="\ce{[Ar] 3d^5 4s^1, [Ar] 3d^10 4s^
   - Units: <span class="course-math" data-tex="\text{Debyes (D)}" data-display="false"><code>\text{Debyes (D)}</code></span> (carefully convert to <span class="course-math" data-tex="\text{C} \cdot \text{m}" data-display="false"><code>\text{C} \cdot \text{m}</code></span>)
 
 **Lewis Structure**
-- Assign the electrons with the Octet Rule (only for period 1 and 2)
+- Assign the electrons with the Octet Rule (especially for period 2); H and He follow the duet rule
   - Exceptions
     - odd number of electrons (<span class="course-math" data-tex="\ce{NO}" data-display="false"><code>\ce{NO}</code></span>)
     - less than an octet of valence electron(<span class="course-math" data-tex="\ce{BF3}" data-display="false"><code>\ce{BF3}</code></span>)
@@ -244,7 +244,7 @@ Exception <span class="course-math" data-tex="\ce{[Ar] 3d^5 4s^1, [Ar] 3d^10 4s^
 - Delocalized electrons
 
 **Bond Enthalpy**
-- <span class="course-math" data-tex="\Delta H_{\text{rxn}}=\sum \Delta H(\text{bonds broken}) +\sum \Delta H(\text{bonds formed})" data-display="false"><code>\Delta H_{\text{rxn}}=\sum \Delta H(\text{bonds broken}) +\sum \Delta H(\text{bonds formed})</code></span>
+- <span class="course-math" data-tex="\Delta H_{\text{rxn}}\approx\sum D(\text{bonds broken})-\sum D(\text{bonds formed})" data-display="false"><code>\Delta H_{\text{rxn}}\approx\sum D(\text{bonds broken})-\sum D(\text{bonds formed})</code></span>（<span class="course-math" data-tex="D" data-display="false"><code>D</code></span> 为正的平均键能；若使用带符号的断键/成键焓变，则将两项相加）
 
 
 ## Chapter 9

@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-04-11T12:05:26+08:00"
-updated_at: "2026-05-08T14:02:01+08:00"
+updated_at: "2026-10-08T20:57:10+08:00"
 reference: false
 order: 12
 layout: "course"
@@ -52,7 +52,7 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 对于直导线：
 <span class="course-math course-math-display" data-tex="\begin{cases}&#10;q=it \\&#10;l=v_{d}t \\&#10;F=qv_{d}B\sin \phi&#10;\end{cases}&#10;\implies \vec{F}=i\vec{l}\times \vec{B}" data-display="true"><code>\begin{cases}&#10;q=it \\&#10;l=v_{d}t \\&#10;F=qv_{d}B\sin \phi&#10;\end{cases}&#10;\implies \vec{F}=i\vec{l}\times \vec{B}</code></span>
 对于任意导线，若磁场恒定：
-<span class="course-math course-math-display" data-tex="\vec{F}=\int id\vec{l}\times \vec{B}=i\left( \int \vec{l} \right)\times \vec{B}=i\vec{L}\times \vec{B}" data-display="true"><code>\vec{F}=\int id\vec{l}\times \vec{B}=i\left( \int \vec{l} \right)\times \vec{B}=i\vec{L}\times \vec{B}</code></span>
+<span class="course-math course-math-display" data-tex="\vec{F}=\int id\vec{l}\times \vec{B}=i\left( \int d\vec{l} \right)\times \vec{B}=i\vec{L}\times \vec{B}" data-display="true"><code>\vec{F}=\int id\vec{l}\times \vec{B}=i\left( \int d\vec{l} \right)\times \vec{B}=i\vec{L}\times \vec{B}</code></span>
 这里 <span class="course-math" data-tex="\vec{L}" data-display="false"><code>\vec{L}</code></span> 为导线首尾相接得到的矢量。
 
 
@@ -66,7 +66,7 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 <span class="course-math course-math-display" data-tex="\tau=2\times\frac{1}{2}baIB\sin\theta=baIB\sin\theta" data-display="true"><code>\tau=2\times\frac{1}{2}baIB\sin\theta=baIB\sin\theta</code></span>
 定义磁偶极矩 <span class="course-math" data-tex="\vec{\mu}=I\vec{A}" data-display="false"><code>\vec{\mu}=I\vec{A}</code></span>，其方向为右手握电流，大拇指指向的方向，垂直于线圈。 
 则有
-<span class="course-math course-math-display" data-tex="\tau=\mu \times B" data-display="true"><code>\tau=\mu \times B</code></span>
+<span class="course-math course-math-display" data-tex="\vec{\tau}=\vec{\mu}\times\vec{B}" data-display="true"><code>\vec{\tau}=\vec{\mu}\times\vec{B}</code></span>
 若有 <span class="course-math" data-tex="N" data-display="false"><code>N</code></span> 匝（Loops）的线圈，则 <span class="course-math" data-tex="\vec{\mu}=Ni\vec{A}" data-display="false"><code>\vec{\mu}=Ni\vec{A}</code></span>。
 和电偶极矩类似，磁矩也会带势能：
 <span class="course-math course-math-display" data-tex="U=-\vec{\mu}\cdot \vec{B}" data-display="true"><code>U=-\vec{\mu}\cdot \vec{B}</code></span>
@@ -89,8 +89,8 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 对一个无穷长的直导线，积分得到
 <span class="course-math course-math-display" data-tex="B=\int_{-\infty}^{\infty} \frac{\mu_{0}}{4\pi} \frac{i dz}{z^{2}+R^{2}} \frac{R}{\sqrt{ z^{2}+R^{2} }}=\frac{\mu_{0}i}{2\pi R}" data-display="true"><code>B=\int_{-\infty}^{\infty} \frac{\mu_{0}}{4\pi} \frac{i dz}{z^{2}+R^{2}} \frac{R}{\sqrt{ z^{2}+R^{2} }}=\frac{\mu_{0}i}{2\pi R}</code></span>
 其中 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 为某点到导线的垂直距离。
-若导线不是直的，则可以分解为 <span class="course-math" data-tex="x,y,x" data-display="false"><code>x,y,x</code></span> 三个分量分别积分。
-<span class="course-math" data-tex="1\text{A}" data-display="false"><code>1\text{A}</code></span> 的大小是通过两个平行直导线之间磁场力的大小来定义的。
+若导线不是直的，则可以分解为 <span class="course-math" data-tex="x,y,z" data-display="false"><code>x,y,z</code></span> 三个分量分别积分。
+<span class="course-math" data-tex="1\text{A}" data-display="false"><code>1\text{A}</code></span> 曾由两根平行直导线间的磁力定义；2019 年起，SI 安培由固定元电荷 <span class="course-math" data-tex="e=1.602176634\times10^{-19}\text{C}" data-display="false"><code>e=1.602176634\times10^{-19}\text{C}</code></span> 定义。
 一个角度为 <span class="course-math" data-tex="\varphi" data-display="false"><code>\varphi</code></span>  圆弧形导线：
 <span class="course-math course-math-display" data-tex="B=\int \frac{\mu_{0}}{4\pi} \frac{ird\theta}{r^{2}}=\frac{\mu_{0}i\varphi}{4\pi r}" data-display="true"><code>B=\int \frac{\mu_{0}}{4\pi} \frac{ird\theta}{r^{2}}=\frac{\mu_{0}i\varphi}{4\pi r}</code></span>
 
@@ -134,7 +134,7 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 <span class="course-math course-math-display" data-tex="\varepsilon=- \frac{d\Phi_{B}}{dt}=-\frac{d}{dt} \int \vec{B}\cdot d\vec{A}" data-display="true"><code>\varepsilon=- \frac{d\Phi_{B}}{dt}=-\frac{d}{dt} \int \vec{B}\cdot d\vec{A}</code></span>
 这里的正方向是右手定则确定的。
 另外有
-<span class="course-math course-math-display" data-tex="\left&#124; \varepsilon \right&#124; = \frac{d\Phi}{dt}=B \frac{dA}{dt}+A \frac{dB}{dt}" data-display="true"><code>\left&#124; \varepsilon \right&#124; = \frac{d\Phi}{dt}=B \frac{dA}{dt}+A \frac{dB}{dt}</code></span>
+<span class="course-math course-math-display" data-tex="\left&#124;\varepsilon\right&#124;=\left&#124;\frac{d\Phi_B}{dt}\right&#124;=\left&#124;B\frac{dA}{dt}+A\frac{dB}{dt}\right&#124;\quad(\Phi_B=BA)" data-display="true"><code>\left&#124;\varepsilon\right&#124;=\left&#124;\frac{d\Phi_B}{dt}\right&#124;=\left&#124;B\frac{dA}{dt}+A\frac{dB}{dt}\right&#124;\quad(\Phi_B=BA)</code></span>
 注意多圈的线圈要乘上 <span class="course-math" data-tex="N" data-display="false"><code>N</code></span>。
 考虑激发的电场，一个回路中有关系：
 <span class="course-math course-math-display" data-tex="\varepsilon=\oint \vec{E}\cdot d\vec{l}" data-display="true"><code>\varepsilon=\oint \vec{E}\cdot d\vec{l}</code></span>

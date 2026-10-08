@@ -1,0 +1,3012 @@
+--- before/其他通识课/大化 Midterm Review.md
++++ after/其他通识课/大化 Midterm Review.md
+@@ -78,7 +78,7 @@
+ - Common Soluble Compounds:
+   - $\ce{NO_{3}- / CH_{3}COO-}$: No exception
+   -  $\ce{Cl- / Br- / I- :Ag+, Hg_{2}^2+, Pb^2+}$  Precipitation
+-  - $\ce{SO_{4}^2-  : Sr^2+, Ba^2+, Hg_{2}+, Pb^2+}$ Precipitation
++  - $\ce{SO_{4}^2-  : Sr^2+, Ba^2+, Hg_{2}^2+, Pb^2+}$ Precipitation
+ - Common Insoluble Compounds
+   - $\ce{S^2- / OH- : NH_{4}+, \text{alkali metal cations}, Ca^2+, Sr^2+, Ba^2+}$ Soluble
+   - $\ce{CO_{3}^2- / PO_{4}^3- : NH_{4}+, \text{alkali metal cations}}$ Soluble
+@@ -96,7 +96,7 @@
+ - Arrhenius (increase $\ce{[H+] / [OH-]}$) / Brønsted (Donate / Accept Protons)
+ - Strong / Weak
+   - Strong Acids: $\ce{HCl, HBr, HI, HClO_{3}, HClO_{4}, HNO_{3}, H_{2}SO_{4}}$
+-  - Strong Bases: $\ce{LiOH, NaOH, KOH, RbOH, CsOh, Ca(OH)2, Sr(OH)2, Ba(OH)2}$
++  - Strong Bases: $\ce{LiOH, NaOH, KOH, RbOH, CsOH, Ca(OH)2, Sr(OH)2, Ba(OH)2}$
+ 
+ **Oxidation Numbers**
+ 
+@@ -128,10 +128,10 @@
+ 
+ **Heisenberg's uncertainty principle** $(\Delta x)(\Delta p)\geq \frac{h}{4\pi}$
+ 
+-**$\psi^2$ gives electron density**
++**$|\psi|^2=\psi^*\psi$ gives electron probability density**
+ 
+ **Quantum Numbers**
+-- Principle quantum number - shells/orbitals - $n$
++- Principal quantum number - shells/orbitals - $n$
+ - Angular quantum number - subshells - $l(0\leq l\leq n-1)$
+ - Magnetic quantum number  - $m_{l} (-l\leq m_{l} \leq l)$
+ - Spin quantum number - $m_{s}(\frac{1}{2} / -\frac{1}{2})$
+@@ -153,7 +153,7 @@
+ - Isoelectronic Series <- Judge from Nuclear Charge
+ 
+ **Ionization Energy**
+-- $I_{n}$ Energy required to remove the nth election 
++- $I_{n}$ Energy required to remove the nth electron
+ - Judge group of a element (e.g. Al has a sharp increase from $I_{3}$ to $I_{4}$)
+ - Always **endothermic**
+ 
+@@ -192,7 +192,7 @@
+   - Units: $\text{Debyes (D)}$ (carefully convert to $\text{C} \cdot \text{m}$)
+ 
+ **Lewis Structure**
+-- Assign the electrons with the Octet Rule (only for period 1 and 2)
++- Assign the electrons with the Octet Rule (especially for period 2); H and He follow the duet rule
+   - Exceptions
+     - odd number of electrons ($\ce{NO}$)
+     - less than an octet of valence electron($\ce{BF3}$)
+@@ -204,7 +204,7 @@
+ - Delocalized electrons
+ 
+ **Bond Enthalpy**
+-- $\Delta H_{\text{rxn}}=\sum \Delta H(\text{bonds broken}) +\sum \Delta H(\text{bonds formed})$
++- $\Delta H_{\text{rxn}}\approx\sum D(\text{bonds broken})-\sum D(\text{bonds formed})$（$D$ 为正的平均键能；若使用带符号的断键/成键焓变，则将两项相加）
+ 
+ ## Chapter 9
+ 
+--- before/其他通识课/大学物理/上/Equilibrium and Elasticity - 平衡和弹性.md
++++ after/其他通识课/大学物理/上/Equilibrium and Elasticity - 平衡和弹性.md
+@@ -14,7 +14,7 @@
+ ## 弹性
+ 
+ ![[Elasticity-1.png]]
+-上图展示了三种**应力（stress）**：拉伸力（tensile stress）/ 剪切力（shearing stress）/ 静水压力（液应力，hydraulic stress）
++上图展示了三种**应力（stress）**：拉伸应力（tensile stress）/ 剪切应力（shearing stress）/ 静水压力（液应力，hydraulic stress）
+ 
+  $$
+ \text{应力（stress） = 模量（modulus）}\times \text{应变（strain）}
+@@ -26,9 +26,9 @@
+ $$
+ 这里的 $E$ 被称作**杨氏模量（Young's modulus）**。
+ 类似的，对剪切力，有**剪切模量（shear modulus）** -  $G$，以及 $\frac{F}{A}=G \frac{\Delta x}{L}$。
+-对静水压力，有**体变模量（bulk modulus）** - $B$，以及 $\frac{F}{A}=B \frac{\Delta V}{V}$。
++对静水压力，有**体变模量（bulk modulus）** - $B$，以及 $\Delta p=-B\frac{\Delta V}{V}$（$\Delta V$ 是带符号的体积变化）。
+ ![[Elasticity-2.png]]
+-在应力达到 **抗屈强度（yield strength）** 后，发生塑性形变。在**极限强度（ultimate strength）**，发生破裂。
++在应力达到 **屈服强度（yield strength）** 后，发生塑性形变。**极限抗拉强度（ultimate tensile strength）** 是工程应力的最大值；断裂发生在**断裂强度（fracture strength）**处，二者不一定相同。
+ 
+ **扭转（twisting）** 物体会产生响应的力矩来阻止这个扭转，满足公式：
+ $$
+--- before/其他通识课/大学物理/上/Gravitation - 引力.md
++++ after/其他通识课/大学物理/上/Gravitation - 引力.md
+@@ -30,7 +30,7 @@
+ ### 引力势能
+ 
+ 万有引力是保守力，将无穷远点设为零势能点，即可推出引力势能的表达式。
+-双粒子系统： $U=-\int_{R}^\infty Fdr=-\frac{GMm}{r}$。
++双粒子系统： $U(r)=-\int_r^\infty \frac{GMm}{r^{\prime 2}}\,dr^{\prime}=-\frac{GMm}{r}$。
+ 三粒子系统：$U=-\frac{Gm_{1}m_{2}}{r_{12}}-\frac{Gm_{1}m_{3}}{r_{13}}-\frac{Gm_{2}m_{3}}{r_{23}}$。
+ 逃逸速度 （Escape Speed）指脱离引力场需要的速度：
+ $$
+--- before/其他通识课/大学物理/上/Kinetic Theory of Gases - 气体动力学理论.md
++++ after/其他通识课/大学物理/上/Kinetic Theory of Gases - 气体动力学理论.md
+@@ -13,7 +13,7 @@
+ $$
+ pV=nRT=NkT
+ $$
+-其中 $k=1.38\times {10}^{23} \text{J/K}$ 为玻尔兹曼常数，$R$ 为气体常数，它们之间满足 $kN_{A}=R$。
++其中 $k=1.38\times {10}^{-23} \text{J/K}$ 为玻尔兹曼常数，$R$ 为气体常数，它们之间满足 $kN_{A}=R$。
+ $R$ 在数值上等于 $8.31$。
+ ### 理想气体的分子速率分布
+ 
+@@ -63,7 +63,7 @@
+ $$
+ \Delta E_{\text{int}}=Q+W=Q=nC_{v}\Delta T
+ $$
+-那么对于所有理想气体，定义
++在 $C_v$ 可视为常数、并选定内能零点时，可写为
+ $$
+ E_{\text{int}}=nC_{v}T
+ $$
+@@ -102,7 +102,7 @@
+ 3. 转动自由度：3（非线性）或 2（线性）。
+ 4. 振动自由度：$3N-6$（非线性）或 $3N-5$ （线性）。
+ 
+-对于自由度为 $f$ 的气体分子：
++对于有 $f$ 个参与能量均分的二次型能量项的气体分子（每个振动模式包含动能、势能两项）：
+ 
+ $$
+ E_{\text{int}}=\frac{1}{2} kT \times N\times f =n \frac{f}{2} RT
+@@ -113,7 +113,7 @@
+ $$
+ 实际上，气体分子的自由度还和温度有关。在低温状态下，转动和振动自由度会被冻结。温度升高之后，转动自由度会先解冻，然后是振动自由度。
+ ![[Gas-Kinetics-1.png]]
+-基于**能量均分定理**，可通过自由度的比例算出动能大小，例如对于双原子分子，平动动能为 $\frac{3}{5}E_{\text{int}}$。
++基于**能量均分定理**，可通过自由度的比例算出动能大小，例如对于转动已激发、振动仍冻结的双原子分子，平动动能为 $\frac{3}{5}E_{\text{int}}$。
+ 
+ ### 热力学过程计算
+ 
+@@ -151,18 +151,18 @@
+ Q=0
+ $$
+ $$W=-\Delta E_{\text{int}}=-nC_{v}\Delta T=\frac{C_{v}}{R}(p_{i}V_{i}-p_{f}V_{f})$$
+-绝热过程的过程方程为
++对于可逆绝热过程，且 $C_v,C_p$ 可视为常数时，过程方程为
+ $$
+-pV^\gamma=1
++pV^\gamma=\text{constant}
+ $$
+ 或 
+ $$
+-TV^{\gamma-1}=1
++TV^{\gamma-1}=\text{constant}
+ $$
+ 其中 $\gamma=\frac{C_{p}}{C_{v}}>1$ ，那么绝热过程的曲线比等温过程的曲线更陡峭。
+ 
+ #### 自由膨胀（Free Expansion）
+ $$
+-W=0,Q=0, E_{\text{int}}=0
++W=0,Q=0, \Delta E_{\text{int}}=0
+ $$
+ 那么 $\Delta T=0, \Delta(pV)=0$。--- before/其他通识课/大学物理/上/Longitudinal Wave - 纵波.md
++++ after/其他通识课/大学物理/上/Longitudinal Wave - 纵波.md
+@@ -1,6 +1,6 @@
+ 前置： [[Transverse Wave - 横波]]
+ 
+-**纵波（Longitudinal Wave）** 指质点振动方向与波传播方向相同的波。
++**纵波（Longitudinal Wave）** 指质点振动方向与波传播方向平行的波。
+ 
+ **声波（Sound Waves）** 是一种常见的纵波。
+ 声波的波速：
+--- before/其他通识课/大学物理/上/Oscillations - 振动.md
++++ after/其他通识课/大学物理/上/Oscillations - 振动.md
+@@ -6,7 +6,7 @@
+ 
+ ### 简谐运动
+ 
+-振动位置是时间的正弦函数的运动，称为**简谐运动（Simple Harmonic Function, SHM）**。
++振动位置是时间的正弦函数的运动，称为**简谐运动（Simple Harmonic Motion, SHM）**。
+ $$
+ x(t)=x_{m}\cos(\omega t+\phi)
+ $$
+@@ -21,7 +21,7 @@
+ $$
+ a(t)=\frac{dv(t)}{dt}=-\omega^2
+ x_{m}\cos(\omega t+\phi)$$
+- 不难看出 $a=-w^2x$，故而 $F=ma=-m\omega^2x$，这里的力就叫**回复力（Restoring Force）**。
++ 不难看出 $a=-\omega^2x$，故而 $F=ma=-m\omega^2x$，这里的力就叫**回复力（Restoring Force）**。
+ 反过来通过 $F=-kx$ 可以求得 $\omega=\sqrt{ \frac{k}{m} }, T=2\pi \sqrt{ \frac{m}{k} }$。
+ 
+ 能量角度，势能 $U=\frac{1}{2}kx^2=\frac{1}{2}kx_{m}^2\cos^2(\omega t+\phi)$，动能 $K=\frac{1}{2}mv^2=\frac{1}{2}kx_{m}^2\sin^2(\omega t+\phi)$，它们之和即为机械能，故系统机械能守恒：
+@@ -38,7 +38,7 @@
+ \implies \theta(t)= \theta_{m} \cos(\omega t + \phi) 
+ $$
+ 其中 $\omega = \sqrt{ \frac{\kappa}{I} }$。
+-对单摆来说， $\tau=\vec{h} \times m\vec{g} = -hmg\sin\theta\sim -hmg\theta$，故 $\kappa=hmg$，$I=I_{com}+mh^2$。
++对小角度的物理摆来说， $\tau=\vec{h} \times m\vec{g} = -hmg\sin\theta\sim -hmg\theta$，故 $\kappa=hmg$，$I=I_{com}+mh^2$。
+ $$
+ \implies \omega=\sqrt{ \frac{mgh}{I_{com}+mh^2} }\sim \sqrt{ \frac{g}{h} }
+ $$
+@@ -57,13 +57,13 @@
+ \implies m \frac{d^2x}{dt^2} + b \frac{dx}{dt} +kx = 0
+ $$
+ $$
+-\implies x(t)=x_{m} e^{bt/2m} \cos(\omega' t + \phi)
++\implies x(t)=x_{m} e^{-bt/2m} \cos(\omega' t + \phi)
+  $$
+- 其中 $$\omega' = \sqrt{ \frac{k}{m} -\frac{b^2}{4m^2}}, E(t)\simeq \frac{1}{2}kx_{m}^2 e^{-\frac{bt}{m}}$$
++ 其中（欠阻尼，$b^2<4mk$） $$\omega' = \sqrt{ \frac{k}{m} -\frac{b^2}{4m^2}}, E(t)\simeq \frac{1}{2}kx_{m}^2 e^{-\frac{bt}{m}}$$
+ ### 共振
+ 
+ 受迫振动（Forced Oscillation）的频率始终和周期性的驱动力（Driving Force）的频率相同。
+-当受迫振动的频率达到本真频率 （Natural Angular Frequency）时，振动的振幅最大，这种现象叫做共振 （Resonance）。
++小阻尼时，驱动角频率接近固有角频率（Natural Angular Frequency）会出现共振（Resonance）。对 $m\ddot{x}+b\dot{x}+kx=F_0\cos\omega_dt$，位移振幅的峰值在 $\omega_d=\sqrt{k/m-b^2/(2m^2)}$（要求 $b^2<2mk$）；只有忽略阻尼时才趋于 $\sqrt{k/m}$。
+ 
+ ### 等效劲度系数
+ 
+--- before/其他通识课/大学物理/上/Rolling and Precession - 滚动和进动.md
++++ after/其他通识课/大学物理/上/Rolling and Precession - 滚动和进动.md
+@@ -16,7 +16,7 @@
+ 容易推出 $\tau=\frac{d\mathscr{\vec{l}}}{dt}$。进一步的，若 $\tau$ 为 0，则 $\mathscr{l}$ 不变。
+ 质心系：$L_{tot}=\vec{R}\times M\vec{v}+L_{com}$。
+ 
+-计算中常用 $\gamma =\frac{I^2}{MR^2}$ 简化表达式。
++计算中常用 $\gamma =\frac{I_{com}}{MR^2}$ 简化表达式。
+ ## 进动
+ 
+ **进动（Precession）** 是指自转刚体受外力作用时自转轴绕某一中心旋转的现象。
+--- before/其他通识课/大学物理/上/Rotation - 定轴转动.md
++++ after/其他通识课/大学物理/上/Rotation - 定轴转动.md
+@@ -13,7 +13,7 @@
+ | $W=\Delta K$        | $W = \Delta K$              |
+  在转动中，质量 $m$ 与转动惯量 $I$ 对应，力 $F$ 与力矩 $\tau$ 对应。
+  
+- **差异**：转动中的加速度分为 **切向加速度** 和 **法向加速度**，对应公式 $$  \vec{a}=\alpha r \hat{t}+w^2r\hat{r_{c}}$$ 
++ **差异**：转动中的加速度分为 **切向加速度** 和 **法向加速度**，对应公式 $$  \vec{a}=\alpha r \hat{t}+\omega^2r\hat{r_{c}}$$
+  
+ 质点的转动惯量为 $mr^2$，刚体的转动惯量 $I=\int r^2dm$，一般不太好算，所以会给一些常见几何体的（转轴过质心情况下的）转动惯量表。
+  然后可以用平行轴定理 $I=I_{com}+Mh^2$ 算出新转轴下的转动惯量。
+--- before/其他通识课/大学物理/上/Thermodynamics - 热力学.md
++++ after/其他通识课/大学物理/上/Thermodynamics - 热力学.md
+@@ -40,7 +40,7 @@
+ 
+ ### 热膨胀
+ 
+-**二维情形：**
++**一维情形（线膨胀）：**
+ 
+ $$
+ \frac{\Delta L}{L} = \alpha \Delta T
+@@ -94,7 +94,7 @@
+ $$
+ 净吸收功率：
+ $$
+-P_{\text{net}}=P_{\text{abs}}-P_{\text{rad}}=\sigma \varepsilon A (T_{\text{env}}^2-T^4)
++P_{\text{net}}=P_{\text{abs}}-P_{\text{rad}}=\sigma \varepsilon A (T_{\text{env}}^4-T^4)
+ $$
+ 其中 $A$ 为物体表面积，$T$ 为物体温度，$\sigma$ 为斯忒藩-玻尔兹曼常数（Stefan-Boltzmann Constant），$\varepsilon$ 为与物体材料有关的介于 $0$ 和 $1$ 之间的量。
+ 对黑体（Blackbody）来说，$\varepsilon=1$，即物体吸收和发射辐射能力都最强。
+@@ -122,7 +122,7 @@
+ $$
+ 过程分为不可逆过程（Irreversible Process）和可逆过程（Reversible Process）。
+ 可逆过程只存在于理想中，它意味着初态到末态中的所有状态都是静态状态。
+-准静态过程（Quasi-static Process）是通过拉长过程的时间来近似可逆过程。
++准静态过程（Quasi-static Process）使系统经历一系列近似平衡态；还需要没有摩擦等耗散、没有有限温差传热，才是可逆过程。
+ 
+ 绝热过程（Adiabatic Process）：$Q=0$。
+ 恒容过程（Isochoric / Constant-volume Process）：$W=0$。
+@@ -161,7 +161,7 @@
+ 对于理想卡诺热机：
+ ![[Thermodynamics-2.png]]
+ 对整个过程，$|Q|=|W|=Q_{\text{in}}-Q_{\text{out}}$。而且通过绝热过程的方程可推 $\frac{V_{2}}{V_{1}}=\frac{V_{3}}{V_{4}}$。
+-有 $W=RT_{H}\ln \frac{V_{2}}{V_{1}}-RT_{L} \frac{V_{3}}{V_{4}}=R(T_{H}-T_{C})\ln \frac{V_{2}}{V_{1}}$，$Q_{H}=RT_{H}\ln \frac{V_{2}}{V_{1}}$。
++有 $W=nRT_{H}\ln\frac{V_{2}}{V_{1}}-nRT_{L}\ln\frac{V_{3}}{V_{4}}=nR(T_{H}-T_{L})\ln\frac{V_{2}}{V_{1}}$，$Q_{H}=nRT_{H}\ln\frac{V_{2}}{V_{1}}$（$T_L=T_C$，表示冷源温度）。
+ 那么 $0\leq \varepsilon = 1- \frac{T_{C}}{T_{H}}<1$ 。
+ 
+ 卡诺指出，不同的热机在冷源和热源温度一致时，卡诺热机的效率是最高的。
+@@ -190,7 +190,7 @@
+ 一些特例：
+ 1. 等压过程（Isobaric Process）：$\Delta S=nC_{p} \ln \frac{T_{2}}{T_{1}}$。
+ 2. 等温过程（Isothermal Process）：$\Delta S= nR\ln \frac{V_{2}}{V_{1}}$ 。
+-3. 绝热过程（Adiabatic Process）：$\Delta S=0$。
++3. 可逆绝热过程（Reversible Adiabatic Process）：$\Delta S=0$。
+ 4. 等容过程（Isochoric Process）：$\Delta S = nC_{v} \ln \frac{T_{2}}{T_{1}}=nC_{v} \ln \frac{p_{2}}{p_{1}}$。
+ 5. 相变（Phase Change）：$\Delta S=\frac{\Delta Q}{T}=\frac{Lm}{T}$。
+ 6. 同相变温（Same Phase, Change in Temperature）：$\Delta S= \int \frac{dQ}{T}=\int \frac{cm}{T}dT=cm\ln \frac{T_{2}}{T_{1}}$
+--- before/其他通识课/大学物理/上/Transverse Wave - 横波.md
++++ after/其他通识课/大学物理/上/Transverse Wave - 横波.md
+@@ -1,5 +1,5 @@
+ [[Oscillations - 振动]]
+-**横波（Transverse Wave）** 指质点振动方向与波传播方向相反的波。
++**横波（Transverse Wave）** 指质点振动方向与波传播方向垂直的波。
+ 
+ 向右传播的波可以写成 $y(x,t)=f(x - vt)$ 的形式。
+ ## 谐波
+@@ -60,15 +60,15 @@
+ $$
+ 是一个**驻波（Standing Wave）**。
+ 1. 若 $\sin kx=0$，即 $x=n \frac{\lambda}{2}$，这些点永远不动，叫做节点（Nodes）。
+-2. 若 $\sin kx=\pm 1$，即 $x=\left( n+\frac{1}{2} \right) \frac{\lambda}{2}$，这些点振幅最大，叫做负点（Antinodes）。
++2. 若 $\sin kx=\pm 1$，即 $x=\left( n+\frac{1}{2} \right) \frac{\lambda}{2}$，这些点振幅最大，叫做波腹（Antinodes）。
+ ## 波的反射
+ 
+-如果一个波撞到“硬边界”（Hard boundary），会发生半波损，波会跳跃半个相位后反射回来。
++如果一个波撞到“硬边界”（Hard boundary），会发生半波损，反射波相位改变 $\pi$ 后返回。
+ 如果一个波撞到“软边界”（Soft boundary），会直接反射回来。
+ 
+ 如果一个波和其反射的波叠加形成了驻波，则这种现象称为共振（Resonance）。
+ 
+-**可以证明，产生共振的必要条件是硬边界都在节点，软边界都在负点**。
++**可以证明，产生共振的必要条件是硬边界都在节点，软边界都在波腹**。
+ 
+ 两边都是硬边界的情况，需要 $L=n \frac{\lambda}{2}$ 形成共振：
+ ![[Wave-3.png]]
+--- before/其他通识课/大学物理/下/DC Circuits - 直流电路.md
++++ after/其他通识课/大学物理/下/DC Circuits - 直流电路.md
+@@ -8,11 +8,11 @@
+ 电流为一个标量。
+ 微观表示
+   $$
+-i=\frac{\Delta q}{\Delta t}=\frac{NALe}{\frac{L}{v_{d}}}=nAev_{d}
++i=\frac{\Delta q}{\Delta t}=\frac{nALe}{\frac{L}{v_{d}}}=nAev_{d}
+ $$
+ 定义电流密度
+ $$
+-\vec{J}=\frac{i}{A}\hat{v_{d}}=ne \vec{v_{d}}
++\vec{J}=nq\vec{v_d}\quad(q=-e\text{ for electrons})
+ $$
+ 那么有 
+ $$
+@@ -64,7 +64,7 @@
+ $$
+ 并联：
+ $$
+-R=\frac{1}{R_{1}}+\frac{1}{R_{2}}+\dots+\frac{1}{R_{n}}
++\frac{1}{R}=\frac{1}{R_{1}}+\frac{1}{R_{2}}+\dots+\frac{1}{R_{n}}
+ 
+ $$
+ ## 电功率
+@@ -77,7 +77,7 @@
+ $$
+ 在纯电阻的情况下, 应用欧姆定律有：
+ $$
+-P=I^{2}R=\frac{V}{R}
++P=I^{2}R=\frac{V^2}{R}
+ $$
+ ## 电路
+ 
+@@ -123,5 +123,5 @@
+ q=Q_{0}e^{-t/RC}
+ $$
+ $$
+-i=-\frac{Q}{RC}e^{-t/RC}=I_{0}e^{-t/RC}
++i=-\frac{Q_0}{RC}e^{-t/RC}=I_{0}e^{-t/RC}
+ $$
+--- before/其他通识课/大学物理/下/Electrostatics - 静电学.md
++++ after/其他通识课/大学物理/下/Electrostatics - 静电学.md
+@@ -10,7 +10,7 @@
+ $$
+ F=k \frac{|q_{1}q_{2}|}{r^{2}}
+ $$
+-其中电荷的单位为库伦（Coulomb, $1\text{C}=1\text{A}\cdot\text{S}$）。
++其中电荷的单位为库伦（Coulomb, $1\text{C}=1\text{A}\cdot\text{s}$）。
+ 并有 $k=\frac{1}{4\pi \varepsilon_{0}}(=8.99\times 10^9\, \text{N}\times\text{m}^2\text{/C}^2)$，其中 $\varepsilon_{0}$ 为真空介电常数。
+ 矢量形式：
+ $$
+@@ -35,7 +35,7 @@
+ E= \frac{\sigma}{2\varepsilon_{0}}\left( 1- \frac{z}{\sqrt{ z^{2}+R^{2} }} \right)\text{(charged disk)}
+ $$
+ $$
+-E=\frac{qz}{4\pi \varepsilon_{0}(x^{2}+R^{2})^{3/2}}\text{(charged ring)}
++E=\frac{qz}{4\pi \varepsilon_{0}(z^{2}+R^{2})^{3/2}}\text{(charged ring)}
+ $$
+ 
+ 
+@@ -91,7 +91,7 @@
+ 例如无穷大均匀带电面的电场，满足 $q_{\text{enc}}=\sigma A=\varepsilon_{0} \oint EdA=\varepsilon_{0} E (2A)\implies E=\frac{\sigma}{2\varepsilon_{0}}$。
+ 从而平行板电容器的电场 $E=\frac{\sigma}{\varepsilon_{0}}$。 
+ 导体表面的电场也为 $E=\frac{\sigma}{\varepsilon_{0}}$ 。
+-高斯定律主要适用于对称/近似无穷大的情况。
++高斯定律普遍成立；具有充分对称性时，才方便直接用它求电场。
+ 
+ 对称：球对称，柱对称，平移对称，面对称。对不同的面选不一样的高斯曲面，一般是一个球或者圆柱。
+ 
+@@ -197,7 +197,7 @@
+ $$
+ \varepsilon_{0} \oint \kappa \vec{E}\cdot d\vec{A}=q(\text{free charge})
+ $$
+-有电介质的电容：$C=\kappa  \frac{Q}{V}$。
++有电介质的电容：$C=\frac{Q}{V}=\kappa C_0$（完全填充线性电介质）。
+ 注意是 $V$ 不变还是 $Q$ 不变。
+ - 若 $V$ 不变，$C=\kappa C_{0}$，$Q=CV$ 变大。
+ - 若 $Q$ 不变，$C=\kappa C_{0}$，$V=\frac{Q}{C}$ 变小。--- before/其他通识课/大学物理/下/Magnetism and Induction - 磁学与电磁感应.md
++++ after/其他通识课/大学物理/下/Magnetism and Induction - 磁学与电磁感应.md
+@@ -44,7 +44,7 @@
+ $$
+ 对于任意导线，若磁场恒定：
+ $$
+-\vec{F}=\int id\vec{l}\times \vec{B}=i\left( \int \vec{l} \right)\times \vec{B}=i\vec{L}\times \vec{B}
++\vec{F}=\int id\vec{l}\times \vec{B}=i\left( \int d\vec{l} \right)\times \vec{B}=i\vec{L}\times \vec{B}
+ $$
+ 这里 $\vec{L}$ 为导线首尾相接得到的矢量。
+ 
+@@ -61,7 +61,7 @@
+ 定义磁偶极矩 $\vec{\mu}=I\vec{A}$，其方向为右手握电流，大拇指指向的方向，垂直于线圈。 
+ 则有
+ $$
+-\tau=\mu \times B
++\vec{\tau}=\vec{\mu}\times\vec{B}
+ $$
+ 若有 $N$ 匝（Loops）的线圈，则 $\vec{\mu}=Ni\vec{A}$。
+ 和电偶极矩类似，磁矩也会带势能：
+@@ -85,8 +85,8 @@
+ B=\int_{-\infty}^{\infty} \frac{\mu_{0}}{4\pi} \frac{i dz}{z^{2}+R^{2}} \frac{R}{\sqrt{ z^{2}+R^{2} }}=\frac{\mu_{0}i}{2\pi R} 
+ $$
+ 其中 $R$ 为某点到导线的垂直距离。
+-若导线不是直的，则可以分解为 $x,y,x$ 三个分量分别积分。
+-$1\text{A}$ 的大小是通过两个平行直导线之间磁场力的大小来定义的。
++若导线不是直的，则可以分解为 $x,y,z$ 三个分量分别积分。
++$1\text{A}$ 曾由两根平行直导线间的磁力定义；2019 年起，SI 安培由固定元电荷 $e=1.602176634\times10^{-19}\text{C}$ 定义。
+ 一个角度为 $\varphi$  圆弧形导线：
+ $$
+ B=\int \frac{\mu_{0}}{4\pi} \frac{ird\theta}{r^{2}}=\frac{\mu_{0}i\varphi}{4\pi r}
+@@ -141,7 +141,7 @@
+ 这里的正方向是右手定则确定的。
+ 另外有
+ $$
+-\left| \varepsilon \right| = \frac{d\Phi}{dt}=B \frac{dA}{dt}+A \frac{dB}{dt}
++\left|\varepsilon\right|=\left|\frac{d\Phi_B}{dt}\right|=\left|B\frac{dA}{dt}+A\frac{dB}{dt}\right|\quad(\Phi_B=BA)
+ $$
+ 注意多圈的线圈要乘上 $N$。
+ 考虑激发的电场，一个回路中有关系：
+--- before/其他通识课/大学物理/下/Optics - 光学.md
++++ after/其他通识课/大学物理/下/Optics - 光学.md
+@@ -9,7 +9,7 @@
+ *   **斯涅尔定律 (折射定律)：** 
+     $$ n_1 \sin\theta_1 = n_2 \sin\theta_2 $$
+     *(注：角度均为光线与法线的夹角)*
+-*   **费马原理：** 光传播的路径是“耗时最短”的路径。
++*   **费马原理：** 光传播的实际路径使传播时间（或光程）取驻值；常见反射、折射问题中表现为局部最小。
+ 
+ **全反射 (Total Internal Reflection)**
+ *   **条件：** 光由**光密射向光疏**介质 ($n_1 > n_2$)。
+@@ -24,7 +24,7 @@
+     $$ \theta_B = \tan^{-1}(\frac{n_b}{n_a}) $$
+     *(其中 $n_a$ 为入射介质，$n_b$ 为折射介质)*
+ 
+-### 干涉 (Inference)
++### 干涉 (Interference)
+ 
+ 1.  **相干波条件：** 相同频率 ($\omega$)、相同振动方向、恒定相位差。
+ 2.  **光程 (Optical Path)：**
+--- before/其他通识课/大学物理/下/Quantum Physics - 量子物理.md
++++ after/其他通识课/大学物理/下/Quantum Physics - 量子物理.md
+@@ -2,7 +2,7 @@
+ ## 光电效应
+ 
+ $$
+-hf=K+\Phi
++hf=K_{\max}+\Phi
+ $$
+ 这里 $\Phi$ 是材料中电子和真空中电子的能量差。必须要 $hf\geq \Phi$ 才能激发电子。
+ 实验中，会发现光子的能量是量子化的，是一份一份的。
+@@ -25,7 +25,7 @@
+ \frac{hc}{\lambda}= \frac{hc}{\lambda'}+(\gamma-1)mc^{2}
+ $$
+ $$
+-\frac{h}{\lambda}=\frac{h}{\lambda'}+\gamma mv\cos\theta
++\frac{h}{\lambda}=\frac{h}{\lambda'}\cos\phi+\gamma mv\cos\theta
+ $$
+ 这里 $\theta$ 为电子偏转的角度，$\phi$ 是光子偏转的角度。
+ 那么 Compton Shift，即前后的波长变化量为：
+@@ -39,7 +39,7 @@
+ $$
+ \lambda=\frac{h}{p}
+ $$
+-能量特别高的时候（波长<1 nm），要考虑相对论效应：
++当 $v$ 不再远小于 $c$（或动能不再远小于 $mc^2$）时，要考虑相对论效应：
+ $$
+ p=\gamma mv,K=(\gamma-1)mc^{2}
+ $$
+@@ -51,7 +51,7 @@
+ ## 海森堡不确定性原理
+ 
+ $$
+-\Delta x\cdot \Delta p_{x}\geq \hbar
++\Delta x\cdot\Delta p_x\geq\frac{\hbar}{2}
+ $$
+ 
+ 
+--- before/其他通识课/大学物理/下/Relativity - 相对论.md
++++ after/其他通识课/大学物理/下/Relativity - 相对论.md
+@@ -1,11 +1,11 @@
+ 
+-“任何物理规律在不同的参考系下保持不变。”
+-“光速不变。”
++“物理规律在所有惯性参考系中具有相同形式。”
++“真空光速在所有惯性参考系中相同。”
+ 
+ 【狭义相对论的核心背景】
+ 时空间隔（Space-Time Interval）：与参考系无关的距离。
+ 世界点：四维时空中的一个点 $(t,x,y,z)$。
+-世界线：物体在思维时间中运动画出的线。
++世界线：物体在四维时空中运动画出的线。
+ 那么时空间隔
+ $$
+ s^{2}=[c(t_{2}-t_{1})]^{2}-[(x_{2}-x_{1})^{2}+(y_{2}-y_{1})^{2}+(z_{2}-z_{1})^{2}] = (c\Delta t)^{2}- l^{2}
+--- before/其他通识课/大学物理/下/Synthesis of Electromagnetism - 电磁学综合.md
++++ after/其他通识课/大学物理/下/Synthesis of Electromagnetism - 电磁学综合.md
+@@ -51,7 +51,7 @@
+ 在 $X_{L}<X_{C}$ 时，$\phi<0$，$I_{m}$ 随 $\omega_{d}$ 增加而增加（称为容性/mainly capacitive，此时电压落后于电流）；在 $X_{L}>X_{C}$ 时， $\phi>0$，$I_{m}$ 随 $\omega_{d}$ 增加而减小（称为感性/mainly inductive，此时电压提前于电流）。
+ **直观理解：$\omega_{d}$ 从 $0$ 增加到 $\infty$ 时，感抗在从 $0$ 增加到 $\infty$，容抗在从 $\infty$ 减小到 $0$。总阻抗取决于它们差值的大小，当他们相等的时候阻抗最小，电流幅值最大。左边，容抗大，为电容性；右边，感抗大，为电感性。**
+ 
+-另外，定义 **功率因数（Power Factor）** 为 $\cos \phi=\frac{R}{Z}$，即有功功率和总功率的比值。
++另外，定义 **功率因数（Power Factor）** 为 $\cos \phi=\frac{R}{Z}$，即有功功率和视在功率的比值。
+ 
+ ### 交流电路（AC）中的功率
+ 
+@@ -91,7 +91,7 @@
+ 根据麦克斯韦理论，为了保持闭合电路中“电流”的连续性，流入电容器极板的传导电流等于极板间的位移电流。
+ 麦克斯韦修正后的安培定律：
+ $$
+-\int \vec{B}\cdot d\vec{l}=\mu_{0}(i+i_{D})
++\oint \vec{B}\cdot d\vec{l}=\mu_{0}(i+i_{D})
+ $$
+ ## 麦克斯韦方程组
+ 
+--- before/其他通识课/旧石器艺术与符号/Week1.md
++++ after/其他通识课/旧石器艺术与符号/Week1.md
+@@ -1,19 +1,19 @@
+-Humans are biocultural organism.
++Humans are biocultural organism.
+ Culture: “patterns of learned behaviour and ideas that humans acquire as members of a society, together with the artifacts and structures we create and use.”
+ - Culture knowledge
+ - Tool : survival; overcome biological and individual limitations; information
+ - Culture is Symbolic
+ - Linguistic anthropolog
+ 
+-Verbal communication
++Vocal communication
+ - Verbal language
+ - Non-word sounds with meaning
+ - Native speaker
+ - Communication is more than individual words
+ 
+-Non-verbal communication
++Non-vocal communication
+ - Writing, Morse code, Sign language, body language, facial expressions
+-- Difficult - time, past/future
++- Body language alone: difficult to express time, past/future; writing and sign languages can express these.
+ 
+ Distinctiveness of Human language:
+ - Openness
+--- before/其他通识课/旧石器艺术与符号/Week3.md
++++ after/其他通识课/旧石器艺术与符号/Week3.md
+@@ -16,7 +16,7 @@
+ - Differences
+ 
+ Can apes learn language?
+-- Non-verbal ; 
++- Non-vocal ;
+ - sign language (gorilla"koko", "reportedlly" use displacement and abstract concepts); 
+ - lexigrams (abstract image representing a word) (bonobos "kanzi") Kanzi understand opken English.
+ - Human communication is uniquely complex
+--- before/其他通识课/生命科学概论/Brain and Mind - 脑与心智.md
++++ after/其他通识课/生命科学概论/Brain and Mind - 脑与心智.md
+@@ -30,11 +30,12 @@
+ - Tonic 紧张型 - 持续持续
+ - Phasic 瞬变型 - 感受变化
+ 
+-Circadian Rhythm（生物节律）
++Circadian Rhythm（昼夜节律）
+ - Free-running Rhythm（自主节律）
+ - Suprachiasmatic Nuclei（SCN，视交叉上核）
+ 
+ Parasympathetic（副交感神经） - rest and digest function
+ - acetylcholine（乙酰胆碱） - cholinergic（胆碱能）
+ Sympathetic（交感神经） - fight or flight response
+-- catecholamines（儿茶酚胺） - adrenergic（肾上腺素能）+- 节前神经元：acetylcholine（乙酰胆碱），cholinergic（胆碱能）。
++- 多数节后神经元：norepinephrine（去甲肾上腺素），adrenergic（肾上腺素能）；汗腺等例外使用乙酰胆碱。--- before/其他通识课/生命科学概论/Cell Biology - 细胞生物学.md
++++ after/其他通识课/生命科学概论/Cell Biology - 细胞生物学.md
+@@ -1,14 +1,14 @@
+ * emergence（涌现）
+ ### The history of cell biology
+ 
+-- The size of a cell: $100 \mu m$
++- Typical cell sizes: eukaryotic cells $10\text{–}100\,\mu\mathrm{m}$; prokaryotic cells $0.1\text{–}5\,\mu\mathrm{m}$ (with exceptions).
+ - The invention of **microscope** 
+   - Objective lens and eye lens
+ - The word "cell": Robert Hooke
+ - The father of Microbiology: Anton van Leeuwenhoek
+-- The original Cell Theory (1838, Schwann & Schleiden)
++- The original Cell Theory: Schleiden (1838, plants) & Schwann (1839, animals)
+ - Cells derive from pre-existing cells (1855, Rudolf Virchow)
+-- Observation of Cell Devision (1880)
++- Observation of Cell Division (1880)
+ 
+ Modern Cell Theory:
+ - All living organisms are composed of one or more cells.
+@@ -42,8 +42,8 @@
+ Transport Across Cell Membranes (跨膜运输)
+ 
+ Endocytosis (内吞作用) 
+-- Pinocytosis (胞饮作用): No receptor, small amount
+-- Phagocytosis (胞吞作用): Receptor, Happens in specific types of cells, e.g. macrophages (巨噬细胞) and neutrophils (中性粒细胞).
++- Pinocytosis (胞饮作用): Uptake of extracellular fluid and dissolved solutes; often non-specific
++- Phagocytosis (吞噬作用): Receptor, Happens in specific types of cells, e.g. macrophages (巨噬细胞) and neutrophils (中性粒细胞).
+ - Clathrin-Mediated Endocytosis (网格蛋白介导的内吞作用)
+ - Receptor-Mediated Endocytosis (受体介导的内吞作用）
+ 
+--- before/其他通识课/生命科学概论/Plants - 植物.md
++++ after/其他通识课/生命科学概论/Plants - 植物.md
+@@ -24,7 +24,7 @@
+ - 藓类
+ 没有维管组织（Vascular Tissue）
+ Reproduce using spores 孢子繁殖
+-生活周期大部分处于Sporophyte 配子体世代
++生活周期大部分处于 Gametophyte 配子体世代
+ 
+  大部分植物是 Tracheophytes/Vascular plant（维管植物）
+  - 韧皮
+@@ -35,7 +35,7 @@
+ 
+ Gametophyte 配子体
+ 植物的生殖细胞存在于多细胞的配子体中
+-孢子体 Sporophyte ->减数分裂单倍体孢子 Haploid Spore ->有丝分裂卵细胞
++孢子体 Sporophyte ->减数分裂产生单倍体孢子 Haploid Spore ->有丝分裂形成配子体 Gametophyte ->有丝分裂产生配子（卵细胞或精子）
+ 
+ 双受精 Double Fertilization
+ - 受粉（Pollination）
+@@ -51,7 +51,7 @@
+ - 酚类
+ - 生物碱
+ - 萜类
+-Morphine Endorphin...（常见例子）
++Morphine（吗啡）, Caffeine（咖啡因）...（生物碱的常见例子；Endorphin 内啡肽是动物体内的肽类）
+ 
+ 植物产品的作用
+ - 有益防御
+--- before/其他通识课/科学与文明史概论/History.md
++++ after/其他通识课/科学与文明史概论/History.md
+@@ -63,16 +63,16 @@
+ - 技术工匠
+ - 老普林尼 - 博物志
+ 
+-哥白尼（《天体运行论》，实际上是《天球运行轮》）
++哥白尼（《天体运行论》，实际上是《天球运行论》）
+ 
+ 布鲁诺打破天球论 （被视为宗教异端被烧死）
+ 
+-第谷（中世纪）- 天文观测 - 开普勒
++第谷（文艺复兴时期）- 天文观测 - 开普勒
+ 
+ **全球化**
+ 
+ 拜占庭帝国
+-- 罗马帝国 476 年崩溃 - 中世纪
++- 西罗马帝国 476 年灭亡 - 中世纪
+ - 东部 - 拜占庭 
+ 翻译 - 希腊文到阿拉伯文
+ 波斯
+@@ -87,7 +87,7 @@
+ 
+ 高棉帝国（802-1431）
+ 
+-中美洲（玛雅，阿兹特克，印加帝国）
++中美洲（玛雅，阿兹特克）；南美洲（印加帝国）
+ 
+ 中国
+ - 长城
+@@ -109,7 +109,7 @@
+ 文艺复兴到科学革命
+ 
+ （西欧）中世纪（公元 476-公元 1453）
+-- 476：西罗马帝国灭亡，被日耳曼人攻破
++- 476：西罗马帝国最后一位皇帝罗慕路斯·奥古斯都被奥多亚塞废黜
+ - 1453：君士坦丁堡陷落，被奥斯曼土耳其帝国攻破
+ 
+ 约翰古腾堡（1398-1468）
+@@ -118,7 +118,7 @@
+ 尼尔波兹曼
+ - 《技术垄断》
+ - **技术与社会的关系**：社会围绕着技术重新结构，是一种生态关系，这种改变是技术发明人无法想象，也无法控制
+-- 古腾堡印刷术发明后，印刷圣经（德文）引发宗教改革，印刷文学作品引发文艺复兴... （与发明人意愿相悖）
++- 古腾堡印刷术发明后，印刷圣经（古腾堡版为拉丁文；后来路德的德文译本借助印刷传播）推动宗教改革，印刷文学作品引发文艺复兴... （与发明人意愿相悖）
+ 
+ 文艺复兴
+ - 文学三杰是：但丁《神曲》，彼得拉克，薄伽丘《十日谈》
+@@ -145,11 +145,11 @@
+    - 1609 年，45 岁，改造望远镜
+    - 月亮的环形山，金星的位象，太阳的黑子
+    - 《星空信使》
+-   - 《关于两大世界体系的对话》- 萨尔维亚蒂（伽利略），赛格雷多（外行），辛普里西奥（亚里士多德） - 监狱 （托勒密和哥白尼体系的对话）
++   - 《关于两大世界体系的对话》- 萨尔维亚蒂（伽利略），赛格雷多（外行），辛普里西奥（亚里士多德） - 1632 年出版，早于 1633 年审判（托勒密和哥白尼体系的对话）
+    - 《关于两种新科学的对话》 - 悬臂的受力分析 - 自由落体定律
+    - 大自然的数学化（不问为什么，而问怎么样）
+    - “《圣经》能告诉我们怎么样上天堂，但是不能告诉我们天体怎样运行”
+-   - 1992 年教皇保罗二世为伽利略（1632 被审）平反
++   - 1992 年教皇约翰·保罗二世承认对伽利略（1633 年被审）的处理错误
+    - 《圣经》，《自然之书》的隐喻
+    - 相对性（伽利略变换）
+  - 牛顿 
+@@ -170,7 +170,7 @@
+ - 夏平 - 爱丁堡学派 - SSK （Sociology of Scientific Knowledge）
+ 
+ 马丁路德 - 德文圣经 - 宗教改革
+-- 天主教（旧教）和基督教（新教）的区别：是否需要神父传达旨意
++- 天主教（旧教）和新教的区别：是否需要神父传达旨意
+ 
+ 哈雷彗星的回归（哈雷计算并预言 1758 年它会再接近地球）
+ - 最先和最完备的记录都在中国
+@@ -187,7 +187,7 @@
+ - 砍树挖煤
+ - 伦敦 - 雾都
+ 
+-**卡诺（Carnot, 1796-1823）** 热质说的热力学，研究蒸汽机
++**卡诺（Carnot, 1796-1832）** 热质说的热力学，研究蒸汽机
+ - 爱因斯坦：“一门科学，建立在最少的假设上，却在最大的范围内适用，热力学就是这样的科学的典范。”
+ - 热力学是普适的，超越于具体物质，超越于时间与空间。
+ 
+@@ -195,7 +195,7 @@
+ 工业革命之后，科学和技术联姻，科学的新功能就是作为技术新的母体，形而下的功能。
+ 科学和科学共同体获得社会地位，科学成为全球性的意识形态，科学是唯一正确的解释，科学家是创造者。
+ 
+-马克思韦伯（Max Weber）《新教伦理与资本主义精神》
++马克斯韦伯（Max Weber）《新教伦理与资本主义精神》
+ 罗伯特莫顿《十七世纪英格兰的科学/技术与社会》（STS）
+ **韦伯命题+莫顿命题：**
+ **新教伦理（赚钱，资本增殖：“上帝希望看到你勤勉工作”->钱（不能乱花）->再生产）**
+@@ -216,14 +216,14 @@
+ - 还原论的胜利
+ - 植物生长需要的元素来调配土壤 - 化肥
+ - **弗里茨哈伯** 1868-1934 犹太人，德国人家里做染料 - 合成氨 - 主动参与战争，刺激性**毒气**
+-- *日内瓦条约：不能发射毒气弹。* 哈伯：用风。授为陆军上尉。
++- *1899 年海牙宣言：禁止以散布窒息性或有害气体为唯一目的的投射物。* 哈伯：用风。授为陆军上尉。
+ - **克拉拉**1870-1915 与哈伯结婚。克拉拉坚决反对哈伯开发化学武器。自杀。
+ - 克拉拉的评价逐渐提升，逐渐被历史重点提起。“女性主义科学史”
+ - 波伦《杂食者的两难》哈伯“善与恶竟然来自同一个人，同一种知识”
+-- 二战后炸药用的硝酸铵用作废料，军工厂变成化肥厂，毒气厂改做杀虫剂
++- 二战后炸药用的硝酸铵用作肥料，军工厂变成化肥厂，毒气厂改做杀虫剂
+ - 约翰麦克尼尔《阳光下的新事物》化肥 - 需要增加耕地 - 贫富差距
+ 
+-Richard Duncan：工业文明由廉价的石油产生的，石油产量的高峰为 1972 年。
++Richard Duncan 的奥杜威假说：以人均能源消费讨论工业文明的持续时间。其 2000 年论文将 1920–1999 年数据中的人均石油产量峰值记为 1979 年，区别于全球石油总产量；文明衰退的预测属于假说。
+ 
+ 考虑不同的未来的可能性
+ 
+@@ -262,7 +262,7 @@
+ - 第二次：1962《寂静的春天》
+ 
+ 
+-1968 绿色革命：工业化农业。诺曼布劳格“诺贝尔和平奖”-印度-东南亚-南美-...
++绿色革命：工业化农业（“绿色革命”一词于 1968 年提出）。诺曼布劳格“1970 年诺贝尔和平奖”-印度-东南亚-南美-...
+ 
+ Vandana Shiva（范达娜席瓦）《失窃的收成》
+ - 增产是剥夺了蚯蚓和蚂蚁的
+--- before/其他通识课/科学与文明史概论/Insights.md
++++ after/其他通识课/科学与文明史概论/Insights.md
+@@ -41,7 +41,7 @@
+ 文化与环境之间的共生 - 靠山吃山，靠海吃海
+ 
+ 人类世（人类具有地质影响能力）
+-- 复活节岛（石像，由于过度破坏环境而文明衰退）
++- 复活节岛（石像；课堂采用“生态自毁”解释，但欧洲接触前人口崩溃的说法有争议，近年研究不支持其为定论）
+ 
+ 文明：形而上解释｜形而下解释
+ - 现代：科学｜科学技术
+@@ -133,7 +133,7 @@
+ 
+ **博物学家**
+ 亚当
+-林奈《自然的经济体系》：演化论
++林奈《自然的经济体系》：自然界的相互依存、循环与平衡（早期生态学思想）
+ 共同体
+ 
+ 吉尔伯特怀特《赛尔彭博物志》 
+--- before/其他通识课/科学与文明史概论/Review.md
++++ after/其他通识课/科学与文明史概论/Review.md
+@@ -30,7 +30,7 @@
+     
+ - **神话的作用**：创世神话构建了民族的意识与身份认同。任何解释方案必须具备两个条件：能够理解 + 愿意接受。
+     
+-- **人类世预警**：人类已具备地质影响能力。反面案例是**复活节岛**（因石像建造过度破坏环境，导致文明崩溃）。全球共有六个独立出现的文明。
++- **人类世预警**：人类已具备地质影响能力。课堂案例是**复活节岛**（“生态自毁”解释存在争议；近年研究不支持欧洲接触前人口崩溃为定论）。全球共有六个独立出现的文明。
+     
+ 
+ ## 二、古希腊、罗马与古代中国（轴心时代及之后）
+@@ -84,7 +84,7 @@
+ 
+ ## 三、中世纪与知识的全球化（公元 476 - 1453 年）
+ 
+-- **断代标志**：476 年西罗马帝国被日耳曼人攻破崩溃（中世纪开始）；1453 年君士坦丁堡被奥斯曼土耳其攻破陷落（中世纪结束）。（阅读黑塞的作品有助于了解中世纪）。
++- **断代标志**：476 年西罗马帝国最后一位皇帝被奥多亚塞废黜（中世纪开始）；1453 年君士坦丁堡被奥斯曼土耳其攻破陷落（中世纪结束）。（阅读黑塞的作品有助于了解中世纪）。
+     
+ - **大翻译与同化运动**：拜占庭帝国保留了火种，通过波斯进行希腊文到阿拉伯文的翻译。
+     
+@@ -96,7 +96,7 @@
+         
+     - **核心探讨**：边缘论和同化论，伊斯兰是否吸收了希腊文明？麦克莱伦第三的“阿拉伯问题”探讨近代科学为何未在阿拉伯诞生。
+         
+-- **同时代其他文明**：印度、高棉帝国（802-1431）、中美洲（玛雅、阿兹特克、印加帝国）。
++- **同时代其他文明**：印度、高棉帝国（802-1431）、中美洲（玛雅、阿兹特克）、南美洲（印加帝国）。
+     
+ 
+ ## 四、文艺复兴与科学革命（14 - 17 世纪）
+@@ -128,9 +128,9 @@
+         
+ - **物理学奠基**：
+     
+-    - **伽利略（近代科学起点）**：引入思想实验，强调**大自然的数学化（不问为什么，而问怎么样）**。1609 年改造望远镜（发现月亮环形山/金星位相/太阳黑子）。著作《星空信使》；在监狱写出《关于两大世界体系的对话》（托勒密与哥白尼体系对话，人物：萨尔维亚蒂-伽利略，赛格雷多-外行，辛普里西奥-亚里士多德）；《关于两种新科学的对话》（悬臂受力/自由落体）。
+-        
+-    - **伽利略名言**：“《圣经》能告诉我们怎么样上天堂，但是不能告诉我们天体怎样运行”。（《圣经》与《自然之书》的隐喻）。1992 年教皇保罗二世为其平反。
++    - **伽利略（近代科学起点）**：引入思想实验，强调**大自然的数学化（不问为什么，而问怎么样）**。1609 年改造望远镜（发现月亮环形山/金星位相/太阳黑子）。著作《星空信使》；1632 年出版《关于两大世界体系的对话》（早于 1633 年审判）（托勒密与哥白尼体系对话，人物：萨尔维亚蒂-伽利略，赛格雷多-外行，辛普里西奥-亚里士多德）；《关于两种新科学的对话》（悬臂受力/自由落体）。
++        
++    - **伽利略名言**：“《圣经》能告诉我们怎么样上天堂，但是不能告诉我们天体怎样运行”。（《圣经》与《自然之书》的隐喻）。1992 年教皇约翰·保罗二世承认对其处理错误。
+         
+     - **牛顿**：经典物理集大成者，著《自然哲学的数学原理》（万有引力、运动定律）。
+         
+@@ -150,7 +150,7 @@
+ 
+ ### 2. 热力学与 STS 命题定调
+ 
+-- **卡诺 (Carnot, 1796-1823)**：研究蒸汽机，创立热质说的热力学。爱因斯坦赞誉：热力学建立在最少假设上，在最大范围内适用，普适且超越具体物质时空。斯诺在《两种文化》中探讨了莎士比亚与热力学第二定律代表的人文与科学的割裂。
++- **卡诺 (Carnot, 1796-1832)**：研究蒸汽机，创立热质说的热力学。爱因斯坦赞誉：热力学建立在最少假设上，在最大范围内适用，普适且超越具体物质时空。斯诺在《两种文化》中探讨了莎士比亚与热力学第二定律代表的人文与科学的割裂。
+     
+ - **科学功能的转折**：科学从形而上（解释世界）沦为形而下（作为技术的母体）。科学共同体获得地位，科学家成为创造者，科学成为全球性意识形态。
+     
+@@ -171,11 +171,11 @@
+     
+ - **哈伯夫妇的伦理悲剧**：
+     
+-    - **弗里茨·哈伯**：犹太人家做染料出身。发明合成氨；一战主动参与开发**刺激性毒气**（借口“用风”绕过不能发射毒气弹的《日内瓦条约》），被授陆军上尉。波伦《杂食者的两难》评价：“善与恶竟然来自同一个人，同一种知识”。
++    - **弗里茨·哈伯**：犹太人家做染料出身。发明合成氨；一战主动参与开发**刺激性毒气**（借口“用风”绕过不能发射毒气弹的1899 年海牙宣言），被授陆军上尉。波伦《杂食者的两难》评价：“善与恶竟然来自同一个人，同一种知识”。
+         
+     - **克拉拉**：哈伯之妻，坚决反对开发化武，自杀。“女性主义科学史”中评价逐渐提升，被历史重点提起。
+         
+-- **战后反思**：硝酸铵炸药变废料，军工厂变化肥厂，毒气厂变杀虫剂厂。约翰·麦克尼尔《阳光下的新事物》指出，化肥需增加耕地导致贫富差距，“我们的食物是由石油和阳光制成的”。
++- **战后反思**：炸药原料硝酸铵转用于肥料，军工厂变化肥厂，毒气厂变杀虫剂厂。约翰·麦克尼尔《阳光下的新事物》指出，化肥需增加耕地导致贫富差距，“我们的食物是由石油和阳光制成的”。
+     
+ 
+ ### 2. 生态觉醒与绿色革命争议
+@@ -190,7 +190,7 @@
+         
+     - _相关事件_：何院士与方舟子辩论“敬畏自然就是反科学”，引发关于环境伦理教育的讨论。
+         
+-- **1968 绿色革命**：诺曼·布劳格推广工业化农业获诺贝尔和平奖。但 Vandana Shiva 在《失窃的收成》中尖锐批评：增产是剥夺了蚯蚓和蚂蚁，是“偷未来的粮食”，导致土地板结与污染。
++- **绿色革命**（1968 年提出这一名称）：诺曼·布劳格推广农业技术，获 1970 年诺贝尔和平奖。但 Vandana Shiva 在《失窃的收成》中尖锐批评：增产是剥夺了蚯蚓和蚂蚁，是“偷未来的粮食”，导致土地板结与污染。
+     
+ 
+ ## 七、当代反思与前沿探讨（20 世纪末 - 至今）
+@@ -207,7 +207,7 @@
+     
+     - 物质与能量的转换有向，会变得不可用。煤和石油本质是“把远古的太阳挂在天上”。
+         
+-    - Richard Duncan 指出：工业文明由廉价石油产生，石油产量高峰为 1972 年。
++    - Richard Duncan 的奥杜威假说讨论人均能源消费与工业文明；其 2000 年论文中的人均石油产量峰值为 1979 年（1920–1999 年数据），不是全球石油总产量峰值。文明衰退预测属于假说。
+         
+     - **太阳能迷思**：太阳能板变成“永久垃圾”，转化无害垃圾需耗能。从生态学看，直接剥夺一地的太阳能也深度改变了其生态。
+         
+--- before/其他通识课/科学与文明史概论/Special Lecture.md
++++ after/其他通识课/科学与文明史概论/Special Lecture.md
+@@ -23,7 +23,7 @@
+ 古代地图的载体：多样，如帛/木板/石块/纸本....
+ 
+ 近代以前中国地图绘制自成一体
+-特殊：利玛窦，卫匡国，康熙《皇與全览图》
++特殊：利玛窦，卫匡国，康熙《皇舆全览图》
+ 
+ 传统舆图
+ - 量测地图
+@@ -46,7 +46,7 @@
+ 南宋，国耻
+ 保密地图（故意空缺杭州地名）
+ 
+-皇與全览图对台湾有进行实测
++皇舆全览图对台湾有进行实测
+ 戈壁
+ 
+ 山川画和图的关系
+--- before/其他通识课/科学哲学/Lecture.md
++++ after/其他通识课/科学哲学/Lecture.md
+@@ -25,12 +25,12 @@
+ 维特根斯坦（早年）：语言的边界就是世界的边界。
+ 
+ - 基因考古学：通过 DNA 复制产生的错误来考据继承关系。
+-- 人类共同祖先 - 智人 - 今埃塞尔比亚。（灭绝其他人种）
+-- 智人打败尼安德特人/丹尼索瓦人 ：语言能力强。
++- 智人起源于非洲，不能把所有人的共同祖先定位为今埃塞尔比亚的单一群体；现代人与尼安德特人、丹尼索瓦人曾发生基因交流。
++- 智人与尼安德特人/丹尼索瓦人的演化关系：语言能力差异是一种解释假说，不能记为已证实的唯一原因。
+ ![[Lecture1.png]]
+ 
+ 古语言的痕迹
+-- 罗塞塔石碑（托马斯杨破译） - 希腊文对照 - 破译埃及文（表音+表意）
++- 罗塞塔石碑（托马斯·杨有重要贡献；商博良于 1822 年取得关键破译突破） - 希腊文对照 - 破译埃及文（表音+表意）
+ - 埃及壁画 - 和神沟通：头侧面，眼睛正面，肩膀正面，腰侧面... (启发毕加索的立体主义)
+ - 埃及金字塔 - 由各地的平民建造 （不是奴隶） -  建造过程中学到宗教与文化，带回居住地 - 语言的社会组织能力
+ 古希腊人的雕塑 - 利用重心
+@@ -71,9 +71,9 @@
+ 一神教的产生（三教同源）
+ - 埃及 - 阿肯那顿 & Nefertiti 
+ - 摩西 - 犹太教《塔纳赫》
+-- 耶稣 - 基督教（犹太教的分支，耶稣是上帝之子，三位一体） -> 东正教（宗教权利<世俗权力） / 天主教（宗教权利>世俗权力，玛利亚有神性，封教宗，圣人，十字架是有耶稣受难像的） -> 新教（每个人都可以解释圣经，玛利亚没有神性，十字架是空的，耶稣复活，崇拜仪式自由）
+-- 穆罕默德 - 最后一位圣人 - 伊斯兰教（反对具象崇拜）
+-马克思韦伯（Max Weber）《新教伦理与资本主义精神》
++- 耶稣 - 基督教（犹太教的分支，耶稣是上帝之子，三位一体） -> 东正教（宗教权利<世俗权力） / 天主教（宗教权利>世俗权力，尊崇玛利亚为圣母，但不把她视为神，封教宗，圣人，十字架是有耶稣受难像的） -> 新教（每个人都可以解释圣经，玛利亚没有神性，十字架是空的，耶稣复活，崇拜仪式自由）
++- 穆罕默德 - 最后一位先知（伊斯兰教信仰） - 伊斯兰教（反对具象崇拜）
++马克斯韦伯（Max Weber）《新教伦理与资本主义精神》
+ 马丁路德 - 宗教改革 - 圣经的印刷 “因信称义”
+ 
+ 清教徒 - 北美殖民地
+@@ -103,9 +103,9 @@
+ - 引入了命题证明。
+ - 哲学史上第一人。
+ 
+-拉斐尔《雅典学院》
++拉斐尔《雅典学园》
+ 
+-伊壁鸠鲁：第一个无神论哲学家
++伊壁鸠鲁：认为诸神不干预人间事务，不能简单称为第一个无神论哲学家
+ 
+ 柏拉图《理想国》
+ - 乌托邦思想
+@@ -117,10 +117,10 @@
+ - 观察与证据
+ - 柏拉图的理念论不能帮助我们更好认识世界
+ - “我爱我师，我更爱真理”
+-- 《政治学》：{一个人通知，少数人统治，多数人统治}$\times${守法，不守法}得到一共六种制度
++- 《政治学》：{一个人统治，少数人统治，多数人统治}$\times${守法，不守法}得到一共六种制度
+ - 实体论：四因说：质料，形式，动力，目的
+ - **逻辑学说：**
+-  - 四大规律：同一律，矛盾律，排中律，因果律
++  - 传统逻辑常列同一律、不矛盾律、排中律；充足理由律主要与莱布尼茨相关，不能把“因果律”列为亚里士多德的第四条逻辑规律
+ 
+ 毕达哥拉斯
+ - 数是万物本原
+--- before/数学/数理逻辑导论/Exam Review - 考试复习.md
++++ after/数学/数理逻辑导论/Exam Review - 考试复习.md
+@@ -589,8 +589,8 @@
+ 
+ | 概念 | 定义 |
+ |------|------|
+-| **自由变元 (Free Variable)** | 不在任何量词作用域内的变量 |
+-| **约束变元 (Bound Variable)** | 在某个量词作用域内的变量 |
++| **自由变元 (Free Variable)** | 该次出现不被任何对应变量的量词绑定 |
++| **约束变元 (Bound Variable)** | 该次出现被对应变量的量词绑定 |
+ | **句子 (Sentence)** | 无自由变元的公式（也称闭公式） |
+ | **阐释 (Interpretation) $\mathcal{I}$** | Domain + 常量/函数/谓词的具体含义 |
+ | **环境 (Environment) $E$** | 给自由变元赋值 |
+@@ -646,7 +646,7 @@
+ | 公式 | 值 | 理由 |
+ |------|-----|------|
+ | $\forall x \exists y F(x,y)$ | **True** | $x=3$ 有 $y=4$；$x=4$ 有 $y=3$。全满足 |
+-| $\exists x \forall y F(x,y)$ | **False** | $x=3$ 时 $F(3,3) \notin F^{\mathcal{I}}$；$x=4$ 时 $F(4,4) \notin F^{\mathcal{I}}$。不存在这样的 $x$ |
++| $\exists x \forall y F(x,y)$ | **False** | $x=3$ 时 $(3,3) \notin F^{\mathcal{I}}$；$x=4$ 时 $(4,4) \notin F^{\mathcal{I}}$。不存在这样的 $x$ |
+ | $\forall x \forall y (F(x,y) \to F(f(x), f(y)))$ | **True** | 枚举 4 对 $(x,y)$：$(3,3)$ 前提假→整体真；$(3,4)$: $F(3,4)=1, F(f(3),f(4))=F(4,3)=1$；$(4,3)$: 同理；$(4,4)$ 前提假→整体真 |
+ 
+ **A6.3** Domain $\mathbb{N}$, $a^{\mathcal{I}}=2$, $f^{\mathcal{I}}(x,y)=x+y$, $g^{\mathcal{I}}(x,y)=x\times y$, $P^{\mathcal{I}}(x,y): x=y$, $E(x)=0, E(y)=1, E(z)=2$
+@@ -666,7 +666,7 @@
+ | $\forall x(P(x) \to P(x)) \to \exists y(Q(y) \land \neg Q(y))$ | **Unsatisfiable** | 前件永真，后件永假；$1 \to 0 = 0$ |
+ | $\forall x \forall y (P(x,y) \to P(y,x))$ | **Satisfiable** | 取 $P$ 为 $=$ → True；取 $P$ 为 $<$ → False。故不是 valid 也不是 unsatisfiable |
+ | $\neg(\forall x P(x) \to \exists y Q(y)) \land \exists y Q(y)$ | **Unsatisfiable** | 设公式为真：前半要求 $\forall x P(x)=1$ 且 $\exists y Q(y)=0$；后半要求 $\exists y Q(y)=1$。矛盾 |
+-| $\exists x P(x,y)$ | **Satisfiable** | $y$ 自由，可在阐释中取合适的 $y$ 和 $P$ 满足；也可取不满足的阐释。故 satisfiable |
++| $\exists x P(x,y)$ | **Satisfiable** | $y$ 自由，可选择合适的阐释 $\mathcal I$ 和环境 $E$（赋值给 $y$）满足；也可取不满足的阐释。故 satisfiable |
+ 
+ ---
+ 
+--- before/数学/数理逻辑导论/FOL - 一阶逻辑.md
++++ after/数学/数理逻辑导论/FOL - 一阶逻辑.md
+@@ -34,7 +34,7 @@
+ 
+ ### 项
+ 
+-Terms（项）就是 Object。严格定义为：
++Terms（项）是表示对象的语法表达式，其值由阐释与变量赋值决定。严格定义为：
+ - Constant symbols 和 Variables 都是 Term。
+ - 若 $f^n$ 是一个 $n$ 元函数且 $t_{1},t_{2},\dots,t_{n}$ 为 Term，则 $f^n(t_{1},t_{2},\dots,t_{n})$ 也是 Term。
+ - 只有上述递归定义的结果才是 Term。
+@@ -69,7 +69,7 @@
+ ### 形式化表达（Formalization）
+ 
+ Every student knows math.
+-$\forall x(S(x)\to K(x,\text{Math})$
++$\forall x(S(x)\to K(x,\text{Math}))$
+ Some student knows math.
+ $\exists x(S(x)\land K(x,\text{Math}))$
+ 
+@@ -86,10 +86,10 @@
+ 
+ 定义 
+ - Free Variables（自由变元）：不在量化变量 $x$ 的 scope 中的 $x$ 就是自由变元。
+-- Bounded Variables（约束变元）：其他情况。
++- Bound Variables（约束变元）：其他情况。
+ 另一种定义方式：解析树中，如果一个叶子节点 $x$ 到根节点的路径中不存在 $\forall x$ 或 $\exists x$，则它是一个自由变元。否则，为约束变元。
+ ![[FOL - 一阶逻辑-1.png|323]]
+-定义：没有自由变量的公式叫做 **Closed Formula / Sentence**（闭公式/句子）。因为没有自由变量才能决定真或假。
++定义：没有自由变量的公式叫做 **Closed Formula / Sentence**（闭公式/句子）。闭公式的真值不依赖于变量赋值；开放公式在给定阐释和变量赋值后也可以决定真或假。
+ 对闭公式赋予意义需要对其中非逻辑符号（常量，谓词和函数）做阐释（Interpretation）（对应到定定义域上）。例如：![[FOL - 一阶逻辑-2.png]]
+ 对变量也赋予一个值，就是环境（Environment）。例如：$E(x)=1$ 就是说在环境 $E$ 中， $x=1$。
+ 定义：在 $\mathcal{I}$ 和 $E$ 中，项 $t$ 的值记为 $t^{(\mathcal{I},E)}$。若它是常量，则为 $c^{\mathcal{I}}$。若它为变量，则为 $x^E$。若为函数，则为迭代的产物。
+@@ -122,7 +122,7 @@
+ \exists x\exists yP(x,y)\equiv \exists y\exists xP(x,y)
+ $$
+ 这里需要是相同种类的量词。
+-可交换性（Distributivity）：
++分配性（Distributivity）：
+ $$
+ \forall x(P(x)\land Q(x))\equiv (\forall xP(x))\land(\forall xQ(x))
+ $$
+--- before/数学/数理逻辑导论/Prerequisite Knowledge - 预备知识.md
++++ after/数学/数理逻辑导论/Prerequisite Knowledge - 预备知识.md
+@@ -105,7 +105,7 @@
+ - 归纳定义（Inductive Definiton）。例如定义 $\mathbb{N}$：$0\in \mathbb{N}$，且 $n \in \mathbb{N}\implies n+1 \in \mathbb{N}$，且只有前两个规则产生的元素才属于 $\mathbb{N}$。
+ - 归纳证明（Proof by Induction）。若要证明 $P(x) \forall x$：
+   - 先证明 $P(n_{0})$ 成立（Base case）。
+-  - 归纳假设：假设 $P(k)$ 对 $k= n_{0}$ 成立。
++  - 归纳假设：对任意 $k\geq n_0$，假设 $P(k)$ 成立。
+   - 归纳：证明 $P(k+1)$ 成立。
+ - 递归定义（Recursive Definition）：
+ $$
+--- before/数学/数理逻辑导论/Propositional Logic - 命题逻辑.md
++++ after/数学/数理逻辑导论/Propositional Logic - 命题逻辑.md
+@@ -65,7 +65,7 @@
+ 为了可读性，有*惯例：*
+ - 将 $F$ 和 $(F)$ 视为相同的公式。
+ - 优先级（Precedence）：从高到低为 $(), \neg,\land,\lor,\to,\leftrightarrow$。
+-- 结合性（Associativity）：$\land, \lor, \leftrightarrow$ 具有结合性。$\to$ 具有右结合性。
++- 结合性（Associativity）：$\land, \lor, \leftrightarrow$ 具有结合性。$\to$ 按右结合约定解析（不满足结合律）。
+ 
+ ### 语义
+ 
+@@ -80,7 +80,7 @@
+ | false | true  | true     |
+ | true  | false | false    |
+ | true  | true  | true     |
+-这里 $P$ 是前件（Antecedent），$Q$ 是后件（Consequence），$P\to Q$ 相当于 $\neg P\lor Q$。
++这里 $P$ 是前件（Antecedent），$Q$ 是后件（Consequent），$P\to Q$ 相当于 $\neg P\lor Q$。
+ 
+ 
+ $\leftrightarrow$ 的真值表：
+@@ -112,7 +112,7 @@
+ ![[Propositional Logic - 命题逻辑-4.png|540]]
+ ![[Propositional Logic - 命题逻辑-5.png|541]]
+ 
+-**代换实例（Substitution Instance）：** 将一个式子里的某些部分替换为其他式子，且保持替换的一致性（相同的部分替换为相同的式子）得到的式子。
++**代换实例（Substitution Instance）：** 将公式中的原子命题统一替换为其他公式，且保持替换的一致性（同一原子命题的所有出现均替换为同一公式）得到的式子。
+ - 一个永真式的代换实例仍然是永真式。
+ **代换定理：** 如果 $A$ 是一个 wff ，它有一个子式 $C$，且 $C \equiv D$，则将 $A$ 中的某些 $C$ 代换成 $D$ 得到的结果 $B$ 有 $A\equiv B$。
+ 
+@@ -185,7 +185,7 @@
+     - 是  $\mathscr{H}$ 中的一个公理，或一个 $\Sigma$ 中的一个公式。
+     - 是 $A_{j}(j<i)$。
+     - 是通过 MP 从 $A_{j}, A_{k}(j, k<i)$ 推导出来的。
+-- 这里我们称 $A_{n}$ 是 $\mathscr{H}$ 中的一个定理（Theorem）。
++- 当 $\Sigma=\varnothing$ 时，称 $A_n$ 是 $\mathscr H$ 中的定理（Theorem）；否则它是由前提 $\Sigma$ 导出的结论。
+ - $A_{n}$ 可被证明记作 $\Sigma\vdash A_{n}$。
+ - 若 $\Sigma=\varnothing$，则简记为 $\vdash A_{n}$。
+ 
+@@ -261,7 +261,7 @@
+ - 公式：与 wff 类似的定义。
+ 
+ 推理规则（Inference Rules）：
+-- 自反（Reflexivity）：$\Sigma \cup {\alpha}\vdash\alpha$ or $\Sigma,\alpha\vdash\alpha$
++- 自反（Reflexivity）：$\Sigma \cup \{\alpha\}\vdash\alpha$ or $\Sigma,\alpha\vdash\alpha$
+ - 每条规则包括 introduction 和 elimination 两部分。
+ - $\land\text{i}$ ：$$
+ \frac{\alpha \,\, \beta}{\alpha \land\beta}
+@@ -368,10 +368,10 @@
+   - 考虑有 Sub-proof 的情况，比如第 $k+1$ 行是一个 $\to\text{i}: \beta\to \gamma$，I.H. 就不能直接用了，因为前 $k$ 行不是完整的证明。但是可以令 $\Sigma'=\Sigma \cup \{ \beta \}$，在新的 $\Sigma'$ 下，前 $k$ 行就变成完整的证明了，由于 I.H. 对任意的 $\Sigma$ 都成立，所以 $\Sigma'\vdash \gamma \implies \Sigma'\vDash\gamma$，也就是 $\Sigma\cup \{ \beta \}\vDash \gamma$。从而可以通过反证法证明 $\Sigma\vDash \beta\to\gamma$。
+ 有了可靠性，证明蕴含就可以用：真值表，定义，反证法，以及 **用 ND 证明**。
+ 
+-要证明 ND 的完备性，设 $\Sigma=\{ a_{0},a_{1},\dots,a_{n} \}$ ，可以分别证明三个引理：
++对有限前提集证明 ND 的完备性，设 $\Sigma=\{ a_{0},a_{1},\dots,a_{n} \}$ ，可以分别证明三个引理：
+ - Lemma 1: 若 $\Sigma\vDash\beta$，则 $\emptyset \vDash(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta))))$。
+ - Lemma 2: 对任意 wff $\gamma$，若 $\emptyset\vDash \gamma$, 则 $\emptyset\vdash_{ND}\gamma$。（永真式可以被证明）
+-- Lemma 3: 若 $\emptyset\vdash_{ND}(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta)\dots))$，则 $\{ a_{0},a_{1},\dots,a_{n} \}\vdash_{ND}\beta$。也就是说 $\Sigma\vdash_{ND}\beta$。
++- Lemma 3: 若 $\emptyset\vdash_{ND}(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta)\dots)))$，则 $\{ a_{0},a_{1},\dots,a_{n} \}\vdash_{ND}\beta$。也就是说 $\Sigma\vdash_{ND}\beta$。
+ Lemma 1 容易用反证法证明。Lemma 3 可以重复用 $\to\text{e}$ 消去最后得到 $\beta$ 证明。
+ Lemma 2：
+ - 例如有两个 Atom $p,q$，就只需要证明 $p,q\vdash\gamma,\ p, \neg q\vdash\gamma,\ \neg p, q \vdash \gamma,\ \neg p, \neg q\vdash \gamma$ 四种情况。因为，我们可以用排中律构造一个这样的证明：![[Propositional Logic - 命题逻辑-10.png|545]]
+@@ -430,7 +430,7 @@
+ 将任意式子转化为 DNF/CNF：
+ ![[Propositional Logic - 命题逻辑-11.png|555]]
+ 
+-定义 $B$ 为 $A$ 的主合取/析取范式（Principle CNF/DNF）：
++定义 $B$ 为 $A$ 的主合取/析取范式（Principal CNF/DNF）：
+ - $B$ 是 $A$ 的 CNF/DNF。
+ - 每个 $B$ 中的子句（clause）都包含 $A$ 中的所有命题变量恰好一次，且没有两个相同的子句。
+ 要写出主 CNF 和主 DNF，可以先写出真值表，DNF 就是所有值为 1 的 row 析取，CNF 就是所有值为 0 的 row 先否定再合取。
+--- before/数学/概率与统计/Probability Basic - 概率基础.md
++++ after/数学/概率与统计/Probability Basic - 概率基础.md
+@@ -18,25 +18,25 @@
+ - 对立/互补（Complement）：$A\cap B=\varnothing \&A\cup B=\Omega$
+ 
+ 且事件之间的运算满足：
+-- 交换律（Communicative Laws）：$A \cap B=B\cap A$
++- 交换律（Commutative Laws）：$A \cap B=B\cap A$
+ - 结合律（Associative laws）：$A\cap (B\cap C)=(A\cap B)\cap C$
+-- 分配率（Distributive Law）：$A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$
++- 分配律（Distributive Law）：$A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$
+ - 德摩根律（De Morgan's Laws）：$\overline{\bigcup_{i=1}^{\infty} A_i} = \bigcap_{i=1}^{\infty} \overline{A_i}, \qquad \overline{\bigcap_{i=1}^{\infty} A_i} = \bigcup_{i=1}^{\infty} \overline{A_i}$
+ 
+ ## 概率
+ 
+-概率测度（Probability Measure），简称概率（Probability），是一个定义在样本空间 $\Omega$ 的子集上的实值函数，满足一下三个公理：
+-- 非负性（Non-negativity）：对任意 $A\subset \Omega$，$P(A)\geq 0$。
+-- 规范型（Normalization）：$P(\Omega)=1$。
++概率测度（Probability Measure），简称概率（Probability），是定义在样本空间 $\Omega$ 的事件集合 $\mathcal F$（一个 $\sigma$-代数）上的实值函数，满足以下三个公理：
++- 非负性（Non-negativity）：对任意 $A\in\mathcal F$，$P(A)\geq 0$。
++- 规范性（Normalization）：$P(\Omega)=1$。
+ - 可加性（Additivity）：对于任何互斥事件 $A_{1},A_{2},\dots$，有
+ $$
+ P\left( \bigcup_{i=1}^\infty A_{i}\right)=\sum_{i=1}^{\infty}P(A_{i})
+ $$
+-概率空间（Probability Space）：$(\Omega, A, P)$
++概率空间（Probability Space）：$(\Omega,\mathcal F,P)$
+ 
+ 由公理可以推出概率的一些性质：
+ - $P(\varnothing)=0$。
+-- 有限可加性（Finite Additivity）：
++- 有限可加性（Finite Additivity）：当 $A_1,\dots,A_n$ 两两互斥时，
+ $$P\left( \bigcup_{i=1}^n A_{i}\right)=\sum_{i=1}^{n}P(A_{i})$$
+ - $P(\overline{A})=1-P(A)$。
+ - $0\leq P(A)\leq 1$
+@@ -58,7 +58,7 @@
+ ### 古典概型 （Classical Model of Probability）
+ 
+ 一个随机试验满足：
+-- 样本空间 $\Omega$ 中只有有限个样本点： $\Omega=\{ w=\omega_{1},\omega_{2},\dots,\omega _{n} \}$。
++- 样本空间 $\Omega$ 中只有有限个样本点： $\Omega=\{\omega_{1},\omega_{2},\dots,\omega_n\}$。
+ - 每个样本点是等可能的：$P(\{ \omega_{1} \})=\dots=P(\{ \omega_{n} \})=\frac{1}{n}$
+ 那么计算概率只需要数样本点：
+ $$
+@@ -91,7 +91,7 @@
+ - 最终可以算出 $P(A)=1-\frac{1}{2!}+\frac{1}{3!}+\dots+(-1)^{n-1} \frac{1}{n!}$。
+ - 当 $n\to \infty$，$P(A)\to 1-\frac{1}{e}$。
+ - 错位排列的概率 $P(\overline{A})\to \frac{1}{e}$。
+-- 错排数 $D_{n}=n!P(A)$。
++- 错排数 $D_{n}=n!P(\overline A)$。
+ ### 几何概型（Geometric Model of Probability）
+ 
+ 几何概型适用于：随机事件可表示成在一个有界区域 $\Omega$ 上投点，每一个点是等可能的。
+@@ -105,29 +105,29 @@
+ 
+ ## 条件概率（Conditional Probability）
+ 
+-在事件 $B$ 发生的情况下，事件 $A$ 的条件概率为：
++在 $P(B)>0$ 且事件 $B$ 发生的情况下，事件 $A$ 的条件概率为：
+ $$
+ P(A|B)= \frac{P(AB)}{P(B)}
+ $$
+ 也就是说，样本空间从 $\Omega$ 变成了 $B$。
+ - 乘法定律：$P(AB)=P(A|B)P(B)$
+-- 全概率公式：$P(A)=P(A \overline{B})+P(AB)=P(A|\overline{B})P(\overline{B})+P(A|B)P(B)$
+-- 链式法则：$P(A_{1}A_{2}\dots A_{n})=P(A_{n}|A_{1}A_{2}\dots A_{n-1})P(A_{n-1}|A_{1}A_{2}\dots A_{n-2})\dots P(A_{2}|A_{1})P(A_{1})$
++- 全概率公式（要求 $0<P(B)<1$）：$P(A)=P(A \overline{B})+P(AB)=P(A|\overline{B})P(\overline{B})+P(A|B)P(B)$
++- 链式法则（要求式中各条件事件的概率大于零）：$P(A_{1}A_{2}\dots A_{n})=P(A_{n}|A_{1}A_{2}\dots A_{n-1})P(A_{n-1}|A_{1}A_{2}\dots A_{n-2})\dots P(A_{2}|A_{1})P(A_{1})$
+ 
+ 贝叶斯定理（Bayes' Theorem）
+ $$
+-P(B_{i}|A)= \frac{P(B_{i})P(A|B_{i})}{\sum P(B_{i})P(A|B_{i})}
++P(B_{i}|A)= \frac{P(B_{i})P(A|B_{i})}{\sum_{j=1}^n P(B_j)P(A|B_j)}
+ $$
+-其中 $B_{1}, \dots, B_{n}$ 是样本空间的一个划分（partition）。
++其中 $B_{1}, \dots, B_{n}$ 是样本空间的一个划分（partition），且 $P(A)>0$、各 $P(B_j)>0$。
+ 这里 $P(B_{i}|A)$ 称为 $B_{i}$ 的后验概率（Posterior probability）； $P(B_{i})$ 叫做 $B_{i}$ 的先验概率（Prior probability）。
+ 
+ 独立性（Independence）：
+ - 从条件概率来看，就是事件 $A$ 的发生不影响 $B$ 的概率，反之亦然。
+ - 两个事件相互独立就是 $P(AB)=P(A)P(B)$。
+ - 三个事件相互独立就是 $P(AB)=P(A)P(B), P(AC)=P(A)P(C), P(BC)=P(B)P(C), P(ABC)=P(A)P(B)P(C)$。
+-- $n$ 个事件 $A_{1}\dots A_{n}$ 相互独立：对任意这些事件的子集 $A_{i_{1}}, A_{i_{2}}\dots A_{i_{}k}$，都有 $P(A_{i_{1}}\dots A_{i_{k}})=P(A_{i_{1}})\dots P(A_{i_{k}})$。
++- $n$ 个事件 $A_{1}\dots A_{n}$ 相互独立：对任意这些事件的子集 $A_{i_{1}}, A_{i_{2}}\dots A_{i_k}$，都有 $P(A_{i_{1}}\dots A_{i_{k}})=P(A_{i_{1}})\dots P(A_{i_{k}})$。
+  
+ 条件独立性（Conditional Independence）
+-- 把上面的条件概率的定义改成 $P(A_{i_{1}}\dots A_{i_{k}}|B)=P(A_{i_{1}}|B)\dots P(A_{i_{k}}|B)$。
++- 在 $P(B)>0$ 时，把上面的相互独立定义改成 $P(A_{i_{1}}\dots A_{i_{k}}|B)=P(A_{i_{1}}|B)\dots P(A_{i_{k}}|B)$。
+ 
+ 条件独立性和独立性是互相不能推出的。--- before/数学/概率与统计/Probability Distributions - 概率分布.md
++++ after/数学/概率与统计/Probability Distributions - 概率分布.md
+@@ -9,7 +9,7 @@
+ 
+ ### 二项分布（Binomial Distribution）
+ 
+-重复 $n$ 次相互独立的伯努利试验（n-fold bernoulli trial），每次成功概率为 $p$，则成功的次数服从二项分布，记作 $X\sim B(n,p)$（或 $X\sim\text{Binomial}(n,p)$），其概率密度函数为：
++重复 $n$ 次相互独立的伯努利试验（n-fold bernoulli trial），每次成功概率为 $p$，则成功的次数服从二项分布，记作 $X\sim B(n,p)$（或 $X\sim\text{Binomial}(n,p)$），其概率质量函数（PMF）为：
+ $$
+ P(X=x)=\binom{n}{x}p^x(1-p)^{n-x}
+ $$
+@@ -19,7 +19,7 @@
+ - $\mathrm{SD}(X)=\sqrt{ np(1-p) }$
+ ### 几何分布（Geometric Distribution）
+ 
+-重复相互独立的伯努利试验（概率为 $p$），直到成功，把试验的次数记为随机变量 $X$，那么我们说 $X$ 服从几何分布，记作 $X\sim\text{Geometric}(p)$，其概率密度函数为：
++重复相互独立的伯努利试验（概率为 $p$），直到成功，把试验的次数记为随机变量 $X$，那么我们说 $X$ 服从几何分布，记作 $X\sim\text{Geometric}(p)$，其概率质量函数（PMF）为：
+ $$
+ P(X=x)=p(1-p)^{x-1}, x=1,2,\dots
+ $$
+@@ -75,7 +75,7 @@
+ F(x)=\begin{cases}
+ 0, & x\leq a, \\
+ \frac{x-a}{b-a}, & a< x< b, \\
+-1, & x>b,
++1, & x\geq b,
+ \end{cases}
+ $$
+ 期望与方差：
+@@ -146,7 +146,7 @@
+ $$
+ 其 PDF 是一个钟形曲线：
+ ![[Probability Distributions - 概率分布-2.png|381]]
+-对 $X\sim N(\mu,\sigma)$，可以做标准化：令 $Z= \frac{X-\mu}{\sigma}$，则 $Z\sim N(0,1)$。
++对 $X\sim N(\mu,\sigma^2)$，可以做标准化：令 $Z= \frac{X-\mu}{\sigma}$，则 $Z\sim N(0,1)$。
+ 期望与方差：
+ $$
+ \mathrm{E}(X)=\mu
+--- before/数学/概率与统计/Random Variables - 随机变量.md
++++ after/数学/概率与统计/Random Variables - 随机变量.md
+@@ -1,6 +1,6 @@
+-随机变量的定义：定义在样本空间上的一个实值函数。$X:\Omega\to \mathbb{R}$。
++随机变量的定义：定义在样本空间上的一个可测实值函数。$X:\Omega\to \mathbb{R}$。
+ 
+-随机变量分为离散的（Discrete）和连续的（Continuous）。
++常见的随机变量类型有离散的（Discrete）和连续的（Continuous），也存在混合型等其他类型。
+ 
+ 概率质量函数（Probability Mass Function, pmf）：对在集合 $S$ （称为支撑集 Support）上离散随机变量 $X$，定义它的概率质量函数：
+ $$
+@@ -10,10 +10,10 @@
+ 
+ 概率密度函数（Probability Density Function, pdf）：对在集合 $S$ 上连续随机变量 $X$，它落在区间 $\left[ a,b \right]$ 中的概率由概率密度函数 $f(x)$ 在 $\left[ a,b \right]$ 上对 $x$ 积分给出：
+ $$
+-P(a\leq x\leq b)=\int_{a}^b f(x)dx
++P(a\leq X\leq b)=\int_{a}^b f(x)dx
+ $$（这也是连续随机变量的定义）
+ 这里，$f(x)$ 需要满足 $\forall x \in S, f(x)\geq 0$ 且 $\int_{S}f(x)dx=1$。
+-注意，对连续随机变量，$P(x=a)=P(a\leq x\leq a)=\int_{a}^af(x)dx=0$。另外，不同于 pmf， pdf 的值可以大于 $1$。
++注意，对连续随机变量，$P(X=a)=P(a\leq X\leq a)=\int_{a}^af(x)dx=0$。另外，不同于 pmf， pdf 的值可以大于 $1$。
+ 
+ 
+ 随机变量 $X$ 的累计分布函数（Cumulative distribution function, cdf)：
+@@ -43,9 +43,9 @@
+ $$
+ ## 期望（Expectation）
+ 
+-集合 $S$ 上，概率密度函数为 $f(x)$ 的离散随机变量 $X$ 的期望（Expectation/Expected Value/Mean）定义为
++集合 $S$ 上，概率质量函数为 $p(x)$ 的离散随机变量 $X$ 的期望（Expectation/Expected Value/Mean）定义为
+ $$
+-\mathrm{E}(X)=\sum_{x\in{S}} xf(x)
++\mathrm{E}(X)=\sum_{x\in S}xp(x)
+ $$
+ 性质：
+ - 常量的期望就是它本身： $\mathrm{E}(a)=a$
+@@ -56,14 +56,14 @@
+ 随机变量的 $k$ 阶原点矩（$k$ -th Raw Moment）：$\mathrm{E}(X^k)$
+ 如果是连续随机变量，就定义为积分：
+ $$
+-\mathrm{E}(X)=\int_{-\infty}^{\infty}xf(x)
++\mathrm{E}(X)=\int_{-\infty}^{\infty}xf(x)\,dx
+ $$
+ 
+ ## 方差（Variance）
+ 
+ 随机变量 $X$ 方差定义为
+ $$
+-\mathrm{Var}(X)=\mathrm{E}(X-\mathrm{E}(X))^{2}
++\mathrm{Var}(X)=\mathrm{E}\left[(X-\mathrm{E}(X))^2\right]
+ $$
+ 可以推导出计算公式：
+ $$
+@@ -76,7 +76,7 @@
+ $$
+ 性质：
+ $$
+-\mathrm{Var}(aX+b)=a^{2}\mathrm{Var}(X), \mathrm{SD}(aX+b)=a\mathrm{SD}(X)
++\mathrm{Var}(aX+b)=a^{2}\mathrm{Var}(X), \mathrm{SD}(aX+b)=|a|\mathrm{SD}(X)
+ $$
+ 
+ 
+--- before/数学/离散数学/Algorithm - 算法.md
++++ after/数学/离散数学/Algorithm - 算法.md
+@@ -5,7 +5,7 @@
+ 
+ 我们关心随着 input size（记作 $n$）变大，运行时间的渐进表现（Asymptotic behavior）。使用大 $O$ 记号表示上界：$f(n)=O(g(n))$ 若
+ $$
+-\exists c,n_{0}, \forall n>n_{0} , \lvert f(n) \rvert\leq c \lvert g(n) \rvert  
++\exists c>0,n_0,\ \forall n>n_0 , \lvert f(n) \rvert\leq c \lvert g(n) \rvert  
+ $$
+ 结论：$f(x)=\sum_{i=0}^{n} a_{i}x^{i}=O(x^{n})$。（多项式的主项决定增长速度）
+ ![[Algorithm - 算法.png|332]]
+--- before/数学/离散数学/Logic and Proofs - 逻辑与证明.md
++++ after/数学/离散数学/Logic and Proofs - 逻辑与证明.md
+@@ -97,7 +97,7 @@
+ - Variable
+ - Predicate：$P(x)$ 给每个 $x$ 赋一个 T / F 值。
+ 
+-Predicate $P(x_{1},\dots,x_{n})$ 只能称为**Statement**；只有当每个 $x_{i}$ 换成具体的值，或在它的前面加上一个 Quantifier，它才成为一个 **proposition**（具有真值）。
++Predicate $P(x_{1},\dots,x_{n})$ 只能称为**Statement**；只有当每个 $x_{i}$ 换成具体的值，或用量词约束全部自由变量，它才成为一个 **proposition**（具有真值）。
+ - Universe/Domain：所有可能取值 $(x_{1},x_{2}\dots x_{n})$ 的集合。
+ - Truth set：让 $P(x_{1},\dots ,x_{n})$ 成立的取值 $(x_{1},x_{2}\dots x_{n})$ 的集合。
+ 
+@@ -127,7 +127,7 @@
+ ![[Logic - 逻辑-5.png|437]]
+ 
+ ## 数学证明（Mathematical Proof）
+-**Axiom（公理）：** 不证自明的命题。
++**Axiom（公理）：** 在一个理论中选定、不经证明而作为推理起点的命题。
+ **Theorem（定理）：** 可以证明的命题。
+ **Lemma（引理）：** 可以证明的命题，用于证明其他命题。
+ **Corollary（推论）：** 从定理可以推出来的结论。
+--- before/数学/离散数学/Set and Function - 集合与函数.md
++++ after/数学/离散数学/Set and Function - 集合与函数.md
+@@ -13,7 +13,7 @@
+ 
+ 定义集合的势（Cardinality）$|S|$：
+ - 对于有限集，就是元素的个数。
+-- 对于任意集合：我们说 $A$ 和 $B$ 等势（have the same cardinality），若 $A$ 和 $B$ 之间存在满射（one-to-one correspondence）。
++- 对于任意集合：我们说 $A$ 和 $B$ 等势（have the same cardinality），若 $A$ 和 $B$ 之间存在双射（one-to-one correspondence）。
+ - 我们说 $A$ 的势小于 $B$ 的势或与 $B$ 的势相同，若 $A$ 到 $B$ 存在一个单射（one-to-one function），记作 $\lvert A \rvert\leq \lvert B \rvert$（注意，这里并不是说数值上的小于或等于）。
+ - 若 $\lvert A \rvert\leq \lvert B \rvert$ 且 $A,B$ 不等势，那么记 $\lvert A \rvert<\lvert B \rvert$。
+ 
+@@ -24,7 +24,7 @@
+ - $\mathbb{Q}^{+}$ 可数。可以按这个来列举（依次去列 $p+q=2$ ，$p+q=3$ ... 的 $p / q$，再加一个 filter 要求 $p,q$ 不可约）：
+ ![[Set and Function - 集合与函数.png|190]]
+ - 若 $S$ 可数，则 $S$ 的任意子集都可数。（加一个 filter 去掉不在子集里的，形成新的序列）
+-- 有限字母表 $A$ 上的有限字符串集 $S$ 是可数无穷的。用字典序去形成序列即可。
++- 非空有限字母表 $A$ 上的有限字符串集 $S$ 是可数无穷的。先按长度、再在同一长度内按字典序枚举即可。
+ - 从上面这条，可以推出，所有 Java 程序组成的集合是可数的。（加一个 filter: Java Compiler）。
+ 
+ 不可数集
+@@ -101,7 +101,7 @@
+ 对 $f:A\to B$ 分类：
+ - 单射（Injective / one-to-one）：$f(x)=f(y)\to x=y$（等价地，$x\neq y\to f(x)\neq f(y)$）。
+ - 满射 （Surjective / onto）：$f(A)=B$ （值域就是陪域）。
+-- 双射（Bijective / one-to-one correspondence）：如果既是满射又是双射。
++- 双射（Bijective / one-to-one correspondence）：如果既是满射又是单射。
+ 
+ 可以证明，对于**等势**的两个**有限**集合，单射和满射是等价的。（然而对于无限集合这是不对的）
+ 
+@@ -123,8 +123,8 @@
+ 
+ 序列（Sequence）的定义：一个函数，把整数的子集（通常是  $\{ 0,1,2,\dots \}$ 或 $\{ 1,2,3,\dots \}$）映射到集合 $S$。用 $a_{n}$ 来表示整数 $n$ 的像。用 $\{ a_{n} \}$  表示有序列表 $a_{1},a_{2},\dots$。
+ 
+-算术级数（Arithmetic Progression）：形为 $a,a+d,a+2d, \dots,a+nd$ 的序列。首项为 $a$，公差（Common Difference）为 $d$。
+-几何级数（Geometric Progression）：形为 $a,ar,a r^{2}, \dots, ar^{n}$ 的序列。首项为 $a$，公比（Common Ratio）为 $r$。
++等差数列（Arithmetic Progression）：形为 $a,a+d,a+2d, \dots,a+nd$ 的序列。首项为 $a$，公差（Common Difference）为 $d$。
++等比数列（Geometric Progression）：形为 $a,ar,a r^{2}, \dots, ar^{n}$ 的序列。首项为 $a$，公比（Common Ratio）为 $r$。
+ 
+ 序列也可以用递归（Recursion）定义，例如 $f_{n}=f_{n-1}+f_{n-2}$ (Fibonacci Sequence)。
+ 
+@@ -153,7 +153,7 @@
+ $$
+ \sum_{k=1}^{n} k^{3}= \frac{n^{2}(n+1)^{2}}{4}
+ $$
+-（推导，以 $\sum k^{3}$ 为例，使用 Telescoping 方法/“邻差法”：考察这个式子
++（推导，以 $\sum k^{2}$ 为例，使用 Telescoping 方法/“邻差法”：考察这个式子
+ $$
+ \sum(k^{3}-(k-1)^{3})
+ $$
+@@ -161,7 +161,7 @@
+ （另外我们发现 $\sum k^{3}=\left( \sum k \right)^{2}$。它的证明：
+ $$
+ \begin{align}
+-\left( \sum_{i=1}^n k\right)^{2}&=\sum_{i=1}^{n}i\sum_{j=1}^{n}j \\
++\left(\sum_{i=1}^n i\right)^2&=\sum_{i=1}^{n}i\sum_{j=1}^{n}j \\
+ &= \sum_{i=1}^{n}i \left( \sum_{j=1}^{i}j+\sum_{j=i}^{n}j-i \right) \\
+ &=\sum_{1\leq j\leq i\leq n}ij+\sum_{1\leq i\leq j\leq n}ij-\sum_{i=1}^{n}i^{2} \\
+ &=2 \sum_{1\leq j\leq i\leq n}ij-\sum_{i=1}^{n}i^{2} \\
+--- before/数学/线性代数/Complex Matrices - 复矩阵.md
++++ after/数学/线性代数/Complex Matrices - 复矩阵.md
+@@ -106,7 +106,7 @@
+ **定理：$(Ux)^H(Uy)=x^Hy$（保内积）。**
+ 
+ **定理：每个 $U$ 的特征值都有 $|\lambda|=1$。**
+-- $(Ux)^H(Ux)=x^Hx=(\lambda x^H)(\lambda x)=\lambda^{2}x^Hx\implies \lvert \lambda \rvert=1$
++- $(Ux)^H(Ux)=x^Hx=(\bar\lambda x^H)(\lambda x)=|\lambda|^{2}x^Hx\implies \lvert \lambda \rvert=1$
+ 例如：
+ $$
+ U=\begin{bmatrix}
+@@ -119,7 +119,7 @@
+ \lvert U-\lambda I \rvert =\lambda^{2}-2\cos\theta\lambda+1
+ $$
+ $$
+-\implies\lambda=\cos\pm i\sin\theta=e^{\pm i\theta}\implies \lvert \lambda \rvert =1
++\implies\lambda=\cos\theta\pm i\sin\theta=e^{\pm i\theta}\implies \lvert \lambda \rvert =1
+ $$
+ **定理：若 $x,y$ 是酉矩阵的两特征向量，对应不同的特征值 $\lambda,\mu$，则 $x\perp y$。****
+ - $x^Hy=(Ux)^H(Uy)=(\lambda x)^H(\mu y)=\mu\bar{\lambda}(x^Hy)$。
+@@ -132,9 +132,9 @@
+ K^H=-K
+ $$
+ 对角元素满足 $a-bi=-(a+bi)\implies a=0$，所以为纯虚数。
+-若 $K$ 是实矩阵，则称 $K$ 是斜对称/反对称（Skew-Symmetric）的（$K^T=K$），对角元为 $0$。
++若 $K$ 是实矩阵，则称 $K$ 是斜对称/反对称（Skew-Symmetric）的（$K^T=-K$），对角元为 $0$。
+ **若 $K$ 为 skew-Hermitian 矩阵，则 $iK$ 为 Hermitian 矩阵。**
+-- $K^H=-K\implies(iK)^H=(\bar{i} \bar{K})^T=K^T(-i)^T=-iK^H=iK$。
++- $K^H=-K\implies(iK)^H=\bar i K^H=-i(-K)=iK$。
+ 
+ **skew-Hermitian 矩阵的特征值为纯虚数。**
+ - $iK$ 是 Hermitian 矩阵。因此，$(iK)x=\lambda x,\lambda\in \mathbb{R}$。
+@@ -147,9 +147,9 @@
+ 
+ | Real                                | Cpx                                                |
+ | ----------------------------------- | -------------------------------------------------- |
+-| $\lVert x \rVert=\sum x_{i}^{2}$    | $\lVert x \rVert^{2}=\sum \lvert x_{i} \rvert^{2}$ |
++| $\lVert x \rVert^{2}=\sum x_{i}^{2}$    | $\lVert x \rVert^{2}=\sum \lvert x_{i} \rvert^{2}$ |
+ | $\left< x,y \right> =x^Ty$          | $\left< x,y \right> =x^Hy$                         |
+-| Orthogonal：$x^Ty=0$                 | Orthogonal：$x^Ty=0$                                |
++| Orthogonal：$x^Ty=0$                 | Orthogonal：$x^Hy=0$                                |
+ | $A^T$                               | $A^H$                                              |
+ | $(AB)^T=B^TA^T$                     | $(AB)^H=B^HA^H$                                    |
+ | Symmetric Matrices $A=A^T$          | Hermitian Matrices $A=A^H$                         |
+@@ -175,14 +175,14 @@
+ B=M^{-1}AM
+ $$
+ 
+-Schor Lemma：对任意复矩阵 $A$，存在一个酉矩阵 $U$，使得 $T=U^{-1}AU$ 为一个上三角矩阵。
++Schur Lemma：对任意复矩阵 $A$，存在一个酉矩阵 $U$，使得 $T=U^{-1}AU$ 为一个上三角矩阵。
+ 证明：
+ - 假设存在 $T=U^{-1}AU$ 是一个上三角矩阵，则 $AU=UT$，设 $U=\begin{bmatrix}x_{1} & \dots & x_{n}\end{bmatrix}$ 对照一下得到 $Ax_{1}=t_{11}x_{1}$。那么 $\lVert x_{1} \rVert=1$ 且 $x_{1}$ 是 $A$ 的一个特征向量，特征值为 $t_{11}$。
+ - $n=2$ 的情况：$$\begin{align}
+ Ax_{1}=t_{11}x_{1} & & (1) \\
+-Ax_{2}=t_{12}x_{1}+t_{22}u_{2} &  & (2)
++Ax_{2}=t_{12}x_{1}+t_{22}x_{2} &  & (2)
+ \end{align} $$
+-- 由于 $\det (A-\lambda I)=0$ 有至少一个解 $\lambda_{1}\in \mathbb{C}$，则可以找到 $v_{1}\in \mathbb{C}$，使得 $Av_{1}=\lambda_{1}v_{1}$。
++- 由于 $\det (A-\lambda I)=0$ 有至少一个解 $\lambda_{1}\in \mathbb{C}$，则可以找到 $v_{1}\in \mathbb{C}^{2}\setminus\{0\}$，使得 $Av_{1}=\lambda_{1}v_{1}$。
+ - 我们令 $x_{1}=\frac{v_{1}}{\lVert v_{1} \rVert},t_{11}=\lambda_{1}$，则 $(1)$ 成立。
+ - 存在 $x_{2}\in \mathbb{C}^{2}$，使得 $x_{1}\perp x_{2}$，$\lVert x_{2} \rVert=1$，这里 $x_{1},x_{2}$ 就是 $\mathbb{C}^{2}$ 的一组基（用 Gram-Schmidt 正交化可以找到）, 那么存在 $t_{12},t_{22}\in \mathbb{C}$，使得 $Ax_{2}=t_{12}x_{1}+t_{22}x_{2}$。这就得到了一个上三角矩阵 $T$。
+ - $n=3$ 的情况：同样有一个 $Ax_{1}=\lambda_{1}x_{1}$，用 Gram-Schmidt 正交化方法，可以找到一组标准正交基 $x_{1},x_{2},x_{3}\in \mathbb{C}^3$，那么有：
+@@ -194,15 +194,15 @@
+ - 这里令 $U'=\begin{bmatrix}x_{1} & x_{2} & x_{3}\end{bmatrix}$ ，$T'=\begin{bmatrix}\lambda_{1} & a_{12} & a_{13} \\ 0 & a_{22} & a_{23} \\ 0 & a_{32} & a_{33}\end{bmatrix}$。
+ - 那么就有 $AU'=U'T'$。把 $T'$ 写成 $\begin{bmatrix}\lambda_{1} & a \\ 0 & A_{1}\end{bmatrix}$。要把 $A_{1}$ 变成上三角矩阵，这个就是 $n=2$ 的情况，于是存在 $U_{1}$ 使得 $U_{1}^{-1}A_{1}U_{1}$ 是上三角矩阵。
+ - 那么存在 $U_{2}=\begin{bmatrix}1 & 0 \\ 0 & U_{1}\end{bmatrix},U_{2}^{-1}=\begin{bmatrix}1 & 0 \\ 0 & U_{1}^{-1}\end{bmatrix}$ 是一个酉矩阵，使得 $T=U_{2}^{-1}T'U_{2}=\begin{bmatrix}\lambda_{1} & aU_{1} \\ 0 & U_{1}^{-1}A_{1}U_{1}\end{bmatrix}$ 是一个上三角矩阵。
+-- 于是有 $T=U_{1}^{-1}U'^{-1}T'U'U_{1}$，也就是存在 $U=U'U_{1}$ 使得 $T=U^{-1}AU$ 为上三角矩阵。
++- 于是有 $T=U_{2}^{-1}U'^{-1}AU'U_{2}$，也就是存在 $U=U'U_{2}$ 使得 $T=U^{-1}AU$ 为上三角矩阵。
+ - 递归可证明原定理。
+ 
+ 
+ 谱定理（Spectral Theorem）：若 $A$ 是埃尔米特矩阵，则存在酉矩阵 $U$ 使得 $U^{-1}AU=\Lambda$（实对称矩阵）。
+-- Schor Lemma 给出存在酉矩阵 $U$ 使得 $U^{-1}AU$  是上三角矩阵。
++- Schur Lemma 给出存在酉矩阵 $U$ 使得 $U^{-1}AU$  是上三角矩阵。
+ - 又因为 $(U^{-1}AU)^H=(U^HAU)^H=U^HA^HU=U^HAU=U^{-1}AU$，它是一个对角矩阵。
+ 
+-Remark：若 $A$ 是一个实对称矩阵，Schor Lemma 中的 $U$ 可以选成 $Q$，进一步得出 $Q^{-1}AQ$ 是对角矩阵。（正交对角化）
++Remark：若 $A$ 是一个实对称矩阵，Schur Lemma 中的 $U$ 可以选成 $Q$，进一步得出 $Q^{-1}AQ$ 是对角矩阵。（正交对角化）
+ 
+ 将对称矩阵 $A$ 写成 $Q\Lambda Q^T$，叫做 $A$ 的 **谱分解**：
+ $$
+@@ -227,7 +227,7 @@
+ 
+ 正规矩阵的谱定理（Spectral Theorem for Normal Matrices）：一个复矩阵 $A$ 可以被酉矩阵 $U$ 对角化，当且仅当 $A$ 是正规矩阵。
+ - 证明：$\implies$：$A=U\Lambda U^H$，那么 $AA^H=U(\Lambda\Lambda^H)U^H=U(\Lambda^H\Lambda)U^H=A^HA$。 
+-- 右推左：Schor Lemma 给出存在酉矩阵 $U$ 使得 $T=U^HAU$ 是一个上三角矩阵。这里 $TT^H=(U^HAU)(U^HA^HU)=U^HAA^HU=U^HA^HAU=T^HT$。那么 $T$ 也是一个正当矩阵。可以证明，上三角的正规矩阵必然是对角矩阵，于是就完成了证明。
++- 右推左：Schur Lemma 给出存在酉矩阵 $U$ 使得 $T=U^HAU$ 是一个上三角矩阵。这里 $TT^H=(U^HAU)(U^HA^HU)=U^HAA^HU=U^HA^HAU=T^HT$。那么 $T$ 也是一个正规矩阵。可以证明，上三角的正规矩阵必然是对角矩阵，于是就完成了证明。
+ 
+ （期末不考）
+ 定义约当块（Jordan Block）：
+@@ -253,6 +253,6 @@
+ 
+ 那么：
+ - $\det(J_{i}-\lambda I)=(\lambda_{i}-\lambda)^n=0\implies\lambda=\lambda_{i}$。
+-- $(J_{i}-\lambda_{i}I)x=0\implies x=\begin{bmatrix}1 \\ 0 \\ \vdots \\ 0\end{bmatrix}$。
+-约当形的矩阵是最不可对角化的形式。
++- $(J_{i}-\lambda_{i}I)x=0\implies x=c\begin{bmatrix}1 \\ 0 \\ \vdots \\ 0\end{bmatrix},\quad c\in\mathbb C$。
++约当形可对角化当且仅当所有约当块的大小均为 $1$。
+ 有相同的 Jordan Form 等价于相似。--- before/数学/线性代数/Determinant - 行列式.md
++++ after/数学/线性代数/Determinant - 行列式.md
+@@ -89,7 +89,7 @@
+ > 	 另外，由于 $P^TP=I$，有 $\det(P)\det(P^T)=1$。另外，由于交换两行给行列式添符号，有 $\det(P)=\pm\det(I)=\pm 1$。结合两者得到 $\det(P)=\det(P^T)$。
+ > 	 所以 $\det(A)=\det(A^T)$。
+  
+-- $\det(A)=\pm(\text{product of pivots})$。（用 $LU$ 分解证明）
++- 满秩时 $\det(A)=\pm(\text{product of all }n\text{ pivots})$；秩不足时 $\det(A)=0$。（用 $LU$ 分解证明）
+ 
+ 行列式的几何意义：假设 $A$ 分解为 $A=QR$。
+ 那么 $\det(A)=\det(Q)\det(R)$。这里 $Q$ 是一个正交矩阵，故 $\det(Q^TQ)=1$，则 $\det(Q)=\pm 1$。
+@@ -140,7 +140,7 @@
+ $$
+ \det(A)=\sum_{(\alpha_{1},\alpha_{2},\dots,\alpha_{n})} a_{1\alpha_{1}}a_{2\alpha_{2}}\dots a_{n\alpha _{n}}\det(P)
+ $$
+-这里 $\det(P)=\pm 1$ 是该排列对应的置换矩阵的行列式，也是该排列 $p$ 的 **逆序数（Inversion Number）**，即集合 $\{ (i,j)|i<j,\alpha_{i}>\alpha_{j} \}$ 的基数，记作 $\text{inv}(p)$，则有
++这里 $\det(P)=\pm 1$ 是该排列对应的置换矩阵的行列式，也是该排列的符号。该排列 $p$ 的 **逆序数（Inversion Number）** 是集合 $\{ (i,j)|i<j,\alpha_{i}>\alpha_{j} \}$ 的基数，记作 $\text{inv}(p)$，则有
+ $$
+ \det(P)=(-1)^{\text{inv}(p)}
+ $$
+@@ -149,7 +149,7 @@
+ 
+ 另外，如果我们固定 $\alpha_{1}=1$，得到大公式的一部分 $a_{11} \sum_{(\alpha_{2},\alpha_{3},\dots,\alpha_{n})}a_{2\alpha_{2}}\dots a_{n\alpha _{n}}\det(P)=a_{11}M_{11}$，这里 $M_{ij}$ 表示余子式（Minor），再定义 $C_{ij}=(-1)^{i+j}M_{ij}$ 为代数余子式（Cofactor）。继续固定 $\alpha_{1}=2,3,\dots$，可得到：
+ $$
+-\det(A)=\sum(-1)^{k-1} M_{1k}= \sum_{i=1}^n a_{1i}C_{1i}
++\det(A)=\sum_{k=1}^n(-1)^{k-1}a_{1k}M_{1k}= \sum_{i=1}^n a_{1i}C_{1i}
+ $$
+ 定义行列式对第 $i$ 行的拉普拉斯展开（Laplace Expansion）：
+ $$
+@@ -162,12 +162,12 @@
+ 
+ #### 用行列式求矩阵的逆
+ 
+-构建代数余子式构成的矩阵 $C$，其中 $C_{ij}=(-1)^{i+j}\det(M_{ij})$。
++构建代数余子式构成的矩阵 $C$，其中 $C_{ij}=(-1)^{i+j}M_{ij}$。
+ $$
+ A^{-1}= \frac{C^T}{\det(A)}
+ $$
+ **证明：**
+-要证明
++要证明
+ $$
+ A \frac{C^T}{\det(A)}=I
+ $$
+@@ -193,7 +193,7 @@
+ $$
+ C_{1i}b_{1}+C_{2i}b_{2}+\dots+C_{ni}b_{n}
+ $$
+-这可以看成把 $A$ 的第 $i$ 列替换成 $b$ （设为 $B_{i}$）然后将行列式按第 $i$ 行展开。
++这可以看成把 $A$ 的第 $i$ 列替换成 $b$ （设为 $B_{i}$）然后将行列式按第 $i$ 列展开。
+ 这就是 **克莱姆法则（Cramer's Rule）：**
+ $$
+ x_{j}= \frac{\det(B_{j})}{\det(A)}
+@@ -204,7 +204,7 @@
+ $$
+ d_{k}= \frac{\det(A_{k})}{\det(A_{k-1})}
+ $$
+-其中 $A_{k}$ 为 $A$ 左上角的 $k\times k$ 子矩阵，假设 $\det(A)\neq 0$。
++其中 $A_{k}$ 为 $A$ 左上角的 $k\times k$ 子矩阵，假设无需换行即可消元，且所有顺序主子式 $\det(A_k)\neq 0$，约定 $\det(A_0)=1$。
+ **证明：** 假设 $A=LDU$，主元就是 $D$ 中的对角线元素。那么用分块矩阵的思想有
+ $$
+ \begin{align}
+--- before/数学/线性代数/Eigenvalues and Eigenvectors - 特征值和特征向量.md
++++ after/数学/线性代数/Eigenvalues and Eigenvectors - 特征值和特征向量.md
+@@ -40,7 +40,7 @@
+ - 几何意义：$S$ 相当于一个基变换矩阵：$\begin{bmatrix}v_{1} & v_{2} & \dots & v_{n}\end{bmatrix}=\begin{bmatrix}e_{1} & e_{2} & \dots & e_{n}\end{bmatrix}S$，以特征向量为基进行线性变换，只是相当于把它们按照相应的特征值进行伸缩。
+ - 代数视角也容易验证。
+ - 称 $S$ 为特征向量矩阵（Eigenvector Matrix），称 $\Lambda$ 为特征值矩阵（Eigenvalue matrix）。这里 $S$ 不是唯一的，因为特征向量不唯一。
+-- **可对角化的充要条件是特征向量相互独立。**
++- **$n$ 阶矩阵可对角化的充要条件是存在 $n$ 个线性无关的特征向量。**
+ - 对角化可以便于算 $A^n$，因为 $A^n=S\Lambda^{n}S^{-1}$。
+ 
+ **定理：若特征向量 $x_{1},x_{2},\dots,x_{n}$ 有着各异的特征值，则这些特征向量相互独立。**
+@@ -56,30 +56,30 @@
+ - 证明： $A^kx=A^{k-1}Ax=A^{k-1}\lambda x=\lambda A^{k-1}x=\dots=\lambda^kx$。
+ 进一步，令  $f(x)=a_{n}x^n+a_{n-1}x^{n-1}+\dots+a_{0}$，且 $v$ 为 $A$ 的一个特征向量，对应特征值 $\lambda$，那么有
+ $$
+-f(A)v=\sum a_{i}A^nv=\sum a_{i}\lambda^{n}v=f(\lambda)v
++f(A)v=\sum_{i=0}^n a_{i}A^iv=\sum_{i=0}^n a_{i}\lambda^{i}v=f(\lambda)v
+ $$
+ 也就是说， $v$ 仍然是 $f(A)$ 的特征向量，对应特征值 $f(\lambda)$。
+ 
+ **定理：若 $A,B$ 为可对角化的矩阵，则** 
+ $$
+-AB=BA \iff A,B\text{ share the same eigenvector } S
++AB=BA \iff A,B\text{ share a common eigenvector basis } S
+ $$
+ 从而 $AB$ 也与 $A,B$ 有相同的特征向量，且该特征向量对应的特征值为 $A,B$ 对应特征值相乘。
+ 证明：
+ - 右推左比较简单，因为若 $A=S\Lambda_{1}S^{-1},B=S\Lambda_{2}S^{-1}$，则 $AB=S\Lambda_{1}\Lambda_{2}S^{-1},BA=S\Lambda_{2}\Lambda_{1}S^{-1}$。由于 $\Lambda_{1},\Lambda_{2}$ 是对角矩阵，$\Lambda_{1}\Lambda_{2}=\Lambda_{2}\Lambda_{1}$。因此 $AB=BA$。
+ - 左推右比较困难。一个弱的情况是，$B$ 的特征值各异，设为 $\mu_{1},\mu_{2},\dots,\mu_{n}$，且有 $Bv_{i}=\mu_{i}v_{i}$，那么可推 $v_{1},v_{2},\dots,v_{n}$ 相互独立。只需证明， $v_{i}$ 也是 $A$ 的特征向量。
+-- 这里条件是 $ABv_{i}=BAv_{i}=\mu_{i}Av_{i}$，也就是说，$Av_{i}$ 是 $B$ 的特征向量，且这里 $Av_{i}$ 和 $v_{i}$ 具有相同的特征值 $\mu_{i}$。
++- 这里条件是 $ABv_{i}=BAv_{i}=\mu_{i}Av_{i}$，若 $Av_i=0$，则 $v_i$ 已是 $A$ 的零特征值特征向量；否则 $Av_{i}$ 是 $B$ 的特征向量，且这里 $Av_{i}$ 和 $v_{i}$ 具有相同的特征值 $\mu_{i}$。
+ - 假设 $Av_{i}$ 和 $v_{i}$ 线性无关。我们考察 $n+1$ 个向量 $v_{1},v_{2},\dots,v_{n},Av_{i}$，对于方程 $(\sum c_{i}v_{i})+c_{n+1}Av_{i}=0$ 我们构造 $v_{i}'=c_{n+1}Av_{i}+c_{i}v_{i}$ 也是一个特征值为 $\mu_{i}$ 的特征向量，则方程等价于 $c_{1}v_{1}+\dots+1\cdot v_{i}'+\dots+c_{n}v_{n}=0$。这里，如果 $v_{i}'\neq 0$，那么 $v_{1},\dots,v_{i}',\dots,v_{n}$ 是特征值互异的特征向量，所以它们相互独立，这个方程就不可能成立了（出现了非零解）。
+ - 所以唯一的可能性就是 $v_{i}'=0$。然而这样的话，结合我们的假设，就有 $c_{i}=c_{n+1}=0$，另外 $c_{1}=c_{2}=c_{i-1}=c_{i+1}=\dots=c_{n}=0$，这就出现了 $n+1$ 个 $\mathbb{R}^n$ 中的向量相互独立，矛盾。
+ - 因此假设不成立，$Av_{i}$ 与 $v_{i}$ 线性相关，因此 $v_{i}$ 也是 $A$ 的特征向量。
+ 
+ **结论：$AB$ 与 $BA$ 的非零特征值始终相同。若它们都为 $n\times n$ 方阵，则它们的特征多项式也相同。**
+ $$
+-\lambda^n \lvert AB - \lambda I_{n} \rvert=\lambda ^m \lvert BA-\lambda I_{m} \rvert 
++\lambda^n \lvert AB - \lambda I_{m} \rvert=\lambda ^m \lvert BA-\lambda I_{n} \rvert 
+ $$
+ 其中 $A$ 为 $m\times n$ 矩阵， $B$ 为 $n\times m$ 矩阵。
+-
+-**结论：秩为 $1$ 的矩阵必然有 $n-1$ 个特征值为 $0$。（$N(A)$ 有 $n-1$ 维，对应特征值为 $0$ 的特征向量）**
++
++**结论：秩为 $1$ 的 $n$ 阶矩阵至少有 $n-1$ 个特征值为 $0$（按代数重数计）。（$N(A)$ 有 $n-1$ 维，对应特征值为 $0$ 的特征向量）**
+ ### 递推数列与 Markov 矩阵
+ 
+ **应用：推导斐波那契数列通项公式**
+@@ -129,7 +129,7 @@
+ 这里
+ $$
+ \begin{align}
+-F_{n}&=u_{n 1}=(A^n u_{0})_{2}=(A^n)_{21} \\
++F_{n}&=u_{n 2}=(A^n u_{0})_{2}=(A^n)_{21} \\
+ &=\frac{1}{\lambda_{1}-\lambda_{2}}\left(\begin{bmatrix}
+ \lambda_{1} & \lambda_{2} \\
+ 1 & 1
+@@ -151,14 +151,14 @@
+ $$
+ - 若 $u_{0}=x_{i}$ 是一个 $A$ 的特征向量，特征值为 $\lambda_{i}$，那么有
+ $$
+-u_{n}=A^k u_{0} =\lambda_{i}^k x_{i}
++u_{k}=A^k u_{0} =\lambda_{i}^k x_{i}
+ $$
+ - 若 $u_{0}=c_{1}x_{1}+\dots+c_{n}x_{n}$，其中 $x_{i}$ 为 $A$ 的特征向量，特征值为 $\lambda _i$，则有
+ $$
+ u_{k}=A^ku_{0}=\sum c_{i}\lambda_{i}^kx_{i}
+ $$
+ 也就是说，先用特征向量为基表示 $u_{0}$，然后矩阵的幂次就直接变成特征值的幂次。
+-典型的应用就是 Markov 链（概率的转移），对应的递推矩阵称为 Markov 矩阵。定义：一个 $n\times n$ 矩阵 $A$ 被称为 Markov 矩阵，当且仅当
++典型的应用就是 Markov 链（概率的转移），对应的递推矩阵称为 Markov 矩阵。定义：一个 $n\times n$ 矩阵 $A$ 被称为 Markov 矩阵，当且仅当
+ - $a_{ij}\geq 0$。
+ - 每一列的和都是 $1$。
+ 它具有的性质：
+--- before/数学/线性代数/Final Review - 期末复习.md
++++ after/数学/线性代数/Final Review - 期末复习.md
+@@ -29,7 +29,7 @@
+ **奇异性（Singularity）：**
+ - 奇异（Singular）：无解或无穷多解
+ - 非奇异（Nonsingular）：有且仅有一组解
+-- $A$ 非奇异 $\iff$ $\forall \mathbf{b},\ A\mathbf{x}=\mathbf{b}$ 非奇异
++- $A$ 非奇异 $\iff$ $\forall \mathbf{b},\ A\mathbf{x}=\mathbf{b}$ 有且仅有一组解
+ 
+ ### 1.3 An Example of Gaussian Elimination
+ 
+@@ -64,11 +64,11 @@
+ - 方幂：$A^0 = I_n,\ A^k = A^{k-1}A$
+ 
+ **特殊变换矩阵（左乘）：**
+-- **置换矩阵（Permutation Matrix）：** 每行每列恰有一个 $1$，用于交换行
++- **置换矩阵（Permutation Matrix）：** 每行每列恰有一个 $1$、其余元素为 $0$ 的方阵，用于交换行
+ - **初等矩阵（Elementary Matrices）：**
+   - 交换两行的置换矩阵
+-  - 将 $I_n$ 的 $(i,j)$ 替换为 $l$：把第 $j$ 行乘 $l$ 加到第 $i$ 行
+-  - 将 $I_n$ 的 $(i,i)$ 替换为 $k$：把第 $i$ 行乘 $k$
++  - 将 $I_n$ 的 $(i,j)$（$i\ne j$）替换为 $l$：把第 $j$ 行乘 $l$ 加到第 $i$ 行
++  - 将 $I_n$ 的 $(i,i)$ 替换为 $k\ne 0$：把第 $i$ 行乘 $k$
+ 
+ > **【左行右列】**：左乘 → 行变换，右乘 → 列变换
+ 
+@@ -88,9 +88,9 @@
+ **利用 LU 解方程 $A\mathbf{x} = \mathbf{b}$：**
+ $$\begin{cases} L\mathbf{c} = \mathbf{b} \\ U\mathbf{x} = \mathbf{c} \end{cases}$$
+ 
+-两个都是三角方程组，直接回代。
+-
+-> **LU 分解唯一性：** 若 $A = L_1U_1 = L_2U_2$，且 $L_1, L_2$ 对角元均为 $1$，则 $L_1 = L_2,\ U_1 = U_2$。
++下三角方程组用前代，上三角方程组用回代；有行交换时先将右端改为 $P\mathbf b$。
++
++> **LU 分解唯一性：** 若 $A$ 可逆，且 $A = L_1U_1 = L_2U_2$，且 $L_1, L_2$ 对角元均为 $1$，则 $L_1 = L_2,\ U_1 = U_2$。
+ 
+ **LDU 分解：** 提取主元到对角矩阵 $D$，使 $L, U$ 对角元都为 $1$：$A = LDU$
+ 
+@@ -160,7 +160,7 @@
+ - $\beta \cdot \mathbf{0} = \mathbf{0}$
+ - $\alpha \cdot \mathbf{x} = \mathbf{0} \implies \alpha=0$ 或 $\mathbf{x}=\mathbf{0}$
+ 
+-**子空间 $W \subseteq V$：**
++**子空间 $W \subseteq V$（$W$ 非空）：**
+ 1. 加法封闭：$\mathbf{x}, \mathbf{y} \in W \implies \mathbf{x}+\mathbf{y} \in W$
+ 2. 数乘封闭：$\mathbf{x} \in W,\ c\in\mathbb{R} \implies c\mathbf{x} \in W$
+ 
+@@ -238,7 +238,7 @@
+ | 行空间 $C(A^T)$ | $r$ | 取 $R$ 的 $r$ 个非零行 |
+ | 列空间 $C(A)$ | $r$ | 找 $R$ 的主元列，取**原矩阵 $A$** 中对应的列 |
+ | 零空间 $N(A)$ | $n-r$ | 解 $R\mathbf{x} = \mathbf{0}$，令自由变量依次为 $1$ 得基础解系 |
+-| 左零空间 $N(A^T)$ | $m-r$ | 取 $E$ 中 $R$ 全零行对应位置的行（或 $L^{-1}$ 的最后 $m-r$ 行） |
++| 左零空间 $N(A^T)$ | $m-r$ | 取 $E$ 中 $R$ 全零行对应位置的行（无换行的 $A=LU$ 中取 $L^{-1}$ 的最后 $m-r$ 行；若 $PA=LU$，则取 $L^{-1}P$ 的对应行） |
+ 
+ > 行变换**不改变**行空间（$C(A^T) = C(U^T)$），但**改变**列空间。主元列的**列标**不变，但列向量本身变了。
+ 
+@@ -308,7 +308,7 @@
+ 
+ ### 3.2 Cosines and Projections onto Lines
+ 
+-**向量 $\mathbf{b}$ 在向量 $\mathbf{a}$ 上的投影：**
++**向量 $\mathbf{b}$ 在非零向量 $\mathbf{a}$ 上的投影：**
+ $$\mathbf{p} = \|\mathbf{b}\|\cos\theta \cdot \frac{\mathbf{a}}{\|\mathbf{a}\|} = \frac{\mathbf{a}^T\mathbf{b}}{\mathbf{a}^T\mathbf{a}} \mathbf{a}$$
+ 
+ **投影矩阵：**
+@@ -333,7 +333,7 @@
+ - 若 $A$ 列满秩（$A^TA$ 可逆）：$\hat{\mathbf{x}} = (A^TA)^{-1}A^T\mathbf{b}$
+ - 若 $A$ 可逆：$\hat{\mathbf{x}} = A^{-1}\mathbf{b}$
+ 
+-**投影到 $C(A)$：**
++**投影到 $C(A)$（以下逆矩阵公式要求 $A$ 列满秩）：**
+ $$\mathbf{p} = A\hat{\mathbf{x}} = A(A^TA)^{-1}A^T\mathbf{b}$$
+ 
+ **投影矩阵（Projection Matrix）：**
+@@ -352,7 +352,7 @@
+ 
+ **加权最小二乘（Weighted Least Squares）：** $\min \sum w_i^2(a_{i1}x_1 + \cdots - b_i)^2$
+ 
+-- 构造对角权矩阵 $W = \text{diag}(w_1,\dots,w_n)$，化为 $\min \|WA\hat{\mathbf{x}} - W\mathbf{b}\|^2$
++- 构造对角权矩阵 $W = \text{diag}(w_1,\dots,w_m)$，化为 $\min \|WA\hat{\mathbf{x}} - W\mathbf{b}\|^2$
+ - 法方程：$A^T(W^TW)A\hat{\mathbf{x}} = A^T(W^TW)\mathbf{b}$
+ 
+ ### 3.4 Orthogonal Bases and Gram-Schmidt
+@@ -381,7 +381,7 @@
+ 
+ - $H^2 = I$（对合），$H^T = H$（对称），$H^T H = I$（正交）
+ - 用途：将向量某些分量置零而保持长度不变
+-- 例：找 $A^2 = I$ 且第一列为单位向量 $\mathbf{u}$ 的对称矩阵——取 $A$ 为 Householder 矩阵，法向量 $\mathbf{v} = \mathbf{e}_1 - \mathbf{u}$
++- 例：找 $A^2 = I$ 且第一列为单位向量 $\mathbf{u}$ 的对称矩阵——取 $A$ 为 Householder 矩阵，法向量 $\mathbf{v} = \mathbf{e}_1 - \mathbf{u}$；若 $\mathbf u=\mathbf e_1$，直接取 $A=I$
+ 
+ **Gram-Schmidt 正交化：** 从基 $\{a_1, a_2, \dots, a_n\}$ 构造规范正交基 $\{q_1, q_2, \dots, q_n\}$
+ 
+@@ -452,7 +452,7 @@
+   - 证明：若 $B$ 奇异，$AB$ 也奇异，均为 $0$。若 $B$ 可逆，验证 $d(A) = \frac{\det(AB)}{\det(B)}$ 满足三条定义性质，故 $d(A) = \det(A)$。
+ - **转置不变：** $\det(A) = \det(A^T)$
+   - 证明：利用 $PA = LU$，转置后 $\det(P) = \det(P^T)$，三角矩阵转置行列式不变。
+-- $\det(A) = \pm (\text{主元之积})$（由 $LU$ 分解）
++- 满秩时 $\det(A) = \pm (\text{全部 }n\text{ 个主元之积})$，秩不足时 $\det(A)=0$（由 $LU$ 分解）
+ 
+ > 注意：一般 $\det(A+B) \neq \det(A)+\det(B)$；$\det(cA) = c^n\det(A)$
+ 
+@@ -499,7 +499,7 @@
+ **用行列式求主元：**
+ $$d_k = \frac{\det(A_k)}{\det(A_{k-1})}$$
+ 
+-其中 $A_k$ 是 $A$ 左上角 $k\times k$ 子矩阵（假设 $\det(A) \neq 0$）。
++其中 $A_k$ 是 $A$ 左上角 $k\times k$ 子矩阵（假设无需换行消元，所有顺序主子式非零，且 $\det(A_0)=1$）。
+ 
+ **证明：** $A = LDU$，则 $A_k = L_k D_k U_k$，故 $\det(A_k) = d_1 d_2 \cdots d_k$，相除即得。
+ 
+@@ -555,11 +555,11 @@
+ 此时 $AB$ 的特征向量同 $S$，特征值 = $\lambda_i^A \lambda_i^B$。
+ 
+ **$AB$ 与 $BA$ 的特征值关系：** 非零特征值始终相同。若均为 $n\times n$，特征多项式相同：
+-$$\lambda^n|AB - \lambda I_n| = \lambda^m|BA - \lambda I_m|$$
++$$\lambda^n|AB - \lambda I_m| = \lambda^m|BA - \lambda I_n|$$
+ 
+ （$A$ 为 $m\times n$，$B$ 为 $n\times m$）
+ 
+-**秩一矩阵的特征值：** 必有 $n-1$ 个特征值为 $0$（$N(A)$ 有 $n-1$ 维）。
++**秩一矩阵的特征值：** 至少有 $n-1$ 个特征值为 $0$（按代数重数计）（$N(A)$ 有 $n-1$ 维）。
+ 
+ ### 5.3 Difference Equations and Powers $A^k$
+ 
+@@ -731,12 +731,12 @@
+ - $A \geq 0$
+ - 所有特征值 $\lambda_i \geq 0$
+ - 所有主矩阵（Principal Matrices）无负特征值
+-- 所有主元 $d_i \geq 0$
++- 所有主子式 $\det(A_I)\geq 0$（包括非顺序主子式）
+ - 存在矩阵 $R$ 使得 $A = R^T R$（$R$ 未必可逆）
+ 
+ > 技巧：$A \geq 0 \iff A + \varepsilon I > 0,\ \forall \varepsilon > 0$（充分小），取极限即得半正定性质。
+ 
+-**负定：** $A < 0$ 若 $-A > 0$。等价于 $\mathbf{x}^T A \mathbf{x} < 0$。
++**负定：** $A < 0$ 若 $-A > 0$。等价于对所有非零 $\mathbf x$ 都有 $\mathbf{x}^T A \mathbf{x} < 0$。
+ 
+ ### 6.3 Singular Value Decomposition
+ 
+--- before/数学/线性代数/Matrices and System of Linear Equations -  矩阵与线性方程组.md
++++ after/数学/线性代数/Matrices and System of Linear Equations -  矩阵与线性方程组.md
+@@ -48,12 +48,12 @@
+ 
+ ### 基于乘法的特殊变换矩阵
+ 
+-置换矩阵（Permutation Matrix）：每行每列都恰有一个 $1$ 的矩阵。用它左乘另一个矩阵，可以交换矩阵的某些行。
++置换矩阵（Permutation Matrix）：每行每列都恰有一个 $1$、其余元素均为 $0$ 的方阵。用它左乘另一个矩阵，可以交换矩阵的某些行。
+ 
+ **初等矩阵：**
+ - 可交换两行的置换矩阵。
+-- 将 $\mathbf{I}_{n}$ 中的 $(i,j)$ 位置替换为 $l$ 得到的矩阵。用它左乘另一个矩阵，可以把该矩阵的第 $j$ 行乘以 $l$ 加到第 $i$ 行上去。
+-- 将单位矩阵中第 $i$ 行的 $1$ 替换为 $k$ 的到的矩阵。用它左乘以另一个矩阵，可以把该矩阵的第 $i$ 行乘以 $k$。
++- 将 $\mathbf{I}_{n}$ 中的 $(i,j)$ 位置（$i\neq j$）替换为 $l$ 得到的矩阵。用它左乘另一个矩阵，可以把该矩阵的第 $j$ 行乘以 $l$ 加到第 $i$ 行上去。
++- 将单位矩阵中第 $i$ 行的 $1$ 替换为 $k\neq 0$ 得到的矩阵。用它左乘以另一个矩阵，可以把该矩阵的第 $i$ 行乘以 $k$。
+ >  【左行右列】以上如果换成右乘这些变换矩阵，会变成初等列变换。
+ 
+ 
+@@ -109,9 +109,9 @@
+ \mathbf{Lc}=\mathbf{b}
+ \end{cases}
+ $$
+-这两个方程都是行阶梯形的，非常好解。
++这两个方程分别为下三角和上三角方程组，可以用前代与回代求解。
+ 
+->  LU 分解的唯一性：若 $\mathbf{A}=\mathbf{L}_{1}\mathbf{U}_{1}=\mathbf{L}_{2}\mathbf{U}_{2}$，且 $\mathbf{L}_{1}, \mathbf{L}_{2}$ 的对角元素都是 $1$，则 $\mathbf{L}_{1}=\mathbf{L}_{2}, \mathbf{R}_{1}=\mathbf{R}_{2}$。
++>  LU 分解的唯一性：若 $\mathbf A$ 可逆，且 $\mathbf{A}=\mathbf{L}_{1}\mathbf{U}_{1}=\mathbf{L}_{2}\mathbf{U}_{2}$，且 $\mathbf{L}_{1}, \mathbf{L}_{2}$ 的对角元素都是 $1$，则 $\mathbf{L}_{1}=\mathbf{L}_{2}, \mathbf{U}_{1}=\mathbf{U}_{2}$。
+ 
+ >  LDU 分解：使用对角矩阵 $\mathbf{D}$ （对角元素为主元）使得 $\mathbf{L}, \mathbf{U}$ 的对角元素都是 $1$。
+ 
+--- before/数学/线性代数/Orthogonal - 正交.md
++++ after/数学/线性代数/Orthogonal - 正交.md
+@@ -29,7 +29,7 @@
+ 
+ ## 投影与最小平方解
+ 
+-$b$ 在 $a$ 上的投影（Projection）：$p= \lVert p \rVert \frac{a}{\lVert a \rVert}= \lVert b \rVert\cos\theta  \frac{a}{\lVert a \rVert}=\frac{a^Tb}{\lVert a \rVert^{2}}a$。
++$b$ 在非零向量 $a$ 上的投影（Projection）：$p= \lVert b \rVert\cos\theta  \frac{a}{\lVert a \rVert}=\frac{a^Tb}{\lVert a \rVert^{2}}a$。
+ 投影的矩阵表示： $T:\mathbb{R}^n\to \mathbb{R}^n, b \mapsto \frac{a^Tb}{\lVert a \rVert^{2}}a$。所以矩阵表示就是 $\frac{aa^T}{a^Ta}$。
+ 
+ 应用：**最小平方解（Least Square Solutions）**，求平方和 $\sum_{i=1}^m(a_{i1}x_{1}+a_{i2}x_{2}+\dots+a_{in}x_{n}-b_{i})^{2}$ 的最小值，其中 $a_{ij}, b_{i}$ 为常数。
+@@ -45,10 +45,10 @@
+ 对于 $n=2$ 的情况就是用最小二乘法求线性回归直线。
+ - 设这个回归直线为  $b=C+Dt$。则要使得残差平方和 $\sum_{i=1}^m(C+Dt_{i}-b_{i})^{2}$ 最小。
+ - 这里 $A=\begin{bmatrix}1 & t_{1} \\ 1  & t_{2} \\ \dots & \dots \\ 1 & t_{m}\end{bmatrix}$，$b=\begin{bmatrix}b_{1} \\ b_{2} \\ \dots \\ b_{m}\end{bmatrix}$。
+-- 则只需解方程 $A^TA\begin{bmatrix}C \\ D\end{bmatrix}=A^T$ 即可求出直线的系数。
+-- 为了方便计算，可以让 $b=C_{1}+D_{1}(t-\bar{t})$，这里原直线的参数 $C=C_{1}-D_{1}t, D=D_{1}$。那么 $A=\begin{bmatrix}1 & t_{1}-\bar{t} \\ 1 & t_{2}-\bar{t} \\ \dots & \dots \\ 1 & t_{n}-\bar{t}\end{bmatrix}$，则 $A=\begin{bmatrix}v_{1} & v_{2}\end{bmatrix}$ 的两列是正交的。那么 $\hat{C}=\frac{v_{1}^Tb}{v_{1}^Tv_{1}},\hat{D}=\frac{v_{2}^Tb}{v_{2}^Tv_{2}}$。
+-
+-考虑这个几何问题。
++- 则只需解方程 $A^TA\begin{bmatrix}C \\ D\end{bmatrix}=A^Tb$ 即可求出直线的系数。
++- 为了方便计算，可以让 $b=C_{1}+D_{1}(t-\bar{t})$，这里原直线的参数 $C=C_{1}-D_{1}\bar t, D=D_{1}$。那么 $A=\begin{bmatrix}1 & t_{1}-\bar{t} \\ 1 & t_{2}-\bar{t} \\ \dots & \dots \\ 1 & t_{m}-\bar{t}\end{bmatrix}$，则 $A=\begin{bmatrix}v_{1} & v_{2}\end{bmatrix}$ 的两列是正交的。那么 $\hat{C}_1=\frac{v_{1}^Tb}{v_{1}^Tv_{1}},\hat{D}_1=\frac{v_{2}^Tb}{v_{2}^Tv_{2}}$。
++
++考虑这个几何问题，选取 $C(A)$ 的一组基作为 $A$ 的列（列满秩）。
+ - 由于 $A\hat{x}$ 为 $C(A)$ 上使得其终点与 $b$ 终点连线垂直于 $C(A)$ 的向量，$b$ 在 $C(A)$ 上的投影即为 $p=A\hat{x}=A(A^TA)^{-1}A^Tb$。
+ - 那么投影到 $C(A)$ 的线性变换的矩阵表示为 $P=A(A^TA)^{-1} A^T$。
+ - 这里 $P$ 有些性质。比如 $P^{2}=P$, $P^T=P$。
+@@ -63,9 +63,9 @@
+ 
+ 加权最小平方解（Weighted least-square solution）：求平方和 $\sum_{i=1}^mw_{i}^{2}(a_{i1}x_{1}+a_{i2}x_{2}+\dots+a_{in}x_{n}-b_{i})^{2}$ 的最小值，其中 $a_{ij}, b_{i}$ 为常数。
+ - 只需要把 $w_{i}$ 放到平方里面去即可。
+-- 构造 $W=\begin{bmatrix}w_{1} & \dots & \dots & \dots \\ \dots  & w_{2} & \dots & \dots \\ \dots & \dots & \dots & \dots \\ \dots & \dots & \dots & w_{n} \end{bmatrix}$，则转换为求 $\lVert WA\hat{x_{w}}-Wb \rVert^{2}$ 的最小值。
+-- 也就是 $(WA)^T(WA)\hat{x_{w}}=(WA)^T(Wb$。
+-- 也就是 $A^T(W^TW)A\hat{x_{w}}=A^T(W^TW)B$。
++- 构造 $W=\operatorname{diag}(w_1,\dots,w_m)$，则转换为求 $\lVert WA\hat{x_{w}}-Wb \rVert^{2}$ 的最小值。
++- 也就是 $(WA)^T(WA)\hat{x_{w}}=(WA)^T(Wb)$。
++- 也就是 $A^T(W^TW)A\hat{x_{w}}=A^T(W^TW)b$。
+ 
+ ## 规范正交基与正交矩阵
+ 
+@@ -127,7 +127,7 @@
+ $$
+ - 长度很好求。
+ $$
+-\lVert b \rVert = \sqrt{ \sum (q_{i}b)^{2} }
++\lVert b \rVert = \sqrt{ \sum (q_{i}^Tb)^{2} }
+ $$
+ 
+ - $Q^T$ 也是一个正交矩阵，也就是说行也是正交的
+@@ -145,11 +145,11 @@
+ $$
+ 这是因为，$H:\mathbb{R}^n \to \mathbb{R}^n, x=x_{\parallel}+x_{\perp}\mapsto x_{\parallel}-x_{\perp}$，又有 $P_{v}x=x_{\perp}$，则 $Hx=x_{\parallel}-x_{\perp}=x-2x_{\perp}=x-2P_{v}x$，进而 $H=I-2P_{v}=I-2 \frac{vv^T}{v^Tv}$。
+ - 对合性：$H^{2}=I$
+-- 正交性：$H^TH=0$
++- 正交性：$H^TH=I$
+ - 对称性：$H=H^T$
+ Householder 变换的意义在于，作为一个反射变换，它可以将向量的某些元素置零而保持长度不变。
+ - 例题：要找某个对称矩阵 $A$ 使得 $A^{2}=I$ 且其第一列为某单位向量 $u$。
+-- 不妨令 $A$ 为一个 Householder 矩阵，由题意得 $Ae_{1}=u$，也就是说 $e_{1}$ 与 $u$ 关于 Householder 变换的超平面对称，那么可以取法向量 $v=e_{1}-u$。从而得到矩阵 $A$。 
++- 若 $u=e_1$，可取 $A=I$；否则令 $A$ 为一个 Householder 矩阵，由题意得 $Ae_{1}=u$，也就是说 $e_{1}$ 与 $u$ 关于 Householder 变换的超平面对称，那么可以取法向量 $v=e_{1}-u$。从而得到矩阵 $A$。
+ 
+ ## Gram-Schmidt 正交化
+ 
+@@ -158,7 +158,7 @@
+   $$q_{1}=\frac{a_{1}}{\lVert a_{1} \rVert}$$
+ 把 $a_{2}$ 去掉其投影到 $q_{1}$ 的部分，再归一化
+ $$
+-q_{2}=\frac{a_{2}-(q_{1}^Ta_{2})a_{1}}{\lVert a_{2}-(q_{1}^Ta_{2}) a_{1}\rVert }
++q_{2}=\frac{a_{2}-(q_{1}^Ta_{2})q_{1}}{\lVert a_{2}-(q_{1}^Ta_{2})q_{1}\rVert }
+ $$
+ 循环往复，减去往前面所有（正交的）向量做的投影：
+ $$
+@@ -223,7 +223,7 @@
+ - 用 Gram-Schmidt 正交化可以找到一组正交基 $a_{1}=  1, a_{2}=t-\frac{1}{2}$ 。
+ - 于是这个投影就是  
+ $$
+-\frac{\left< a_{1}, v \right> }{\left< a_{1}, a_{1} \right> } a_{1}+ \frac{\left< a_{2},v \right> }{\left< a_{2},a_{2} \right> } a_{2}
++\frac{\left< a_{1}, v_1 \right> }{\left< a_{1}, a_{1} \right> } a_{1}+ \frac{\left< a_{2},v_1 \right> }{\left< a_{2},a_{2} \right> } a_{2}
+ $$
+ - 这也就是要找的直线。
+ 
+--- before/数学/线性代数/Positive Definite Matrices - 正定矩阵.md
++++ after/数学/线性代数/Positive Definite Matrices - 正定矩阵.md
+@@ -53,7 +53,7 @@
+ 证明：
+ - 【 $1\implies 2$ 】若 $x^TAx>0$，假设 $\lambda _i$ 是一个特征值，对应特征向量 $x_{i}\neq 0$，则 $x_{i}^TAx_{i}>0$。又因为 $Ax_{i}=\lambda x_{i}$，有 $\lambda_{i}x_{i}^Tx_{i}=\lambda_{i}\lVert x_{i} \rVert^{2}>0$，故而 $\lambda_{i}>0$。
+ - 【 $2\implies 1$ 】若 $\lambda_{i}>0$，由谱定理，因为 $A$ 是一个对称矩阵，它可以被一个正交矩阵对角化，也就是说存在一组规范正交的特征向量 $x_{1},\dots,x_{n}$ 使得 $Ax_{i}=\lambda_{i}x_{i}$。任意向量可以写成这组特征向量的线性组合： $x=\sum c_{i}x_{i}$。那么 $x^TAx=\left( \sum c_{i}x_{i}^T \right)A\left( \sum c_{i}x_{i} \right)=\left( \sum c_{i}x_{i}^T \right)\left( \sum c_{i}\lambda_{i}x_{i} \right)=\sum c_{i}^{2}\lambda_{i}$（因为交叉项都为 $0$）。故而 $x^TAx>0$。
+-- 【 $2\implies 3$ 】 $\det(A_{n})=\prod\lambda_{i}>0$。设原来的二次型为 $g(x_{1}\dots x_{n})=\begin{bmatrix}x_{1}\dots x_{n}\end{bmatrix}A\begin{bmatrix}x_{1} \\ \vdots\\x_{n}\end{bmatrix}$，它是正定的。那么考察 $f(x_{1}\dots x_{k})=\begin{bmatrix}x_{1}\dots x_{k}\end{bmatrix}A\begin{bmatrix}x_{1} \\ \vdots\\x_{k}\end{bmatrix}$，它满足 $f=g(x_{1}\dots x_{k},0\dots 0)$，那么 $f$ 也是正定的。于是 $\det(A_{k})>0$。
++- 【 $2\implies 3$ 】 $\det(A_{n})=\prod\lambda_{i}>0$。设原来的二次型为 $g(x_{1}\dots x_{n})=\begin{bmatrix}x_{1}\dots x_{n}\end{bmatrix}A\begin{bmatrix}x_{1} \\ \vdots\\x_{n}\end{bmatrix}$，它是正定的。那么考察 $f(x_{1}\dots x_{k})=\begin{bmatrix}x_{1}\dots x_{k}\end{bmatrix}A_k\begin{bmatrix}x_{1} \\ \vdots\\x_{k}\end{bmatrix}$，它满足 $f=g(x_{1}\dots x_{k},0\dots 0)$，那么 $f$ 也是正定的。于是 $\det(A_{k})>0$。
+ - 【 $3\implies 4$ 】 $d_{k}= \frac{\det(A_{k})}{\det(A_{k-1})}>0$。
+ - 【 $4\implies 1$ 】 假设 $A=LDU$，由于 $A^T=U^TDL^T=A=LDU$，有 $U=L^T$。那么 $\forall x\neq 0,x^TAx=x^T(LDU)x=x^TLDL^Tx$。令 $L^Tx=y\neq 0$，则 $x^TAx=y^TDy=\sum d_{i}y_{i}^{2}>0$。
+ - 【 $5\implies 1$ 】 $\forall x\neq 0, x^TAx=x^TR^TRx=\lVert Rx \rVert^{2}$，这里由于 $R$ 可逆，$Rx$ 就不为 $0$，因此 $x^TAx>0$。
+@@ -64,7 +64,7 @@
+   - 这里有无穷多种分解，因为若 $A=R^TR$，则对任意 $R'=QR$ 其中 $Q$ 是任意正交矩阵，则 $A=R'^TR'$。
+ 
+ 当然，根据定义，也可以去直接把二次多项式给 Complete the square 来判断。
+-这里你会发现，若 $A=LDU$，则 $x^TAx=\sum d_{i}y_{i}^{2}$，这里 $y_{i}=L^Tx_{i}$，且 $d_{i}$ 为第 $i$ 个主元。这就是配方之后的结果！所以配方和高斯消元的过程其实是对应的。
++这里你会发现，若 $A=LDU$，则 $x^TAx=\sum d_{i}y_{i}^{2}$，这里 $y=L^Tx$，$y_i$ 为 $y$ 的第 $i$ 个分量，且 $d_{i}$ 为第 $i$ 个主元。这就是配方之后的结果！所以配方和高斯消元的过程其实是对应的。
+ 
+ 将一个对称矩阵称为半正定的（Semipositive Definite），若 
+ $$
+@@ -76,9 +76,9 @@
+ TFAE:
+ - $A\geq 0$
+ - 特征值 $\lambda_{i} \geq 0$
+-- 没有主矩阵（Principle Matrices）有负的特征值。
++- 没有主子矩阵（Principal Submatrices）有负的特征值。
+   - 主矩阵：指标集（Index Set） $I\subset \{ 1,2,\dots,n \}$ 对应的主矩阵 $A_{I}$ ，定义为 $A$ 的一个子矩阵，它来自于选取 $A$ 中的所有满足 $i,j\in I$ 的 $a_{ij}$。
+-- 主元 $d_{i}\geq 0$
++- 所有主子式 $\det(A_I)\geq 0$（包括非顺序主子式）
+ - 存在矩阵 $R$ 使得 $A=R^TR$。
+ 
+ 要证明这些事情，可以用这个事实：
+@@ -197,7 +197,7 @@
+ - 其中 $r$ 为 $A$ 的秩，这里 $\sigma_{i}$ 称为奇异值（Singular Value）。
+ **定义 ：** $A$ 的奇异值 $\sigma_{i}=\sqrt{ \lambda_{i} }=\sqrt{ \mu_{i} }$ ，其中 $\lambda_{i},\mu_{i}$ 是 $AA^T$ 和 $A^TA$ 的非零特征值（$i=1,2,\dots,\text{rank}(A)$）。
+ 
+-（可以这么定义是因为，$AA^T$ 和 $A^TA$ 都是半正定矩阵，特征值都大于零，而且它们的秩都和 $A$ 相同，且它们的非零特征值也相等。验证一下：这里
++（可以这么定义是因为，$AA^T$ 和 $A^TA$ 都是半正定矩阵，特征值都大于等于零，而且它们的秩都和 $A$ 相同，且它们的非零特征值也相等。验证一下：这里
+ $$
+ \begin{align}
+ A^TA&=(U\Sigma V^T)^TU\Sigma V^T
+@@ -265,7 +265,7 @@
+ $$
+ 令 $S=\sqrt{ \Lambda }$，那么 $S$ 是一个正定的对角的可逆矩阵。那么有：
+ $$
+-S^{-1}Q_{2}^TQ^TAQ_{2}S^{-1}=I
++S^{-1}Q_{2}^TA^TAQ_{2}S^{-1}=I
+ $$
+ 那么 $AQ_{2}S^{-1}$ 就是一个正交矩阵，记为 $Q_{1}$。于是有
+ $$
+@@ -278,14 +278,14 @@
+ （$A=U\Sigma V^T=(UV^T)(V\Sigma V^T)=QS$）
+ 类比 $z=re^{i\theta}$。这里 $S$ 类似于  $r$，$Q$ 类似与 $e^{i\theta}$。
+ 
+-有效秩（Effective Rank）：用 $A^TA$ 来计算 $A$ 的秩，会更稳定（实际计算中数值可能有一些小的偏差，$A^TA$ 会把这些偏差平方，而缩小。）
++有效秩（Effective Rank）：直接对 $A$ 做 SVD，并按照相对于最大奇异值的容差判断数值秩。形成 $A^TA$ 会平方条件数，使较小奇异值更难准确分辨。
+ 
+ 图片压缩（Image Compression）：一个 $m\times n$ 的图像，可以进行 SVD 分解，只需要存储 $r$ 个奇异值和奇异向量，共 $r\times(m+n+1)$ 个值。图片压缩比：$\frac{m\times n}{r\times(m+n+1)}$。
+-图片降噪（Noice Reduction）：直接丢掉相对来说特别小的奇异值和奇异降噪。
++图片降噪（Noise Reduction）：丢弃较小的奇异值及其对应的奇异向量项。
+ 
+ 最小二乘（Least Square）的最优解：最小二乘的 Normal Equation $A^TAx=A^Tb$ ，如果 $A^TA$ 不可逆，也就是说，$A$ 不是列满秩的，则可能有多个解 $\hat{x}$。其中最优解为长度最小的解 $x^{+}$。
+-- 记作 $x^{+}=A^+b$ 中，$A^+$ 称为 $A$ 的伪逆（Pseuodoinverse）。
+-- 容易验证，$\Sigma^{+}$ 就是把每一个 $\sigma$ 求倒数。
++- 记作 $x^{+}=A^+b$ 中，$A^+$ 称为 $A$ 的伪逆（Pseudoinverse）。
++- 容易验证，$\Sigma^{+}$ 将非零奇异值求倒数、零奇异值保持为零，并转置矩阵的形状。
+ - 一般情况下，由于 $\hat{x}=x_{r}+x_{n}$，那么由于零空间和行空间正交，有 $\lVert \hat{x} \rVert^{2}=\lVert x_{r} \rVert^{2}+\lVert x_{n} \rVert ^{2}$，取 $x_{n}=0$，则得到了最优解，**所以最优解是行空间中的。** （可以解 Normal Equation 然后选行空间中的）
+ - ![[Positive Definite Matrices - 正定矩阵.png]]
+ - 一般情况下，伪逆有公式
+@@ -294,4 +294,4 @@
+ $$
+ - 证明：$\lVert Ax-b \rVert=\lVert U\Sigma V^Tx-b \rVert=\lVert \Sigma V^Tx-U^Tb \rVert$。
+ - 令 $y=V^Tx=V^{-1}x$。只需最小化 $\lVert \Sigma y-U^Tb \rVert$。
+-- $y^+=\Sigma^+U^Tb$，故而 $x^+=V\Sigma^+U^T$。+- $y^+=\Sigma^+U^Tb$，故而 $x^+=V\Sigma^+U^Tb$。--- before/数学/线性代数/The Properties of Matrices - 矩阵的性质.md
++++ after/数学/线性代数/The Properties of Matrices - 矩阵的性质.md
+@@ -155,10 +155,10 @@
+ $$
+ 或
+ $$
+-\mathbf{A}\mathbf{B}=\mathbf{A}=\begin{bmatrix}\mathbf{a}_{1} \\ \mathbf{a}_{2} \\ \vdots \\\mathbf{a}_{n}\end{bmatrix}\begin{bmatrix}
++\mathbf{A}\mathbf{B}=\begin{bmatrix}\mathbf{a}_{1} \\ \mathbf{a}_{2} \\ \vdots \\\mathbf{a}_{n}\end{bmatrix}\begin{bmatrix}
+ \mathbf{B}
+ \end{bmatrix}
+-=\mathbf{A}=\begin{bmatrix}\mathbf{a}_{1}\mathbf{B} \\ \mathbf{a}_{2}\mathbf{B} \\ \vdots \\\mathbf{a}_{n}\mathbf{B}\end{bmatrix}
++=\begin{bmatrix}\mathbf{a}_{1}\mathbf{B} \\ \mathbf{a}_{2}\mathbf{B} \\ \vdots \\\mathbf{a}_{n}\mathbf{B}\end{bmatrix}
+ $$
+ 注意分块的矩阵尺寸要保证可乘。
+ 
+@@ -192,7 +192,7 @@
+ $$
+ \text{rank}(A)+\text{rank}(B)\leq n
+ $$
+-一般的，有$$\text{rank}(AB)=\text{rank}(B)-\text{dim}(N(A)\cap C(B))\geq\text{rank}(B)-\text{dim}N(A)=\text{rank}(B)-\text{rank(A)}+n$$ 故而有
++一般的，有$$\text{rank}(AB)=\text{rank}(B)-\text{dim}(N(A)\cap C(B))\geq\text{rank}(B)-\text{dim}N(A)=\text{rank}(B)+\text{rank}(A)-n$$ 故而有
+ $$
+ \text{rank}(A)+\text{rank}(B)-n\leq\text{rank}(AB)
+ $$
+--- before/数学/线性代数/Vector Space - 向量空间.md
++++ after/数学/线性代数/Vector Space - 向量空间.md
+@@ -29,9 +29,9 @@
+ 
+ - **列空间（Column Space）：** 所有列向量的线性组合，记作 $C(\mathbf{A})$，为一个 $\mathbb{R}^m$ 的子空间。
+ >  推论：$\mathbf{A}\mathbf{x}=\mathbf{b}$ 是相容的当且仅当 $\mathbf{b}\in C(\mathbf{A})$；若 $\mathbf{A}\in M_{n\times n}$ 非奇异，则 $C(\mathbf{A})=\mathbb{R}^n$。
+->  $\mathbf{b} \in C(\mathbf{A})\implies \exists \mathbf{c}\in \mathbb{R}^m,\text{s.t.} \mathbf{A}\mathbf{c}=\mathbf{b}$
++>  $\mathbf{b} \in C(\mathbf{A})\implies \exists \mathbf{c}\in \mathbb{R}^n,\text{s.t.} \mathbf{A}\mathbf{c}=\mathbf{b}$
+ 
+-- **零空间/核空间（Nullspace/Kernal）：** 所有使得 $\mathbf{A}\mathbf{x}=\mathbf{0}$ 的向量 $\mathbf{x}$，记作 $N(\mathbf{A})$，为一个 $\mathbb{R}^n$ 的子空间。
++- **零空间/核空间（Nullspace/Kernel）：** 所有使得 $\mathbf{A}\mathbf{x}=\mathbf{0}$ 的向量 $\mathbf{x}$，记作 $N(\mathbf{A})$，为一个 $\mathbb{R}^n$ 的子空间。
+ >  推论：若 $\mathbf{A}\mathbf{x}=\mathbf{b}$ 有特解 $\mathbf{x}_{0}$，则所有的解可以写成 $\mathbf{x}=\mathbf{x}_{0}+\mathbf{x}_{n}$，其中 $\mathbf{x}_{n} \in N(\mathbf{A})$。
+ 
+ - **行空间（Row Space）**：$C(\mathbf{A}^T) \subset \mathbb{R}^n$
+@@ -50,9 +50,9 @@
+ 
+ 定理：$\mathbf{v}_{1},\mathbf{v}_{2},\dots \mathbf{v}_{n}\in \mathbb{R}^n$ 是 $\mathbb{R}^{n}$ 的一组基，当且仅当 $\mathbf{A}=[\mathbf{v}_{1}\dots \mathbf{v}_{n}]$ 可逆。
+ 
+-对于多项式集 $\mathbb{R}[x]_{\leq n}=\{ a_{0}+a_{1}x+\dots+a_{n}x^{n} | a_{1},a_{2},\dots,a_{n}\in \mathbb{R}\}$，一组基为 $1,x,x^{2},x^{3},\dots,x^{n}$。
++对于多项式集 $\mathbb{R}[x]_{\leq n}=\{ a_{0}+a_{1}x+\dots+a_{n}x^{n} | a_{0},a_{1},a_{2},\dots,a_{n}\in \mathbb{R}\}$，一组基为 $1,x,x^{2},x^{3},\dots,x^{n}$。
+ 
+-定理：若向量空间 $V$ 存在两组基 $\mathbf{v}_{1},\mathbf{v}_{2},\dots,\mathbf{v}_{n}$ 和 $\mathbf{w}_{1},\mathbf{w}_{2},\dots,\mathbf{w}_{n}$，则 $m=n$。这里 $n$ 定义为向量空间 $V$ 的维数（dimension）$\text{dim}V$。
++定理：若向量空间 $V$ 存在两组基 $\mathbf{v}_{1},\mathbf{v}_{2},\dots,\mathbf{v}_{n}$ 和 $\mathbf{w}_{1},\mathbf{w}_{2},\dots,\mathbf{w}_{m}$，则 $m=n$。这里 $n$ 定义为向量空间 $V$ 的维数（dimension）$\text{dim}V$。
+ 
+ ### 基本空间的基
+ 
+--- before/数学/高等数学/上/Antiderivative and Integral - 积分.md
++++ after/数学/高等数学/上/Antiderivative and Integral - 积分.md
+@@ -41,9 +41,9 @@
+ ## 判断反常积分敛散性
+ 
+ 1. 对于可积函数，积出来之后根据反常积分的定义，判断极限是否存在即可。
+-2. 若其恒小于一个收敛的反常积分，则该积分也收敛。
+-3. 若其恒大于一个发散的反常积分，则该积分也发散。
+-4. 若在端点处 $f$ 和 $g$ 同阶，即其比值的极限存在，则 $f$ 和 $g$ 同敛散。
++2. 对非负被积函数，若被积函数不大于一个反常积分收敛的非负函数，则该积分也收敛。
++3. 对非负被积函数，若被积函数不小于一个反常积分发散的非负函数，则该积分也发散。
++4. 若在端点处 $f$ 和 $g$ 同阶，即其比值趋于有限的正数（非负函数），则 $f$ 和 $g$ 同敛散。
+     具体而言，比如要判断 $0$ 处端点是否可积，则可以用泰勒近似找一个同阶的幂函数，然后用下面的特例来判断即可；比如要判断无穷远处是否可积，则可以用抓大头的想法找一个同阶的幂函数，然后用下面的特例来判断即可。
+ 5. 特例：
+    $\int_{0}^t \frac{1}{x^p}dx$ 收敛当且仅当  $p<1$；$\int_{t}^{\infty} \frac{1}{x^p}dx$ 收敛当且仅当 $p>1$。
+@@ -54,7 +54,7 @@
+ - Washer Method: 对截面进行积分 $V=\int \text{截面面积}(x)dx$
+ - Shell Method: 旋转体可看成圆柱面的累加：$\int 2\pi \times\text{半径}(x)\times高度(x)dx$
+   - 其中半径是 $x$ 到旋转轴的距离，高度为 $x$ 处的被旋转面的截线长
+-- Pappus’s Theorem for Volumes: $V=2\pi \rho A$，即旋转面面积乘质心走的距离
++- Pappus’s Theorem for Volumes: $V=2\pi \rho A$，即平面区域面积乘质心走的距离（旋转轴在该平面内且不穿过区域内部）
+ 
+ 求弧长
+ $$
+@@ -65,16 +65,16 @@
+ $$
+ 求旋转体的表面积
+ $$
+-A=\int^{b}_{a}2\pi f(x)\sqrt{ 1+[f'(x)]^2 } dx
++A=\int^{b}_{a}2\pi |f(x)|\sqrt{ 1+[f'(x)]^2 } dx
+ $$
+-- Pappus’s Theorem for Surface Areas：$A=2\pi \rho L$，即弧长乘质心走的距离
++- Pappus’s Theorem for Surface Areas：$A=2\pi \rho L$，即弧长乘质心走的距离（旋转轴在曲线平面内且不穿过曲线）
+ 
+ 求平面图形质心
+ $$
+ \bar{x}= \frac{\int \tilde{x}dm}{\int dm},\bar{y}= \frac{\int \tilde{y}dm}{\int dm}
+ $$
+ - 若密度分布不均匀，有密度分布函数 $\delta$，则 $dm=\delta dA$。
+-- 若求两个函数包着的区域质心，即 $y=f(x)-g(x)$，则可以将 $\tilde{y}$ 写成 $\frac{1}{2}(f(x)+g(x))$：
++- 若密度仅依赖 $x$（均匀密度也适用），求两个函数包着的区域质心，其竖直截条高度为 $y=f(x)-g(x)$，则可以将 $\tilde{y}$ 写成 $\frac{1}{2}(f(x)+g(x))$：
+   $$
+ \bar{x}= \frac{1}{M} \int \delta x (f(x)-g(x))dx
+ $$
+@@ -87,7 +87,7 @@
+ 
+ 求几何中心（即 $\delta$ 是常数的情况）
+ $$
+-\bar{x}= \frac{\int \tilde{x}dA}{A}, y=\frac{\int \tilde{y}dA}{A}
++\bar{x}= \frac{\int \tilde{x}dA}{A}, \bar y=\frac{\int \tilde{y}dA}{A}
+ $$
+ 
+ 求定积分的数值估计
+@@ -99,7 +99,7 @@
+ 误差：$$
+ |E_{T}| \leq \frac{M(b-a)^3}{12n^2}
+ $$
+-其中 $M$ 是 $f''$ 的上界。
++其中 $M$ 是 $|f''|$ 的上界。
+ 
+ **Simpson’s Rule：** 用抛物线近似面积。
+ 
+@@ -111,4 +111,4 @@
+ $$
+ |E_{S}| \leq \frac{M(b-a)^5}{180n^4}
+ $$
+-其中 $M$ 是 $f^{(4)}$ 的上界。+其中 $M$ 是 $|f^{(4)}|$ 的上界。--- before/数学/高等数学/上/Complex Number - 复数.md
++++ after/数学/高等数学/上/Complex Number - 复数.md
+@@ -19,7 +19,7 @@
+ - $\frac{1}{z}$ 是 $n$ 次单位根。
+ - $\frac{z}{w}$ 是 $n$ 次单位根。
+ - $z^k$ 是 $n$ 次单位根。
+-另外，所有 $n$ 次单位根的和为 $0$：
++另外，$n\ge2$ 时所有 $n$ 次单位根的和为 $0$（以下取 $z=e^{2\pi i/n}$）：
+ $$
+ 1+z+z^2+\dots+z^{n-1}=\frac{1-z^n}{1-z}=0
+ $$
+--- before/数学/高等数学/上/Differential Equation - 微分方程.md
++++ after/数学/高等数学/上/Differential Equation - 微分方程.md
+@@ -11,7 +11,7 @@
+ #### 构造乘积
+ 对形如
+ $$
+-\frac{dy}{dx}+P(x)y=Q(x) , \ (Q(x)\neq 0)
++\frac{dy}{dx}+P(x)y=Q(x)
+ $$
+ 的一阶常微分方程，可以构造一个 $v(x)$ ，使得等式两边同乘 $v(x)$ 后，左边为乘积的微分公式：
+ $$
+@@ -30,7 +30,7 @@
+ 
+ ### 杂类
+ 
+-自治微分方程 （Autonomous Function），指  $\frac{dy}{dx}=f(y)$。
++自治微分方程 （Autonomous Differential Equation），指  $\frac{dy}{dx}=f(y)$。
+ 使得这里的 $f(y)=0$ 的根叫做平衡点（Equilibrium Points）。
+-若平衡点 $y_{0}$ 满足 $f(y_{0}^-)>0, f(y_{0}^+)<0$，则 $y_{0}$ 被称为稳定（Stable）平衡点，因为稍微偏离 $y_{0}$ 的 $y$ 都会回到 $y_{0}$ 。
+-反之，则有不稳定（Unstable）平衡点，稍微偏离 $y_{0}$ 的 $y$ 都会越跑越远。+若平衡点 $y_{0}$ 满足 在 $y_0$ 的左侧邻域内 $f(y)>0$、右侧邻域内 $f(y)<0$，则 $y_{0}$ 被称为稳定（Stable）平衡点，因为稍微偏离 $y_{0}$ 的 $y$ 都会回到 $y_{0}$ 。
++若左侧 $f(y)<0$、右侧 $f(y)>0$，则有不稳定（Unstable）平衡点，稍微偏离 $y_{0}$ 的 $y$ 都会越跑越远。--- before/数学/高等数学/上/Integral Techniques - 积分技巧.md
++++ after/数学/高等数学/上/Integral Techniques - 积分技巧.md
+@@ -5,7 +5,7 @@
+ - 注意是否区间关于 0 对称而且被积函数是奇函数。
+ - 区间再现： $$\int^{\pi/2}_{0}f(\sin x) dx=\int^{\pi/2}_{0}f(\cos x)dx$$ 
+ -  更一般的，$$\int^{a}_{0}f(x)dx=\frac{1}{2}  \int^{a}_{0} \left[f(x)+f(a-x)\right]dx$$
+-- 类似的，$$\int^{a}_{\frac{1}{a}} f(x)dx=\frac{1}{2} \int^{a}_{\frac{1}{a}} \left[f(x)+\frac{1}{x^2}f\left( \frac{1}{x} \right)\right]dx$$
++- 类似的，当 $a>0$ 时，$$\int^{a}_{\frac{1}{a}} f(x)dx=\frac{1}{2} \int^{a}_{\frac{1}{a}} \left[f(x)+\frac{1}{x^2}f\left( \frac{1}{x} \right)\right]dx$$
+ #### 不定积分
+ - $\frac{1}{a^2+x^2}, \frac{1}{\sqrt{1-ax^2}}, \frac{1}{|ax|\sqrt{a^2x^2-1}}\dots$ 考虑反三角函数
+ - 三角函数积分公式表：[[Integral-1]]
+@@ -23,7 +23,7 @@
+ $$
+ - 以下公式最好直接背，因为三角换元容易造成难以处理的绝对值：
+   $$
+-\frac{1}{\sqrt{ x^2\pm a^2}} = \ln|x+\sqrt{ x^2\pm a^2 }|
++\int\frac{dx}{\sqrt{ x^2\pm a^2}} = \ln|x+\sqrt{ x^2\pm a^2 }|+C
+ $$
+ ### 换元（Substitution）
+ 
+@@ -34,7 +34,7 @@
+ 关于三角函数的经验凑微分技巧：
+ 1. 若将 $\sin x$ 换成 $-\sin x$ 后，原式变为其相反数，则凑 $\sin x dx=-d\cos x$。
+ 2. 若将 $\cos x$ 换成 $-\cos x$ 后，原式变为其相反数，则凑 $\cos xdx=d\sin x$。
+-3. 若将 $\sin x$ 和 $\cos x$ 换成 $-\sin x$ 和 $-\cos x$ 后，原式不变，则凑 $\sec^2dx=d\tan x$。
++3. 若将 $\sin x$ 和 $\cos x$ 换成 $-\sin x$ 和 $-\cos x$ 后，原式不变，则凑 $\sec^2 x\,dx=d\tan x$。
+ 4. 也可考虑万能公式。
+ #### 第二类（去根号）
+ 
+@@ -70,7 +70,7 @@
+ 当 $F(x)$ 的次数小于 $G(x)$ 时，可以将这个有理分式拆开：
+ 
+ $$
+-\frac{F(x)}{G(x)=\prod_{i} (x-x_{i})^{a_{i}}}=\sum_{i} \sum _{1\leq k\leq a_{i}} \frac{t_{i}}{(x-x_{0})^k}
++\frac{F(x)}{G(x)=\prod_{i} (x-x_{i})^{a_{i}}}=\sum_{i} \sum _{1\leq k\leq a_{i}} \frac{t_{ik}}{(x-x_{i})^k}
+ $$
+ 注意如果分母包含不可约的二次因式如 $x^2+x+1$，那么对它拆的时候分子待定系数为 $Ax+B$，而不是简单的常数。
+ 任何实系数多项式都可以分解成若干一次因式和二次因式的乘积，例如
+--- before/数学/高等数学/上/Limit and Derivative - 极限与导数.md
++++ after/数学/高等数学/上/Limit and Derivative - 极限与导数.md
+@@ -1,4 +1,4 @@
+-
++
+ ## 概念与定义
+ 
+ 函数连续（Continuous）的定义： $\lim_{ x \to c }f(x)=f(c)$
+@@ -19,7 +19,7 @@
+ 
+ 小 o 记号（little-oh Notation）：$f=o(g)$（“$f$ is little-oh of $g$”），当  $f$ 的阶比 $g$ 的阶更小，即 $\lim\limits_{x\to\infty}\frac{f(x)}{g(x)}=0$
+ 
+-大 O 记号（big-oh Notation）： $f=O(g)$（“$f$ is big-oh of $g$”），当的阶小于或等于 $g$  的阶，即 $\lim\limits_{x\to\infty}\frac{f(x)}{g(x)}\le M$
++大 O 记号（big-oh Notation）： $f=O(g)$（“$f$ is big-oh of $g$”），当存在 $M>0,x_0$，使 $x\ge x_0$ 时 $|f(x)|\le M|g(x)|$
+ 
+ ## 定理
+ 
+@@ -88,11 +88,11 @@
+     $$
+     \lim_{x\to a}\frac{f(x)}{g(x)} \;=\; \lim_{x\to a}\frac{f'(x)}{g'(x)}.
+     $$
+-## 经典反例
++## 经典反例
+ 
+ 1. $f(x)=\begin{cases}x^2\sin \left( \frac{1}{x} \right) & x\neq 0 \\ 0 & x=0\end{cases}$
+ 	$f(x)$ 连续且处处可导，但 $f'(x)$ 在 $0$ 处不连续，因为 $\lim_{ x \to 0 }f'(x)$ 不存在。
+-	这个函数在 $0$ 附近震荡非常强烈，例如可构造 $g(x)=2f(x)+x$ 让 $f'(x)$ 在 $0$ 附近符号频繁变化。
++	这个函数在 $0$ 附近震荡非常强烈，例如可构造 $g(x)=2f(x)+x$ 让 $g'(x)$ 在 $0$ 附近符号频繁变化。
+ 	另外，它在  $0$  处没有二阶导，$(0,0)$ 也不是它的拐点。
+ 2.  $f(x)=\begin{cases}1 & x\neq 0 \\ 0 & x=0\end{cases}$
+ 	和第 1 条类似但稍弱一些，说明 $f'(0)$ 和 $\lim_{ x \to 0 }f'(x)$ 不是一回事。
+@@ -127,11 +127,11 @@
+ 余项 $R_n(x)=\dfrac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}$，其中 $c$ 位于 $a$ 与 $x$ 之间。
+ **余项估计定理（Remainder Estimation Theorem）：** 若存在正常数 $M$ 使得
+ $$|f^{(n)}(x)|\leq M$$
+-对每个 $n\geq 0$ 成立，则该级数收敛到 $f(x)$。
++在 $a$ 与所考察的 $x$ 之间对所有阶数 $n\ge0$ 都成立（使用同一个 $M$），则该级数收敛到 $f(x)$。
+ 
+ 若此时 $R_{n}\to 0$ 当 $n\to \infty$ 对 $x \in I$ 恒成立，则 $f$ 在 $x=a$ 处的泰勒展开收敛到 $f$，记作
+ $$
+-f(x)=\sum^{\infty}_{i=0} \frac{f^{(i)}(a)(x-a)}{i!}
++f(x)=\sum^{\infty}_{i=0} \frac{f^{(i)}(a)(x-a)^i}{i!}
+ $$
+ 麦克劳林级数（Maclaurin series）是在 $0$ 处的泰勒公式。 
+ 一些常见函数的麦克劳林展开：
+@@ -152,7 +152,7 @@
+ $$
+ \tan^{-1}x=x-\frac{x^3}{3}+\frac{x^5}{5}+\cdots(x\to 0)
+ $$
+-注意，上面这些公式在其定义域内都收敛。
++注意，$\sin x,\cos x,e^x$ 的上述级数对所有实数收敛；$\tan x$ 的级数要求 $|x|<\pi/2$，$\arctan x$ 的级数要求 $|x|\le1$。
+ $$
+ \frac{1}{1-x}=1+x+x^2+x^3+\cdots(x\to 0)
+ $$
+--- before/数学/高等数学/下/Multiple Integral - 多重积分.md
++++ after/数学/高等数学/下/Multiple Integral - 多重积分.md
+@@ -1,9 +1,9 @@
+ 
+-二重积分（Double Integral）用黎曼和定义：
++二重积分（Double Integral）用黎曼和定义（分割的最大小块直径趋于零）：
+ $$
+ \lim_{ n \to \infty } \sum_{i=1}^n f(x_{i},y_{i})\Delta A_{i}:=\iint _{R}f(x,y)dxdy
+ $$
+-有时 $dxdy$ 写成 $dA$。**它的几何意义是曲面 $z=f(x,y)$ 下方的体积。**
++有时 $dxdy$ 写成 $dA$。**当 $f\ge0$ 时，它的几何意义是曲面 $z=f(x,y)$ 与 $xy$ 平面间的体积；一般情况下是带符号的体积。**
+ 要计算二重积分，我们把它转化为累次积分（Iterated integral/Repeated integral），也就是切成横条或竖条计算面积，再把面积积分成体积。这种方法就是富比尼定理（Fubini's Theorem）：
+ - 若 $f(x,y)$ 在区域 $R$ 内连续，若区域 $R$ 用 $a\leq x\leq b, g_{1}(x)\leq y\leq g_{2}(x)$ 定义，且 $g_{1},g_{2}$ 在 $\left[ a,b \right]$ 上连续，则有
+ $$
+@@ -65,7 +65,7 @@
+ $$
+ dxdy=|J(u,v)|dudv
+ $$
+-（理解：对于新坐标系下的某一点 $(u_{0},v_{0})$，它由 $(x_{0},y_{0})$ 在经过变换 $x=g(u,v),y=h(u,v)$ 得到，它附近的一个极小的平行四边形可以看作由原坐标系下的一个单位正方形做 **线性变换** 得到，而这个变换导致的面积变化也就是乘上 $J(u,v)$。考虑 $x,y$ 是 $u,v$ 的线性组合的情况，就容易理解了。）
++（理解：对于新坐标系下的某一点 $(u_{0},v_{0})$，它经过变换 $x=g(u,v),y=h(u,v)$ 得到 $(x_0,y_0)$，它附近的一个极小的平行四边形可以看作由原坐标系下的一个单位正方形做 **线性变换** 得到，而这个变换导致的面积变化也就是乘上 $|J(u,v)|$。考虑 $x,y$ 是 $u,v$ 的线性组合的情况，就容易理解了。）
+ 更高维的情况也类似。
+ 
+ 应用：三维空间中的质量和一阶矩（First moment）
+--- before/数学/高等数学/下/Partial Derivatives -  偏导数.md
++++ after/数学/高等数学/下/Partial Derivatives -  偏导数.md
+@@ -3,9 +3,9 @@
+ 
+ ### 多元函数及其极限
+ 
+-实值函数（Real-valued Function）$f$ 将 $n$ 元组 $(x_{1},x_{2},\dots,x_{n})$ 映射到一个实数 $w$。称 $w$ 为因变量/输入变量（Dependent Variable/Output Variable），$x_{1},x_{2},\dots,x_{n}$ 为自变量/输出变量（Independent Variables/Input Variables）。
+-
+-对于 $\mathbb{R}^{2}$ 上的区域/集合 $R$，定义它的内点（Interior Point）为使得以这个点为原心的小圆只包含 $R$ 中的点；定义它的边界点（Boundary Point）为使得以这个点为原心的小圆中同时包含 $R$ 中和 $R$ 外的点。$R$ 的内点构成的集合称为这个区域的内部（Interior）。边界点构成的集合称为这个区域的边界（Boundary）。包含了所有内点的区域定义为是开的（Open）。包含了所有边界点的区域定义为是闭的（Closed）。
++实值函数（Real-valued Function）$f$ 将 $n$ 元组 $(x_{1},x_{2},\dots,x_{n})$ 映射到一个实数 $w$。称 $w$ 为因变量/输出变量（Dependent Variable/Output Variable），$x_{1},x_{2},\dots,x_{n}$ 为自变量/输入变量（Independent Variables/Input Variables）。
++
++对于 $\mathbb{R}^{2}$ 上的区域/集合 $R$，定义它的内点（Interior Point）为使得存在以这个点为圆心的小圆盘完全包含在 $R$ 内；定义它的边界点（Boundary Point）为使得任意以这个点为圆心的小圆盘都同时包含 $R$ 中和 $R$ 外的点。$R$ 的内点构成的集合称为这个区域的内部（Interior）。边界点构成的集合称为这个区域的边界（Boundary）。所有点都是内点的区域定义为是开的（Open）。包含了所有边界点的区域定义为是闭的（Closed）。
+ （类似的，把小圆换成小球，就是 $\mathbb{R}^{3}$ 中的情况）
+ 
+ 定义区域有界（Bounded）若它落在一个有限半径的圆内，反之称为无界（Unbounded）。
+@@ -16,7 +16,7 @@
+ $$
+ \lim_{ (x,y) \to (x_{0},y_{0}) }f(x,y)=L 
+ $$
+-为 $\forall\varepsilon, \exists \delta$ 使得
++为 $\forall\varepsilon>0, \exists \delta>0$ 使得
+ $$
+ 0<\sqrt{ (x-x_{0})^{2}+(y-y_{0})^{2} }<\delta \implies |f(x,y)-L|<\varepsilon
+ $$
+@@ -29,7 +29,7 @@
+ - 从所有直线趋近某个点得到的极限相同，并不能说明极限存在。
+ 
+ 极坐标代换：当出现 $x^{2}+y^{2}$，或分子次数大于分母次数时，或想要证明极限为 $0$ 时，考虑令 $x=r\cos\theta,y=r\sin\theta$，则 $\lim_{ (x,y) \to (0,0) }f(x,y)=\lim_{ r \to 0 }f(r,\theta)$。
+-- 注意，这里不能简单地把 $\theta$ 视为常数然后求 $r\to 0$ 处的极限，因为这样相当于只走直线路径 $y=\tan\theta$。可以先猜测极限为 $L$，然后再用 $\varepsilon-\delta$ 语言严格证明 $\forall\varepsilon>0, \exists \delta>0,s.t.$ $$
++- 注意，这里不能简单地把 $\theta$ 视为常数然后求 $r\to 0$ 处的极限，因为这样相当于只走直线路径 $y=x\tan\theta$。可以先猜测极限为 $L$，然后再用 $\varepsilon-\delta$ 语言严格证明 $\forall\varepsilon>0, \exists \delta>0,s.t.$ $$
+ |r|<\delta \implies|f(r,\theta)-L|<\varepsilon
+ $$
+ ### 求二元多项式之比的极限
+@@ -101,13 +101,13 @@
+ \left( \frac{df}{ds} \right)_{\mathbf{u},P_{0}}= \lim_{ s \to 0 } \frac{f(x_{0}+su_{1}, y_{0}+su_{2})-f(x_{0},y_{0})}{s} 
+ $$
+ 也记作 $(D_{\mathbf{u}}f)_{P_{0}}$。
+-通过链式法则，由于 $x=x_{0}+su_{1}, y=y_{0}+su_{2}$ 我们可以把它拆成：
++若 $f$ 在 $P_0$ 可微，通过链式法则，由于 $x=x_{0}+su_{1}, y=y_{0}+su_{2}$ 我们可以把它拆成：
+ $$
+ \begin{align}
+ (D_{\mathbf{u}}f)_{P_{0}}&= \left( \frac{df}{ds} \right)_{\mathbf{u},P_{0}} \\
+ &= \left(\frac{ \partial f }{ \partial x }\right)_{P_{0}} \frac{dx}{ds}+\left(\frac{ \partial f }{ \partial y }\right)_{P_{0}} \frac{dy}{ds} \\
+ &= \left(\frac{ \partial f }{ \partial x }\right)_{P_{0}} u_{1}+\left(\frac{ \partial f }{ \partial y }\right)_{P_{0}}u_{2} \\
+-&=\left( \frac{ \partial f }{ \partial x } \mathbf{i}+\frac{ \partial f }{ \partial y } \mathbf{j} \right) \left( u_{1}\mathbf{i}+u_{2}\mathbf{j} \right) 
++&=\left( \frac{ \partial f }{ \partial x } \mathbf{i}+\frac{ \partial f }{ \partial y } \mathbf{j} \right)\cdot\left( u_{1}\mathbf{i}+u_{2}\mathbf{j} \right) 
+ \end{align}
+ $$
+ 这里定义 $f(x,y)$ 的梯度（Gradient） 为向量
+@@ -119,19 +119,19 @@
+ $$
+ D_{\mathbf{u}}f=\nabla f\cdot \mathbf{u}=\left| \nabla f \right| \cos\theta
+ $$
+-所以，$\theta=0$ 时 $f$ 增长最快，$\theta=\pi$ 时 $f$ 衰减最快，$\theta=\frac{\pi}{2}$ 时 $f$ 不改变。
+-向量 $\nabla f$ 与曲线 $z=f(x,y)$ 的等值线（Level Curve）成法向（Normal）（与方向向量垂直）。所以可以写出等值线的切线：
++所以，$\theta=0$ 时 $f$ 增长最快，$\theta=\pi$ 时 $f$ 衰减最快，$\theta=\frac{\pi}{2}$ 时方向导数为零（一阶变化为零）。
++向量 $\nabla f$ 与曲线 $z=f(x,y)$ 的等值线（Level Curve）成法向（Normal）（与方向向量垂直）。当该点 $\nabla f\ne0$ 时，可以写出等值线的切线：
+ $$
+ f_{x}(x-x_{0})+f_{y}(y-y_{0})=0
+ $$
+ 并且，$\nabla$ 算子的加/减/数乘/乘/除的规则都和求导算子 $\frac{d}{dx}$ 类似。
+ 
+-路径导数的链式法则：若 $\mathbf{r}(t)=x(t)\mathbf{i}+y(t)\mathbf{j}+z(t)\mathbf{j}$ 为一条平滑路径，$f(\mathbf{r}(t))$ 是路径上的一个函数，则有
++路径导数的链式法则：若 $\mathbf{r}(t)=x(t)\mathbf{i}+y(t)\mathbf{j}+z(t)\mathbf{k}$ 为一条平滑路径，$f(\mathbf{r}(t))$ 是路径上的一个函数，则有
+ $$
+ \frac{d}{dt}f(\mathbf{r}(t))=\nabla f(\mathbf{r}(t))\cdot \mathbf{r}'(t)
+ $$
+ 
+-切平面：从上面的链式法则，若左边为零，也就是说，$\mathbf{r}(t)$ 为等值面 $f(x,y,z)=c$ 上的一个路径，则 $f(\mathbf{r}(t))$ 为常数，那么右边的两个向量 $\nabla f(\mathbf{r}(t))$ 与 $\mathbf{r}'(t)$ 垂直。故而定义等值面 $f(x,y,z)=c$  在 $P_{0}(x_{0},y_{0},z_{0})$ 的切平面（Tangent Plane）为经过 $P_{0}$，以 $(\nabla f)_{P_{0}}$  为法向量的平面：
++切平面：从上面的链式法则，若左边为零，也就是说，$\mathbf{r}(t)$ 为等值面 $f(x,y,z)=c$ 上的一个路径，则 $f(\mathbf{r}(t))$ 为常数，那么右边的两个向量 $\nabla f(\mathbf{r}(t))$ 与 $\mathbf{r}'(t)$ 垂直。当 $(\nabla f)_{P_0}\ne0$ 时，故而定义等值面 $f(x,y,z)=c$  在 $P_{0}(x_{0},y_{0},z_{0})$ 的切平面（Tangent Plane）为经过 $P_{0}$，以 $(\nabla f)_{P_{0}}$  为法向量的平面：
+ $$
+ f_{x}(x-x_{0})+f_{y}(y-y_{0})+f_{z}(z-z_{0})=0
+ $$
+@@ -145,7 +145,7 @@
+ 
+ 可以估计多元函数在某个方向的增量：
+ $$
+-df=(D_{\mathbf{u}}f)_{P_{0}} ds=((\nabla f)_{{P_{0}}} \cdot \mathbf{u})s
++df=(D_{\mathbf{u}}f)_{P_{0}} ds=((\nabla f)_{{P_{0}}} \cdot \mathbf{u})\,ds
+ $$
+ 从而有线性化 (Linearization)：
+ $$
+@@ -170,7 +170,7 @@
+ 
+ 定义二元函数的鞍点（Saddle Point）为对任意以它为中心的圆盘中，都存在定义域内值更小的点和值更大的点。
+ 
+-二阶导测试（Second Derivative Test）： 定义 $f$ 的判别式（discriminant）或海森（Hessian）为海森矩阵的行列式：
++二阶导测试（Second Derivative Test，要求二阶偏导在该点附近连续）：定义 $f$ 的判别式（discriminant）或海森（Hessian）为海森矩阵的行列式：
+ $$
+ D=f_{x x}f_{yy}-f_{x y}^{2}= \left| \begin{matrix} f_{x x} & f_{x y} \\
+ f_{xy}  & f_{yy} \end{matrix} \right|
+@@ -194,7 +194,7 @@
+ 
+ 几何解释：考察任意 $g=0$ 上的曲线 $C:\mathbf{r}(t)$，若  $f$ 在它上面某点取得极值，则有 $\nabla f\cdot \mathbf{r}'(t)=0$，也就是，$\nabla f$ 垂直于这一点处曲线 $C$ 的切向量。另外，在这一点也有 $\nabla g$  垂直于 $g=0$。所以考察 $f$ 在 $g=0$ 上的最值，有 $\nabla f$ 与 $\nabla g$ 共线。这就说明了拉格朗日乘子法的有效性。
+ 
+-如果有两个限制条件 $g_{1}=0,g_{2}=0$，那么要满足：
++如果有两个限制条件 $g_{1}=0,g_{2}=0$，且两约束的梯度在该点线性无关，那么要满足：
+ $$
+ \nabla f=\lambda \nabla g_{1}+\mu \nabla g_{2}
+ $$
+@@ -209,6 +209,6 @@
+ ![[Partial Derivatives -  偏导数-1.png]]
+ 也就是说
+ $$
+-f(x,y)=\left( \sum_{k=0}^{n} \frac{1}{k!}\left( x \frac{ \partial  }{ \partial x } +y \frac{ \partial  }{ \partial y }  \right)^{k}f   \right)+ \left( \frac{1}{(n+1)!}\left( x\frac{ \partial  }{ \partial x } +y\frac{ \partial  }{ \partial y }  \right)^{n+1} f\right)_{(cx, cy)} 
++f(x,y)=\sum_{k=0}^{n}\frac{1}{k!}\left[\left(x\frac{\partial}{\partial u}+y\frac{\partial}{\partial v}\right)^k f(u,v)\right]_{(u,v)=(0,0)}+\frac{1}{(n+1)!}\left[\left(x\frac{\partial}{\partial u}+y\frac{\partial}{\partial v}\right)^{n+1}f(u,v)\right]_{(u,v)=(cx,cy)},\quad 0<c<1 
+ $$ 
+ 
+--- before/数学/高等数学/下/Polar Coordinates - 极坐标.md
++++ after/数学/高等数学/下/Polar Coordinates - 极坐标.md
+@@ -4,20 +4,20 @@
+ 
+ 三维坐标系中直线的向量方程：$\mathbf{r}(t)=\mathbf{r}_{0}+t\mathbf{v}$，对应的参数方程：$x=x_{0}+tv_{1},y=y_{0}+tv_{2},z=z_{0}+tv_{3}$。
+ 三维坐标系中平面的方程：设法向量为 $\mathbf{n}=(A,B,C)$，且 $P_{0}(x_{0},y_{0},z_{0})$ 在平面内，则它们确定的平面为 $\mathbf{n}\cdot \vec{P_{0}P}=0$，也就是 $A(x-x_{0})+B(y-y_{0})+C(z-z_{0})=0$。
+-一般来说平面的方程可以写成 $Ax+Bx+Cz=D$，它的一个法向量就是 $(A,B,C)$，它过的一个点满足 $D=Ax_{0}+By_{0}+Cz_{0}$。
++一般来说平面的方程可以写成 $Ax+By+Cz=D$，它的一个法向量就是 $(A,B,C)$，它过的一个点满足 $D=Ax_{0}+By_{0}+Cz_{0}$。
+ 
+ 【不考】
+ 平面光滑曲线的曲率（Curvature）定义为
+ $$
+ \kappa=| \frac{d\mathbf{T}}{ds}|
+ $$
+-其中 $T$ 是曲线 $s$ 的一个单位向量。
++其中 $s$ 是弧长，$\mathbf T$ 是曲线的单位切向量。
+ 计算公式：若 $\mathbf{r}(t)$ 是一个光滑曲线，则：
+ $$
+ \kappa=\frac{1}{|\mathbf{v}|} | \frac{d\mathbf{T}}{dt}|
+ $$
+ 其中 $\mathbf{v}=\mathbf{r}'(t), \mathbf{T}= \frac{\mathbf{v}}{|\mathbf{v}|}$ 是一个 $s$ 的单位向量。
+-定义对一个光滑曲线的  **主单位法向量（Principle Unit Normal Vector）** ：
++定义对一个光滑曲线的  **主单位法向量（Principal Unit Normal Vector）** ：
+ $$
+ \mathbf{N}=\frac{1}{\kappa} \frac{d\mathbf{T}}{ds}
+ $$
+@@ -37,7 +37,7 @@
+ - 那么 $\mathbf{v}=\mathbf{i}+f'(t)\mathbf{j}$。
+ - 那么 $\lvert \mathbf{v} \rvert=\sqrt{ 1+[f'(t)]^{2} }$，且有 $\mathbf{T}=\mathbf{v} / \lvert  \mathbf{v} \rvert$。
+ - 最终可以推出  $$\kappa=\frac{1}{\lvert \mathbf{v} \rvert} | \frac{d\mathbf{T}}{dt}|= \frac{\lvert y'' \rvert}{(1+(y')^{2})^{3/2}}$$
+-### 求闭合曲线面积
++### 求闭合曲线面积（简单闭曲线，沿逆时针方向）
+ 
+ $$
+ A=\frac{1}{2}\oint(xdy-ydx)
+--- before/数学/高等数学/下/Sequence and Series - 数列与级数.md
++++ after/数学/高等数学/下/Sequence and Series - 数列与级数.md
+@@ -11,7 +11,7 @@
+ $$
+ 
+ 数列**有界（Bound）** 的定义为数列同时有上界（Upper Bound）和下界（Lower Bound）。
+-- 上界的定义： $a_{n}\leq M, \forall n \in \mathbb{N}^+$，则 $M$ 为上界。最小的 $M$ 称为最小上界（Least Lower Bound）。
++- 上界的定义： $a_{n}\leq M, \forall n \in \mathbb{N}^+$，则 $M$ 为上界。最小的 $M$ 称为最小上界（Least Upper Bound）。
+ 
+ 
+ 数列**单调（Monotonic）** 的定义为数列不降（Nondecreasing）或不升（Nonincreasing）。
+@@ -21,7 +21,7 @@
+ 常见数列极限：
+ - $\lim_{ n \to \infty } \frac {{\ln n}} {n}=0$。
+ - $\lim_{ n \to \infty} n^{1/n}=1$。
+-- $\lim_{ n \to \infty }x^{1/n}=1$。
++- $\lim_{ n \to \infty }x^{1/n}=1\quad(x>0)$。
+ - $\lim_{ n \to \infty }x^{n}=0(|x|<1)$。
+ - $\lim_{ n \to \infty }\left( 1+\frac{x}{n} \right)^n=e^x$。
+ - $\lim_{ n \to \infty } \frac{x^n}{n!}=0$。
+@@ -70,7 +70,7 @@
+ $$
+ \sum(a_{n}+kb_{n})=\sum a_{n}+k\sum b_{n}
+ $$
+-- 若级数 $\sum a_{n}$ 发散，则 $\sum ka_{n}$ 也发散。
++- 若级数 $\sum a_{n}$ 发散，且 $k\ne0$，则 $\sum ka_{n}$ 也发散。
+ - 若级数 $\sum a_{n}$ 发散，级数 $\sum b_{n}$ 收敛，则级数 $\sum (a_{n}+b_{n})$ 发散。
+ 
+ 单调有界定理的推论（Corollary）：若 $a_{n}\geq 0$，则级数 $\sum a_{n}$ 收敛当且仅当 $s_{n}$ 有上界。
+@@ -96,7 +96,7 @@
+ - 若 $\sum c_{n}$ 收敛，则 $\sum b_{n}$ 收敛。
+ 
+ **极限比较判别法（Limit Comparison test）**：若 $a_{n}>0$ 且 $b_{n}>0$ 对所有 $n\geq N$：
+-- 若 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=c>0$，则 $\sum a_{n}$ 和 $\sum b_{n}$ 同敛散。
++- 若 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=c\in(0,\infty)$，则 $\sum a_{n}$ 和 $\sum b_{n}$ 同敛散。
+ - 若 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=0$，则 $\sum b_{n} \text{收敛}\implies \sum a_{n}\text{收敛}$。
+ - 若 $\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=\infty$，则 $\sum b_{n}\text{发散}\implies \sum a_{n}\text{发散}$ 。
+ 
+@@ -117,9 +117,9 @@
+ - $u_{n}\geq u_{n+1}$。
+ - $\lim_{ n \to \infty }u_{n}=0$
+ 
+-**交错级数估计定理（The Alternating Series Estimation Theorem）：** 若 $\sum a_{n}=\sum (-1)^{n+1}u_{n}=L$，则：
+--  $|s_{n}-L| < u_{n+1}$。
+-- $\text{sgn}(L-s_{n})=\text{sgn}(a_{n+1})=(-1)^{n}$。
++**交错级数估计定理（The Alternating Series Estimation Theorem）：** 若 $u_n>0$ 单调不增并趋于零，且 $\sum a_{n}=\sum (-1)^{n+1}u_{n}=L$，则：
++-  $|s_{n}-L|\le u_{n+1}$。
++- $0\le(-1)^n(L-s_n)\le u_{n+1}$（余项非零时与下一项同号）。
+ 
+ **绝对收敛数列重排定理（The Rearrangement Theorem for Absolutely Convergent Series）：** 若 $\sum a_{n}$ 绝对收敛，且 $b_{n}$ 是 $a_{n}$ 的任意重排，则 $\sum a_{n}=\sum b_{n}$。
+ >  若 $\sum a_{n}$ 条件收敛，则它重排之后极限与原来不一定相同。
+@@ -130,8 +130,8 @@
+ **幂级数收敛定理（The Convergence Theorem for Power Series）：** 对级数 $\sum c_{n}x^n$：
+ - 若它在 $x=c$ 处收敛，则它在 $|x|<|c|$ 绝对收敛。
+ - 若它在 $x=d$ 处发散，则它在 $|x|>|d|$ 发散。
+->  推论：对幂级数 $\sum c_{n}x^n$，它必属于以下三种：
+->  - $\exists R>0, s.t. \sum a_{n}$ 在 $|x-a|<R$ 绝对收敛，在 $|x-a|> R$ 发散。
++>  推论：对幂级数 $\sum c_{n}(x-a)^n$，它必属于以下三种：
++>  - $\exists R>0$，该幂级数在 $|x-a|<R$ 绝对收敛，在 $|x-a|> R$ 发散。
+ >  - $R=0$。
+ >  - $R=\infty$。
+ >  其中 $R$ 称为幂级数的收敛半径（Radius of Convergence），收敛的区间称为收敛区间（Interval of Convergence）。
+@@ -153,7 +153,7 @@
+ f'(x)=\sum n c_{n}(x-a)^{n-1}
+ $$
+ 
+-**逐项积分定理（The Term-by-term Differentiation Theorem）：** 若 $f(x)=\sum c_{n}(x-a)^n$ 对 $|x-a|<R$ 收敛，则有
++**逐项积分定理（The Term-by-term Integration Theorem）：** 若 $f(x)=\sum c_{n}(x-a)^n$ 对 $|x-a|<R$ 收敛，则有
+ $$
+ \int f(x)\,dx= \sum c_{n} \frac{(x-a)^{n+1}}{n+1}+C
+ $$
+@@ -171,7 +171,7 @@
+ 这两个式子是求导的关系。
+ 
+ 例：
+-- 求 $\sum \frac{1}{(n+1)2^n}$。
++- 求 $\sum_{n=1}^{\infty}\frac{1}{(n+1)2^n}$。
+    - 令 $f(x)= \sum \frac{1}{n+1} x^n$。故 $xf(x)=\sum \frac{x^{n+1}}{n+1}$，于是 $(xf(x))'=\sum x^n=\frac{1}{1-x}-1$，积分回去就有 $xf(x)=-\ln(1-x)-x$。代入 $x=\frac{1}{2}$ 得 $\sum \frac{1}{(n+1)2^n}=f\left( \frac{1}{2}\right)=2\ln(2)-1$。
+    - 也可以直接配凑出 $-\ln(1-x)$ 的展开。
+ 
+--- before/数学/高等数学/下/Vector Calculus - 向量微积分.md
++++ after/数学/高等数学/下/Vector Calculus - 向量微积分.md
+@@ -7,7 +7,7 @@
+ \int_{C}fds
+ $$
+ 计算方法：
+-- 将 $f$ 参数化为 $\mathbf{r}(t)$。
++- 将曲线 $C$ 参数化为 $\mathbf{r}(t)$。
+ - 则 $ds=|\mathbf{v}(t)|dt$，其中 $\mathbf{v}(t)=\mathbf{r}'(t)$。
+ - 最后变成计算一元积分 $\int f(\mathbf{r}(t))|\mathbf{v}(t)|dt$。
+ 用线积分可以计算线质量，转动惯量等。
+@@ -20,7 +20,7 @@
+ $$
+ 这里为向量的点乘。计算方法同样是参数化，转化为：
+ $$
+-\int_{C} \mathbf{F}(\mathbf{r}(t))\cdot\mathbf{r}'(t)dt
++\int_a^b\mathbf{F}(\mathbf{r}(t))\cdot\mathbf{r}'(t)dt
+ $$
+ 若 $\mathbf{F}=\left< M,N \right>$ 也可以进一步写成点乘 $\mathbf{F}\cdot \left< dx,dy \right>$ 的形式
+ $$
+@@ -50,20 +50,20 @@
+ $$
+ \frac{ \partial {P} }{ \partial y } =\frac{ \partial Q }{ \partial x } 
+ $$
+-进一步的，若区域是**单连通的**，则这个条件是充要的。
++进一步的，若区域是**单连通的开区域**，且场的分量有连续一阶偏导，则这个条件是充要的。
+ 定义：一个式子 $Mdx+Ndy+Pdz$ 为恰当（Exact）微分形式，若存在 $f$ 使得：
+ $$
+ df=Mdx+Ndy+Pdz=\frac{ \partial f }{ \partial x } dx+\frac{ \partial f }{ \partial y } dy+\frac{ \partial f }{ \partial z } dz
+ $$
+ 这里 $f$ 就是势函数。
+ 对恰当微分形式进行线积分，由线积分基本定理，只需终点处的势函数值减去起点处的势函数值。
+-若单连通，同样有一个保守场充要条件：
++在单连通开区域内、场的分量具有连续一阶偏导时，同样有一个保守场充要条件：
+ $$
+ \frac{ \partial M }{ \partial y } =\frac{ \partial N }{ \partial x } ,\frac{ \partial M }{ \partial z } =\frac{ \partial P }{ \partial x } ,\frac{ \partial N }{ \partial z } =\frac{ \partial P }{ \partial y } 
+ $$
+ 保守场的一个充要条件：对任意回路积分为 $0$。
+ 
+-定义场 $\mathbf{F}=\left< M,N \right>$ 的流量密度（circulation density）：
++定义场 $\mathbf{F}=\left< M,N \right>$ 的环流密度（circulation density）：
+ $$
+ \frac{ \partial N }{ \partial x } -\frac{ \partial M }{ \partial y } = (\nabla \times\mathbf{F}) \cdot \mathbf{k}
+ $$
+@@ -118,7 +118,7 @@
+ 
+ 这里若 $z=f(x,y)$，则有 $\mathbf{r}=\left< u,v,f(u,v) \right>$，$\mathbf{r}_{u}=\left< 1,0,f_{x} \right>,\mathbf{r}_{v}=\left< 0,1,f_{y} \right>$，故而 $\mathbf{r}_{u}\times r_{v}=\left< -f_{x},-f_{y},1 \right>$（这里指向上面），有结论：
+ $$
+-d\sigma=\sqrt{ f_{x}^{2}+f_{y}^{2}+1 }dudv
++d\sigma=\sqrt{ f_{x}^{2}+f_{y}^{2}+1 }dxdy
+ $$
+ 所以 
+ $$
+@@ -153,7 +153,7 @@
+ 
+ 另外：对曲面求通量，比如有一个场 $\mathbf{F}$，则 Surface Integral of F over S： 
+ $$
+-\iint _{S}\mathbf{F}\cdot \mathbf{n}d\sigma=\iint_{S}\mathbf{F}\cdot \frac{\mathbf{r}_{u}\times \mathbf{r}_{v}}{\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert }\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert dudv=\iint_{S}\mathbf{F}\cdot(\mathbf{r}_{u}\times \mathbf{r}_{v})dudv
++\iint _{S}\mathbf{F}\cdot \mathbf{n}d\sigma=\iint_{R}\mathbf{F}(\mathbf r(u,v))\cdot \frac{\mathbf{r}_{u}\times \mathbf{r}_{v}}{\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert }\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert dudv=\iint_{R}\mathbf{F}(\mathbf r(u,v))\cdot(\mathbf{r}_{u}\times \mathbf{r}_{v})dudv
+ $$
+ 这里的 $\mathbf{n}$ 的方向需要确定：
+ - **封闭曲面 (Closed Surfaces)** 
+@@ -179,13 +179,13 @@
+ $$
+ \oint_{C}\mathbf{F}\cdot d\mathbf{r}=\iint_{S}(\nabla \times \mathbf{F})\cdot \mathbf{n}d\sigma
+ $$
+-- 其中 $C$ 是一个闭合边界，$S$ 是以 $C$ 为边界的一个**分段光滑曲面**。
++- 其中 $S$ 是可定向的**分段光滑曲面**，$C$ 是它的正向边界（方向与法向量按右手定则相容）；$\mathbf F$ 在包含整个 $S$ 的开区域内具有连续一阶偏导。
+ - 也就是说，以 $C$ 为边界的曲面的旋度场的通量，等于这个边界上的环流量。
+ - 那么对于一个复杂的曲面积分，可以改成算一个线积分，也可以换成一个简单的（有相同边界的）曲面的积分；对于一个复杂的环流量线积分，也可以换成一个简单曲面的旋度通量积分。
+ 
+ 这里要注意，作为一个通量积分，仍然有：
+ $$
+-d\mathbf{S}=\mathbf{n}d\sigma= \frac{r_{u}\times r_{v}}{\lvert r_{u}\times r_{v} \rvert }\lvert r_{u}\times r_{v} \rvert =r_{u}\times r_{v}
++d\mathbf{S}=\mathbf{n}d\sigma= \frac{r_{u}\times r_{v}}{\lvert r_{u}\times r_{v} \rvert }\lvert r_{u}\times r_{v} \rvert\,du\,dv=(r_{u}\times r_{v})\,du\,dv
+ $$
+ 那么对于 $z=f(x,y)$，仍然有 $r_{u}\times r_{v}=(-f_{x},-f_{y},1)$。
+ 
+@@ -198,9 +198,9 @@
+ - **内边界（Hole boundary）**：必须是**顺时针（Clockwise）**方向。
+ （保持曲面在左手边）
+ 
+-定理：**任何标量场的梯度场，其旋度必为零向量。**
++定理：**具有连续二阶偏导的标量场，其梯度场的旋度为零向量。**
+ $$\text{curl}(\text{grad } f) = \mathbf{0} \quad \text{或} \quad \nabla \times \nabla f = \mathbf{0} \quad \text{}$$
+-在**连通且单连通（Connected & Simply Connected）的开放区域 $D$** 中，TFAE：
++在**连通且单连通（Connected & Simply Connected）的开放区域 $D$** 中，对具有连续一阶偏导的向量场，TFAE：
+ 1. $\mathbf{F}$ 是保守场（$\mathbf{F} = \nabla f$ 存在势函数）。
+ 2. 沿着区域内任何闭合回路的线积分永远为 0（$\oint_C \mathbf{F} \cdot d\mathbf{r} = 0$）。
+ 3. 向量场线积分严格路径无关（Path Independence）。
+--- before/笔记依赖/证明/Gas - 1.md
++++ after/笔记依赖/证明/Gas - 1.md
+@@ -2,11 +2,11 @@
+ $$
+ -mv_{x}-mv_{x}=\bar{F_{x}} \frac{2L}{v_{x}}
+ $$
+-所以有 
++取分子撞向该墙的方向为正，墙对分子的平均力为：
+ $$
+ \bar{F_{x}}=-\frac{mv_{x}^2}{L}
+ $$
+-那么合力为
++墙受到方向相反的反作用力，其合力的大小为
+ $$
+ \begin{align}
+ \bar{F}&= F_{1x}+F_{2x}+\dots+F_{Nx} \\
+--- before/笔记依赖/证明/Integral-1.md
++++ after/笔记依赖/证明/Integral-1.md
+@@ -9,7 +9,7 @@
+ \int \sec xdx=\int \frac{\sec^2 x+\sec x\tan x}{\sec x+\tan x} dx=\int \frac{d(\sec x+\tan x)}{\sec x+\tan x}=\ln|\sec x+\tan x| +C
+ $$
+ $$
+-\int \csc xdx=\int \frac{\csc^2x+\csc x\cot x}{\csc x+\cot x}=\int \frac{-d(\csc x+\cot x)}{\csc x+\cot x}=-\ln|\csc x+\cot x|+C
++\int \csc xdx=\int \frac{\csc^2x+\csc x\cot x}{\csc x+\cot x}\,dx=\int \frac{-d(\csc x+\cot x)}{\csc x+\cot x}=-\ln|\csc x+\cot x|+C
+ $$
+ $$
+ \int \tan xdx=\int \frac{\sin x}{\cos x}dx=\int - \frac{d\cos x}{\cos x}=-\ln |\cos x|+C
+--- before/笔记依赖/证明/Wave-3.md
++++ after/笔记依赖/证明/Wave-3.md
+@@ -12,7 +12,7 @@
+  $$
+ \begin{align}
+ F_{net}&=(p_{0}+\Delta p_{1})A-(p_{0}+\Delta p_{2})A \\  \\
+-&=\left( B (\frac{\Delta s}{\Delta x})_{2} - (\frac{\Delta s}{\Delta x})_{1} \right)A\\
++&=BA\left((\frac{\Delta s}{\Delta x})_{2}-(\frac{\Delta s}{\Delta x})_{1}\right)\\
+ &=BA \Delta \frac{\Delta s}{\Delta x}
+ \end{align}
+ $$
+@@ -24,13 +24,13 @@
+ $$
+ a= \frac{B}{\rho} \frac{\Delta (\Delta s/\Delta x)}{\Delta x}
+ $$
+-$x\to {0}$：
++$\Delta x\to0$：
+ 
+ $$
+ \frac{\partial^2s}{\partial t^2}=\frac{B}{\rho} \frac{\partial^2s}{\partial x^2}
+ $$
+ $$
+-\implies v= \frac{\partial x}{\partial t}=\sqrt{ \frac{B}{\rho} }
++\implies v=\frac{\omega}{k}=\sqrt{ \frac{B}{\rho} }
+ $$
+ 另外：
+ $$
+--- before/计算机/DSAA/Introduction.md
++++ after/计算机/DSAA/Introduction.md
+@@ -68,7 +68,7 @@
+ 这里 $\Theta(g(n))$ 同时表示了 $f(n)$ 的上界和下界。另外有 $O(g(n))$，只表示上界（Upper bound）；以及 $\Omega(g(n))$，只表示下界（Lower bound）。形式化的定义方式与 $\Theta$ 类似。
+ ![[Introduction-1.png|576]]
+ $O$ 与 $\Omega$ 都弱于 $\Theta$。同时满足这两个可以得出 $\Theta$。
+-另外还有 $o(g(n))$ 表示严格小于某个上界（对**任意**常数 $c$，$f(n)<cg(n)$，也就是说 $\lim_{ n \to \infty }f(n)/g(n)=0$），$\omega(g(n))$ 表示严格大于某个上界。若 $f(n)=o(g(n))$，我们说 $f(n)$ 渐进小于（Asymptotically Smaller） $g(n)$。类似的有渐进大于（Asymptotically larger）
++另外还有 $o(g(n))$ 表示严格小于某个上界（对**任意**常数 $c$，$f(n)<cg(n)$，也就是说 $\lim_{ n \to \infty }f(n)/g(n)=0$），$\omega(g(n))$ 表示渐近严格大于 $g(n)$（对任意 $c>0$，最终有 $f(n)>cg(n)$）。若 $f(n)=o(g(n))$，我们说 $f(n)$ 渐进小于（Asymptotically Smaller） $g(n)$。类似的有渐进大于（Asymptotically larger）
+ ![[Introduction-2.png|583]]
+ 常用的：
+ ![[Introduction-3.png|314]]
+--- before/计算机/DSAA/Sorting.md
++++ after/计算机/DSAA/Sorting.md
+@@ -5,12 +5,12 @@
+ 可以把数组对应到一个二叉树（Binary Tree）。
+ - 下标的对应关系： $\text{Parent}(i)= \lfloor i / 2 \rfloor,\text{Left}(i)=2i,\text{Right}(i)=2i+1$。
+ 
+-大根堆：一个二叉树，具有 Max-heap Property：
++大根堆：一个完全二叉树，具有 Max-heap Property：
+ $$
+ A[\text{Parent}(i)]\geq A[i]
+ $$
+ ![[Sorting.png|471]]
+-小根堆，一个二叉树，具有 Min-heap Property：
++小根堆，一个完全二叉树，具有 Min-heap Property：
+ $$
+ A[\text{Parent}(i)]\leq A[i]
+ $$
+@@ -20,7 +20,7 @@
+ 
+ $\text{Max-Heapify}(A,i)$：假设 $\text{Left}(i),\text{Right}(i)$ 都是大根堆，但 $i$ 处可能破坏堆的性质。那么，可以通过不断向下调整（"float down"），把 $i$ 与它的**较大的**子节点（如果比 $i$ 大）交换，不断递归地重复即可。
+ ![[Sorting-1.png|493]]
+-运行时间：我们说树中一个节点的高度（height）是它到叶子节点的最长简单路径的长度。那么若 $i$ 的高度为 $h$，则运行时间是 $O(h)$ 的。（不是 $\Omega (h)$，因为可能提前停下）这里 $h$ 最多是 $\log n$，因为 $h$ 层的二叉树至少有 $1+2+4+\dots+2^{h-1}+1=2^{h}$ 个节点。
++运行时间：我们说树中一个节点的高度（height）是它到叶子节点的最长简单路径的长度。那么若 $i$ 的高度为 $h$，则运行时间是 $O(h)$ 的。（不是 $\Omega (h)$，因为可能提前停下）这里 $h$ 最多是 $\log n$，因为高度为 $h$ 的完全二叉树至少有 $1+2+4+\dots+2^{h-1}+1=2^{h}$ 个节点。
+ 正确性：对高度进行归纳证明。Base case 就是叶子节点。假设对 $i-1$ 高度已经成立，那么对 $i$ 高度，交换之后就化为了 $i-1$ 的情况，所以也成立。
+ 
+ $\text{Build-Max-Heap}(A,n)$：从叶子节点开始，从下至上不断执行 $\text{Max-Heapify}$。这是因为 $\text{Max-Heapify}$ 假设了 $\text{Left}(i)$ 和 $\text{Right}(i)$ 都是大根堆。另外我们注意到 $A[( \lfloor n / 2 \rfloor + 1),\dots,n]$ 都是叶子节点，所以不需要操作就自然形成大根堆。那么只需要从 $\lfloor n / 2 \rfloor$ 开始往前做即可。
+--- before/计算机/Harvard CS50 - AI/0 - Search.md
++++ after/计算机/Harvard CS50 - AI/0 - Search.md
+@@ -14,8 +14,8 @@
+ 2. Remove a node from the frontier. This is the node that will be considered.
+ 3. If the node contains the goal state: Return the solution. Stop.
+     Else,
+-    - Expand the node (find all the new nodes that could be reached from this node), and add resulting nodes to the frontier.
+-    * Add the current node to the explored set（已探索集合）.
++    - Add the current state to the explored set. Expand the node and add successor states that are neither explored nor already in the frontier.
++    * The explored set（已探索集合）stores states.
+ ### Depth-First Search, DFS（深度优先搜索）
+ 
+ DFS uses a **stack（栈）** as the frontier.
+@@ -24,7 +24,7 @@
+ 
+ BFS uses a **queue（队列）** as the frontier.
+ 
+->  Guaranteed to find the optimal solution（保证找到最优解）.
++>  Guaranteed to find the shortest path in number of steps; optimal in path cost when every step has the same positive cost（每步代价相同时保证最优）.
+ 
+ ### Greedy Best-First Search, GBFS（贪心最佳优先搜索）
+ 
+--- before/计算机/Harvard CS50 - AI/1 - Knowledge.md
++++ after/计算机/Harvard CS50 - AI/1 - Knowledge.md
+@@ -82,6 +82,9 @@
+       \ElsIf{\texttt{IsDisjunction(formula)}}
+         \State \texttt{left} $\gets$ \texttt{Left(formula)}; \texttt{right} $\gets$ \texttt{Right(formula)}
+         \State \Return \texttt{Evaluate(left, valuation)} or \texttt{Evaluate(right, valuation)}
++      \ElsIf{\texttt{IsExclusiveOr(formula)}}
++        \State \texttt{left} $\gets$ \texttt{Left(formula)}; \texttt{right} $\gets$ \texttt{Right(formula)}
++        \State \Return \texttt{Evaluate(left, valuation)} $\ne$ \texttt{Evaluate(right, valuation)}
+       \ElsIf{\texttt{IsImplication(formula)}}
+         \State \texttt{left} $\gets$ \texttt{Left(formula)}; \texttt{right} $\gets$ \texttt{Right(formula)}
+         \State \Return (not \texttt{Evaluate(left, valuation)}) or \texttt{Evaluate(right, valuation)}
+--- before/计算机/Harvard CS50 - AI/2 - Uncertainty.md
++++ after/计算机/Harvard CS50 - AI/2 - Uncertainty.md
+@@ -6,7 +6,7 @@
+ - Joint Probability
+ - Probability Rules:
+   - Negation: $P(\neg a)=1-P(a)$
+-  - Inclusion-Exclution: $P(a\lor b)=P(a)+P(b)-P(a\land b)$
++  - Inclusion-Exclusion: $P(a\lor b)=P(a)+P(b)-P(a\land b)$
+   - Marginalization: 
+     -  $P(a)=P(a,b)+P(a,\neg b)$
+     - $P(X=x_{i})=\sum_{j} P(X=x_{i}, Y=y_{j})$
+@@ -16,7 +16,7 @@
+ 
+ ### Bayesian Network
+ 
+-A Bayesian network is a data structure(directed graphs) that represents the dependencies among random variables.
++A Bayesian network is a data structure (directed acyclic graphs, DAGs) that represents the dependencies among random variables.
+ 
+ ![[2 - Uncertainty.png]]
+ 
+--- before/计算机/Harvard CS50 - AI/3 - Optimization.md
++++ after/计算机/Harvard CS50 - AI/3 - Optimization.md
+@@ -8,7 +8,7 @@
+ - Stochastic - choose randomly from higher-valued neighbors
+ - First-choice - choose the first higher-valued neighbor
+ - Random-restart - conduct hill climbing multiple times
+-- Local beam search - choose the k-highest-valued neighbor 
++- Local beam search - maintain k states, expand all their neighbors, and retain the k highest-valued successors
+ 
+ ### Simulated Annealing
+ 
+@@ -19,11 +19,12 @@
+ - _current_ = initial state of _problem_
+ - For _t_ = 1 to _max_:
+     - _T_ = Temperature (_t_)
++    - If _T_ = 0: Return _current_
+     - _neighbor_ = random neighbor of _current_
+     - _ΔE_ = how much better _neighbor_ is than _current_
+     - If _ΔE_ > 0:
+         - _current_ = _neighbor_
+-    - With probability e^(_ΔE/T_) set _current_ = _neighbor_
++    - Otherwise, with probability e^(_ΔE/T_) set _current_ = _neighbor_
+ - Return _current_
+ 
+ Local search can be used to solve TSP problem.
+@@ -118,7 +119,7 @@
+ - Call AC-3
+ 
+ Select-Unassigned-Var
+-- Minimum remaining values heuristic - select the smallest value
++- Minimum remaining values heuristic - select the unassigned variable with the fewest remaining legal values
+ - Degree heuristic - select the highest degree
+ 
+ Domain-Values
+--- before/计算机/Harvard CS50 - AI/4 - Learning.md
++++ after/计算机/Harvard CS50 - AI/4 - Learning.md
+@@ -1,7 +1,7 @@
+ 
+ ## Supervised Learning
+ 
+-Learning from a discrete function $f$ (actual data) to create a function $h$ that approximate the behavior of $f$.
++Learning from labeled examples of a function $f$ (actual data) to create a function $h$ that approximate the behavior of $f$.
+ 
+ ## Nearest-Neighbor Classification
+ 
+@@ -27,7 +27,7 @@
+ 0 & \text{Otherwise}
+ \end{cases}
+ $$
+-One way to find the best weight vector $\mathbf{w}$ is to use **perception learning:**
++One way to find the best weight vector $\mathbf{w}$ is to use **perceptron learning:**
+ $$
+ w_{i} \gets w_{i}+\alpha(y-h_{\mathbf{w}}(x)) \times x_{i}
+ $$
+--- before/计算机/Harvard CS50 - AI/5 - Neural Networks.md
++++ after/计算机/Harvard CS50 - AI/5 - Neural Networks.md
+@@ -26,7 +26,7 @@
+ 
+ - Start with a random choice of weights.
+ - Keep doing:
+-	- Calculate the gradient based on **all data points**: direction that will lead to decreasing loss.
++	- Calculate the gradient based on **all data points**: the gradient points toward increasing loss; update in the negative gradient direction.
+ 	- Update the weights based on the gradient.
+ 
+ Variants:
+@@ -80,7 +80,7 @@
+ 
+ This matrix is often used to detect edges. (Same values leads to 0, larger if the central is different from neighbors)
+ 
+-**Pooling:** Reduce the size of an image by pooling some pixels together. A way is to use **max-pooling** (choose the maximum value of a picture)
++**Pooling:** Reduce the size of an image by pooling some pixels together. A way is to use **max-pooling** (choose the maximum value within each local pooling window)
+ 
+ ### Convolutional Neural Network (CNN)
+ 
+--- before/计算机/Harvard CS50 - AI/6 - Language.md
++++ after/计算机/Harvard CS50 - AI/6 - Language.md
+@@ -16,7 +16,7 @@
+ - NP (Noun Phrase : N | D NP), VP (Verb Phrase : V | V NP), S (Sentence)
+ - S -> NP VP
+ ![[6 - Language.png]]
+-- Others: AP (Adjective Phrase), PP (Propositional Phrase) ...
++- Others: AP (Adjective Phrase), PP (Prepositional Phrase) ...
+ 
+ Python lib `nltk`
+ 
+@@ -36,10 +36,10 @@
+ $$
+ P(a|b)= \frac{P(a)P(b|a)}{P(b)}
+ $$
+-E.g. we have to classes, positive and negative. We first separate the sentence into words $w_{1},w_{2},\dots,w_{n}$. And **we naively assume all the words are independent.**
++E.g. we have to classes, positive and negative. We first separate the sentence into words $w_{1},w_{2},\dots,w_{n}$. And **we assume the words are conditionally independent given the class.**
+ Then the probability that the sentence is positive is:
+ $$
+-P(\text{positive} |w_{1},w_{2},\dots,w_{n})= \frac{P(\text{positive})P(w_{1}|\text{posivite})\dots P(w_{n}|\text{positive})}{P(w_{1})\dots P(w_{n})}
++P(\text{positive} |w_{1},w_{2},\dots,w_{n})= \frac{P(\text{positive})P(w_{1}|\text{positive})\dots P(w_{n}|\text{positive})}{\sum_{c\in\{\text{positive},\text{negative}\}}P(c)\prod_{i=1}^n P(w_i|c)}
+ $$
+ And the right hand side can be calculate easily.
+ To avoid the case that a word never appear in our training data (and make the probability 0), we use:
+@@ -60,7 +60,7 @@
+ 
+ Old recurrent neural networks is sequential, not parallelized.
+ 
+-Decoder: for every word:
++Encoder: for every word:
+ (Input word + Positional encoding)
+ {-> Multiple **Self-attention**(context) - Multi-headed attention
+ -> neural network} - repeating
+--- before/计算机/MIT Missing Semester/Basic Cryptography - 基础密码学.md
++++ after/计算机/MIT Missing Semester/Basic Cryptography - 基础密码学.md
+@@ -1,11 +1,11 @@
+ 
+ ### 熵
+-密码学中的 **熵（Entropy）** 单位为比特，它的值被定义为 $\log_{2}(\text{所有可能的情况数})$。
++密码学中的 **熵（Entropy）** 单位为比特，等可能选择时为 $\log_2(\text{所有可能的情况数})$；一般为 $H=-\sum_i p_i\log_2p_i$。
+ 一个密码的熵越大，就越不容易被攻击。
+ 
+ ### 散列函数
+ 
+-具有以下特性的函数叫做**散列函数（Hash Function）**：
++密码学散列函数（Cryptographic Hash Function）将任意长度输入映射到固定长度输出，要求具有以下特性：
+ - 确定性：确定的输入对应确定的输出。
+ - 不可逆性：难以从输出反推输入。
+ - 碰撞抵抗性：难以找到两个不同的输入对应相同的输出。
+@@ -14,6 +14,6 @@
+ 
+ ### 加密
+ 
+-**密钥生成函数：** 一个比较慢的函数，从较短的密码生成长度相同的，可以在其他加密算法中使用的密钥。
++**基于密码的密钥派生函数（Password-based KDF）：** 故意设计得较慢的函数，从密码和盐生成指定长度、可供其他加密算法使用的密钥。
+ **对称加密：** 明文（Plain Text）和密文（Cipher Text）之间通过一个密钥（Key）可以互相得出。
+ **非对称加密：** 明文通过公钥（Public Key）加密为密文，而密文通过私钥（Private Key）解密为明文。也可以通过私钥生成签名，让所有拥有公钥的人都可验证签名来自私钥。--- before/计算机/MIT Missing Semester/Git - 版本控制.md
++++ after/计算机/MIT Missing Semester/Git - 版本控制.md
+@@ -1,10 +1,10 @@
+ ## Git 模型
+ 
+- Git  模型中有 3 种数据类型：`blob`，`tree` 和 `commit`。
++ Git  模型中有 4 种对象类型：`blob`、`tree`、`commit` 和 `tag`。
+ `blob`：数据对象，对应文件。
+ `tree`：树对象，对应目录。
+ `commit`：提交对象。
+-其中 `commit` 对象包含一个父辈，元数据和顶层树。许多 `commit` 会构成类似这样的有向无环图：
++其中 `commit` 对象包含零个或多个父提交、元数据和顶层树。许多 `commit` 会构成类似这样的有向无环图：
+ ```
+ o <-- o <-- o <-- o <----  o 
+             ^            /
+@@ -15,14 +15,14 @@
+ 其中每个点都指向它的父辈，最左边的点是最旧的节点，最右边的点是最新的节点，可以看到上面的图中在第三次提交后分叉成了两个独立的分支，又最后合并起来。
+ ### 对象的储存和引用
+ 
+-所有的对象本身不会保存在硬盘上，实际上保存的是对象的**SHA-1 哈希**。
++对象内容会保存在 `.git/objects`（松散对象或 pack 文件）中；对象以内容的哈希值寻址，传统格式使用 SHA-1，也有 SHA-256 仓库格式。
+ 为了让人类可以方便的使用这些对象，我们又用引用（References）作为指向 `commit` 的指针，来给这些哈希值取名。
+ 例如，引用 `master` 指向的是当前分支的最新提交。
+ ## Git 命令
+ 
+-事实上，在硬盘上，Git 只储存对象和引用。所有的 `git` 命令都对应着增加对象，增加或删除引用等操作。
++事实上，在硬盘上，Git 只储存对象和引用。修改历史的命令可能增加对象或更新引用，查询命令只读取状态。
+ Git 有一个**暂存区**的概念，只有加入到暂存区的改动才会包含在 `commit` 中。
+-HEAD 指向当前所在的 `commit`。
++HEAD 通常是指向当前分支的符号引用；分离 HEAD 时直接指向提交。
+ ### 基础
+ 
+ - `git help <command>`: 获取 git 命令的帮助信息
+--- before/计算机/MIT Missing Semester/Metaprogramming - 元编程.md
++++ after/计算机/MIT Missing Semester/Metaprogramming - 元编程.md
+@@ -9,7 +9,7 @@
+ 1. MAJOR version：不兼容的 API 修改。
+ 2. MINOR version：向下兼容的功能性新增。
+ 3. PATCH version：向下兼容的问题修正。
+-理论上，一个软件依赖的库版本号只需要 `MAJOR` 相同，`MINOR.PATCH` 大于或等于期望的版本，即可正常运行。 
++理论上，在依赖遵守语义化版本且主版本至少为 1 的前提下，主版本相同且版本不低于所需版本，公共 API 应保持兼容；0.y.z 处于初始开发阶段，不保证这一兼容性。
+ ## 持续集成系统
+ 
+ 持续集成（Continuous integration，CI），比如 Github Actions，可以在代码发生变化后，自动运行一些动作。比如 Github Pages 就是在代码更新后执行 `jekyll`  构建网站，并对接到一个域名上。
+--- before/计算机/SUSTech CS109 - Java.md
++++ after/计算机/SUSTech CS109 - Java.md
+@@ -1,21 +1,21 @@
+ 
+ ## Java 简介（Introduction to Java）
+ 
+-Java 是一门基于 **C++** 的编程语言。
++Java 的语法受 **C/C++** 影响，但它是一门独立的编程语言。
+ 
+ Java 之父：James Gosling。
+ 
+ Java 从源代码到运行：
+ 1. 编译器：编译源代码到**字节码**。`javac Main.java`
+-2. 解释器（JVM）：读取，识别，**解释**，运行字节码。`java Main`
++2. 解释器（JVM）：加载字节码，通过解释执行或 JIT 编译等方式运行。`java Main`
+ 
+ JVM：Java Virtual Machine，运行程序的虚拟机。
+ JRE：Java Runtime Environment = JVM + 核心类库。
+ JDK：Java Development Kit = JRE + 开发工具
+ 
+-变量名，方法名都是标识符（Identifiers）。标识符只允许出现大小写英文字母和数字，$和_，不允许用数字开头。
+-
+-多行注释是贪心匹配的，不能嵌套。
++变量名，方法名都是标识符（Identifiers）。标识符支持 Unicode 字母等合法 Java 字符（也包括 `$` 和 `_`），后续可包含数字，不能以数字开头或使用保留关键字；Java 9 起不能单独使用 `_`。
++
++多行注释在遇到第一个 `*/` 时结束，不能嵌套。
+ 
+ ```java
+ /*
+@@ -32,7 +32,7 @@
+   byte(8 bits), short(16 bits), int(32 bits), long(64 bits)  // Integral Type
+   float(32 bits), double(64 bits) // Floating-Point Type
+   // 注意 float f = 1.2f 要在数字后加个 "f" 显式告诉编译器
+-  boolean(1 bit)
++  boolean(true/false，存储大小未由语言规范固定为 1 bit)
+   char(16 bits, unicode)   
+   ```
+ - 引用类型（Reference Type），也叫复杂数据类型（Complex Data Type）。
+@@ -49,12 +49,12 @@
+ 
+ 类型强制转换（Explicit Conversion） `(double)a * b`，其中 `b` 也会被隐式提升（Implicitly Promoted） 为 `double`。
+ 
+-提升需要不丢精度，比如 `float` 可以提升为 `double`，`short` 可以提升为 `long`，反过来却不安全。
++拓宽转换不一定保留精度（例如 `int/long` 转 `float` 或 `long` 转 `double`）；比如 `float` 可以提升为 `double`，`short` 可以提升为 `long`，反过来却不安全。
+ 
+ ![[CS109 - 3.png]]
+ 
+ 八大基础类型有对应的 Wrapper Classes
+-`ArrayList<Integer> list = new Arraylist<Integer>();`
++`ArrayList<Integer> list = new ArrayList<Integer>();`
+ `Map<Integer, String>`
+ 
+ ## 控制语句（Control Statement）
+@@ -98,7 +98,7 @@
+ > `String / StringBuilder` 用 `a.length()`。
+ > `List / Set / Map` 这种东西都用 `a.size()`。
+ 
+-数组越界会抛 `ArrayIndexOutofBound` 异常。
++数组越界会抛 `ArrayIndexOutOfBoundsException` 异常。
+ 
+ 初始化数组的方法：
+ ```java
+@@ -125,9 +125,9 @@
+ 
+ ## 方法（Method）
+ 
+-函数中的传参数：基础类型是传值本身，引用类型是传引用。参数也会隐式提升。
+-
+-同一个方法不同的签名（Signature，就是参数类型列表），可实现方法重载（Method Overloading）
++函数中的传参数：Java 一律按值传参：基础类型复制值，引用类型复制引用值（不是对调用者变量的引用）。参数也会隐式提升。
++
++同一个方法不同的签名（Signature，包括方法名与参数类型等，不含返回类型），可实现方法重载（Method Overloading）
+ 
+ 可变数量参数 `public static double sum(double... numbers)`
+ 
+@@ -166,12 +166,12 @@
+ 
+ boolean r1 = "hello".startsWith("he"); // true
+ boolean r2 = "hello".endsWith("lo"); // ture
+-boolean r3 = "hello".startsWith("ell", 1) // true
++boolean r3 = "hello".startsWith("ell", 1); // true
+ 
+ String s = "abcdcba";
+ int index1 = s.indexOf('c'); // 2
+ int index2 = s.indexOf('p'); // -1
+-int index3 = s.indexOf('c', 3) // 4 (从 index = 3 开始搜)
++int index3 = s.indexOf('c', 3); // 4 (从 index = 3 开始搜)
+ // lastIndexOf 为反向搜索，其余一样
+ 
+ String ss1 = "abcdefg".substring(2); // cdefg
+@@ -219,7 +219,7 @@
+ 
+ 包（Package）：例如 `java.util` ，`edu.sustech.xiangqi`。
+ 可以导入包中的类，例如 `import java.util.*`。
+-还可以导入类的静态成员，例如 `import java.lang.Math.*`。
++还可以导入类的静态成员，例如 `import static java.lang.Math.*`。
+ 但导入了同名的静态成员会有编译错误。
+ 
+ 枚举类（Enumerations）：
+@@ -227,7 +227,7 @@
+ public enum Direction {
+ 	NORTH, SOUTH, EAST, WEST
+ }
+-// 等效于下面这个
++// 下面仅类比枚举常量的实例；真正的 enum 还继承 Enum，并具有 values()/valueOf() 等机制
+ public final class Direction {
+ 	private Direction() {} 
+ 	public static final Direction EAST = new Direction();
+@@ -261,7 +261,7 @@
+ 修饰符：
+ 
+ ![[CS109-1.png]]
+-子类会不会“继承“超类 `private` 成员具有争议。一个比较有共识的说法是，子类会继承超类的所有成员，但是会隐藏 `private` 成员。
++Java 语言规范明确：子类不继承超类的 `private` 成员；子类对象仍包含超类部分的状态，但这不等于成员继承。
+ 子类可以通过 `super` 关键字调用（invoke）超类的构造方法。
+ 没有标识符（no modifier）相当于 `package-private`。
+ 使用  `extends` 关键字继承。
+@@ -315,11 +315,11 @@
+ animal.move(); // 动态绑定，调用的是 Fish 的 move 方法
+ animal.swim(); // 编译错误，因为 animal 本身没有 swim 这个方法
+ if (animal instanceof Fish) {
+-	Fish fish = (Fish) Animal; // 显式转换（Explicit Casting）
++	Fish fish = (Fish) animal; // 显式转换（Explicit Casting）
+ 	fish.swim(); // 可以正常运作
+ }
+ ```
+-- 静态绑定（Static Binding）：当方法被定义为 `static / final / private`，方法调用基于引用变量的类型。
++- 静态绑定（Static Binding）：`static` 方法按编译时类型选择，不能动态重写；`private` 方法不被继承，`final` 方法不可重写。可重写的实例方法按运行时对象类型动态绑定。
+ ```java
+ // 考虑上面写的 Parent 和 Child 类，虽然子类隐藏了父类的 staticMethod 方法，但由于静态绑定，还是会调用父类的静态方法
+ Parent p = new Child();
+@@ -327,8 +327,8 @@
+ ```
+ 
+ `final` 关键字：
+-- 可以修饰变量，让它变成常量，不能再修改；
+-- 可以修饰方法，让它不能被子类重写（`private / static` 方法都隐式声明为 ` final `）；
++- 可以修饰变量，使其赋值后不能重新赋值；引用变量指向的对象仍可能被修改；
++- 可以修饰方法，让它不能被子类重写（`private` 方法不能被重写；`static` 方法可被隐藏，并不隐式声明为 `final`）；
+ - 可以修饰类，让它不能被继承（`String / System` 都是 `final` 类）。
+ 
+ `abstract` 关键字：
+@@ -343,10 +343,10 @@
+ 
+ ## 接口（Interface）
+ 
+-接口是一种特殊的类，与公共的抽象类类似。使用 `interface` 关键字。
++接口是一种引用类型，与抽象类具有相似用途，但不是类。使用 `interface` 关键字。
+ 接口不可以包含构造方法。
+ 接口中的常量都隐式被 `public static final` 修饰。
+-接口可以包含抽象方法（Abstract） / 默认方法 （Default） / 静态方法 （Static）。如果没有指定，隐式为抽象方法。
++接口可以包含抽象方法（Abstract）、默认方法（Default）、静态方法（Static），Java 9 起也可包含私有方法（Private）；普通无方法体的接口方法隐式为 public abstract。
+ 不可以直接实例化一个接口，但接口变量可以指向实现了接口的类的实例。
+ ```java
+ Payable p1 = new Alipay();
+@@ -369,16 +369,16 @@
+ 
+ ```java
+ public static <T extends Comparable<T>> T maximum(T a, T b, T c) {
+-	T m = x;
+-	if (y.compareTo(m) > 0)	max = y;
+-	if (z.compareTo(m) > 0) max = z;
++	T m = a;
++	if (b.compareTo(m) > 0) m = b;
++	if (c.compareTo(m) > 0) m = c;
+ 	return m;
+ }
+ ```
+-注意这里的 `extends` 是实现的意思。
++这里的 `extends` 声明类型参数的上界：`T` 必须是 `Comparable<T>` 的子类型（类通过实现接口满足此条件）。
+ 
+ 泛型类（Generic Classes）例如 `ArrayList<T>, Stack<T>`。
+-泛型只是语法糖，编译成字节码之后，泛型是不存在的，会自动进行类型转换（这个叫做擦除 Erasure）。
++编译时会进行类型擦除（Erasure），将类型参数替换为其上界并插入必要的类型转换；字节码仍可保留泛型签名元数据供反射读取。
+ 
+ 需要注意泛型的**类型安全**：
+ ```java
+--- before/计算机/数字逻辑/Boolean Algebra - 布尔代数.md
++++ after/计算机/数字逻辑/Boolean Algebra - 布尔代数.md
+@@ -34,9 +34,9 @@
+ - 再把每个 Literal 取反。
+ - 例如， $F=x'y'z+x'yz+xy'$，那么 $F'=(x+y+z')(x+y'+z')(x'+y)$。
+ 
+-- 最小项（Minterm）：包含了所有的 Literals （包括补的形式）的 AND 项。
++- 最小项（Minterm）：每个变量恰好出现一次（原变量或其补）的 AND 项。
+   - 例如，对两个变量 $x,y$ ，最小项： $x'y',x'y,xy',xy(m_{0}\sim m_{3})$。 
+-- 最大项（Maxterm）：包含了所有的 Literals （包括补的形式）的 OR 项。
++- 最大项（Maxterm）：每个变量恰好出现一次（原变量或其补）的 OR 项。
+   - 例如，对两个变量 $x,y$ ，最大项： $x+y,x+y',x'+y,x'+y'(M_{0}\sim M_{3})$。 
+ 这个编号就是对应变量的十进制值。另外有 $M_{i}=m_{i}'$。
+ ![[Boolean Algebra - 布尔代数-2.png|521]]
+--- before/计算机/数字逻辑/Number Systems - 数字系统.md
++++ after/计算机/数字逻辑/Number Systems - 数字系统.md
+@@ -46,7 +46,7 @@
+ 
+ 十六进制表示（Hexadecimal representation）：两个十六进制位表示一个字节。
+ ![[Number Systems - 数字系统-6.png|219]]
+-KB 与 B 的转换，是以 1024 为基数：
++二进制容量单位 $1\,\mathrm{KiB}=1024\,\mathrm B$；十进制 $1\,\mathrm{kB}=1000\,\mathrm B$（下图的 KB 使用旧的二进制习惯记法）：
+ ![[Number Systems - 数字系统-7.png|282]]
+ 
+ 

@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-11-26T20:02:55+08:00"
-updated_at: "2025-12-28T09:55:51+08:00"
+updated_at: "2026-10-08T20:57:10+08:00"
 reference: false
 order: 7
 layout: "course"
@@ -19,7 +19,7 @@ excerpt: "大学物理（上）/（下） · Longitudinal Wave - 纵波"
 {% raw %}
 前置： <a href="{% endraw %}{{ '/courses/physics/transverse-wave/' | relative_url }}{% raw %}">Transverse Wave - 横波</a>
 
-**纵波（Longitudinal Wave）** 指质点振动方向与波传播方向相同的波。
+**纵波（Longitudinal Wave）** 指质点振动方向与波传播方向平行的波。
 
 **声波（Sound Waves）** 是一种常见的纵波。
 声波的波速：

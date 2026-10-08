@@ -5,7 +5,7 @@ course_title: "数理逻辑导论"
 section: ""
 status: "completed"
 created_at: "2026-03-11T10:39:43+08:00"
-updated_at: "2026-06-07T00:14:25+08:00"
+updated_at: "2026-10-08T21:08:23+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -93,7 +93,7 @@ WFF 的性质：
 为了可读性，有*惯例：*
 - 将 <span class="course-math" data-tex="F" data-display="false"><code>F</code></span> 和 <span class="course-math" data-tex="(F)" data-display="false"><code>(F)</code></span> 视为相同的公式。
 - 优先级（Precedence）：从高到低为 <span class="course-math" data-tex="(), \neg,\land,\lor,\to,\leftrightarrow" data-display="false"><code>(), \neg,\land,\lor,\to,\leftrightarrow</code></span>。
-- 结合性（Associativity）：<span class="course-math" data-tex="\land, \lor, \leftrightarrow" data-display="false"><code>\land, \lor, \leftrightarrow</code></span> 具有结合性。<span class="course-math" data-tex="\to" data-display="false"><code>\to</code></span> 具有右结合性。
+- 结合性（Associativity）：<span class="course-math" data-tex="\land, \lor, \leftrightarrow" data-display="false"><code>\land, \lor, \leftrightarrow</code></span> 具有结合性。<span class="course-math" data-tex="\to" data-display="false"><code>\to</code></span> 按右结合约定解析（不满足结合律）。
 
 
 ### 语义
@@ -112,7 +112,7 @@ WFF 的性质：
 | true  | false | false    |
 | true  | true  | true     |
 
-这里 <span class="course-math" data-tex="P" data-display="false"><code>P</code></span> 是前件（Antecedent），<span class="course-math" data-tex="Q" data-display="false"><code>Q</code></span> 是后件（Consequence），<span class="course-math" data-tex="P\to Q" data-display="false"><code>P\to Q</code></span> 相当于 <span class="course-math" data-tex="\neg P\lor Q" data-display="false"><code>\neg P\lor Q</code></span>。
+这里 <span class="course-math" data-tex="P" data-display="false"><code>P</code></span> 是前件（Antecedent），<span class="course-math" data-tex="Q" data-display="false"><code>Q</code></span> 是后件（Consequent），<span class="course-math" data-tex="P\to Q" data-display="false"><code>P\to Q</code></span> 相当于 <span class="course-math" data-tex="\neg P\lor Q" data-display="false"><code>\neg P\lor Q</code></span>。
 
 
 <span class="course-math" data-tex="\leftrightarrow" data-display="false"><code>\leftrightarrow</code></span> 的真值表：
@@ -144,7 +144,7 @@ WFF 的性质：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-4.png' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-4" width="540" height="303" loading="lazy" decoding="async">
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-5.png' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-5" width="541" height="114" loading="lazy" decoding="async">
 
-**代换实例（Substitution Instance）：** 将一个式子里的某些部分替换为其他式子，且保持替换的一致性（相同的部分替换为相同的式子）得到的式子。
+**代换实例（Substitution Instance）：** 将公式中的原子命题统一替换为其他公式，且保持替换的一致性（同一原子命题的所有出现均替换为同一公式）得到的式子。
 - 一个永真式的代换实例仍然是永真式。
 **代换定理：** 如果 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 是一个 wff ，它有一个子式 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span>，且 <span class="course-math" data-tex="C \equiv D" data-display="false"><code>C \equiv D</code></span>，则将 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 中的某些 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 代换成 <span class="course-math" data-tex="D" data-display="false"><code>D</code></span> 得到的结果 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 有 <span class="course-math" data-tex="A\equiv B" data-display="false"><code>A\equiv B</code></span>。
 
@@ -217,7 +217,7 @@ WFF 的性质：
     - 是  <span class="course-math" data-tex="\mathscr{H}" data-display="false"><code>\mathscr{H}</code></span> 中的一个公理，或一个 <span class="course-math" data-tex="\Sigma" data-display="false"><code>\Sigma</code></span> 中的一个公式。
     - 是 <span class="course-math" data-tex="A_{j}(j&lt;i)" data-display="false"><code>A_{j}(j&lt;i)</code></span>。
     - 是通过 MP 从 <span class="course-math" data-tex="A_{j}, A_{k}(j, k&lt;i)" data-display="false"><code>A_{j}, A_{k}(j, k&lt;i)</code></span> 推导出来的。
-- 这里我们称 <span class="course-math" data-tex="A_{n}" data-display="false"><code>A_{n}</code></span> 是 <span class="course-math" data-tex="\mathscr{H}" data-display="false"><code>\mathscr{H}</code></span> 中的一个定理（Theorem）。
+- 当 <span class="course-math" data-tex="\Sigma=\varnothing" data-display="false"><code>\Sigma=\varnothing</code></span> 时，称 <span class="course-math" data-tex="A_n" data-display="false"><code>A_n</code></span> 是 <span class="course-math" data-tex="\mathscr H" data-display="false"><code>\mathscr H</code></span> 中的定理（Theorem）；否则它是由前提 <span class="course-math" data-tex="\Sigma" data-display="false"><code>\Sigma</code></span> 导出的结论。
 - <span class="course-math" data-tex="A_{n}" data-display="false"><code>A_{n}</code></span> 可被证明记作 <span class="course-math" data-tex="\Sigma\vdash A_{n}" data-display="false"><code>\Sigma\vdash A_{n}</code></span>。
 - 若 <span class="course-math" data-tex="\Sigma=\varnothing" data-display="false"><code>\Sigma=\varnothing</code></span>，则简记为 <span class="course-math" data-tex="\vdash A_{n}" data-display="false"><code>\vdash A_{n}</code></span>。
 
@@ -270,7 +270,7 @@ WFF 的性质：
 - 公式：与 wff 类似的定义。
 
 推理规则（Inference Rules）：
-- 自反（Reflexivity）：<span class="course-math" data-tex="\Sigma \cup {\alpha}\vdash\alpha" data-display="false"><code>\Sigma \cup {\alpha}\vdash\alpha</code></span> or <span class="course-math" data-tex="\Sigma,\alpha\vdash\alpha" data-display="false"><code>\Sigma,\alpha\vdash\alpha</code></span>
+- 自反（Reflexivity）：<span class="course-math" data-tex="\Sigma \cup \{\alpha\}\vdash\alpha" data-display="false"><code>\Sigma \cup \{\alpha\}\vdash\alpha</code></span> or <span class="course-math" data-tex="\Sigma,\alpha\vdash\alpha" data-display="false"><code>\Sigma,\alpha\vdash\alpha</code></span>
 - 每条规则包括 introduction 和 elimination 两部分。
 - <span class="course-math" data-tex="\land\text{i}" data-display="false"><code>\land\text{i}</code></span> ：<span class="course-math course-math-display" data-tex="\frac{\alpha \,\, \beta}{\alpha \land\beta}" data-display="true"><code>\frac{\alpha \,\, \beta}{\alpha \land\beta}</code></span>
 - <span class="course-math" data-tex="\land \text{e}" data-display="false"><code>\land \text{e}</code></span>：
@@ -326,10 +326,10 @@ WFF 的性质：
   - 考虑有 Sub-proof 的情况，比如第 <span class="course-math" data-tex="k+1" data-display="false"><code>k+1</code></span> 行是一个 <span class="course-math" data-tex="\to\text{i}: \beta\to \gamma" data-display="false"><code>\to\text{i}: \beta\to \gamma</code></span>，I.H. 就不能直接用了，因为前 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 行不是完整的证明。但是可以令 <span class="course-math" data-tex="\Sigma&#x27;=\Sigma \cup \{ \beta \}" data-display="false"><code>\Sigma&#x27;=\Sigma \cup \{ \beta \}</code></span>，在新的 <span class="course-math" data-tex="\Sigma&#x27;" data-display="false"><code>\Sigma&#x27;</code></span> 下，前 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 行就变成完整的证明了，由于 I.H. 对任意的 <span class="course-math" data-tex="\Sigma" data-display="false"><code>\Sigma</code></span> 都成立，所以 <span class="course-math" data-tex="\Sigma&#x27;\vdash \gamma \implies \Sigma&#x27;\vDash\gamma" data-display="false"><code>\Sigma&#x27;\vdash \gamma \implies \Sigma&#x27;\vDash\gamma</code></span>，也就是 <span class="course-math" data-tex="\Sigma\cup \{ \beta \}\vDash \gamma" data-display="false"><code>\Sigma\cup \{ \beta \}\vDash \gamma</code></span>。从而可以通过反证法证明 <span class="course-math" data-tex="\Sigma\vDash \beta\to\gamma" data-display="false"><code>\Sigma\vDash \beta\to\gamma</code></span>。
 有了可靠性，证明蕴含就可以用：真值表，定义，反证法，以及 **用 ND 证明**。
 
-要证明 ND 的完备性，设 <span class="course-math" data-tex="\Sigma=\{ a_{0},a_{1},\dots,a_{n} \}" data-display="false"><code>\Sigma=\{ a_{0},a_{1},\dots,a_{n} \}</code></span> ，可以分别证明三个引理：
+对有限前提集证明 ND 的完备性，设 <span class="course-math" data-tex="\Sigma=\{ a_{0},a_{1},\dots,a_{n} \}" data-display="false"><code>\Sigma=\{ a_{0},a_{1},\dots,a_{n} \}</code></span> ，可以分别证明三个引理：
 - Lemma 1: 若 <span class="course-math" data-tex="\Sigma\vDash\beta" data-display="false"><code>\Sigma\vDash\beta</code></span>，则 <span class="course-math" data-tex="\emptyset \vDash(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta))))" data-display="false"><code>\emptyset \vDash(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta))))</code></span>。
 - Lemma 2: 对任意 wff <span class="course-math" data-tex="\gamma" data-display="false"><code>\gamma</code></span>，若 <span class="course-math" data-tex="\emptyset\vDash \gamma" data-display="false"><code>\emptyset\vDash \gamma</code></span>, 则 <span class="course-math" data-tex="\emptyset\vdash_{ND}\gamma" data-display="false"><code>\emptyset\vdash_{ND}\gamma</code></span>。（永真式可以被证明）
-- Lemma 3: 若 <span class="course-math" data-tex="\emptyset\vdash_{ND}(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta)\dots))" data-display="false"><code>\emptyset\vdash_{ND}(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta)\dots))</code></span>，则 <span class="course-math" data-tex="\{ a_{0},a_{1},\dots,a_{n} \}\vdash_{ND}\beta" data-display="false"><code>\{ a_{0},a_{1},\dots,a_{n} \}\vdash_{ND}\beta</code></span>。也就是说 <span class="course-math" data-tex="\Sigma\vdash_{ND}\beta" data-display="false"><code>\Sigma\vdash_{ND}\beta</code></span>。
+- Lemma 3: 若 <span class="course-math" data-tex="\emptyset\vdash_{ND}(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta)\dots)))" data-display="false"><code>\emptyset\vdash_{ND}(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta)\dots)))</code></span>，则 <span class="course-math" data-tex="\{ a_{0},a_{1},\dots,a_{n} \}\vdash_{ND}\beta" data-display="false"><code>\{ a_{0},a_{1},\dots,a_{n} \}\vdash_{ND}\beta</code></span>。也就是说 <span class="course-math" data-tex="\Sigma\vdash_{ND}\beta" data-display="false"><code>\Sigma\vdash_{ND}\beta</code></span>。
 Lemma 1 容易用反证法证明。Lemma 3 可以重复用 <span class="course-math" data-tex="\to\text{e}" data-display="false"><code>\to\text{e}</code></span> 消去最后得到 <span class="course-math" data-tex="\beta" data-display="false"><code>\beta</code></span> 证明。
 Lemma 2：
 - 例如有两个 Atom <span class="course-math" data-tex="p,q" data-display="false"><code>p,q</code></span>，就只需要证明 <span class="course-math" data-tex="p,q\vdash\gamma,\ p, \neg q\vdash\gamma,\ \neg p, q \vdash \gamma,\ \neg p, \neg q\vdash \gamma" data-display="false"><code>p,q\vdash\gamma,\ p, \neg q\vdash\gamma,\ \neg p, q \vdash \gamma,\ \neg p, \neg q\vdash \gamma</code></span> 四种情况。因为，我们可以用排中律构造一个这样的证明：<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-10.png' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-10" width="545" height="266" loading="lazy" decoding="async">
@@ -387,7 +387,7 @@ Theorem: 任何式子 <span class="course-math" data-tex="A\in\text{Form}(\maths
 将任意式子转化为 DNF/CNF：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-11.png' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-11" width="555" height="248" loading="lazy" decoding="async">
 
-定义 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 为 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的主合取/析取范式（Principle CNF/DNF）：
+定义 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 为 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的主合取/析取范式（Principal CNF/DNF）：
 - <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 是 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的 CNF/DNF。
 - 每个 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 中的子句（clause）都包含 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 中的所有命题变量恰好一次，且没有两个相同的子句。
 要写出主 CNF 和主 DNF，可以先写出真值表，DNF 就是所有值为 1 的 row 析取，CNF 就是所有值为 0 的 row 先否定再合取。

@@ -5,7 +5,7 @@ course_title: "数字逻辑"
 section: ""
 status: "updating"
 created_at: "2026-09-15T14:47:35+08:00"
-updated_at: "2026-09-25T12:03:12+08:00"
+updated_at: "2026-10-08T21:14:49+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -59,9 +59,9 @@ excerpt: "数字逻辑 · Boolean Algebra - 布尔代数"
 - 再把每个 Literal 取反。
 - 例如， <span class="course-math" data-tex="F=x&#x27;y&#x27;z+x&#x27;yz+xy&#x27;" data-display="false"><code>F=x&#x27;y&#x27;z+x&#x27;yz+xy&#x27;</code></span>，那么 <span class="course-math" data-tex="F&#x27;=(x+y+z&#x27;)(x+y&#x27;+z&#x27;)(x&#x27;+y)" data-display="false"><code>F&#x27;=(x+y+z&#x27;)(x+y&#x27;+z&#x27;)(x&#x27;+y)</code></span>。
 
-- 最小项（Minterm）：包含了所有的 Literals （包括补的形式）的 AND 项。
+- 最小项（Minterm）：每个变量恰好出现一次（原变量或其补）的 AND 项。
   - 例如，对两个变量 <span class="course-math" data-tex="x,y" data-display="false"><code>x,y</code></span> ，最小项： <span class="course-math" data-tex="x&#x27;y&#x27;,x&#x27;y,xy&#x27;,xy(m_{0}\sim m_{3})" data-display="false"><code>x&#x27;y&#x27;,x&#x27;y,xy&#x27;,xy(m_{0}\sim m_{3})</code></span>。 
-- 最大项（Maxterm）：包含了所有的 Literals （包括补的形式）的 OR 项。
+- 最大项（Maxterm）：每个变量恰好出现一次（原变量或其补）的 OR 项。
   - 例如，对两个变量 <span class="course-math" data-tex="x,y" data-display="false"><code>x,y</code></span> ，最大项： <span class="course-math" data-tex="x+y,x+y&#x27;,x&#x27;+y,x&#x27;+y&#x27;(M_{0}\sim M_{3})" data-display="false"><code>x+y,x+y&#x27;,x&#x27;+y,x&#x27;+y&#x27;(M_{0}\sim M_{3})</code></span>。 
 这个编号就是对应变量的十进制值。另外有 <span class="course-math" data-tex="M_{i}=m_{i}&#x27;" data-display="false"><code>M_{i}=m_{i}&#x27;</code></span>。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0-2.png' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数-2" width="521" height="231" loading="lazy" decoding="async">

@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-12-02T10:12:03+08:00"
-updated_at: "2025-12-20T17:43:39+08:00"
+updated_at: "2026-10-08T21:09:46+08:00"
 reference: false
 order: 6
 layout: "course"
@@ -36,7 +36,7 @@ excerpt: "高等数学（上）/（下） · Differential Equation - 微分方�
 {: #section-3 }
 
 对形如
-<span class="course-math course-math-display" data-tex="\frac{dy}{dx}+P(x)y=Q(x) , \ (Q(x)\neq 0)" data-display="true"><code>\frac{dy}{dx}+P(x)y=Q(x) , \ (Q(x)\neq 0)</code></span>
+<span class="course-math course-math-display" data-tex="\frac{dy}{dx}+P(x)y=Q(x)" data-display="true"><code>\frac{dy}{dx}+P(x)y=Q(x)</code></span>
 的一阶常微分方程，可以构造一个 <span class="course-math" data-tex="v(x)" data-display="false"><code>v(x)</code></span> ，使得等式两边同乘 <span class="course-math" data-tex="v(x)" data-display="false"><code>v(x)</code></span> 后，左边为乘积的微分公式：
 <span class="course-math course-math-display" data-tex="v(x) \left( \frac{dy}{dx}+P(x)y \right)=\frac{d}{dx}(v(x)y)" data-display="true"><code>v(x) \left( \frac{dy}{dx}+P(x)y \right)=\frac{d}{dx}(v(x)y)</code></span>
 那么可以解得
@@ -56,8 +56,8 @@ excerpt: "高等数学（上）/（下） · Differential Equation - 微分方�
 {: #section-5 }
 
 
-自治微分方程 （Autonomous Function），指  <span class="course-math" data-tex="\frac{dy}{dx}=f(y)" data-display="false"><code>\frac{dy}{dx}=f(y)</code></span>。
+自治微分方程 （Autonomous Differential Equation），指  <span class="course-math" data-tex="\frac{dy}{dx}=f(y)" data-display="false"><code>\frac{dy}{dx}=f(y)</code></span>。
 使得这里的 <span class="course-math" data-tex="f(y)=0" data-display="false"><code>f(y)=0</code></span> 的根叫做平衡点（Equilibrium Points）。
-若平衡点 <span class="course-math" data-tex="y_{0}" data-display="false"><code>y_{0}</code></span> 满足 <span class="course-math" data-tex="f(y_{0}^-)&gt;0, f(y_{0}^+)&lt;0" data-display="false"><code>f(y_{0}^-)&gt;0, f(y_{0}^+)&lt;0</code></span>，则 <span class="course-math" data-tex="y_{0}" data-display="false"><code>y_{0}</code></span> 被称为稳定（Stable）平衡点，因为稍微偏离 <span class="course-math" data-tex="y_{0}" data-display="false"><code>y_{0}</code></span> 的 <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> 都会回到 <span class="course-math" data-tex="y_{0}" data-display="false"><code>y_{0}</code></span> 。
-反之，则有不稳定（Unstable）平衡点，稍微偏离 <span class="course-math" data-tex="y_{0}" data-display="false"><code>y_{0}</code></span> 的 <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> 都会越跑越远。
+若平衡点 <span class="course-math" data-tex="y_{0}" data-display="false"><code>y_{0}</code></span> 满足 在 <span class="course-math" data-tex="y_0" data-display="false"><code>y_0</code></span> 的左侧邻域内 <span class="course-math" data-tex="f(y)&gt;0" data-display="false"><code>f(y)&gt;0</code></span>、右侧邻域内 <span class="course-math" data-tex="f(y)&lt;0" data-display="false"><code>f(y)&lt;0</code></span>，则 <span class="course-math" data-tex="y_{0}" data-display="false"><code>y_{0}</code></span> 被称为稳定（Stable）平衡点，因为稍微偏离 <span class="course-math" data-tex="y_{0}" data-display="false"><code>y_{0}</code></span> 的 <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> 都会回到 <span class="course-math" data-tex="y_{0}" data-display="false"><code>y_{0}</code></span> 。
+若左侧 <span class="course-math" data-tex="f(y)&lt;0" data-display="false"><code>f(y)&lt;0</code></span>、右侧 <span class="course-math" data-tex="f(y)&gt;0" data-display="false"><code>f(y)&gt;0</code></span>，则有不稳定（Unstable）平衡点，稍微偏离 <span class="course-math" data-tex="y_{0}" data-display="false"><code>y_{0}</code></span> 的 <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> 都会越跑越远。
 {% endraw %}

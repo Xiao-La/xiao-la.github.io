@@ -5,7 +5,7 @@ course_title: "生命科学概论"
 section: ""
 status: "completed"
 created_at: "2026-05-06T08:20:12+08:00"
-updated_at: "2026-05-18T12:05:21+08:00"
+updated_at: "2026-10-08T21:22:39+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -43,7 +43,7 @@ Lichen 地衣
 - 藓类
 没有维管组织（Vascular Tissue）
 Reproduce using spores 孢子繁殖
-生活周期大部分处于Sporophyte 配子体世代
+生活周期大部分处于 Gametophyte 配子体世代
 
  大部分植物是 Tracheophytes/Vascular plant（维管植物）
  - 韧皮
@@ -54,7 +54,7 @@ Immortal（永生）pluripotency（多能性）无性的 Asexual
 
 Gametophyte 配子体
 植物的生殖细胞存在于多细胞的配子体中
-孢子体 Sporophyte ->减数分裂单倍体孢子 Haploid Spore ->有丝分裂卵细胞
+孢子体 Sporophyte ->减数分裂产生单倍体孢子 Haploid Spore ->有丝分裂形成配子体 Gametophyte ->有丝分裂产生配子（卵细胞或精子）
 
 双受精 Double Fertilization
 - 受粉（Pollination）
@@ -70,7 +70,7 @@ Alternation between generations
 - 酚类
 - 生物碱
 - 萜类
-Morphine Endorphin...（常见例子）
+Morphine（吗啡）, Caffeine（咖啡因）...（生物碱的常见例子；Endorphin 内啡肽是动物体内的肽类）
 
 植物产品的作用
 - 有益防御

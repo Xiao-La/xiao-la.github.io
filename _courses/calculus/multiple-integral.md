@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-05-07T12:53:21+08:00"
-updated_at: "2026-05-12T18:25:27+08:00"
+updated_at: "2026-10-08T21:11:37+08:00"
 reference: false
 order: 11
 layout: "course"
@@ -18,9 +18,9 @@ excerpt: "高等数学（上）/（下） · Multiple Integral - 多重积分"
 
 {% raw %}
 
-二重积分（Double Integral）用黎曼和定义：
+二重积分（Double Integral）用黎曼和定义（分割的最大小块直径趋于零）：
 <span class="course-math course-math-display" data-tex="\lim_{ n \to \infty } \sum_{i=1}^n f(x_{i},y_{i})\Delta A_{i}:=\iint _{R}f(x,y)dxdy" data-display="true"><code>\lim_{ n \to \infty } \sum_{i=1}^n f(x_{i},y_{i})\Delta A_{i}:=\iint _{R}f(x,y)dxdy</code></span>
-有时 <span class="course-math" data-tex="dxdy" data-display="false"><code>dxdy</code></span> 写成 <span class="course-math" data-tex="dA" data-display="false"><code>dA</code></span>。**它的几何意义是曲面 <span class="course-math" data-tex="z=f(x,y)" data-display="false"><code>z=f(x,y)</code></span> 下方的体积。**
+有时 <span class="course-math" data-tex="dxdy" data-display="false"><code>dxdy</code></span> 写成 <span class="course-math" data-tex="dA" data-display="false"><code>dA</code></span>。**当 <span class="course-math" data-tex="f\ge0" data-display="false"><code>f\ge0</code></span> 时，它的几何意义是曲面 <span class="course-math" data-tex="z=f(x,y)" data-display="false"><code>z=f(x,y)</code></span> 与 <span class="course-math" data-tex="xy" data-display="false"><code>xy</code></span> 平面间的体积；一般情况下是带符号的体积。**
 要计算二重积分，我们把它转化为累次积分（Iterated integral/Repeated integral），也就是切成横条或竖条计算面积，再把面积积分成体积。这种方法就是富比尼定理（Fubini's Theorem）：
 - 若 <span class="course-math" data-tex="f(x,y)" data-display="false"><code>f(x,y)</code></span> 在区域 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 内连续，若区域 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 用 <span class="course-math" data-tex="a\leq x\leq b, g_{1}(x)\leq y\leq g_{2}(x)" data-display="false"><code>a\leq x\leq b, g_{1}(x)\leq y\leq g_{2}(x)</code></span> 定义，且 <span class="course-math" data-tex="g_{1},g_{2}" data-display="false"><code>g_{1},g_{2}</code></span> 在 <span class="course-math" data-tex="\left[ a,b \right]" data-display="false"><code>\left[ a,b \right]</code></span> 上连续，则有
 <span class="course-math course-math-display" data-tex="\iint_{R}f(x,y)dA=\int _{a}^b\int_{g_{1}(x)}^{g_{2}(x)}f(x,y)dydx" data-display="true"><code>\iint_{R}f(x,y)dA=\int _{a}^b\int_{g_{1}(x)}^{g_{2}(x)}f(x,y)dydx</code></span>
@@ -59,7 +59,7 @@ excerpt: "高等数学（上）/（下） · Multiple Integral - 多重积分"
 <span class="course-math course-math-display" data-tex="J(u,v)= \frac{\partial(x,y)}{\partial(u,v)}" data-display="true"><code>J(u,v)= \frac{\partial(x,y)}{\partial(u,v)}</code></span>
 那么有
 <span class="course-math course-math-display" data-tex="dxdy=&#124;J(u,v)&#124;dudv" data-display="true"><code>dxdy=&#124;J(u,v)&#124;dudv</code></span>
-（理解：对于新坐标系下的某一点 <span class="course-math" data-tex="(u_{0},v_{0})" data-display="false"><code>(u_{0},v_{0})</code></span>，它由 <span class="course-math" data-tex="(x_{0},y_{0})" data-display="false"><code>(x_{0},y_{0})</code></span> 在经过变换 <span class="course-math" data-tex="x=g(u,v),y=h(u,v)" data-display="false"><code>x=g(u,v),y=h(u,v)</code></span> 得到，它附近的一个极小的平行四边形可以看作由原坐标系下的一个单位正方形做 **线性变换** 得到，而这个变换导致的面积变化也就是乘上 <span class="course-math" data-tex="J(u,v)" data-display="false"><code>J(u,v)</code></span>。考虑 <span class="course-math" data-tex="x,y" data-display="false"><code>x,y</code></span> 是 <span class="course-math" data-tex="u,v" data-display="false"><code>u,v</code></span> 的线性组合的情况，就容易理解了。）
+（理解：对于新坐标系下的某一点 <span class="course-math" data-tex="(u_{0},v_{0})" data-display="false"><code>(u_{0},v_{0})</code></span>，它经过变换 <span class="course-math" data-tex="x=g(u,v),y=h(u,v)" data-display="false"><code>x=g(u,v),y=h(u,v)</code></span> 得到 <span class="course-math" data-tex="(x_0,y_0)" data-display="false"><code>(x_0,y_0)</code></span>，它附近的一个极小的平行四边形可以看作由原坐标系下的一个单位正方形做 **线性变换** 得到，而这个变换导致的面积变化也就是乘上 <span class="course-math" data-tex="&#124;J(u,v)&#124;" data-display="false"><code>&#124;J(u,v)&#124;</code></span>。考虑 <span class="course-math" data-tex="x,y" data-display="false"><code>x,y</code></span> 是 <span class="course-math" data-tex="u,v" data-display="false"><code>u,v</code></span> 的线性组合的情况，就容易理解了。）
 更高维的情况也类似。
 
 应用：三维空间中的质量和一阶矩（First moment）

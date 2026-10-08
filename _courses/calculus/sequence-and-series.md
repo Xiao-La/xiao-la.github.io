@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-02-27T10:23:55+08:00"
-updated_at: "2026-04-23T22:33:06+08:00"
+updated_at: "2026-10-08T21:23:24+08:00"
 reference: false
 order: 8
 layout: "course"
@@ -29,7 +29,7 @@ excerpt: "高等数学（上）/（下） · Sequence and Series - 数列与级�
  <span class="course-math course-math-display" data-tex="\forall \varepsilon &gt;0, \exists N(\varepsilon)&gt;0,s.t. &#124;a_{n}-L&#124;&lt;\varepsilon,\forall n&gt;N(\varepsilon)" data-display="true"><code>\forall \varepsilon &gt;0, \exists N(\varepsilon)&gt;0,s.t. &#124;a_{n}-L&#124;&lt;\varepsilon,\forall n&gt;N(\varepsilon)</code></span>
 
 数列**有界（Bound）** 的定义为数列同时有上界（Upper Bound）和下界（Lower Bound）。
-- 上界的定义： <span class="course-math" data-tex="a_{n}\leq M, \forall n \in \mathbb{N}^+" data-display="false"><code>a_{n}\leq M, \forall n \in \mathbb{N}^+</code></span>，则 <span class="course-math" data-tex="M" data-display="false"><code>M</code></span> 为上界。最小的 <span class="course-math" data-tex="M" data-display="false"><code>M</code></span> 称为最小上界（Least Lower Bound）。
+- 上界的定义： <span class="course-math" data-tex="a_{n}\leq M, \forall n \in \mathbb{N}^+" data-display="false"><code>a_{n}\leq M, \forall n \in \mathbb{N}^+</code></span>，则 <span class="course-math" data-tex="M" data-display="false"><code>M</code></span> 为上界。最小的 <span class="course-math" data-tex="M" data-display="false"><code>M</code></span> 称为最小上界（Least Upper Bound）。
 
 
 数列**单调（Monotonic）** 的定义为数列不降（Nondecreasing）或不升（Nonincreasing）。
@@ -39,7 +39,7 @@ excerpt: "高等数学（上）/（下） · Sequence and Series - 数列与级�
 常见数列极限：
 - <span class="course-math" data-tex="\lim_{ n \to \infty } \frac {{\ln n}} {n}=0" data-display="false"><code>\lim_{ n \to \infty } \frac {{\ln n}} {n}=0</code></span>。
 - <span class="course-math" data-tex="\lim_{ n \to \infty} n^{1/n}=1" data-display="false"><code>\lim_{ n \to \infty} n^{1/n}=1</code></span>。
-- <span class="course-math" data-tex="\lim_{ n \to \infty }x^{1/n}=1" data-display="false"><code>\lim_{ n \to \infty }x^{1/n}=1</code></span>。
+- <span class="course-math" data-tex="\lim_{ n \to \infty }x^{1/n}=1\quad(x&gt;0)" data-display="false"><code>\lim_{ n \to \infty }x^{1/n}=1\quad(x&gt;0)</code></span>。
 - <span class="course-math" data-tex="\lim_{ n \to \infty }x^{n}=0(&#124;x&#124;&lt;1)" data-display="false"><code>\lim_{ n \to \infty }x^{n}=0(&#124;x&#124;&lt;1)</code></span>。
 - <span class="course-math" data-tex="\lim_{ n \to \infty }\left( 1+\frac{x}{n} \right)^n=e^x" data-display="false"><code>\lim_{ n \to \infty }\left( 1+\frac{x}{n} \right)^n=e^x</code></span>。
 - <span class="course-math" data-tex="\lim_{ n \to \infty } \frac{x^n}{n!}=0" data-display="false"><code>\lim_{ n \to \infty } \frac{x^n}{n!}=0</code></span>。
@@ -93,7 +93,7 @@ excerpt: "高等数学（上）/（下） · Sequence and Series - 数列与级�
 线性性质：
 - 若级数 <span class="course-math" data-tex="\sum a_{n}" data-display="false"><code>\sum a_{n}</code></span> 和 <span class="course-math" data-tex="\sum b_{n}" data-display="false"><code>\sum b_{n}</code></span> 都收敛，则它们的线性运算可以和求和符号交换位置：
 <span class="course-math course-math-display" data-tex="\sum(a_{n}+kb_{n})=\sum a_{n}+k\sum b_{n}" data-display="true"><code>\sum(a_{n}+kb_{n})=\sum a_{n}+k\sum b_{n}</code></span>
-- 若级数 <span class="course-math" data-tex="\sum a_{n}" data-display="false"><code>\sum a_{n}</code></span> 发散，则 <span class="course-math" data-tex="\sum ka_{n}" data-display="false"><code>\sum ka_{n}</code></span> 也发散。
+- 若级数 <span class="course-math" data-tex="\sum a_{n}" data-display="false"><code>\sum a_{n}</code></span> 发散，且 <span class="course-math" data-tex="k\ne0" data-display="false"><code>k\ne0</code></span>，则 <span class="course-math" data-tex="\sum ka_{n}" data-display="false"><code>\sum ka_{n}</code></span> 也发散。
 - 若级数 <span class="course-math" data-tex="\sum a_{n}" data-display="false"><code>\sum a_{n}</code></span> 发散，级数 <span class="course-math" data-tex="\sum b_{n}" data-display="false"><code>\sum b_{n}</code></span> 收敛，则级数 <span class="course-math" data-tex="\sum (a_{n}+b_{n})" data-display="false"><code>\sum (a_{n}+b_{n})</code></span> 发散。
 
 单调有界定理的推论（Corollary）：若 <span class="course-math" data-tex="a_{n}\geq 0" data-display="false"><code>a_{n}\geq 0</code></span>，则级数 <span class="course-math" data-tex="\sum a_{n}" data-display="false"><code>\sum a_{n}</code></span> 收敛当且仅当 <span class="course-math" data-tex="s_{n}" data-display="false"><code>s_{n}</code></span> 有上界。
@@ -113,7 +113,7 @@ excerpt: "高等数学（上）/（下） · Sequence and Series - 数列与级�
 - 若 <span class="course-math" data-tex="\sum c_{n}" data-display="false"><code>\sum c_{n}</code></span> 收敛，则 <span class="course-math" data-tex="\sum b_{n}" data-display="false"><code>\sum b_{n}</code></span> 收敛。
 
 **极限比较判别法（Limit Comparison test）**：若 <span class="course-math" data-tex="a_{n}&gt;0" data-display="false"><code>a_{n}&gt;0</code></span> 且 <span class="course-math" data-tex="b_{n}&gt;0" data-display="false"><code>b_{n}&gt;0</code></span> 对所有 <span class="course-math" data-tex="n\geq N" data-display="false"><code>n\geq N</code></span>：
-- 若 <span class="course-math" data-tex="\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=c&gt;0" data-display="false"><code>\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=c&gt;0</code></span>，则 <span class="course-math" data-tex="\sum a_{n}" data-display="false"><code>\sum a_{n}</code></span> 和 <span class="course-math" data-tex="\sum b_{n}" data-display="false"><code>\sum b_{n}</code></span> 同敛散。
+- 若 <span class="course-math" data-tex="\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=c\in(0,\infty)" data-display="false"><code>\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=c\in(0,\infty)</code></span>，则 <span class="course-math" data-tex="\sum a_{n}" data-display="false"><code>\sum a_{n}</code></span> 和 <span class="course-math" data-tex="\sum b_{n}" data-display="false"><code>\sum b_{n}</code></span> 同敛散。
 - 若 <span class="course-math" data-tex="\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=0" data-display="false"><code>\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=0</code></span>，则 <span class="course-math" data-tex="\sum b_{n} \text{收敛}\implies \sum a_{n}\text{收敛}" data-display="false"><code>\sum b_{n} \text{收敛}\implies \sum a_{n}\text{收敛}</code></span>。
 - 若 <span class="course-math" data-tex="\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=\infty" data-display="false"><code>\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=\infty</code></span>，则 <span class="course-math" data-tex="\sum b_{n}\text{发散}\implies \sum a_{n}\text{发散}" data-display="false"><code>\sum b_{n}\text{发散}\implies \sum a_{n}\text{发散}</code></span> 。
 
@@ -134,9 +134,9 @@ excerpt: "高等数学（上）/（下） · Sequence and Series - 数列与级�
 - <span class="course-math" data-tex="u_{n}\geq u_{n+1}" data-display="false"><code>u_{n}\geq u_{n+1}</code></span>。
 - <span class="course-math" data-tex="\lim_{ n \to \infty }u_{n}=0" data-display="false"><code>\lim_{ n \to \infty }u_{n}=0</code></span>
 
-**交错级数估计定理（The Alternating Series Estimation Theorem）：** 若 <span class="course-math" data-tex="\sum a_{n}=\sum (-1)^{n+1}u_{n}=L" data-display="false"><code>\sum a_{n}=\sum (-1)^{n+1}u_{n}=L</code></span>，则：
--  <span class="course-math" data-tex="&#124;s_{n}-L&#124; &lt; u_{n+1}" data-display="false"><code>&#124;s_{n}-L&#124; &lt; u_{n+1}</code></span>。
-- <span class="course-math" data-tex="\text{sgn}(L-s_{n})=\text{sgn}(a_{n+1})=(-1)^{n}" data-display="false"><code>\text{sgn}(L-s_{n})=\text{sgn}(a_{n+1})=(-1)^{n}</code></span>。
+**交错级数估计定理（The Alternating Series Estimation Theorem）：** 若 <span class="course-math" data-tex="u_n&gt;0" data-display="false"><code>u_n&gt;0</code></span> 单调不增并趋于零，且 <span class="course-math" data-tex="\sum a_{n}=\sum (-1)^{n+1}u_{n}=L" data-display="false"><code>\sum a_{n}=\sum (-1)^{n+1}u_{n}=L</code></span>，则：
+-  <span class="course-math" data-tex="&#124;s_{n}-L&#124;\le u_{n+1}" data-display="false"><code>&#124;s_{n}-L&#124;\le u_{n+1}</code></span>。
+- <span class="course-math" data-tex="0\le(-1)^n(L-s_n)\le u_{n+1}" data-display="false"><code>0\le(-1)^n(L-s_n)\le u_{n+1}</code></span>（余项非零时与下一项同号）。
 
 **绝对收敛数列重排定理（The Rearrangement Theorem for Absolutely Convergent Series）：** 若 <span class="course-math" data-tex="\sum a_{n}" data-display="false"><code>\sum a_{n}</code></span> 绝对收敛，且 <span class="course-math" data-tex="b_{n}" data-display="false"><code>b_{n}</code></span> 是 <span class="course-math" data-tex="a_{n}" data-display="false"><code>a_{n}</code></span> 的任意重排，则 <span class="course-math" data-tex="\sum a_{n}=\sum b_{n}" data-display="false"><code>\sum a_{n}=\sum b_{n}</code></span>。
 >  若 <span class="course-math" data-tex="\sum a_{n}" data-display="false"><code>\sum a_{n}</code></span> 条件收敛，则它重排之后极限与原来不一定相同。
@@ -150,8 +150,8 @@ excerpt: "高等数学（上）/（下） · Sequence and Series - 数列与级�
 **幂级数收敛定理（The Convergence Theorem for Power Series）：** 对级数 <span class="course-math" data-tex="\sum c_{n}x^n" data-display="false"><code>\sum c_{n}x^n</code></span>：
 - 若它在 <span class="course-math" data-tex="x=c" data-display="false"><code>x=c</code></span> 处收敛，则它在 <span class="course-math" data-tex="&#124;x&#124;&lt;&#124;c&#124;" data-display="false"><code>&#124;x&#124;&lt;&#124;c&#124;</code></span> 绝对收敛。
 - 若它在 <span class="course-math" data-tex="x=d" data-display="false"><code>x=d</code></span> 处发散，则它在 <span class="course-math" data-tex="&#124;x&#124;&gt;&#124;d&#124;" data-display="false"><code>&#124;x&#124;&gt;&#124;d&#124;</code></span> 发散。
->  推论：对幂级数 <span class="course-math" data-tex="\sum c_{n}x^n" data-display="false"><code>\sum c_{n}x^n</code></span>，它必属于以下三种：
->  - <span class="course-math" data-tex="\exists R&gt;0, s.t. \sum a_{n}" data-display="false"><code>\exists R&gt;0, s.t. \sum a_{n}</code></span> 在 <span class="course-math" data-tex="&#124;x-a&#124;&lt;R" data-display="false"><code>&#124;x-a&#124;&lt;R</code></span> 绝对收敛，在 <span class="course-math" data-tex="&#124;x-a&#124;&gt; R" data-display="false"><code>&#124;x-a&#124;&gt; R</code></span> 发散。
+>  推论：对幂级数 <span class="course-math" data-tex="\sum c_{n}(x-a)^n" data-display="false"><code>\sum c_{n}(x-a)^n</code></span>，它必属于以下三种：
+>  - <span class="course-math" data-tex="\exists R&gt;0" data-display="false"><code>\exists R&gt;0</code></span>，该幂级数在 <span class="course-math" data-tex="&#124;x-a&#124;&lt;R" data-display="false"><code>&#124;x-a&#124;&lt;R</code></span> 绝对收敛，在 <span class="course-math" data-tex="&#124;x-a&#124;&gt; R" data-display="false"><code>&#124;x-a&#124;&gt; R</code></span> 发散。
 >  - <span class="course-math" data-tex="R=0" data-display="false"><code>R=0</code></span>。
 >  - <span class="course-math" data-tex="R=\infty" data-display="false"><code>R=\infty</code></span>。
 >  其中 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 称为幂级数的收敛半径（Radius of Convergence），收敛的区间称为收敛区间（Interval of Convergence）。
@@ -167,7 +167,7 @@ excerpt: "高等数学（上）/（下） · Sequence and Series - 数列与级�
 **逐项微分定理（The Term-by-term Differentiation Theorem）：** 若 <span class="course-math" data-tex="f(x)=\sum c_{n}(x-a)^n" data-display="false"><code>f(x)=\sum c_{n}(x-a)^n</code></span> 对 <span class="course-math" data-tex="&#124;x-a&#124;&lt;R" data-display="false"><code>&#124;x-a&#124;&lt;R</code></span> 收敛，则有
 <span class="course-math course-math-display" data-tex="f&#x27;(x)=\sum n c_{n}(x-a)^{n-1}" data-display="true"><code>f&#x27;(x)=\sum n c_{n}(x-a)^{n-1}</code></span>
 
-**逐项积分定理（The Term-by-term Differentiation Theorem）：** 若 <span class="course-math" data-tex="f(x)=\sum c_{n}(x-a)^n" data-display="false"><code>f(x)=\sum c_{n}(x-a)^n</code></span> 对 <span class="course-math" data-tex="&#124;x-a&#124;&lt;R" data-display="false"><code>&#124;x-a&#124;&lt;R</code></span> 收敛，则有
+**逐项积分定理（The Term-by-term Integration Theorem）：** 若 <span class="course-math" data-tex="f(x)=\sum c_{n}(x-a)^n" data-display="false"><code>f(x)=\sum c_{n}(x-a)^n</code></span> 对 <span class="course-math" data-tex="&#124;x-a&#124;&lt;R" data-display="false"><code>&#124;x-a&#124;&lt;R</code></span> 收敛，则有
 <span class="course-math course-math-display" data-tex="\int f(x)\,dx= \sum c_{n} \frac{(x-a)^{n+1}}{n+1}+C" data-display="true"><code>\int f(x)\,dx= \sum c_{n} \frac{(x-a)^{n+1}}{n+1}+C</code></span>
 
 #### 求幂级数
@@ -182,7 +182,7 @@ excerpt: "高等数学（上）/（下） · Sequence and Series - 数列与级�
 这两个式子是求导的关系。
 
 例：
-- 求 <span class="course-math" data-tex="\sum \frac{1}{(n+1)2^n}" data-display="false"><code>\sum \frac{1}{(n+1)2^n}</code></span>。
+- 求 <span class="course-math" data-tex="\sum_{n=1}^{\infty}\frac{1}{(n+1)2^n}" data-display="false"><code>\sum_{n=1}^{\infty}\frac{1}{(n+1)2^n}</code></span>。
    - 令 <span class="course-math" data-tex="f(x)= \sum \frac{1}{n+1} x^n" data-display="false"><code>f(x)= \sum \frac{1}{n+1} x^n</code></span>。故 <span class="course-math" data-tex="xf(x)=\sum \frac{x^{n+1}}{n+1}" data-display="false"><code>xf(x)=\sum \frac{x^{n+1}}{n+1}</code></span>，于是 <span class="course-math" data-tex="(xf(x))&#x27;=\sum x^n=\frac{1}{1-x}-1" data-display="false"><code>(xf(x))&#x27;=\sum x^n=\frac{1}{1-x}-1</code></span>，积分回去就有 <span class="course-math" data-tex="xf(x)=-\ln(1-x)-x" data-display="false"><code>xf(x)=-\ln(1-x)-x</code></span>。代入 <span class="course-math" data-tex="x=\frac{1}{2}" data-display="false"><code>x=\frac{1}{2}</code></span> 得 <span class="course-math" data-tex="\sum \frac{1}{(n+1)2^n}=f\left( \frac{1}{2}\right)=2\ln(2)-1" data-display="false"><code>\sum \frac{1}{(n+1)2^n}=f\left( \frac{1}{2}\right)=2\ln(2)-1</code></span>。
    - 也可以直接配凑出 <span class="course-math" data-tex="-\ln(1-x)" data-display="false"><code>-\ln(1-x)</code></span> 的展开。
 

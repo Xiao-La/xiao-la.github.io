@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-11-10T23:17:07+08:00"
-updated_at: "2025-12-24T14:37:52+08:00"
+updated_at: "2026-10-08T20:57:10+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -55,7 +55,7 @@ excerpt: "大学物理（上）/（下） · Gravitation - 引力"
 
 
 万有引力是保守力，将无穷远点设为零势能点，即可推出引力势能的表达式。
-双粒子系统： <span class="course-math" data-tex="U=-\int_{R}^\infty Fdr=-\frac{GMm}{r}" data-display="false"><code>U=-\int_{R}^\infty Fdr=-\frac{GMm}{r}</code></span>。
+双粒子系统： <span class="course-math" data-tex="U(r)=-\int_r^\infty \frac{GMm}{r^{\prime 2}}\,dr^{\prime}=-\frac{GMm}{r}" data-display="false"><code>U(r)=-\int_r^\infty \frac{GMm}{r^{\prime 2}}\,dr^{\prime}=-\frac{GMm}{r}</code></span>。
 三粒子系统：<span class="course-math" data-tex="U=-\frac{Gm_{1}m_{2}}{r_{12}}-\frac{Gm_{1}m_{3}}{r_{13}}-\frac{Gm_{2}m_{3}}{r_{23}}" data-display="false"><code>U=-\frac{Gm_{1}m_{2}}{r_{12}}-\frac{Gm_{1}m_{3}}{r_{13}}-\frac{Gm_{2}m_{3}}{r_{23}}</code></span>。
 逃逸速度 （Escape Speed）指脱离引力场需要的速度：
 <span class="course-math course-math-display" data-tex="E=K+U=\frac{1}{2}mv^2 - \frac{Gm_{1}m_{2}}{r}=0 \implies v=\sqrt{ \frac{2GM}{r} }" data-display="true"><code>E=K+U=\frac{1}{2}mv^2 - \frac{Gm_{1}m_{2}}{r}=0 \implies v=\sqrt{ \frac{2GM}{r} }</code></span>

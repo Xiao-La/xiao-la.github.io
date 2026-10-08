@@ -5,7 +5,7 @@ course_title: "线性代数"
 section: ""
 status: "completed"
 created_at: "2026-04-03T14:42:42+08:00"
-updated_at: "2026-05-15T14:37:00+08:00"
+updated_at: "2026-10-08T21:33:39+08:00"
 reference: false
 order: 6
 layout: "course"
@@ -49,7 +49,7 @@ excerpt: "线性代数 · Orthogonal - 正交"
 {: #section-1 }
 
 
-<span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 在 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 上的投影（Projection）：<span class="course-math" data-tex="p= \lVert p \rVert \frac{a}{\lVert a \rVert}= \lVert b \rVert\cos\theta  \frac{a}{\lVert a \rVert}=\frac{a^Tb}{\lVert a \rVert^{2}}a" data-display="false"><code>p= \lVert p \rVert \frac{a}{\lVert a \rVert}= \lVert b \rVert\cos\theta  \frac{a}{\lVert a \rVert}=\frac{a^Tb}{\lVert a \rVert^{2}}a</code></span>。
+<span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 在非零向量 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 上的投影（Projection）：<span class="course-math" data-tex="p= \lVert b \rVert\cos\theta  \frac{a}{\lVert a \rVert}=\frac{a^Tb}{\lVert a \rVert^{2}}a" data-display="false"><code>p= \lVert b \rVert\cos\theta  \frac{a}{\lVert a \rVert}=\frac{a^Tb}{\lVert a \rVert^{2}}a</code></span>。
 投影的矩阵表示： <span class="course-math" data-tex="T:\mathbb{R}^n\to \mathbb{R}^n, b \mapsto \frac{a^Tb}{\lVert a \rVert^{2}}a" data-display="false"><code>T:\mathbb{R}^n\to \mathbb{R}^n, b \mapsto \frac{a^Tb}{\lVert a \rVert^{2}}a</code></span>。所以矩阵表示就是 <span class="course-math" data-tex="\frac{aa^T}{a^Ta}" data-display="false"><code>\frac{aa^T}{a^Ta}</code></span>。
 
 应用：**最小平方解（Least Square Solutions）**，求平方和 <span class="course-math" data-tex="\sum_{i=1}^m(a_{i1}x_{1}+a_{i2}x_{2}+\dots+a_{in}x_{n}-b_{i})^{2}" data-display="false"><code>\sum_{i=1}^m(a_{i1}x_{1}+a_{i2}x_{2}+\dots+a_{in}x_{n}-b_{i})^{2}</code></span> 的最小值，其中 <span class="course-math" data-tex="a_{ij}, b_{i}" data-display="false"><code>a_{ij}, b_{i}</code></span> 为常数。
@@ -65,10 +65,10 @@ excerpt: "线性代数 · Orthogonal - 正交"
 对于 <span class="course-math" data-tex="n=2" data-display="false"><code>n=2</code></span> 的情况就是用最小二乘法求线性回归直线。
 - 设这个回归直线为  <span class="course-math" data-tex="b=C+Dt" data-display="false"><code>b=C+Dt</code></span>。则要使得残差平方和 <span class="course-math" data-tex="\sum_{i=1}^m(C+Dt_{i}-b_{i})^{2}" data-display="false"><code>\sum_{i=1}^m(C+Dt_{i}-b_{i})^{2}</code></span> 最小。
 - 这里 <span class="course-math" data-tex="A=\begin{bmatrix}1 &amp; t_{1} \\ 1  &amp; t_{2} \\ \dots &amp; \dots \\ 1 &amp; t_{m}\end{bmatrix}" data-display="false"><code>A=\begin{bmatrix}1 &amp; t_{1} \\ 1  &amp; t_{2} \\ \dots &amp; \dots \\ 1 &amp; t_{m}\end{bmatrix}</code></span>，<span class="course-math" data-tex="b=\begin{bmatrix}b_{1} \\ b_{2} \\ \dots \\ b_{m}\end{bmatrix}" data-display="false"><code>b=\begin{bmatrix}b_{1} \\ b_{2} \\ \dots \\ b_{m}\end{bmatrix}</code></span>。
-- 则只需解方程 <span class="course-math" data-tex="A^TA\begin{bmatrix}C \\ D\end{bmatrix}=A^T" data-display="false"><code>A^TA\begin{bmatrix}C \\ D\end{bmatrix}=A^T</code></span> 即可求出直线的系数。
-- 为了方便计算，可以让 <span class="course-math" data-tex="b=C_{1}+D_{1}(t-\bar{t})" data-display="false"><code>b=C_{1}+D_{1}(t-\bar{t})</code></span>，这里原直线的参数 <span class="course-math" data-tex="C=C_{1}-D_{1}t, D=D_{1}" data-display="false"><code>C=C_{1}-D_{1}t, D=D_{1}</code></span>。那么 <span class="course-math" data-tex="A=\begin{bmatrix}1 &amp; t_{1}-\bar{t} \\ 1 &amp; t_{2}-\bar{t} \\ \dots &amp; \dots \\ 1 &amp; t_{n}-\bar{t}\end{bmatrix}" data-display="false"><code>A=\begin{bmatrix}1 &amp; t_{1}-\bar{t} \\ 1 &amp; t_{2}-\bar{t} \\ \dots &amp; \dots \\ 1 &amp; t_{n}-\bar{t}\end{bmatrix}</code></span>，则 <span class="course-math" data-tex="A=\begin{bmatrix}v_{1} &amp; v_{2}\end{bmatrix}" data-display="false"><code>A=\begin{bmatrix}v_{1} &amp; v_{2}\end{bmatrix}</code></span> 的两列是正交的。那么 <span class="course-math" data-tex="\hat{C}=\frac{v_{1}^Tb}{v_{1}^Tv_{1}},\hat{D}=\frac{v_{2}^Tb}{v_{2}^Tv_{2}}" data-display="false"><code>\hat{C}=\frac{v_{1}^Tb}{v_{1}^Tv_{1}},\hat{D}=\frac{v_{2}^Tb}{v_{2}^Tv_{2}}</code></span>。
+- 则只需解方程 <span class="course-math" data-tex="A^TA\begin{bmatrix}C \\ D\end{bmatrix}=A^Tb" data-display="false"><code>A^TA\begin{bmatrix}C \\ D\end{bmatrix}=A^Tb</code></span> 即可求出直线的系数。
+- 为了方便计算，可以让 <span class="course-math" data-tex="b=C_{1}+D_{1}(t-\bar{t})" data-display="false"><code>b=C_{1}+D_{1}(t-\bar{t})</code></span>，这里原直线的参数 <span class="course-math" data-tex="C=C_{1}-D_{1}\bar t, D=D_{1}" data-display="false"><code>C=C_{1}-D_{1}\bar t, D=D_{1}</code></span>。那么 <span class="course-math" data-tex="A=\begin{bmatrix}1 &amp; t_{1}-\bar{t} \\ 1 &amp; t_{2}-\bar{t} \\ \dots &amp; \dots \\ 1 &amp; t_{m}-\bar{t}\end{bmatrix}" data-display="false"><code>A=\begin{bmatrix}1 &amp; t_{1}-\bar{t} \\ 1 &amp; t_{2}-\bar{t} \\ \dots &amp; \dots \\ 1 &amp; t_{m}-\bar{t}\end{bmatrix}</code></span>，则 <span class="course-math" data-tex="A=\begin{bmatrix}v_{1} &amp; v_{2}\end{bmatrix}" data-display="false"><code>A=\begin{bmatrix}v_{1} &amp; v_{2}\end{bmatrix}</code></span> 的两列是正交的。那么 <span class="course-math" data-tex="\hat{C}_1=\frac{v_{1}^Tb}{v_{1}^Tv_{1}},\hat{D}_1=\frac{v_{2}^Tb}{v_{2}^Tv_{2}}" data-display="false"><code>\hat{C}_1=\frac{v_{1}^Tb}{v_{1}^Tv_{1}},\hat{D}_1=\frac{v_{2}^Tb}{v_{2}^Tv_{2}}</code></span>。
 
-考虑这个几何问题。
+考虑这个几何问题，选取 <span class="course-math" data-tex="C(A)" data-display="false"><code>C(A)</code></span> 的一组基作为 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的列（列满秩）。
 - 由于 <span class="course-math" data-tex="A\hat{x}" data-display="false"><code>A\hat{x}</code></span> 为 <span class="course-math" data-tex="C(A)" data-display="false"><code>C(A)</code></span> 上使得其终点与 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 终点连线垂直于 <span class="course-math" data-tex="C(A)" data-display="false"><code>C(A)</code></span> 的向量，<span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 在 <span class="course-math" data-tex="C(A)" data-display="false"><code>C(A)</code></span> 上的投影即为 <span class="course-math" data-tex="p=A\hat{x}=A(A^TA)^{-1}A^Tb" data-display="false"><code>p=A\hat{x}=A(A^TA)^{-1}A^Tb</code></span>。
 - 那么投影到 <span class="course-math" data-tex="C(A)" data-display="false"><code>C(A)</code></span> 的线性变换的矩阵表示为 <span class="course-math" data-tex="P=A(A^TA)^{-1} A^T" data-display="false"><code>P=A(A^TA)^{-1} A^T</code></span>。
 - 这里 <span class="course-math" data-tex="P" data-display="false"><code>P</code></span> 有些性质。比如 <span class="course-math" data-tex="P^{2}=P" data-display="false"><code>P^{2}=P</code></span>, <span class="course-math" data-tex="P^T=P" data-display="false"><code>P^T=P</code></span>。
@@ -83,9 +83,9 @@ excerpt: "线性代数 · Orthogonal - 正交"
 
 加权最小平方解（Weighted least-square solution）：求平方和 <span class="course-math" data-tex="\sum_{i=1}^mw_{i}^{2}(a_{i1}x_{1}+a_{i2}x_{2}+\dots+a_{in}x_{n}-b_{i})^{2}" data-display="false"><code>\sum_{i=1}^mw_{i}^{2}(a_{i1}x_{1}+a_{i2}x_{2}+\dots+a_{in}x_{n}-b_{i})^{2}</code></span> 的最小值，其中 <span class="course-math" data-tex="a_{ij}, b_{i}" data-display="false"><code>a_{ij}, b_{i}</code></span> 为常数。
 - 只需要把 <span class="course-math" data-tex="w_{i}" data-display="false"><code>w_{i}</code></span> 放到平方里面去即可。
-- 构造 <span class="course-math" data-tex="W=\begin{bmatrix}w_{1} &amp; \dots &amp; \dots &amp; \dots \\ \dots  &amp; w_{2} &amp; \dots &amp; \dots \\ \dots &amp; \dots &amp; \dots &amp; \dots \\ \dots &amp; \dots &amp; \dots &amp; w_{n} \end{bmatrix}" data-display="false"><code>W=\begin{bmatrix}w_{1} &amp; \dots &amp; \dots &amp; \dots \\ \dots  &amp; w_{2} &amp; \dots &amp; \dots \\ \dots &amp; \dots &amp; \dots &amp; \dots \\ \dots &amp; \dots &amp; \dots &amp; w_{n} \end{bmatrix}</code></span>，则转换为求 <span class="course-math" data-tex="\lVert WA\hat{x_{w}}-Wb \rVert^{2}" data-display="false"><code>\lVert WA\hat{x_{w}}-Wb \rVert^{2}</code></span> 的最小值。
-- 也就是 <span class="course-math" data-tex="(WA)^T(WA)\hat{x_{w}}=(WA)^T(Wb" data-display="false"><code>(WA)^T(WA)\hat{x_{w}}=(WA)^T(Wb</code></span>。
-- 也就是 <span class="course-math" data-tex="A^T(W^TW)A\hat{x_{w}}=A^T(W^TW)B" data-display="false"><code>A^T(W^TW)A\hat{x_{w}}=A^T(W^TW)B</code></span>。
+- 构造 <span class="course-math" data-tex="W=\operatorname{diag}(w_1,\dots,w_m)" data-display="false"><code>W=\operatorname{diag}(w_1,\dots,w_m)</code></span>，则转换为求 <span class="course-math" data-tex="\lVert WA\hat{x_{w}}-Wb \rVert^{2}" data-display="false"><code>\lVert WA\hat{x_{w}}-Wb \rVert^{2}</code></span> 的最小值。
+- 也就是 <span class="course-math" data-tex="(WA)^T(WA)\hat{x_{w}}=(WA)^T(Wb)" data-display="false"><code>(WA)^T(WA)\hat{x_{w}}=(WA)^T(Wb)</code></span>。
+- 也就是 <span class="course-math" data-tex="A^T(W^TW)A\hat{x_{w}}=A^T(W^TW)b" data-display="false"><code>A^T(W^TW)A\hat{x_{w}}=A^T(W^TW)b</code></span>。
 
 
 ## 规范正交基与正交矩阵
@@ -118,7 +118,7 @@ excerpt: "线性代数 · Orthogonal - 正交"
 - 任意向量分解到基上都相当于投影上去。
 <span class="course-math course-math-display" data-tex="b=\sum (q_{i}^Tb)q_{i}" data-display="true"><code>b=\sum (q_{i}^Tb)q_{i}</code></span>
 - 长度很好求。
-<span class="course-math course-math-display" data-tex="\lVert b \rVert = \sqrt{ \sum (q_{i}b)^{2} }" data-display="true"><code>\lVert b \rVert = \sqrt{ \sum (q_{i}b)^{2} }</code></span>
+<span class="course-math course-math-display" data-tex="\lVert b \rVert = \sqrt{ \sum (q_{i}^Tb)^{2} }" data-display="true"><code>\lVert b \rVert = \sqrt{ \sum (q_{i}^Tb)^{2} }</code></span>
 
 - <span class="course-math" data-tex="Q^T" data-display="false"><code>Q^T</code></span> 也是一个正交矩阵，也就是说行也是正交的
 <span class="course-math course-math-display" data-tex="(Q^T)^TQ^T=(QQ^T)^T=I" data-display="true"><code>(Q^T)^TQ^T=(QQ^T)^T=I</code></span>
@@ -134,11 +134,11 @@ Householder 变换：将某个向量 <span class="course-math" data-tex="x" data
 <span class="course-math course-math-display" data-tex="H=I_{n}-2 \frac{vv^T}{v^Tv}" data-display="true"><code>H=I_{n}-2 \frac{vv^T}{v^Tv}</code></span>
 这是因为，<span class="course-math" data-tex="H:\mathbb{R}^n \to \mathbb{R}^n, x=x_{\parallel}+x_{\perp}\mapsto x_{\parallel}-x_{\perp}" data-display="false"><code>H:\mathbb{R}^n \to \mathbb{R}^n, x=x_{\parallel}+x_{\perp}\mapsto x_{\parallel}-x_{\perp}</code></span>，又有 <span class="course-math" data-tex="P_{v}x=x_{\perp}" data-display="false"><code>P_{v}x=x_{\perp}</code></span>，则 <span class="course-math" data-tex="Hx=x_{\parallel}-x_{\perp}=x-2x_{\perp}=x-2P_{v}x" data-display="false"><code>Hx=x_{\parallel}-x_{\perp}=x-2x_{\perp}=x-2P_{v}x</code></span>，进而 <span class="course-math" data-tex="H=I-2P_{v}=I-2 \frac{vv^T}{v^Tv}" data-display="false"><code>H=I-2P_{v}=I-2 \frac{vv^T}{v^Tv}</code></span>。
 - 对合性：<span class="course-math" data-tex="H^{2}=I" data-display="false"><code>H^{2}=I</code></span>
-- 正交性：<span class="course-math" data-tex="H^TH=0" data-display="false"><code>H^TH=0</code></span>
+- 正交性：<span class="course-math" data-tex="H^TH=I" data-display="false"><code>H^TH=I</code></span>
 - 对称性：<span class="course-math" data-tex="H=H^T" data-display="false"><code>H=H^T</code></span>
 Householder 变换的意义在于，作为一个反射变换，它可以将向量的某些元素置零而保持长度不变。
 - 例题：要找某个对称矩阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 使得 <span class="course-math" data-tex="A^{2}=I" data-display="false"><code>A^{2}=I</code></span> 且其第一列为某单位向量 <span class="course-math" data-tex="u" data-display="false"><code>u</code></span>。
-- 不妨令 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为一个 Householder 矩阵，由题意得 <span class="course-math" data-tex="Ae_{1}=u" data-display="false"><code>Ae_{1}=u</code></span>，也就是说 <span class="course-math" data-tex="e_{1}" data-display="false"><code>e_{1}</code></span> 与 <span class="course-math" data-tex="u" data-display="false"><code>u</code></span> 关于 Householder 变换的超平面对称，那么可以取法向量 <span class="course-math" data-tex="v=e_{1}-u" data-display="false"><code>v=e_{1}-u</code></span>。从而得到矩阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span>。 
+- 若 <span class="course-math" data-tex="u=e_1" data-display="false"><code>u=e_1</code></span>，可取 <span class="course-math" data-tex="A=I" data-display="false"><code>A=I</code></span>；否则令 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为一个 Householder 矩阵，由题意得 <span class="course-math" data-tex="Ae_{1}=u" data-display="false"><code>Ae_{1}=u</code></span>，也就是说 <span class="course-math" data-tex="e_{1}" data-display="false"><code>e_{1}</code></span> 与 <span class="course-math" data-tex="u" data-display="false"><code>u</code></span> 关于 Householder 变换的超平面对称，那么可以取法向量 <span class="course-math" data-tex="v=e_{1}-u" data-display="false"><code>v=e_{1}-u</code></span>。从而得到矩阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span>。
 
 
 ## Gram-Schmidt 正交化
@@ -149,7 +149,7 @@ Householder 变换的意义在于，作为一个反射变换，它可以将向�
 先把 <span class="course-math" data-tex="a_{1}" data-display="false"><code>a_{1}</code></span> 归一化：
   <span class="course-math course-math-display" data-tex="q_{1}=\frac{a_{1}}{\lVert a_{1} \rVert}" data-display="true"><code>q_{1}=\frac{a_{1}}{\lVert a_{1} \rVert}</code></span>
 把 <span class="course-math" data-tex="a_{2}" data-display="false"><code>a_{2}</code></span> 去掉其投影到 <span class="course-math" data-tex="q_{1}" data-display="false"><code>q_{1}</code></span> 的部分，再归一化
-<span class="course-math course-math-display" data-tex="q_{2}=\frac{a_{2}-(q_{1}^Ta_{2})a_{1}}{\lVert a_{2}-(q_{1}^Ta_{2}) a_{1}\rVert }" data-display="true"><code>q_{2}=\frac{a_{2}-(q_{1}^Ta_{2})a_{1}}{\lVert a_{2}-(q_{1}^Ta_{2}) a_{1}\rVert }</code></span>
+<span class="course-math course-math-display" data-tex="q_{2}=\frac{a_{2}-(q_{1}^Ta_{2})q_{1}}{\lVert a_{2}-(q_{1}^Ta_{2})q_{1}\rVert }" data-display="true"><code>q_{2}=\frac{a_{2}-(q_{1}^Ta_{2})q_{1}}{\lVert a_{2}-(q_{1}^Ta_{2})q_{1}\rVert }</code></span>
 循环往复，减去往前面所有（正交的）向量做的投影：
 <span class="course-math course-math-display" data-tex="A_{j+1}=a_{j+1}-\sum_{i=1}^j (q_{i}^T a_{j+1})q_{i}" data-display="true"><code>A_{j+1}=a_{j+1}-\sum_{i=1}^j (q_{i}^T a_{j+1})q_{i}</code></span>
 <span class="course-math course-math-display" data-tex="q_{j+1}= \frac{A_{j+1}}{\lVert A_{j+1} \rVert }" data-display="true"><code>q_{j+1}= \frac{A_{j+1}}{\lVert A_{j+1} \rVert }</code></span>
@@ -190,6 +190,6 @@ Householder 变换的意义在于，作为一个反射变换，它可以将向�
 - 这里 <span class="course-math" data-tex="v_{2}" data-display="false"><code>v_{2}</code></span> 在 <span class="course-math" data-tex="\{ 1,t \}" data-display="false"><code>\{ 1,t \}</code></span> 张成的平面内，故这个长度最小，需要 <span class="course-math" data-tex="v_{2}" data-display="false"><code>v_{2}</code></span> 为 <span class="course-math" data-tex="v_{1}" data-display="false"><code>v_{1}</code></span> 在这个平面上的投影。
 - 用 Gram-Schmidt 正交化可以找到一组正交基 <span class="course-math" data-tex="a_{1}=  1, a_{2}=t-\frac{1}{2}" data-display="false"><code>a_{1}=  1, a_{2}=t-\frac{1}{2}</code></span> 。
 - 于是这个投影就是  
-<span class="course-math course-math-display" data-tex="\frac{\left&lt; a_{1}, v \right&gt; }{\left&lt; a_{1}, a_{1} \right&gt; } a_{1}+ \frac{\left&lt; a_{2},v \right&gt; }{\left&lt; a_{2},a_{2} \right&gt; } a_{2}" data-display="true"><code>\frac{\left&lt; a_{1}, v \right&gt; }{\left&lt; a_{1}, a_{1} \right&gt; } a_{1}+ \frac{\left&lt; a_{2},v \right&gt; }{\left&lt; a_{2},a_{2} \right&gt; } a_{2}</code></span>
+<span class="course-math course-math-display" data-tex="\frac{\left&lt; a_{1}, v_1 \right&gt; }{\left&lt; a_{1}, a_{1} \right&gt; } a_{1}+ \frac{\left&lt; a_{2},v_1 \right&gt; }{\left&lt; a_{2},a_{2} \right&gt; } a_{2}" data-display="true"><code>\frac{\left&lt; a_{1}, v_1 \right&gt; }{\left&lt; a_{1}, a_{1} \right&gt; } a_{1}+ \frac{\left&lt; a_{2},v_1 \right&gt; }{\left&lt; a_{2},a_{2} \right&gt; } a_{2}</code></span>
 - 这也就是要找的直线。
 {% endraw %}

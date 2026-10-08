@@ -5,7 +5,7 @@ course_title: "数理逻辑导论"
 section: ""
 status: "completed"
 created_at: "2026-02-25T10:20:41+08:00"
-updated_at: "2026-03-25T08:51:24+08:00"
+updated_at: "2026-10-08T20:59:37+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -144,7 +144,7 @@ excerpt: "数理逻辑导论 · Prerequisite Knowledge - 预备知识"
 - 归纳定义（Inductive Definiton）。例如定义 <span class="course-math" data-tex="\mathbb{N}" data-display="false"><code>\mathbb{N}</code></span>：<span class="course-math" data-tex="0\in \mathbb{N}" data-display="false"><code>0\in \mathbb{N}</code></span>，且 <span class="course-math" data-tex="n \in \mathbb{N}\implies n+1 \in \mathbb{N}" data-display="false"><code>n \in \mathbb{N}\implies n+1 \in \mathbb{N}</code></span>，且只有前两个规则产生的元素才属于 <span class="course-math" data-tex="\mathbb{N}" data-display="false"><code>\mathbb{N}</code></span>。
 - 归纳证明（Proof by Induction）。若要证明 <span class="course-math" data-tex="P(x) \forall x" data-display="false"><code>P(x) \forall x</code></span>：
   - 先证明 <span class="course-math" data-tex="P(n_{0})" data-display="false"><code>P(n_{0})</code></span> 成立（Base case）。
-  - 归纳假设：假设 <span class="course-math" data-tex="P(k)" data-display="false"><code>P(k)</code></span> 对 <span class="course-math" data-tex="k= n_{0}" data-display="false"><code>k= n_{0}</code></span> 成立。
+  - 归纳假设：对任意 <span class="course-math" data-tex="k\geq n_0" data-display="false"><code>k\geq n_0</code></span>，假设 <span class="course-math" data-tex="P(k)" data-display="false"><code>P(k)</code></span> 成立。
   - 归纳：证明 <span class="course-math" data-tex="P(k+1)" data-display="false"><code>P(k+1)</code></span> 成立。
 - 递归定义（Recursive Definition）：
 <span class="course-math course-math-display" data-tex="\begin{cases}&#10;f(0)=g(0) \\&#10;f(n&#x27;)=h(f(n))&#10;\end{cases}" data-display="true"><code>\begin{cases}&#10;f(0)=g(0) \\&#10;f(n&#x27;)=h(f(n))&#10;\end{cases}</code></span>

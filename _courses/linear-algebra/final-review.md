@@ -5,7 +5,7 @@ course_title: "线性代数"
 section: ""
 status: "completed"
 created_at: "2026-06-12T01:12:17+08:00"
-updated_at: "2026-06-14T23:39:13+08:00"
+updated_at: "2026-10-08T21:08:23+08:00"
 reference: false
 order: 10
 layout: "course"
@@ -57,7 +57,7 @@ excerpt: "线性代数 · Final Review - 期末复习"
 **奇异性（Singularity）：**
 - 奇异（Singular）：无解或无穷多解
 - 非奇异（Nonsingular）：有且仅有一组解
-- <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 非奇异 <span class="course-math" data-tex="\iff" data-display="false"><code>\iff</code></span> <span class="course-math" data-tex="\forall \mathbf{b},\ A\mathbf{x}=\mathbf{b}" data-display="false"><code>\forall \mathbf{b},\ A\mathbf{x}=\mathbf{b}</code></span> 非奇异
+- <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 非奇异 <span class="course-math" data-tex="\iff" data-display="false"><code>\iff</code></span> <span class="course-math" data-tex="\forall \mathbf{b},\ A\mathbf{x}=\mathbf{b}" data-display="false"><code>\forall \mathbf{b},\ A\mathbf{x}=\mathbf{b}</code></span> 有且仅有一组解
 
 
 ### 1.3 An Example of Gaussian Elimination
@@ -98,11 +98,11 @@ excerpt: "线性代数 · Final Review - 期末复习"
 - 方幂：<span class="course-math" data-tex="A^0 = I_n,\ A^k = A^{k-1}A" data-display="false"><code>A^0 = I_n,\ A^k = A^{k-1}A</code></span>
 
 **特殊变换矩阵（左乘）：**
-- **置换矩阵（Permutation Matrix）：** 每行每列恰有一个 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>，用于交换行
+- **置换矩阵（Permutation Matrix）：** 每行每列恰有一个 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>、其余元素为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 的方阵，用于交换行
 - **初等矩阵（Elementary Matrices）：**
   - 交换两行的置换矩阵
-  - 将 <span class="course-math" data-tex="I_n" data-display="false"><code>I_n</code></span> 的 <span class="course-math" data-tex="(i,j)" data-display="false"><code>(i,j)</code></span> 替换为 <span class="course-math" data-tex="l" data-display="false"><code>l</code></span>：把第 <span class="course-math" data-tex="j" data-display="false"><code>j</code></span> 行乘 <span class="course-math" data-tex="l" data-display="false"><code>l</code></span> 加到第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 行
-  - 将 <span class="course-math" data-tex="I_n" data-display="false"><code>I_n</code></span> 的 <span class="course-math" data-tex="(i,i)" data-display="false"><code>(i,i)</code></span> 替换为 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span>：把第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 行乘 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span>
+  - 将 <span class="course-math" data-tex="I_n" data-display="false"><code>I_n</code></span> 的 <span class="course-math" data-tex="(i,j)" data-display="false"><code>(i,j)</code></span>（<span class="course-math" data-tex="i\ne j" data-display="false"><code>i\ne j</code></span>）替换为 <span class="course-math" data-tex="l" data-display="false"><code>l</code></span>：把第 <span class="course-math" data-tex="j" data-display="false"><code>j</code></span> 行乘 <span class="course-math" data-tex="l" data-display="false"><code>l</code></span> 加到第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 行
+  - 将 <span class="course-math" data-tex="I_n" data-display="false"><code>I_n</code></span> 的 <span class="course-math" data-tex="(i,i)" data-display="false"><code>(i,i)</code></span> 替换为 <span class="course-math" data-tex="k\ne 0" data-display="false"><code>k\ne 0</code></span>：把第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 行乘 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span>
 
 > **【左行右列】**：左乘 → 行变换，右乘 → 列变换
 
@@ -125,9 +125,9 @@ excerpt: "线性代数 · Final Review - 期末复习"
 **利用 LU 解方程 <span class="course-math" data-tex="A\mathbf{x} = \mathbf{b}" data-display="false"><code>A\mathbf{x} = \mathbf{b}</code></span>：**
 <span class="course-math course-math-display" data-tex="\begin{cases} L\mathbf{c} = \mathbf{b} \\ U\mathbf{x} = \mathbf{c} \end{cases}" data-display="true"><code>\begin{cases} L\mathbf{c} = \mathbf{b} \\ U\mathbf{x} = \mathbf{c} \end{cases}</code></span>
 
-两个都是三角方程组，直接回代。
+下三角方程组用前代，上三角方程组用回代；有行交换时先将右端改为 <span class="course-math" data-tex="P\mathbf b" data-display="false"><code>P\mathbf b</code></span>。
 
-> **LU 分解唯一性：** 若 <span class="course-math" data-tex="A = L_1U_1 = L_2U_2" data-display="false"><code>A = L_1U_1 = L_2U_2</code></span>，且 <span class="course-math" data-tex="L_1, L_2" data-display="false"><code>L_1, L_2</code></span> 对角元均为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>，则 <span class="course-math" data-tex="L_1 = L_2,\ U_1 = U_2" data-display="false"><code>L_1 = L_2,\ U_1 = U_2</code></span>。
+> **LU 分解唯一性：** 若 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 可逆，且 <span class="course-math" data-tex="A = L_1U_1 = L_2U_2" data-display="false"><code>A = L_1U_1 = L_2U_2</code></span>，且 <span class="course-math" data-tex="L_1, L_2" data-display="false"><code>L_1, L_2</code></span> 对角元均为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>，则 <span class="course-math" data-tex="L_1 = L_2,\ U_1 = U_2" data-display="false"><code>L_1 = L_2,\ U_1 = U_2</code></span>。
 
 **LDU 分解：** 提取主元到对角矩阵 <span class="course-math" data-tex="D" data-display="false"><code>D</code></span>，使 <span class="course-math" data-tex="L, U" data-display="false"><code>L, U</code></span> 对角元都为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>：<span class="course-math" data-tex="A = LDU" data-display="false"><code>A = LDU</code></span>
 
@@ -209,7 +209,7 @@ excerpt: "线性代数 · Final Review - 期末复习"
 - <span class="course-math" data-tex="\beta \cdot \mathbf{0} = \mathbf{0}" data-display="false"><code>\beta \cdot \mathbf{0} = \mathbf{0}</code></span>
 - <span class="course-math" data-tex="\alpha \cdot \mathbf{x} = \mathbf{0} \implies \alpha=0" data-display="false"><code>\alpha \cdot \mathbf{x} = \mathbf{0} \implies \alpha=0</code></span> 或 <span class="course-math" data-tex="\mathbf{x}=\mathbf{0}" data-display="false"><code>\mathbf{x}=\mathbf{0}</code></span>
 
-**子空间 <span class="course-math" data-tex="W \subseteq V" data-display="false"><code>W \subseteq V</code></span>：**
+**子空间 <span class="course-math" data-tex="W \subseteq V" data-display="false"><code>W \subseteq V</code></span>（<span class="course-math" data-tex="W" data-display="false"><code>W</code></span> 非空）：**
 1. 加法封闭：<span class="course-math" data-tex="\mathbf{x}, \mathbf{y} \in W \implies \mathbf{x}+\mathbf{y} \in W" data-display="false"><code>\mathbf{x}, \mathbf{y} \in W \implies \mathbf{x}+\mathbf{y} \in W</code></span>
 2. 数乘封闭：<span class="course-math" data-tex="\mathbf{x} \in W,\ c\in\mathbb{R} \implies c\mathbf{x} \in W" data-display="false"><code>\mathbf{x} \in W,\ c\in\mathbb{R} \implies c\mathbf{x} \in W</code></span>
 
@@ -296,7 +296,7 @@ excerpt: "线性代数 · Final Review - 期末复习"
 | 行空间 <span class="course-math" data-tex="C(A^T)" data-display="false"><code>C(A^T)</code></span> | <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> | 取 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> 个非零行 |
 | 列空间 <span class="course-math" data-tex="C(A)" data-display="false"><code>C(A)</code></span> | <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> | 找 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的主元列，取**原矩阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span>** 中对应的列 |
 | 零空间 <span class="course-math" data-tex="N(A)" data-display="false"><code>N(A)</code></span> | <span class="course-math" data-tex="n-r" data-display="false"><code>n-r</code></span> | 解 <span class="course-math" data-tex="R\mathbf{x} = \mathbf{0}" data-display="false"><code>R\mathbf{x} = \mathbf{0}</code></span>，令自由变量依次为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 得基础解系 |
-| 左零空间 <span class="course-math" data-tex="N(A^T)" data-display="false"><code>N(A^T)</code></span> | <span class="course-math" data-tex="m-r" data-display="false"><code>m-r</code></span> | 取 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 中 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 全零行对应位置的行（或 <span class="course-math" data-tex="L^{-1}" data-display="false"><code>L^{-1}</code></span> 的最后 <span class="course-math" data-tex="m-r" data-display="false"><code>m-r</code></span> 行） |
+| 左零空间 <span class="course-math" data-tex="N(A^T)" data-display="false"><code>N(A^T)</code></span> | <span class="course-math" data-tex="m-r" data-display="false"><code>m-r</code></span> | 取 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 中 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 全零行对应位置的行（无换行的 <span class="course-math" data-tex="A=LU" data-display="false"><code>A=LU</code></span> 中取 <span class="course-math" data-tex="L^{-1}" data-display="false"><code>L^{-1}</code></span> 的最后 <span class="course-math" data-tex="m-r" data-display="false"><code>m-r</code></span> 行；若 <span class="course-math" data-tex="PA=LU" data-display="false"><code>PA=LU</code></span>，则取 <span class="course-math" data-tex="L^{-1}P" data-display="false"><code>L^{-1}P</code></span> 的对应行） |
 
 > 行变换**不改变**行空间（<span class="course-math" data-tex="C(A^T) = C(U^T)" data-display="false"><code>C(A^T) = C(U^T)</code></span>），但**改变**列空间。主元列的**列标**不变，但列向量本身变了。
 
@@ -381,7 +381,7 @@ excerpt: "线性代数 · Final Review - 期末复习"
 {: #section-18 }
 
 
-**向量 <span class="course-math" data-tex="\mathbf{b}" data-display="false"><code>\mathbf{b}</code></span> 在向量 <span class="course-math" data-tex="\mathbf{a}" data-display="false"><code>\mathbf{a}</code></span> 上的投影：**
+**向量 <span class="course-math" data-tex="\mathbf{b}" data-display="false"><code>\mathbf{b}</code></span> 在非零向量 <span class="course-math" data-tex="\mathbf{a}" data-display="false"><code>\mathbf{a}</code></span> 上的投影：**
 <span class="course-math course-math-display" data-tex="\mathbf{p} = \&#124;\mathbf{b}\&#124;\cos\theta \cdot \frac{\mathbf{a}}{\&#124;\mathbf{a}\&#124;} = \frac{\mathbf{a}^T\mathbf{b}}{\mathbf{a}^T\mathbf{a}} \mathbf{a}" data-display="true"><code>\mathbf{p} = \&#124;\mathbf{b}\&#124;\cos\theta \cdot \frac{\mathbf{a}}{\&#124;\mathbf{a}\&#124;} = \frac{\mathbf{a}^T\mathbf{b}}{\mathbf{a}^T\mathbf{a}} \mathbf{a}</code></span>
 
 **投影矩阵：**
@@ -409,7 +409,7 @@ excerpt: "线性代数 · Final Review - 期末复习"
 - 若 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 列满秩（<span class="course-math" data-tex="A^TA" data-display="false"><code>A^TA</code></span> 可逆）：<span class="course-math" data-tex="\hat{\mathbf{x}} = (A^TA)^{-1}A^T\mathbf{b}" data-display="false"><code>\hat{\mathbf{x}} = (A^TA)^{-1}A^T\mathbf{b}</code></span>
 - 若 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 可逆：<span class="course-math" data-tex="\hat{\mathbf{x}} = A^{-1}\mathbf{b}" data-display="false"><code>\hat{\mathbf{x}} = A^{-1}\mathbf{b}</code></span>
 
-**投影到 <span class="course-math" data-tex="C(A)" data-display="false"><code>C(A)</code></span>：**
+**投影到 <span class="course-math" data-tex="C(A)" data-display="false"><code>C(A)</code></span>（以下逆矩阵公式要求 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 列满秩）：**
 <span class="course-math course-math-display" data-tex="\mathbf{p} = A\hat{\mathbf{x}} = A(A^TA)^{-1}A^T\mathbf{b}" data-display="true"><code>\mathbf{p} = A\hat{\mathbf{x}} = A(A^TA)^{-1}A^T\mathbf{b}</code></span>
 
 **投影矩阵（Projection Matrix）：**
@@ -428,7 +428,7 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 **加权最小二乘（Weighted Least Squares）：** <span class="course-math" data-tex="\min \sum w_i^2(a_{i1}x_1 + \cdots - b_i)^2" data-display="false"><code>\min \sum w_i^2(a_{i1}x_1 + \cdots - b_i)^2</code></span>
 
-- 构造对角权矩阵 <span class="course-math" data-tex="W = \text{diag}(w_1,\dots,w_n)" data-display="false"><code>W = \text{diag}(w_1,\dots,w_n)</code></span>，化为 <span class="course-math" data-tex="\min \&#124;WA\hat{\mathbf{x}} - W\mathbf{b}\&#124;^2" data-display="false"><code>\min \&#124;WA\hat{\mathbf{x}} - W\mathbf{b}\&#124;^2</code></span>
+- 构造对角权矩阵 <span class="course-math" data-tex="W = \text{diag}(w_1,\dots,w_m)" data-display="false"><code>W = \text{diag}(w_1,\dots,w_m)</code></span>，化为 <span class="course-math" data-tex="\min \&#124;WA\hat{\mathbf{x}} - W\mathbf{b}\&#124;^2" data-display="false"><code>\min \&#124;WA\hat{\mathbf{x}} - W\mathbf{b}\&#124;^2</code></span>
 - 法方程：<span class="course-math" data-tex="A^T(W^TW)A\hat{\mathbf{x}} = A^T(W^TW)\mathbf{b}" data-display="false"><code>A^T(W^TW)A\hat{\mathbf{x}} = A^T(W^TW)\mathbf{b}</code></span>
 
 
@@ -460,7 +460,7 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 - <span class="course-math" data-tex="H^2 = I" data-display="false"><code>H^2 = I</code></span>（对合），<span class="course-math" data-tex="H^T = H" data-display="false"><code>H^T = H</code></span>（对称），<span class="course-math" data-tex="H^T H = I" data-display="false"><code>H^T H = I</code></span>（正交）
 - 用途：将向量某些分量置零而保持长度不变
-- 例：找 <span class="course-math" data-tex="A^2 = I" data-display="false"><code>A^2 = I</code></span> 且第一列为单位向量 <span class="course-math" data-tex="\mathbf{u}" data-display="false"><code>\mathbf{u}</code></span> 的对称矩阵——取 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为 Householder 矩阵，法向量 <span class="course-math" data-tex="\mathbf{v} = \mathbf{e}_1 - \mathbf{u}" data-display="false"><code>\mathbf{v} = \mathbf{e}_1 - \mathbf{u}</code></span>
+- 例：找 <span class="course-math" data-tex="A^2 = I" data-display="false"><code>A^2 = I</code></span> 且第一列为单位向量 <span class="course-math" data-tex="\mathbf{u}" data-display="false"><code>\mathbf{u}</code></span> 的对称矩阵——取 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为 Householder 矩阵，法向量 <span class="course-math" data-tex="\mathbf{v} = \mathbf{e}_1 - \mathbf{u}" data-display="false"><code>\mathbf{v} = \mathbf{e}_1 - \mathbf{u}</code></span>；若 <span class="course-math" data-tex="\mathbf u=\mathbf e_1" data-display="false"><code>\mathbf u=\mathbf e_1</code></span>，直接取 <span class="course-math" data-tex="A=I" data-display="false"><code>A=I</code></span>
 
 **Gram-Schmidt 正交化：** 从基 <span class="course-math" data-tex="\{a_1, a_2, \dots, a_n\}" data-display="false"><code>\{a_1, a_2, \dots, a_n\}</code></span> 构造规范正交基 <span class="course-math" data-tex="\{q_1, q_2, \dots, q_n\}" data-display="false"><code>\{q_1, q_2, \dots, q_n\}</code></span>
 
@@ -533,7 +533,7 @@ excerpt: "线性代数 · Final Review - 期末复习"
   - 证明：若 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 奇异，<span class="course-math" data-tex="AB" data-display="false"><code>AB</code></span> 也奇异，均为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>。若 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 可逆，验证 <span class="course-math" data-tex="d(A) = \frac{\det(AB)}{\det(B)}" data-display="false"><code>d(A) = \frac{\det(AB)}{\det(B)}</code></span> 满足三条定义性质，故 <span class="course-math" data-tex="d(A) = \det(A)" data-display="false"><code>d(A) = \det(A)</code></span>。
 - **转置不变：** <span class="course-math" data-tex="\det(A) = \det(A^T)" data-display="false"><code>\det(A) = \det(A^T)</code></span>
   - 证明：利用 <span class="course-math" data-tex="PA = LU" data-display="false"><code>PA = LU</code></span>，转置后 <span class="course-math" data-tex="\det(P) = \det(P^T)" data-display="false"><code>\det(P) = \det(P^T)</code></span>，三角矩阵转置行列式不变。
-- <span class="course-math" data-tex="\det(A) = \pm (\text{主元之积})" data-display="false"><code>\det(A) = \pm (\text{主元之积})</code></span>（由 <span class="course-math" data-tex="LU" data-display="false"><code>LU</code></span> 分解）
+- 满秩时 <span class="course-math" data-tex="\det(A) = \pm (\text{全部 }n\text{ 个主元之积})" data-display="false"><code>\det(A) = \pm (\text{全部 }n\text{ 个主元之积})</code></span>，秩不足时 <span class="course-math" data-tex="\det(A)=0" data-display="false"><code>\det(A)=0</code></span>（由 <span class="course-math" data-tex="LU" data-display="false"><code>LU</code></span> 分解）
 
 > 注意：一般 <span class="course-math" data-tex="\det(A+B) \neq \det(A)+\det(B)" data-display="false"><code>\det(A+B) \neq \det(A)+\det(B)</code></span>；<span class="course-math" data-tex="\det(cA) = c^n\det(A)" data-display="false"><code>\det(cA) = c^n\det(A)</code></span>
 
@@ -586,7 +586,7 @@ excerpt: "线性代数 · Final Review - 期末复习"
 **用行列式求主元：**
 <span class="course-math course-math-display" data-tex="d_k = \frac{\det(A_k)}{\det(A_{k-1})}" data-display="true"><code>d_k = \frac{\det(A_k)}{\det(A_{k-1})}</code></span>
 
-其中 <span class="course-math" data-tex="A_k" data-display="false"><code>A_k</code></span> 是 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 左上角 <span class="course-math" data-tex="k\times k" data-display="false"><code>k\times k</code></span> 子矩阵（假设 <span class="course-math" data-tex="\det(A) \neq 0" data-display="false"><code>\det(A) \neq 0</code></span>）。
+其中 <span class="course-math" data-tex="A_k" data-display="false"><code>A_k</code></span> 是 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 左上角 <span class="course-math" data-tex="k\times k" data-display="false"><code>k\times k</code></span> 子矩阵（假设无需换行消元，所有顺序主子式非零，且 <span class="course-math" data-tex="\det(A_0)=1" data-display="false"><code>\det(A_0)=1</code></span>）。
 
 **证明：** <span class="course-math" data-tex="A = LDU" data-display="false"><code>A = LDU</code></span>，则 <span class="course-math" data-tex="A_k = L_k D_k U_k" data-display="false"><code>A_k = L_k D_k U_k</code></span>，故 <span class="course-math" data-tex="\det(A_k) = d_1 d_2 \cdots d_k" data-display="false"><code>\det(A_k) = d_1 d_2 \cdots d_k</code></span>，相除即得。
 
@@ -651,11 +651,11 @@ excerpt: "线性代数 · Final Review - 期末复习"
 此时 <span class="course-math" data-tex="AB" data-display="false"><code>AB</code></span> 的特征向量同 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span>，特征值 = <span class="course-math" data-tex="\lambda_i^A \lambda_i^B" data-display="false"><code>\lambda_i^A \lambda_i^B</code></span>。
 
 **<span class="course-math" data-tex="AB" data-display="false"><code>AB</code></span> 与 <span class="course-math" data-tex="BA" data-display="false"><code>BA</code></span> 的特征值关系：** 非零特征值始终相同。若均为 <span class="course-math" data-tex="n\times n" data-display="false"><code>n\times n</code></span>，特征多项式相同：
-<span class="course-math course-math-display" data-tex="\lambda^n&#124;AB - \lambda I_n&#124; = \lambda^m&#124;BA - \lambda I_m&#124;" data-display="true"><code>\lambda^n&#124;AB - \lambda I_n&#124; = \lambda^m&#124;BA - \lambda I_m&#124;</code></span>
+<span class="course-math course-math-display" data-tex="\lambda^n&#124;AB - \lambda I_m&#124; = \lambda^m&#124;BA - \lambda I_n&#124;" data-display="true"><code>\lambda^n&#124;AB - \lambda I_m&#124; = \lambda^m&#124;BA - \lambda I_n&#124;</code></span>
 
 （<span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为 <span class="course-math" data-tex="m\times n" data-display="false"><code>m\times n</code></span>，<span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 为 <span class="course-math" data-tex="n\times m" data-display="false"><code>n\times m</code></span>）
 
-**秩一矩阵的特征值：** 必有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 个特征值为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>（<span class="course-math" data-tex="N(A)" data-display="false"><code>N(A)</code></span> 有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 维）。
+**秩一矩阵的特征值：** 至少有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 个特征值为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>（按代数重数计）（<span class="course-math" data-tex="N(A)" data-display="false"><code>N(A)</code></span> 有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 维）。
 
 
 ### 5.3 Difference Equations and Powers <span class="course-math" data-tex="A^k" data-display="false"><code>A^k</code></span>
@@ -848,12 +848,12 @@ excerpt: "线性代数 · Final Review - 期末复习"
 - <span class="course-math" data-tex="A \geq 0" data-display="false"><code>A \geq 0</code></span>
 - 所有特征值 <span class="course-math" data-tex="\lambda_i \geq 0" data-display="false"><code>\lambda_i \geq 0</code></span>
 - 所有主矩阵（Principal Matrices）无负特征值
-- 所有主元 <span class="course-math" data-tex="d_i \geq 0" data-display="false"><code>d_i \geq 0</code></span>
+- 所有主子式 <span class="course-math" data-tex="\det(A_I)\geq 0" data-display="false"><code>\det(A_I)\geq 0</code></span>（包括非顺序主子式）
 - 存在矩阵 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 使得 <span class="course-math" data-tex="A = R^T R" data-display="false"><code>A = R^T R</code></span>（<span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 未必可逆）
 
 > 技巧：<span class="course-math" data-tex="A \geq 0 \iff A + \varepsilon I &gt; 0,\ \forall \varepsilon &gt; 0" data-display="false"><code>A \geq 0 \iff A + \varepsilon I &gt; 0,\ \forall \varepsilon &gt; 0</code></span>（充分小），取极限即得半正定性质。
 
-**负定：** <span class="course-math" data-tex="A &lt; 0" data-display="false"><code>A &lt; 0</code></span> 若 <span class="course-math" data-tex="-A &gt; 0" data-display="false"><code>-A &gt; 0</code></span>。等价于 <span class="course-math" data-tex="\mathbf{x}^T A \mathbf{x} &lt; 0" data-display="false"><code>\mathbf{x}^T A \mathbf{x} &lt; 0</code></span>。
+**负定：** <span class="course-math" data-tex="A &lt; 0" data-display="false"><code>A &lt; 0</code></span> 若 <span class="course-math" data-tex="-A &gt; 0" data-display="false"><code>-A &gt; 0</code></span>。等价于对所有非零 <span class="course-math" data-tex="\mathbf x" data-display="false"><code>\mathbf x</code></span> 都有 <span class="course-math" data-tex="\mathbf{x}^T A \mathbf{x} &lt; 0" data-display="false"><code>\mathbf{x}^T A \mathbf{x} &lt; 0</code></span>。
 
 
 ### 6.3 Singular Value Decomposition

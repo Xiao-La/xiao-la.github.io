@@ -5,7 +5,7 @@ course_title: "数理逻辑导论"
 section: ""
 status: "completed"
 created_at: "2026-06-08T20:15:52+08:00"
-updated_at: "2026-06-08T22:25:21+08:00"
+updated_at: "2026-10-08T21:23:24+08:00"
 reference: false
 order: 6
 layout: "course"
@@ -704,8 +704,8 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 
 | 概念 | 定义 |
 |------|------|
-| **自由变元 (Free Variable)** | 不在任何量词作用域内的变量 |
-| **约束变元 (Bound Variable)** | 在某个量词作用域内的变量 |
+| **自由变元 (Free Variable)** | 该次出现不被任何对应变量的量词绑定 |
+| **约束变元 (Bound Variable)** | 该次出现被对应变量的量词绑定 |
 | **句子 (Sentence)** | 无自由变元的公式（也称闭公式） |
 | **阐释 (Interpretation) <span class="course-math" data-tex="\mathcal{I}" data-display="false"><code>\mathcal{I}</code></span>** | Domain + 常量/函数/谓词的具体含义 |
 | **环境 (Environment) <span class="course-math" data-tex="E" data-display="false"><code>E</code></span>** | 给自由变元赋值 |
@@ -776,7 +776,7 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 | 公式 | 值 | 理由 |
 |------|-----|------|
 | <span class="course-math" data-tex="\forall x \exists y F(x,y)" data-display="false"><code>\forall x \exists y F(x,y)</code></span> | **True** | <span class="course-math" data-tex="x=3" data-display="false"><code>x=3</code></span> 有 <span class="course-math" data-tex="y=4" data-display="false"><code>y=4</code></span>；<span class="course-math" data-tex="x=4" data-display="false"><code>x=4</code></span> 有 <span class="course-math" data-tex="y=3" data-display="false"><code>y=3</code></span>。全满足 |
-| <span class="course-math" data-tex="\exists x \forall y F(x,y)" data-display="false"><code>\exists x \forall y F(x,y)</code></span> | **False** | <span class="course-math" data-tex="x=3" data-display="false"><code>x=3</code></span> 时 <span class="course-math" data-tex="F(3,3) \notin F^{\mathcal{I}}" data-display="false"><code>F(3,3) \notin F^{\mathcal{I}}</code></span>；<span class="course-math" data-tex="x=4" data-display="false"><code>x=4</code></span> 时 <span class="course-math" data-tex="F(4,4) \notin F^{\mathcal{I}}" data-display="false"><code>F(4,4) \notin F^{\mathcal{I}}</code></span>。不存在这样的 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> |
+| <span class="course-math" data-tex="\exists x \forall y F(x,y)" data-display="false"><code>\exists x \forall y F(x,y)</code></span> | **False** | <span class="course-math" data-tex="x=3" data-display="false"><code>x=3</code></span> 时 <span class="course-math" data-tex="(3,3) \notin F^{\mathcal{I}}" data-display="false"><code>(3,3) \notin F^{\mathcal{I}}</code></span>；<span class="course-math" data-tex="x=4" data-display="false"><code>x=4</code></span> 时 <span class="course-math" data-tex="(4,4) \notin F^{\mathcal{I}}" data-display="false"><code>(4,4) \notin F^{\mathcal{I}}</code></span>。不存在这样的 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> |
 | <span class="course-math" data-tex="\forall x \forall y (F(x,y) \to F(f(x), f(y)))" data-display="false"><code>\forall x \forall y (F(x,y) \to F(f(x), f(y)))</code></span> | **True** | 枚举 4 对 <span class="course-math" data-tex="(x,y)" data-display="false"><code>(x,y)</code></span>：<span class="course-math" data-tex="(3,3)" data-display="false"><code>(3,3)</code></span> 前提假→整体真；<span class="course-math" data-tex="(3,4)" data-display="false"><code>(3,4)</code></span>: <span class="course-math" data-tex="F(3,4)=1, F(f(3),f(4))=F(4,3)=1" data-display="false"><code>F(3,4)=1, F(f(3),f(4))=F(4,3)=1</code></span>；<span class="course-math" data-tex="(4,3)" data-display="false"><code>(4,3)</code></span>: 同理；<span class="course-math" data-tex="(4,4)" data-display="false"><code>(4,4)</code></span> 前提假→整体真 |
 
 **A6.3** Domain <span class="course-math" data-tex="\mathbb{N}" data-display="false"><code>\mathbb{N}</code></span>, <span class="course-math" data-tex="a^{\mathcal{I}}=2" data-display="false"><code>a^{\mathcal{I}}=2</code></span>, <span class="course-math" data-tex="f^{\mathcal{I}}(x,y)=x+y" data-display="false"><code>f^{\mathcal{I}}(x,y)=x+y</code></span>, <span class="course-math" data-tex="g^{\mathcal{I}}(x,y)=x\times y" data-display="false"><code>g^{\mathcal{I}}(x,y)=x\times y</code></span>, <span class="course-math" data-tex="P^{\mathcal{I}}(x,y): x=y" data-display="false"><code>P^{\mathcal{I}}(x,y): x=y</code></span>, <span class="course-math" data-tex="E(x)=0, E(y)=1, E(z)=2" data-display="false"><code>E(x)=0, E(y)=1, E(z)=2</code></span>
@@ -796,7 +796,7 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 | <span class="course-math" data-tex="\forall x(P(x) \to P(x)) \to \exists y(Q(y) \land \neg Q(y))" data-display="false"><code>\forall x(P(x) \to P(x)) \to \exists y(Q(y) \land \neg Q(y))</code></span> | **Unsatisfiable** | 前件永真，后件永假；<span class="course-math" data-tex="1 \to 0 = 0" data-display="false"><code>1 \to 0 = 0</code></span> |
 | <span class="course-math" data-tex="\forall x \forall y (P(x,y) \to P(y,x))" data-display="false"><code>\forall x \forall y (P(x,y) \to P(y,x))</code></span> | **Satisfiable** | 取 <span class="course-math" data-tex="P" data-display="false"><code>P</code></span> 为 <span class="course-math" data-tex="=" data-display="false"><code>=</code></span> → True；取 <span class="course-math" data-tex="P" data-display="false"><code>P</code></span> 为 <span class="course-math" data-tex="&lt;" data-display="false"><code>&lt;</code></span> → False。故不是 valid 也不是 unsatisfiable |
 | <span class="course-math" data-tex="\neg(\forall x P(x) \to \exists y Q(y)) \land \exists y Q(y)" data-display="false"><code>\neg(\forall x P(x) \to \exists y Q(y)) \land \exists y Q(y)</code></span> | **Unsatisfiable** | 设公式为真：前半要求 <span class="course-math" data-tex="\forall x P(x)=1" data-display="false"><code>\forall x P(x)=1</code></span> 且 <span class="course-math" data-tex="\exists y Q(y)=0" data-display="false"><code>\exists y Q(y)=0</code></span>；后半要求 <span class="course-math" data-tex="\exists y Q(y)=1" data-display="false"><code>\exists y Q(y)=1</code></span>。矛盾 |
-| <span class="course-math" data-tex="\exists x P(x,y)" data-display="false"><code>\exists x P(x,y)</code></span> | **Satisfiable** | <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> 自由，可在阐释中取合适的 <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> 和 <span class="course-math" data-tex="P" data-display="false"><code>P</code></span> 满足；也可取不满足的阐释。故 satisfiable |
+| <span class="course-math" data-tex="\exists x P(x,y)" data-display="false"><code>\exists x P(x,y)</code></span> | **Satisfiable** | <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> 自由，可选择合适的阐释 <span class="course-math" data-tex="\mathcal I" data-display="false"><code>\mathcal I</code></span> 和环境 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span>（赋值给 <span class="course-math" data-tex="y" data-display="false"><code>y</code></span>）满足；也可取不满足的阐释。故 satisfiable |
 
 ---
 

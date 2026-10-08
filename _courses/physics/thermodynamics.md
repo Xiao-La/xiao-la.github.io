@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-12-11T10:26:58+08:00"
-updated_at: "2025-12-26T10:52:03+08:00"
+updated_at: "2026-10-08T20:57:10+08:00"
 reference: false
 order: 8
 layout: "course"
@@ -71,7 +71,7 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 {: #section-4 }
 
 
-**二维情形：**
+**一维情形（线膨胀）：**
 
 <span class="course-math course-math-display" data-tex="\frac{\Delta L}{L} = \alpha \Delta T" data-display="true"><code>\frac{\Delta L}{L} = \alpha \Delta T</code></span>
 其中 <span class="course-math" data-tex="\alpha" data-display="false"><code>\alpha</code></span> 为线膨胀系数，<span class="course-math" data-tex="\alpha&gt;0" data-display="false"><code>\alpha&gt;0</code></span> 为热胀冷缩，<span class="course-math" data-tex="\alpha&lt;0" data-display="false"><code>\alpha&lt;0</code></span> 为热缩冷胀。
@@ -126,7 +126,7 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 物体吸收环境的热功率（基尔霍夫定律）：
 <span class="course-math course-math-display" data-tex="P_{\text{abs}}=\sigma \varepsilon A T^4_{\text{env}}" data-display="true"><code>P_{\text{abs}}=\sigma \varepsilon A T^4_{\text{env}}</code></span>
 净吸收功率：
-<span class="course-math course-math-display" data-tex="P_{\text{net}}=P_{\text{abs}}-P_{\text{rad}}=\sigma \varepsilon A (T_{\text{env}}^2-T^4)" data-display="true"><code>P_{\text{net}}=P_{\text{abs}}-P_{\text{rad}}=\sigma \varepsilon A (T_{\text{env}}^2-T^4)</code></span>
+<span class="course-math course-math-display" data-tex="P_{\text{net}}=P_{\text{abs}}-P_{\text{rad}}=\sigma \varepsilon A (T_{\text{env}}^4-T^4)" data-display="true"><code>P_{\text{net}}=P_{\text{abs}}-P_{\text{rad}}=\sigma \varepsilon A (T_{\text{env}}^4-T^4)</code></span>
 其中 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为物体表面积，<span class="course-math" data-tex="T" data-display="false"><code>T</code></span> 为物体温度，<span class="course-math" data-tex="\sigma" data-display="false"><code>\sigma</code></span> 为斯忒藩-玻尔兹曼常数（Stefan-Boltzmann Constant），<span class="course-math" data-tex="\varepsilon" data-display="false"><code>\varepsilon</code></span> 为与物体材料有关的介于 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 和 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 之间的量。
 对黑体（Blackbody）来说，<span class="course-math" data-tex="\varepsilon=1" data-display="false"><code>\varepsilon=1</code></span>，即物体吸收和发射辐射能力都最强。
 
@@ -159,7 +159,7 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 <span class="course-math course-math-display" data-tex="(p_{i}, V_{i}, T_{i})\to (p_{f}, V_{f}, T_{f})" data-display="true"><code>(p_{i}, V_{i}, T_{i})\to (p_{f}, V_{f}, T_{f})</code></span>
 过程分为不可逆过程（Irreversible Process）和可逆过程（Reversible Process）。
 可逆过程只存在于理想中，它意味着初态到末态中的所有状态都是静态状态。
-准静态过程（Quasi-static Process）是通过拉长过程的时间来近似可逆过程。
+准静态过程（Quasi-static Process）使系统经历一系列近似平衡态；还需要没有摩擦等耗散、没有有限温差传热，才是可逆过程。
 
 绝热过程（Adiabatic Process）：<span class="course-math" data-tex="Q=0" data-display="false"><code>Q=0</code></span>。
 恒容过程（Isochoric / Constant-volume Process）：<span class="course-math" data-tex="W=0" data-display="false"><code>W=0</code></span>。
@@ -204,7 +204,7 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 对于理想卡诺热机：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Thermodynamics-2.png' | relative_url }}{% raw %}" alt="Thermodynamics-2" width="446" height="394" loading="lazy" decoding="async">
 对整个过程，<span class="course-math" data-tex="&#124;Q&#124;=&#124;W&#124;=Q_{\text{in}}-Q_{\text{out}}" data-display="false"><code>&#124;Q&#124;=&#124;W&#124;=Q_{\text{in}}-Q_{\text{out}}</code></span>。而且通过绝热过程的方程可推 <span class="course-math" data-tex="\frac{V_{2}}{V_{1}}=\frac{V_{3}}{V_{4}}" data-display="false"><code>\frac{V_{2}}{V_{1}}=\frac{V_{3}}{V_{4}}</code></span>。
-有 <span class="course-math" data-tex="W=RT_{H}\ln \frac{V_{2}}{V_{1}}-RT_{L} \frac{V_{3}}{V_{4}}=R(T_{H}-T_{C})\ln \frac{V_{2}}{V_{1}}" data-display="false"><code>W=RT_{H}\ln \frac{V_{2}}{V_{1}}-RT_{L} \frac{V_{3}}{V_{4}}=R(T_{H}-T_{C})\ln \frac{V_{2}}{V_{1}}</code></span>，<span class="course-math" data-tex="Q_{H}=RT_{H}\ln \frac{V_{2}}{V_{1}}" data-display="false"><code>Q_{H}=RT_{H}\ln \frac{V_{2}}{V_{1}}</code></span>。
+有 <span class="course-math" data-tex="W=nRT_{H}\ln\frac{V_{2}}{V_{1}}-nRT_{L}\ln\frac{V_{3}}{V_{4}}=nR(T_{H}-T_{L})\ln\frac{V_{2}}{V_{1}}" data-display="false"><code>W=nRT_{H}\ln\frac{V_{2}}{V_{1}}-nRT_{L}\ln\frac{V_{3}}{V_{4}}=nR(T_{H}-T_{L})\ln\frac{V_{2}}{V_{1}}</code></span>，<span class="course-math" data-tex="Q_{H}=nRT_{H}\ln\frac{V_{2}}{V_{1}}" data-display="false"><code>Q_{H}=nRT_{H}\ln\frac{V_{2}}{V_{1}}</code></span>（<span class="course-math" data-tex="T_L=T_C" data-display="false"><code>T_L=T_C</code></span>，表示冷源温度）。
 那么 <span class="course-math" data-tex="0\leq \varepsilon = 1- \frac{T_{C}}{T_{H}}&lt;1" data-display="false"><code>0\leq \varepsilon = 1- \frac{T_{C}}{T_{H}}&lt;1</code></span> 。
 
 卡诺指出，不同的热机在冷源和热源温度一致时，卡诺热机的效率是最高的。
@@ -240,7 +240,7 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 一些特例：
 1. 等压过程（Isobaric Process）：<span class="course-math" data-tex="\Delta S=nC_{p} \ln \frac{T_{2}}{T_{1}}" data-display="false"><code>\Delta S=nC_{p} \ln \frac{T_{2}}{T_{1}}</code></span>。
 2. 等温过程（Isothermal Process）：<span class="course-math" data-tex="\Delta S= nR\ln \frac{V_{2}}{V_{1}}" data-display="false"><code>\Delta S= nR\ln \frac{V_{2}}{V_{1}}</code></span> 。
-3. 绝热过程（Adiabatic Process）：<span class="course-math" data-tex="\Delta S=0" data-display="false"><code>\Delta S=0</code></span>。
+3. 可逆绝热过程（Reversible Adiabatic Process）：<span class="course-math" data-tex="\Delta S=0" data-display="false"><code>\Delta S=0</code></span>。
 4. 等容过程（Isochoric Process）：<span class="course-math" data-tex="\Delta S = nC_{v} \ln \frac{T_{2}}{T_{1}}=nC_{v} \ln \frac{p_{2}}{p_{1}}" data-display="false"><code>\Delta S = nC_{v} \ln \frac{T_{2}}{T_{1}}=nC_{v} \ln \frac{p_{2}}{p_{1}}</code></span>。
 5. 相变（Phase Change）：<span class="course-math" data-tex="\Delta S=\frac{\Delta Q}{T}=\frac{Lm}{T}" data-display="false"><code>\Delta S=\frac{\Delta Q}{T}=\frac{Lm}{T}</code></span>。
 6. 同相变温（Same Phase, Change in Temperature）：<span class="course-math" data-tex="\Delta S= \int \frac{dQ}{T}=\int \frac{cm}{T}dT=cm\ln \frac{T_{2}}{T_{1}}" data-display="false"><code>\Delta S= \int \frac{dQ}{T}=\int \frac{cm}{T}dT=cm\ln \frac{T_{2}}{T_{1}}</code></span>

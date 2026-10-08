@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-04-28T15:01:35+08:00"
-updated_at: "2026-06-05T20:45:40+08:00"
+updated_at: "2026-10-08T20:57:27+08:00"
 reference: false
 order: 13
 layout: "course"
@@ -53,7 +53,7 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 在 <span class="course-math" data-tex="X_{L}&lt;X_{C}" data-display="false"><code>X_{L}&lt;X_{C}</code></span> 时，<span class="course-math" data-tex="\phi&lt;0" data-display="false"><code>\phi&lt;0</code></span>，<span class="course-math" data-tex="I_{m}" data-display="false"><code>I_{m}</code></span> 随 <span class="course-math" data-tex="\omega_{d}" data-display="false"><code>\omega_{d}</code></span> 增加而增加（称为容性/mainly capacitive，此时电压落后于电流）；在 <span class="course-math" data-tex="X_{L}&gt;X_{C}" data-display="false"><code>X_{L}&gt;X_{C}</code></span> 时， <span class="course-math" data-tex="\phi&gt;0" data-display="false"><code>\phi&gt;0</code></span>，<span class="course-math" data-tex="I_{m}" data-display="false"><code>I_{m}</code></span> 随 <span class="course-math" data-tex="\omega_{d}" data-display="false"><code>\omega_{d}</code></span> 增加而减小（称为感性/mainly inductive，此时电压提前于电流）。
 **直观理解：<span class="course-math" data-tex="\omega_{d}" data-display="false"><code>\omega_{d}</code></span> 从 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 增加到 <span class="course-math" data-tex="\infty" data-display="false"><code>\infty</code></span> 时，感抗在从 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 增加到 <span class="course-math" data-tex="\infty" data-display="false"><code>\infty</code></span>，容抗在从 <span class="course-math" data-tex="\infty" data-display="false"><code>\infty</code></span> 减小到 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>。总阻抗取决于它们差值的大小，当他们相等的时候阻抗最小，电流幅值最大。左边，容抗大，为电容性；右边，感抗大，为电感性。**
 
-另外，定义 **功率因数（Power Factor）** 为 <span class="course-math" data-tex="\cos \phi=\frac{R}{Z}" data-display="false"><code>\cos \phi=\frac{R}{Z}</code></span>，即有功功率和总功率的比值。
+另外，定义 **功率因数（Power Factor）** 为 <span class="course-math" data-tex="\cos \phi=\frac{R}{Z}" data-display="false"><code>\cos \phi=\frac{R}{Z}</code></span>，即有功功率和视在功率的比值。
 
 
 ### 交流电路（AC）中的功率
@@ -87,7 +87,7 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 电容器充放电中，就会产生位移电流。
 根据麦克斯韦理论，为了保持闭合电路中“电流”的连续性，流入电容器极板的传导电流等于极板间的位移电流。
 麦克斯韦修正后的安培定律：
-<span class="course-math course-math-display" data-tex="\int \vec{B}\cdot d\vec{l}=\mu_{0}(i+i_{D})" data-display="true"><code>\int \vec{B}\cdot d\vec{l}=\mu_{0}(i+i_{D})</code></span>
+<span class="course-math course-math-display" data-tex="\oint \vec{B}\cdot d\vec{l}=\mu_{0}(i+i_{D})" data-display="true"><code>\oint \vec{B}\cdot d\vec{l}=\mu_{0}(i+i_{D})</code></span>
 
 ## 麦克斯韦方程组
 {: #section-5 }

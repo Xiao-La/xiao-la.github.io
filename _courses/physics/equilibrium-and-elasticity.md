@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-11-01T15:58:57+08:00"
-updated_at: "2025-11-04T09:44:25+08:00"
+updated_at: "2026-10-08T20:57:10+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -39,7 +39,7 @@ excerpt: "大学物理（上）/（下） · Equilibrium and Elasticity - 平衡
 
 
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Elasticity-1.png' | relative_url }}{% raw %}" alt="Elasticity-1" width="655" height="255" loading="lazy" decoding="async">
-上图展示了三种**应力（stress）**：拉伸力（tensile stress）/ 剪切力（shearing stress）/ 静水压力（液应力，hydraulic stress）
+上图展示了三种**应力（stress）**：拉伸应力（tensile stress）/ 剪切应力（shearing stress）/ 静水压力（液应力，hydraulic stress）
 
  <span class="course-math course-math-display" data-tex="\text{应力（stress） = 模量（modulus）}\times \text{应变（strain）}" data-display="true"><code>\text{应力（stress） = 模量（modulus）}\times \text{应变（strain）}</code></span>
 
@@ -47,9 +47,9 @@ excerpt: "大学物理（上）/（下） · Equilibrium and Elasticity - 平衡
 <span class="course-math course-math-display" data-tex="\frac{F}{A}=E\frac{\Delta L}{L}" data-display="true"><code>\frac{F}{A}=E\frac{\Delta L}{L}</code></span>
 这里的 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 被称作**杨氏模量（Young's modulus）**。
 类似的，对剪切力，有**剪切模量（shear modulus）** -  <span class="course-math" data-tex="G" data-display="false"><code>G</code></span>，以及 <span class="course-math" data-tex="\frac{F}{A}=G \frac{\Delta x}{L}" data-display="false"><code>\frac{F}{A}=G \frac{\Delta x}{L}</code></span>。
-对静水压力，有**体变模量（bulk modulus）** - <span class="course-math" data-tex="B" data-display="false"><code>B</code></span>，以及 <span class="course-math" data-tex="\frac{F}{A}=B \frac{\Delta V}{V}" data-display="false"><code>\frac{F}{A}=B \frac{\Delta V}{V}</code></span>。
+对静水压力，有**体变模量（bulk modulus）** - <span class="course-math" data-tex="B" data-display="false"><code>B</code></span>，以及 <span class="course-math" data-tex="\Delta p=-B\frac{\Delta V}{V}" data-display="false"><code>\Delta p=-B\frac{\Delta V}{V}</code></span>（<span class="course-math" data-tex="\Delta V" data-display="false"><code>\Delta V</code></span> 是带符号的体积变化）。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Elasticity-2.png' | relative_url }}{% raw %}" alt="Elasticity-2" width="435" height="394" loading="lazy" decoding="async">
-在应力达到 **抗屈强度（yield strength）** 后，发生塑性形变。在**极限强度（ultimate strength）**，发生破裂。
+在应力达到 **屈服强度（yield strength）** 后，发生塑性形变。**极限抗拉强度（ultimate tensile strength）** 是工程应力的最大值；断裂发生在**断裂强度（fracture strength）**处，二者不一定相同。
 
 **扭转（twisting）** 物体会产生响应的力矩来阻止这个扭转，满足公式：
 <span class="course-math course-math-display" data-tex="\tau = -\kappa \theta" data-display="true"><code>\tau = -\kappa \theta</code></span>

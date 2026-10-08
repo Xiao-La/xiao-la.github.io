@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-12-20T17:42:17+08:00"
-updated_at: "2025-12-24T19:38:16+08:00"
+updated_at: "2026-10-08T20:57:10+08:00"
 reference: false
 order: 9
 layout: "course"
@@ -26,7 +26,7 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 理想气体（Ideal Gas）：忽略气体分子间的相互作用。
 理想气体物态方程：
 <span class="course-math course-math-display" data-tex="pV=nRT=NkT" data-display="true"><code>pV=nRT=NkT</code></span>
-其中 <span class="course-math" data-tex="k=1.38\times {10}^{23} \text{J/K}" data-display="false"><code>k=1.38\times {10}^{23} \text{J/K}</code></span> 为玻尔兹曼常数，<span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 为气体常数，它们之间满足 <span class="course-math" data-tex="kN_{A}=R" data-display="false"><code>kN_{A}=R</code></span>。
+其中 <span class="course-math" data-tex="k=1.38\times {10}^{-23} \text{J/K}" data-display="false"><code>k=1.38\times {10}^{-23} \text{J/K}</code></span> 为玻尔兹曼常数，<span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 为气体常数，它们之间满足 <span class="course-math" data-tex="kN_{A}=R" data-display="false"><code>kN_{A}=R</code></span>。
 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 在数值上等于 <span class="course-math" data-tex="8.31" data-display="false"><code>8.31</code></span>。
 
 ### 理想气体的分子速率分布
@@ -76,7 +76,7 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 由于 <span class="course-math" data-tex="W=0" data-display="false"><code>W=0</code></span>，有
 
 <span class="course-math course-math-display" data-tex="\Delta E_{\text{int}}=Q+W=Q=nC_{v}\Delta T" data-display="true"><code>\Delta E_{\text{int}}=Q+W=Q=nC_{v}\Delta T</code></span>
-那么对于所有理想气体，定义
+在 <span class="course-math" data-tex="C_v" data-display="false"><code>C_v</code></span> 可视为常数、并选定内能零点时，可写为
 <span class="course-math course-math-display" data-tex="E_{\text{int}}=nC_{v}T" data-display="true"><code>E_{\text{int}}=nC_{v}T</code></span>
 可以看出，理想气体的内能只与温度有关，是一个状态函数而不是路径函数。
 对于**单原子分子的理想气体**，内能只考虑平动动能，那么
@@ -109,14 +109,14 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 3. 转动自由度：3（非线性）或 2（线性）。
 4. 振动自由度：<span class="course-math" data-tex="3N-6" data-display="false"><code>3N-6</code></span>（非线性）或 <span class="course-math" data-tex="3N-5" data-display="false"><code>3N-5</code></span> （线性）。
 
-对于自由度为 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 的气体分子：
+对于有 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 个参与能量均分的二次型能量项的气体分子（每个振动模式包含动能、势能两项）：
 
 <span class="course-math course-math-display" data-tex="E_{\text{int}}=\frac{1}{2} kT \times N\times f =n \frac{f}{2} RT" data-display="true"><code>E_{\text{int}}=\frac{1}{2} kT \times N\times f =n \frac{f}{2} RT</code></span>
 对比 <span class="course-math" data-tex="E_{\text{int}}=nC_{v}T" data-display="false"><code>E_{\text{int}}=nC_{v}T</code></span> 可得
 <span class="course-math course-math-display" data-tex="C_{v}=\frac{f}{2}R, C_{p}=\left( \frac{f}{2}+1 \right)R" data-display="true"><code>C_{v}=\frac{f}{2}R, C_{p}=\left( \frac{f}{2}+1 \right)R</code></span>
 实际上，气体分子的自由度还和温度有关。在低温状态下，转动和振动自由度会被冻结。温度升高之后，转动自由度会先解冻，然后是振动自由度。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Gas-Kinetics-1.png' | relative_url }}{% raw %}" alt="Gas-Kinetics-1" width="1702" height="558" loading="lazy" decoding="async">
-基于**能量均分定理**，可通过自由度的比例算出动能大小，例如对于双原子分子，平动动能为 <span class="course-math" data-tex="\frac{3}{5}E_{\text{int}}" data-display="false"><code>\frac{3}{5}E_{\text{int}}</code></span>。
+基于**能量均分定理**，可通过自由度的比例算出动能大小，例如对于转动已激发、振动仍冻结的双原子分子，平动动能为 <span class="course-math" data-tex="\frac{3}{5}E_{\text{int}}" data-display="false"><code>\frac{3}{5}E_{\text{int}}</code></span>。
 
 
 ### 热力学过程计算
@@ -155,16 +155,16 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 
 <span class="course-math course-math-display" data-tex="Q=0" data-display="true"><code>Q=0</code></span>
 <span class="course-math course-math-display" data-tex="W=-\Delta E_{\text{int}}=-nC_{v}\Delta T=\frac{C_{v}}{R}(p_{i}V_{i}-p_{f}V_{f})" data-display="true"><code>W=-\Delta E_{\text{int}}=-nC_{v}\Delta T=\frac{C_{v}}{R}(p_{i}V_{i}-p_{f}V_{f})</code></span>
-绝热过程的过程方程为
-<span class="course-math course-math-display" data-tex="pV^\gamma=1" data-display="true"><code>pV^\gamma=1</code></span>
+对于可逆绝热过程，且 <span class="course-math" data-tex="C_v,C_p" data-display="false"><code>C_v,C_p</code></span> 可视为常数时，过程方程为
+<span class="course-math course-math-display" data-tex="pV^\gamma=\text{constant}" data-display="true"><code>pV^\gamma=\text{constant}</code></span>
 或 
-<span class="course-math course-math-display" data-tex="TV^{\gamma-1}=1" data-display="true"><code>TV^{\gamma-1}=1</code></span>
+<span class="course-math course-math-display" data-tex="TV^{\gamma-1}=\text{constant}" data-display="true"><code>TV^{\gamma-1}=\text{constant}</code></span>
 其中 <span class="course-math" data-tex="\gamma=\frac{C_{p}}{C_{v}}&gt;1" data-display="false"><code>\gamma=\frac{C_{p}}{C_{v}}&gt;1</code></span> ，那么绝热过程的曲线比等温过程的曲线更陡峭。
 
 
 #### 自由膨胀（Free Expansion）
 {: #section-12 }
 
-<span class="course-math course-math-display" data-tex="W=0,Q=0, E_{\text{int}}=0" data-display="true"><code>W=0,Q=0, E_{\text{int}}=0</code></span>
+<span class="course-math course-math-display" data-tex="W=0,Q=0, \Delta E_{\text{int}}=0" data-display="true"><code>W=0,Q=0, \Delta E_{\text{int}}=0</code></span>
 那么 <span class="course-math" data-tex="\Delta T=0, \Delta(pV)=0" data-display="false"><code>\Delta T=0, \Delta(pV)=0</code></span>。
 {% endraw %}

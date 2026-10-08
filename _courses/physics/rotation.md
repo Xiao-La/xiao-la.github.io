@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-10-21T20:46:07+08:00"
-updated_at: "2025-12-24T14:26:50+08:00"
+updated_at: "2026-10-08T21:33:39+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -33,7 +33,7 @@ excerpt: "大学物理（上）/（下） · Rotation - 定轴转动"
 
  在转动中，质量 <span class="course-math" data-tex="m" data-display="false"><code>m</code></span> 与转动惯量 <span class="course-math" data-tex="I" data-display="false"><code>I</code></span> 对应，力 <span class="course-math" data-tex="F" data-display="false"><code>F</code></span> 与力矩 <span class="course-math" data-tex="\tau" data-display="false"><code>\tau</code></span> 对应。
  
- **差异**：转动中的加速度分为 **切向加速度** 和 **法向加速度**，对应公式 <span class="course-math course-math-display" data-tex="\vec{a}=\alpha r \hat{t}+w^2r\hat{r_{c}}" data-display="true"><code>\vec{a}=\alpha r \hat{t}+w^2r\hat{r_{c}}</code></span> 
+ **差异**：转动中的加速度分为 **切向加速度** 和 **法向加速度**，对应公式 <span class="course-math course-math-display" data-tex="\vec{a}=\alpha r \hat{t}+\omega^2r\hat{r_{c}}" data-display="true"><code>\vec{a}=\alpha r \hat{t}+\omega^2r\hat{r_{c}}</code></span>
  
 质点的转动惯量为 <span class="course-math" data-tex="mr^2" data-display="false"><code>mr^2</code></span>，刚体的转动惯量 <span class="course-math" data-tex="I=\int r^2dm" data-display="false"><code>I=\int r^2dm</code></span>，一般不太好算，所以会给一些常见几何体的（转轴过质心情况下的）转动惯量表。
  然后可以用平行轴定理 <span class="course-math" data-tex="I=I_{com}+Mh^2" data-display="false"><code>I=I_{com}+Mh^2</code></span> 算出新转轴下的转动惯量。

@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-05-19T17:43:41+08:00"
-updated_at: "2026-06-06T20:53:11+08:00"
+updated_at: "2026-10-08T21:23:24+08:00"
 reference: false
 order: 12
 layout: "course"
@@ -27,7 +27,7 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 线积分（Line Integral）：沿着某条曲线 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 做函数 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 的积分：
 <span class="course-math course-math-display" data-tex="\int_{C}fds" data-display="true"><code>\int_{C}fds</code></span>
 计算方法：
-- 将 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 参数化为 <span class="course-math" data-tex="\mathbf{r}(t)" data-display="false"><code>\mathbf{r}(t)</code></span>。
+- 将曲线 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 参数化为 <span class="course-math" data-tex="\mathbf{r}(t)" data-display="false"><code>\mathbf{r}(t)</code></span>。
 - 则 <span class="course-math" data-tex="ds=&#124;\mathbf{v}(t)&#124;dt" data-display="false"><code>ds=&#124;\mathbf{v}(t)&#124;dt</code></span>，其中 <span class="course-math" data-tex="\mathbf{v}(t)=\mathbf{r}&#x27;(t)" data-display="false"><code>\mathbf{v}(t)=\mathbf{r}&#x27;(t)</code></span>。
 - 最后变成计算一元积分 <span class="course-math" data-tex="\int f(\mathbf{r}(t))&#124;\mathbf{v}(t)&#124;dt" data-display="false"><code>\int f(\mathbf{r}(t))&#124;\mathbf{v}(t)&#124;dt</code></span>。
 用线积分可以计算线质量，转动惯量等。
@@ -37,7 +37,7 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 于是可以求类似于做功的积分，也叫流量积分（Flow Integral）：
 <span class="course-math course-math-display" data-tex="\int_{C} \mathbf{F}\cdot d\mathbf{r}" data-display="true"><code>\int_{C} \mathbf{F}\cdot d\mathbf{r}</code></span>
 这里为向量的点乘。计算方法同样是参数化，转化为：
-<span class="course-math course-math-display" data-tex="\int_{C} \mathbf{F}(\mathbf{r}(t))\cdot\mathbf{r}&#x27;(t)dt" data-display="true"><code>\int_{C} \mathbf{F}(\mathbf{r}(t))\cdot\mathbf{r}&#x27;(t)dt</code></span>
+<span class="course-math course-math-display" data-tex="\int_a^b\mathbf{F}(\mathbf{r}(t))\cdot\mathbf{r}&#x27;(t)dt" data-display="true"><code>\int_a^b\mathbf{F}(\mathbf{r}(t))\cdot\mathbf{r}&#x27;(t)dt</code></span>
 若 <span class="course-math" data-tex="\mathbf{F}=\left&lt; M,N \right&gt;" data-display="false"><code>\mathbf{F}=\left&lt; M,N \right&gt;</code></span> 也可以进一步写成点乘 <span class="course-math" data-tex="\mathbf{F}\cdot \left&lt; dx,dy \right&gt;" data-display="false"><code>\mathbf{F}\cdot \left&lt; dx,dy \right&gt;</code></span> 的形式
 <span class="course-math course-math-display" data-tex="\int_{C}(Mdx+Ndy)" data-display="true"><code>\int_{C}(Mdx+Ndy)</code></span>
 若 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 为闭合曲线，则也把这个流量积分叫做环流量（Circulation）。
@@ -56,16 +56,16 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 
 判定保守场的一个必要条件：对于向量场 <span class="course-math" data-tex="\mathbf{F}=\left&lt; P,Q \right&gt;" data-display="false"><code>\mathbf{F}=\left&lt; P,Q \right&gt;</code></span>，若它是保守场，则必有
 <span class="course-math course-math-display" data-tex="\frac{ \partial {P} }{ \partial y } =\frac{ \partial Q }{ \partial x }" data-display="true"><code>\frac{ \partial {P} }{ \partial y } =\frac{ \partial Q }{ \partial x }</code></span>
-进一步的，若区域是**单连通的**，则这个条件是充要的。
+进一步的，若区域是**单连通的开区域**，且场的分量有连续一阶偏导，则这个条件是充要的。
 定义：一个式子 <span class="course-math" data-tex="Mdx+Ndy+Pdz" data-display="false"><code>Mdx+Ndy+Pdz</code></span> 为恰当（Exact）微分形式，若存在 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 使得：
 <span class="course-math course-math-display" data-tex="df=Mdx+Ndy+Pdz=\frac{ \partial f }{ \partial x } dx+\frac{ \partial f }{ \partial y } dy+\frac{ \partial f }{ \partial z } dz" data-display="true"><code>df=Mdx+Ndy+Pdz=\frac{ \partial f }{ \partial x } dx+\frac{ \partial f }{ \partial y } dy+\frac{ \partial f }{ \partial z } dz</code></span>
 这里 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 就是势函数。
 对恰当微分形式进行线积分，由线积分基本定理，只需终点处的势函数值减去起点处的势函数值。
-若单连通，同样有一个保守场充要条件：
+在单连通开区域内、场的分量具有连续一阶偏导时，同样有一个保守场充要条件：
 <span class="course-math course-math-display" data-tex="\frac{ \partial M }{ \partial y } =\frac{ \partial N }{ \partial x } ,\frac{ \partial M }{ \partial z } =\frac{ \partial P }{ \partial x } ,\frac{ \partial N }{ \partial z } =\frac{ \partial P }{ \partial y }" data-display="true"><code>\frac{ \partial M }{ \partial y } =\frac{ \partial N }{ \partial x } ,\frac{ \partial M }{ \partial z } =\frac{ \partial P }{ \partial x } ,\frac{ \partial N }{ \partial z } =\frac{ \partial P }{ \partial y }</code></span>
 保守场的一个充要条件：对任意回路积分为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>。
 
-定义场 <span class="course-math" data-tex="\mathbf{F}=\left&lt; M,N \right&gt;" data-display="false"><code>\mathbf{F}=\left&lt; M,N \right&gt;</code></span> 的流量密度（circulation density）：
+定义场 <span class="course-math" data-tex="\mathbf{F}=\left&lt; M,N \right&gt;" data-display="false"><code>\mathbf{F}=\left&lt; M,N \right&gt;</code></span> 的环流密度（circulation density）：
 <span class="course-math course-math-display" data-tex="\frac{ \partial N }{ \partial x } -\frac{ \partial M }{ \partial y } = (\nabla \times\mathbf{F}) \cdot \mathbf{k}" data-display="true"><code>\frac{ \partial N }{ \partial x } -\frac{ \partial M }{ \partial y } = (\nabla \times\mathbf{F}) \cdot \mathbf{k}</code></span>
 也被称为**旋度的 k 分量** the k-component of the curl，记作 <span class="course-math" data-tex="(\text{curl } \mathbf{F})\cdot \mathbf{k}" data-display="false"><code>(\text{curl } \mathbf{F})\cdot \mathbf{k}</code></span>
 定义散度（Divergence）：
@@ -107,7 +107,7 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 注意：做这样的换算，都要把积分的区域也做投影！
 
 这里若 <span class="course-math" data-tex="z=f(x,y)" data-display="false"><code>z=f(x,y)</code></span>，则有 <span class="course-math" data-tex="\mathbf{r}=\left&lt; u,v,f(u,v) \right&gt;" data-display="false"><code>\mathbf{r}=\left&lt; u,v,f(u,v) \right&gt;</code></span>，<span class="course-math" data-tex="\mathbf{r}_{u}=\left&lt; 1,0,f_{x} \right&gt;,\mathbf{r}_{v}=\left&lt; 0,1,f_{y} \right&gt;" data-display="false"><code>\mathbf{r}_{u}=\left&lt; 1,0,f_{x} \right&gt;,\mathbf{r}_{v}=\left&lt; 0,1,f_{y} \right&gt;</code></span>，故而 <span class="course-math" data-tex="\mathbf{r}_{u}\times r_{v}=\left&lt; -f_{x},-f_{y},1 \right&gt;" data-display="false"><code>\mathbf{r}_{u}\times r_{v}=\left&lt; -f_{x},-f_{y},1 \right&gt;</code></span>（这里指向上面），有结论：
-<span class="course-math course-math-display" data-tex="d\sigma=\sqrt{ f_{x}^{2}+f_{y}^{2}+1 }dudv" data-display="true"><code>d\sigma=\sqrt{ f_{x}^{2}+f_{y}^{2}+1 }dudv</code></span>
+<span class="course-math course-math-display" data-tex="d\sigma=\sqrt{ f_{x}^{2}+f_{y}^{2}+1 }dxdy" data-display="true"><code>d\sigma=\sqrt{ f_{x}^{2}+f_{y}^{2}+1 }dxdy</code></span>
 所以 
 <span class="course-math course-math-display" data-tex="A=\iint_{R} d\sigma=\iint_{R&#x27;} \sqrt{ f_{x}^{2}+f_{y}^{2}+1 }dxdy" data-display="true"><code>A=\iint_{R} d\sigma=\iint_{R&#x27;} \sqrt{ f_{x}^{2}+f_{y}^{2}+1 }dxdy</code></span>
 其中 <span class="course-math" data-tex="R&#x27;" data-display="false"><code>R&#x27;</code></span> 为 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 向 <span class="course-math" data-tex="xOy" data-display="false"><code>xOy</code></span> 平面投影得到。
@@ -136,7 +136,7 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 **非定向曲面 (Non-orientable Surface)** 的代表——莫比乌斯带。
 
 另外：对曲面求通量，比如有一个场 <span class="course-math" data-tex="\mathbf{F}" data-display="false"><code>\mathbf{F}</code></span>，则 Surface Integral of F over S： 
-<span class="course-math course-math-display" data-tex="\iint _{S}\mathbf{F}\cdot \mathbf{n}d\sigma=\iint_{S}\mathbf{F}\cdot \frac{\mathbf{r}_{u}\times \mathbf{r}_{v}}{\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert }\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert dudv=\iint_{S}\mathbf{F}\cdot(\mathbf{r}_{u}\times \mathbf{r}_{v})dudv" data-display="true"><code>\iint _{S}\mathbf{F}\cdot \mathbf{n}d\sigma=\iint_{S}\mathbf{F}\cdot \frac{\mathbf{r}_{u}\times \mathbf{r}_{v}}{\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert }\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert dudv=\iint_{S}\mathbf{F}\cdot(\mathbf{r}_{u}\times \mathbf{r}_{v})dudv</code></span>
+<span class="course-math course-math-display" data-tex="\iint _{S}\mathbf{F}\cdot \mathbf{n}d\sigma=\iint_{R}\mathbf{F}(\mathbf r(u,v))\cdot \frac{\mathbf{r}_{u}\times \mathbf{r}_{v}}{\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert }\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert dudv=\iint_{R}\mathbf{F}(\mathbf r(u,v))\cdot(\mathbf{r}_{u}\times \mathbf{r}_{v})dudv" data-display="true"><code>\iint _{S}\mathbf{F}\cdot \mathbf{n}d\sigma=\iint_{R}\mathbf{F}(\mathbf r(u,v))\cdot \frac{\mathbf{r}_{u}\times \mathbf{r}_{v}}{\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert }\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert dudv=\iint_{R}\mathbf{F}(\mathbf r(u,v))\cdot(\mathbf{r}_{u}\times \mathbf{r}_{v})dudv</code></span>
 这里的 <span class="course-math" data-tex="\mathbf{n}" data-display="false"><code>\mathbf{n}</code></span> 的方向需要确定：
 - **封闭曲面 (Closed Surfaces)** 
     封闭曲面默认只有两种定向：
@@ -160,12 +160,12 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 - 其中 <span class="course-math" data-tex="\nabla=\left&lt; \frac{ \partial  }{ \partial x },\frac{ \partial  }{ \partial y },\frac{ \partial  }{ \partial z } \right&gt;" data-display="false"><code>\nabla=\left&lt; \frac{ \partial  }{ \partial x },\frac{ \partial  }{ \partial y },\frac{ \partial  }{ \partial z } \right&gt;</code></span> 为倒三角算符（Del Operator）。
 - 那么斯托克斯定理指出：
 <span class="course-math course-math-display" data-tex="\oint_{C}\mathbf{F}\cdot d\mathbf{r}=\iint_{S}(\nabla \times \mathbf{F})\cdot \mathbf{n}d\sigma" data-display="true"><code>\oint_{C}\mathbf{F}\cdot d\mathbf{r}=\iint_{S}(\nabla \times \mathbf{F})\cdot \mathbf{n}d\sigma</code></span>
-- 其中 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 是一个闭合边界，<span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 是以 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 为边界的一个**分段光滑曲面**。
+- 其中 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 是可定向的**分段光滑曲面**，<span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 是它的正向边界（方向与法向量按右手定则相容）；<span class="course-math" data-tex="\mathbf F" data-display="false"><code>\mathbf F</code></span> 在包含整个 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 的开区域内具有连续一阶偏导。
 - 也就是说，以 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 为边界的曲面的旋度场的通量，等于这个边界上的环流量。
 - 那么对于一个复杂的曲面积分，可以改成算一个线积分，也可以换成一个简单的（有相同边界的）曲面的积分；对于一个复杂的环流量线积分，也可以换成一个简单曲面的旋度通量积分。
 
 这里要注意，作为一个通量积分，仍然有：
-<span class="course-math course-math-display" data-tex="d\mathbf{S}=\mathbf{n}d\sigma= \frac{r_{u}\times r_{v}}{\lvert r_{u}\times r_{v} \rvert }\lvert r_{u}\times r_{v} \rvert =r_{u}\times r_{v}" data-display="true"><code>d\mathbf{S}=\mathbf{n}d\sigma= \frac{r_{u}\times r_{v}}{\lvert r_{u}\times r_{v} \rvert }\lvert r_{u}\times r_{v} \rvert =r_{u}\times r_{v}</code></span>
+<span class="course-math course-math-display" data-tex="d\mathbf{S}=\mathbf{n}d\sigma= \frac{r_{u}\times r_{v}}{\lvert r_{u}\times r_{v} \rvert }\lvert r_{u}\times r_{v} \rvert\,du\,dv=(r_{u}\times r_{v})\,du\,dv" data-display="true"><code>d\mathbf{S}=\mathbf{n}d\sigma= \frac{r_{u}\times r_{v}}{\lvert r_{u}\times r_{v} \rvert }\lvert r_{u}\times r_{v} \rvert\,du\,dv=(r_{u}\times r_{v})\,du\,dv</code></span>
 那么对于 <span class="course-math" data-tex="z=f(x,y)" data-display="false"><code>z=f(x,y)</code></span>，仍然有 <span class="course-math" data-tex="r_{u}\times r_{v}=(-f_{x},-f_{y},1)" data-display="false"><code>r_{u}\times r_{v}=(-f_{x},-f_{y},1)</code></span>。
 
 如果曲面有洞：公式里的边界 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 会变成**一组曲线的集合**：
@@ -177,9 +177,9 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 - **内边界（Hole boundary）**：必须是**顺时针（Clockwise）**方向。
 （保持曲面在左手边）
 
-定理：**任何标量场的梯度场，其旋度必为零向量。**
+定理：**具有连续二阶偏导的标量场，其梯度场的旋度为零向量。**
 <span class="course-math course-math-display" data-tex="\text{curl}(\text{grad } f) = \mathbf{0} \quad \text{或} \quad \nabla \times \nabla f = \mathbf{0} \quad \text{}" data-display="true"><code>\text{curl}(\text{grad } f) = \mathbf{0} \quad \text{或} \quad \nabla \times \nabla f = \mathbf{0} \quad \text{}</code></span>
-在**连通且单连通（Connected & Simply Connected）的开放区域 <span class="course-math" data-tex="D" data-display="false"><code>D</code></span>** 中，TFAE：
+在**连通且单连通（Connected & Simply Connected）的开放区域 <span class="course-math" data-tex="D" data-display="false"><code>D</code></span>** 中，对具有连续一阶偏导的向量场，TFAE：
 1. <span class="course-math" data-tex="\mathbf{F}" data-display="false"><code>\mathbf{F}</code></span> 是保守场（<span class="course-math" data-tex="\mathbf{F} = \nabla f" data-display="false"><code>\mathbf{F} = \nabla f</code></span> 存在势函数）。
 2. 沿着区域内任何闭合回路的线积分永远为 0（<span class="course-math" data-tex="\oint_C \mathbf{F} \cdot d\mathbf{r} = 0" data-display="false"><code>\oint_C \mathbf{F} \cdot d\mathbf{r} = 0</code></span>）。
 3. 向量场线积分严格路径无关（Path Independence）。

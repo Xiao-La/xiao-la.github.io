@@ -1,7 +1,11 @@
+body { padding: 0; }
+
 .main {
   width: 100%;
-  padding: 0 0 0 0;
+  padding: 24px 18px 48px;
   border: none;
+  font-size: 1.0625rem;
+  line-height: 1.7;
 }
 
 .pconly{
@@ -16,20 +20,10 @@ div.info{
   display: none;
 }
 
-H1, H2 {
-  margin-bottom: 1.25em;
-  padding: 0;
-  width: 100%;
-  font-size: 1.25em;
-}
-
-H3, H4 {
-  margin-top: 0.625em;
-  margin-bottom: 0.625em;
-  border: none;
-  width: 100%;
-  font-size: 1em;
-}
+h1 { font-size: 1.65em; }
+h2 { font-size: 1.35em; }
+h3 { font-size: 1.15em; }
+h4 { font-size: 1.05em; }
 
 .nav {
   width: 100%;

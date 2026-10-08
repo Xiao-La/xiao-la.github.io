@@ -5,7 +5,7 @@ course_title: "概率与统计"
 section: ""
 status: "updating"
 created_at: "2026-09-09T16:58:35+08:00"
-updated_at: "2026-09-17T20:23:51+08:00"
+updated_at: "2026-10-08T20:59:37+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -40,9 +40,9 @@ excerpt: "概率与统计 · Probability Basic - 概率基础"
 - 对立/互补（Complement）：<span class="course-math" data-tex="A\cap B=\varnothing \&amp;A\cup B=\Omega" data-display="false"><code>A\cap B=\varnothing \&amp;A\cup B=\Omega</code></span>
 
 且事件之间的运算满足：
-- 交换律（Communicative Laws）：<span class="course-math" data-tex="A \cap B=B\cap A" data-display="false"><code>A \cap B=B\cap A</code></span>
+- 交换律（Commutative Laws）：<span class="course-math" data-tex="A \cap B=B\cap A" data-display="false"><code>A \cap B=B\cap A</code></span>
 - 结合律（Associative laws）：<span class="course-math" data-tex="A\cap (B\cap C)=(A\cap B)\cap C" data-display="false"><code>A\cap (B\cap C)=(A\cap B)\cap C</code></span>
-- 分配率（Distributive Law）：<span class="course-math" data-tex="A\cup(B\cap C)=(A\cup B)\cap(A\cup C)" data-display="false"><code>A\cup(B\cap C)=(A\cup B)\cap(A\cup C)</code></span>
+- 分配律（Distributive Law）：<span class="course-math" data-tex="A\cup(B\cap C)=(A\cup B)\cap(A\cup C)" data-display="false"><code>A\cup(B\cap C)=(A\cup B)\cap(A\cup C)</code></span>
 - 德摩根律（De Morgan's Laws）：<span class="course-math" data-tex="\overline{\bigcup_{i=1}^{\infty} A_i} = \bigcap_{i=1}^{\infty} \overline{A_i}, \qquad \overline{\bigcap_{i=1}^{\infty} A_i} = \bigcup_{i=1}^{\infty} \overline{A_i}" data-display="false"><code>\overline{\bigcup_{i=1}^{\infty} A_i} = \bigcap_{i=1}^{\infty} \overline{A_i}, \qquad \overline{\bigcap_{i=1}^{\infty} A_i} = \bigcup_{i=1}^{\infty} \overline{A_i}</code></span>
 
 
@@ -50,16 +50,16 @@ excerpt: "概率与统计 · Probability Basic - 概率基础"
 {: #section-2 }
 
 
-概率测度（Probability Measure），简称概率（Probability），是一个定义在样本空间 <span class="course-math" data-tex="\Omega" data-display="false"><code>\Omega</code></span> 的子集上的实值函数，满足一下三个公理：
-- 非负性（Non-negativity）：对任意 <span class="course-math" data-tex="A\subset \Omega" data-display="false"><code>A\subset \Omega</code></span>，<span class="course-math" data-tex="P(A)\geq 0" data-display="false"><code>P(A)\geq 0</code></span>。
-- 规范型（Normalization）：<span class="course-math" data-tex="P(\Omega)=1" data-display="false"><code>P(\Omega)=1</code></span>。
+概率测度（Probability Measure），简称概率（Probability），是定义在样本空间 <span class="course-math" data-tex="\Omega" data-display="false"><code>\Omega</code></span> 的事件集合 <span class="course-math" data-tex="\mathcal F" data-display="false"><code>\mathcal F</code></span>（一个 <span class="course-math" data-tex="\sigma" data-display="false"><code>\sigma</code></span>-代数）上的实值函数，满足以下三个公理：
+- 非负性（Non-negativity）：对任意 <span class="course-math" data-tex="A\in\mathcal F" data-display="false"><code>A\in\mathcal F</code></span>，<span class="course-math" data-tex="P(A)\geq 0" data-display="false"><code>P(A)\geq 0</code></span>。
+- 规范性（Normalization）：<span class="course-math" data-tex="P(\Omega)=1" data-display="false"><code>P(\Omega)=1</code></span>。
 - 可加性（Additivity）：对于任何互斥事件 <span class="course-math" data-tex="A_{1},A_{2},\dots" data-display="false"><code>A_{1},A_{2},\dots</code></span>，有
 <span class="course-math course-math-display" data-tex="P\left( \bigcup_{i=1}^\infty A_{i}\right)=\sum_{i=1}^{\infty}P(A_{i})" data-display="true"><code>P\left( \bigcup_{i=1}^\infty A_{i}\right)=\sum_{i=1}^{\infty}P(A_{i})</code></span>
-概率空间（Probability Space）：<span class="course-math" data-tex="(\Omega, A, P)" data-display="false"><code>(\Omega, A, P)</code></span>
+概率空间（Probability Space）：<span class="course-math" data-tex="(\Omega,\mathcal F,P)" data-display="false"><code>(\Omega,\mathcal F,P)</code></span>
 
 由公理可以推出概率的一些性质：
 - <span class="course-math" data-tex="P(\varnothing)=0" data-display="false"><code>P(\varnothing)=0</code></span>。
-- 有限可加性（Finite Additivity）：
+- 有限可加性（Finite Additivity）：当 <span class="course-math" data-tex="A_1,\dots,A_n" data-display="false"><code>A_1,\dots,A_n</code></span> 两两互斥时，
 <span class="course-math course-math-display" data-tex="P\left( \bigcup_{i=1}^n A_{i}\right)=\sum_{i=1}^{n}P(A_{i})" data-display="true"><code>P\left( \bigcup_{i=1}^n A_{i}\right)=\sum_{i=1}^{n}P(A_{i})</code></span>
 - <span class="course-math" data-tex="P(\overline{A})=1-P(A)" data-display="false"><code>P(\overline{A})=1-P(A)</code></span>。
 - <span class="course-math" data-tex="0\leq P(A)\leq 1" data-display="false"><code>0\leq P(A)\leq 1</code></span>
@@ -79,7 +79,7 @@ excerpt: "概率与统计 · Probability Basic - 概率基础"
 
 
 一个随机试验满足：
-- 样本空间 <span class="course-math" data-tex="\Omega" data-display="false"><code>\Omega</code></span> 中只有有限个样本点： <span class="course-math" data-tex="\Omega=\{ w=\omega_{1},\omega_{2},\dots,\omega _{n} \}" data-display="false"><code>\Omega=\{ w=\omega_{1},\omega_{2},\dots,\omega _{n} \}</code></span>。
+- 样本空间 <span class="course-math" data-tex="\Omega" data-display="false"><code>\Omega</code></span> 中只有有限个样本点： <span class="course-math" data-tex="\Omega=\{\omega_{1},\omega_{2},\dots,\omega_n\}" data-display="false"><code>\Omega=\{\omega_{1},\omega_{2},\dots,\omega_n\}</code></span>。
 - 每个样本点是等可能的：<span class="course-math" data-tex="P(\{ \omega_{1} \})=\dots=P(\{ \omega_{n} \})=\frac{1}{n}" data-display="false"><code>P(\{ \omega_{1} \})=\dots=P(\{ \omega_{n} \})=\frac{1}{n}</code></span>
 那么计算概率只需要数样本点：
 <span class="course-math course-math-display" data-tex="P(A)= \frac{k}{n}" data-display="true"><code>P(A)= \frac{k}{n}</code></span>
@@ -110,7 +110,7 @@ excerpt: "概率与统计 · Probability Basic - 概率基础"
 - 最终可以算出 <span class="course-math" data-tex="P(A)=1-\frac{1}{2!}+\frac{1}{3!}+\dots+(-1)^{n-1} \frac{1}{n!}" data-display="false"><code>P(A)=1-\frac{1}{2!}+\frac{1}{3!}+\dots+(-1)^{n-1} \frac{1}{n!}</code></span>。
 - 当 <span class="course-math" data-tex="n\to \infty" data-display="false"><code>n\to \infty</code></span>，<span class="course-math" data-tex="P(A)\to 1-\frac{1}{e}" data-display="false"><code>P(A)\to 1-\frac{1}{e}</code></span>。
 - 错位排列的概率 <span class="course-math" data-tex="P(\overline{A})\to \frac{1}{e}" data-display="false"><code>P(\overline{A})\to \frac{1}{e}</code></span>。
-- 错排数 <span class="course-math" data-tex="D_{n}=n!P(A)" data-display="false"><code>D_{n}=n!P(A)</code></span>。
+- 错排数 <span class="course-math" data-tex="D_{n}=n!P(\overline A)" data-display="false"><code>D_{n}=n!P(\overline A)</code></span>。
 
 ### 几何概型（Geometric Model of Probability）
 {: #section-5 }
@@ -128,26 +128,26 @@ excerpt: "概率与统计 · Probability Basic - 概率基础"
 {: #section-6 }
 
 
-在事件 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 发生的情况下，事件 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的条件概率为：
+在 <span class="course-math" data-tex="P(B)&gt;0" data-display="false"><code>P(B)&gt;0</code></span> 且事件 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 发生的情况下，事件 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的条件概率为：
 <span class="course-math course-math-display" data-tex="P(A&#124;B)= \frac{P(AB)}{P(B)}" data-display="true"><code>P(A&#124;B)= \frac{P(AB)}{P(B)}</code></span>
 也就是说，样本空间从 <span class="course-math" data-tex="\Omega" data-display="false"><code>\Omega</code></span> 变成了 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span>。
 - 乘法定律：<span class="course-math" data-tex="P(AB)=P(A&#124;B)P(B)" data-display="false"><code>P(AB)=P(A&#124;B)P(B)</code></span>
-- 全概率公式：<span class="course-math" data-tex="P(A)=P(A \overline{B})+P(AB)=P(A&#124;\overline{B})P(\overline{B})+P(A&#124;B)P(B)" data-display="false"><code>P(A)=P(A \overline{B})+P(AB)=P(A&#124;\overline{B})P(\overline{B})+P(A&#124;B)P(B)</code></span>
-- 链式法则：<span class="course-math" data-tex="P(A_{1}A_{2}\dots A_{n})=P(A_{n}&#124;A_{1}A_{2}\dots A_{n-1})P(A_{n-1}&#124;A_{1}A_{2}\dots A_{n-2})\dots P(A_{2}&#124;A_{1})P(A_{1})" data-display="false"><code>P(A_{1}A_{2}\dots A_{n})=P(A_{n}&#124;A_{1}A_{2}\dots A_{n-1})P(A_{n-1}&#124;A_{1}A_{2}\dots A_{n-2})\dots P(A_{2}&#124;A_{1})P(A_{1})</code></span>
+- 全概率公式（要求 <span class="course-math" data-tex="0&lt;P(B)&lt;1" data-display="false"><code>0&lt;P(B)&lt;1</code></span>）：<span class="course-math" data-tex="P(A)=P(A \overline{B})+P(AB)=P(A&#124;\overline{B})P(\overline{B})+P(A&#124;B)P(B)" data-display="false"><code>P(A)=P(A \overline{B})+P(AB)=P(A&#124;\overline{B})P(\overline{B})+P(A&#124;B)P(B)</code></span>
+- 链式法则（要求式中各条件事件的概率大于零）：<span class="course-math" data-tex="P(A_{1}A_{2}\dots A_{n})=P(A_{n}&#124;A_{1}A_{2}\dots A_{n-1})P(A_{n-1}&#124;A_{1}A_{2}\dots A_{n-2})\dots P(A_{2}&#124;A_{1})P(A_{1})" data-display="false"><code>P(A_{1}A_{2}\dots A_{n})=P(A_{n}&#124;A_{1}A_{2}\dots A_{n-1})P(A_{n-1}&#124;A_{1}A_{2}\dots A_{n-2})\dots P(A_{2}&#124;A_{1})P(A_{1})</code></span>
 
 贝叶斯定理（Bayes' Theorem）
-<span class="course-math course-math-display" data-tex="P(B_{i}&#124;A)= \frac{P(B_{i})P(A&#124;B_{i})}{\sum P(B_{i})P(A&#124;B_{i})}" data-display="true"><code>P(B_{i}&#124;A)= \frac{P(B_{i})P(A&#124;B_{i})}{\sum P(B_{i})P(A&#124;B_{i})}</code></span>
-其中 <span class="course-math" data-tex="B_{1}, \dots, B_{n}" data-display="false"><code>B_{1}, \dots, B_{n}</code></span> 是样本空间的一个划分（partition）。
+<span class="course-math course-math-display" data-tex="P(B_{i}&#124;A)= \frac{P(B_{i})P(A&#124;B_{i})}{\sum_{j=1}^n P(B_j)P(A&#124;B_j)}" data-display="true"><code>P(B_{i}&#124;A)= \frac{P(B_{i})P(A&#124;B_{i})}{\sum_{j=1}^n P(B_j)P(A&#124;B_j)}</code></span>
+其中 <span class="course-math" data-tex="B_{1}, \dots, B_{n}" data-display="false"><code>B_{1}, \dots, B_{n}</code></span> 是样本空间的一个划分（partition），且 <span class="course-math" data-tex="P(A)&gt;0" data-display="false"><code>P(A)&gt;0</code></span>、各 <span class="course-math" data-tex="P(B_j)&gt;0" data-display="false"><code>P(B_j)&gt;0</code></span>。
 这里 <span class="course-math" data-tex="P(B_{i}&#124;A)" data-display="false"><code>P(B_{i}&#124;A)</code></span> 称为 <span class="course-math" data-tex="B_{i}" data-display="false"><code>B_{i}</code></span> 的后验概率（Posterior probability）； <span class="course-math" data-tex="P(B_{i})" data-display="false"><code>P(B_{i})</code></span> 叫做 <span class="course-math" data-tex="B_{i}" data-display="false"><code>B_{i}</code></span> 的先验概率（Prior probability）。
 
 独立性（Independence）：
 - 从条件概率来看，就是事件 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的发生不影响 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 的概率，反之亦然。
 - 两个事件相互独立就是 <span class="course-math" data-tex="P(AB)=P(A)P(B)" data-display="false"><code>P(AB)=P(A)P(B)</code></span>。
 - 三个事件相互独立就是 <span class="course-math" data-tex="P(AB)=P(A)P(B), P(AC)=P(A)P(C), P(BC)=P(B)P(C), P(ABC)=P(A)P(B)P(C)" data-display="false"><code>P(AB)=P(A)P(B), P(AC)=P(A)P(C), P(BC)=P(B)P(C), P(ABC)=P(A)P(B)P(C)</code></span>。
-- <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个事件 <span class="course-math" data-tex="A_{1}\dots A_{n}" data-display="false"><code>A_{1}\dots A_{n}</code></span> 相互独立：对任意这些事件的子集 <span class="course-math" data-tex="A_{i_{1}}, A_{i_{2}}\dots A_{i_{}k}" data-display="false"><code>A_{i_{1}}, A_{i_{2}}\dots A_{i_{}k}</code></span>，都有 <span class="course-math" data-tex="P(A_{i_{1}}\dots A_{i_{k}})=P(A_{i_{1}})\dots P(A_{i_{k}})" data-display="false"><code>P(A_{i_{1}}\dots A_{i_{k}})=P(A_{i_{1}})\dots P(A_{i_{k}})</code></span>。
+- <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个事件 <span class="course-math" data-tex="A_{1}\dots A_{n}" data-display="false"><code>A_{1}\dots A_{n}</code></span> 相互独立：对任意这些事件的子集 <span class="course-math" data-tex="A_{i_{1}}, A_{i_{2}}\dots A_{i_k}" data-display="false"><code>A_{i_{1}}, A_{i_{2}}\dots A_{i_k}</code></span>，都有 <span class="course-math" data-tex="P(A_{i_{1}}\dots A_{i_{k}})=P(A_{i_{1}})\dots P(A_{i_{k}})" data-display="false"><code>P(A_{i_{1}}\dots A_{i_{k}})=P(A_{i_{1}})\dots P(A_{i_{k}})</code></span>。
  
 条件独立性（Conditional Independence）
-- 把上面的条件概率的定义改成 <span class="course-math" data-tex="P(A_{i_{1}}\dots A_{i_{k}}&#124;B)=P(A_{i_{1}}&#124;B)\dots P(A_{i_{k}}&#124;B)" data-display="false"><code>P(A_{i_{1}}\dots A_{i_{k}}&#124;B)=P(A_{i_{1}}&#124;B)\dots P(A_{i_{k}}&#124;B)</code></span>。
+- 在 <span class="course-math" data-tex="P(B)&gt;0" data-display="false"><code>P(B)&gt;0</code></span> 时，把上面的相互独立定义改成 <span class="course-math" data-tex="P(A_{i_{1}}\dots A_{i_{k}}&#124;B)=P(A_{i_{1}}&#124;B)\dots P(A_{i_{k}}&#124;B)" data-display="false"><code>P(A_{i_{1}}\dots A_{i_{k}}&#124;B)=P(A_{i_{1}}&#124;B)\dots P(A_{i_{k}}&#124;B)</code></span>。
 
 条件独立性和独立性是互相不能推出的。
 {% endraw %}

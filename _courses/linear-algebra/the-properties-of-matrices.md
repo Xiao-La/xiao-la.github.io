@@ -5,7 +5,7 @@ course_title: "线性代数"
 section: ""
 status: "completed"
 created_at: "2026-03-11T16:31:38+08:00"
-updated_at: "2026-04-29T17:06:49+08:00"
+updated_at: "2026-10-08T21:23:24+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -131,7 +131,7 @@ excerpt: "线性代数 · The Properties of Matrices - 矩阵的性质"
 那么可以把 <span class="course-math" data-tex="\mathbf{A}\mathbf{B}" data-display="false"><code>\mathbf{A}\mathbf{B}</code></span> 看成
 <span class="course-math course-math-display" data-tex="\mathbf{A}\mathbf{B}=\begin{bmatrix}&#10;\mathbf{A}&#10;\end{bmatrix}\begin{bmatrix}\mathbf{b}_{1} &amp; \mathbf{b}_{2} &amp; \cdots &amp; \mathbf{b}_{n}\end{bmatrix}=\begin{bmatrix}\mathbf{A}\mathbf{b}_{1} &amp; \mathbf{A}\mathbf{b}_{2} &amp; \cdots &amp; \mathbf{A}\mathbf{b}_{n}\end{bmatrix}" data-display="true"><code>\mathbf{A}\mathbf{B}=\begin{bmatrix}&#10;\mathbf{A}&#10;\end{bmatrix}\begin{bmatrix}\mathbf{b}_{1} &amp; \mathbf{b}_{2} &amp; \cdots &amp; \mathbf{b}_{n}\end{bmatrix}=\begin{bmatrix}\mathbf{A}\mathbf{b}_{1} &amp; \mathbf{A}\mathbf{b}_{2} &amp; \cdots &amp; \mathbf{A}\mathbf{b}_{n}\end{bmatrix}</code></span>
 或
-<span class="course-math course-math-display" data-tex="\mathbf{A}\mathbf{B}=\mathbf{A}=\begin{bmatrix}\mathbf{a}_{1} \\ \mathbf{a}_{2} \\ \vdots \\\mathbf{a}_{n}\end{bmatrix}\begin{bmatrix}&#10;\mathbf{B}&#10;\end{bmatrix}&#10;=\mathbf{A}=\begin{bmatrix}\mathbf{a}_{1}\mathbf{B} \\ \mathbf{a}_{2}\mathbf{B} \\ \vdots \\\mathbf{a}_{n}\mathbf{B}\end{bmatrix}" data-display="true"><code>\mathbf{A}\mathbf{B}=\mathbf{A}=\begin{bmatrix}\mathbf{a}_{1} \\ \mathbf{a}_{2} \\ \vdots \\\mathbf{a}_{n}\end{bmatrix}\begin{bmatrix}&#10;\mathbf{B}&#10;\end{bmatrix}&#10;=\mathbf{A}=\begin{bmatrix}\mathbf{a}_{1}\mathbf{B} \\ \mathbf{a}_{2}\mathbf{B} \\ \vdots \\\mathbf{a}_{n}\mathbf{B}\end{bmatrix}</code></span>
+<span class="course-math course-math-display" data-tex="\mathbf{A}\mathbf{B}=\begin{bmatrix}\mathbf{a}_{1} \\ \mathbf{a}_{2} \\ \vdots \\\mathbf{a}_{n}\end{bmatrix}\begin{bmatrix}&#10;\mathbf{B}&#10;\end{bmatrix}&#10;=\begin{bmatrix}\mathbf{a}_{1}\mathbf{B} \\ \mathbf{a}_{2}\mathbf{B} \\ \vdots \\\mathbf{a}_{n}\mathbf{B}\end{bmatrix}" data-display="true"><code>\mathbf{A}\mathbf{B}=\begin{bmatrix}\mathbf{a}_{1} \\ \mathbf{a}_{2} \\ \vdots \\\mathbf{a}_{n}\end{bmatrix}\begin{bmatrix}&#10;\mathbf{B}&#10;\end{bmatrix}&#10;=\begin{bmatrix}\mathbf{a}_{1}\mathbf{B} \\ \mathbf{a}_{2}\mathbf{B} \\ \vdots \\\mathbf{a}_{n}\mathbf{B}\end{bmatrix}</code></span>
 注意分块的矩阵尺寸要保证可乘。
 
 
@@ -165,7 +165,7 @@ excerpt: "线性代数 · The Properties of Matrices - 矩阵的性质"
 
 若 <span class="course-math" data-tex="AB=O" data-display="false"><code>AB=O</code></span>，则有 <span class="course-math" data-tex="C(B) \subseteq N(A)" data-display="false"><code>C(B) \subseteq N(A)</code></span>，则有 <span class="course-math" data-tex="\text{rank}(B)\leq n-\text{rank(A)}" data-display="false"><code>\text{rank}(B)\leq n-\text{rank(A)}</code></span>，也就是：
 <span class="course-math course-math-display" data-tex="\text{rank}(A)+\text{rank}(B)\leq n" data-display="true"><code>\text{rank}(A)+\text{rank}(B)\leq n</code></span>
-一般的，有<span class="course-math course-math-display" data-tex="\text{rank}(AB)=\text{rank}(B)-\text{dim}(N(A)\cap C(B))\geq\text{rank}(B)-\text{dim}N(A)=\text{rank}(B)-\text{rank(A)}+n" data-display="true"><code>\text{rank}(AB)=\text{rank}(B)-\text{dim}(N(A)\cap C(B))\geq\text{rank}(B)-\text{dim}N(A)=\text{rank}(B)-\text{rank(A)}+n</code></span> 故而有
+一般的，有<span class="course-math course-math-display" data-tex="\text{rank}(AB)=\text{rank}(B)-\text{dim}(N(A)\cap C(B))\geq\text{rank}(B)-\text{dim}N(A)=\text{rank}(B)+\text{rank}(A)-n" data-display="true"><code>\text{rank}(AB)=\text{rank}(B)-\text{dim}(N(A)\cap C(B))\geq\text{rank}(B)-\text{dim}N(A)=\text{rank}(B)+\text{rank}(A)-n</code></span> 故而有
 <span class="course-math course-math-display" data-tex="\text{rank}(A)+\text{rank}(B)-n\leq\text{rank}(AB)" data-display="true"><code>\text{rank}(A)+\text{rank}(B)-n\leq\text{rank}(AB)</code></span>
 
 一些题目中的结论： <span class="course-math" data-tex="\text{rank}(A^TA)=\text{rank}(A)" data-display="false"><code>\text{rank}(A^TA)=\text{rank}(A)</code></span>， <span class="course-math" data-tex="\text{rank}(A+B)\leq\text{rank}(A)+\text{rank}(B)" data-display="false"><code>\text{rank}(A+B)\leq\text{rank}(A)+\text{rank}(B)</code></span>。

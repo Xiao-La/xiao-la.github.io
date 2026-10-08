@@ -5,7 +5,7 @@ course_title: "线性代数"
 section: ""
 status: "completed"
 created_at: "2026-01-18T18:16:22+08:00"
-updated_at: "2026-04-29T18:06:01+08:00"
+updated_at: "2026-10-08T21:23:24+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -74,7 +74,7 @@ excerpt: "线性代数 · Determinant - 行列式"
 > 	 另外，由于 <span class="course-math" data-tex="P^TP=I" data-display="false"><code>P^TP=I</code></span>，有 <span class="course-math" data-tex="\det(P)\det(P^T)=1" data-display="false"><code>\det(P)\det(P^T)=1</code></span>。另外，由于交换两行给行列式添符号，有 <span class="course-math" data-tex="\det(P)=\pm\det(I)=\pm 1" data-display="false"><code>\det(P)=\pm\det(I)=\pm 1</code></span>。结合两者得到 <span class="course-math" data-tex="\det(P)=\det(P^T)" data-display="false"><code>\det(P)=\det(P^T)</code></span>。
 > 	 所以 <span class="course-math" data-tex="\det(A)=\det(A^T)" data-display="false"><code>\det(A)=\det(A^T)</code></span>。
  
-- <span class="course-math" data-tex="\det(A)=\pm(\text{product of pivots})" data-display="false"><code>\det(A)=\pm(\text{product of pivots})</code></span>。（用 <span class="course-math" data-tex="LU" data-display="false"><code>LU</code></span> 分解证明）
+- 满秩时 <span class="course-math" data-tex="\det(A)=\pm(\text{product of all }n\text{ pivots})" data-display="false"><code>\det(A)=\pm(\text{product of all }n\text{ pivots})</code></span>；秩不足时 <span class="course-math" data-tex="\det(A)=0" data-display="false"><code>\det(A)=0</code></span>。（用 <span class="course-math" data-tex="LU" data-display="false"><code>LU</code></span> 分解证明）
 
 行列式的几何意义：假设 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 分解为 <span class="course-math" data-tex="A=QR" data-display="false"><code>A=QR</code></span>。
 那么 <span class="course-math" data-tex="\det(A)=\det(Q)\det(R)" data-display="false"><code>\det(A)=\det(Q)\det(R)</code></span>。这里 <span class="course-math" data-tex="Q" data-display="false"><code>Q</code></span> 是一个正交矩阵，故 <span class="course-math" data-tex="\det(Q^TQ)=1" data-display="false"><code>\det(Q^TQ)=1</code></span>，则 <span class="course-math" data-tex="\det(Q)=\pm 1" data-display="false"><code>\det(Q)=\pm 1</code></span>。
@@ -115,13 +115,13 @@ excerpt: "线性代数 · Determinant - 行列式"
 
 将上面的情况推广到 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 阶：考虑 <span class="course-math" data-tex="(1,2,\dots,n)" data-display="false"><code>(1,2,\dots,n)</code></span> 的所有排列 <span class="course-math" data-tex="p=(\alpha_{1},\alpha_{2},\dots,\alpha_{n})" data-display="false"><code>p=(\alpha_{1},\alpha_{2},\dots,\alpha_{n})</code></span>，则有大公式（Big Formula）：
 <span class="course-math course-math-display" data-tex="\det(A)=\sum_{(\alpha_{1},\alpha_{2},\dots,\alpha_{n})} a_{1\alpha_{1}}a_{2\alpha_{2}}\dots a_{n\alpha _{n}}\det(P)" data-display="true"><code>\det(A)=\sum_{(\alpha_{1},\alpha_{2},\dots,\alpha_{n})} a_{1\alpha_{1}}a_{2\alpha_{2}}\dots a_{n\alpha _{n}}\det(P)</code></span>
-这里 <span class="course-math" data-tex="\det(P)=\pm 1" data-display="false"><code>\det(P)=\pm 1</code></span> 是该排列对应的置换矩阵的行列式，也是该排列 <span class="course-math" data-tex="p" data-display="false"><code>p</code></span> 的 **逆序数（Inversion Number）**，即集合 <span class="course-math" data-tex="\{ (i,j)&#124;i&lt;j,\alpha_{i}&gt;\alpha_{j} \}" data-display="false"><code>\{ (i,j)&#124;i&lt;j,\alpha_{i}&gt;\alpha_{j} \}</code></span> 的基数，记作 <span class="course-math" data-tex="\text{inv}(p)" data-display="false"><code>\text{inv}(p)</code></span>，则有
+这里 <span class="course-math" data-tex="\det(P)=\pm 1" data-display="false"><code>\det(P)=\pm 1</code></span> 是该排列对应的置换矩阵的行列式，也是该排列的符号。该排列 <span class="course-math" data-tex="p" data-display="false"><code>p</code></span> 的 **逆序数（Inversion Number）** 是集合 <span class="course-math" data-tex="\{ (i,j)&#124;i&lt;j,\alpha_{i}&gt;\alpha_{j} \}" data-display="false"><code>\{ (i,j)&#124;i&lt;j,\alpha_{i}&gt;\alpha_{j} \}</code></span> 的基数，记作 <span class="course-math" data-tex="\text{inv}(p)" data-display="false"><code>\text{inv}(p)</code></span>，则有
 <span class="course-math course-math-display" data-tex="\det(P)=(-1)^{\text{inv}(p)}" data-display="true"><code>\det(P)=(-1)^{\text{inv}(p)}</code></span>
 （这是因为，逆序数对应该置换矩阵要交换多少次行可以交换回恒等矩阵）
 当然这个计算的复杂度是阶乘的，实际计算还是用 <span class="course-math" data-tex="PA=LU" data-display="false"><code>PA=LU</code></span> 分解然后求主元之积。
 
 另外，如果我们固定 <span class="course-math" data-tex="\alpha_{1}=1" data-display="false"><code>\alpha_{1}=1</code></span>，得到大公式的一部分 <span class="course-math" data-tex="a_{11} \sum_{(\alpha_{2},\alpha_{3},\dots,\alpha_{n})}a_{2\alpha_{2}}\dots a_{n\alpha _{n}}\det(P)=a_{11}M_{11}" data-display="false"><code>a_{11} \sum_{(\alpha_{2},\alpha_{3},\dots,\alpha_{n})}a_{2\alpha_{2}}\dots a_{n\alpha _{n}}\det(P)=a_{11}M_{11}</code></span>，这里 <span class="course-math" data-tex="M_{ij}" data-display="false"><code>M_{ij}</code></span> 表示余子式（Minor），再定义 <span class="course-math" data-tex="C_{ij}=(-1)^{i+j}M_{ij}" data-display="false"><code>C_{ij}=(-1)^{i+j}M_{ij}</code></span> 为代数余子式（Cofactor）。继续固定 <span class="course-math" data-tex="\alpha_{1}=2,3,\dots" data-display="false"><code>\alpha_{1}=2,3,\dots</code></span>，可得到：
-<span class="course-math course-math-display" data-tex="\det(A)=\sum(-1)^{k-1} M_{1k}= \sum_{i=1}^n a_{1i}C_{1i}" data-display="true"><code>\det(A)=\sum(-1)^{k-1} M_{1k}= \sum_{i=1}^n a_{1i}C_{1i}</code></span>
+<span class="course-math course-math-display" data-tex="\det(A)=\sum_{k=1}^n(-1)^{k-1}a_{1k}M_{1k}= \sum_{i=1}^n a_{1i}C_{1i}" data-display="true"><code>\det(A)=\sum_{k=1}^n(-1)^{k-1}a_{1k}M_{1k}= \sum_{i=1}^n a_{1i}C_{1i}</code></span>
 定义行列式对第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 行的拉普拉斯展开（Laplace Expansion）：
 <span class="course-math course-math-display" data-tex="\det(A)= \sum_{k=1}^n a_{ik}C_{ik}" data-display="true"><code>\det(A)= \sum_{k=1}^n a_{ik}C_{ik}</code></span>
 由于 <span class="course-math" data-tex="\det(A)=\det(A^T)" data-display="false"><code>\det(A)=\det(A^T)</code></span> ，也可以对第 <span class="course-math" data-tex="j" data-display="false"><code>j</code></span> 列展开：
@@ -132,10 +132,10 @@ excerpt: "线性代数 · Determinant - 行列式"
 {: #section-6 }
 
 
-构建代数余子式构成的矩阵 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span>，其中 <span class="course-math" data-tex="C_{ij}=(-1)^{i+j}\det(M_{ij})" data-display="false"><code>C_{ij}=(-1)^{i+j}\det(M_{ij})</code></span>。
+构建代数余子式构成的矩阵 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span>，其中 <span class="course-math" data-tex="C_{ij}=(-1)^{i+j}M_{ij}" data-display="false"><code>C_{ij}=(-1)^{i+j}M_{ij}</code></span>。
 <span class="course-math course-math-display" data-tex="A^{-1}= \frac{C^T}{\det(A)}" data-display="true"><code>A^{-1}= \frac{C^T}{\det(A)}</code></span>
 **证明：**
-要证明
+要证明
 <span class="course-math course-math-display" data-tex="A \frac{C^T}{\det(A)}=I" data-display="true"><code>A \frac{C^T}{\det(A)}=I</code></span>
 只需证明
 <span class="course-math course-math-display" data-tex="AC^T=\det(A)I" data-display="true"><code>AC^T=\det(A)I</code></span>
@@ -154,7 +154,7 @@ excerpt: "线性代数 · Determinant - 行列式"
 对方程 <span class="course-math" data-tex="Ax=b" data-display="false"><code>Ax=b</code></span>，有 <span class="course-math" data-tex="x=A^{-1}b= \frac{C^T}{\det(A)}b" data-display="false"><code>x=A^{-1}b= \frac{C^T}{\det(A)}b</code></span>。
 <span class="course-math" data-tex="C^Tb" data-display="false"><code>C^Tb</code></span> 的第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 个分量为：
 <span class="course-math course-math-display" data-tex="C_{1i}b_{1}+C_{2i}b_{2}+\dots+C_{ni}b_{n}" data-display="true"><code>C_{1i}b_{1}+C_{2i}b_{2}+\dots+C_{ni}b_{n}</code></span>
-这可以看成把 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 列替换成 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> （设为 <span class="course-math" data-tex="B_{i}" data-display="false"><code>B_{i}</code></span>）然后将行列式按第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 行展开。
+这可以看成把 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 列替换成 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> （设为 <span class="course-math" data-tex="B_{i}" data-display="false"><code>B_{i}</code></span>）然后将行列式按第 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 列展开。
 这就是 **克莱姆法则（Cramer's Rule）：**
 <span class="course-math course-math-display" data-tex="x_{j}= \frac{\det(B_{j})}{\det(A)}" data-display="true"><code>x_{j}= \frac{\det(B_{j})}{\det(A)}</code></span>
 
@@ -164,7 +164,7 @@ excerpt: "线性代数 · Determinant - 行列式"
 
 设第 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 个主元为 <span class="course-math" data-tex="d_{k}" data-display="false"><code>d_{k}</code></span>，有
 <span class="course-math course-math-display" data-tex="d_{k}= \frac{\det(A_{k})}{\det(A_{k-1})}" data-display="true"><code>d_{k}= \frac{\det(A_{k})}{\det(A_{k-1})}</code></span>
-其中 <span class="course-math" data-tex="A_{k}" data-display="false"><code>A_{k}</code></span> 为 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 左上角的 <span class="course-math" data-tex="k\times k" data-display="false"><code>k\times k</code></span> 子矩阵，假设 <span class="course-math" data-tex="\det(A)\neq 0" data-display="false"><code>\det(A)\neq 0</code></span>。
+其中 <span class="course-math" data-tex="A_{k}" data-display="false"><code>A_{k}</code></span> 为 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 左上角的 <span class="course-math" data-tex="k\times k" data-display="false"><code>k\times k</code></span> 子矩阵，假设无需换行即可消元，且所有顺序主子式 <span class="course-math" data-tex="\det(A_k)\neq 0" data-display="false"><code>\det(A_k)\neq 0</code></span>，约定 <span class="course-math" data-tex="\det(A_0)=1" data-display="false"><code>\det(A_0)=1</code></span>。
 **证明：** 假设 <span class="course-math" data-tex="A=LDU" data-display="false"><code>A=LDU</code></span>，主元就是 <span class="course-math" data-tex="D" data-display="false"><code>D</code></span> 中的对角线元素。那么用分块矩阵的思想有
 <span class="course-math course-math-display" data-tex="\begin{align}&#10;A=LDU&amp;=\begin{bmatrix}&#10;L_{k}  &amp; 0 \\&#10;* &amp; *&#10;\end{bmatrix} \begin{bmatrix}&#10;D_{k} &amp; 0 \\&#10;0 &amp; *&#10;\end{bmatrix}&#10;\begin{bmatrix}&#10;U_{k} &amp; * \\&#10;0 &amp; *&#10;\end{bmatrix} \\&#10;&amp;=\begin{bmatrix}&#10;L_{k}D_{k}U_{k} &amp; * \\&#10;* &amp; *&#10;\end{bmatrix} =\begin{bmatrix}&#10;A_{k} &amp; * \\&#10;* &amp; *&#10;\end{bmatrix}&#10;\end{align}" data-display="true"><code>\begin{align}&#10;A=LDU&amp;=\begin{bmatrix}&#10;L_{k}  &amp; 0 \\&#10;* &amp; *&#10;\end{bmatrix} \begin{bmatrix}&#10;D_{k} &amp; 0 \\&#10;0 &amp; *&#10;\end{bmatrix}&#10;\begin{bmatrix}&#10;U_{k} &amp; * \\&#10;0 &amp; *&#10;\end{bmatrix} \\&#10;&amp;=\begin{bmatrix}&#10;L_{k}D_{k}U_{k} &amp; * \\&#10;* &amp; *&#10;\end{bmatrix} =\begin{bmatrix}&#10;A_{k} &amp; * \\&#10;* &amp; *&#10;\end{bmatrix}&#10;\end{align}</code></span>
 所以有 <span class="course-math" data-tex="A_{k}=L_{k}D_{k}U_{k}" data-display="false"><code>A_{k}=L_{k}D_{k}U_{k}</code></span>。

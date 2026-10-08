@@ -5,7 +5,7 @@ course_title: "MIT Missing Semester"
 section: ""
 status: "completed"
 created_at: "2025-10-21T21:37:22+08:00"
-updated_at: "2025-10-22T11:32:24+08:00"
+updated_at: "2026-10-08T21:14:49+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -22,11 +22,11 @@ excerpt: "MIT Missing Semester · Git - 版本控制"
 {: #section-1 }
 
 
- Git  模型中有 3 种数据类型：`blob`，`tree` 和 `commit`。
+ Git  模型中有 4 种对象类型：`blob`、`tree`、`commit` 和 `tag`。
 `blob`：数据对象，对应文件。
 `tree`：树对象，对应目录。
 `commit`：提交对象。
-其中 `commit` 对象包含一个父辈，元数据和顶层树。许多 `commit` 会构成类似这样的有向无环图：
+其中 `commit` 对象包含零个或多个父提交、元数据和顶层树。许多 `commit` 会构成类似这样的有向无环图：
 ```
 o <-- o <-- o <-- o <----  o 
             ^            /
@@ -40,7 +40,7 @@ o <-- o <-- o <-- o <----  o
 {: #section-2 }
 
 
-所有的对象本身不会保存在硬盘上，实际上保存的是对象的**SHA-1 哈希**。
+对象内容会保存在 `.git/objects`（松散对象或 pack 文件）中；对象以内容的哈希值寻址，传统格式使用 SHA-1，也有 SHA-256 仓库格式。
 为了让人类可以方便的使用这些对象，我们又用引用（References）作为指向 `commit` 的指针，来给这些哈希值取名。
 例如，引用 `master` 指向的是当前分支的最新提交。
 
@@ -48,9 +48,9 @@ o <-- o <-- o <-- o <----  o
 {: #section-3 }
 
 
-事实上，在硬盘上，Git 只储存对象和引用。所有的 `git` 命令都对应着增加对象，增加或删除引用等操作。
+事实上，在硬盘上，Git 只储存对象和引用。修改历史的命令可能增加对象或更新引用，查询命令只读取状态。
 Git 有一个**暂存区**的概念，只有加入到暂存区的改动才会包含在 `commit` 中。
-HEAD 指向当前所在的 `commit`。
+HEAD 通常是指向当前分支的符号引用；分离 HEAD 时直接指向提交。
 
 ### 基础
 {: #section-4 }

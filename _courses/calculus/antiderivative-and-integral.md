@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-10-28T17:03:23+08:00"
-updated_at: "2026-03-03T16:38:22+08:00"
+updated_at: "2026-10-08T21:09:39+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -62,9 +62,9 @@ excerpt: "高等数学（上）/（下） · Antiderivative and Integral - 积�
 
 
 1. 对于可积函数，积出来之后根据反常积分的定义，判断极限是否存在即可。
-2. 若其恒小于一个收敛的反常积分，则该积分也收敛。
-3. 若其恒大于一个发散的反常积分，则该积分也发散。
-4. 若在端点处 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 和 <span class="course-math" data-tex="g" data-display="false"><code>g</code></span> 同阶，即其比值的极限存在，则 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 和 <span class="course-math" data-tex="g" data-display="false"><code>g</code></span> 同敛散。
+2. 对非负被积函数，若被积函数不大于一个反常积分收敛的非负函数，则该积分也收敛。
+3. 对非负被积函数，若被积函数不小于一个反常积分发散的非负函数，则该积分也发散。
+4. 若在端点处 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 和 <span class="course-math" data-tex="g" data-display="false"><code>g</code></span> 同阶，即其比值趋于有限的正数（非负函数），则 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 和 <span class="course-math" data-tex="g" data-display="false"><code>g</code></span> 同敛散。
     具体而言，比如要判断 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 处端点是否可积，则可以用泰勒近似找一个同阶的幂函数，然后用下面的特例来判断即可；比如要判断无穷远处是否可积，则可以用抓大头的想法找一个同阶的幂函数，然后用下面的特例来判断即可。
 5. 特例：
    <span class="course-math" data-tex="\int_{0}^t \frac{1}{x^p}dx" data-display="false"><code>\int_{0}^t \frac{1}{x^p}dx</code></span> 收敛当且仅当  <span class="course-math" data-tex="p&lt;1" data-display="false"><code>p&lt;1</code></span>；<span class="course-math" data-tex="\int_{t}^{\infty} \frac{1}{x^p}dx" data-display="false"><code>\int_{t}^{\infty} \frac{1}{x^p}dx</code></span> 收敛当且仅当 <span class="course-math" data-tex="p&gt;1" data-display="false"><code>p&gt;1</code></span>。
@@ -78,31 +78,31 @@ excerpt: "高等数学（上）/（下） · Antiderivative and Integral - 积�
 - Washer Method: 对截面进行积分 <span class="course-math" data-tex="V=\int \text{截面面积}(x)dx" data-display="false"><code>V=\int \text{截面面积}(x)dx</code></span>
 - Shell Method: 旋转体可看成圆柱面的累加：<span class="course-math" data-tex="\int 2\pi \times\text{半径}(x)\times高度(x)dx" data-display="false"><code>\int 2\pi \times\text{半径}(x)\times高度(x)dx</code></span>
   - 其中半径是 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 到旋转轴的距离，高度为 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 处的被旋转面的截线长
-- Pappus’s Theorem for Volumes: <span class="course-math" data-tex="V=2\pi \rho A" data-display="false"><code>V=2\pi \rho A</code></span>，即旋转面面积乘质心走的距离
+- Pappus’s Theorem for Volumes: <span class="course-math" data-tex="V=2\pi \rho A" data-display="false"><code>V=2\pi \rho A</code></span>，即平面区域面积乘质心走的距离（旋转轴在该平面内且不穿过区域内部）
 
 求弧长
 <span class="course-math course-math-display" data-tex="\text{arc length} = \int^{b}_{a} \sqrt{ 1+ \left( \frac{dy}{dx} \right)^2 }dx" data-display="true"><code>\text{arc length} = \int^{b}_{a} \sqrt{ 1+ \left( \frac{dy}{dx} \right)^2 }dx</code></span>
 <span class="course-math course-math-display" data-tex="\text{arc length} = \int^{b}_{a} \sqrt{ 1+ \left( \frac{dx}{dy} \right)^2 }dy" data-display="true"><code>\text{arc length} = \int^{b}_{a} \sqrt{ 1+ \left( \frac{dx}{dy} \right)^2 }dy</code></span>
 求旋转体的表面积
-<span class="course-math course-math-display" data-tex="A=\int^{b}_{a}2\pi f(x)\sqrt{ 1+[f&#x27;(x)]^2 } dx" data-display="true"><code>A=\int^{b}_{a}2\pi f(x)\sqrt{ 1+[f&#x27;(x)]^2 } dx</code></span>
-- Pappus’s Theorem for Surface Areas：<span class="course-math" data-tex="A=2\pi \rho L" data-display="false"><code>A=2\pi \rho L</code></span>，即弧长乘质心走的距离
+<span class="course-math course-math-display" data-tex="A=\int^{b}_{a}2\pi &#124;f(x)&#124;\sqrt{ 1+[f&#x27;(x)]^2 } dx" data-display="true"><code>A=\int^{b}_{a}2\pi &#124;f(x)&#124;\sqrt{ 1+[f&#x27;(x)]^2 } dx</code></span>
+- Pappus’s Theorem for Surface Areas：<span class="course-math" data-tex="A=2\pi \rho L" data-display="false"><code>A=2\pi \rho L</code></span>，即弧长乘质心走的距离（旋转轴在曲线平面内且不穿过曲线）
 
 求平面图形质心
 <span class="course-math course-math-display" data-tex="\bar{x}= \frac{\int \tilde{x}dm}{\int dm},\bar{y}= \frac{\int \tilde{y}dm}{\int dm}" data-display="true"><code>\bar{x}= \frac{\int \tilde{x}dm}{\int dm},\bar{y}= \frac{\int \tilde{y}dm}{\int dm}</code></span>
 - 若密度分布不均匀，有密度分布函数 <span class="course-math" data-tex="\delta" data-display="false"><code>\delta</code></span>，则 <span class="course-math" data-tex="dm=\delta dA" data-display="false"><code>dm=\delta dA</code></span>。
-- 若求两个函数包着的区域质心，即 <span class="course-math" data-tex="y=f(x)-g(x)" data-display="false"><code>y=f(x)-g(x)</code></span>，则可以将 <span class="course-math" data-tex="\tilde{y}" data-display="false"><code>\tilde{y}</code></span> 写成 <span class="course-math" data-tex="\frac{1}{2}(f(x)+g(x))" data-display="false"><code>\frac{1}{2}(f(x)+g(x))</code></span>：
+- 若密度仅依赖 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span>（均匀密度也适用），求两个函数包着的区域质心，其竖直截条高度为 <span class="course-math" data-tex="y=f(x)-g(x)" data-display="false"><code>y=f(x)-g(x)</code></span>，则可以将 <span class="course-math" data-tex="\tilde{y}" data-display="false"><code>\tilde{y}</code></span> 写成 <span class="course-math" data-tex="\frac{1}{2}(f(x)+g(x))" data-display="false"><code>\frac{1}{2}(f(x)+g(x))</code></span>：
   <span class="course-math course-math-display" data-tex="\bar{x}= \frac{1}{M} \int \delta x (f(x)-g(x))dx" data-display="true"><code>\bar{x}= \frac{1}{M} \int \delta x (f(x)-g(x))dx</code></span>
 <span class="course-math course-math-display" data-tex="\begin{align}&#10;\bar{y}&amp;= \frac{1}{M} \int \frac{f(x)+g(x)}{2} \delta  (f(x)-g(x))dx\\&#10;&amp;= \frac{1}{M} \int \frac{\delta}{2}[f^2(x)-g^2(x)]dx&#10;\end{align}" data-display="true"><code>\begin{align}&#10;\bar{y}&amp;= \frac{1}{M} \int \frac{f(x)+g(x)}{2} \delta  (f(x)-g(x))dx\\&#10;&amp;= \frac{1}{M} \int \frac{\delta}{2}[f^2(x)-g^2(x)]dx&#10;\end{align}</code></span>
 
 求几何中心（即 <span class="course-math" data-tex="\delta" data-display="false"><code>\delta</code></span> 是常数的情况）
-<span class="course-math course-math-display" data-tex="\bar{x}= \frac{\int \tilde{x}dA}{A}, y=\frac{\int \tilde{y}dA}{A}" data-display="true"><code>\bar{x}= \frac{\int \tilde{x}dA}{A}, y=\frac{\int \tilde{y}dA}{A}</code></span>
+<span class="course-math course-math-display" data-tex="\bar{x}= \frac{\int \tilde{x}dA}{A}, \bar y=\frac{\int \tilde{y}dA}{A}" data-display="true"><code>\bar{x}= \frac{\int \tilde{x}dA}{A}, \bar y=\frac{\int \tilde{y}dA}{A}</code></span>
 
 求定积分的数值估计
 **The Trapezoidal Rule：** 用梯形近似面积。
 
 <span class="course-math course-math-display" data-tex="T= \frac{\Delta x}{2}(y_{0}+2y_{1}+2y_{2}+\dots +2y_{n-1}+y_{n})" data-display="true"><code>T= \frac{\Delta x}{2}(y_{0}+2y_{1}+2y_{2}+\dots +2y_{n-1}+y_{n})</code></span>
 误差：<span class="course-math course-math-display" data-tex="&#124;E_{T}&#124; \leq \frac{M(b-a)^3}{12n^2}" data-display="true"><code>&#124;E_{T}&#124; \leq \frac{M(b-a)^3}{12n^2}</code></span>
-其中 <span class="course-math" data-tex="M" data-display="false"><code>M</code></span> 是 <span class="course-math" data-tex="f&#x27;&#x27;" data-display="false"><code>f&#x27;&#x27;</code></span> 的上界。
+其中 <span class="course-math" data-tex="M" data-display="false"><code>M</code></span> 是 <span class="course-math" data-tex="&#124;f&#x27;&#x27;&#124;" data-display="false"><code>&#124;f&#x27;&#x27;&#124;</code></span> 的上界。
 
 **Simpson’s Rule：** 用抛物线近似面积。
 
@@ -110,5 +110,5 @@ excerpt: "高等数学（上）/（下） · Antiderivative and Integral - 积�
 其中 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 为偶数。
 误差：
 <span class="course-math course-math-display" data-tex="&#124;E_{S}&#124; \leq \frac{M(b-a)^5}{180n^4}" data-display="true"><code>&#124;E_{S}&#124; \leq \frac{M(b-a)^5}{180n^4}</code></span>
-其中 <span class="course-math" data-tex="M" data-display="false"><code>M</code></span> 是 <span class="course-math" data-tex="f^{(4)}" data-display="false"><code>f^{(4)}</code></span> 的上界。
+其中 <span class="course-math" data-tex="M" data-display="false"><code>M</code></span> 是 <span class="course-math" data-tex="&#124;f^{(4)}&#124;" data-display="false"><code>&#124;f^{(4)}&#124;</code></span> 的上界。
 {% endraw %}

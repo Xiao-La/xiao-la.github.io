@@ -5,7 +5,7 @@ course_title: "数理逻辑导论"
 section: ""
 status: "completed"
 created_at: "2026-04-29T11:06:10+08:00"
-updated_at: "2026-06-07T23:38:17+08:00"
+updated_at: "2026-10-08T21:27:00+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -63,7 +63,7 @@ Logical symbols（逻辑符号）：
 {: #section-4 }
 
 
-Terms（项）就是 Object。严格定义为：
+Terms（项）是表示对象的语法表达式，其值由阐释与变量赋值决定。严格定义为：
 - Constant symbols 和 Variables 都是 Term。
 - 若 <span class="course-math" data-tex="f^n" data-display="false"><code>f^n</code></span> 是一个 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 元函数且 <span class="course-math" data-tex="t_{1},t_{2},\dots,t_{n}" data-display="false"><code>t_{1},t_{2},\dots,t_{n}</code></span> 为 Term，则 <span class="course-math" data-tex="f^n(t_{1},t_{2},\dots,t_{n})" data-display="false"><code>f^n(t_{1},t_{2},\dots,t_{n})</code></span> 也是 Term。
 - 只有上述递归定义的结果才是 Term。
@@ -107,7 +107,7 @@ Formula（公式）的定义为， <span class="course-math" data-tex="\alpha \i
 
 
 Every student knows math.
-<span class="course-math" data-tex="\forall x(S(x)\to K(x,\text{Math})" data-display="false"><code>\forall x(S(x)\to K(x,\text{Math})</code></span>
+<span class="course-math" data-tex="\forall x(S(x)\to K(x,\text{Math}))" data-display="false"><code>\forall x(S(x)\to K(x,\text{Math}))</code></span>
 Some student knows math.
 <span class="course-math" data-tex="\exists x(S(x)\land K(x,\text{Math}))" data-display="false"><code>\exists x(S(x)\land K(x,\text{Math}))</code></span>
 
@@ -127,10 +127,10 @@ Scope（作用域）：在公式 <span class="course-math" data-tex="\forall x\a
 
 定义 
 - Free Variables（自由变元）：不在量化变量 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 的 scope 中的 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 就是自由变元。
-- Bounded Variables（约束变元）：其他情况。
+- Bound Variables（约束变元）：其他情况。
 另一种定义方式：解析树中，如果一个叶子节点 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 到根节点的路径中不存在 <span class="course-math" data-tex="\forall x" data-display="false"><code>\forall x</code></span> 或 <span class="course-math" data-tex="\exists x" data-display="false"><code>\exists x</code></span>，则它是一个自由变元。否则，为约束变元。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/FOL%20-%20%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91-1.png' | relative_url }}{% raw %}" alt="FOL - 一阶逻辑-1" width="323" height="375" loading="lazy" decoding="async">
-定义：没有自由变量的公式叫做 **Closed Formula / Sentence**（闭公式/句子）。因为没有自由变量才能决定真或假。
+定义：没有自由变量的公式叫做 **Closed Formula / Sentence**（闭公式/句子）。闭公式的真值不依赖于变量赋值；开放公式在给定阐释和变量赋值后也可以决定真或假。
 对闭公式赋予意义需要对其中非逻辑符号（常量，谓词和函数）做阐释（Interpretation）（对应到定定义域上）。例如：<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/FOL%20-%20%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91-2.png' | relative_url }}{% raw %}" alt="FOL - 一阶逻辑-2" width="1948" height="620" loading="lazy" decoding="async">
 对变量也赋予一个值，就是环境（Environment）。例如：<span class="course-math" data-tex="E(x)=1" data-display="false"><code>E(x)=1</code></span> 就是说在环境 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 中， <span class="course-math" data-tex="x=1" data-display="false"><code>x=1</code></span>。
 定义：在 <span class="course-math" data-tex="\mathcal{I}" data-display="false"><code>\mathcal{I}</code></span> 和 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 中，项 <span class="course-math" data-tex="t" data-display="false"><code>t</code></span> 的值记为 <span class="course-math" data-tex="t^{(\mathcal{I},E)}" data-display="false"><code>t^{(\mathcal{I},E)}</code></span>。若它是常量，则为 <span class="course-math" data-tex="c^{\mathcal{I}}" data-display="false"><code>c^{\mathcal{I}}</code></span>。若它为变量，则为 <span class="course-math" data-tex="x^E" data-display="false"><code>x^E</code></span>。若为函数，则为迭代的产物。
@@ -150,7 +150,7 @@ Scope（作用域）：在公式 <span class="course-math" data-tex="\forall x\a
 <span class="course-math course-math-display" data-tex="\forall x\forall yP(x,y)\equiv \forall y\forall xP(x,y)" data-display="true"><code>\forall x\forall yP(x,y)\equiv \forall y\forall xP(x,y)</code></span>
 <span class="course-math course-math-display" data-tex="\exists x\exists yP(x,y)\equiv \exists y\exists xP(x,y)" data-display="true"><code>\exists x\exists yP(x,y)\equiv \exists y\exists xP(x,y)</code></span>
 这里需要是相同种类的量词。
-可交换性（Distributivity）：
+分配性（Distributivity）：
 <span class="course-math course-math-display" data-tex="\forall x(P(x)\land Q(x))\equiv (\forall xP(x))\land(\forall xQ(x))" data-display="true"><code>\forall x(P(x)\land Q(x))\equiv (\forall xP(x))\land(\forall xQ(x))</code></span>
 
 <span class="course-math course-math-display" data-tex="\exists x(P(x)\lor Q(x))\equiv(\exists xP(x))\lor(\exists xQ(x))" data-display="true"><code>\exists x(P(x)\lor Q(x))\equiv(\exists xP(x))\lor(\exists xQ(x))</code></span>

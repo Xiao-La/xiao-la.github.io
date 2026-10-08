@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-10-26T18:15:02+08:00"
-updated_at: "2026-03-26T18:28:11+08:00"
+updated_at: "2026-10-08T21:23:24+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -17,7 +17,7 @@ excerpt: "高等数学（上）/（下） · Limit and Derivative - 极限与导
 ---
 
 {% raw %}
-
+
 
 ## 概念与定义
 {: #section-1 }
@@ -41,7 +41,7 @@ Concave Up 和 Concave Down：<span class="course-math" data-tex="f&#x27;&#x27;(
 
 小 o 记号（little-oh Notation）：<span class="course-math" data-tex="f=o(g)" data-display="false"><code>f=o(g)</code></span>（“<span class="course-math" data-tex="f" data-display="false"><code>f</code></span> is little-oh of <span class="course-math" data-tex="g" data-display="false"><code>g</code></span>”），当  <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 的阶比 <span class="course-math" data-tex="g" data-display="false"><code>g</code></span> 的阶更小，即 <span class="course-math" data-tex="\lim\limits_{x\to\infty}\frac{f(x)}{g(x)}=0" data-display="false"><code>\lim\limits_{x\to\infty}\frac{f(x)}{g(x)}=0</code></span>
 
-大 O 记号（big-oh Notation）： <span class="course-math" data-tex="f=O(g)" data-display="false"><code>f=O(g)</code></span>（“<span class="course-math" data-tex="f" data-display="false"><code>f</code></span> is big-oh of <span class="course-math" data-tex="g" data-display="false"><code>g</code></span>”），当的阶小于或等于 <span class="course-math" data-tex="g" data-display="false"><code>g</code></span>  的阶，即 <span class="course-math" data-tex="\lim\limits_{x\to\infty}\frac{f(x)}{g(x)}\le M" data-display="false"><code>\lim\limits_{x\to\infty}\frac{f(x)}{g(x)}\le M</code></span>
+大 O 记号（big-oh Notation）： <span class="course-math" data-tex="f=O(g)" data-display="false"><code>f=O(g)</code></span>（“<span class="course-math" data-tex="f" data-display="false"><code>f</code></span> is big-oh of <span class="course-math" data-tex="g" data-display="false"><code>g</code></span>”），当存在 <span class="course-math" data-tex="M&gt;0,x_0" data-display="false"><code>M&gt;0,x_0</code></span>，使 <span class="course-math" data-tex="x\ge x_0" data-display="false"><code>x\ge x_0</code></span> 时 <span class="course-math" data-tex="&#124;f(x)&#124;\le M&#124;g(x)&#124;" data-display="false"><code>&#124;f(x)&#124;\le M&#124;g(x)&#124;</code></span>
 
 
 ## 定理
@@ -93,13 +93,13 @@ Concave Up 和 Concave Down：<span class="course-math" data-tex="f&#x27;&#x27;(
   - 结论：
     <span class="course-math course-math-display" data-tex="\lim_{x\to a}\frac{f(x)}{g(x)} \;=\; \lim_{x\to a}\frac{f&#x27;(x)}{g&#x27;(x)}." data-display="true"><code>\lim_{x\to a}\frac{f(x)}{g(x)} \;=\; \lim_{x\to a}\frac{f&#x27;(x)}{g&#x27;(x)}.</code></span>
 
-## 经典反例
+## 经典反例
 {: #section-3 }
 
 
 1. <span class="course-math" data-tex="f(x)=\begin{cases}x^2\sin \left( \frac{1}{x} \right) &amp; x\neq 0 \\ 0 &amp; x=0\end{cases}" data-display="false"><code>f(x)=\begin{cases}x^2\sin \left( \frac{1}{x} \right) &amp; x\neq 0 \\ 0 &amp; x=0\end{cases}</code></span>
 	<span class="course-math" data-tex="f(x)" data-display="false"><code>f(x)</code></span> 连续且处处可导，但 <span class="course-math" data-tex="f&#x27;(x)" data-display="false"><code>f&#x27;(x)</code></span> 在 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 处不连续，因为 <span class="course-math" data-tex="\lim_{ x \to 0 }f&#x27;(x)" data-display="false"><code>\lim_{ x \to 0 }f&#x27;(x)</code></span> 不存在。
-	这个函数在 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 附近震荡非常强烈，例如可构造 <span class="course-math" data-tex="g(x)=2f(x)+x" data-display="false"><code>g(x)=2f(x)+x</code></span> 让 <span class="course-math" data-tex="f&#x27;(x)" data-display="false"><code>f&#x27;(x)</code></span> 在 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 附近符号频繁变化。
+	这个函数在 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 附近震荡非常强烈，例如可构造 <span class="course-math" data-tex="g(x)=2f(x)+x" data-display="false"><code>g(x)=2f(x)+x</code></span> 让 <span class="course-math" data-tex="g&#x27;(x)" data-display="false"><code>g&#x27;(x)</code></span> 在 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 附近符号频繁变化。
 	另外，它在  <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>  处没有二阶导，<span class="course-math" data-tex="(0,0)" data-display="false"><code>(0,0)</code></span> 也不是它的拐点。
 2.  <span class="course-math" data-tex="f(x)=\begin{cases}1 &amp; x\neq 0 \\ 0 &amp; x=0\end{cases}" data-display="false"><code>f(x)=\begin{cases}1 &amp; x\neq 0 \\ 0 &amp; x=0\end{cases}</code></span>
 	和第 1 条类似但稍弱一些，说明 <span class="course-math" data-tex="f&#x27;(0)" data-display="false"><code>f&#x27;(0)</code></span> 和 <span class="course-math" data-tex="\lim_{ x \to 0 }f&#x27;(x)" data-display="false"><code>\lim_{ x \to 0 }f&#x27;(x)</code></span> 不是一回事。
@@ -140,10 +140,10 @@ Concave Up 和 Concave Down：<span class="course-math" data-tex="f&#x27;&#x27;(
 余项 <span class="course-math" data-tex="R_n(x)=\dfrac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}" data-display="false"><code>R_n(x)=\dfrac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}</code></span>，其中 <span class="course-math" data-tex="c" data-display="false"><code>c</code></span> 位于 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 与 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 之间。
 **余项估计定理（Remainder Estimation Theorem）：** 若存在正常数 <span class="course-math" data-tex="M" data-display="false"><code>M</code></span> 使得
 <span class="course-math course-math-display" data-tex="&#124;f^{(n)}(x)&#124;\leq M" data-display="true"><code>&#124;f^{(n)}(x)&#124;\leq M</code></span>
-对每个 <span class="course-math" data-tex="n\geq 0" data-display="false"><code>n\geq 0</code></span> 成立，则该级数收敛到 <span class="course-math" data-tex="f(x)" data-display="false"><code>f(x)</code></span>。
+在 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 与所考察的 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 之间对所有阶数 <span class="course-math" data-tex="n\ge0" data-display="false"><code>n\ge0</code></span> 都成立（使用同一个 <span class="course-math" data-tex="M" data-display="false"><code>M</code></span>），则该级数收敛到 <span class="course-math" data-tex="f(x)" data-display="false"><code>f(x)</code></span>。
 
 若此时 <span class="course-math" data-tex="R_{n}\to 0" data-display="false"><code>R_{n}\to 0</code></span> 当 <span class="course-math" data-tex="n\to \infty" data-display="false"><code>n\to \infty</code></span> 对 <span class="course-math" data-tex="x \in I" data-display="false"><code>x \in I</code></span> 恒成立，则 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在 <span class="course-math" data-tex="x=a" data-display="false"><code>x=a</code></span> 处的泰勒展开收敛到 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span>，记作
-<span class="course-math course-math-display" data-tex="f(x)=\sum^{\infty}_{i=0} \frac{f^{(i)}(a)(x-a)}{i!}" data-display="true"><code>f(x)=\sum^{\infty}_{i=0} \frac{f^{(i)}(a)(x-a)}{i!}</code></span>
+<span class="course-math course-math-display" data-tex="f(x)=\sum^{\infty}_{i=0} \frac{f^{(i)}(a)(x-a)^i}{i!}" data-display="true"><code>f(x)=\sum^{\infty}_{i=0} \frac{f^{(i)}(a)(x-a)^i}{i!}</code></span>
 麦克劳林级数（Maclaurin series）是在 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 处的泰勒公式。 
 一些常见函数的麦克劳林展开：
 <span class="course-math course-math-display" data-tex="\sin x=x- \frac{x^3}{3!}+ \frac{x^5}{5!} - \frac{x^7}{7!}+\cdots (x\to 0)" data-display="true"><code>\sin x=x- \frac{x^3}{3!}+ \frac{x^5}{5!} - \frac{x^7}{7!}+\cdots (x\to 0)</code></span>
@@ -153,7 +153,7 @@ Concave Up 和 Concave Down：<span class="course-math" data-tex="f&#x27;&#x27;(
 <span class="course-math course-math-display" data-tex="\tan x=x+\frac{1}{3}x^3+\frac{2}{15}x^5+\cdots(x\to 0)" data-display="true"><code>\tan x=x+\frac{1}{3}x^3+\frac{2}{15}x^5+\cdots(x\to 0)</code></span>
 这个需要死记硬背。
 <span class="course-math course-math-display" data-tex="\tan^{-1}x=x-\frac{x^3}{3}+\frac{x^5}{5}+\cdots(x\to 0)" data-display="true"><code>\tan^{-1}x=x-\frac{x^3}{3}+\frac{x^5}{5}+\cdots(x\to 0)</code></span>
-注意，上面这些公式在其定义域内都收敛。
+注意，<span class="course-math" data-tex="\sin x,\cos x,e^x" data-display="false"><code>\sin x,\cos x,e^x</code></span> 的上述级数对所有实数收敛；<span class="course-math" data-tex="\tan x" data-display="false"><code>\tan x</code></span> 的级数要求 <span class="course-math" data-tex="&#124;x&#124;&lt;\pi/2" data-display="false"><code>&#124;x&#124;&lt;\pi/2</code></span>，<span class="course-math" data-tex="\arctan x" data-display="false"><code>\arctan x</code></span> 的级数要求 <span class="course-math" data-tex="&#124;x&#124;\le1" data-display="false"><code>&#124;x&#124;\le1</code></span>。
 <span class="course-math course-math-display" data-tex="\frac{1}{1-x}=1+x+x^2+x^3+\cdots(x\to 0)" data-display="true"><code>\frac{1}{1-x}=1+x+x^2+x^3+\cdots(x\to 0)</code></span>
 <span class="course-math course-math-display" data-tex="\frac{1}{1+x}=1-x+x^2-x^3+\cdots(x \to 0)" data-display="true"><code>\frac{1}{1+x}=1-x+x^2-x^3+\cdots(x \to 0)</code></span>
 <span class="course-math course-math-display" data-tex="\ln(1+x)=x- \frac{x^2}{2}+ \frac{x^3}{3}-\frac{x^4}{4} + \cdots (x \to 0)" data-display="true"><code>\ln(1+x)=x- \frac{x^2}{2}+ \frac{x^3}{3}-\frac{x^4}{4} + \cdots (x \to 0)</code></span>

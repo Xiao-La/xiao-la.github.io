@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-11-26T11:11:49+08:00"
-updated_at: "2025-12-09T08:58:37+08:00"
+updated_at: "2026-10-08T21:23:24+08:00"
 reference: false
 order: 6
 layout: "course"
@@ -18,7 +18,7 @@ excerpt: "大学物理（上）/（下） · Transverse Wave - 横波"
 
 {% raw %}
 <a href="{% endraw %}{{ '/courses/physics/oscillations/' | relative_url }}{% raw %}">Oscillations - 振动</a>
-**横波（Transverse Wave）** 指质点振动方向与波传播方向相反的波。
+**横波（Transverse Wave）** 指质点振动方向与波传播方向垂直的波。
 
 向右传播的波可以写成 <span class="course-math" data-tex="y(x,t)=f(x - vt)" data-display="false"><code>y(x,t)=f(x - vt)</code></span> 的形式。
 
@@ -74,18 +74,18 @@ excerpt: "大学物理（上）/（下） · Transverse Wave - 横波"
 <span class="course-math course-math-display" data-tex="\begin{align}&#10;y(x,t)&amp;=y_{m} \sin (kx-\omega t) + y_{m} \sin(kx+\omega t) \\&#10;&amp;=2y_{m} \sin kx&#10; \cos\omega t\end{align}" data-display="true"><code>\begin{align}&#10;y(x,t)&amp;=y_{m} \sin (kx-\omega t) + y_{m} \sin(kx+\omega t) \\&#10;&amp;=2y_{m} \sin kx&#10; \cos\omega t\end{align}</code></span>
 是一个**驻波（Standing Wave）**。
 1. 若 <span class="course-math" data-tex="\sin kx=0" data-display="false"><code>\sin kx=0</code></span>，即 <span class="course-math" data-tex="x=n \frac{\lambda}{2}" data-display="false"><code>x=n \frac{\lambda}{2}</code></span>，这些点永远不动，叫做节点（Nodes）。
-2. 若 <span class="course-math" data-tex="\sin kx=\pm 1" data-display="false"><code>\sin kx=\pm 1</code></span>，即 <span class="course-math" data-tex="x=\left( n+\frac{1}{2} \right) \frac{\lambda}{2}" data-display="false"><code>x=\left( n+\frac{1}{2} \right) \frac{\lambda}{2}</code></span>，这些点振幅最大，叫做负点（Antinodes）。
+2. 若 <span class="course-math" data-tex="\sin kx=\pm 1" data-display="false"><code>\sin kx=\pm 1</code></span>，即 <span class="course-math" data-tex="x=\left( n+\frac{1}{2} \right) \frac{\lambda}{2}" data-display="false"><code>x=\left( n+\frac{1}{2} \right) \frac{\lambda}{2}</code></span>，这些点振幅最大，叫做波腹（Antinodes）。
 
 ## 波的反射
 {: #section-6 }
 
 
-如果一个波撞到“硬边界”（Hard boundary），会发生半波损，波会跳跃半个相位后反射回来。
+如果一个波撞到“硬边界”（Hard boundary），会发生半波损，反射波相位改变 <span class="course-math" data-tex="\pi" data-display="false"><code>\pi</code></span> 后返回。
 如果一个波撞到“软边界”（Soft boundary），会直接反射回来。
 
 如果一个波和其反射的波叠加形成了驻波，则这种现象称为共振（Resonance）。
 
-**可以证明，产生共振的必要条件是硬边界都在节点，软边界都在负点**。
+**可以证明，产生共振的必要条件是硬边界都在节点，软边界都在波腹**。
 
 两边都是硬边界的情况，需要 <span class="course-math" data-tex="L=n \frac{\lambda}{2}" data-display="false"><code>L=n \frac{\lambda}{2}</code></span> 形成共振：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-3.png' | relative_url }}{% raw %}" alt="Wave-3" width="1217" height="1251" loading="lazy" decoding="async">

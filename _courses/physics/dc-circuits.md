@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-04-01T21:34:20+08:00"
-updated_at: "2026-06-05T20:25:23+08:00"
+updated_at: "2026-10-08T20:57:10+08:00"
 reference: false
 order: 11
 layout: "course"
@@ -27,9 +27,9 @@ excerpt: "大学物理（上）/（下） · DC Circuits - 直流电路"
 <span class="course-math course-math-display" data-tex="i=\frac{dq}{dt}" data-display="true"><code>i=\frac{dq}{dt}</code></span>
 电流为一个标量。
 微观表示
-  <span class="course-math course-math-display" data-tex="i=\frac{\Delta q}{\Delta t}=\frac{NALe}{\frac{L}{v_{d}}}=nAev_{d}" data-display="true"><code>i=\frac{\Delta q}{\Delta t}=\frac{NALe}{\frac{L}{v_{d}}}=nAev_{d}</code></span>
+  <span class="course-math course-math-display" data-tex="i=\frac{\Delta q}{\Delta t}=\frac{nALe}{\frac{L}{v_{d}}}=nAev_{d}" data-display="true"><code>i=\frac{\Delta q}{\Delta t}=\frac{nALe}{\frac{L}{v_{d}}}=nAev_{d}</code></span>
 定义电流密度
-<span class="course-math course-math-display" data-tex="\vec{J}=\frac{i}{A}\hat{v_{d}}=ne \vec{v_{d}}" data-display="true"><code>\vec{J}=\frac{i}{A}\hat{v_{d}}=ne \vec{v_{d}}</code></span>
+<span class="course-math course-math-display" data-tex="\vec{J}=nq\vec{v_d}\quad(q=-e\text{ for electrons})" data-display="true"><code>\vec{J}=nq\vec{v_d}\quad(q=-e\text{ for electrons})</code></span>
 那么有 
 <span class="course-math course-math-display" data-tex="di=\vec{J}d\vec{A}" data-display="true"><code>di=\vec{J}d\vec{A}</code></span>
 
@@ -62,7 +62,7 @@ excerpt: "大学物理（上）/（下） · DC Circuits - 直流电路"
 电阻的串联：
 <span class="course-math course-math-display" data-tex="R=R_{1}+R_{2}+\dots +R_{n}" data-display="true"><code>R=R_{1}+R_{2}+\dots +R_{n}</code></span>
 并联：
-<span class="course-math course-math-display" data-tex="R=\frac{1}{R_{1}}+\frac{1}{R_{2}}+\dots+\frac{1}{R_{n}}" data-display="true"><code>R=\frac{1}{R_{1}}+\frac{1}{R_{2}}+\dots+\frac{1}{R_{n}}</code></span>
+<span class="course-math course-math-display" data-tex="\frac{1}{R}=\frac{1}{R_{1}}+\frac{1}{R_{2}}+\dots+\frac{1}{R_{n}}" data-display="true"><code>\frac{1}{R}=\frac{1}{R_{1}}+\frac{1}{R_{2}}+\dots+\frac{1}{R_{n}}</code></span>
 
 ## 电功率
 {: #section-3 }
@@ -71,7 +71,7 @@ excerpt: "大学物理（上）/（下） · DC Circuits - 直流电路"
 <span class="course-math course-math-display" data-tex="U=qV\implies dU=Vdq=VIdt" data-display="true"><code>U=qV\implies dU=Vdq=VIdt</code></span>
 <span class="course-math course-math-display" data-tex="\implies P=\frac{dU}{dt}=IV" data-display="true"><code>\implies P=\frac{dU}{dt}=IV</code></span>
 在纯电阻的情况下, 应用欧姆定律有：
-<span class="course-math course-math-display" data-tex="P=I^{2}R=\frac{V}{R}" data-display="true"><code>P=I^{2}R=\frac{V}{R}</code></span>
+<span class="course-math course-math-display" data-tex="P=I^{2}R=\frac{V^2}{R}" data-display="true"><code>P=I^{2}R=\frac{V^2}{R}</code></span>
 
 ## 电路
 {: #section-4 }
@@ -105,5 +105,5 @@ excerpt: "大学物理（上）/（下） · DC Circuits - 直流电路"
 <span class="course-math course-math-display" data-tex="-iR-\frac{q}{C}=0" data-display="true"><code>-iR-\frac{q}{C}=0</code></span>
 解得
 <span class="course-math course-math-display" data-tex="q=Q_{0}e^{-t/RC}" data-display="true"><code>q=Q_{0}e^{-t/RC}</code></span>
-<span class="course-math course-math-display" data-tex="i=-\frac{Q}{RC}e^{-t/RC}=I_{0}e^{-t/RC}" data-display="true"><code>i=-\frac{Q}{RC}e^{-t/RC}=I_{0}e^{-t/RC}</code></span>
+<span class="course-math course-math-display" data-tex="i=-\frac{Q_0}{RC}e^{-t/RC}=I_{0}e^{-t/RC}" data-display="true"><code>i=-\frac{Q_0}{RC}e^{-t/RC}=I_{0}e^{-t/RC}</code></span>
 {% endraw %}

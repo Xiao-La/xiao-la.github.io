@@ -5,7 +5,7 @@ course_title: "补充材料"
 section: ""
 status: "reference"
 created_at: "2025-12-20T18:15:18+08:00"
-updated_at: "2025-12-20T19:44:01+08:00"
+updated_at: "2026-10-08T21:23:24+08:00"
 reference: true
 layout: "course"
 permalink: "/courses/references/gas/"
@@ -18,9 +18,9 @@ excerpt: "补充材料 · Gas - 1"
 {% raw %}
 <span class="course-math" data-tex="L\times L\times L" data-display="false"><code>L\times L\times L</code></span> 正方体内的气体与一面墙碰撞：
 <span class="course-math course-math-display" data-tex="-mv_{x}-mv_{x}=\bar{F_{x}} \frac{2L}{v_{x}}" data-display="true"><code>-mv_{x}-mv_{x}=\bar{F_{x}} \frac{2L}{v_{x}}</code></span>
-所以有 
+取分子撞向该墙的方向为正，墙对分子的平均力为：
 <span class="course-math course-math-display" data-tex="\bar{F_{x}}=-\frac{mv_{x}^2}{L}" data-display="true"><code>\bar{F_{x}}=-\frac{mv_{x}^2}{L}</code></span>
-那么合力为
+墙受到方向相反的反作用力，其合力的大小为
 <span class="course-math course-math-display" data-tex="\begin{align}&#10;\bar{F}&amp;= F_{1x}+F_{2x}+\dots+F_{Nx} \\&#10;&amp;=\frac{m}{L} (v_{1x}^2+v_{2x}^2+\dots+v_{Nx}^2) \\&#10;&amp;=\frac{nM}{L}(v_{x}^2)_{\text{avg}}&#10;\end{align}" data-display="true"><code>\begin{align}&#10;\bar{F}&amp;= F_{1x}+F_{2x}+\dots+F_{Nx} \\&#10;&amp;=\frac{m}{L} (v_{1x}^2+v_{2x}^2+\dots+v_{Nx}^2) \\&#10;&amp;=\frac{nM}{L}(v_{x}^2)_{\text{avg}}&#10;\end{align}</code></span>
 而气体具有各向同性，也就是说 <span class="course-math" data-tex="(v_{x}^2)_{\text{avg}}=(v_{y}^2)_{\text{avg}}=(v_{z}^2)_{\text{avg}}=\frac{1}{3}(v^2)_{\text{avg}}" data-display="false"><code>(v_{x}^2)_{\text{avg}}=(v_{y}^2)_{\text{avg}}=(v_{z}^2)_{\text{avg}}=\frac{1}{3}(v^2)_{\text{avg}}</code></span>。
 

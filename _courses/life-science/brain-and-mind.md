@@ -5,7 +5,7 @@ course_title: "生命科学概论"
 section: ""
 status: "completed"
 created_at: "2026-03-09T10:20:36+08:00"
-updated_at: "2026-03-23T10:39:17+08:00"
+updated_at: "2026-10-08T21:22:39+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -49,12 +49,13 @@ Sensory adaptation
 - Tonic 紧张型 - 持续持续
 - Phasic 瞬变型 - 感受变化
 
-Circadian Rhythm（生物节律）
+Circadian Rhythm（昼夜节律）
 - Free-running Rhythm（自主节律）
 - Suprachiasmatic Nuclei（SCN，视交叉上核）
 
 Parasympathetic（副交感神经） - rest and digest function
 - acetylcholine（乙酰胆碱） - cholinergic（胆碱能）
 Sympathetic（交感神经） - fight or flight response
-- catecholamines（儿茶酚胺） - adrenergic（肾上腺素能）
+- 节前神经元：acetylcholine（乙酰胆碱），cholinergic（胆碱能）。
+- 多数节后神经元：norepinephrine（去甲肾上腺素），adrenergic（肾上腺素能）；汗腺等例外使用乙酰胆碱。
 {% endraw %}

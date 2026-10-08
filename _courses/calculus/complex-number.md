@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-11-18T17:40:33+08:00"
-updated_at: "2026-01-19T16:25:38+08:00"
+updated_at: "2026-10-08T21:09:39+08:00"
 reference: false
 order: 5
 layout: "course"
@@ -38,7 +38,7 @@ excerpt: "高等数学（上）/（下） · Complex Number - 复数"
 - <span class="course-math" data-tex="\frac{1}{z}" data-display="false"><code>\frac{1}{z}</code></span> 是 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 次单位根。
 - <span class="course-math" data-tex="\frac{z}{w}" data-display="false"><code>\frac{z}{w}</code></span> 是 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 次单位根。
 - <span class="course-math" data-tex="z^k" data-display="false"><code>z^k</code></span> 是 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 次单位根。
-另外，所有 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 次单位根的和为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>：
+另外，<span class="course-math" data-tex="n\ge2" data-display="false"><code>n\ge2</code></span> 时所有 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 次单位根的和为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>（以下取 <span class="course-math" data-tex="z=e^{2\pi i/n}" data-display="false"><code>z=e^{2\pi i/n}</code></span>）：
 <span class="course-math course-math-display" data-tex="1+z+z^2+\dots+z^{n-1}=\frac{1-z^n}{1-z}=0" data-display="true"><code>1+z+z^2+\dots+z^{n-1}=\frac{1-z^n}{1-z}=0</code></span>
 所有 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 次单位根的积：
 <span class="course-math course-math-display" data-tex="1\times z^1 \times z^{2}\times\dots\times z^{n-1}=\begin{cases} (z^{n})^{(n-1)/2}=1, &amp; \text{when n is odd} \\ (z^{n/2})^{n-1}=-1, &amp;  \text{when n is even} \end{cases}" data-display="true"><code>1\times z^1 \times z^{2}\times\dots\times z^{n-1}=\begin{cases} (z^{n})^{(n-1)/2}=1, &amp; \text{when n is odd} \\ (z^{n/2})^{n-1}=-1, &amp;  \text{when n is even} \end{cases}</code></span>

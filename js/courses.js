@@ -68,6 +68,7 @@
       // Direct tex2svg conversion does not install the document styles by
       // itself. This also hides visual duplicates of assistive MathML.
       MathJax.startup.document.updateDocument();
+      if (window.formatInlineMath) window.formatInlineMath(content);
       content.dataset.rendered = 'true';
       if (window.courseRenderErrors.length) console.error('Course render errors:', window.courseRenderErrors);
     }).catch(function (error) {

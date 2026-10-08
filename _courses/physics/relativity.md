@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-05-29T17:22:15+08:00"
-updated_at: "2026-06-05T16:28:53+08:00"
+updated_at: "2026-10-08T20:57:27+08:00"
 reference: false
 order: 15
 layout: "course"
@@ -18,13 +18,13 @@ excerpt: "大学物理（上）/（下） · Relativity - 相对论"
 
 {% raw %}
 
-“任何物理规律在不同的参考系下保持不变。”
-“光速不变。”
+“物理规律在所有惯性参考系中具有相同形式。”
+“真空光速在所有惯性参考系中相同。”
 
 【狭义相对论的核心背景】
 时空间隔（Space-Time Interval）：与参考系无关的距离。
 世界点：四维时空中的一个点 <span class="course-math" data-tex="(t,x,y,z)" data-display="false"><code>(t,x,y,z)</code></span>。
-世界线：物体在思维时间中运动画出的线。
+世界线：物体在四维时空中运动画出的线。
 那么时空间隔
 <span class="course-math course-math-display" data-tex="s^{2}=[c(t_{2}-t_{1})]^{2}-[(x_{2}-x_{1})^{2}+(y_{2}-y_{1})^{2}+(z_{2}-z_{1})^{2}] = (c\Delta t)^{2}- l^{2}" data-display="true"><code>s^{2}=[c(t_{2}-t_{1})]^{2}-[(x_{2}-x_{1})^{2}+(y_{2}-y_{1})^{2}+(z_{2}-z_{1})^{2}] = (c\Delta t)^{2}- l^{2}</code></span>
 是一个和参考系无关的量。

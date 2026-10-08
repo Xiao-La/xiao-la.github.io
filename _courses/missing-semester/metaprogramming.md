@@ -5,7 +5,7 @@ course_title: "MIT Missing Semester"
 section: ""
 status: "completed"
 created_at: "2025-10-22T20:05:39+08:00"
-updated_at: "2025-10-22T23:09:19+08:00"
+updated_at: "2026-10-08T21:33:39+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -34,7 +34,7 @@ excerpt: "MIT Missing Semester · Metaprogramming - 元编程"
 1. MAJOR version：不兼容的 API 修改。
 2. MINOR version：向下兼容的功能性新增。
 3. PATCH version：向下兼容的问题修正。
-理论上，一个软件依赖的库版本号只需要 `MAJOR` 相同，`MINOR.PATCH` 大于或等于期望的版本，即可正常运行。 
+理论上，在依赖遵守语义化版本且主版本至少为 1 的前提下，主版本相同且版本不低于所需版本，公共 API 应保持兼容；0.y.z 处于初始开发阶段，不保证这一兼容性。
 
 ## 持续集成系统
 {: #section-3 }

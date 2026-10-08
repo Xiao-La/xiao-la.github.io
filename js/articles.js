@@ -14,6 +14,7 @@
     document.querySelectorAll('main article mjx-container:not([display="true"])').forEach(function (math) {
       if (!math.closest('.article-math-display')) wrap(math, 'article-math-inline', 'span');
     });
+    if (window.formatInlineMath) window.formatInlineMath(document.querySelector('main article'));
   };
 
   document.querySelectorAll('main article table').forEach(function (table) {

@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-09-30T19:28:05+08:00"
-updated_at: "2026-09-30T20:49:46+08:00"
+updated_at: "2026-10-08T20:59:37+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -23,7 +23,7 @@ excerpt: "离散数学 · Algorithm - 算法"
 >  Algorithm出自“Algoritmi”，这是花拉子米（al-Khwārizmī）的拉丁文译名。
 
 我们关心随着 input size（记作 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span>）变大，运行时间的渐进表现（Asymptotic behavior）。使用大 <span class="course-math" data-tex="O" data-display="false"><code>O</code></span> 记号表示上界：<span class="course-math" data-tex="f(n)=O(g(n))" data-display="false"><code>f(n)=O(g(n))</code></span> 若
-<span class="course-math course-math-display" data-tex="\exists c,n_{0}, \forall n&gt;n_{0} , \lvert f(n) \rvert\leq c \lvert g(n) \rvert" data-display="true"><code>\exists c,n_{0}, \forall n&gt;n_{0} , \lvert f(n) \rvert\leq c \lvert g(n) \rvert</code></span>
+<span class="course-math course-math-display" data-tex="\exists c&gt;0,n_0,\ \forall n&gt;n_0 , \lvert f(n) \rvert\leq c \lvert g(n) \rvert" data-display="true"><code>\exists c&gt;0,n_0,\ \forall n&gt;n_0 , \lvert f(n) \rvert\leq c \lvert g(n) \rvert</code></span>
 结论：<span class="course-math" data-tex="f(x)=\sum_{i=0}^{n} a_{i}x^{i}=O(x^{n})" data-display="false"><code>f(x)=\sum_{i=0}^{n} a_{i}x^{i}=O(x^{n})</code></span>。（多项式的主项决定增长速度）
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Algorithm%20-%20%E7%AE%97%E6%B3%95.png' | relative_url }}{% raw %}" alt="Algorithm - 算法" width="332" height="264" loading="lazy" decoding="async">
 - <span class="course-math" data-tex="n^{n}" data-display="false"><code>n^{n}</code></span> 并不是 <span class="course-math" data-tex="O(n!)" data-display="false"><code>O(n!)</code></span> 的。

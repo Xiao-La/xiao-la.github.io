@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-02-21T11:22:04+08:00"
-updated_at: "2026-04-23T23:40:50+08:00"
+updated_at: "2026-10-08T21:11:37+08:00"
 reference: false
 order: 7
 layout: "course"
@@ -26,16 +26,16 @@ excerpt: "高等数学（上）/（下） · Polar Coordinates - 极坐标"
 
 三维坐标系中直线的向量方程：<span class="course-math" data-tex="\mathbf{r}(t)=\mathbf{r}_{0}+t\mathbf{v}" data-display="false"><code>\mathbf{r}(t)=\mathbf{r}_{0}+t\mathbf{v}</code></span>，对应的参数方程：<span class="course-math" data-tex="x=x_{0}+tv_{1},y=y_{0}+tv_{2},z=z_{0}+tv_{3}" data-display="false"><code>x=x_{0}+tv_{1},y=y_{0}+tv_{2},z=z_{0}+tv_{3}</code></span>。
 三维坐标系中平面的方程：设法向量为 <span class="course-math" data-tex="\mathbf{n}=(A,B,C)" data-display="false"><code>\mathbf{n}=(A,B,C)</code></span>，且 <span class="course-math" data-tex="P_{0}(x_{0},y_{0},z_{0})" data-display="false"><code>P_{0}(x_{0},y_{0},z_{0})</code></span> 在平面内，则它们确定的平面为 <span class="course-math" data-tex="\mathbf{n}\cdot \vec{P_{0}P}=0" data-display="false"><code>\mathbf{n}\cdot \vec{P_{0}P}=0</code></span>，也就是 <span class="course-math" data-tex="A(x-x_{0})+B(y-y_{0})+C(z-z_{0})=0" data-display="false"><code>A(x-x_{0})+B(y-y_{0})+C(z-z_{0})=0</code></span>。
-一般来说平面的方程可以写成 <span class="course-math" data-tex="Ax+Bx+Cz=D" data-display="false"><code>Ax+Bx+Cz=D</code></span>，它的一个法向量就是 <span class="course-math" data-tex="(A,B,C)" data-display="false"><code>(A,B,C)</code></span>，它过的一个点满足 <span class="course-math" data-tex="D=Ax_{0}+By_{0}+Cz_{0}" data-display="false"><code>D=Ax_{0}+By_{0}+Cz_{0}</code></span>。
+一般来说平面的方程可以写成 <span class="course-math" data-tex="Ax+By+Cz=D" data-display="false"><code>Ax+By+Cz=D</code></span>，它的一个法向量就是 <span class="course-math" data-tex="(A,B,C)" data-display="false"><code>(A,B,C)</code></span>，它过的一个点满足 <span class="course-math" data-tex="D=Ax_{0}+By_{0}+Cz_{0}" data-display="false"><code>D=Ax_{0}+By_{0}+Cz_{0}</code></span>。
 
 【不考】
 平面光滑曲线的曲率（Curvature）定义为
 <span class="course-math course-math-display" data-tex="\kappa=&#124; \frac{d\mathbf{T}}{ds}&#124;" data-display="true"><code>\kappa=&#124; \frac{d\mathbf{T}}{ds}&#124;</code></span>
-其中 <span class="course-math" data-tex="T" data-display="false"><code>T</code></span> 是曲线 <span class="course-math" data-tex="s" data-display="false"><code>s</code></span> 的一个单位向量。
+其中 <span class="course-math" data-tex="s" data-display="false"><code>s</code></span> 是弧长，<span class="course-math" data-tex="\mathbf T" data-display="false"><code>\mathbf T</code></span> 是曲线的单位切向量。
 计算公式：若 <span class="course-math" data-tex="\mathbf{r}(t)" data-display="false"><code>\mathbf{r}(t)</code></span> 是一个光滑曲线，则：
 <span class="course-math course-math-display" data-tex="\kappa=\frac{1}{&#124;\mathbf{v}&#124;} &#124; \frac{d\mathbf{T}}{dt}&#124;" data-display="true"><code>\kappa=\frac{1}{&#124;\mathbf{v}&#124;} &#124; \frac{d\mathbf{T}}{dt}&#124;</code></span>
 其中 <span class="course-math" data-tex="\mathbf{v}=\mathbf{r}&#x27;(t), \mathbf{T}= \frac{\mathbf{v}}{&#124;\mathbf{v}&#124;}" data-display="false"><code>\mathbf{v}=\mathbf{r}&#x27;(t), \mathbf{T}= \frac{\mathbf{v}}{&#124;\mathbf{v}&#124;}</code></span> 是一个 <span class="course-math" data-tex="s" data-display="false"><code>s</code></span> 的单位向量。
-定义对一个光滑曲线的  **主单位法向量（Principle Unit Normal Vector）** ：
+定义对一个光滑曲线的  **主单位法向量（Principal Unit Normal Vector）** ：
 <span class="course-math course-math-display" data-tex="\mathbf{N}=\frac{1}{\kappa} \frac{d\mathbf{T}}{ds}" data-display="true"><code>\mathbf{N}=\frac{1}{\kappa} \frac{d\mathbf{T}}{ds}</code></span>
 这里 <span class="course-math" data-tex="\frac{d\mathbf{T}}{ds}" data-display="false"><code>\frac{d\mathbf{T}}{ds}</code></span> 指向了 <span class="course-math" data-tex="\mathbf{T}" data-display="false"><code>\mathbf{T}</code></span> 转向的方向，因此垂直于切向量。再用 <span class="course-math" data-tex="\kappa" data-display="false"><code>\kappa</code></span> 归一化。
 对于参数方程 <span class="course-math" data-tex="\mathbf{r}(t)" data-display="false"><code>\mathbf{r}(t)</code></span>，这个量可以这样计算：
@@ -50,7 +50,7 @@ excerpt: "高等数学（上）/（下） · Polar Coordinates - 极坐标"
 - 那么 <span class="course-math" data-tex="\lvert \mathbf{v} \rvert=\sqrt{ 1+[f&#x27;(t)]^{2} }" data-display="false"><code>\lvert \mathbf{v} \rvert=\sqrt{ 1+[f&#x27;(t)]^{2} }</code></span>，且有 <span class="course-math" data-tex="\mathbf{T}=\mathbf{v} / \lvert  \mathbf{v} \rvert" data-display="false"><code>\mathbf{T}=\mathbf{v} / \lvert  \mathbf{v} \rvert</code></span>。
 - 最终可以推出  <span class="course-math course-math-display" data-tex="\kappa=\frac{1}{\lvert \mathbf{v} \rvert} &#124; \frac{d\mathbf{T}}{dt}&#124;= \frac{\lvert y&#x27;&#x27; \rvert}{(1+(y&#x27;)^{2})^{3/2}}" data-display="true"><code>\kappa=\frac{1}{\lvert \mathbf{v} \rvert} &#124; \frac{d\mathbf{T}}{dt}&#124;= \frac{\lvert y&#x27;&#x27; \rvert}{(1+(y&#x27;)^{2})^{3/2}}</code></span>
 
-### 求闭合曲线面积
+### 求闭合曲线面积（简单闭曲线，沿逆时针方向）
 {: #section-2 }
 
 

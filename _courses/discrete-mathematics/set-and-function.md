@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-09-03T17:09:42+08:00"
-updated_at: "2026-09-30T19:27:56+08:00"
+updated_at: "2026-10-08T20:59:37+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -30,7 +30,7 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 
 定义集合的势（Cardinality）<span class="course-math" data-tex="&#124;S&#124;" data-display="false"><code>&#124;S&#124;</code></span>：
 - 对于有限集，就是元素的个数。
-- 对于任意集合：我们说 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 和 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 等势（have the same cardinality），若 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 和 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 之间存在满射（one-to-one correspondence）。
+- 对于任意集合：我们说 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 和 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 等势（have the same cardinality），若 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 和 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 之间存在双射（one-to-one correspondence）。
 - 我们说 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的势小于 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 的势或与 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 的势相同，若 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 到 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 存在一个单射（one-to-one function），记作 <span class="course-math" data-tex="\lvert A \rvert\leq \lvert B \rvert" data-display="false"><code>\lvert A \rvert\leq \lvert B \rvert</code></span>（注意，这里并不是说数值上的小于或等于）。
 - 若 <span class="course-math" data-tex="\lvert A \rvert\leq \lvert B \rvert" data-display="false"><code>\lvert A \rvert\leq \lvert B \rvert</code></span> 且 <span class="course-math" data-tex="A,B" data-display="false"><code>A,B</code></span> 不等势，那么记 <span class="course-math" data-tex="\lvert A \rvert&lt;\lvert B \rvert" data-display="false"><code>\lvert A \rvert&lt;\lvert B \rvert</code></span>。
 
@@ -41,7 +41,7 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 - <span class="course-math" data-tex="\mathbb{Q}^{+}" data-display="false"><code>\mathbb{Q}^{+}</code></span> 可数。可以按这个来列举（依次去列 <span class="course-math" data-tex="p+q=2" data-display="false"><code>p+q=2</code></span> ，<span class="course-math" data-tex="p+q=3" data-display="false"><code>p+q=3</code></span> ... 的 <span class="course-math" data-tex="p / q" data-display="false"><code>p / q</code></span>，再加一个 filter 要求 <span class="course-math" data-tex="p,q" data-display="false"><code>p,q</code></span> 不可约）：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20and%20Function%20-%20%E9%9B%86%E5%90%88%E4%B8%8E%E5%87%BD%E6%95%B0.png' | relative_url }}{% raw %}" alt="Set and Function - 集合与函数" width="190" height="182" loading="lazy" decoding="async">
 - 若 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 可数，则 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 的任意子集都可数。（加一个 filter 去掉不在子集里的，形成新的序列）
-- 有限字母表 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 上的有限字符串集 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 是可数无穷的。用字典序去形成序列即可。
+- 非空有限字母表 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 上的有限字符串集 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 是可数无穷的。先按长度、再在同一长度内按字典序枚举即可。
 - 从上面这条，可以推出，所有 Java 程序组成的集合是可数的。（加一个 filter: Java Compiler）。
 
 不可数集
@@ -108,7 +108,7 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 对 <span class="course-math" data-tex="f:A\to B" data-display="false"><code>f:A\to B</code></span> 分类：
 - 单射（Injective / one-to-one）：<span class="course-math" data-tex="f(x)=f(y)\to x=y" data-display="false"><code>f(x)=f(y)\to x=y</code></span>（等价地，<span class="course-math" data-tex="x\neq y\to f(x)\neq f(y)" data-display="false"><code>x\neq y\to f(x)\neq f(y)</code></span>）。
 - 满射 （Surjective / onto）：<span class="course-math" data-tex="f(A)=B" data-display="false"><code>f(A)=B</code></span> （值域就是陪域）。
-- 双射（Bijective / one-to-one correspondence）：如果既是满射又是双射。
+- 双射（Bijective / one-to-one correspondence）：如果既是满射又是单射。
 
 可以证明，对于**等势**的两个**有限**集合，单射和满射是等价的。（然而对于无限集合这是不对的）
 
@@ -136,8 +136,8 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 
 序列（Sequence）的定义：一个函数，把整数的子集（通常是  <span class="course-math" data-tex="\{ 0,1,2,\dots \}" data-display="false"><code>\{ 0,1,2,\dots \}</code></span> 或 <span class="course-math" data-tex="\{ 1,2,3,\dots \}" data-display="false"><code>\{ 1,2,3,\dots \}</code></span>）映射到集合 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span>。用 <span class="course-math" data-tex="a_{n}" data-display="false"><code>a_{n}</code></span> 来表示整数 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 的像。用 <span class="course-math" data-tex="\{ a_{n} \}" data-display="false"><code>\{ a_{n} \}</code></span>  表示有序列表 <span class="course-math" data-tex="a_{1},a_{2},\dots" data-display="false"><code>a_{1},a_{2},\dots</code></span>。
 
-算术级数（Arithmetic Progression）：形为 <span class="course-math" data-tex="a,a+d,a+2d, \dots,a+nd" data-display="false"><code>a,a+d,a+2d, \dots,a+nd</code></span> 的序列。首项为 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span>，公差（Common Difference）为 <span class="course-math" data-tex="d" data-display="false"><code>d</code></span>。
-几何级数（Geometric Progression）：形为 <span class="course-math" data-tex="a,ar,a r^{2}, \dots, ar^{n}" data-display="false"><code>a,ar,a r^{2}, \dots, ar^{n}</code></span> 的序列。首项为 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span>，公比（Common Ratio）为 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span>。
+等差数列（Arithmetic Progression）：形为 <span class="course-math" data-tex="a,a+d,a+2d, \dots,a+nd" data-display="false"><code>a,a+d,a+2d, \dots,a+nd</code></span> 的序列。首项为 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span>，公差（Common Difference）为 <span class="course-math" data-tex="d" data-display="false"><code>d</code></span>。
+等比数列（Geometric Progression）：形为 <span class="course-math" data-tex="a,ar,a r^{2}, \dots, ar^{n}" data-display="false"><code>a,ar,a r^{2}, \dots, ar^{n}</code></span> 的序列。首项为 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span>，公比（Common Ratio）为 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span>。
 
 序列也可以用递归（Recursion）定义，例如 <span class="course-math" data-tex="f_{n}=f_{n-1}+f_{n-2}" data-display="false"><code>f_{n}=f_{n-1}+f_{n-2}</code></span> (Fibonacci Sequence)。
 
@@ -157,11 +157,11 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
  <span class="course-math course-math-display" data-tex="\sum_{k=1}^{n}k= \frac{n(n+1)}{2}" data-display="true"><code>\sum_{k=1}^{n}k= \frac{n(n+1)}{2}</code></span>
 <span class="course-math course-math-display" data-tex="\sum_{k=1}^{n}k^{2}= \frac{n(n+1)(2n+1)}{6}" data-display="true"><code>\sum_{k=1}^{n}k^{2}= \frac{n(n+1)(2n+1)}{6}</code></span>
 <span class="course-math course-math-display" data-tex="\sum_{k=1}^{n} k^{3}= \frac{n^{2}(n+1)^{2}}{4}" data-display="true"><code>\sum_{k=1}^{n} k^{3}= \frac{n^{2}(n+1)^{2}}{4}</code></span>
-（推导，以 <span class="course-math" data-tex="\sum k^{3}" data-display="false"><code>\sum k^{3}</code></span> 为例，使用 Telescoping 方法/“邻差法”：考察这个式子
+（推导，以 <span class="course-math" data-tex="\sum k^{2}" data-display="false"><code>\sum k^{2}</code></span> 为例，使用 Telescoping 方法/“邻差法”：考察这个式子
 <span class="course-math course-math-display" data-tex="\sum(k^{3}-(k-1)^{3})" data-display="true"><code>\sum(k^{3}-(k-1)^{3})</code></span>
 一方面抵消之后就只剩下 <span class="course-math" data-tex="n^{3}" data-display="false"><code>n^{3}</code></span>，另一方面展开后它又等于 <span class="course-math" data-tex="3\sum k^{2}-3\sum k+n" data-display="false"><code>3\sum k^{2}-3\sum k+n</code></span>，代入即可。）
 （另外我们发现 <span class="course-math" data-tex="\sum k^{3}=\left( \sum k \right)^{2}" data-display="false"><code>\sum k^{3}=\left( \sum k \right)^{2}</code></span>。它的证明：
-<span class="course-math course-math-display" data-tex="\begin{align}&#10;\left( \sum_{i=1}^n k\right)^{2}&amp;=\sum_{i=1}^{n}i\sum_{j=1}^{n}j \\&#10;&amp;= \sum_{i=1}^{n}i \left( \sum_{j=1}^{i}j+\sum_{j=i}^{n}j-i \right) \\&#10;&amp;=\sum_{1\leq j\leq i\leq n}ij+\sum_{1\leq i\leq j\leq n}ij-\sum_{i=1}^{n}i^{2} \\&#10;&amp;=2 \sum_{1\leq j\leq i\leq n}ij-\sum_{i=1}^{n}i^{2} \\&#10;&amp;=2\sum_{i=1}^{n}i\sum_{j=1}^{i}j-\sum_{i=1}^{n}i^{2} \\&#10;&amp;=2\sum_{i=1}^{n}i \cdot \frac{i(i+1)}{2} - \sum_{i=1}^{n}i^{2} \\&#10;&amp;=\sum_{i=1}^{n} i^{3}&#10;\end{align}" data-display="true"><code>\begin{align}&#10;\left( \sum_{i=1}^n k\right)^{2}&amp;=\sum_{i=1}^{n}i\sum_{j=1}^{n}j \\&#10;&amp;= \sum_{i=1}^{n}i \left( \sum_{j=1}^{i}j+\sum_{j=i}^{n}j-i \right) \\&#10;&amp;=\sum_{1\leq j\leq i\leq n}ij+\sum_{1\leq i\leq j\leq n}ij-\sum_{i=1}^{n}i^{2} \\&#10;&amp;=2 \sum_{1\leq j\leq i\leq n}ij-\sum_{i=1}^{n}i^{2} \\&#10;&amp;=2\sum_{i=1}^{n}i\sum_{j=1}^{i}j-\sum_{i=1}^{n}i^{2} \\&#10;&amp;=2\sum_{i=1}^{n}i \cdot \frac{i(i+1)}{2} - \sum_{i=1}^{n}i^{2} \\&#10;&amp;=\sum_{i=1}^{n} i^{3}&#10;\end{align}</code></span>
+<span class="course-math course-math-display" data-tex="\begin{align}&#10;\left(\sum_{i=1}^n i\right)^2&amp;=\sum_{i=1}^{n}i\sum_{j=1}^{n}j \\&#10;&amp;= \sum_{i=1}^{n}i \left( \sum_{j=1}^{i}j+\sum_{j=i}^{n}j-i \right) \\&#10;&amp;=\sum_{1\leq j\leq i\leq n}ij+\sum_{1\leq i\leq j\leq n}ij-\sum_{i=1}^{n}i^{2} \\&#10;&amp;=2 \sum_{1\leq j\leq i\leq n}ij-\sum_{i=1}^{n}i^{2} \\&#10;&amp;=2\sum_{i=1}^{n}i\sum_{j=1}^{i}j-\sum_{i=1}^{n}i^{2} \\&#10;&amp;=2\sum_{i=1}^{n}i \cdot \frac{i(i+1)}{2} - \sum_{i=1}^{n}i^{2} \\&#10;&amp;=\sum_{i=1}^{n} i^{3}&#10;\end{align}" data-display="true"><code>\begin{align}&#10;\left(\sum_{i=1}^n i\right)^2&amp;=\sum_{i=1}^{n}i\sum_{j=1}^{n}j \\&#10;&amp;= \sum_{i=1}^{n}i \left( \sum_{j=1}^{i}j+\sum_{j=i}^{n}j-i \right) \\&#10;&amp;=\sum_{1\leq j\leq i\leq n}ij+\sum_{1\leq i\leq j\leq n}ij-\sum_{i=1}^{n}i^{2} \\&#10;&amp;=2 \sum_{1\leq j\leq i\leq n}ij-\sum_{i=1}^{n}i^{2} \\&#10;&amp;=2\sum_{i=1}^{n}i\sum_{j=1}^{i}j-\sum_{i=1}^{n}i^{2} \\&#10;&amp;=2\sum_{i=1}^{n}i \cdot \frac{i(i+1)}{2} - \sum_{i=1}^{n}i^{2} \\&#10;&amp;=\sum_{i=1}^{n} i^{3}&#10;\end{align}</code></span>
 ）
 （无穷序列）
 - 对 <span class="course-math" data-tex="\lvert x \rvert&lt;1" data-display="false"><code>\lvert x \rvert&lt;1</code></span>，有 

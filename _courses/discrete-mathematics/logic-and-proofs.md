@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-09-07T15:27:48+08:00"
-updated_at: "2026-10-07T20:21:26+08:00"
+updated_at: "2026-10-08T20:59:37+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -122,7 +122,7 @@ Negation Laws
 - Variable
 - Predicate：<span class="course-math" data-tex="P(x)" data-display="false"><code>P(x)</code></span> 给每个 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 赋一个 T / F 值。
 
-Predicate <span class="course-math" data-tex="P(x_{1},\dots,x_{n})" data-display="false"><code>P(x_{1},\dots,x_{n})</code></span> 只能称为**Statement**；只有当每个 <span class="course-math" data-tex="x_{i}" data-display="false"><code>x_{i}</code></span> 换成具体的值，或在它的前面加上一个 Quantifier，它才成为一个 **proposition**（具有真值）。
+Predicate <span class="course-math" data-tex="P(x_{1},\dots,x_{n})" data-display="false"><code>P(x_{1},\dots,x_{n})</code></span> 只能称为**Statement**；只有当每个 <span class="course-math" data-tex="x_{i}" data-display="false"><code>x_{i}</code></span> 换成具体的值，或用量词约束全部自由变量，它才成为一个 **proposition**（具有真值）。
 - Universe/Domain：所有可能取值 <span class="course-math" data-tex="(x_{1},x_{2}\dots x_{n})" data-display="false"><code>(x_{1},x_{2}\dots x_{n})</code></span> 的集合。
 - Truth set：让 <span class="course-math" data-tex="P(x_{1},\dots ,x_{n})" data-display="false"><code>P(x_{1},\dots ,x_{n})</code></span> 成立的取值 <span class="course-math" data-tex="(x_{1},x_{2}\dots x_{n})" data-display="false"><code>(x_{1},x_{2}\dots x_{n})</code></span> 的集合。
 
@@ -156,7 +156,7 @@ Predicate <span class="course-math" data-tex="P(x_{1},\dots,x_{n})" data-display
 ## 数学证明（Mathematical Proof）
 {: #section-4 }
 
-**Axiom（公理）：** 不证自明的命题。
+**Axiom（公理）：** 在一个理论中选定、不经证明而作为推理起点的命题。
 **Theorem（定理）：** 可以证明的命题。
 **Lemma（引理）：** 可以证明的命题，用于证明其他命题。
 **Corollary（推论）：** 从定理可以推出来的结论。

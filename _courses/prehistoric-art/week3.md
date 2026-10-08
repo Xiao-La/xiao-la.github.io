@@ -5,7 +5,7 @@ course_title: "旧石器艺术与符号"
 section: ""
 status: "updating"
 created_at: "2026-09-23T11:00:22+08:00"
-updated_at: "2026-09-23T12:11:07+08:00"
+updated_at: "2026-10-08T21:33:39+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -35,7 +35,7 @@ Symbols in the past
 - Differences
 
 Can apes learn language?
-- Non-verbal ; 
+- Non-vocal ;
 - sign language (gorilla"koko", "reportedlly" use displacement and abstract concepts); 
 - lexigrams (abstract image representing a word) (bonobos "kanzi") Kanzi understand opken English.
 - Human communication is uniquely complex

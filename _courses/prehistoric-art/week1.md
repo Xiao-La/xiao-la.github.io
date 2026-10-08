@@ -5,7 +5,7 @@ course_title: "旧石器艺术与符号"
 section: ""
 status: "updating"
 created_at: "2026-09-09T10:24:19+08:00"
-updated_at: "2026-09-09T11:57:00+08:00"
+updated_at: "2026-10-08T21:23:24+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -17,22 +17,22 @@ excerpt: "旧石器艺术与符号 · Week1"
 ---
 
 {% raw %}
-Humans are biocultural organism.
+Humans are biocultural organism.
 Culture: “patterns of learned behaviour and ideas that humans acquire as members of a society, together with the artifacts and structures we create and use.”
 - Culture knowledge
 - Tool : survival; overcome biological and individual limitations; information
 - Culture is Symbolic
 - Linguistic anthropolog
 
-Verbal communication
+Vocal communication
 - Verbal language
 - Non-word sounds with meaning
 - Native speaker
 - Communication is more than individual words
 
-Non-verbal communication
+Non-vocal communication
 - Writing, Morse code, Sign language, body language, facial expressions
-- Difficult - time, past/future
+- Body language alone: difficult to express time, past/future; writing and sign languages can express these.
 
 Distinctiveness of Human language:
 - Openness

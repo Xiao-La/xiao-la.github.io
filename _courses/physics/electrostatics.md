@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-02-27T16:45:43+08:00"
-updated_at: "2026-04-13T20:17:01+08:00"
+updated_at: "2026-10-08T20:57:10+08:00"
 reference: false
 order: 10
 layout: "course"
@@ -30,7 +30,7 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 
 **库仑定律**：
 <span class="course-math course-math-display" data-tex="F=k \frac{&#124;q_{1}q_{2}&#124;}{r^{2}}" data-display="true"><code>F=k \frac{&#124;q_{1}q_{2}&#124;}{r^{2}}</code></span>
-其中电荷的单位为库伦（Coulomb, <span class="course-math" data-tex="1\text{C}=1\text{A}\cdot\text{S}" data-display="false"><code>1\text{C}=1\text{A}\cdot\text{S}</code></span>）。
+其中电荷的单位为库伦（Coulomb, <span class="course-math" data-tex="1\text{C}=1\text{A}\cdot\text{s}" data-display="false"><code>1\text{C}=1\text{A}\cdot\text{s}</code></span>）。
 并有 <span class="course-math" data-tex="k=\frac{1}{4\pi \varepsilon_{0}}(=8.99\times 10^9\, \text{N}\times\text{m}^2\text{/C}^2)" data-display="false"><code>k=\frac{1}{4\pi \varepsilon_{0}}(=8.99\times 10^9\, \text{N}\times\text{m}^2\text{/C}^2)</code></span>，其中 <span class="course-math" data-tex="\varepsilon_{0}" data-display="false"><code>\varepsilon_{0}</code></span> 为真空介电常数。
 矢量形式：
 <span class="course-math course-math-display" data-tex="\vec{F}\text{(on 2)}=k \frac{q_{1}q_{2}}{&#124;\vec{r_{2}}-\vec{r_{1}}&#124;^3} (\vec{r_{2}}-\vec{r_{1}})" data-display="true"><code>\vec{F}\text{(on 2)}=k \frac{q_{1}q_{2}}{&#124;\vec{r_{2}}-\vec{r_{1}}&#124;^3} (\vec{r_{2}}-\vec{r_{1}})</code></span>
@@ -51,7 +51,7 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 
 常见公式：
 <span class="course-math course-math-display" data-tex="E= \frac{\sigma}{2\varepsilon_{0}}\left( 1- \frac{z}{\sqrt{ z^{2}+R^{2} }} \right)\text{(charged disk)}" data-display="true"><code>E= \frac{\sigma}{2\varepsilon_{0}}\left( 1- \frac{z}{\sqrt{ z^{2}+R^{2} }} \right)\text{(charged disk)}</code></span>
-<span class="course-math course-math-display" data-tex="E=\frac{qz}{4\pi \varepsilon_{0}(x^{2}+R^{2})^{3/2}}\text{(charged ring)}" data-display="true"><code>E=\frac{qz}{4\pi \varepsilon_{0}(x^{2}+R^{2})^{3/2}}\text{(charged ring)}</code></span>
+<span class="course-math course-math-display" data-tex="E=\frac{qz}{4\pi \varepsilon_{0}(z^{2}+R^{2})^{3/2}}\text{(charged ring)}" data-display="true"><code>E=\frac{qz}{4\pi \varepsilon_{0}(z^{2}+R^{2})^{3/2}}\text{(charged ring)}</code></span>
 
 
 电场也满足球壳定理。
@@ -100,7 +100,7 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 例如无穷大均匀带电面的电场，满足 <span class="course-math" data-tex="q_{\text{enc}}=\sigma A=\varepsilon_{0} \oint EdA=\varepsilon_{0} E (2A)\implies E=\frac{\sigma}{2\varepsilon_{0}}" data-display="false"><code>q_{\text{enc}}=\sigma A=\varepsilon_{0} \oint EdA=\varepsilon_{0} E (2A)\implies E=\frac{\sigma}{2\varepsilon_{0}}</code></span>。
 从而平行板电容器的电场 <span class="course-math" data-tex="E=\frac{\sigma}{\varepsilon_{0}}" data-display="false"><code>E=\frac{\sigma}{\varepsilon_{0}}</code></span>。 
 导体表面的电场也为 <span class="course-math" data-tex="E=\frac{\sigma}{\varepsilon_{0}}" data-display="false"><code>E=\frac{\sigma}{\varepsilon_{0}}</code></span> 。
-高斯定律主要适用于对称/近似无穷大的情况。
+高斯定律普遍成立；具有充分对称性时，才方便直接用它求电场。
 
 对称：球对称，柱对称，平移对称，面对称。对不同的面选不一样的高斯曲面，一般是一个球或者圆柱。
 
@@ -164,7 +164,7 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 将原来公式中的 <span class="course-math" data-tex="\varepsilon_{0}" data-display="false"><code>\varepsilon_{0}</code></span> 替换为 <span class="course-math" data-tex="\kappa\varepsilon_{0}" data-display="false"><code>\kappa\varepsilon_{0}</code></span> 即为有电介质的情况。
 例如，有电介质的情况下的高斯定理：
 <span class="course-math course-math-display" data-tex="\varepsilon_{0} \oint \kappa \vec{E}\cdot d\vec{A}=q(\text{free charge})" data-display="true"><code>\varepsilon_{0} \oint \kappa \vec{E}\cdot d\vec{A}=q(\text{free charge})</code></span>
-有电介质的电容：<span class="course-math" data-tex="C=\kappa  \frac{Q}{V}" data-display="false"><code>C=\kappa  \frac{Q}{V}</code></span>。
+有电介质的电容：<span class="course-math" data-tex="C=\frac{Q}{V}=\kappa C_0" data-display="false"><code>C=\frac{Q}{V}=\kappa C_0</code></span>（完全填充线性电介质）。
 注意是 <span class="course-math" data-tex="V" data-display="false"><code>V</code></span> 不变还是 <span class="course-math" data-tex="Q" data-display="false"><code>Q</code></span> 不变。
 - 若 <span class="course-math" data-tex="V" data-display="false"><code>V</code></span> 不变，<span class="course-math" data-tex="C=\kappa C_{0}" data-display="false"><code>C=\kappa C_{0}</code></span>，<span class="course-math" data-tex="Q=CV" data-display="false"><code>Q=CV</code></span> 变大。
 - 若 <span class="course-math" data-tex="Q" data-display="false"><code>Q</code></span> 不变，<span class="course-math" data-tex="C=\kappa C_{0}" data-display="false"><code>C=\kappa C_{0}</code></span>，<span class="course-math" data-tex="V=\frac{Q}{C}" data-display="false"><code>V=\frac{Q}{C}</code></span> 变小。

@@ -70,4 +70,4 @@ exclude:
   - scripts
   - tests
   - docs
-  - reports/courses-sync.json
+  - reports
