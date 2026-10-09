@@ -1,5 +1,10 @@
-<div class="overview">
+<div class="overview article-overview">
   {% assign article_date = include.article.created_at | default: include.article.date %}
   <div class="date"><time datetime="{{ article_date | date_to_xmlschema }}">{{ article_date | date: "%Y-%m-%d" }}</time></div>
-  <div class="detail"><a href="{{ include.article.url | relative_url }}">{{ include.article.title | escape }}</a></div>
+  <div class="detail">
+    <a href="{{ include.article.url | relative_url }}">{{ include.article.title | escape }}</a>
+    {% if include.show_course and include.article.course_id and include.article.reference != true %}
+      <span class="article-course">{{ include.article.course_title | escape }}</span>
+    {% endif %}
+  </div>
 </div>

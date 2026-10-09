@@ -159,6 +159,10 @@ div.date {
   display: none;
 }
 
+.article-overview {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .gist .line-numbers {
   display: none;
 }

@@ -597,6 +597,39 @@ div.date {
   font-size: 0.75em;
 }
 
+.article-overview {
+  display: grid;
+  grid-template-columns: 25% minmax(0, 1fr);
+  column-gap: 3%;
+  align-items: center;
+}
+
+.article-overview .date {
+  float: none;
+  width: auto;
+  padding-top: 0;
+}
+
+.article-overview .detail {
+  margin-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .2em .75em;
+}
+
+.article-overview .detail > a {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.article-course {
+  margin-left: auto;
+  color: #777;
+  font-size: .75em;
+  white-space: nowrap;
+}
+
 div.paginator {
   margin-left: 20%;
   float: center;

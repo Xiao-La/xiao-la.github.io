@@ -49,7 +49,7 @@ learning_page: true
       {% for key in recent_keys limit: 5 %}
         {% assign document_url = key | split: '::' | last %}
         {% assign document = recent_documents | where: 'url', document_url | first %}
-        <li>{% include article-overview.html article=document %}</li>
+        <li>{% include article-overview.html article=document show_course=true %}</li>
       {% endfor %}
     </ol>
   </section>
