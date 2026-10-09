@@ -5,7 +5,7 @@ course_title: "数据结构与算法分析"
 section: ""
 status: "updating"
 created_at: "2026-09-08T16:23:16+08:00"
-updated_at: "2026-10-08T21:14:49+08:00"
+updated_at: "2026-10-09T16:13:40+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -25,7 +25,7 @@ excerpt: "数据结构与算法分析 · Introduction"
 定义：一个良定义的计算步骤，接受输入（input）并产生输出（output）
 - 用于解决计算问题（Computational problem）
 例如：排序问题 (Sorting Problems)
-- 输入： 一个包含 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个数字的序列 
+- 输入： 一个包含 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个数字的序列
 - 输出：一个输入序列的排列，使得这些数呈升序。
 一个具体的输入叫做实例（instance）。
 算法应能解决所有可能的实例。
@@ -46,7 +46,7 @@ excerpt: "数据结构与算法分析 · Introduction"
 算法的运行时间（Runtime）取决于初等操作的次数。
 
 
-### 插入排序 
+### 插入排序
 {: #section-2 }
 
 
@@ -108,7 +108,7 @@ Proof by loop invariant （通过循环不变量证明）
 - <span class="course-math" data-tex="f(n)+g(n)=\Theta(\max(f(n), g(n)))" data-display="false"><code>f(n)+g(n)=\Theta(\max(f(n), g(n)))</code></span>
 - <span class="course-math" data-tex="\Theta(f(n))\cdot\Theta(g(n))=\Theta(f(n)\cdot g(n))" data-display="false"><code>\Theta(f(n))\cdot\Theta(g(n))=\Theta(f(n)\cdot g(n))</code></span>
 
-我们可以写 <span class="course-math" data-tex="O(n)=O(n^{2})" data-display="false"><code>O(n)=O(n^{2})</code></span>，这里指的是子集的关系，<span class="course-math" data-tex="O(n)\subset O(n^{2})" data-display="false"><code>O(n)\subset O(n^{2})</code></span>。但是不能写 <span class="course-math" data-tex="O(n^{2})\subset O(n)" data-display="false"><code>O(n^{2})\subset O(n)</code></span>。
+我们可以写 <span class="course-math" data-tex="O(n)=O(n^{2})" data-display="false"><code>O(n)=O(n^{2})</code></span>，这里指的是子集的关系，<span class="course-math" data-tex="O(n)\subseteq O(n^{2})" data-display="false"><code>O(n)\subseteq O(n^{2})</code></span>。但是不能写 <span class="course-math" data-tex="O(n^{2})\subseteq O(n)" data-display="false"><code>O(n^{2})\subseteq O(n)</code></span>。
 这样的式子： <span class="course-math" data-tex="2n^{2}+\Theta(n)=\Theta(n^{2})" data-display="false"><code>2n^{2}+\Theta(n)=\Theta(n^{2})</code></span> 指的是，对于任意的左边的匿名函数（Anonymous Function） <span class="course-math" data-tex="f(n)\in \Theta(n)" data-display="false"><code>f(n)\in \Theta(n)</code></span>, 总存在一个右边的匿名函数 <span class="course-math" data-tex="g(n)\in \Theta(n^{2})" data-display="false"><code>g(n)\in \Theta(n^{2})</code></span>，使得等式成立。
 
 并不是任意两个函数都是渐进可比的。

@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-11-10T23:17:07+08:00"
-updated_at: "2026-10-08T20:57:10+08:00"
+updated_at: "2026-10-09T16:13:40+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -20,8 +20,8 @@ excerpt: "大学物理（上）/（下） · Gravitation - 引力"
  牛顿引力定律（Newton's Law of Gravitation）：
 <span class="course-math course-math-display" data-tex="F=G \frac{m_{1}m_{2}}{r^2}" data-display="true"><code>F=G \frac{m_{1}m_{2}}{r^2}</code></span>
 或
-<span class="course-math course-math-display" data-tex="\vec{F}=-G \frac{m_{1}m_{2}}{r^2} \hat{r}=-G \frac{m_{1}m_{2}}{r^3} \vec{r}" data-display="true"><code>\vec{F}=-G \frac{m_{1}m_{2}}{r^2} \hat{r}=-G \frac{m_{1}m_{2}}{r^3} \vec{r}</code></span>
-其中 <span class="course-math" data-tex="G=6.67\times 10^{-11} \text{N} \cdot \text{m}^2 \text{/ kg}^2" data-display="false"><code>G=6.67\times 10^{-11} \text{N} \cdot \text{m}^2 \text{/ kg}^2</code></span>。
+<span class="course-math course-math-display" data-tex="\mathbf{F}=-G \frac{m_{1}m_{2}}{r^2} \hat{\mathbf{r}}=-G \frac{m_{1}m_{2}}{r^3} \mathbf{r}" data-display="true"><code>\mathbf{F}=-G \frac{m_{1}m_{2}}{r^2} \hat{\mathbf{r}}=-G \frac{m_{1}m_{2}}{r^3} \mathbf{r}</code></span>
+其中 <span class="course-math" data-tex="G=6.67\times 10^{-11} \mathrm{N} \cdot \mathrm{m}^2 \text{/ kg}^2" data-display="false"><code>G=6.67\times 10^{-11} \mathrm{N} \cdot \mathrm{m}^2 \text{/ kg}^2</code></span>。
 
 
 
@@ -29,7 +29,7 @@ excerpt: "大学物理（上）/（下） · Gravitation - 引力"
 {: #section-1 }
 
 
-<span class="course-math course-math-display" data-tex="\vec{F_{1, net}} = \sum^{n}_{i=2}\vec{F_{1i}}" data-display="true"><code>\vec{F_{1, net}} = \sum^{n}_{i=2}\vec{F_{1i}}</code></span>
+<span class="course-math course-math-display" data-tex="\mathbf{F}_{1, net} = \sum^{n}_{i=2}\mathbf{F}_{1i}" data-display="true"><code>\mathbf{F}_{1, net} = \sum^{n}_{i=2}\mathbf{F}_{1i}</code></span>
 
 
 ### 球壳定理（The Shell Theorem）
@@ -47,7 +47,7 @@ excerpt: "大学物理（上）/（下） · Gravitation - 引力"
 
 
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Gravitation-1.png' | relative_url }}{% raw %}" alt="Gravitation-1" width="152" height="200" loading="lazy" decoding="async">
-实际上，支持力 <span class="course-math" data-tex="\vec{N}" data-display="false"><code>\vec{N}</code></span> 和 <span class="course-math" data-tex="\vec{F_{g}}" data-display="false"><code>\vec{F_{g}}</code></span> 一起提供自转的向心力，而 <span class="course-math" data-tex="\vec{N}" data-display="false"><code>\vec{N}</code></span> 和 <span class="course-math" data-tex="m\vec{g}" data-display="false"><code>m\vec{g}</code></span> 相等。故有 <span class="course-math" data-tex="\vec{F_{g}}=m \vec{a_{c}} + m \vec{g}" data-display="false"><code>\vec{F_{g}}=m \vec{a_{c}} + m \vec{g}</code></span>。
+实际上，支持力 <span class="course-math" data-tex="\mathbf{N}" data-display="false"><code>\mathbf{N}</code></span> 和 <span class="course-math" data-tex="\mathbf{F}_{g}" data-display="false"><code>\mathbf{F}_{g}</code></span> 一起提供自转的向心力，而 <span class="course-math" data-tex="\mathbf{N}" data-display="false"><code>\mathbf{N}</code></span> 和 <span class="course-math" data-tex="m\mathbf{g}" data-display="false"><code>m\mathbf{g}</code></span> 相等。故有 <span class="course-math" data-tex="\mathbf{F}_{g}=m \mathbf{a}_{c} + m \mathbf{g}" data-display="false"><code>\mathbf{F}_{g}=m \mathbf{a}_{c} + m \mathbf{g}</code></span>。
 
 
 ### 引力势能
@@ -55,7 +55,7 @@ excerpt: "大学物理（上）/（下） · Gravitation - 引力"
 
 
 万有引力是保守力，将无穷远点设为零势能点，即可推出引力势能的表达式。
-双粒子系统： <span class="course-math" data-tex="U(r)=-\int_r^\infty \frac{GMm}{r^{\prime 2}}\,dr^{\prime}=-\frac{GMm}{r}" data-display="false"><code>U(r)=-\int_r^\infty \frac{GMm}{r^{\prime 2}}\,dr^{\prime}=-\frac{GMm}{r}</code></span>。
+双粒子系统： <span class="course-math" data-tex="U(r)=-\int_r^\infty \frac{GMm}{r^{\prime 2}}\,\mathrm{d}r^{\prime}=-\frac{GMm}{r}" data-display="false"><code>U(r)=-\int_r^\infty \frac{GMm}{r^{\prime 2}}\,\mathrm{d}r^{\prime}=-\frac{GMm}{r}</code></span>。
 三粒子系统：<span class="course-math" data-tex="U=-\frac{Gm_{1}m_{2}}{r_{12}}-\frac{Gm_{1}m_{3}}{r_{13}}-\frac{Gm_{2}m_{3}}{r_{23}}" data-display="false"><code>U=-\frac{Gm_{1}m_{2}}{r_{12}}-\frac{Gm_{1}m_{3}}{r_{13}}-\frac{Gm_{2}m_{3}}{r_{23}}</code></span>。
 逃逸速度 （Escape Speed）指脱离引力场需要的速度：
 <span class="course-math course-math-display" data-tex="E=K+U=\frac{1}{2}mv^2 - \frac{Gm_{1}m_{2}}{r}=0 \implies v=\sqrt{ \frac{2GM}{r} }" data-display="true"><code>E=K+U=\frac{1}{2}mv^2 - \frac{Gm_{1}m_{2}}{r}=0 \implies v=\sqrt{ \frac{2GM}{r} }</code></span>
@@ -67,7 +67,7 @@ excerpt: "大学物理（上）/（下） · Gravitation - 引力"
 
 假设太阳不动，那么开普勒三大定律指出：
 1. 轨道定律：所有行星走椭圆轨道 <span class="course-math" data-tex="r=\frac{p}{1+e\cos\theta}" data-display="false"><code>r=\frac{p}{1+e\cos\theta}</code></span>。
-2. 面积定律：太阳和行星连线扫过的面积随时间均匀变化：<span class="course-math course-math-display" data-tex="\frac{dA}{dt}=\frac{1}{2}r^2 \frac{d\theta}{dt}=\frac{1}{2}\omega r^2=\frac{L}{2m}=\text{constant}" data-display="true"><code>\frac{dA}{dt}=\frac{1}{2}r^2 \frac{d\theta}{dt}=\frac{1}{2}\omega r^2=\frac{L}{2m}=\text{constant}</code></span>
+2. 面积定律：太阳和行星连线扫过的面积随时间均匀变化：<span class="course-math course-math-display" data-tex="\frac{\mathrm{d}A}{\mathrm{d}t}=\frac{1}{2}r^2 \frac{\mathrm{d}\theta}{\mathrm{d}t}=\frac{1}{2}\omega r^2=\frac{L}{2m}=\text{constant}" data-display="true"><code>\frac{\mathrm{d}A}{\mathrm{d}t}=\frac{1}{2}r^2 \frac{\mathrm{d}\theta}{\mathrm{d}t}=\frac{1}{2}\omega r^2=\frac{L}{2m}=\text{constant}</code></span>
 3. 周期定律：行星运动满足 <span class="course-math" data-tex="\frac{T^2}{a^3}=\text{constant}\left( = \frac{4\pi^2}{GM} \right)" data-display="false"><code>\frac{T^2}{a^3}=\text{constant}\left( = \frac{4\pi^2}{GM} \right)</code></span>，其中 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 是椭圆半长轴长度，<span class="course-math" data-tex="T" data-display="false"><code>T</code></span> 为行星运动的周期。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Gravitation-2.png' | relative_url }}{% raw %}" alt="Gravitation-2" width="1896" height="1298" loading="lazy" decoding="async">
 {% endraw %}

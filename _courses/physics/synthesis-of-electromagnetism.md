@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-04-28T15:01:35+08:00"
-updated_at: "2026-10-08T20:57:27+08:00"
+updated_at: "2026-10-09T16:58:39+08:00"
 reference: false
 order: 13
 layout: "course"
@@ -25,7 +25,7 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88.png' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合" width="1754" height="474" loading="lazy" decoding="async">
 能量守恒：
 <span class="course-math course-math-display" data-tex="\frac{Q^{2}}{2C}+ \frac{1}{2}Li^{2}=U" data-display="true"><code>\frac{Q^{2}}{2C}+ \frac{1}{2}Li^{2}=U</code></span>
-这是一个关于 <span class="course-math" data-tex="q" data-display="false"><code>q</code></span> 的二阶微分方程（假定电流流进正极板，才有 <span class="course-math" data-tex="i=\frac{dQ}{dt}" data-display="false"><code>i=\frac{dQ}{dt}</code></span>），类似与弹簧振子。那么有
+这是一个关于 <span class="course-math" data-tex="q" data-display="false"><code>q</code></span> 的二阶微分方程（假定电流流进正极板，才有 <span class="course-math" data-tex="i=\frac{\mathrm{d}Q}{\mathrm{d}t}" data-display="false"><code>i=\frac{\mathrm{d}Q}{\mathrm{d}t}</code></span>），类似与弹簧振子。那么有
 <span class="course-math course-math-display" data-tex="q=Q\cos(\omega t+\phi)" data-display="true"><code>q=Q\cos(\omega t+\phi)</code></span>
 这里 <span class="course-math" data-tex="\omega= \frac{1}{\sqrt{ LC }}" data-display="false"><code>\omega= \frac{1}{\sqrt{ LC }}</code></span>。
 
@@ -38,8 +38,8 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 <span class="course-math course-math-display" data-tex="\varepsilon=\varepsilon_{m}\sin \omega t" data-display="true"><code>\varepsilon=\varepsilon_{m}\sin \omega t</code></span>
 <span class="course-math course-math-display" data-tex="i=I_{m}\sin(\omega t-\phi)" data-display="true"><code>i=I_{m}\sin(\omega t-\phi)</code></span>
 <span class="course-math course-math-display" data-tex="\implies V_{R}=iR=I_{m}R\sin(\omega t-\phi)" data-display="true"><code>\implies V_{R}=iR=I_{m}R\sin(\omega t-\phi)</code></span>
-<span class="course-math course-math-display" data-tex="V_{L}=L \frac{di}{dt}=L\omega I_{m}\sin\left( \omega t-\phi+\frac{\pi}{2} \right)" data-display="true"><code>V_{L}=L \frac{di}{dt}=L\omega I_{m}\sin\left( \omega t-\phi+\frac{\pi}{2} \right)</code></span>
-<span class="course-math course-math-display" data-tex="V_{C} = \frac{\int idt}{C}= \frac{1}{\omega C} I_{m} \sin\left( \omega t-\phi-\frac{\pi}{2} \right)" data-display="true"><code>V_{C} = \frac{\int idt}{C}= \frac{1}{\omega C} I_{m} \sin\left( \omega t-\phi-\frac{\pi}{2} \right)</code></span>
+<span class="course-math course-math-display" data-tex="V_{L}=L \frac{\mathrm{d}i}{\mathrm{d}t}=L\omega I_{m}\sin\left( \omega t-\phi+\frac{\pi}{2} \right)" data-display="true"><code>V_{L}=L \frac{\mathrm{d}i}{\mathrm{d}t}=L\omega I_{m}\sin\left( \omega t-\phi+\frac{\pi}{2} \right)</code></span>
+<span class="course-math course-math-display" data-tex="V_{C} = \frac{\int i\,\mathrm{d}t}{C}= \frac{1}{\omega C} I_{m} \sin\left( \omega t-\phi-\frac{\pi}{2} \right)" data-display="true"><code>V_{C} = \frac{\int i\,\mathrm{d}t}{C}= \frac{1}{\omega C} I_{m} \sin\left( \omega t-\phi-\frac{\pi}{2} \right)</code></span>
 **直观理解：电感是对抗电流的变化的，所以电压提前于电流；电容器是先有电流充电才有电压的，所以电压落后于电流。**
 这里称 <span class="course-math" data-tex="X_{L}=\omega L" data-display="false"><code>X_{L}=\omega L</code></span> 为感抗（Inductive Reactance），<span class="course-math" data-tex="X_{C}=\frac{1}{\omega C}" data-display="false"><code>X_{C}=\frac{1}{\omega C}</code></span> 为容抗（Capacitive Reactance）。上方是相图（Phasor Diagram），因此电感的电势差相位领先电流 <span class="course-math" data-tex="\frac{\pi}{2}" data-display="false"><code>\frac{\pi}{2}</code></span>，电容的落后电流 <span class="course-math" data-tex="\frac{\pi}{2}" data-display="false"><code>\frac{\pi}{2}</code></span>。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-3.png' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合-3" width="2168" height="704" loading="lazy" decoding="async">
@@ -60,11 +60,11 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 {: #section-2 }
 
 
-<span class="course-math course-math-display" data-tex="I_{\text{rms}}=\frac{I}{\sqrt{ 2 }}, V_{\text{rms}}= \frac{V}{\sqrt{ 2 }}, \varepsilon_{\text{rms}} = \frac{\varepsilon _{m}}{\sqrt{ 2 }}" data-display="true"><code>I_{\text{rms}}=\frac{I}{\sqrt{ 2 }}, V_{\text{rms}}= \frac{V}{\sqrt{ 2 }}, \varepsilon_{\text{rms}} = \frac{\varepsilon _{m}}{\sqrt{ 2 }}</code></span>
-<span class="course-math course-math-display" data-tex="P_{\text{avg}}=I^{2}_{\text{rms}}R" data-display="true"><code>P_{\text{avg}}=I^{2}_{\text{rms}}R</code></span>
+<span class="course-math course-math-display" data-tex="I_{\mathrm{rms}}=\frac{I}{\sqrt{ 2 }}, V_{\mathrm{rms}}= \frac{V}{\sqrt{ 2 }}, \varepsilon_{\mathrm{rms}} = \frac{\varepsilon _{m}}{\sqrt{ 2 }}" data-display="true"><code>I_{\mathrm{rms}}=\frac{I}{\sqrt{ 2 }}, V_{\mathrm{rms}}= \frac{V}{\sqrt{ 2 }}, \varepsilon_{\mathrm{rms}} = \frac{\varepsilon _{m}}{\sqrt{ 2 }}</code></span>
+<span class="course-math course-math-display" data-tex="P_{\mathrm{avg}}=I^{2}_{\mathrm{rms}}R" data-display="true"><code>P_{\mathrm{avg}}=I^{2}_{\mathrm{rms}}R</code></span>
 在包含 <span class="course-math" data-tex="\varepsilon,C,L,R" data-display="false"><code>\varepsilon,C,L,R</code></span> 的电路中：
 
-<span class="course-math course-math-display" data-tex="P_{\text{avg}}=I_{\text{rms}}^{2}R= \frac{\varepsilon_{\text{rms}}}{Z}I_{\text{rms}}R=\varepsilon_{\text{rms}}I_{\text{rms}}\cos \phi" data-display="true"><code>P_{\text{avg}}=I_{\text{rms}}^{2}R= \frac{\varepsilon_{\text{rms}}}{Z}I_{\text{rms}}R=\varepsilon_{\text{rms}}I_{\text{rms}}\cos \phi</code></span>
+<span class="course-math course-math-display" data-tex="P_{\mathrm{avg}}=I_{\mathrm{rms}}^{2}R= \frac{\varepsilon_{\mathrm{rms}}}{Z}I_{\mathrm{rms}}R=\varepsilon_{\mathrm{rms}}I_{\mathrm{rms}}\cos \phi" data-display="true"><code>P_{\mathrm{avg}}=I_{\mathrm{rms}}^{2}R= \frac{\varepsilon_{\mathrm{rms}}}{Z}I_{\mathrm{rms}}R=\varepsilon_{\mathrm{rms}}I_{\mathrm{rms}}\cos \phi</code></span>
 
 ### 变压器（Transformer）
 {: #section-3 }
@@ -83,11 +83,11 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 
 
 位移电流（Displacement Current）为空间中的电场变化的等效电流，它会产生磁场：
-<span class="course-math course-math-display" data-tex="i_{D}=\varepsilon_{0} \frac{d\Phi_{E}}{dt}=\varepsilon_{0} \frac{d}{dt}\int \vec{E}\cdot d\vec{A}" data-display="true"><code>i_{D}=\varepsilon_{0} \frac{d\Phi_{E}}{dt}=\varepsilon_{0} \frac{d}{dt}\int \vec{E}\cdot d\vec{A}</code></span>
+<span class="course-math course-math-display" data-tex="i_{D}=\varepsilon_{0} \frac{\mathrm{d}\Phi_{E}}{\mathrm{d}t}=\varepsilon_{0} \frac{\mathrm{d}}{\mathrm{d}t}\int \mathbf{E}\cdot \mathrm{d}\mathbf{A}" data-display="true"><code>i_{D}=\varepsilon_{0} \frac{\mathrm{d}\Phi_{E}}{\mathrm{d}t}=\varepsilon_{0} \frac{\mathrm{d}}{\mathrm{d}t}\int \mathbf{E}\cdot \mathrm{d}\mathbf{A}</code></span>
 电容器充放电中，就会产生位移电流。
 根据麦克斯韦理论，为了保持闭合电路中“电流”的连续性，流入电容器极板的传导电流等于极板间的位移电流。
 麦克斯韦修正后的安培定律：
-<span class="course-math course-math-display" data-tex="\oint \vec{B}\cdot d\vec{l}=\mu_{0}(i+i_{D})" data-display="true"><code>\oint \vec{B}\cdot d\vec{l}=\mu_{0}(i+i_{D})</code></span>
+<span class="course-math course-math-display" data-tex="\oint \mathbf{B}\cdot \mathrm{d}\mathbf{l}=\mu_{0}(i+i_{D})" data-display="true"><code>\oint \mathbf{B}\cdot \mathrm{d}\mathbf{l}=\mu_{0}(i+i_{D})</code></span>
 
 ## 麦克斯韦方程组
 {: #section-5 }
@@ -97,7 +97,7 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 
 电磁波的存在是基于麦克斯韦方程组推导出来的。一般形式的麦克斯韦方程组积分形式如下：
 
-<span class="course-math course-math-display" data-tex="\begin{cases}&#10;\oint \mathbf{E} \cdot \mathrm{d}\mathbf{A} = \frac{q_{\text{enc}}}{\varepsilon_0} &amp; \text{(高斯定律)} \\&#10;\oint \mathbf{B} \cdot \mathrm{d}\mathbf{A} = 0 &amp; \text{(高斯磁定律)} \\&#10;\oint \mathbf{E} \cdot \mathrm{d}\mathbf{l} = -\frac{\mathrm{d}}{\mathrm{d}t} \int \mathbf{B} \cdot \mathrm{d}\mathbf{A} &amp; \text{(法拉第感应定律)} \\&#10;\oint \mathbf{B} \cdot \mathrm{d}\mathbf{l} = \mu_0 \left( \int \mathbf{J} \cdot \mathrm{d}\mathbf{A} + \varepsilon_0 \frac{\mathrm{d}}{\mathrm{d}t} \int \mathbf{E} \cdot \mathrm{d}\mathbf{A} \right) &amp; \text{(安培-麦克斯韦定律)}&#10;\end{cases}" data-display="true"><code>\begin{cases}&#10;\oint \mathbf{E} \cdot \mathrm{d}\mathbf{A} = \frac{q_{\text{enc}}}{\varepsilon_0} &amp; \text{(高斯定律)} \\&#10;\oint \mathbf{B} \cdot \mathrm{d}\mathbf{A} = 0 &amp; \text{(高斯磁定律)} \\&#10;\oint \mathbf{E} \cdot \mathrm{d}\mathbf{l} = -\frac{\mathrm{d}}{\mathrm{d}t} \int \mathbf{B} \cdot \mathrm{d}\mathbf{A} &amp; \text{(法拉第感应定律)} \\&#10;\oint \mathbf{B} \cdot \mathrm{d}\mathbf{l} = \mu_0 \left( \int \mathbf{J} \cdot \mathrm{d}\mathbf{A} + \varepsilon_0 \frac{\mathrm{d}}{\mathrm{d}t} \int \mathbf{E} \cdot \mathrm{d}\mathbf{A} \right) &amp; \text{(安培-麦克斯韦定律)}&#10;\end{cases}</code></span>
+<span class="course-math course-math-display" data-tex="\begin{cases}&#10;\oint \mathbf{E} \cdot \mathrm{d}\mathbf{A} = \frac{q_{\mathrm{enc}}}{\varepsilon_0} &amp; \text{(高斯定律)} \\&#10;\oint \mathbf{B} \cdot \mathrm{d}\mathbf{A} = 0 &amp; \text{(高斯磁定律)} \\&#10;\oint \mathbf{E} \cdot \mathrm{d}\mathbf{l} = -\frac{\mathrm{d}}{\mathrm{d}t} \int \mathbf{B} \cdot \mathrm{d}\mathbf{A} &amp; \text{(法拉第感应定律)} \\&#10;\oint \mathbf{B} \cdot \mathrm{d}\mathbf{l} = \mu_0 \left( \int \mathbf{J} \cdot \mathrm{d}\mathbf{A} + \varepsilon_0 \frac{\mathrm{d}}{\mathrm{d}t} \int \mathbf{E} \cdot \mathrm{d}\mathbf{A} \right) &amp; \text{(安培-麦克斯韦定律)}&#10;\end{cases}" data-display="true"><code>\begin{cases}&#10;\oint \mathbf{E} \cdot \mathrm{d}\mathbf{A} = \frac{q_{\mathrm{enc}}}{\varepsilon_0} &amp; \text{(高斯定律)} \\&#10;\oint \mathbf{B} \cdot \mathrm{d}\mathbf{A} = 0 &amp; \text{(高斯磁定律)} \\&#10;\oint \mathbf{E} \cdot \mathrm{d}\mathbf{l} = -\frac{\mathrm{d}}{\mathrm{d}t} \int \mathbf{B} \cdot \mathrm{d}\mathbf{A} &amp; \text{(法拉第感应定律)} \\&#10;\oint \mathbf{B} \cdot \mathrm{d}\mathbf{l} = \mu_0 \left( \int \mathbf{J} \cdot \mathrm{d}\mathbf{A} + \varepsilon_0 \frac{\mathrm{d}}{\mathrm{d}t} \int \mathbf{E} \cdot \mathrm{d}\mathbf{A} \right) &amp; \text{(安培-麦克斯韦定律)}&#10;\end{cases}</code></span>
 
 **自由空间条件产生自洽波动：**
 在远离辐射源的自由空间中，没有自由电荷 (<span class="course-math" data-tex="q = 0" data-display="false"><code>q = 0</code></span>)，也没有传导电流 (<span class="course-math" data-tex="\mathbf{J} = 0" data-display="false"><code>\mathbf{J} = 0</code></span>)。将这两个条件代入上述方程，原本需要电荷和电流激发的项消失了，方程变得高度对称。这表明：**交变的电场可以自发产生磁场，交变的磁场也可以自发产生电场。** 它们交替激发，形成在空间中传播的电磁波。
@@ -107,30 +107,30 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Synthesis%20of%20Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88.png' | relative_url }}{% raw %}" alt="Synthesis of Electromagnetism - 电磁学综合" width="468" height="429" loading="lazy" decoding="async">
 
-电磁波具有以下六个重要特征：
+上述真空平面行波具有以下六个重要特征：
 1. 步调一致 (<span class="course-math" data-tex="E \text{ and } B" data-display="false"><code>E \text{ and } B</code></span> are in phase)：电场 <span class="course-math" data-tex="\mathbf{E}" data-display="false"><code>\mathbf{E}</code></span> 和磁场 <span class="course-math" data-tex="\mathbf{B}" data-display="false"><code>\mathbf{B}</code></span> 是**同相**的。
 2. 相互垂直 (<span class="course-math" data-tex="E \text{ and } B" data-display="false"><code>E \text{ and } B</code></span> are perpendicular)：电场分量和磁场分量不仅彼此相互垂直，而且它们都垂直于波的传播方向。因此电磁波是横波。
-3. 定向传播 (<span class="course-math" data-tex="\hat{E} \times \hat{B} = \hat{c}" data-display="false"><code>\hat{E} \times \hat{B} = \hat{c}</code></span>)。
+3. 定向传播 (<span class="course-math" data-tex="\hat{\mathbf{E}} \times \hat{\mathbf{B}} = \hat{\mathbf{c}}" data-display="false"><code>\hat{\mathbf{E}} \times \hat{\mathbf{B}} = \hat{\mathbf{c}}</code></span>)。
  4. 振幅比例固定 (<span class="course-math" data-tex="E_m = cB_m" data-display="false"><code>E_m = cB_m</code></span>)：在真空中，电场的峰值大小 <span class="course-math" data-tex="E_m" data-display="false"><code>E_m</code></span> 与磁场的峰值大小 <span class="course-math" data-tex="B_m" data-display="false"><code>B_m</code></span> 之间保持一个固定的比例关系，这个比例常数就是真空中光速 <span class="course-math" data-tex="c" data-display="false"><code>c</code></span>。
  5. 波速由真空常数决定 (<span class="course-math" data-tex="c = 1/\sqrt{\mu_0\varepsilon_0}" data-display="false"><code>c = 1/\sqrt{\mu_0\varepsilon_0}</code></span>)：电磁波在真空中的传播速度（光速 <span class="course-math" data-tex="c" data-display="false"><code>c</code></span>）仅仅取决于真空磁导率 <span class="course-math" data-tex="\mu_0" data-display="false"><code>\mu_0</code></span> 和真空电容率 <span class="course-math" data-tex="\varepsilon_0" data-display="false"><code>\varepsilon_0</code></span>。这一推导证明了光本质上也是一种电磁波。
- 6. 能量均分 (<span class="course-math" data-tex="u_E = u_B" data-display="false"><code>u_E = u_B</code></span>)：电磁波在传播过程中携带着能量。在任何时刻、真空中的任何一点，电场贡献的能量密度 <span class="course-math" data-tex="u_E" data-display="false"><code>u_E</code></span> 和磁场贡献的能量密度 <span class="course-math" data-tex="u_B" data-display="false"><code>u_B</code></span> 是绝对相等的。
+ 6. 能量均分 (<span class="course-math" data-tex="u_E = u_B" data-display="false"><code>u_E = u_B</code></span>)：电磁波在传播过程中携带着能量。对这种平面行波，在任意时空点都有 <span class="course-math" data-tex="u_E=u_B" data-display="false"><code>u_E=u_B</code></span>。一般的电磁场或多列波叠加形成的驻波并不一定逐点满足这一关系。
 
 
-为了描述电磁波在某一时刻、某一点传输能量的方向和速率，物理学引入了**坡印廷矢量（Poynting vector） <span class="course-math" data-tex="\vec{S}" data-display="false"><code>\vec{S}</code></span>**。其定义式（矢量形式）为：
-<span class="course-math course-math-display" data-tex="\vec{S} = \frac{1}{\mu_0} \vec{E} \times \vec{B}" data-display="true"><code>\vec{S} = \frac{1}{\mu_0} \vec{E} \times \vec{B}</code></span>
+为了描述电磁波在某一时刻、某一点传输能量的方向和速率，物理学引入了**坡印廷矢量（Poynting vector） <span class="course-math" data-tex="\mathbf{S}" data-display="false"><code>\mathbf{S}</code></span>**。其定义式（矢量形式）为：
+<span class="course-math course-math-display" data-tex="\mathbf{S} = \frac{1}{\mu_0} \mathbf{E} \times \mathbf{B}" data-display="true"><code>\mathbf{S} = \frac{1}{\mu_0} \mathbf{E} \times \mathbf{B}</code></span>
 
-*   **方向：** <span class="course-math" data-tex="\vec{S}" data-display="false"><code>\vec{S}</code></span> 的方向由 <span class="course-math" data-tex="\vec{E} \times \vec{B}" data-display="false"><code>\vec{E} \times \vec{B}</code></span> 决定，这意味着能量是沿着波的传播方向流动的。
-*   **大小推导：** 因为 <span class="course-math" data-tex="\vec{E}" data-display="false"><code>\vec{E}</code></span> 和 <span class="course-math" data-tex="\vec{B}" data-display="false"><code>\vec{B}</code></span> 相互垂直，所以叉乘的大小直接等于乘积 <span class="course-math" data-tex="EB" data-display="false"><code>EB</code></span>。再利用真空中电场和磁场的幅值关系 <span class="course-math" data-tex="E = cB" data-display="false"><code>E = cB</code></span>，可以推导出 <span class="course-math" data-tex="\vec{S}" data-display="false"><code>\vec{S}</code></span> 大小的多种等效表达形式。光学中常用只含 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 的形式。
+*   **方向：** <span class="course-math" data-tex="\mathbf{S}" data-display="false"><code>\mathbf{S}</code></span> 的方向由 <span class="course-math" data-tex="\mathbf{E} \times \mathbf{B}" data-display="false"><code>\mathbf{E} \times \mathbf{B}</code></span> 决定，这意味着能量是沿着波的传播方向流动的。
+*   **大小推导：** 因为 <span class="course-math" data-tex="\mathbf{E}" data-display="false"><code>\mathbf{E}</code></span> 和 <span class="course-math" data-tex="\mathbf{B}" data-display="false"><code>\mathbf{B}</code></span> 相互垂直，所以叉乘的大小直接等于乘积 <span class="course-math" data-tex="EB" data-display="false"><code>EB</code></span>。再利用真空中电场和磁场的幅值关系 <span class="course-math" data-tex="E = cB" data-display="false"><code>E = cB</code></span>，可以推导出 <span class="course-math" data-tex="\mathbf{S}" data-display="false"><code>\mathbf{S}</code></span> 大小的多种等效表达形式。光学中常用只含 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 的形式。
 <span class="course-math course-math-display" data-tex="S = \frac{1}{\mu_0} EB = \frac{1}{c\mu_0} E^2 = \frac{c}{\mu_0} B^2" data-display="true"><code>S = \frac{1}{\mu_0} EB = \frac{1}{c\mu_0} E^2 = \frac{c}{\mu_0} B^2</code></span>
-*   **物理意义：** 量纲为 **功率/面积 (<span class="course-math" data-tex="W/m^2" data-display="false"><code>W/m^2</code></span>)**。它表示单位时间内，垂直穿过单位面积的电磁能量。
+*   **物理意义：** 量纲为 **功率/面积 (<span class="course-math" data-tex="\mathrm{W}/\mathrm{m}^{2}" data-display="false"><code>\mathrm{W}/\mathrm{m}^{2}</code></span>)**。它表示单位时间内，垂直穿过单位面积的电磁能量。
 
-由于电磁波的电场 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 和磁场 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 是极高频周期性变化的，坡印廷矢量 <span class="course-math" data-tex="\vec{S}" data-display="false"><code>\vec{S}</code></span> 也在快速振荡。考察一段时间内能量传输的**平均效果**，这个时间平均值就被称为电磁波的**强度 (Intensity)**，用字母 <span class="course-math" data-tex="I" data-display="false"><code>I</code></span> 表示：
-<span class="course-math course-math-display" data-tex="I = \langle S \rangle = \frac{1}{c\mu_0} \langle E^2 \rangle = \frac{1}{2c\mu_0} E_m^2 = \frac{1}{c\mu_0} E_{\text{rms}}^2" data-display="true"><code>I = \langle S \rangle = \frac{1}{c\mu_0} \langle E^2 \rangle = \frac{1}{2c\mu_0} E_m^2 = \frac{1}{c\mu_0} E_{\text{rms}}^2</code></span>
+由于电磁波的电场 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 和磁场 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 是极高频周期性变化的，坡印廷矢量 <span class="course-math" data-tex="\mathbf{S}" data-display="false"><code>\mathbf{S}</code></span> 也在快速振荡。考察一段时间内能量传输的**平均效果**，这个时间平均值就被称为电磁波的**强度 (Intensity)**，用字母 <span class="course-math" data-tex="I" data-display="false"><code>I</code></span> 表示：
+<span class="course-math course-math-display" data-tex="I = \langle S \rangle = \frac{1}{c\mu_0} \langle E^2 \rangle = \frac{1}{2c\mu_0} E_m^2 = \frac{1}{c\mu_0} E_{\mathrm{rms}}^2" data-display="true"><code>I = \langle S \rangle = \frac{1}{c\mu_0} \langle E^2 \rangle = \frac{1}{2c\mu_0} E_m^2 = \frac{1}{c\mu_0} E_{\mathrm{rms}}^2</code></span>
 
-*   <span class="course-math" data-tex="\langle S \rangle" data-display="false"><code>\langle S \rangle</code></span> 表示对瞬时值 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 取时间平均。对于正弦波，周期内平方的平均值 <span class="course-math" data-tex="\langle E^2 \rangle = \frac{1}{2} E_m^2" data-display="false"><code>\langle E^2 \rangle = \frac{1}{2} E_m^2</code></span> （其中 <span class="course-math" data-tex="E_m" data-display="false"><code>E_m</code></span> 是电场的峰值/最大幅值）。<span class="course-math" data-tex="E_{\text{rms}}" data-display="false"><code>E_{\text{rms}}</code></span> 代表电场的**有效值** (均方根值, Root Mean Square)，<span class="course-math" data-tex="E_{\text{rms}} = E_m / \sqrt{2}" data-display="false"><code>E_{\text{rms}} = E_m / \sqrt{2}</code></span>。因此 <span class="course-math" data-tex="\frac{1}{2} E_m^2" data-display="false"><code>\frac{1}{2} E_m^2</code></span> 等于 <span class="course-math" data-tex="E_{\text{rms}}^2" data-display="false"><code>E_{\text{rms}}^2</code></span>。
+*   <span class="course-math" data-tex="\langle S \rangle" data-display="false"><code>\langle S \rangle</code></span> 表示对瞬时值 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 取时间平均。对于正弦波，周期内平方的平均值 <span class="course-math" data-tex="\langle E^2 \rangle = \frac{1}{2} E_m^2" data-display="false"><code>\langle E^2 \rangle = \frac{1}{2} E_m^2</code></span> （其中 <span class="course-math" data-tex="E_m" data-display="false"><code>E_m</code></span> 是电场的峰值/最大幅值）。<span class="course-math" data-tex="E_{\mathrm{rms}}" data-display="false"><code>E_{\mathrm{rms}}</code></span> 代表电场的**有效值** (均方根值, Root Mean Square)，<span class="course-math" data-tex="E_{\mathrm{rms}} = E_m / \sqrt{2}" data-display="false"><code>E_{\mathrm{rms}} = E_m / \sqrt{2}</code></span>。因此 <span class="course-math" data-tex="\frac{1}{2} E_m^2" data-display="false"><code>\frac{1}{2} E_m^2</code></span> 等于 <span class="course-math" data-tex="E_{\mathrm{rms}}^2" data-display="false"><code>E_{\mathrm{rms}}^2</code></span>。
 
 强度的本质是：
-<span class="course-math course-math-display" data-tex="\left( \frac{\text{power}}{\text{area}} \right)_{avg}" data-display="true"><code>\left( \frac{\text{power}}{\text{area}} \right)_{avg}</code></span>
+<span class="course-math course-math-display" data-tex="\left( \frac{\text{power}}{\text{area}} \right)_{\mathrm{avg}}" data-display="true"><code>\left( \frac{\text{power}}{\text{area}} \right)_{\mathrm{avg}}</code></span>
 即：**平均辐射功率除以受照面积**。
 
 如果产生电磁波的是一个向四面八方均匀辐射的**点辐射源 (Point source)**，能量会在空间中以球面波的形式向外扩散。根据能量守恒定律，辐射源发出的总平均功率（average power）在距离源为 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> 时，会均匀分布在半径为 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> 的整个球面上：
@@ -151,7 +151,7 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 *(注：<span class="course-math" data-tex="c" data-display="false"><code>c</code></span> 为真空中光速)*
 
 当一束强度为 <span class="course-math" data-tex="I" data-display="false"><code>I</code></span> 的电磁波在 <span class="course-math" data-tex="\Delta t" data-display="false"><code>\Delta t</code></span> 时间内照射到面积为 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的物体表面时，传递的总能量为 <span class="course-math" data-tex="U = I A \Delta t" data-display="false"><code>U = I A \Delta t</code></span>。根据表面性质的不同，物体获得的动量变化量 <span class="course-math" data-tex="\Delta P" data-display="false"><code>\Delta P</code></span> 有两种极端情况：
-*   **完全吸收 (Totally absorbed)：** 
+*   **完全吸收 (Totally absorbed)：**
     物体吸收所有入射光子。
     <span class="course-math course-math-display" data-tex="\Delta P = \frac{U}{c} = \frac{IA\Delta t}{c}" data-display="true"><code>\Delta P = \frac{U}{c} = \frac{IA\Delta t}{c}</code></span>
 *   **完全反射 (Totally reflected)：**
@@ -170,7 +170,7 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 *   完全吸收：<span class="course-math course-math-display" data-tex="p = \frac{I}{c}" data-display="true"><code>p = \frac{I}{c}</code></span>
 *   完全反射：<span class="course-math course-math-display" data-tex="p = \frac{2I}{c}" data-display="true"><code>p = \frac{2I}{c}</code></span>
 通过单位（量纲）理解辐射压本质的直观对应关系：
-<span class="course-math course-math-display" data-tex="\frac{I}{c} = \frac{S_{avg}}{c} = \frac{\text{energy}/(m^2 \cdot sec)}{c}" data-display="true"><code>\frac{I}{c} = \frac{S_{avg}}{c} = \frac{\text{energy}/(m^2 \cdot sec)}{c}</code></span>
+<span class="course-math course-math-display" data-tex="\frac{I}{c} = \frac{S_{\mathrm{avg}}}{c} = \frac{\text{energy}/(\mathrm{m}^{2}\,\mathrm{s})}{c}" data-display="true"><code>\frac{I}{c} = \frac{S_{\mathrm{avg}}}{c} = \frac{\text{energy}/(\mathrm{m}^{2}\,\mathrm{s})}{c}</code></span>
 由于 **<span class="course-math" data-tex="\text{energy} / c = \text{momentum}" data-display="false"><code>\text{energy} / c = \text{momentum}</code></span> (能量/光速 = 动量)**，上式可理解为：
 **单位时间、单位面积上所传递的动量**。由动量定理可知，这正是**压强 (pressure)** 的物理定义。
 
@@ -179,9 +179,9 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 {: #section-7 }
 
 
-*   **偏振面定义：** 电磁波中**电场 <span class="course-math" data-tex="\vec{E}" data-display="false"><code>\vec{E}</code></span>** 振动所在的平面。
-*   **线偏振光：** 电场 <span class="course-math" data-tex="\vec{E}" data-display="false"><code>\vec{E}</code></span> 只在单一固定方向上振动的光。
-*   **非偏振光 (自然光)：** 电场 <span class="course-math" data-tex="\vec{E}" data-display="false"><code>\vec{E}</code></span> 在各个方向振动概率相等的随机光。可等效为**两个相互垂直、强度相等的线偏振光叠加**。
+*   **偏振面定义：** 电磁波中**电场 <span class="course-math" data-tex="\mathbf{E}" data-display="false"><code>\mathbf{E}</code></span>** 振动所在的平面。
+*   **线偏振光：** 电场 <span class="course-math" data-tex="\mathbf{E}" data-display="false"><code>\mathbf{E}</code></span> 只在单一固定方向上振动的光。
+*   **非偏振光 (自然光)：** 电场 <span class="course-math" data-tex="\mathbf{E}" data-display="false"><code>\mathbf{E}</code></span> 在各个方向振动概率相等的随机光。可等效为**两个相互垂直、强度相等的线偏振光叠加**。
 
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Synthesis%20of%20Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-1.png' | relative_url }}{% raw %}" alt="Synthesis of Electromagnetism - 电磁学综合-1" width="326" height="169" loading="lazy" decoding="async">
 

@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-10-26T18:15:02+08:00"
-updated_at: "2026-10-08T21:23:24+08:00"
+updated_at: "2026-10-09T17:01:15+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -35,13 +35,13 @@ Concave Up 和 Concave Down：<span class="course-math" data-tex="f&#x27;&#x27;(
 
 拐点（Inflection Point）：左右两边 <span class="course-math" data-tex="f&#x27;&#x27;(x)" data-display="false"><code>f&#x27;&#x27;(x)</code></span> 符号不同（注意不要求 <span class="course-math" data-tex="f&#x27;&#x27;(x)" data-display="false"><code>f&#x27;&#x27;(x)</code></span> 存在）。
 
-一对一函数（One-to-one Function）：<span class="course-math" data-tex="f(x_{1})=f(x_{2})\implies x_{1}=x_{2}" data-display="false"><code>f(x_{1})=f(x_{2})\implies x_{1}=x_{2}</code></span>（一个充分条件是 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 严格单调） 
+一对一函数（One-to-one Function）：<span class="course-math" data-tex="f(x_{1})=f(x_{2})\implies x_{1}=x_{2}" data-display="false"><code>f(x_{1})=f(x_{2})\implies x_{1}=x_{2}</code></span>（一个充分条件是 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 严格单调）
 
-反函数（Inverse Function）：对一对一函数（One-to-one Function）来说，存在反函数 <span class="course-math" data-tex="y=f^{-1}(x)" data-display="false"><code>y=f^{-1}(x)</code></span>，使得 <span class="course-math" data-tex="f(y)=x" data-display="false"><code>f(y)=x</code></span>。 
+反函数（Inverse Function）：对一对一函数（One-to-one Function）来说，存在反函数 <span class="course-math" data-tex="y=f^{-1}(x)" data-display="false"><code>y=f^{-1}(x)</code></span>，使得 <span class="course-math" data-tex="f(y)=x" data-display="false"><code>f(y)=x</code></span>。
 
 小 o 记号（little-oh Notation）：<span class="course-math" data-tex="f=o(g)" data-display="false"><code>f=o(g)</code></span>（“<span class="course-math" data-tex="f" data-display="false"><code>f</code></span> is little-oh of <span class="course-math" data-tex="g" data-display="false"><code>g</code></span>”），当  <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 的阶比 <span class="course-math" data-tex="g" data-display="false"><code>g</code></span> 的阶更小，即 <span class="course-math" data-tex="\lim\limits_{x\to\infty}\frac{f(x)}{g(x)}=0" data-display="false"><code>\lim\limits_{x\to\infty}\frac{f(x)}{g(x)}=0</code></span>
 
-大 O 记号（big-oh Notation）： <span class="course-math" data-tex="f=O(g)" data-display="false"><code>f=O(g)</code></span>（“<span class="course-math" data-tex="f" data-display="false"><code>f</code></span> is big-oh of <span class="course-math" data-tex="g" data-display="false"><code>g</code></span>”），当存在 <span class="course-math" data-tex="M&gt;0,x_0" data-display="false"><code>M&gt;0,x_0</code></span>，使 <span class="course-math" data-tex="x\ge x_0" data-display="false"><code>x\ge x_0</code></span> 时 <span class="course-math" data-tex="&#124;f(x)&#124;\le M&#124;g(x)&#124;" data-display="false"><code>&#124;f(x)&#124;\le M&#124;g(x)&#124;</code></span>
+大 O 记号（big-oh Notation）： <span class="course-math" data-tex="f=O(g)" data-display="false"><code>f=O(g)</code></span>（“<span class="course-math" data-tex="f" data-display="false"><code>f</code></span> is big-oh of <span class="course-math" data-tex="g" data-display="false"><code>g</code></span>”），当存在 <span class="course-math" data-tex="M&gt;0,x_0" data-display="false"><code>M&gt;0,x_0</code></span>，使 <span class="course-math" data-tex="x\ge x_0" data-display="false"><code>x\ge x_0</code></span> 时 <span class="course-math" data-tex="\lvert f(x)\rvert \le M\lvert g(x)\rvert" data-display="false"><code>\lvert f(x)\rvert \le M\lvert g(x)\rvert</code></span>
 
 
 ## 定理
@@ -97,12 +97,14 @@ Concave Up 和 Concave Down：<span class="course-math" data-tex="f&#x27;&#x27;(
 {: #section-3 }
 
 
-1. <span class="course-math" data-tex="f(x)=\begin{cases}x^2\sin \left( \frac{1}{x} \right) &amp; x\neq 0 \\ 0 &amp; x=0\end{cases}" data-display="false"><code>f(x)=\begin{cases}x^2\sin \left( \frac{1}{x} \right) &amp; x\neq 0 \\ 0 &amp; x=0\end{cases}</code></span>
+1.    <span class="course-math course-math-display" data-tex="f(x)=\begin{cases}x^2\sin \left( \frac{1}{x} \right) &amp; x\neq 0 \\ 0 &amp; x=0\end{cases}" data-display="true"><code>f(x)=\begin{cases}x^2\sin \left( \frac{1}{x} \right) &amp; x\neq 0 \\ 0 &amp; x=0\end{cases}</code></span>
 	<span class="course-math" data-tex="f(x)" data-display="false"><code>f(x)</code></span> 连续且处处可导，但 <span class="course-math" data-tex="f&#x27;(x)" data-display="false"><code>f&#x27;(x)</code></span> 在 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 处不连续，因为 <span class="course-math" data-tex="\lim_{ x \to 0 }f&#x27;(x)" data-display="false"><code>\lim_{ x \to 0 }f&#x27;(x)</code></span> 不存在。
 	这个函数在 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 附近震荡非常强烈，例如可构造 <span class="course-math" data-tex="g(x)=2f(x)+x" data-display="false"><code>g(x)=2f(x)+x</code></span> 让 <span class="course-math" data-tex="g&#x27;(x)" data-display="false"><code>g&#x27;(x)</code></span> 在 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 附近符号频繁变化。
 	另外，它在  <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>  处没有二阶导，<span class="course-math" data-tex="(0,0)" data-display="false"><code>(0,0)</code></span> 也不是它的拐点。
-2.  <span class="course-math" data-tex="f(x)=\begin{cases}1 &amp; x\neq 0 \\ 0 &amp; x=0\end{cases}" data-display="false"><code>f(x)=\begin{cases}1 &amp; x\neq 0 \\ 0 &amp; x=0\end{cases}</code></span>
-	和第 1 条类似但稍弱一些，说明 <span class="course-math" data-tex="f&#x27;(0)" data-display="false"><code>f&#x27;(0)</code></span> 和 <span class="course-math" data-tex="\lim_{ x \to 0 }f&#x27;(x)" data-display="false"><code>\lim_{ x \to 0 }f&#x27;(x)</code></span> 不是一回事。
+2.
+
+   <span class="course-math course-math-display" data-tex="f(x)=\begin{cases}1 &amp; x\neq 0 \\ 0 &amp; x=0\end{cases}" data-display="true"><code>f(x)=\begin{cases}1 &amp; x\neq 0 \\ 0 &amp; x=0\end{cases}</code></span>
+	这里 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 处不连续，所以 <span class="course-math" data-tex="f&#x27;(0)" data-display="false"><code>f&#x27;(0)</code></span> 不存在；但在 <span class="course-math" data-tex="x\neq0" data-display="false"><code>x\neq0</code></span> 处 <span class="course-math" data-tex="f&#x27;(x)=0" data-display="false"><code>f&#x27;(x)=0</code></span>，因此 <span class="course-math" data-tex="\lim_{x\to0}f&#x27;(x)=0" data-display="false"><code>\lim_{x\to0}f&#x27;(x)=0</code></span>。这说明导数的极限存在，并不能单独保证该点可导。
 
 
 ## 杂类
@@ -139,12 +141,12 @@ Concave Up 和 Concave Down：<span class="course-math" data-tex="f&#x27;&#x27;(
 
 余项 <span class="course-math" data-tex="R_n(x)=\dfrac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}" data-display="false"><code>R_n(x)=\dfrac{f^{(n+1)}(c)}{(n+1)!}(x-a)^{n+1}</code></span>，其中 <span class="course-math" data-tex="c" data-display="false"><code>c</code></span> 位于 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 与 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 之间。
 **余项估计定理（Remainder Estimation Theorem）：** 若存在正常数 <span class="course-math" data-tex="M" data-display="false"><code>M</code></span> 使得
-<span class="course-math course-math-display" data-tex="&#124;f^{(n)}(x)&#124;\leq M" data-display="true"><code>&#124;f^{(n)}(x)&#124;\leq M</code></span>
+<span class="course-math course-math-display" data-tex="\lvert f^{(n)}(x)\rvert \leq M" data-display="true"><code>\lvert f^{(n)}(x)\rvert \leq M</code></span>
 在 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 与所考察的 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 之间对所有阶数 <span class="course-math" data-tex="n\ge0" data-display="false"><code>n\ge0</code></span> 都成立（使用同一个 <span class="course-math" data-tex="M" data-display="false"><code>M</code></span>），则该级数收敛到 <span class="course-math" data-tex="f(x)" data-display="false"><code>f(x)</code></span>。
 
 若此时 <span class="course-math" data-tex="R_{n}\to 0" data-display="false"><code>R_{n}\to 0</code></span> 当 <span class="course-math" data-tex="n\to \infty" data-display="false"><code>n\to \infty</code></span> 对 <span class="course-math" data-tex="x \in I" data-display="false"><code>x \in I</code></span> 恒成立，则 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在 <span class="course-math" data-tex="x=a" data-display="false"><code>x=a</code></span> 处的泰勒展开收敛到 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span>，记作
 <span class="course-math course-math-display" data-tex="f(x)=\sum^{\infty}_{i=0} \frac{f^{(i)}(a)(x-a)^i}{i!}" data-display="true"><code>f(x)=\sum^{\infty}_{i=0} \frac{f^{(i)}(a)(x-a)^i}{i!}</code></span>
-麦克劳林级数（Maclaurin series）是在 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 处的泰勒公式。 
+麦克劳林级数（Maclaurin series）是在 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 处的泰勒公式。
 一些常见函数的麦克劳林展开：
 <span class="course-math course-math-display" data-tex="\sin x=x- \frac{x^3}{3!}+ \frac{x^5}{5!} - \frac{x^7}{7!}+\cdots (x\to 0)" data-display="true"><code>\sin x=x- \frac{x^3}{3!}+ \frac{x^5}{5!} - \frac{x^7}{7!}+\cdots (x\to 0)</code></span>
 <span class="course-math course-math-display" data-tex="\cos x=1-\frac{x^2}{2!}+\frac{x^4}{4!}- \frac{x^6}{6!} + \cdots(x\to 0)" data-display="true"><code>\cos x=1-\frac{x^2}{2!}+\frac{x^4}{4!}- \frac{x^6}{6!} + \cdots(x\to 0)</code></span>
@@ -153,14 +155,14 @@ Concave Up 和 Concave Down：<span class="course-math" data-tex="f&#x27;&#x27;(
 <span class="course-math course-math-display" data-tex="\tan x=x+\frac{1}{3}x^3+\frac{2}{15}x^5+\cdots(x\to 0)" data-display="true"><code>\tan x=x+\frac{1}{3}x^3+\frac{2}{15}x^5+\cdots(x\to 0)</code></span>
 这个需要死记硬背。
 <span class="course-math course-math-display" data-tex="\tan^{-1}x=x-\frac{x^3}{3}+\frac{x^5}{5}+\cdots(x\to 0)" data-display="true"><code>\tan^{-1}x=x-\frac{x^3}{3}+\frac{x^5}{5}+\cdots(x\to 0)</code></span>
-注意，<span class="course-math" data-tex="\sin x,\cos x,e^x" data-display="false"><code>\sin x,\cos x,e^x</code></span> 的上述级数对所有实数收敛；<span class="course-math" data-tex="\tan x" data-display="false"><code>\tan x</code></span> 的级数要求 <span class="course-math" data-tex="&#124;x&#124;&lt;\pi/2" data-display="false"><code>&#124;x&#124;&lt;\pi/2</code></span>，<span class="course-math" data-tex="\arctan x" data-display="false"><code>\arctan x</code></span> 的级数要求 <span class="course-math" data-tex="&#124;x&#124;\le1" data-display="false"><code>&#124;x&#124;\le1</code></span>。
+注意，<span class="course-math" data-tex="\sin x,\cos x,e^x" data-display="false"><code>\sin x,\cos x,e^x</code></span> 的上述级数对所有实数收敛；<span class="course-math" data-tex="\tan x" data-display="false"><code>\tan x</code></span> 的级数要求 <span class="course-math" data-tex="\lvert x\rvert &lt;\pi/2" data-display="false"><code>\lvert x\rvert &lt;\pi/2</code></span>，<span class="course-math" data-tex="\arctan x" data-display="false"><code>\arctan x</code></span> 的级数要求 <span class="course-math" data-tex="\lvert x\rvert \le1" data-display="false"><code>\lvert x\rvert \le1</code></span>。
 <span class="course-math course-math-display" data-tex="\frac{1}{1-x}=1+x+x^2+x^3+\cdots(x\to 0)" data-display="true"><code>\frac{1}{1-x}=1+x+x^2+x^3+\cdots(x\to 0)</code></span>
 <span class="course-math course-math-display" data-tex="\frac{1}{1+x}=1-x+x^2-x^3+\cdots(x \to 0)" data-display="true"><code>\frac{1}{1+x}=1-x+x^2-x^3+\cdots(x \to 0)</code></span>
 <span class="course-math course-math-display" data-tex="\ln(1+x)=x- \frac{x^2}{2}+ \frac{x^3}{3}-\frac{x^4}{4} + \cdots (x \to 0)" data-display="true"><code>\ln(1+x)=x- \frac{x^2}{2}+ \frac{x^3}{3}-\frac{x^4}{4} + \cdots (x \to 0)</code></span>
 这几个都可以互推。
-注意，前两个公式收敛需要 <span class="course-math" data-tex="&#124;x&#124;&lt;1" data-display="false"><code>&#124;x&#124;&lt;1</code></span>，最后一个公式收敛需要 <span class="course-math" data-tex="-1&lt;x\leq 1" data-display="false"><code>-1&lt;x\leq 1</code></span>。
+注意，前两个公式收敛需要 <span class="course-math" data-tex="\lvert x\rvert &lt;1" data-display="false"><code>\lvert x\rvert &lt;1</code></span>，最后一个公式收敛需要 <span class="course-math" data-tex="-1&lt;x\leq 1" data-display="false"><code>-1&lt;x\leq 1</code></span>。
 特别的，
 <span class="course-math course-math-display" data-tex="\ln(\cos x)=\ln\left( 1-\frac{x^2}{2}+o(x^2) \right)=-\frac{x^2}{2}+o(x^2)" data-display="true"><code>\ln(\cos x)=\ln\left( 1-\frac{x^2}{2}+o(x^2) \right)=-\frac{x^2}{2}+o(x^2)</code></span>
 用广义二项式定理求幂级数：
-<span class="course-math course-math-display" data-tex="\begin{align}&#10;(1+x)^{\alpha}&amp;=\sum_{k=0}^{\infty}\binom{\alpha}{k}x^k \\&#10;&amp;=\sum_{k=0}^{\infty} \frac{\alpha(\alpha-1)(\alpha-2)\cdots (\alpha-k+1)}{k!}x^k&#10;\end{align}" data-display="true"><code>\begin{align}&#10;(1+x)^{\alpha}&amp;=\sum_{k=0}^{\infty}\binom{\alpha}{k}x^k \\&#10;&amp;=\sum_{k=0}^{\infty} \frac{\alpha(\alpha-1)(\alpha-2)\cdots (\alpha-k+1)}{k!}x^k&#10;\end{align}</code></span>
+<span class="course-math course-math-display" data-tex="\begin{aligned}&#10;(1+x)^{\alpha}&amp;=\sum_{k=0}^{\infty}\binom{\alpha}{k}x^k \\&#10;&amp;=\sum_{k=0}^{\infty} \frac{\alpha(\alpha-1)(\alpha-2)\cdots (\alpha-k+1)}{k!}x^k&#10;\end{aligned}" data-display="true"><code>\begin{aligned}&#10;(1+x)^{\alpha}&amp;=\sum_{k=0}^{\infty}\binom{\alpha}{k}x^k \\&#10;&amp;=\sum_{k=0}^{\infty} \frac{\alpha(\alpha-1)(\alpha-2)\cdots (\alpha-k+1)}{k!}x^k&#10;\end{aligned}</code></span>
 {% endraw %}

@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-06-05T11:43:03+08:00"
-updated_at: "2026-10-08T20:57:27+08:00"
+updated_at: "2026-10-09T16:13:40+08:00"
 reference: false
 order: 16
 layout: "course"
@@ -27,7 +27,7 @@ excerpt: "大学物理（上）/（下） · Quantum Physics - 量子物理"
 这里 <span class="course-math" data-tex="\Phi" data-display="false"><code>\Phi</code></span> 是材料中电子和真空中电子的能量差。必须要 <span class="course-math" data-tex="hf\geq \Phi" data-display="false"><code>hf\geq \Phi</code></span> 才能激发电子。
 实验中，会发现光子的能量是量子化的，是一份一份的。
 截止电压：
-<span class="course-math course-math-display" data-tex="hf-\Phi=K_{max}=eV_{stop}" data-display="true"><code>hf-\Phi=K_{max}=eV_{stop}</code></span>
+<span class="course-math course-math-display" data-tex="hf-\Phi=K_{\mathrm{max}}=eV_{\mathrm{stop}}" data-display="true"><code>hf-\Phi=K_{\mathrm{max}}=eV_{\mathrm{stop}}</code></span>
  从这个公式可以做实验测出 <span class="course-math" data-tex="\Phi" data-display="false"><code>\Phi</code></span> 和 <span class="course-math" data-tex="h" data-display="false"><code>h</code></span>。（测两组 <span class="course-math" data-tex="V,\lambda" data-display="false"><code>V,\lambda</code></span>）
 
 

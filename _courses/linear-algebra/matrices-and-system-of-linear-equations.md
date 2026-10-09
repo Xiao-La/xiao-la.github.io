@@ -5,7 +5,7 @@ course_title: "线性代数"
 section: ""
 status: "completed"
 created_at: "2025-12-10T17:22:32+08:00"
-updated_at: "2026-10-08T21:08:23+08:00"
+updated_at: "2026-10-09T16:58:39+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -68,7 +68,7 @@ excerpt: "线性代数 · Matrices and System of Linear Equations -  矩阵与�
 {: #section-4 }
 
 
-用矩阵可以表示线性方程组：<span class="course-math" data-tex="\mathbf{A}\mathbf{x}=\mathbf{b}" data-display="false"><code>\mathbf{A}\mathbf{x}=\mathbf{b}</code></span>，其中 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span> 为线性方程组的系数矩阵（Coefficient Matrix）。 
+用矩阵可以表示线性方程组：<span class="course-math" data-tex="\mathbf{A}\mathbf{x}=\mathbf{b}" data-display="false"><code>\mathbf{A}\mathbf{x}=\mathbf{b}</code></span>，其中 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span> 为线性方程组的系数矩阵（Coefficient Matrix）。
 
 将线性方程组的系数矩阵右侧添加常数列，就构成了增广矩阵（Augmented Matrix），记作 <span class="course-math" data-tex="[\mathbf{A}&#124;\mathbf{b}]" data-display="false"><code>[\mathbf{A}&#124;\mathbf{b}]</code></span>。
 
@@ -85,9 +85,9 @@ excerpt: "线性代数 · Matrices and System of Linear Equations -  矩阵与�
 {: #section-6 }
 
 
-奇异（Singular）：没有解或无穷多组解。
+以下针对 <span class="course-math" data-tex="n\times n" data-display="false"><code>n\times n</code></span> 方阵系数的线性方程组。奇异（Singular）：没有解或无穷多组解。
 非奇异 （Nonsingular）：有且仅有一组解。
-从而可以定义矩阵的奇异性： <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span> 是非奇异矩阵当且仅当 <span class="course-math" data-tex="\forall \mathbf{b},\mathbf{A}\mathbf{x}=\mathbf{b}" data-display="false"><code>\forall \mathbf{b},\mathbf{A}\mathbf{x}=\mathbf{b}</code></span> 非奇异。
+方阵 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span> 非奇异当且仅当，对任意 <span class="course-math" data-tex="\mathbf{b}\in\mathbb{R}^n" data-display="false"><code>\mathbf{b}\in\mathbb{R}^n</code></span>，<span class="course-math" data-tex="\mathbf{A}\mathbf{x}=\mathbf{b}" data-display="false"><code>\mathbf{A}\mathbf{x}=\mathbf{b}</code></span> 有且仅有一组解。这与 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span> 可逆等价。
 
 ## 高斯消元与 LU 分解
 {: #section-7 }
@@ -99,7 +99,7 @@ excerpt: "线性代数 · Matrices and System of Linear Equations -  矩阵与�
 
 
 保持线性方程组的解不变（Equivalent System）的线性变换叫做初等变换（Elementary Operations）。
-交换两个方程（<span class="course-math" data-tex="E_{i} \leftrightarrow E_{j}" data-display="false"><code>E_{i} \leftrightarrow E_{j}</code></span>），将某个方程乘一个非零常数（<span class="course-math" data-tex="E_{i} \gets kE_{i}" data-display="false"><code>E_{i} \gets kE_{i}</code></span>），以及把一个方程的倍数加到另一个方程上（<span class="course-math" data-tex="E_{i}\gets E_{i}+ kE_{j}" data-display="false"><code>E_{i}\gets E_{i}+ kE_{j}</code></span>），都属于初等变换。
+交换两个方程（<span class="course-math" data-tex="\mathbf{E}_{i} \leftrightarrow \mathbf{E}_{j}" data-display="false"><code>\mathbf{E}_{i} \leftrightarrow \mathbf{E}_{j}</code></span>），将某个方程乘一个非零常数（<span class="course-math" data-tex="\mathbf{E}_{i} \gets k\mathbf{E}_{i}" data-display="false"><code>\mathbf{E}_{i} \gets k\mathbf{E}_{i}</code></span>），以及把一个方程的倍数加到另一个方程上（<span class="course-math" data-tex="\mathbf{E}_{i}\gets \mathbf{E}_{i}+ k\mathbf{E}_{j}" data-display="false"><code>\mathbf{E}_{i}\gets \mathbf{E}_{i}+ k\mathbf{E}_{j}</code></span>），都属于初等变换。
 对矩阵的行进行类似的变换，叫做初等行变换（Elementary Row Operations）。
 
 那么高斯消元（Gaussian Elimination）的步骤：
@@ -116,17 +116,17 @@ excerpt: "线性代数 · Matrices and System of Linear Equations -  矩阵与�
 假设矩阵 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span> 进行高斯消元之后得到上三角矩阵（Upper triangular matrix） <span class="course-math" data-tex="\mathbf{U}" data-display="false"><code>\mathbf{U}</code></span>，则它可以分解为：
 <span class="course-math course-math-display" data-tex="\mathbf{A}=\mathbf{L}\mathbf{U}" data-display="true"><code>\mathbf{A}=\mathbf{L}\mathbf{U}</code></span>
 其中 <span class="course-math" data-tex="\mathbf{L}" data-display="false"><code>\mathbf{L}</code></span> 是下三角矩阵（Lower triangle matrix），对角元素为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>。高斯消元的乘子（Multiplier）记录在对角线（Diagonal）的下方。
-- <span class="course-math" data-tex="l_{ij}" data-display="false"><code>l_{ij}</code></span> 表示高斯消元中的步骤：<span class="course-math" data-tex="E_{i} \leftarrow E_{i}-l_{ij}E_{j}" data-display="false"><code>E_{i} \leftarrow E_{i}-l_{ij}E_{j}</code></span>。
+- <span class="course-math" data-tex="l_{ij}" data-display="false"><code>l_{ij}</code></span> 表示高斯消元中的步骤：<span class="course-math" data-tex="\mathbf{E}_{i} \leftarrow \mathbf{E}_{i}-l_{ij}\mathbf{E}_{j}" data-display="false"><code>\mathbf{E}_{i} \leftarrow \mathbf{E}_{i}-l_{ij}\mathbf{E}_{j}</code></span>。
 <span class="course-math" data-tex="\mathbf{U}" data-display="false"><code>\mathbf{U}</code></span> 是上三角矩阵，对角元素为主元。
 
 >  若发现高斯消元中需要进行交换两行的操作，则引入 <span class="course-math" data-tex="\mathbf{A}&#x27;=\mathbf{P}\mathbf{A}" data-display="false"><code>\mathbf{A}&#x27;=\mathbf{P}\mathbf{A}</code></span>，然后再对 <span class="course-math" data-tex="\mathbf{A}&#x27;" data-display="false"><code>\mathbf{A}&#x27;</code></span> 进行高斯消元。一般的，有：
 >  <span class="course-math course-math-display" data-tex="\mathbf{P}\mathbf{A}=\mathbf{L}\mathbf{U}" data-display="true"><code>\mathbf{P}\mathbf{A}=\mathbf{L}\mathbf{U}</code></span>
 
 若已知 LU 分解，则可以把方程 <span class="course-math" data-tex="\mathbf{A}\mathbf{x}=\mathbf{b}" data-display="false"><code>\mathbf{A}\mathbf{x}=\mathbf{b}</code></span> 转换为：
-<span class="course-math course-math-display" data-tex="\begin{cases}&#10; \mathbf{U}\mathbf{x}=\mathbf{c} \\&#10;\mathbf{Lc}=\mathbf{b}&#10;\end{cases}" data-display="true"><code>\begin{cases}&#10; \mathbf{U}\mathbf{x}=\mathbf{c} \\&#10;\mathbf{Lc}=\mathbf{b}&#10;\end{cases}</code></span>
+<span class="course-math course-math-display" data-tex="\begin{cases}&#10; \mathbf{U}\mathbf{x}=\mathbf{c} \\&#10;\mathbf{L}\mathbf{c}=\mathbf{b}&#10;\end{cases}" data-display="true"><code>\begin{cases}&#10; \mathbf{U}\mathbf{x}=\mathbf{c} \\&#10;\mathbf{L}\mathbf{c}=\mathbf{b}&#10;\end{cases}</code></span>
 这两个方程分别为下三角和上三角方程组，可以用前代与回代求解。
 
->  LU 分解的唯一性：若 <span class="course-math" data-tex="\mathbf A" data-display="false"><code>\mathbf A</code></span> 可逆，且 <span class="course-math" data-tex="\mathbf{A}=\mathbf{L}_{1}\mathbf{U}_{1}=\mathbf{L}_{2}\mathbf{U}_{2}" data-display="false"><code>\mathbf{A}=\mathbf{L}_{1}\mathbf{U}_{1}=\mathbf{L}_{2}\mathbf{U}_{2}</code></span>，且 <span class="course-math" data-tex="\mathbf{L}_{1}, \mathbf{L}_{2}" data-display="false"><code>\mathbf{L}_{1}, \mathbf{L}_{2}</code></span> 的对角元素都是 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>，则 <span class="course-math" data-tex="\mathbf{L}_{1}=\mathbf{L}_{2}, \mathbf{U}_{1}=\mathbf{U}_{2}" data-display="false"><code>\mathbf{L}_{1}=\mathbf{L}_{2}, \mathbf{U}_{1}=\mathbf{U}_{2}</code></span>。
+>  LU 分解的唯一性：若 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span> 可逆，且 <span class="course-math" data-tex="\mathbf{A}=\mathbf{L}_{1}\mathbf{U}_{1}=\mathbf{L}_{2}\mathbf{U}_{2}" data-display="false"><code>\mathbf{A}=\mathbf{L}_{1}\mathbf{U}_{1}=\mathbf{L}_{2}\mathbf{U}_{2}</code></span>，且 <span class="course-math" data-tex="\mathbf{L}_{1}, \mathbf{L}_{2}" data-display="false"><code>\mathbf{L}_{1}, \mathbf{L}_{2}</code></span> 的对角元素都是 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>，则 <span class="course-math" data-tex="\mathbf{L}_{1}=\mathbf{L}_{2}, \mathbf{U}_{1}=\mathbf{U}_{2}" data-display="false"><code>\mathbf{L}_{1}=\mathbf{L}_{2}, \mathbf{U}_{1}=\mathbf{U}_{2}</code></span>。
 
 >  LDU 分解：使用对角矩阵 <span class="course-math" data-tex="\mathbf{D}" data-display="false"><code>\mathbf{D}</code></span> （对角元素为主元）使得 <span class="course-math" data-tex="\mathbf{L}, \mathbf{U}" data-display="false"><code>\mathbf{L}, \mathbf{U}</code></span> 的对角元素都是 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>。
 

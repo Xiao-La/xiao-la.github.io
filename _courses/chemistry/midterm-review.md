@@ -5,7 +5,7 @@ course_title: "大学化学"
 section: ""
 status: "completed"
 created_at: "2025-11-04T10:04:38+08:00"
-updated_at: "2026-10-08T21:33:39+08:00"
+updated_at: "2026-10-09T16:13:40+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -51,7 +51,7 @@ excerpt: "大学化学 · 大化 Midterm Review"
 - Proton
 - Electron
 - Neutron
-  
+
 **Isotope and Atomic Weight**
 
 **Formula**
@@ -162,7 +162,7 @@ excerpt: "大学化学 · 大化 Midterm Review"
 
 **Heisenberg's uncertainty principle** <span class="course-math" data-tex="(\Delta x)(\Delta p)\geq \frac{h}{4\pi}" data-display="false"><code>(\Delta x)(\Delta p)\geq \frac{h}{4\pi}</code></span>
 
-**<span class="course-math" data-tex="&#124;\psi&#124;^2=\psi^*\psi" data-display="false"><code>&#124;\psi&#124;^2=\psi^*\psi</code></span> gives electron probability density**
+**<span class="course-math" data-tex="\lvert \psi\rvert ^2=\psi^*\psi" data-display="false"><code>\lvert \psi\rvert ^2=\psi^*\psi</code></span> gives electron probability density**
 
 **Quantum Numbers**
 - Principal quantum number - shells/orbitals - <span class="course-math" data-tex="n" data-display="false"><code>n</code></span>
@@ -171,7 +171,7 @@ excerpt: "大学化学 · 大化 Midterm Review"
 - Spin quantum number - <span class="course-math" data-tex="m_{s}(\frac{1}{2} / -\frac{1}{2})" data-display="false"><code>m_{s}(\frac{1}{2} / -\frac{1}{2})</code></span>
 
 **Electron Configuration / Orbital Diagram**
-- Pauli Exclusion Principle 
+- Pauli Exclusion Principle
 - Hund's Rule
 - Aufbau principle
 - Condensed Electron Configuration
@@ -182,7 +182,7 @@ Exception <span class="course-math" data-tex="\ce{[Ar] 3d^5 4s^1, [Ar] 3d^10 4s^
 {: #section-6 }
 
 
-**Effective Nuclear Charge** <span class="course-math" data-tex="Z_{\text{eff}}=Z-S" data-display="false"><code>Z_{\text{eff}}=Z-S</code></span>
+**Effective Nuclear Charge** <span class="course-math" data-tex="Z_{\mathrm{eff}}=Z-S" data-display="false"><code>Z_{\mathrm{eff}}=Z-S</code></span>
 - Calculation is not required , as Chapter 8 & 9 are harder
 
 **Size of atom**
@@ -229,7 +229,7 @@ Exception <span class="course-math" data-tex="\ce{[Ar] 3d^5 4s^1, [Ar] 3d^10 4s^
 
 **Bond Polarity**
 - Dipoles <span class="course-math" data-tex="\mu=Qr" data-display="false"><code>\mu=Qr</code></span>
-  - Units: <span class="course-math" data-tex="\text{Debyes (D)}" data-display="false"><code>\text{Debyes (D)}</code></span> (carefully convert to <span class="course-math" data-tex="\text{C} \cdot \text{m}" data-display="false"><code>\text{C} \cdot \text{m}</code></span>)
+  - Units: <span class="course-math" data-tex="\text{Debyes (D)}" data-display="false"><code>\text{Debyes (D)}</code></span> (carefully convert to <span class="course-math" data-tex="\mathrm{C} \cdot \mathrm{m}" data-display="false"><code>\mathrm{C} \cdot \mathrm{m}</code></span>)
 
 **Lewis Structure**
 - Assign the electrons with the Octet Rule (especially for period 2); H and He follow the duet rule
@@ -244,7 +244,7 @@ Exception <span class="course-math" data-tex="\ce{[Ar] 3d^5 4s^1, [Ar] 3d^10 4s^
 - Delocalized electrons
 
 **Bond Enthalpy**
-- <span class="course-math" data-tex="\Delta H_{\text{rxn}}\approx\sum D(\text{bonds broken})-\sum D(\text{bonds formed})" data-display="false"><code>\Delta H_{\text{rxn}}\approx\sum D(\text{bonds broken})-\sum D(\text{bonds formed})</code></span>（<span class="course-math" data-tex="D" data-display="false"><code>D</code></span> 为正的平均键能；若使用带符号的断键/成键焓变，则将两项相加）
+- <span class="course-math" data-tex="\Delta H_{\mathrm{rxn}}\approx\sum D(\text{bonds broken})-\sum D(\text{bonds formed})" data-display="false"><code>\Delta H_{\mathrm{rxn}}\approx\sum D(\text{bonds broken})-\sum D(\text{bonds formed})</code></span>（<span class="course-math" data-tex="D" data-display="false"><code>D</code></span> 为正的平均键能；若使用带符号的断键/成键焓变，则将两项相加）
 
 
 ## Chapter 9
@@ -289,7 +289,7 @@ Exception <span class="course-math" data-tex="\ce{[Ar] 3d^5 4s^1, [Ar] 3d^10 4s^
 - Bonding orbitals and Antibonding orbitals
 - Bond Order = 1/2 (Bonding electrons - Antibonding electrons)
 - HOMO : highest occupied molecular orbital
-- LUMO : lowest unoccupied molecular orbital 
+- LUMO : lowest unoccupied molecular orbital
 - Paramagnetism: have unpaired electrons
 - Diamagnetism: no unpaired electrons
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Chemistry-Midterm-Review-1.png' | relative_url }}{% raw %}" alt="Chemistry-Midterm-Review-1" width="976" height="501" loading="lazy" decoding="async">

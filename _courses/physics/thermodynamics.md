@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-12-11T10:26:58+08:00"
-updated_at: "2026-10-08T20:57:10+08:00"
+updated_at: "2026-10-09T16:13:40+08:00"
 reference: false
 order: 8
 layout: "course"
@@ -61,8 +61,8 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 2. 处于热平衡的物体拥有相同的温度（Temperature）。
 
 经验温标：如摄氏度/华氏度等，由生活中的某事物的冷热程度标定。
-绝对温标：开氏温标（Kelvin Scale），与摄氏温标的换算为 <span class="course-math" data-tex="0 \degree \text{C}=273.15 \text{K}" data-display="false"><code>0 \degree \text{C}=273.15 \text{K}</code></span>。
-开氏温标下，水的三相点的温度：<span class="course-math" data-tex="273.16 \text{K}" data-display="false"><code>273.16 \text{K}</code></span>。
+绝对温标：开氏温标（Kelvin Scale），与摄氏温标的换算为 <span class="course-math" data-tex="0 \degree \mathrm{C}=273.15 \mathrm{K}" data-display="false"><code>0 \degree \mathrm{C}=273.15 \mathrm{K}</code></span>。
+开氏温标下，水的三相点的温度：<span class="course-math" data-tex="273.16 \mathrm{K}" data-display="false"><code>273.16 \mathrm{K}</code></span>。
 
 用压强测温度：依赖于 <span class="course-math" data-tex="T=Cp" data-display="false"><code>T=Cp</code></span>（理想气体），则 <span class="course-math" data-tex="T=T_{3} \frac{p}{p_{3}}" data-display="false"><code>T=T_{3} \frac{p}{p_{3}}</code></span>，其中 <span class="course-math" data-tex="T_{3}, p_{3}" data-display="false"><code>T_{3}, p_{3}</code></span> 为水的三相点的温度与压强。
 
@@ -104,29 +104,29 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 
 
 热传导速率（Thermal Conduction Rate）：
-<span class="course-math course-math-display" data-tex="P_{\text{cond}}=\frac{Q}{t}=kA \frac{T_{H}-T_{C}}{L} = \frac{\Delta T}{R}" data-display="true"><code>P_{\text{cond}}=\frac{Q}{t}=kA \frac{T_{H}-T_{C}}{L} = \frac{\Delta T}{R}</code></span>
+<span class="course-math course-math-display" data-tex="P_{\mathrm{cond}}=\frac{Q}{t}=kA \frac{T_{H}-T_{C}}{L} = \frac{\Delta T}{R}" data-display="true"><code>P_{\mathrm{cond}}=\frac{Q}{t}=kA \frac{T_{H}-T_{C}}{L} = \frac{\Delta T}{R}</code></span>
 其中 <span class="course-math" data-tex="R=L / kA" data-display="false"><code>R=L / kA</code></span> 为热阻（Thermal Resistance），<span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 为导热系数（Thermal Conductivity）。
 热阻和电阻的串并联计算是一样的。
 
-**稳态**：两个热源之间的热流（<span class="course-math" data-tex="P_{\text{cond}}" data-display="false"><code>P_{\text{cond}}</code></span>）不变且处处一致。注意热源是温度保持不变的热库。
+**稳态**：两个热源之间的热流（<span class="course-math" data-tex="P_{\mathrm{cond}}" data-display="false"><code>P_{\mathrm{cond}}</code></span>）不变且处处一致。注意热源是温度保持不变的热库。
 
 
-#### 对流 
+#### 对流
 {: #section-8 }
 
 
 流体热胀冷缩导致其流动，从而传递热量。
 
-#### 辐射 
+#### 辐射
 {: #section-9 }
 
 
 物体向外辐射的热功率：
-<span class="course-math course-math-display" data-tex="P_{\text{rad}}=\sigma \varepsilon A T^4" data-display="true"><code>P_{\text{rad}}=\sigma \varepsilon A T^4</code></span>
+<span class="course-math course-math-display" data-tex="P_{\mathrm{rad}}=\sigma \varepsilon A T^4" data-display="true"><code>P_{\mathrm{rad}}=\sigma \varepsilon A T^4</code></span>
 物体吸收环境的热功率（基尔霍夫定律）：
-<span class="course-math course-math-display" data-tex="P_{\text{abs}}=\sigma \varepsilon A T^4_{\text{env}}" data-display="true"><code>P_{\text{abs}}=\sigma \varepsilon A T^4_{\text{env}}</code></span>
+<span class="course-math course-math-display" data-tex="P_{\mathrm{abs}}=\sigma \varepsilon A T^4_{\mathrm{env}}" data-display="true"><code>P_{\mathrm{abs}}=\sigma \varepsilon A T^4_{\mathrm{env}}</code></span>
 净吸收功率：
-<span class="course-math course-math-display" data-tex="P_{\text{net}}=P_{\text{abs}}-P_{\text{rad}}=\sigma \varepsilon A (T_{\text{env}}^4-T^4)" data-display="true"><code>P_{\text{net}}=P_{\text{abs}}-P_{\text{rad}}=\sigma \varepsilon A (T_{\text{env}}^4-T^4)</code></span>
+<span class="course-math course-math-display" data-tex="P_{\mathrm{net}}=P_{\mathrm{abs}}-P_{\mathrm{rad}}=\sigma \varepsilon A (T_{\mathrm{env}}^4-T^4)" data-display="true"><code>P_{\mathrm{net}}=P_{\mathrm{abs}}-P_{\mathrm{rad}}=\sigma \varepsilon A (T_{\mathrm{env}}^4-T^4)</code></span>
 其中 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为物体表面积，<span class="course-math" data-tex="T" data-display="false"><code>T</code></span> 为物体温度，<span class="course-math" data-tex="\sigma" data-display="false"><code>\sigma</code></span> 为斯忒藩-玻尔兹曼常数（Stefan-Boltzmann Constant），<span class="course-math" data-tex="\varepsilon" data-display="false"><code>\varepsilon</code></span> 为与物体材料有关的介于 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 和 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 之间的量。
 对黑体（Blackbody）来说，<span class="course-math" data-tex="\varepsilon=1" data-display="false"><code>\varepsilon=1</code></span>，即物体吸收和发射辐射能力都最强。
 
@@ -163,14 +163,14 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 
 绝热过程（Adiabatic Process）：<span class="course-math" data-tex="Q=0" data-display="false"><code>Q=0</code></span>。
 恒容过程（Isochoric / Constant-volume Process）：<span class="course-math" data-tex="W=0" data-display="false"><code>W=0</code></span>。
-循环过程(Cyclical / Loop Process)：<span class="course-math" data-tex="\Delta E_{\text{int}}=0" data-display="false"><code>\Delta E_{\text{int}}=0</code></span>。
+循环过程(Cyclical / Loop Process)：<span class="course-math" data-tex="\Delta E_{\mathrm{int}}=0" data-display="false"><code>\Delta E_{\mathrm{int}}=0</code></span>。
 
 #### 热力学过程中的功
 {: #section-14 }
 
 
 将系统对外界做的功（Work done by the system）定义为正：
-<span class="course-math course-math-display" data-tex="W_{\text{by}}=\int_{V_{i}}^{V_{f}} pdV" data-display="true"><code>W_{\text{by}}=\int_{V_{i}}^{V_{f}} pdV</code></span>
+<span class="course-math course-math-display" data-tex="W_{\mathrm{by}}=\int_{V_{i}}^{V_{f}} p\,\mathrm{d}V" data-display="true"><code>W_{\mathrm{by}}=\int_{V_{i}}^{V_{f}} p\,\mathrm{d}V</code></span>
 
 #### 热力学过程中的热
 {: #section-15 }
@@ -178,8 +178,8 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 
 将系统从外界吸收的热定义为正：
 
-<span class="course-math course-math-display" data-tex="Q=C_{\text{process}} \Delta T" data-display="true"><code>Q=C_{\text{process}} \Delta T</code></span>
-其中 <span class="course-math" data-tex="C_{\text{process}}" data-display="false"><code>C_{\text{process}}</code></span> 和过程强相关。
+<span class="course-math course-math-display" data-tex="Q=C_{\mathrm{process}} \Delta T" data-display="true"><code>Q=C_{\mathrm{process}} \Delta T</code></span>
+其中 <span class="course-math" data-tex="C_{\mathrm{process}}" data-display="false"><code>C_{\mathrm{process}}</code></span> 和过程强相关。
 
 
 #### 内能
@@ -188,7 +188,7 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 
 热力学第一定律指出，能量是守恒的，那么热力学过程中剩下的能量会跑到系统内部，这被称为系统的内能（Internal Energy）：
 
-<span class="course-math course-math-display" data-tex="\Delta E_{\text{int}}=Q-W_{\text{by}}" data-display="true"><code>\Delta E_{\text{int}}=Q-W_{\text{by}}</code></span>
+<span class="course-math course-math-display" data-tex="\Delta E_{\mathrm{int}}=Q-W_{\mathrm{by}}" data-display="true"><code>\Delta E_{\mathrm{int}}=Q-W_{\mathrm{by}}</code></span>
 也就是说，不存在第一类永动机。
 自由膨胀（Free Expansion）中，<span class="course-math" data-tex="Q=W=0" data-display="false"><code>Q=W=0</code></span>。
 
@@ -200,10 +200,10 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 利用循环过程做功，这需要过程的 <span class="course-math" data-tex="\text{p-V}" data-display="false"><code>\text{p-V}</code></span> 图线是顺时针方向的闭合曲线。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Thermodynamics-1.png' | relative_url }}{% raw %}" alt="Thermodynamics-1" width="262" height="312" loading="lazy" decoding="async">
 
-热机效率 <span class="course-math" data-tex="\varepsilon= \frac{&#124;W&#124;}{&#124;Q_{H}&#124;}=1-\frac{&#124;Q_{L}&#124;}{&#124;Q_{H}&#124;}" data-display="false"><code>\varepsilon= \frac{&#124;W&#124;}{&#124;Q_{H}&#124;}=1-\frac{&#124;Q_{L}&#124;}{&#124;Q_{H}&#124;}</code></span>。
+热机效率 <span class="course-math" data-tex="\varepsilon= \frac{\lvert W\rvert }{\lvert Q_{H}\rvert }=1-\frac{\lvert Q_{L}\rvert }{\lvert Q_{H}\rvert }" data-display="false"><code>\varepsilon= \frac{\lvert W\rvert }{\lvert Q_{H}\rvert }=1-\frac{\lvert Q_{L}\rvert }{\lvert Q_{H}\rvert }</code></span>。
 对于理想卡诺热机：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Thermodynamics-2.png' | relative_url }}{% raw %}" alt="Thermodynamics-2" width="446" height="394" loading="lazy" decoding="async">
-对整个过程，<span class="course-math" data-tex="&#124;Q&#124;=&#124;W&#124;=Q_{\text{in}}-Q_{\text{out}}" data-display="false"><code>&#124;Q&#124;=&#124;W&#124;=Q_{\text{in}}-Q_{\text{out}}</code></span>。而且通过绝热过程的方程可推 <span class="course-math" data-tex="\frac{V_{2}}{V_{1}}=\frac{V_{3}}{V_{4}}" data-display="false"><code>\frac{V_{2}}{V_{1}}=\frac{V_{3}}{V_{4}}</code></span>。
+对整个过程，<span class="course-math" data-tex="\lvert Q\rvert =\lvert W\rvert =Q_{\mathrm{in}}-Q_{\mathrm{out}}" data-display="false"><code>\lvert Q\rvert =\lvert W\rvert =Q_{\mathrm{in}}-Q_{\mathrm{out}}</code></span>。而且通过绝热过程的方程可推 <span class="course-math" data-tex="\frac{V_{2}}{V_{1}}=\frac{V_{3}}{V_{4}}" data-display="false"><code>\frac{V_{2}}{V_{1}}=\frac{V_{3}}{V_{4}}</code></span>。
 有 <span class="course-math" data-tex="W=nRT_{H}\ln\frac{V_{2}}{V_{1}}-nRT_{L}\ln\frac{V_{3}}{V_{4}}=nR(T_{H}-T_{L})\ln\frac{V_{2}}{V_{1}}" data-display="false"><code>W=nRT_{H}\ln\frac{V_{2}}{V_{1}}-nRT_{L}\ln\frac{V_{3}}{V_{4}}=nR(T_{H}-T_{L})\ln\frac{V_{2}}{V_{1}}</code></span>，<span class="course-math" data-tex="Q_{H}=nRT_{H}\ln\frac{V_{2}}{V_{1}}" data-display="false"><code>Q_{H}=nRT_{H}\ln\frac{V_{2}}{V_{1}}</code></span>（<span class="course-math" data-tex="T_L=T_C" data-display="false"><code>T_L=T_C</code></span>，表示冷源温度）。
 那么 <span class="course-math" data-tex="0\leq \varepsilon = 1- \frac{T_{C}}{T_{H}}&lt;1" data-display="false"><code>0\leq \varepsilon = 1- \frac{T_{C}}{T_{H}}&lt;1</code></span> 。
 
@@ -213,7 +213,7 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 {: #section-18 }
 
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Thermodynamics-3.png' | relative_url }}{% raw %}" alt="Thermodynamics-3" width="270" height="320" loading="lazy" decoding="async">
-<span class="course-math" data-tex="K= \frac{&#124;Q_{L}&#124;}{&#124;W&#124;}=\frac{&#124;Q_{L}&#124;}{&#124;Q_{H}&#124;-&#124;Q_{L}&#124;}= \frac{T_{L}}{T_{H}-T_{L}}" data-display="false"><code>K= \frac{&#124;Q_{L}&#124;}{&#124;W&#124;}=\frac{&#124;Q_{L}&#124;}{&#124;Q_{H}&#124;-&#124;Q_{L}&#124;}= \frac{T_{L}}{T_{H}-T_{L}}</code></span>。
+<span class="course-math" data-tex="K= \frac{\lvert Q_{L}\rvert }{\lvert W\rvert }=\frac{\lvert Q_{L}\rvert }{\lvert Q_{H}\rvert -\lvert Q_{L}\rvert }= \frac{T_{L}}{T_{H}-T_{L}}" data-display="false"><code>K= \frac{\lvert Q_{L}\rvert }{\lvert W\rvert }=\frac{\lvert Q_{L}\rvert }{\lvert Q_{H}\rvert -\lvert Q_{L}\rvert }= \frac{T_{L}}{T_{H}-T_{L}}</code></span>。
 
 
 
@@ -234,16 +234,16 @@ excerpt: "大学物理（上）/（下） · Thermodynamics - 热力学"
 
 定义熵变（Entropy Change）：
 
-<span class="course-math course-math-display" data-tex="dS=\frac{dQ_{\text{rev}}}{T}" data-display="true"><code>dS=\frac{dQ_{\text{rev}}}{T}</code></span>
+<span class="course-math course-math-display" data-tex="dS=\frac{\mathrm{d}Q_{\mathrm{rev}}}{T}" data-display="true"><code>dS=\frac{\mathrm{d}Q_{\mathrm{rev}}}{T}</code></span>
 那么理想气体可逆过程的熵变：
-<span class="course-math course-math-display" data-tex="\Delta S= \int \frac{dE+dW}{T}= \int \frac{nC_{v}}{T}dT + \int \frac{nR}{V}dV=nC_{v} \ln \frac{T_{2}}{T_{1}} + nR \ln \frac{V_{2}}{V_{1}}" data-display="true"><code>\Delta S= \int \frac{dE+dW}{T}= \int \frac{nC_{v}}{T}dT + \int \frac{nR}{V}dV=nC_{v} \ln \frac{T_{2}}{T_{1}} + nR \ln \frac{V_{2}}{V_{1}}</code></span>
+<span class="course-math course-math-display" data-tex="\Delta S= \int \frac{\mathrm{d}E+\mathrm{d}W}{T}= \int \frac{nC_{v}}{T}dT + \int \frac{nR}{V}\,\mathrm{d}V=nC_{v} \ln \frac{T_{2}}{T_{1}} + nR \ln \frac{V_{2}}{V_{1}}" data-display="true"><code>\Delta S= \int \frac{\mathrm{d}E+\mathrm{d}W}{T}= \int \frac{nC_{v}}{T}dT + \int \frac{nR}{V}\,\mathrm{d}V=nC_{v} \ln \frac{T_{2}}{T_{1}} + nR \ln \frac{V_{2}}{V_{1}}</code></span>
 一些特例：
 1. 等压过程（Isobaric Process）：<span class="course-math" data-tex="\Delta S=nC_{p} \ln \frac{T_{2}}{T_{1}}" data-display="false"><code>\Delta S=nC_{p} \ln \frac{T_{2}}{T_{1}}</code></span>。
 2. 等温过程（Isothermal Process）：<span class="course-math" data-tex="\Delta S= nR\ln \frac{V_{2}}{V_{1}}" data-display="false"><code>\Delta S= nR\ln \frac{V_{2}}{V_{1}}</code></span> 。
 3. 可逆绝热过程（Reversible Adiabatic Process）：<span class="course-math" data-tex="\Delta S=0" data-display="false"><code>\Delta S=0</code></span>。
 4. 等容过程（Isochoric Process）：<span class="course-math" data-tex="\Delta S = nC_{v} \ln \frac{T_{2}}{T_{1}}=nC_{v} \ln \frac{p_{2}}{p_{1}}" data-display="false"><code>\Delta S = nC_{v} \ln \frac{T_{2}}{T_{1}}=nC_{v} \ln \frac{p_{2}}{p_{1}}</code></span>。
 5. 相变（Phase Change）：<span class="course-math" data-tex="\Delta S=\frac{\Delta Q}{T}=\frac{Lm}{T}" data-display="false"><code>\Delta S=\frac{\Delta Q}{T}=\frac{Lm}{T}</code></span>。
-6. 同相变温（Same Phase, Change in Temperature）：<span class="course-math" data-tex="\Delta S= \int \frac{dQ}{T}=\int \frac{cm}{T}dT=cm\ln \frac{T_{2}}{T_{1}}" data-display="false"><code>\Delta S= \int \frac{dQ}{T}=\int \frac{cm}{T}dT=cm\ln \frac{T_{2}}{T_{1}}</code></span>
+6. 同相变温（Same Phase, Change in Temperature）：<span class="course-math" data-tex="\Delta S= \int \frac{\mathrm{d}Q}{T}=\int \frac{cm}{T}dT=cm\ln \frac{T_{2}}{T_{1}}" data-display="false"><code>\Delta S= \int \frac{\mathrm{d}Q}{T}=\int \frac{cm}{T}dT=cm\ln \frac{T_{2}}{T_{1}}</code></span>
 **熵增定律（热力学第二定律）：** 绝热过程中 <span class="course-math" data-tex="S_{f}-S_{i}\geq 0" data-display="false"><code>S_{f}-S_{i}\geq 0</code></span>，当且仅当过程可逆时取等。
 推论：孤立系统的熵永远不减，达到平衡态时熵达到最大值。
 

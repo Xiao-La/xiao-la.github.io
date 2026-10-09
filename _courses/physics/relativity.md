@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-05-29T17:22:15+08:00"
-updated_at: "2026-10-08T20:57:27+08:00"
+updated_at: "2026-10-09T16:58:39+08:00"
 reference: false
 order: 15
 layout: "course"
@@ -120,7 +120,7 @@ excerpt: "大学物理（上）/（下） · Relativity - 相对论"
 2.  **做题技巧（“谁拿着钟”法则）：**
     *   在飞船上的人，觉得心跳、吃一顿饭是在飞船的**同一个位置**发生的，此时只用**一只钟**就能测出时间。他测出来的就是**原时 <span class="course-math" data-tex="\Delta t_0" data-display="false"><code>\Delta t_0</code></span>**。
     *   地面上的人看飞船，飞船上的人开始吃饭和吃完饭是在太空两个**不同位置**发生的（飞船飞走了），需要用地面上的**两只钟**同步才能测量。他测出来的是**膨胀时间 <span class="course-math" data-tex="\Delta t" data-display="false"><code>\Delta t</code></span>**。
-3.  **结论：** 测量在同一个参考系下同一事件的时间间隔，**原时 <span class="course-math" data-tex="\Delta t_0" data-display="false"><code>\Delta t_0</code></span> 永远是所有观察者测量出的可能值中最小的一个**。（所有其他相对运动的参考系测出的 <span class="course-math" data-tex="\Delta t" data-display="false"><code>\Delta t</code></span> 都会大于 <span class="course-math" data-tex="\Delta t_0" data-display="false"><code>\Delta t_0</code></span>）。
+3.  **结论：** 对同一对类时分离事件，使两事件同地发生的惯性系测得原时 <span class="course-math" data-tex="\Delta t_0" data-display="false"><code>\Delta t_0</code></span>。**它是所有惯性系测得的坐标时间间隔中的最小值**；与该系相对运动的惯性系测得 <span class="course-math" data-tex="\Delta t=\gamma\Delta t_0\geq\Delta t_0" data-display="false"><code>\Delta t=\gamma\Delta t_0\geq\Delta t_0</code></span>，相对速度非零时严格大于。
 
 
 

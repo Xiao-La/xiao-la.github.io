@@ -5,7 +5,7 @@ course_title: "数字逻辑"
 section: ""
 status: "updating"
 created_at: "2026-09-08T13:58:29+08:00"
-updated_at: "2026-10-08T21:14:49+08:00"
+updated_at: "2026-10-09T16:13:40+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -79,7 +79,7 @@ LSD（Least-significant Digit）：权重最低的位。
 
 十六进制表示（Hexadecimal representation）：两个十六进制位表示一个字节。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-6.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-6" width="219" height="110" loading="lazy" decoding="async">
-二进制容量单位 <span class="course-math" data-tex="1\,\mathrm{KiB}=1024\,\mathrm B" data-display="false"><code>1\,\mathrm{KiB}=1024\,\mathrm B</code></span>；十进制 <span class="course-math" data-tex="1\,\mathrm{kB}=1000\,\mathrm B" data-display="false"><code>1\,\mathrm{kB}=1000\,\mathrm B</code></span>（下图的 KB 使用旧的二进制习惯记法）：
+二进制容量单位 <span class="course-math" data-tex="1\,\mathrm{KiB}=1024\,\mathrm{B}" data-display="false"><code>1\,\mathrm{KiB}=1024\,\mathrm{B}</code></span>；十进制 <span class="course-math" data-tex="1\,\mathrm{kB}=1000\,\mathrm{B}" data-display="false"><code>1\,\mathrm{kB}=1000\,\mathrm{B}</code></span>（下图的 KB 使用旧的二进制习惯记法）：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-7.png' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-7" width="282" height="284" loading="lazy" decoding="async">
 
 

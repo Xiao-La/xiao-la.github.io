@@ -5,7 +5,7 @@ course_title: "数理逻辑导论"
 section: ""
 status: "completed"
 created_at: "2026-03-11T10:39:43+08:00"
-updated_at: "2026-10-08T21:08:23+08:00"
+updated_at: "2026-10-09T16:13:40+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -129,8 +129,8 @@ WFF 的性质：
 - 记号：若 <span class="course-math" data-tex="p\in \mathrm{Atom}(\mathscr{L}^P)" data-display="false"><code>p\in \mathrm{Atom}(\mathscr{L}^P)</code></span>，则用 <span class="course-math" data-tex="v(p)" data-display="false"><code>v(p)</code></span> 或 <span class="course-math" data-tex="p^v" data-display="false"><code>p^v</code></span> 表示 <span class="course-math" data-tex="p" data-display="false"><code>p</code></span> 在赋值 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 下的真值，且 <span class="course-math" data-tex="p^v\in\{0,1\}" data-display="false"><code>p^v\in\{0,1\}</code></span>。
 
 若 <span class="course-math" data-tex="A \in \mathscr{L}^p" data-display="false"><code>A \in \mathscr{L}^p</code></span>：
-• 若 <span class="course-math" data-tex="\forall v" data-display="false"><code>\forall v</code></span>，有 <span class="course-math" data-tex="A^v=1" data-display="false"><code>A^v=1</code></span> 则称 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为永真式（tautology/重言式） 
-• 若 <span class="course-math" data-tex="\forall v" data-display="false"><code>\forall v</code></span>，有 <span class="course-math" data-tex="A^v=0" data-display="false"><code>A^v=0</code></span> 则称 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为永假式（contradiction/矛盾式) 
+• 若 <span class="course-math" data-tex="\forall v" data-display="false"><code>\forall v</code></span>，有 <span class="course-math" data-tex="A^v=1" data-display="false"><code>A^v=1</code></span> 则称 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为永真式（tautology/重言式）
+• 若 <span class="course-math" data-tex="\forall v" data-display="false"><code>\forall v</code></span>，有 <span class="course-math" data-tex="A^v=0" data-display="false"><code>A^v=0</code></span> 则称 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为永假式（contradiction/矛盾式)
 • 若 <span class="course-math" data-tex="\exists v" data-display="false"><code>\exists v</code></span>，使得 <span class="course-math" data-tex="A^v=1" data-display="false"><code>A^v=1</code></span> 则称 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为可满足的（satisfiable）
 
 要证明某个式子是永真式/永假式/可满足的，可以用：
@@ -217,7 +217,7 @@ WFF 的性质：
     - 是  <span class="course-math" data-tex="\mathscr{H}" data-display="false"><code>\mathscr{H}</code></span> 中的一个公理，或一个 <span class="course-math" data-tex="\Sigma" data-display="false"><code>\Sigma</code></span> 中的一个公式。
     - 是 <span class="course-math" data-tex="A_{j}(j&lt;i)" data-display="false"><code>A_{j}(j&lt;i)</code></span>。
     - 是通过 MP 从 <span class="course-math" data-tex="A_{j}, A_{k}(j, k&lt;i)" data-display="false"><code>A_{j}, A_{k}(j, k&lt;i)</code></span> 推导出来的。
-- 当 <span class="course-math" data-tex="\Sigma=\varnothing" data-display="false"><code>\Sigma=\varnothing</code></span> 时，称 <span class="course-math" data-tex="A_n" data-display="false"><code>A_n</code></span> 是 <span class="course-math" data-tex="\mathscr H" data-display="false"><code>\mathscr H</code></span> 中的定理（Theorem）；否则它是由前提 <span class="course-math" data-tex="\Sigma" data-display="false"><code>\Sigma</code></span> 导出的结论。
+- 当 <span class="course-math" data-tex="\Sigma=\varnothing" data-display="false"><code>\Sigma=\varnothing</code></span> 时，称 <span class="course-math" data-tex="A_n" data-display="false"><code>A_n</code></span> 是 <span class="course-math" data-tex="\mathscr{H}" data-display="false"><code>\mathscr{H}</code></span> 中的定理（Theorem）；否则它是由前提 <span class="course-math" data-tex="\Sigma" data-display="false"><code>\Sigma</code></span> 导出的结论。
 - <span class="course-math" data-tex="A_{n}" data-display="false"><code>A_{n}</code></span> 可被证明记作 <span class="course-math" data-tex="\Sigma\vdash A_{n}" data-display="false"><code>\Sigma\vdash A_{n}</code></span>。
 - 若 <span class="course-math" data-tex="\Sigma=\varnothing" data-display="false"><code>\Sigma=\varnothing</code></span>，则简记为 <span class="course-math" data-tex="\vdash A_{n}" data-display="false"><code>\vdash A_{n}</code></span>。
 
@@ -240,7 +240,7 @@ WFF 的性质：
 - Contrapositive Rule:
 <span class="course-math course-math-display" data-tex="\text{if } \Sigma\vdash \neg B\to \neg A, \text{then } \Sigma\vdash  A\to B" data-display="true"><code>\text{if } \Sigma\vdash \neg B\to \neg A, \text{then } \Sigma\vdash  A\to B</code></span>
 
-(Theorem H3) 
+(Theorem H3)
 <span class="course-math course-math-display" data-tex="\vdash \neg \neg A\to A" data-display="true"><code>\vdash \neg \neg A\to A</code></span>
 - Transitivity Rule (Proven by H2):
 <span class="course-math course-math-display" data-tex="\frac{\Sigma\vdash A\to B \text{ and } \Sigma\vdash B\to C}{\Sigma\vdash  A\to C}" data-display="true"><code>\frac{\Sigma\vdash A\to B \text{ and } \Sigma\vdash B\to C}{\Sigma\vdash  A\to C}</code></span>
@@ -278,16 +278,16 @@ WFF 的性质：
 - <span class="course-math" data-tex="\to\text{e}" data-display="false"><code>\to\text{e}</code></span>：
 <span class="course-math course-math-display" data-tex="\frac{(\alpha\to\beta) \,\, \alpha}{ \beta}" data-display="true"><code>\frac{(\alpha\to\beta) \,\, \alpha}{ \beta}</code></span>
 - <span class="course-math" data-tex="\to\text{i}" data-display="false"><code>\to\text{i}</code></span>：
-<span class="course-math course-math-display" data-tex="\frac{\boxed{\begin{aligned}&#10;\alpha \\&#10;\dots \\&#10;\beta &#10;\end{aligned}}}{\alpha\to\beta}" data-display="true"><code>\frac{\boxed{\begin{aligned}&#10;\alpha \\&#10;\dots \\&#10;\beta &#10;\end{aligned}}}{\alpha\to\beta}</code></span>
+<span class="course-math course-math-display" data-tex="\frac{\boxed{\begin{aligned}&#10;\alpha \\&#10;\dots \\&#10;\beta&#10;\end{aligned}}}{\alpha\to\beta}" data-display="true"><code>\frac{\boxed{\begin{aligned}&#10;\alpha \\&#10;\dots \\&#10;\beta&#10;\end{aligned}}}{\alpha\to\beta}</code></span>
 或： 若 <span class="course-math" data-tex="\Sigma,\alpha\vdash_{ND} \beta" data-display="false"><code>\Sigma,\alpha\vdash_{ND} \beta</code></span>，则 <span class="course-math" data-tex="\Sigma\vdash_{ND}(\alpha\to\beta)" data-display="false"><code>\Sigma\vdash_{ND}(\alpha\to\beta)</code></span>。这里被框起来的就是一个子证明（Subproof）。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-9.png' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-9" width="428" height="253" loading="lazy" decoding="async">
 子证明里面可以用外部的行，外部不可以用子证明里面的行。
 - <span class="course-math" data-tex="\lor\text{i}" data-display="false"><code>\lor\text{i}</code></span> ：
 <span class="course-math course-math-display" data-tex="\frac{\alpha}{(\alpha \lor\beta)}, \frac{\alpha}{(\beta \lor\alpha)}" data-display="true"><code>\frac{\alpha}{(\alpha \lor\beta)}, \frac{\alpha}{(\beta \lor\alpha)}</code></span>
 - <span class="course-math" data-tex="\lor\text{e}" data-display="false"><code>\lor\text{e}</code></span>（Proof by cases）：
-<span class="course-math course-math-display" data-tex="\frac{(\alpha_{1}\lor\alpha_{2})\,\,\boxed{\begin{align}&#10;\alpha_{1} \\&#10;\dots \\&#10;\beta&#10;\end{align}}\,\,\boxed{\begin{align}&#10;\alpha_{2} \\&#10;\dots \\&#10;\beta&#10;\end{align}}}{\beta}" data-display="true"><code>\frac{(\alpha_{1}\lor\alpha_{2})\,\,\boxed{\begin{align}&#10;\alpha_{1} \\&#10;\dots \\&#10;\beta&#10;\end{align}}\,\,\boxed{\begin{align}&#10;\alpha_{2} \\&#10;\dots \\&#10;\beta&#10;\end{align}}}{\beta}</code></span>
+<span class="course-math course-math-display" data-tex="\frac{(\alpha_{1}\lor\alpha_{2})\,\,\boxed{\begin{aligned}&#10;\alpha_{1} \\&#10;\dots \\&#10;\beta&#10;\end{aligned}}\,\,\boxed{\begin{aligned}&#10;\alpha_{2} \\&#10;\dots \\&#10;\beta&#10;\end{aligned}}}{\beta}" data-display="true"><code>\frac{(\alpha_{1}\lor\alpha_{2})\,\,\boxed{\begin{aligned}&#10;\alpha_{1} \\&#10;\dots \\&#10;\beta&#10;\end{aligned}}\,\,\boxed{\begin{aligned}&#10;\alpha_{2} \\&#10;\dots \\&#10;\beta&#10;\end{aligned}}}{\beta}</code></span>
 - <span class="course-math" data-tex="\neg\text{i}" data-display="false"><code>\neg\text{i}</code></span>（用 <span class="course-math" data-tex="\perp" data-display="false"><code>\perp</code></span> 表示矛盾）：
-<span class="course-math course-math-display" data-tex="\frac{\boxed {\begin{align}&#10;\alpha \\&#10;\dots \\&#10;\perp&#10;\end{align}}}{\neg\alpha}" data-display="true"><code>\frac{\boxed {\begin{align}&#10;\alpha \\&#10;\dots \\&#10;\perp&#10;\end{align}}}{\neg\alpha}</code></span>
+<span class="course-math course-math-display" data-tex="\frac{\boxed {\begin{aligned}&#10;\alpha \\&#10;\dots \\&#10;\perp&#10;\end{aligned}}}{\neg\alpha}" data-display="true"><code>\frac{\boxed {\begin{aligned}&#10;\alpha \\&#10;\dots \\&#10;\perp&#10;\end{aligned}}}{\neg\alpha}</code></span>
 - <span class="course-math" data-tex="\neg\text{e}" data-display="false"><code>\neg\text{e}</code></span> 或 <span class="course-math" data-tex="\perp\text{i}" data-display="false"><code>\perp\text{i}</code></span>：
 <span class="course-math course-math-display" data-tex="\frac{\alpha\,\,\neg\alpha}{\perp}" data-display="true"><code>\frac{\alpha\,\,\neg\alpha}{\perp}</code></span>
 - <span class="course-math" data-tex="\neg \neg\text{e}" data-display="false"><code>\neg \neg\text{e}</code></span>：
@@ -297,12 +297,12 @@ WFF 的性质：
 
 导出规则（Derived Rules）若有 <span class="course-math" data-tex="\Sigma\vdash_{ND}\alpha" data-display="false"><code>\Sigma\vdash_{ND}\alpha</code></span>，则可视为有一个导出规则
 <span class="course-math course-math-display" data-tex="\frac{\Sigma}{\alpha}" data-display="true"><code>\frac{\Sigma}{\alpha}</code></span>
-- 否定后件（Modus tollens, MT）： 
+- 否定后件（Modus tollens, MT）：
 <span class="course-math course-math-display" data-tex="\{ (p\to q,\neg q) \}\vdash _{ND}(\neg p)" data-display="true"><code>\{ (p\to q,\neg q) \}\vdash _{ND}(\neg p)</code></span>
 - <span class="course-math" data-tex="\neg \neg i" data-display="false"><code>\neg \neg i</code></span>：
 <span class="course-math course-math-display" data-tex="\frac{\alpha }{(\neg(\neg\alpha))}" data-display="true"><code>\frac{\alpha }{(\neg(\neg\alpha))}</code></span>
 - 反证法（Proof by contradiction, reductio ad absurdum）
-<span class="course-math course-math-display" data-tex="\frac{\boxed{\begin{align}&#10;(\neg\alpha) \\&#10;\dots \\&#10;\perp&#10;\end{align}}}{\alpha}" data-display="true"><code>\frac{\boxed{\begin{align}&#10;(\neg\alpha) \\&#10;\dots \\&#10;\perp&#10;\end{align}}}{\alpha}</code></span>
+<span class="course-math course-math-display" data-tex="\frac{\boxed{\begin{aligned}&#10;(\neg\alpha) \\&#10;\dots \\&#10;\perp&#10;\end{aligned}}}{\alpha}" data-display="true"><code>\frac{\boxed{\begin{aligned}&#10;(\neg\alpha) \\&#10;\dots \\&#10;\perp&#10;\end{aligned}}}{\alpha}</code></span>
 - 排中律（Law of Excluded Middle, Tertiam non datur）
 <span class="course-math course-math-display" data-tex="\frac{}{(\alpha \lor(\neg \alpha))}" data-display="true"><code>\frac{}{(\alpha \lor(\neg \alpha))}</code></span>
 
@@ -327,16 +327,20 @@ WFF 的性质：
 有了可靠性，证明蕴含就可以用：真值表，定义，反证法，以及 **用 ND 证明**。
 
 对有限前提集证明 ND 的完备性，设 <span class="course-math" data-tex="\Sigma=\{ a_{0},a_{1},\dots,a_{n} \}" data-display="false"><code>\Sigma=\{ a_{0},a_{1},\dots,a_{n} \}</code></span> ，可以分别证明三个引理：
-- Lemma 1: 若 <span class="course-math" data-tex="\Sigma\vDash\beta" data-display="false"><code>\Sigma\vDash\beta</code></span>，则 <span class="course-math" data-tex="\emptyset \vDash(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta))))" data-display="false"><code>\emptyset \vDash(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta))))</code></span>。
-- Lemma 2: 对任意 wff <span class="course-math" data-tex="\gamma" data-display="false"><code>\gamma</code></span>，若 <span class="course-math" data-tex="\emptyset\vDash \gamma" data-display="false"><code>\emptyset\vDash \gamma</code></span>, 则 <span class="course-math" data-tex="\emptyset\vdash_{ND}\gamma" data-display="false"><code>\emptyset\vdash_{ND}\gamma</code></span>。（永真式可以被证明）
-- Lemma 3: 若 <span class="course-math" data-tex="\emptyset\vdash_{ND}(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta)\dots)))" data-display="false"><code>\emptyset\vdash_{ND}(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta)\dots)))</code></span>，则 <span class="course-math" data-tex="\{ a_{0},a_{1},\dots,a_{n} \}\vdash_{ND}\beta" data-display="false"><code>\{ a_{0},a_{1},\dots,a_{n} \}\vdash_{ND}\beta</code></span>。也就是说 <span class="course-math" data-tex="\Sigma\vdash_{ND}\beta" data-display="false"><code>\Sigma\vdash_{ND}\beta</code></span>。
+- Lemma 1: 若 <span class="course-math" data-tex="\Sigma\vDash\beta" data-display="false"><code>\Sigma\vDash\beta</code></span>，则 <span class="course-math" data-tex="\varnothing \vDash(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta))))" data-display="false"><code>\varnothing \vDash(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta))))</code></span>。
+- Lemma 2: 对任意 wff <span class="course-math" data-tex="\gamma" data-display="false"><code>\gamma</code></span>，若 <span class="course-math" data-tex="\varnothing\vDash \gamma" data-display="false"><code>\varnothing\vDash \gamma</code></span>, 则 <span class="course-math" data-tex="\varnothing\vdash_{ND}\gamma" data-display="false"><code>\varnothing\vdash_{ND}\gamma</code></span>。（永真式可以被证明）
+- Lemma 3: 若 <span class="course-math" data-tex="\varnothing\vdash_{ND}(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta)\dots)))" data-display="false"><code>\varnothing\vdash_{ND}(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta)\dots)))</code></span>，则 <span class="course-math" data-tex="\{ a_{0},a_{1},\dots,a_{n} \}\vdash_{ND}\beta" data-display="false"><code>\{ a_{0},a_{1},\dots,a_{n} \}\vdash_{ND}\beta</code></span>。也就是说 <span class="course-math" data-tex="\Sigma\vdash_{ND}\beta" data-display="false"><code>\Sigma\vdash_{ND}\beta</code></span>。
 Lemma 1 容易用反证法证明。Lemma 3 可以重复用 <span class="course-math" data-tex="\to\text{e}" data-display="false"><code>\to\text{e}</code></span> 消去最后得到 <span class="course-math" data-tex="\beta" data-display="false"><code>\beta</code></span> 证明。
 Lemma 2：
 - 例如有两个 Atom <span class="course-math" data-tex="p,q" data-display="false"><code>p,q</code></span>，就只需要证明 <span class="course-math" data-tex="p,q\vdash\gamma,\ p, \neg q\vdash\gamma,\ \neg p, q \vdash \gamma,\ \neg p, \neg q\vdash \gamma" data-display="false"><code>p,q\vdash\gamma,\ p, \neg q\vdash\gamma,\ \neg p, q \vdash \gamma,\ \neg p, \neg q\vdash \gamma</code></span> 四种情况。因为，我们可以用排中律构造一个这样的证明：<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-10.png' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-10" width="545" height="266" loading="lazy" decoding="async">
 - 对于 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个 Atom <span class="course-math" data-tex="p_{1},p_{2},\dots,p_{n}" data-display="false"><code>p_{1},p_{2},\dots,p_{n}</code></span> 的一般情况，有子引理（Sublemma）：对任意由这些 Atom 组成的 wff <span class="course-math" data-tex="\gamma" data-display="false"><code>\gamma</code></span>，对任意赋值 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span>，有：
   - 若 <span class="course-math" data-tex="\gamma^v=1" data-display="false"><code>\gamma^v=1</code></span>，则 <span class="course-math" data-tex="\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash\gamma" data-display="false"><code>\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash\gamma</code></span>。
   - 若 <span class="course-math" data-tex="\gamma^v=0" data-display="false"><code>\gamma^v=0</code></span>，则 <span class="course-math" data-tex="\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash\neg \gamma" data-display="false"><code>\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash\neg \gamma</code></span>。
-- 这里 <span class="course-math" data-tex="\hat{p_{i}}=\begin{cases}p_{i} &amp; p_{i}^v=1 \\ \neg p_{i} &amp; p_{i}^v=0\end{cases}" data-display="false"><code>\hat{p_{i}}=\begin{cases}p_{i} &amp; p_{i}^v=1 \\ \neg p_{i} &amp; p_{i}^v=0\end{cases}</code></span>。
+- 这里
+
+  <span class="course-math course-math-display" data-tex="\hat{p_{i}}=\begin{cases}p_{i} &amp; p_{i}^v=1 \\ \neg p_{i} &amp; p_{i}^v=0\end{cases}" data-display="true"><code>\hat{p_{i}}=\begin{cases}p_{i} &amp; p_{i}^v=1 \\ \neg p_{i} &amp; p_{i}^v=0\end{cases}</code></span>
+
+  。
 - 如果证明了这个 Sublemma，那么其第一种情况（<span class="course-math" data-tex="\gamma^v=1" data-display="false"><code>\gamma^v=1</code></span>） 恰好对应了前面的构造，所以就能证明 Lemma 2。
 Sublemma 的证明：
 -  对 <span class="course-math" data-tex="\gamma" data-display="false"><code>\gamma</code></span> 的构造进行归纳证明。
@@ -344,16 +348,16 @@ Sublemma 的证明：
   - 若 <span class="course-math" data-tex="\gamma^v=p_{1}^v=1" data-display="false"><code>\gamma^v=p_{1}^v=1</code></span>，则 <span class="course-math" data-tex="\hat{p_{1}}=p_{1}\vdash p_{1}=\gamma" data-display="false"><code>\hat{p_{1}}=p_{1}\vdash p_{1}=\gamma</code></span>。
   - 若 <span class="course-math" data-tex="\gamma^v=p_{1}^v=0" data-display="false"><code>\gamma^v=p_{1}^v=0</code></span>，则 <span class="course-math" data-tex="\hat{p_{1}}=\neg p_{1}\vdash\neg p_{1}=\neg \gamma" data-display="false"><code>\hat{p_{1}}=\neg p_{1}\vdash\neg p_{1}=\neg \gamma</code></span>。
 - Inductive Hypothesis: 用 <span class="course-math" data-tex="P(\gamma)" data-display="false"><code>P(\gamma)</code></span> 表示 <span class="course-math" data-tex="\gamma" data-display="false"><code>\gamma</code></span> 符合 Sublemma，假设 <span class="course-math" data-tex="P(\gamma_{1}), P(\gamma_{2})" data-display="false"><code>P(\gamma_{1}), P(\gamma_{2})</code></span> 成立。
-- Inductive Step: 
+- Inductive Step:
   - Case 1: <span class="course-math" data-tex="\gamma=\neg \gamma_{1}" data-display="false"><code>\gamma=\neg \gamma_{1}</code></span>。
     - 若 <span class="course-math" data-tex="\gamma^v=(\neg \gamma_{1})^v=1" data-display="false"><code>\gamma^v=(\neg \gamma_{1})^v=1</code></span>，则 <span class="course-math" data-tex="\gamma_{1}^v=0" data-display="false"><code>\gamma_{1}^v=0</code></span>。则有 <span class="course-math" data-tex="\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \} \vdash \neg \gamma_{1}=\gamma" data-display="false"><code>\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \} \vdash \neg \gamma_{1}=\gamma</code></span>。
     - 若 <span class="course-math" data-tex="\gamma^v=(\neg \gamma_{1})^v=0" data-display="false"><code>\gamma^v=(\neg \gamma_{1})^v=0</code></span>，则 <span class="course-math" data-tex="\gamma_{1}^v=1" data-display="false"><code>\gamma_{1}^v=1</code></span>。则有 <span class="course-math" data-tex="\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \} \vdash \gamma_{1}" data-display="false"><code>\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \} \vdash \gamma_{1}</code></span>。用 <span class="course-math" data-tex="\neg \neg\text{i}" data-display="false"><code>\neg \neg\text{i}</code></span> 规则，有 <span class="course-math" data-tex="\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash (\neg(\neg \gamma_{1}))=\neg \gamma" data-display="false"><code>\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash (\neg(\neg \gamma_{1}))=\neg \gamma</code></span>。
   - Case 2:  <span class="course-math" data-tex="\gamma=\gamma_{1}\to \gamma_{2}" data-display="false"><code>\gamma=\gamma_{1}\to \gamma_{2}</code></span>。
-    - 若 <span class="course-math" data-tex="\gamma^v=0" data-display="false"><code>\gamma^v=0</code></span>，则 <span class="course-math" data-tex="\gamma_{1}^v=1, \gamma_{2}^v=0" data-display="false"><code>\gamma_{1}^v=1, \gamma_{2}^v=0</code></span>。假设 <span class="course-math" data-tex="\gamma_{1}" data-display="false"><code>\gamma_{1}</code></span> 包含 <span class="course-math" data-tex="\{ q_{1},\dots,q_{k} \}" data-display="false"><code>\{ q_{1},\dots,q_{k} \}</code></span> 这些 Atom，<span class="course-math" data-tex="\gamma_{2}" data-display="false"><code>\gamma_{2}</code></span> 包含 <span class="course-math" data-tex="\{ r_{1},r_{2},\dots,r_{w} \}" data-display="false"><code>\{ r_{1},r_{2},\dots,r_{w} \}</code></span> 这些 Atom，则 I.H. 给出 <span class="course-math" data-tex="\{ \hat{q_{1}},\dots,\hat{q_{k}} \}\vdash \gamma_{1}, \{ \hat{r_{1}}, \dots, \hat{r_{w}} \}\vdash \neg \gamma_{2}" data-display="false"><code>\{ \hat{q_{1}},\dots,\hat{q_{k}} \}\vdash \gamma_{1}, \{ \hat{r_{1}}, \dots, \hat{r_{w}} \}\vdash \neg \gamma_{2}</code></span>。由于这里的前提都是 <span class="course-math" data-tex="\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash\gamma" data-display="false"><code>\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash\gamma</code></span> 的子集，所以可以得到 <span class="course-math" data-tex="\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash\gamma_{1}, \{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash\neg\gamma_{2}" data-display="false"><code>\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash\gamma_{1}, \{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash\neg\gamma_{2}</code></span>。只要构造一个从这两个命题出发对 <span class="course-math" data-tex="\neg(\gamma_{1}\to \gamma_{2})" data-display="false"><code>\neg(\gamma_{1}\to \gamma_{2})</code></span> 的证明即可。这用 PBC 是容易的。
+    - 若 <span class="course-math" data-tex="\gamma^v=0" data-display="false"><code>\gamma^v=0</code></span>，则 <span class="course-math" data-tex="\gamma_{1}^v=1, \gamma_{2}^v=0" data-display="false"><code>\gamma_{1}^v=1, \gamma_{2}^v=0</code></span>。假设 <span class="course-math" data-tex="\gamma_{1}" data-display="false"><code>\gamma_{1}</code></span> 包含 <span class="course-math" data-tex="\{ q_{1},\dots,q_{k} \}" data-display="false"><code>\{ q_{1},\dots,q_{k} \}</code></span> 这些 Atom，<span class="course-math" data-tex="\gamma_{2}" data-display="false"><code>\gamma_{2}</code></span> 包含 <span class="course-math" data-tex="\{ r_{1},r_{2},\dots,r_{w} \}" data-display="false"><code>\{ r_{1},r_{2},\dots,r_{w} \}</code></span> 这些 Atom，则 I.H. 给出 <span class="course-math" data-tex="\{ \hat{q_{1}},\dots,\hat{q_{k}} \}\vdash \gamma_{1}, \{ \hat{\mathbf{r}_{1}}, \dots, \hat{\mathbf{r}_{w}} \}\vdash \neg \gamma_{2}" data-display="false"><code>\{ \hat{q_{1}},\dots,\hat{q_{k}} \}\vdash \gamma_{1}, \{ \hat{\mathbf{r}_{1}}, \dots, \hat{\mathbf{r}_{w}} \}\vdash \neg \gamma_{2}</code></span>。由于这里的前提都是 <span class="course-math" data-tex="\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash\gamma" data-display="false"><code>\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash\gamma</code></span> 的子集，所以可以得到 <span class="course-math" data-tex="\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash\gamma_{1}, \{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash\neg\gamma_{2}" data-display="false"><code>\{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash\gamma_{1}, \{ \hat{p_{1}}, \hat{p_{2}}, \dots, \hat{p_{n}} \}\vdash\neg\gamma_{2}</code></span>。只要构造一个从这两个命题出发对 <span class="course-math" data-tex="\neg(\gamma_{1}\to \gamma_{2})" data-display="false"><code>\neg(\gamma_{1}\to \gamma_{2})</code></span> 的证明即可。这用 PBC 是容易的。
     - 若 <span class="course-math" data-tex="\gamma^v=1" data-display="false"><code>\gamma^v=1</code></span>，类似的去讨论即可。
    - 其他二元连接符的 Cases 也类似。
 
- 
+
 
 #### Resolution
 {: #section-9 }
@@ -399,15 +403,15 @@ Resolution（归结/消解）也称为 Refutation System，用于（计算机辅
 特例：
 <span class="course-math course-math-display" data-tex="\dfrac{(\alpha \lor p)\ \ \ (\neg p)}\alpha{}" data-display="true"><code>\dfrac{(\alpha \lor p)\ \ \ (\neg p)}\alpha{}</code></span>
 <span class="course-math course-math-display" data-tex="\dfrac{p\ \ \ (\neg p)}{\perp}" data-display="true"><code>\dfrac{p\ \ \ (\neg p)}{\perp}</code></span>
-在 Resolution Proof 中，要证明 <span class="course-math" data-tex="\Sigma\vdash_{\text{Res}}\varphi" data-display="false"><code>\Sigma\vdash_{\text{Res}}\varphi</code></span>：
-- 转换为证明 <span class="course-math" data-tex="\Sigma\cup \{ \neg \varphi \}\vdash_{\text{Res}}\perp" data-display="false"><code>\Sigma\cup \{ \neg \varphi \}\vdash_{\text{Res}}\perp</code></span>。
+在 Resolution Proof 中，要证明 <span class="course-math" data-tex="\Sigma\vdash_{\mathrm{Res}}\varphi" data-display="false"><code>\Sigma\vdash_{\mathrm{Res}}\varphi</code></span>：
+- 转换为证明 <span class="course-math" data-tex="\Sigma\cup \{ \neg \varphi \}\vdash_{\mathrm{Res}}\perp" data-display="false"><code>\Sigma\cup \{ \neg \varphi \}\vdash_{\mathrm{Res}}\perp</code></span>。
 - 首先把 <span class="course-math" data-tex="\neg \varphi" data-display="false"><code>\neg \varphi</code></span> 和 <span class="course-math" data-tex="\Sigma" data-display="false"><code>\Sigma</code></span> 转换为 CNF。
 - 将 CNF 从 <span class="course-math" data-tex="\land" data-display="false"><code>\land</code></span> 分开，变成一堆析取子式（Disjunctive Clauses）。
 - 再把析取子式从 <span class="course-math" data-tex="\lor" data-display="false"><code>\lor</code></span> 分开，把每个析取子式变成单式的集合。
 - 在这些集合上不断使用 Resolution Inference，直到不再可以使用，或获得 <span class="course-math" data-tex="\perp" data-display="false"><code>\perp</code></span> 证明命题。
 这里 <span class="course-math" data-tex="\perp" data-display="false"><code>\perp</code></span> 为空子句/空集。
 
-例如，要证明 <span class="course-math" data-tex="\{ p,q \}\vdash_{\text{Res}}(p\land q)" data-display="false"><code>\{ p,q \}\vdash_{\text{Res}}(p\land q)</code></span>：
+例如，要证明 <span class="course-math" data-tex="\{ p,q \}\vdash_{\mathrm{Res}}(p\land q)" data-display="false"><code>\{ p,q \}\vdash_{\mathrm{Res}}(p\land q)</code></span>：
 - 前提转换为 <span class="course-math" data-tex="\{ p,q,\neg(p\land q) \}" data-display="false"><code>\{ p,q,\neg(p\land q) \}</code></span>。
 - 转换为 CNF <span class="course-math" data-tex="\{ p,q,\neg p\lor \neg q \}" data-display="false"><code>\{ p,q,\neg p\lor \neg q \}</code></span>。
 - 变成集合记号 <span class="course-math" data-tex="\{ p \}, \{ q \}, \{ \neg p,\neg q \}" data-display="false"><code>\{ p \}, \{ q \}, \{ \neg p,\neg q \}</code></span>。

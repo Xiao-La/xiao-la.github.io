@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-11-26T11:11:49+08:00"
-updated_at: "2026-10-08T21:23:24+08:00"
+updated_at: "2026-10-09T16:13:40+08:00"
 reference: false
 order: 6
 layout: "course"
@@ -45,7 +45,7 @@ excerpt: "大学物理（上）/（下） · Transverse Wave - 横波"
 其中 <span class="course-math" data-tex="\tau" data-display="false"><code>\tau</code></span> 是弦上的张力（Tension），<span class="course-math" data-tex="\mu=\frac{M}{L}" data-display="false"><code>\mu=\frac{M}{L}</code></span> 是弦的线密度（Linear Density）
 证明： <a href="{% endraw %}{{ '/courses/references/wave-1/' | relative_url }}{% raw %}">Wave-1</a>
 波能量传递的平均功率：
-<span class="course-math course-math-display" data-tex="P_{\text{avg}} = \frac{1}{2}\mu v\omega^2y_{m}^2" data-display="true"><code>P_{\text{avg}} = \frac{1}{2}\mu v\omega^2y_{m}^2</code></span>
+<span class="course-math course-math-display" data-tex="P_{\mathrm{avg}} = \frac{1}{2}\mu v\omega^2y_{m}^2" data-display="true"><code>P_{\mathrm{avg}} = \frac{1}{2}\mu v\omega^2y_{m}^2</code></span>
 证明：<a href="{% endraw %}{{ '/courses/references/wave-2/' | relative_url }}{% raw %}">Wave-2</a>
 
 
@@ -62,7 +62,7 @@ excerpt: "大学物理（上）/（下） · Transverse Wave - 横波"
 
 
 若两列波振幅，波长和频率相同，只差一个相位 <span class="course-math" data-tex="\phi" data-display="false"><code>\phi</code></span>，那么它们的叠加：
-<span class="course-math course-math-display" data-tex="\begin{align}&#10;y(x,t)&amp;=y_{m}\sin(kx-\omega t)+y_{m}\sin(kx-\omega t+\phi) \\&#10;&amp;=2y_{m}\cos\left( \frac{\phi}{2} \right)\sin\left( kx-\omega t+\frac{\phi}{2} \right)&#10;\end{align}" data-display="true"><code>\begin{align}&#10;y(x,t)&amp;=y_{m}\sin(kx-\omega t)+y_{m}\sin(kx-\omega t+\phi) \\&#10;&amp;=2y_{m}\cos\left( \frac{\phi}{2} \right)\sin\left( kx-\omega t+\frac{\phi}{2} \right)&#10;\end{align}</code></span>
+<span class="course-math course-math-display" data-tex="\begin{aligned}&#10;y(x,t)&amp;=y_{m}\sin(kx-\omega t)+y_{m}\sin(kx-\omega t+\phi) \\&#10;&amp;=2y_{m}\cos\left( \frac{\phi}{2} \right)\sin\left( kx-\omega t+\frac{\phi}{2} \right)&#10;\end{aligned}" data-display="true"><code>\begin{aligned}&#10;y(x,t)&amp;=y_{m}\sin(kx-\omega t)+y_{m}\sin(kx-\omega t+\phi) \\&#10;&amp;=2y_{m}\cos\left( \frac{\phi}{2} \right)\sin\left( kx-\omega t+\frac{\phi}{2} \right)&#10;\end{aligned}</code></span>
 1. 若 <span class="course-math" data-tex="\cos\left( \frac{\phi}{2} \right)=0" data-display="false"><code>\cos\left( \frac{\phi}{2} \right)=0</code></span>，则两列波反相（Out of phase），称为相消干涉（Destructive Interference）。
 2. 若 <span class="course-math" data-tex="\cos\left( \frac{\phi}{2} \right)=\pm 1" data-display="false"><code>\cos\left( \frac{\phi}{2} \right)=\pm 1</code></span>，则两列波同相（In phase），称为相长干涉（Constructive Interference）。
 
@@ -71,7 +71,7 @@ excerpt: "大学物理（上）/（下） · Transverse Wave - 横波"
 
 
 若两列波振幅，波长和频率相同，但传播方向相反，那么它们的叠加：
-<span class="course-math course-math-display" data-tex="\begin{align}&#10;y(x,t)&amp;=y_{m} \sin (kx-\omega t) + y_{m} \sin(kx+\omega t) \\&#10;&amp;=2y_{m} \sin kx&#10; \cos\omega t\end{align}" data-display="true"><code>\begin{align}&#10;y(x,t)&amp;=y_{m} \sin (kx-\omega t) + y_{m} \sin(kx+\omega t) \\&#10;&amp;=2y_{m} \sin kx&#10; \cos\omega t\end{align}</code></span>
+<span class="course-math course-math-display" data-tex="\begin{aligned}&#10;y(x,t)&amp;=y_{m} \sin (kx-\omega t) + y_{m} \sin(kx+\omega t) \\&#10;&amp;=2y_{m} \sin kx&#10; \cos\omega t\end{aligned}" data-display="true"><code>\begin{aligned}&#10;y(x,t)&amp;=y_{m} \sin (kx-\omega t) + y_{m} \sin(kx+\omega t) \\&#10;&amp;=2y_{m} \sin kx&#10; \cos\omega t\end{aligned}</code></span>
 是一个**驻波（Standing Wave）**。
 1. 若 <span class="course-math" data-tex="\sin kx=0" data-display="false"><code>\sin kx=0</code></span>，即 <span class="course-math" data-tex="x=n \frac{\lambda}{2}" data-display="false"><code>x=n \frac{\lambda}{2}</code></span>，这些点永远不动，叫做节点（Nodes）。
 2. 若 <span class="course-math" data-tex="\sin kx=\pm 1" data-display="false"><code>\sin kx=\pm 1</code></span>，即 <span class="course-math" data-tex="x=\left( n+\frac{1}{2} \right) \frac{\lambda}{2}" data-display="false"><code>x=\left( n+\frac{1}{2} \right) \frac{\lambda}{2}</code></span>，这些点振幅最大，叫做波腹（Antinodes）。

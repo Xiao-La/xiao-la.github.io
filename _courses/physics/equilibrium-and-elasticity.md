@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-11-01T15:58:57+08:00"
-updated_at: "2026-10-08T20:57:10+08:00"
+updated_at: "2026-10-09T16:13:40+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -18,13 +18,13 @@ excerpt: "大学物理（上）/（下） · Equilibrium and Elasticity - 平衡
 
 {% raw %}
 
-## 平衡 
+## 平衡
 {: #section-1 }
 
 
 **平衡（equilibrium）** 状态需要运动状态不变，故而它的条件：
-1. 线动量为常数：<span class="course-math" data-tex="F_{net}=\frac{dp}{dt}=0" data-display="false"><code>F_{net}=\frac{dp}{dt}=0</code></span>。
-2. 角动量为常数：<span class="course-math" data-tex="\tau_{net}=\frac{d\mathscr{l}}{dt}=0" data-display="false"><code>\tau_{net}=\frac{d\mathscr{l}}{dt}=0</code></span>（需对任意参考点都成立）。
+1. 线动量为常数：<span class="course-math" data-tex="F_{\mathrm{net}}=\frac{\mathrm{d}p}{\mathrm{d}t}=0" data-display="false"><code>F_{\mathrm{net}}=\frac{\mathrm{d}p}{\mathrm{d}t}=0</code></span>。
+2. 角动量为常数：<span class="course-math" data-tex="\tau_{\mathrm{net}}=\frac{\mathrm{d}\mathscr{l}}{\mathrm{d}t}=0" data-display="false"><code>\tau_{\mathrm{net}}=\frac{\mathrm{d}\mathscr{l}}{\mathrm{d}t}=0</code></span>（需对任意参考点都成立）。
 进一步的，静态平衡（Static Equilibrium）需要 <span class="course-math" data-tex="p=0, \mathscr{l}=0" data-display="false"><code>p=0, \mathscr{l}=0</code></span>。
 
 *对于合力矩为 0，理论上根据参考点的不同，可列无数个方程；但最多有多少个方程相互独立，取决于系统的自由度。*
@@ -41,7 +41,7 @@ excerpt: "大学物理（上）/（下） · Equilibrium and Elasticity - 平衡
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Elasticity-1.png' | relative_url }}{% raw %}" alt="Elasticity-1" width="655" height="255" loading="lazy" decoding="async">
 上图展示了三种**应力（stress）**：拉伸应力（tensile stress）/ 剪切应力（shearing stress）/ 静水压力（液应力，hydraulic stress）
 
- <span class="course-math course-math-display" data-tex="\text{应力（stress） = 模量（modulus）}\times \text{应变（strain）}" data-display="true"><code>\text{应力（stress） = 模量（modulus）}\times \text{应变（strain）}</code></span>
+ <span class="course-math course-math-display" data-tex="\text{应力(stress) = 模量(modulus)}\times \text{应变(strain)}" data-display="true"><code>\text{应力(stress) = 模量(modulus)}\times \text{应变(strain)}</code></span>
 
 特别的，对应拉伸力，上面的式子变成：
 <span class="course-math course-math-display" data-tex="\frac{F}{A}=E\frac{\Delta L}{L}" data-display="true"><code>\frac{F}{A}=E\frac{\Delta L}{L}</code></span>

@@ -5,7 +5,7 @@ course_title: "数理逻辑导论"
 section: ""
 status: "completed"
 created_at: "2026-04-29T11:06:10+08:00"
-updated_at: "2026-10-08T21:27:00+08:00"
+updated_at: "2026-10-09T16:13:40+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -83,11 +83,11 @@ Atomic Formula/Atom（原子公式）为施加在项上的 **Predicate**。严�
 {: #section-6 }
 
 
-Formula（公式）的定义为， <span class="course-math" data-tex="\alpha \in Form(\mathscr L)" data-display="false"><code>\alpha \in Form(\mathscr L)</code></span> 当且仅当它能由以下规则（有限次使用）生成：
-- <span class="course-math" data-tex="Atom(\mathscr L)\subseteq Form(\mathscr L)" data-display="false"><code>Atom(\mathscr L)\subseteq Form(\mathscr L)</code></span>。
-- 若 <span class="course-math" data-tex="\alpha\in Form(\mathscr L)" data-display="false"><code>\alpha\in Form(\mathscr L)</code></span>，则 <span class="course-math" data-tex="(\neg\alpha)\in Form(\mathscr L)" data-display="false"><code>(\neg\alpha)\in Form(\mathscr L)</code></span>。
-- 若 <span class="course-math" data-tex="\alpha,\beta\in Form(\mathscr L)" data-display="false"><code>\alpha,\beta\in Form(\mathscr L)</code></span>，则 <span class="course-math" data-tex="(\alpha * \beta)\in Form(\mathscr L)" data-display="false"><code>(\alpha * \beta)\in Form(\mathscr L)</code></span>，其中 <span class="course-math" data-tex="*\in\{\land,\lor,\to,\leftrightarrow\}" data-display="false"><code>*\in\{\land,\lor,\to,\leftrightarrow\}</code></span>。
-- 若 <span class="course-math" data-tex="\alpha\in Form(\mathscr L)" data-display="false"><code>\alpha\in Form(\mathscr L)</code></span> 且 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 是变量，则 <span class="course-math" data-tex="(\forall x\,\alpha)\in Form(\mathscr L)" data-display="false"><code>(\forall x\,\alpha)\in Form(\mathscr L)</code></span> 且 <span class="course-math" data-tex="(\exists x\,\alpha)\in Form(\mathscr L)" data-display="false"><code>(\exists x\,\alpha)\in Form(\mathscr L)</code></span>。
+Formula（公式）的定义为， <span class="course-math" data-tex="\alpha \in Form(\mathscr{L})" data-display="false"><code>\alpha \in Form(\mathscr{L})</code></span> 当且仅当它能由以下规则（有限次使用）生成：
+- <span class="course-math" data-tex="Atom(\mathscr{L})\subseteq Form(\mathscr{L})" data-display="false"><code>Atom(\mathscr{L})\subseteq Form(\mathscr{L})</code></span>。
+- 若 <span class="course-math" data-tex="\alpha\in Form(\mathscr{L})" data-display="false"><code>\alpha\in Form(\mathscr{L})</code></span>，则 <span class="course-math" data-tex="(\neg\alpha)\in Form(\mathscr{L})" data-display="false"><code>(\neg\alpha)\in Form(\mathscr{L})</code></span>。
+- 若 <span class="course-math" data-tex="\alpha,\beta\in Form(\mathscr{L})" data-display="false"><code>\alpha,\beta\in Form(\mathscr{L})</code></span>，则 <span class="course-math" data-tex="(\alpha * \beta)\in Form(\mathscr{L})" data-display="false"><code>(\alpha * \beta)\in Form(\mathscr{L})</code></span>，其中 <span class="course-math" data-tex="*\in\{\land,\lor,\to,\leftrightarrow\}" data-display="false"><code>*\in\{\land,\lor,\to,\leftrightarrow\}</code></span>。
+- 若 <span class="course-math" data-tex="\alpha\in Form(\mathscr{L})" data-display="false"><code>\alpha\in Form(\mathscr{L})</code></span> 且 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 是变量，则 <span class="course-math" data-tex="(\forall x\,\alpha)\in Form(\mathscr{L})" data-display="false"><code>(\forall x\,\alpha)\in Form(\mathscr{L})</code></span> 且 <span class="course-math" data-tex="(\exists x\,\alpha)\in Form(\mathscr{L})" data-display="false"><code>(\exists x\,\alpha)\in Form(\mathscr{L})</code></span>。
 
 惯例：
 - 可像命题逻辑中一样省略部分括号。
@@ -125,7 +125,7 @@ Every Son of my father is my brother.
 
 Scope（作用域）：在公式 <span class="course-math" data-tex="\forall x\alpha" data-display="false"><code>\forall x\alpha</code></span> 或 <span class="course-math" data-tex="\exists x\alpha" data-display="false"><code>\exists x\alpha</code></span> 中，<span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 是量化变量（Quantified Variable），它的 Scope 就是 <span class="course-math" data-tex="\alpha" data-display="false"><code>\alpha</code></span>。例如，<span class="course-math" data-tex="\forall xP(x)\land Q(x)" data-display="false"><code>\forall xP(x)\land Q(x)</code></span> 中，<span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 的 Scope 是 <span class="course-math" data-tex="P(x)" data-display="false"><code>P(x)</code></span>。
 
-定义 
+定义
 - Free Variables（自由变元）：不在量化变量 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 的 scope 中的 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 就是自由变元。
 - Bound Variables（约束变元）：其他情况。
 另一种定义方式：解析树中，如果一个叶子节点 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 到根节点的路径中不存在 <span class="course-math" data-tex="\forall x" data-display="false"><code>\forall x</code></span> 或 <span class="course-math" data-tex="\exists x" data-display="false"><code>\exists x</code></span>，则它是一个自由变元。否则，为约束变元。
@@ -136,7 +136,7 @@ Scope（作用域）：在公式 <span class="course-math" data-tex="\forall x\a
 定义：在 <span class="course-math" data-tex="\mathcal{I}" data-display="false"><code>\mathcal{I}</code></span> 和 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 中，项 <span class="course-math" data-tex="t" data-display="false"><code>t</code></span> 的值记为 <span class="course-math" data-tex="t^{(\mathcal{I},E)}" data-display="false"><code>t^{(\mathcal{I},E)}</code></span>。若它是常量，则为 <span class="course-math" data-tex="c^{\mathcal{I}}" data-display="false"><code>c^{\mathcal{I}}</code></span>。若它为变量，则为 <span class="course-math" data-tex="x^E" data-display="false"><code>x^E</code></span>。若为函数，则为迭代的产物。
 有了阐释和环境，原子公式（Atom Formula）的值也就可以确定了：<span class="course-math" data-tex="P(t_{1},\dots,t_{n})^{(\mathcal{I},E)}" data-display="false"><code>P(t_{1},\dots,t_{n})^{(\mathcal{I},E)}</code></span>。进一步，可迭代定义出任何 wff 的值。
 为了形式化定义含有量词的公式的值，我们定义一个新的记号 <span class="course-math" data-tex="E\left[ x\mapsto d \right]" data-display="false"><code>E\left[ x\mapsto d \right]</code></span>：
-<span class="course-math course-math-display" data-tex="E\left[ x \mapsto d \right](y):=\begin{cases}&#10;d &amp; \text{if } y=x \\&#10;E(y) &amp; \text{if } y\neq x &#10;\end{cases}" data-display="true"><code>E\left[ x \mapsto d \right](y):=\begin{cases}&#10;d &amp; \text{if } y=x \\&#10;E(y) &amp; \text{if } y\neq x &#10;\end{cases}</code></span>
+<span class="course-math course-math-display" data-tex="E\left[ x \mapsto d \right](y):=\begin{cases}&#10;d &amp; \text{if } y=x \\&#10;E(y) &amp; \text{if } y\neq x&#10;\end{cases}" data-display="true"><code>E\left[ x \mapsto d \right](y):=\begin{cases}&#10;d &amp; \text{if } y=x \\&#10;E(y) &amp; \text{if } y\neq x&#10;\end{cases}</code></span>
 那么定义
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/FOL%20-%20%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91-3.png' | relative_url }}{% raw %}" alt="FOL - 一阶逻辑-3" width="1826" height="426" loading="lazy" decoding="async">
 
@@ -168,7 +168,7 @@ Scope（作用域）：在公式 <span class="course-math" data-tex="\forall x\a
 - 永真的（Valid）：<span class="course-math" data-tex="\mathcal{I}_{E}\vDash\alpha" data-display="false"><code>\mathcal{I}_{E}\vDash\alpha</code></span> 对任意 <span class="course-math" data-tex="\mathcal{I},E" data-display="false"><code>\mathcal{I},E</code></span>。类似与 PL 中的永真式（Tautology）
 - 可满足的（Satisfiable）：存在一组诠释和环境满足 <span class="course-math" data-tex="\alpha" data-display="false"><code>\alpha</code></span>。
 - 不可满足的（Unsatisfiable）：不存在诠释和环境满足 <span class="course-math" data-tex="\alpha" data-display="false"><code>\alpha</code></span>。
-<span class="course-math" data-tex="\emptyset\vDash\alpha" data-display="false"><code>\emptyset\vDash\alpha</code></span> 表示 <span class="course-math" data-tex="\alpha" data-display="false"><code>\alpha</code></span> 是正当的/永真式。
+<span class="course-math" data-tex="\varnothing\vDash\alpha" data-display="false"><code>\varnothing\vDash\alpha</code></span> 表示 <span class="course-math" data-tex="\alpha" data-display="false"><code>\alpha</code></span> 是正当的/永真式。
 例如：
 <span class="course-math course-math-display" data-tex="\exists y\forall x R(x,y)\to \forall x\exists yR(x,y)" data-display="true"><code>\exists y\forall x R(x,y)\to \forall x\exists yR(x,y)</code></span>
 <span class="course-math course-math-display" data-tex="\exists x(P(x)\to \forall xP(x))" data-display="true"><code>\exists x(P(x)\to \forall xP(x))</code></span>
@@ -195,7 +195,7 @@ Scope（作用域）：在公式 <span class="course-math" data-tex="\forall x\a
 这里 fresh variable 不可以出现在 subproof 之外。最好不要出现在任何的 <span class="course-math" data-tex="\alpha" data-display="false"><code>\alpha</code></span> 和 <span class="course-math" data-tex="\Sigma" data-display="false"><code>\Sigma</code></span> 中。
 例如：<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/FOL%20-%20%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91-4.png' | relative_url }}{% raw %}" alt="FOL - 一阶逻辑-4" width="1204" height="786" loading="lazy" decoding="async">
 - <span class="course-math" data-tex="\exists e" data-display="false"><code>\exists e</code></span>：
-<span class="course-math course-math-display" data-tex="\dfrac{(\exists x\,\alpha)_\,\boxed{\begin{align}&#10;\alpha[u / x], u\text{ fresh} \\&#10;\vdots \\&#10;\beta&#10;\end{align}} }{\beta}" data-display="true"><code>\dfrac{(\exists x\,\alpha)_\,\boxed{\begin{align}&#10;\alpha[u / x], u\text{ fresh} \\&#10;\vdots \\&#10;\beta&#10;\end{align}} }{\beta}</code></span>
+<span class="course-math course-math-display" data-tex="\dfrac{(\exists x\,\alpha)_\,\boxed{\begin{aligned}&#10;\alpha[u / x], u\text{ fresh} \\&#10;\vdots \\&#10;\beta&#10;\end{aligned}} }{\beta}" data-display="true"><code>\dfrac{(\exists x\,\alpha)_\,\boxed{\begin{aligned}&#10;\alpha[u / x], u\text{ fresh} \\&#10;\vdots \\&#10;\beta&#10;\end{aligned}} }{\beta}</code></span>
 ND for FOL 是完备的（Complete）和可靠的（Sound）。
 
 任何 FOL 中的公式可以写成前束范式（Prenex Normal Form）：

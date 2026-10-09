@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-10-23T11:02:29+08:00"
-updated_at: "2026-10-08T20:57:10+08:00"
+updated_at: "2026-10-09T16:13:40+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -24,21 +24,21 @@ excerpt: "大学物理（上）/（下） · Rolling and Precession - 滚动和�
 
 
 纯滚动 (Smooth Rolling) = 纯平动 + 纯转动。
-其中平动和转动的关系满足 <span class="course-math" data-tex="v_{com}=\omega R" data-display="false"><code>v_{com}=\omega R</code></span>，这可以用位移求导得出。
+其中平动和转动的关系满足 <span class="course-math" data-tex="v_{\mathrm{com}}=\omega R" data-display="false"><code>v_{\mathrm{com}}=\omega R</code></span>，这可以用位移求导得出。
 在每一个瞬间，也可以看作绕着点 P 的纯转动。
 证明： <a href="{% endraw %}{{ '/courses/references/rolling-1/' | relative_url }}{% raw %}">Rolling-1</a>
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Rolling-1.png' | relative_url }}{% raw %}" alt="Rolling-1" width="338" height="406" loading="lazy" decoding="async">
 
-纯滚动的动能 <span class="course-math" data-tex="K=K_{translation}+K_{rotation}=\frac{1}{2}mv_{com}^2 + \frac{1}{2} I_{com} \omega^2" data-display="false"><code>K=K_{translation}+K_{rotation}=\frac{1}{2}mv_{com}^2 + \frac{1}{2} I_{com} \omega^2</code></span>。
-力矩 <span class="course-math" data-tex="\tau_{net}=I_{com}\alpha" data-display="false"><code>\tau_{net}=I_{com}\alpha</code></span>。
-动能定理 <span class="course-math" data-tex="W_{net}=\int \vec{F_ {{net}} } d\vec{r_{com}}+\int \tau_{net}d\theta=\Delta K=\Delta K_{translation}+\Delta K_{rotation}" data-display="false"><code>W_{net}=\int \vec{F_ {{net}} } d\vec{r_{com}}+\int \tau_{net}d\theta=\Delta K=\Delta K_{translation}+\Delta K_{rotation}</code></span>。
+纯滚动的动能 <span class="course-math" data-tex="K=K_{\mathrm{translation}}+K_{\mathrm{rotation}}=\frac{1}{2}mv_{\mathrm{com}}^2 + \frac{1}{2} I_{\mathrm{com}} \omega^2" data-display="false"><code>K=K_{\mathrm{translation}}+K_{\mathrm{rotation}}=\frac{1}{2}mv_{\mathrm{com}}^2 + \frac{1}{2} I_{\mathrm{com}} \omega^2</code></span>。
+力矩 <span class="course-math" data-tex="\tau_{\mathrm{net}}=I_{\mathrm{com}}\alpha" data-display="false"><code>\tau_{\mathrm{net}}=I_{\mathrm{com}}\alpha</code></span>。
+动能定理 <span class="course-math" data-tex="W_{\mathrm{net}}=\int \mathbf{F}_{\mathrm{net}}\cdot \mathrm{d}\mathbf{r}_{\mathrm{com}}+\int \tau_{\mathrm{net}}\,\mathrm{d}\theta=\Delta K=\Delta K_{\mathrm{translation}}+\Delta K_{\mathrm{rotation}}" data-display="false"><code>W_{\mathrm{net}}=\int \mathbf{F}_{\mathrm{net}}\cdot \mathrm{d}\mathbf{r}_{\mathrm{com}}+\int \tau_{\mathrm{net}}\,\mathrm{d}\theta=\Delta K=\Delta K_{\mathrm{translation}}+\Delta K_{\mathrm{rotation}}</code></span>。
 
-质点的角动量 <span class="course-math" data-tex="\vec{\mathscr{l}}=\vec{r}\times \vec{p}" data-display="false"><code>\vec{\mathscr{l}}=\vec{r}\times \vec{p}</code></span>。
-刚体的角动量在 <span class="course-math" data-tex="z" data-display="false"><code>z</code></span> 轴的分量 <span class="course-math" data-tex="\vec{L_{z}}=I\vec{\omega}" data-display="false"><code>\vec{L_{z}}=I\vec{\omega}</code></span>。
-容易推出 <span class="course-math" data-tex="\tau=\frac{d\mathscr{\vec{l}}}{dt}" data-display="false"><code>\tau=\frac{d\mathscr{\vec{l}}}{dt}</code></span>。进一步的，若 <span class="course-math" data-tex="\tau" data-display="false"><code>\tau</code></span> 为 0，则 <span class="course-math" data-tex="\mathscr{l}" data-display="false"><code>\mathscr{l}</code></span> 不变。
-质心系：<span class="course-math" data-tex="L_{tot}=\vec{R}\times M\vec{v}+L_{com}" data-display="false"><code>L_{tot}=\vec{R}\times M\vec{v}+L_{com}</code></span>。
+质点的角动量 <span class="course-math" data-tex="\boldsymbol{\mathscr{l}}=\mathbf{r}\times \mathbf{p}" data-display="false"><code>\boldsymbol{\mathscr{l}}=\mathbf{r}\times \mathbf{p}</code></span>。
+刚体的角动量在 <span class="course-math" data-tex="z" data-display="false"><code>z</code></span> 轴的分量 <span class="course-math" data-tex="L_z=I\omega" data-display="false"><code>L_z=I\omega</code></span>。
+容易推出 <span class="course-math" data-tex="\boldsymbol{\tau}=\frac{\mathrm{d}\boldsymbol{\mathscr{l}}}{\mathrm{d}t}" data-display="false"><code>\boldsymbol{\tau}=\frac{\mathrm{d}\boldsymbol{\mathscr{l}}}{\mathrm{d}t}</code></span>。进一步的，若 <span class="course-math" data-tex="\boldsymbol{\tau}" data-display="false"><code>\boldsymbol{\tau}</code></span> 为 0，则 <span class="course-math" data-tex="\boldsymbol{\mathscr{l}}" data-display="false"><code>\boldsymbol{\mathscr{l}}</code></span> 不变。
+质心系：<span class="course-math" data-tex="\mathbf{L}_{\mathrm{tot}}=\mathbf{R}\times M\mathbf{v}+\mathbf{L}_{\mathrm{com}}" data-display="false"><code>\mathbf{L}_{\mathrm{tot}}=\mathbf{R}\times M\mathbf{v}+\mathbf{L}_{\mathrm{com}}</code></span>。
 
-计算中常用 <span class="course-math" data-tex="\gamma =\frac{I_{com}}{MR^2}" data-display="false"><code>\gamma =\frac{I_{com}}{MR^2}</code></span> 简化表达式。
+计算中常用 <span class="course-math" data-tex="\gamma =\frac{I_{\mathrm{com}}}{MR^2}" data-display="false"><code>\gamma =\frac{I_{\mathrm{com}}}{MR^2}</code></span> 简化表达式。
 
 ## 进动
 {: #section-2 }
@@ -51,6 +51,6 @@ excerpt: "大学物理（上）/（下） · Rolling and Precession - 滚动和�
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Precession-3.png' | relative_url }}{% raw %}" alt="Precession-3" width="612" height="334" loading="lazy" decoding="async">
 </div>
 
-过程中，进动角速度 <span class="course-math" data-tex="\Omega=\frac{d\phi}{dt}=\frac{\frac{dL}{L}}{dt}=\frac{\tau}{L}= \frac{Mgr}{I\omega}" data-display="false"><code>\Omega=\frac{d\phi}{dt}=\frac{\frac{dL}{L}}{dt}=\frac{\tau}{L}= \frac{Mgr}{I\omega}</code></span>。
+过程中，进动角速度 <span class="course-math" data-tex="\Omega=\frac{\mathrm{d}\phi}{\mathrm{d}t}=\frac{\frac{\mathrm{d}L}{L}}{\mathrm{d}t}=\frac{\tau}{L}= \frac{Mgr}{I\omega}" data-display="false"><code>\Omega=\frac{\mathrm{d}\phi}{\mathrm{d}t}=\frac{\frac{\mathrm{d}L}{L}}{\mathrm{d}t}=\frac{\tau}{L}= \frac{Mgr}{I\omega}</code></span>。
 进动角速度的方向和 <span class="course-math" data-tex="\omega" data-display="false"><code>\omega</code></span> 的方向有关。
 {% endraw %}

@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-09-30T19:28:05+08:00"
-updated_at: "2026-10-08T20:59:37+08:00"
+updated_at: "2026-10-09T16:13:40+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -31,7 +31,7 @@ excerpt: "离散数学 · Algorithm - 算法"
 - 这是因为，<span class="course-math" data-tex="n^{n}\leq(n!)^{2}" data-display="false"><code>n^{n}\leq(n!)^{2}</code></span>。
 
 定理：若 <span class="course-math" data-tex="f_{1}(x)=O(g_{1}(x)),f_{2}(x)=O(g_{2}(x))" data-display="false"><code>f_{1}(x)=O(g_{1}(x)),f_{2}(x)=O(g_{2}(x))</code></span>，则
--  <span class="course-math" data-tex="(f_{1}+f_{2})(x)=O(\max(&#124;g_{1}(x)&#124;,&#124;g_{2}(x)&#124;))" data-display="false"><code>(f_{1}+f_{2})(x)=O(\max(&#124;g_{1}(x)&#124;,&#124;g_{2}(x)&#124;))</code></span>
+-  <span class="course-math" data-tex="(f_{1}+f_{2})(x)=O(\max(\lvert g_{1}(x)\rvert ,\lvert g_{2}(x)\rvert ))" data-display="false"><code>(f_{1}+f_{2})(x)=O(\max(\lvert g_{1}(x)\rvert ,\lvert g_{2}(x)\rvert ))</code></span>
 - <span class="course-math" data-tex="(f_{1}f_{2})(x)=O(g_{1}(x)g_{2}(x))" data-display="false"><code>(f_{1}f_{2})(x)=O(g_{1}(x)g_{2}(x))</code></span>
 
 类似于大 <span class="course-math" data-tex="O" data-display="false"><code>O</code></span> 记号，还有表示下界的 <span class="course-math" data-tex="\Omega" data-display="false"><code>\Omega</code></span> 记号，还有表示渐进同阶的 <span class="course-math" data-tex="\Theta" data-display="false"><code>\Theta</code></span> 记号。

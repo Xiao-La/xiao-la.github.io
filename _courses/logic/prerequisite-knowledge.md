@@ -5,7 +5,7 @@ course_title: "数理逻辑导论"
 section: ""
 status: "completed"
 created_at: "2026-02-25T10:20:41+08:00"
-updated_at: "2026-10-08T20:59:37+08:00"
+updated_at: "2026-10-09T16:13:40+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -25,11 +25,11 @@ excerpt: "数理逻辑导论 · Prerequisite Knowledge - 预备知识"
 集合的基数（Cardinality）为其元素（Element）的个数。
 可以用集合的外延（Extension）和内涵（Intension）定义一个集合。
  - 外延：列出所有元素。
- - 内涵：用某种共性：<span class="course-math" data-tex="\{x&#124;\varphi(x)\}" data-display="false"><code>\{x&#124;\varphi(x)\}</code></span>。
+ - 内涵：用某种共性：<span class="course-math" data-tex="\{x\mid \varphi(x)\}" data-display="false"><code>\{x\mid \varphi(x)\}</code></span>。
 子集（Subset）和真子集（Proper Subset）的定义与以往相同。
 
 幂集（Power Set）：
->  若 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 是一个集合，则 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的幂集 <span class="course-math" data-tex="P(A):= \{X&#124;X \subseteq A\}" data-display="false"><code>P(A):= \{X&#124;X \subseteq A\}</code></span>。
+>  若 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 是一个集合，则 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的幂集 <span class="course-math" data-tex="P(A):= \{X\mid X \subseteq A\}" data-display="false"><code>P(A):= \{X\mid X \subseteq A\}</code></span>。
 
 集合运算（Set Operations）：
 - 并集（Union）
@@ -50,7 +50,7 @@ excerpt: "数理逻辑导论 · Prerequisite Knowledge - 预备知识"
 
 
 笛卡尔积（Cartesian product）<span class="course-math" data-tex="A\times B" data-display="false"><code>A\times B</code></span>：
-<span class="course-math course-math-display" data-tex="A\times B=\{ \langle x,y \rangle &#124; x \in A , y \in B \}" data-display="true"><code>A\times B=\{ \langle x,y \rangle &#124; x \in A , y \in B \}</code></span>
+<span class="course-math course-math-display" data-tex="A\times B=\{ \langle x,y \rangle\mid  x \in A , y \in B \}" data-display="true"><code>A\times B=\{ \langle x,y \rangle\mid  x \in A , y \in B \}</code></span>
 集合 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 和 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 的一个二元关系 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 是它们笛卡尔积的子集。
 <span class="course-math course-math-display" data-tex="R \subseteq A\times B" data-display="true"><code>R \subseteq A\times B</code></span>
 <span class="course-math" data-tex="\langle x,y \rangle \in R" data-display="false"><code>\langle x,y \rangle \in R</code></span> 记作 <span class="course-math" data-tex="R(x,y)" data-display="false"><code>R(x,y)</code></span> 或 <span class="course-math" data-tex="xRy" data-display="false"><code>xRy</code></span>，读作 "x is R-related to y"。
@@ -84,7 +84,7 @@ excerpt: "数理逻辑导论 · Prerequisite Knowledge - 预备知识"
 
 
 若 <span class="course-math" data-tex="x \in A" data-display="false"><code>x \in A</code></span> 且 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 上有一个等价关系 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span>，则 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 的等价类：
-<span class="course-math course-math-display" data-tex="[x]_{R}:= \{ y \in A&#124;xRy \}" data-display="true"><code>[x]_{R}:= \{ y \in A&#124;xRy \}</code></span>
+<span class="course-math course-math-display" data-tex="[x]_{R}:= \{ y \in A\mid xRy \}" data-display="true"><code>[x]_{R}:= \{ y \in A\mid xRy \}</code></span>
 等价类的性质：
 - 每个元素只属于一个等价类。
 - 不同的等价类是不相容的。

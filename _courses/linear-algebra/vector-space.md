@@ -5,7 +5,7 @@ course_title: "线性代数"
 section: ""
 status: "completed"
 created_at: "2026-03-11T17:54:23+08:00"
-updated_at: "2026-10-08T21:06:08+08:00"
+updated_at: "2026-10-09T16:58:39+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -56,8 +56,8 @@ excerpt: "线性代数 · Vector Space - 向量空间"
 - **零空间/核空间（Nullspace/Kernel）：** 所有使得 <span class="course-math" data-tex="\mathbf{A}\mathbf{x}=\mathbf{0}" data-display="false"><code>\mathbf{A}\mathbf{x}=\mathbf{0}</code></span> 的向量 <span class="course-math" data-tex="\mathbf{x}" data-display="false"><code>\mathbf{x}</code></span>，记作 <span class="course-math" data-tex="N(\mathbf{A})" data-display="false"><code>N(\mathbf{A})</code></span>，为一个 <span class="course-math" data-tex="\mathbb{R}^n" data-display="false"><code>\mathbb{R}^n</code></span> 的子空间。
 >  推论：若 <span class="course-math" data-tex="\mathbf{A}\mathbf{x}=\mathbf{b}" data-display="false"><code>\mathbf{A}\mathbf{x}=\mathbf{b}</code></span> 有特解 <span class="course-math" data-tex="\mathbf{x}_{0}" data-display="false"><code>\mathbf{x}_{0}</code></span>，则所有的解可以写成 <span class="course-math" data-tex="\mathbf{x}=\mathbf{x}_{0}+\mathbf{x}_{n}" data-display="false"><code>\mathbf{x}=\mathbf{x}_{0}+\mathbf{x}_{n}</code></span>，其中 <span class="course-math" data-tex="\mathbf{x}_{n} \in N(\mathbf{A})" data-display="false"><code>\mathbf{x}_{n} \in N(\mathbf{A})</code></span>。
 
-- **行空间（Row Space）**：<span class="course-math" data-tex="C(\mathbf{A}^T) \subset \mathbb{R}^n" data-display="false"><code>C(\mathbf{A}^T) \subset \mathbb{R}^n</code></span>
-- **左零空间（Left Nullspace）：** ****<span class="course-math" data-tex="N(\mathbf{A}^T)\subset \mathbb{R}^m" data-display="false"><code>N(\mathbf{A}^T)\subset \mathbb{R}^m</code></span>
+- **行空间（Row Space）**：<span class="course-math" data-tex="C(\mathbf{A}^{\top}) \subseteq \mathbb{R}^n" data-display="false"><code>C(\mathbf{A}^{\top}) \subseteq \mathbb{R}^n</code></span>
+- **左零空间（Left Nullspace）：** ****<span class="course-math" data-tex="N(\mathbf{A}^{\top})\subseteq \mathbb{R}^m" data-display="false"><code>N(\mathbf{A}^{\top})\subseteq \mathbb{R}^m</code></span>
 
 
 
@@ -68,16 +68,16 @@ excerpt: "线性代数 · Vector Space - 向量空间"
 被向量 <span class="course-math" data-tex="\mathbf{w}_{1},\mathbf{w}_{2},\dots,\mathbf{w}_{l}" data-display="false"><code>\mathbf{w}_{1},\mathbf{w}_{2},\dots,\mathbf{w}_{l}</code></span> 张成的空间（Spanned by <span class="course-math" data-tex="\mathbf{w}_{1},\mathbf{w}_{2},\dots \mathbf{w}_{l}" data-display="false"><code>\mathbf{w}_{1},\mathbf{w}_{2},\dots \mathbf{w}_{l}</code></span>）为这些向量的所有线性组合构成的集合。
 
 空间 <span class="course-math" data-tex="V" data-display="false"><code>V</code></span>  的基（Basis）：
-- 一组线性无关的向量 <span class="course-math" data-tex="v_{1},v_{2},\dots,v_{n}" data-display="false"><code>v_{1},v_{2},\dots,v_{n}</code></span> 。
+- 一组线性无关的向量 <span class="course-math" data-tex="\mathbf{v}_{1},\mathbf{v}_{2},\dots,\mathbf{v}_{n}" data-display="false"><code>\mathbf{v}_{1},\mathbf{v}_{2},\dots,\mathbf{v}_{n}</code></span> 。
 - <span class="course-math" data-tex="V" data-display="false"><code>V</code></span> 为这些向量张成的空间。
-这里 <span class="course-math" data-tex="n=\text{dim}V" data-display="false"><code>n=\text{dim}V</code></span>。
+这里 <span class="course-math" data-tex="n=\dim V" data-display="false"><code>n=\dim V</code></span>。
 记得验证空间非空。
 
 定理：<span class="course-math" data-tex="\mathbf{v}_{1},\mathbf{v}_{2},\dots \mathbf{v}_{n}\in \mathbb{R}^n" data-display="false"><code>\mathbf{v}_{1},\mathbf{v}_{2},\dots \mathbf{v}_{n}\in \mathbb{R}^n</code></span> 是 <span class="course-math" data-tex="\mathbb{R}^{n}" data-display="false"><code>\mathbb{R}^{n}</code></span> 的一组基，当且仅当 <span class="course-math" data-tex="\mathbf{A}=[\mathbf{v}_{1}\dots \mathbf{v}_{n}]" data-display="false"><code>\mathbf{A}=[\mathbf{v}_{1}\dots \mathbf{v}_{n}]</code></span> 可逆。
 
 对于多项式集 <span class="course-math" data-tex="\mathbb{R}[x]_{\leq n}=\{ a_{0}+a_{1}x+\dots+a_{n}x^{n} &#124; a_{0},a_{1},a_{2},\dots,a_{n}\in \mathbb{R}\}" data-display="false"><code>\mathbb{R}[x]_{\leq n}=\{ a_{0}+a_{1}x+\dots+a_{n}x^{n} &#124; a_{0},a_{1},a_{2},\dots,a_{n}\in \mathbb{R}\}</code></span>，一组基为 <span class="course-math" data-tex="1,x,x^{2},x^{3},\dots,x^{n}" data-display="false"><code>1,x,x^{2},x^{3},\dots,x^{n}</code></span>。
 
-定理：若向量空间 <span class="course-math" data-tex="V" data-display="false"><code>V</code></span> 存在两组基 <span class="course-math" data-tex="\mathbf{v}_{1},\mathbf{v}_{2},\dots,\mathbf{v}_{n}" data-display="false"><code>\mathbf{v}_{1},\mathbf{v}_{2},\dots,\mathbf{v}_{n}</code></span> 和 <span class="course-math" data-tex="\mathbf{w}_{1},\mathbf{w}_{2},\dots,\mathbf{w}_{m}" data-display="false"><code>\mathbf{w}_{1},\mathbf{w}_{2},\dots,\mathbf{w}_{m}</code></span>，则 <span class="course-math" data-tex="m=n" data-display="false"><code>m=n</code></span>。这里 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 定义为向量空间 <span class="course-math" data-tex="V" data-display="false"><code>V</code></span> 的维数（dimension）<span class="course-math" data-tex="\text{dim}V" data-display="false"><code>\text{dim}V</code></span>。
+定理：若向量空间 <span class="course-math" data-tex="V" data-display="false"><code>V</code></span> 存在两组基 <span class="course-math" data-tex="\mathbf{v}_{1},\mathbf{v}_{2},\dots,\mathbf{v}_{n}" data-display="false"><code>\mathbf{v}_{1},\mathbf{v}_{2},\dots,\mathbf{v}_{n}</code></span> 和 <span class="course-math" data-tex="\mathbf{w}_{1},\mathbf{w}_{2},\dots,\mathbf{w}_{m}" data-display="false"><code>\mathbf{w}_{1},\mathbf{w}_{2},\dots,\mathbf{w}_{m}</code></span>，则 <span class="course-math" data-tex="m=n" data-display="false"><code>m=n</code></span>。这里 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 定义为向量空间 <span class="course-math" data-tex="V" data-display="false"><code>V</code></span> 的维数（dimension）<span class="course-math" data-tex="\dim V" data-display="false"><code>\dim V</code></span>。
 
 
 ### 基本空间的基
@@ -88,30 +88,30 @@ excerpt: "线性代数 · Vector Space - 向量空间"
 **找 <span class="course-math" data-tex="C(\mathbf{A})" data-display="false"><code>C(\mathbf{A})</code></span> 的基：**
 - 将 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span> 化为阶梯型矩阵 <span class="course-math" data-tex="\mathbf{U}" data-display="false"><code>\mathbf{U}</code></span>，则 <span class="course-math" data-tex="\mathbf{U}" data-display="false"><code>\mathbf{U}</code></span> 的一组列线性无关等价于对应的 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span> 的列是线性无关的。
 - <span class="course-math" data-tex="C(\mathbf{U})" data-display="false"><code>C(\mathbf{U})</code></span> 的一组基是其 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> 个包含主元的列（这与 <span class="course-math" data-tex="C(\mathbf{A})" data-display="false"><code>C(\mathbf{A})</code></span> 不同，需要回去找 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span> 的列）。
-- <span class="course-math" data-tex="\text{dim}C(\mathbf{A})=r=\text{rank}(\mathbf{A})" data-display="false"><code>\text{dim}C(\mathbf{A})=r=\text{rank}(\mathbf{A})</code></span>。
+- <span class="course-math" data-tex="\dim C(\mathbf{A})=r=\operatorname{rank}(\mathbf{A})" data-display="false"><code>\dim C(\mathbf{A})=r=\operatorname{rank}(\mathbf{A})</code></span>。
 **找 <span class="course-math" data-tex="N(\mathbf{A})" data-display="false"><code>N(\mathbf{A})</code></span> 的基：**
 - 找 <span class="course-math" data-tex="\mathbf{A}\mathbf{x}=\mathbf{0}" data-display="false"><code>\mathbf{A}\mathbf{x}=\mathbf{0}</code></span> 的特解，也就是说化成行最简型 <span class="course-math" data-tex="\mathbf{R}" data-display="false"><code>\mathbf{R}</code></span> 后得到 <span class="course-math" data-tex="n-r" data-display="false"><code>n-r</code></span> 个自由变量，将其中一个设为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>，其他设为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 得到一个特解，总共得到 <span class="course-math" data-tex="n-r" data-display="false"><code>n-r</code></span> 个特解。这些特解就是基。
-- <span class="course-math" data-tex="\text{dim}N(\mathbf{A})=n-r" data-display="false"><code>\text{dim}N(\mathbf{A})=n-r</code></span>，也称为零化度（Nullity）。
+- <span class="course-math" data-tex="\dim N(\mathbf{A})=n-r" data-display="false"><code>\dim N(\mathbf{A})=n-r</code></span>，也称为零化度（Nullity）。
 
-**秩-零化度定理：** <span class="course-math" data-tex="\text{rank}(\mathbf{A})+\text{dim}N(\mathbf{A})=n" data-display="false"><code>\text{rank}(\mathbf{A})+\text{dim}N(\mathbf{A})=n</code></span>。
+**秩-零化度定理：** <span class="course-math" data-tex="\operatorname{rank}(\mathbf{A})+\dim N(\mathbf{A})=n" data-display="false"><code>\operatorname{rank}(\mathbf{A})+\dim N(\mathbf{A})=n</code></span>。
 
-**找 <span class="course-math" data-tex="C(\mathbf{A}^T)" data-display="false"><code>C(\mathbf{A}^T)</code></span> 的基：**
--  行变换不影响行空间，因此 <span class="course-math" data-tex="C(\mathbf{A}^T)=C(\mathbf{U}^T)" data-display="false"><code>C(\mathbf{A}^T)=C(\mathbf{U}^T)</code></span>。
--  <span class="course-math" data-tex="\text{dim}C(\mathbf{A}^T)=r=\text{rank}(\mathbf{A}^T)" data-display="false"><code>\text{dim}C(\mathbf{A}^T)=r=\text{rank}(\mathbf{A}^T)</code></span>。
-**找 <span class="course-math" data-tex="N(\mathbf{A}^T)" data-display="false"><code>N(\mathbf{A}^T)</code></span> 的基：
-- 设 <span class="course-math" data-tex="\mathbf{A}=\mathbf{L}\mathbf{U}" data-display="false"><code>\mathbf{A}=\mathbf{L}\mathbf{U}</code></span>，则 <span class="course-math" data-tex="\mathbf{L}^{-1}" data-display="false"><code>\mathbf{L}^{-1}</code></span> 的最后 <span class="course-math" data-tex="m-r" data-display="false"><code>m-r</code></span> 行构成 <span class="course-math" data-tex="N(\mathbf{A}^T)" data-display="false"><code>N(\mathbf{A}^T)</code></span> 的基。
-- <span class="course-math" data-tex="\text{dim}N(\mathbf{A}^T)=m-r" data-display="false"><code>\text{dim}N(\mathbf{A}^T)=m-r</code></span>。
+**找 <span class="course-math" data-tex="C(\mathbf{A}^{\top})" data-display="false"><code>C(\mathbf{A}^{\top})</code></span> 的基：**
+-  行变换不影响行空间，因此 <span class="course-math" data-tex="C(\mathbf{A}^{\top})=C(\mathbf{U}^{\top})" data-display="false"><code>C(\mathbf{A}^{\top})=C(\mathbf{U}^{\top})</code></span>。
+-  <span class="course-math" data-tex="\dim C(\mathbf{A}^{\top})=r=\operatorname{rank}(\mathbf{A}^{\top})" data-display="false"><code>\dim C(\mathbf{A}^{\top})=r=\operatorname{rank}(\mathbf{A}^{\top})</code></span>。
+**找 <span class="course-math" data-tex="N(\mathbf{A}^{\top})" data-display="false"><code>N(\mathbf{A}^{\top})</code></span> 的基：**
+- 设 <span class="course-math" data-tex="\mathbf{A}=\mathbf{L}\mathbf{U}" data-display="false"><code>\mathbf{A}=\mathbf{L}\mathbf{U}</code></span>，则 <span class="course-math" data-tex="\mathbf{L}^{-1}" data-display="false"><code>\mathbf{L}^{-1}</code></span> 的最后 <span class="course-math" data-tex="m-r" data-display="false"><code>m-r</code></span> 行构成 <span class="course-math" data-tex="N(\mathbf{A}^{\top})" data-display="false"><code>N(\mathbf{A}^{\top})</code></span> 的基。
+- <span class="course-math" data-tex="\dim N(\mathbf{A}^{\top})=m-r" data-display="false"><code>\dim N(\mathbf{A}^{\top})=m-r</code></span>。
 
-从而我们可以发现，<span class="course-math" data-tex="C(\mathbf{A}), N(\mathbf{A}^T)\subset \mathbb{R}^m, C(\mathbf{A}^T), N(\mathbf{A})\subset \mathbb{R}^n" data-display="false"><code>C(\mathbf{A}), N(\mathbf{A}^T)\subset \mathbb{R}^m, C(\mathbf{A}^T), N(\mathbf{A})\subset \mathbb{R}^n</code></span> ，且有：
-<span class="course-math course-math-display" data-tex="C(\mathbf{A}) \perp N(\mathbf{A}^{T})" data-display="true"><code>C(\mathbf{A}) \perp N(\mathbf{A}^{T})</code></span>
-<span class="course-math course-math-display" data-tex="C(\mathbf{A^T}) \perp N(\mathbf{A})" data-display="true"><code>C(\mathbf{A^T}) \perp N(\mathbf{A})</code></span>
+从而我们可以发现，<span class="course-math" data-tex="C(\mathbf{A}), N(\mathbf{A}^{\top})\subseteq \mathbb{R}^m, C(\mathbf{A}^{\top}), N(\mathbf{A})\subseteq \mathbb{R}^n" data-display="false"><code>C(\mathbf{A}), N(\mathbf{A}^{\top})\subseteq \mathbb{R}^m, C(\mathbf{A}^{\top}), N(\mathbf{A})\subseteq \mathbb{R}^n</code></span> ，且有：
+<span class="course-math course-math-display" data-tex="C(\mathbf{A}) \perp N(\mathbf{A}^{\top})" data-display="true"><code>C(\mathbf{A}) \perp N(\mathbf{A}^{\top})</code></span>
+<span class="course-math course-math-display" data-tex="C(\mathbf{A}^{\top}) \perp N(\mathbf{A})" data-display="true"><code>C(\mathbf{A}^{\top}) \perp N(\mathbf{A})</code></span>
 
-高斯-约旦消元法求解四大基本子空间：<span class="course-math" data-tex="\begin{bmatrix}A&#124;I\end{bmatrix}\to \begin{bmatrix}R&#124;E\end{bmatrix}" data-display="false"><code>\begin{bmatrix}A&#124;I\end{bmatrix}\to \begin{bmatrix}R&#124;E\end{bmatrix}</code></span>
+高斯-约旦消元法求解四大基本子空间：<span class="course-math" data-tex="\begin{bmatrix}\mathbf{A}\mid \mathbf{I}\end{bmatrix}\to \begin{bmatrix}\mathbf{R}\mid \mathbf{E}\end{bmatrix}" data-display="false"><code>\begin{bmatrix}\mathbf{A}\mid \mathbf{I}\end{bmatrix}\to \begin{bmatrix}\mathbf{R}\mid \mathbf{E}\end{bmatrix}</code></span>
 
 |基本子空间|维数|提取方法|
 |---|---|---|
-|**行空间 <span class="course-math" data-tex="C(A^T)" data-display="false"><code>C(A^T)</code></span>**| <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> |直接取 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> 个非零行向量|
-|**列空间 <span class="course-math" data-tex="C(A)" data-display="false"><code>C(A)</code></span>**| <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> |找 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 中的主元列，取**原矩阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span>** 中对应的列|
-|**零空间 <span class="course-math" data-tex="N(A)" data-display="false"><code>N(A)</code></span>**| <span class="course-math" data-tex="n-r" data-display="false"><code>n-r</code></span> |利用 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 求解 <span class="course-math" data-tex="Rx=0" data-display="false"><code>Rx=0</code></span> 的基础解系|
-|**左零空间 <span class="course-math" data-tex="N(A^T)" data-display="false"><code>N(A^T)</code></span>**| <span class="course-math" data-tex="m-r" data-display="false"><code>m-r</code></span> |取 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 中对应 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 里全零行所在位置的那几行|
+|**行空间 <span class="course-math" data-tex="C(\mathbf{A}^{\top})" data-display="false"><code>C(\mathbf{A}^{\top})</code></span>**| <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> |直接取 <span class="course-math" data-tex="\mathbf{R}" data-display="false"><code>\mathbf{R}</code></span> 的 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> 个非零行向量|
+|**列空间 <span class="course-math" data-tex="C(\mathbf{A})" data-display="false"><code>C(\mathbf{A})</code></span>**| <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> |找 <span class="course-math" data-tex="\mathbf{R}" data-display="false"><code>\mathbf{R}</code></span> 中的主元列，取**原矩阵 <span class="course-math" data-tex="\mathbf{A}" data-display="false"><code>\mathbf{A}</code></span>** 中对应的列|
+|**零空间 <span class="course-math" data-tex="N(\mathbf{A})" data-display="false"><code>N(\mathbf{A})</code></span>**| <span class="course-math" data-tex="n-r" data-display="false"><code>n-r</code></span> |利用 <span class="course-math" data-tex="\mathbf{R}" data-display="false"><code>\mathbf{R}</code></span> 求解 <span class="course-math" data-tex="\mathbf{R}\mathbf{x}=0" data-display="false"><code>\mathbf{R}\mathbf{x}=0</code></span> 的基础解系|
+|**左零空间 <span class="course-math" data-tex="N(\mathbf{A}^{\top})" data-display="false"><code>N(\mathbf{A}^{\top})</code></span>**| <span class="course-math" data-tex="m-r" data-display="false"><code>m-r</code></span> |取 <span class="course-math" data-tex="\mathbf{E}" data-display="false"><code>\mathbf{E}</code></span> 中对应 <span class="course-math" data-tex="\mathbf{R}" data-display="false"><code>\mathbf{R}</code></span> 里全零行所在位置的那几行|
 {% endraw %}

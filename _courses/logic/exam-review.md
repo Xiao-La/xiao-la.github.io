@@ -5,7 +5,7 @@ course_title: "数理逻辑导论"
 section: ""
 status: "completed"
 created_at: "2026-06-08T20:15:52+08:00"
-updated_at: "2026-10-08T21:23:24+08:00"
+updated_at: "2026-10-09T17:01:15+08:00"
 reference: false
 order: 6
 layout: "course"
@@ -38,7 +38,6 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 4. [一阶逻辑 — 语法](#section-23)
 5. [一阶逻辑 — 语义](#section-31)
 6. [一阶逻辑 — ND 证明](#section-38)
-7. 综合练习题
 
 ---
 
@@ -157,7 +156,7 @@ excerpt: "数理逻辑导论 · Exam Review - 考试复习"
 **逻辑等价**：<span class="course-math" data-tex="A \equiv B" data-display="false"><code>A \equiv B</code></span> 当且仅当 <span class="course-math" data-tex="A \leftrightarrow B" data-display="false"><code>A \leftrightarrow B</code></span> 是永真式。
 
 **语义蕴含 (Entailment)**：<span class="course-math" data-tex="\Sigma \vDash \alpha" data-display="false"><code>\Sigma \vDash \alpha</code></span> 当且仅当 <span class="course-math" data-tex="\forall v" data-display="false"><code>\forall v</code></span>，若 <span class="course-math" data-tex="\Sigma^v = 1" data-display="false"><code>\Sigma^v = 1</code></span> 则 <span class="course-math" data-tex="\alpha^v = 1" data-display="false"><code>\alpha^v = 1</code></span>。
-- <span class="course-math" data-tex="\emptyset \vDash A" data-display="false"><code>\emptyset \vDash A</code></span> ⟺ <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 是永真式
+- <span class="course-math" data-tex="\varnothing \vDash A" data-display="false"><code>\varnothing \vDash A</code></span> ⟺ <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 是永真式
 - <span class="course-math" data-tex="A \vDash B" data-display="false"><code>A \vDash B</code></span> ⟺ <span class="course-math" data-tex="A \to B" data-display="false"><code>A \to B</code></span> 是永真式
 
 
@@ -532,11 +531,11 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 {: #section-20 }
 
 
-**A5.1** 若 <span class="course-math" data-tex="\{\alpha, \beta\} \vdash_{ND} \gamma" data-display="false"><code>\{\alpha, \beta\} \vdash_{ND} \gamma</code></span>，则 <span class="course-math" data-tex="\emptyset \vDash (\alpha \land \beta) \to \gamma" data-display="false"><code>\emptyset \vDash (\alpha \land \beta) \to \gamma</code></span>。
+**A5.1** 若 <span class="course-math" data-tex="\{\alpha, \beta\} \vdash_{ND} \gamma" data-display="false"><code>\{\alpha, \beta\} \vdash_{ND} \gamma</code></span>，则 <span class="course-math" data-tex="\varnothing \vDash (\alpha \land \beta) \to \gamma" data-display="false"><code>\varnothing \vDash (\alpha \land \beta) \to \gamma</code></span>。
 
 **证明**：由 ND 的 Soundness，<span class="course-math" data-tex="\{\alpha, \beta\} \vdash \gamma \implies \{\alpha, \beta\} \vDash \gamma" data-display="false"><code>\{\alpha, \beta\} \vdash \gamma \implies \{\alpha, \beta\} \vDash \gamma</code></span>。
 
-反证法：假设 <span class="course-math" data-tex="\emptyset \not\vDash (\alpha \land \beta) \to \gamma" data-display="false"><code>\emptyset \not\vDash (\alpha \land \beta) \to \gamma</code></span>，则存在 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 使 <span class="course-math" data-tex="(\alpha \land \beta)^v = 1" data-display="false"><code>(\alpha \land \beta)^v = 1</code></span> 且 <span class="course-math" data-tex="\gamma^v = 0" data-display="false"><code>\gamma^v = 0</code></span>。于是 <span class="course-math" data-tex="\alpha^v = 1, \beta^v = 1, \gamma^v = 0" data-display="false"><code>\alpha^v = 1, \beta^v = 1, \gamma^v = 0</code></span>，与 <span class="course-math" data-tex="\{\alpha, \beta\} \vDash \gamma" data-display="false"><code>\{\alpha, \beta\} \vDash \gamma</code></span> 矛盾。故 <span class="course-math" data-tex="\emptyset \vDash (\alpha \land \beta) \to \gamma" data-display="false"><code>\emptyset \vDash (\alpha \land \beta) \to \gamma</code></span>。
+反证法：假设 <span class="course-math" data-tex="\varnothing \not\vDash (\alpha \land \beta) \to \gamma" data-display="false"><code>\varnothing \not\vDash (\alpha \land \beta) \to \gamma</code></span>，则存在 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 使 <span class="course-math" data-tex="(\alpha \land \beta)^v = 1" data-display="false"><code>(\alpha \land \beta)^v = 1</code></span> 且 <span class="course-math" data-tex="\gamma^v = 0" data-display="false"><code>\gamma^v = 0</code></span>。于是 <span class="course-math" data-tex="\alpha^v = 1, \beta^v = 1, \gamma^v = 0" data-display="false"><code>\alpha^v = 1, \beta^v = 1, \gamma^v = 0</code></span>，与 <span class="course-math" data-tex="\{\alpha, \beta\} \vDash \gamma" data-display="false"><code>\{\alpha, \beta\} \vDash \gamma</code></span> 矛盾。故 <span class="course-math" data-tex="\varnothing \vDash (\alpha \land \beta) \to \gamma" data-display="false"><code>\varnothing \vDash (\alpha \land \beta) \to \gamma</code></span>。
 
 ---
 
@@ -545,7 +544,7 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 {: #section-21 }
 
 
-**核心思路**：要证 <span class="course-math" data-tex="\Sigma \vdash_{\text{Res}} \varphi" data-display="false"><code>\Sigma \vdash_{\text{Res}} \varphi</code></span>，转为证 <span class="course-math" data-tex="\Sigma \cup \{\neg \varphi\} \vdash_{\text{Res}} \perp" data-display="false"><code>\Sigma \cup \{\neg \varphi\} \vdash_{\text{Res}} \perp</code></span>。
+**核心思路**：要证 <span class="course-math" data-tex="\Sigma \vdash_{\mathrm{Res}} \varphi" data-display="false"><code>\Sigma \vdash_{\mathrm{Res}} \varphi</code></span>，转为证 <span class="course-math" data-tex="\Sigma \cup \{\neg \varphi\} \vdash_{\mathrm{Res}} \perp" data-display="false"><code>\Sigma \cup \{\neg \varphi\} \vdash_{\mathrm{Res}} \perp</code></span>。
 
 **步骤**：
 1. 将 <span class="course-math" data-tex="\Sigma" data-display="false"><code>\Sigma</code></span> 和 <span class="course-math" data-tex="\neg \varphi" data-display="false"><code>\neg \varphi</code></span> 化为 CNF
@@ -563,7 +562,7 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 {: #section-22 }
 
 
-**A5.2** <span class="course-math" data-tex="p \to (q \land r) \vdash_{\text{Res}} (\neg q \lor \neg r) \to \neg p" data-display="false"><code>p \to (q \land r) \vdash_{\text{Res}} (\neg q \lor \neg r) \to \neg p</code></span>
+**A5.2** <span class="course-math" data-tex="p \to (q \land r) \vdash_{\mathrm{Res}} (\neg q \lor \neg r) \to \neg p" data-display="false"><code>p \to (q \land r) \vdash_{\mathrm{Res}} (\neg q \lor \neg r) \to \neg p</code></span>
 
 第一步：转换前提和否定结论为 CNF，再转为子句集合。
 
@@ -796,7 +795,7 @@ k+1. α                      [∨e c, c+1-j, j+1-k]
 | <span class="course-math" data-tex="\forall x(P(x) \to P(x)) \to \exists y(Q(y) \land \neg Q(y))" data-display="false"><code>\forall x(P(x) \to P(x)) \to \exists y(Q(y) \land \neg Q(y))</code></span> | **Unsatisfiable** | 前件永真，后件永假；<span class="course-math" data-tex="1 \to 0 = 0" data-display="false"><code>1 \to 0 = 0</code></span> |
 | <span class="course-math" data-tex="\forall x \forall y (P(x,y) \to P(y,x))" data-display="false"><code>\forall x \forall y (P(x,y) \to P(y,x))</code></span> | **Satisfiable** | 取 <span class="course-math" data-tex="P" data-display="false"><code>P</code></span> 为 <span class="course-math" data-tex="=" data-display="false"><code>=</code></span> → True；取 <span class="course-math" data-tex="P" data-display="false"><code>P</code></span> 为 <span class="course-math" data-tex="&lt;" data-display="false"><code>&lt;</code></span> → False。故不是 valid 也不是 unsatisfiable |
 | <span class="course-math" data-tex="\neg(\forall x P(x) \to \exists y Q(y)) \land \exists y Q(y)" data-display="false"><code>\neg(\forall x P(x) \to \exists y Q(y)) \land \exists y Q(y)</code></span> | **Unsatisfiable** | 设公式为真：前半要求 <span class="course-math" data-tex="\forall x P(x)=1" data-display="false"><code>\forall x P(x)=1</code></span> 且 <span class="course-math" data-tex="\exists y Q(y)=0" data-display="false"><code>\exists y Q(y)=0</code></span>；后半要求 <span class="course-math" data-tex="\exists y Q(y)=1" data-display="false"><code>\exists y Q(y)=1</code></span>。矛盾 |
-| <span class="course-math" data-tex="\exists x P(x,y)" data-display="false"><code>\exists x P(x,y)</code></span> | **Satisfiable** | <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> 自由，可选择合适的阐释 <span class="course-math" data-tex="\mathcal I" data-display="false"><code>\mathcal I</code></span> 和环境 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span>（赋值给 <span class="course-math" data-tex="y" data-display="false"><code>y</code></span>）满足；也可取不满足的阐释。故 satisfiable |
+| <span class="course-math" data-tex="\exists x P(x,y)" data-display="false"><code>\exists x P(x,y)</code></span> | **Satisfiable** | <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> 自由，可选择合适的阐释 <span class="course-math" data-tex="\mathcal{I}" data-display="false"><code>\mathcal{I}</code></span> 和环境 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span>（赋值给 <span class="course-math" data-tex="y" data-display="false"><code>y</code></span>）满足；也可取不满足的阐释。故 satisfiable |
 
 ---
 
