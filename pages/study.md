@@ -43,7 +43,7 @@ learning_page: true
     {% assign learning_articles = learning_documents | where_exp: 'article', 'article.learning_kind' %}
     {% assign course_articles = site.courses | where: 'doc_type', 'note' %}
     {% assign recent_documents = learning_articles | concat: course_articles %}
-    {% capture recent_keys %}{% for document in recent_documents %}{{ document.updated_at | default: document.date | date: '%Y%m%d%H%M%S' }}::{{ document.url }}|{% endfor %}{% endcapture %}
+    {% capture recent_keys %}{% for document in recent_documents %}{{ document.created_at | default: document.date | date: '%Y%m%d%H%M%S' }}::{{ document.url }}|{% endfor %}{% endcapture %}
     {% assign recent_keys = recent_keys | split: '|' | sort | reverse %}
     <ol class="learning-article-list">
       {% for key in recent_keys limit: 5 %}

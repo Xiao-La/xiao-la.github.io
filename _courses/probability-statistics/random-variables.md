@@ -5,7 +5,7 @@ course_title: "概率与统计"
 section: ""
 status: "updating"
 created_at: "2026-04-30T19:28:27+08:00"
-updated_at: "2026-10-09T16:58:39+08:00"
+updated_at: "2026-10-09T18:11:09+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -78,4 +78,44 @@ CDF 是不降的而且是右连续的。
 <span class="course-math course-math-display" data-tex="\operatorname{SD}(X)=\sqrt{ \operatorname{Var}(X) }" data-display="true"><code>\operatorname{SD}(X)=\sqrt{ \operatorname{Var}(X) }</code></span>
 性质：
 <span class="course-math course-math-display" data-tex="\operatorname{Var}(aX+b)=a^{2}\operatorname{Var}(X), \operatorname{SD}(aX+b)=\lvert a\rvert \operatorname{SD}(X)" data-display="true"><code>\operatorname{Var}(aX+b)=a^{2}\operatorname{Var}(X), \operatorname{SD}(aX+b)=\lvert a\rvert \operatorname{SD}(X)</code></span>
+
+
+## 随机变量的变换
+{: #section-3 }
+
+
+
+**离散到离散。** 对于离散随机变量 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span>，其 PMF 为 <span class="course-math" data-tex="p_{X}(x)" data-display="false"><code>p_{X}(x)</code></span>，那么离散随机变量 <span class="course-math" data-tex="Y=g(X)" data-display="false"><code>Y=g(X)</code></span> 的 PMF 就是：
+<span class="course-math course-math-display" data-tex="p_Y(y)=P(Y=y)=\sum _{x\colon g(x)=y}p_{X}(x)" data-display="true"><code>p_Y(y)=P(Y=y)=\sum _{x\colon g(x)=y}p_{X}(x)</code></span>
+也就是把 <span class="course-math" data-tex="Y" data-display="false"><code>Y</code></span> 的对应的 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 的概率求和。
+
+**连续到离散。** <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 连续且 PDF 为 <span class="course-math" data-tex="f_X(x)" data-display="false"><code>f_X(x)</code></span>，<span class="course-math" data-tex="Y=g(X)" data-display="false"><code>Y=g(X)</code></span> 离散，只需把求和换成积分：
+<span class="course-math course-math-display" data-tex="p_{Y}(y)=P(Y=y)=\int _{x\colon g(x)=y}f_X(x)\,\mathrm{d}x" data-display="true"><code>p_{Y}(y)=P(Y=y)=\int _{x\colon g(x)=y}f_X(x)\,\mathrm{d}x</code></span>
+
+**连续到连续。** <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 连续， <span class="course-math" data-tex="Y=g(X)" data-display="false"><code>Y=g(X)</code></span> 连续，PDF 分别为 <span class="course-math" data-tex="f_X,f_Y" data-display="false"><code>f_X,f_Y</code></span> ，那么：
+- 若 <span class="course-math" data-tex="g(x)" data-display="false"><code>g(x)</code></span> 满足：在 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 的支撑集上严格单调，且有连续可导的反函数 <span class="course-math" data-tex="h(y)=g^{-1}(y)" data-display="false"><code>h(y)=g^{-1}(y)</code></span>，那么
+<span class="course-math course-math-display" data-tex="f_{Y}(y)=\begin{cases}&#10;\lvert h&#x27;(y) \rvert \cdot f_{X}(h(y)) &amp; \text{where } h(y) \text{ is defined}  \\&#10;0 &amp; \text{otherwise} &#10;\end{cases}" data-display="true"><code>f_{Y}(y)=\begin{cases}&#10;\lvert h&#x27;(y) \rvert \cdot f_{X}(h(y)) &amp; \text{where } h(y) \text{ is defined}  \\&#10;0 &amp; \text{otherwise} &#10;\end{cases}</code></span>
+- 证明：考虑 CDF。那么
+<span class="course-math course-math-display" data-tex="F_{Y}(y)=P(Y\leq{}y)=P(g(X)\leq{}y)" data-display="true"><code>F_{Y}(y)=P(Y\leq{}y)=P(g(X)\leq{}y)</code></span>
+- 若 <span class="course-math" data-tex="g(x)" data-display="false"><code>g(x)</code></span> 严格单调增，那么有
+<span class="course-math course-math-display" data-tex="F_{Y}(y)=P(X\leq{}g^{-1}(y))=F_{X}(h(y))\implies{}f_{Y}(y)=F_{Y}&#x27;(y)=h&#x27;(y)f_{X}(h(y))" data-display="true"><code>F_{Y}(y)=P(X\leq{}g^{-1}(y))=F_{X}(h(y))\implies{}f_{Y}(y)=F_{Y}&#x27;(y)=h&#x27;(y)f_{X}(h(y))</code></span>
+- 若严格单调减，也类似，可以得到 <span class="course-math" data-tex="f_{Y}(y)=-h&#x27;(y)f_{X}(h(y))" data-display="false"><code>f_{Y}(y)=-h&#x27;(y)f_{X}(h(y))</code></span>。
+- 统一起来就得到上面的结果。
+
+结论（<span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 套上自己的 CDF 后，服从均匀分布；均匀分布套上 CDF 的反函数，就服从这个 CDF）：
+- 若 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 的 CDF 是连续的，且存在反函数 <span class="course-math" data-tex="F^{-1}(x)" data-display="false"><code>F^{-1}(x)</code></span>。定义 <span class="course-math" data-tex="Y=F(X)" data-display="false"><code>Y=F(X)</code></span>，则 <span class="course-math" data-tex="Y\sim \mathrm{Uniform}(0,1)" data-display="false"><code>Y\sim \mathrm{Uniform}(0,1)</code></span>。
+- 反过来，若 <span class="course-math" data-tex="F(x)" data-display="false"><code>F(x)</code></span> 是某个随机变量的 CDF，且存在反函数 <span class="course-math" data-tex="F^{-1}(x)" data-display="false"><code>F^{-1}(x)</code></span>，令 <span class="course-math" data-tex="U\sim \mathrm{Uniform(0,1)}" data-display="false"><code>U\sim \mathrm{Uniform(0,1)}</code></span>，那么定义 <span class="course-math" data-tex="X=F^{-1}(U)" data-display="false"><code>X=F^{-1}(U)</code></span>，有 <span class="course-math" data-tex="X\sim F(x)" data-display="false"><code>X\sim F(x)</code></span>，也就是说 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 的 CDF 就是 <span class="course-math" data-tex="F(x)" data-display="false"><code>F(x)</code></span>。
+证明：
+- <span class="course-math" data-tex="Y=F(X)" data-display="false"><code>Y=F(X)</code></span>，这里 <span class="course-math" data-tex="F" data-display="false"><code>F</code></span> 是连续且不减的。那么 <span class="course-math" data-tex="F_{Y}(y)=P(Y\leq{}y)=P(F(X)\leq{}y)=P(X\leq{}F^{-1}(y))=F(F^{-1}(y))=y" data-display="false"><code>F_{Y}(y)=P(Y\leq{}y)=P(F(X)\leq{}y)=P(X\leq{}F^{-1}(y))=F(F^{-1}(y))=y</code></span>。那么 <span class="course-math" data-tex="f_Y(y)=F&#x27;_{Y}(y)=1" data-display="false"><code>f_Y(y)=F&#x27;_{Y}(y)=1</code></span>。
+- 反过来，按照 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 的定义，<span class="course-math" data-tex="F_X(x)=P(X\leq{}x)=P(F^{-1}(U)\leq{}x)=P(U\leq{} F(x))=F(x)" data-display="false"><code>F_X(x)=P(X\leq{}x)=P(F^{-1}(U)\leq{}x)=P(U\leq{} F(x))=F(x)</code></span>。
+第二个结论用来做 **逆变换采样（Inverse Transform Sampling）**，用于从均匀分布上的随机数，来生成服从某个分布的随机数。
+
+
+### 变换后的期望
+{: #section-4 }
+
+
+离散：
+<span class="course-math course-math-display" data-tex="\mathrm{E}(Y)=\mathrm{E}(g(X))=\sum_{k=1}^{\infty} g(x_{k})p_{k}" data-display="true"><code>\mathrm{E}(Y)=\mathrm{E}(g(X))=\sum_{k=1}^{\infty} g(x_{k})p_{k}</code></span>
+连续就是换成积分。
 {% endraw %}
