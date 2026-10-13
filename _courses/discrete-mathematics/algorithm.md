@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-09-30T19:28:05+08:00"
-updated_at: "2026-10-13T12:01:07+08:00"
+updated_at: "2026-10-13T14:04:27+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -45,8 +45,8 @@ excerpt: "离散数学 · Algorithm - 算法"
 复杂度实际上是 input size 的函数。
 **定义 input size：** 能够编码输入数据所需要的最少的比特数。
 - 例如，输入数据是一个整数 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span>，则 input size 就是 <span class="course-math" data-tex="\log_{2}n" data-display="false"><code>\log_{2}n</code></span>。也就是说，朴素的判断合数的算法（试除法）的复杂度实际上是 <span class="course-math" data-tex="O(2^{\text{size}(n)})" data-display="false"><code>O(2^{\text{size}(n)})</code></span>。
-- 例如，输入数据是一个数组 <span class="course-math" data-tex="a_{1},a_{2},\dots,a_{n}" data-display="false"><code>a_{1},a_{2},\dots,a_{n}</code></span>。采用定长二进制编码，每个元素的编码长度记为 <span class="course-math" data-tex="m=\lceil \log _{2}(\max_i \lvert a_i\rvert+1)\rceil" data-display="false"><code>m=\lceil \log _{2}(\max_i \lvert a_i\rvert+1)\rceil</code></span>，则这种编码的 input size 为 <span class="course-math" data-tex="nm" data-display="false"><code>nm</code></span>。若元素位宽 <span class="course-math" data-tex="m" data-display="false"><code>m</code></span> 固定，可以只用元素个数 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 衡量输入规模。
-- 例如要计算 <span class="course-math" data-tex="a\times b" data-display="false"><code>a\times b</code></span>，可以定义 <span class="course-math" data-tex="t=\log_{2}\max(a,b)" data-display="false"><code>t=\log_{2}\max(a,b)</code></span>。（这和真正的最小比特数 <span class="course-math" data-tex="s=\lceil \log _{2}(a+1) \rceil+\lceil \log_2(b+1) \rceil" data-display="false"><code>s=\lceil \log _{2}(a+1) \rceil+\lceil \log_2(b+1) \rceil</code></span>是同阶的）
+- 例如，输入数据是一个数组 <span class="course-math" data-tex="a_{1},a_{2},\dots,a_{n}" data-display="false"><code>a_{1},a_{2},\dots,a_{n}</code></span>，则 input size 约为 <span class="course-math" data-tex="n\cdot\log_{2}a" data-display="false"><code>n\cdot\log_{2}a</code></span>，其中 <span class="course-math" data-tex="a=\max a_i" data-display="false"><code>a=\max a_i</code></span>。元素位宽固定时，表示复杂度只需考虑元素个数 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span>。
+- 例如要计算 <span class="course-math" data-tex="a\times b" data-display="false"><code>a\times b</code></span>，可以定义 <span class="course-math" data-tex="t=\log_{2}\max(a,b)" data-display="false"><code>t=\log_{2}\max(a,b)</code></span>。
 
 **定义** 正函数 <span class="course-math" data-tex="f(n)" data-display="false"><code>f(n)</code></span> 和 <span class="course-math" data-tex="g(n)" data-display="false"><code>g(n)</code></span> 是同类的（of the **same type**），若
 <span class="course-math course-math-display" data-tex="c_{1}g(n^{a_{1}})^{b_{1}}\leq f(n)\leq c_{2}g(n^{a_{2}})^{b_{2}}" data-display="true"><code>c_{1}g(n^{a_{1}})^{b_{1}}\leq f(n)\leq c_{2}g(n^{a_{2}})^{b_{2}}</code></span>

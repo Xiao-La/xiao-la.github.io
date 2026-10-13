@@ -5,7 +5,7 @@ course_title: "概率与统计"
 section: ""
 status: "updating"
 created_at: "2026-04-30T19:28:27+08:00"
-updated_at: "2026-10-13T12:01:07+08:00"
+updated_at: "2026-10-13T14:04:27+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -125,5 +125,5 @@ CDF 是不降的而且是右连续的。
 
 *Extra:* 琴生不等式的应用，Kullback-Leibler divergence (KL divergence, KL散度)，衡量两个 PDF 之间的距离：
 <span class="course-math course-math-display" data-tex="D_{\mathrm{KL}}(p\Vert q) = \int_{-\infty}^{\infty} p(x) \log \left( \frac{p(x)}{q(x)} \right)\,\mathrm{d}x" data-display="true"><code>D_{\mathrm{KL}}(p\Vert q) = \int_{-\infty}^{\infty} p(x) \log \left( \frac{p(x)}{q(x)} \right)\,\mathrm{d}x</code></span>
-根据琴生不等式可以证明 <span class="course-math" data-tex="D_{\mathrm{KL}}\geq{}0" data-display="false"><code>D_{\mathrm{KL}}\geq{}0</code></span>，且取等当且仅当 <span class="course-math" data-tex="p(x)=q(x)" data-display="false"><code>p(x)=q(x)</code></span> 几乎处处成立。
+根据琴生不等式可以证明 <span class="course-math" data-tex="D_{\mathrm{KL}}\geq{}0" data-display="false"><code>D_{\mathrm{KL}}\geq{}0</code></span>，且取等当且仅当两者表示同一分布。
 {% endraw %}

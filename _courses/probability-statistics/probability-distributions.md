@@ -5,7 +5,7 @@ course_title: "概率与统计"
 section: ""
 status: "updating"
 created_at: "2026-07-25T14:57:40+08:00"
-updated_at: "2026-10-13T11:53:49+08:00"
+updated_at: "2026-10-13T14:04:27+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -53,7 +53,7 @@ excerpt: "概率与统计 · Probability Distributions - 概率分布"
 且有：
 - <span class="course-math" data-tex="\mathrm{E}(X)=\frac{1}{p}" data-display="false"><code>\mathrm{E}(X)=\frac{1}{p}</code></span>
 - <span class="course-math" data-tex="\operatorname{Var}(X)= \frac{1-p}{p^{2}}" data-display="false"><code>\operatorname{Var}(X)= \frac{1-p}{p^{2}}</code></span>
-- 无记忆性（Memoryless property）： <span class="course-math" data-tex="P(X&gt;m+n\mid X&gt;m)=P(X&gt;n)" data-display="false"><code>P(X&gt;m+n\mid X&gt;m)=P(X&gt;n)</code></span>，其中 <span class="course-math" data-tex="m,n" data-display="false"><code>m,n</code></span> 为非负整数（条件概率有定义时）。
+- 无记忆性（Memoryless property）： <span class="course-math" data-tex="P(X&gt;m+n\mid X&gt;m)=P(X&gt;n)" data-display="false"><code>P(X&gt;m+n\mid X&gt;m)=P(X&gt;n)</code></span>，其中 <span class="course-math" data-tex="m,n" data-display="false"><code>m,n</code></span> 为非负整数。
 
 ### 泊松分布（Poisson Distribution）
 {: #section-5 }
@@ -94,7 +94,7 @@ excerpt: "概率与统计 · Probability Distributions - 概率分布"
 {: #section-8 }
 
 
-设 <span class="course-math" data-tex="a&lt;b" data-display="false"><code>a&lt;b</code></span>。“选择一个 <span class="course-math" data-tex="a,b" data-display="false"><code>a,b</code></span> 之间的随机数” 可翻译为 “从 <span class="course-math" data-tex="[a,b]" data-display="false"><code>[a,b]</code></span> 上的连续均匀分布观察到一个值”。
+“选择一个 <span class="course-math" data-tex="a,b" data-display="false"><code>a,b</code></span> 之间的随机数” 可翻译为 “从 <span class="course-math" data-tex="[a,b]" data-display="false"><code>[a,b]</code></span> 上的连续均匀分布观察到一个值”。
 PDF：
 <span class="course-math course-math-display" data-tex="f(x)=\begin{cases}&#10;\frac{1}{b-a}, &amp; a \leq x \leq b, \\&#10;0, &amp; \text{otherwise}&#10;\end{cases}" data-display="true"><code>f(x)=\begin{cases}&#10;\frac{1}{b-a}, &amp; a \leq x \leq b, \\&#10;0, &amp; \text{otherwise}&#10;\end{cases}</code></span>
 随机变量 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 在 <span class="course-math" data-tex="[a,b]" data-display="false"><code>[a,b]</code></span> 上均匀分布： <span class="course-math" data-tex="X\sim\mathrm{Uniform}(a,b)" data-display="false"><code>X\sim\mathrm{Uniform}(a,b)</code></span> 。
