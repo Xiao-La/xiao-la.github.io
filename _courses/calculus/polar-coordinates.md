@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-02-21T11:22:04+08:00"
-updated_at: "2026-10-09T16:58:39+08:00"
+updated_at: "2026-10-13T11:47:00+08:00"
 reference: false
 order: 7
 layout: "course"
@@ -30,25 +30,25 @@ excerpt: "高等数学（上）/（下） · Polar Coordinates - 极坐标"
 
 【不考】
 平面光滑曲线的曲率（Curvature）定义为
-<span class="course-math course-math-display" data-tex="\kappa=\lVert \frac{\mathrm{d}\mathbf{T}}{\mathrm{d}s}\rVert" data-display="true"><code>\kappa=\lVert \frac{\mathrm{d}\mathbf{T}}{\mathrm{d}s}\rVert</code></span>
+<span class="course-math course-math-display" data-tex="\kappa=\lvert \frac{\mathrm{d}\mathbf{T}}{\mathrm{d}s}\rvert" data-display="true"><code>\kappa=\lvert \frac{\mathrm{d}\mathbf{T}}{\mathrm{d}s}\rvert</code></span>
 其中 <span class="course-math" data-tex="s" data-display="false"><code>s</code></span> 是弧长，<span class="course-math" data-tex="\mathbf{T}" data-display="false"><code>\mathbf{T}</code></span> 是曲线的单位切向量。
 计算公式：若 <span class="course-math" data-tex="\mathbf{r}(t)" data-display="false"><code>\mathbf{r}(t)</code></span> 是一个光滑曲线，则：
-<span class="course-math course-math-display" data-tex="\kappa=\frac{1}{\lVert \mathbf{v}\rVert } \lVert \frac{\mathrm{d}\mathbf{T}}{\mathrm{d}t}\rVert" data-display="true"><code>\kappa=\frac{1}{\lVert \mathbf{v}\rVert } \lVert \frac{\mathrm{d}\mathbf{T}}{\mathrm{d}t}\rVert</code></span>
-其中 <span class="course-math" data-tex="\mathbf{v}=\mathbf{r}&#x27;(t), \mathbf{T}= \frac{\mathbf{v}}{\lVert \mathbf{v}\rVert }" data-display="false"><code>\mathbf{v}=\mathbf{r}&#x27;(t), \mathbf{T}= \frac{\mathbf{v}}{\lVert \mathbf{v}\rVert }</code></span> 是曲线的单位切向量。
+<span class="course-math course-math-display" data-tex="\kappa=\frac{1}{\lvert \mathbf{v}\rvert } \lvert \frac{\mathrm{d}\mathbf{T}}{\mathrm{d}t}\rvert" data-display="true"><code>\kappa=\frac{1}{\lvert \mathbf{v}\rvert } \lvert \frac{\mathrm{d}\mathbf{T}}{\mathrm{d}t}\rvert</code></span>
+其中 <span class="course-math" data-tex="\mathbf{v}=\mathbf{r}&#x27;(t), \mathbf{T}= \frac{\mathbf{v}}{\lvert \mathbf{v}\rvert }" data-display="false"><code>\mathbf{v}=\mathbf{r}&#x27;(t), \mathbf{T}= \frac{\mathbf{v}}{\lvert \mathbf{v}\rvert }</code></span> 是曲线的单位切向量。
 在 <span class="course-math" data-tex="\kappa&gt;0" data-display="false"><code>\kappa&gt;0</code></span> 的点，定义光滑曲线的 **主单位法向量（Principal Unit Normal Vector）**：
 <span class="course-math course-math-display" data-tex="\mathbf{N}=\frac{1}{\kappa} \frac{\mathrm{d}\mathbf{T}}{\mathrm{d}s}" data-display="true"><code>\mathbf{N}=\frac{1}{\kappa} \frac{\mathrm{d}\mathbf{T}}{\mathrm{d}s}</code></span>
 这里 <span class="course-math" data-tex="\frac{\mathrm{d}\mathbf{T}}{\mathrm{d}s}" data-display="false"><code>\frac{\mathrm{d}\mathbf{T}}{\mathrm{d}s}</code></span> 指向了 <span class="course-math" data-tex="\mathbf{T}" data-display="false"><code>\mathbf{T}</code></span> 转向的方向，因此垂直于切向量。再用 <span class="course-math" data-tex="\kappa" data-display="false"><code>\kappa</code></span> 归一化。
 对于参数方程 <span class="course-math" data-tex="\mathbf{r}(t)" data-display="false"><code>\mathbf{r}(t)</code></span>，这个量可以这样计算：
-<span class="course-math course-math-display" data-tex="\mathbf{N}=\frac{\mathrm{d}\mathbf{T} / \mathrm{d}t}{\lVert \mathrm{d}\mathbf{T} / \mathrm{d}t \rVert }" data-display="true"><code>\mathbf{N}=\frac{\mathrm{d}\mathbf{T} / \mathrm{d}t}{\lVert \mathrm{d}\mathbf{T} / \mathrm{d}t \rVert }</code></span>
+<span class="course-math course-math-display" data-tex="\mathbf{N}=\frac{\mathrm{d}\mathbf{T} / \mathrm{d}t}{\lvert \mathrm{d}\mathbf{T} / \mathrm{d}t \rvert }" data-display="true"><code>\mathbf{N}=\frac{\mathrm{d}\mathbf{T} / \mathrm{d}t}{\lvert \mathrm{d}\mathbf{T} / \mathrm{d}t \rvert }</code></span>
 
-其中 <span class="course-math" data-tex="\mathbf{v}=\mathbf{r}&#x27;(t), \mathbf{T}= \mathbf{v} / \lVert \mathbf{v} \rVert" data-display="false"><code>\mathbf{v}=\mathbf{r}&#x27;(t), \mathbf{T}= \mathbf{v} / \lVert \mathbf{v} \rVert</code></span>。
+其中 <span class="course-math" data-tex="\mathbf{v}=\mathbf{r}&#x27;(t), \mathbf{T}= \mathbf{v} / \lvert \mathbf{v} \rvert" data-display="false"><code>\mathbf{v}=\mathbf{r}&#x27;(t), \mathbf{T}= \mathbf{v} / \lvert \mathbf{v} \rvert</code></span>。
 定义曲率半径（The radius of curvature）：
 <span class="course-math course-math-display" data-tex="\rho=\frac{1}{\kappa}" data-display="true"><code>\rho=\frac{1}{\kappa}</code></span>
 对于 <span class="course-math" data-tex="y=f(x)" data-display="false"><code>y=f(x)</code></span> ：
 - 令 <span class="course-math" data-tex="\mathbf{r}(t)=t \mathbf{i}+f(t)\mathbf{j}" data-display="false"><code>\mathbf{r}(t)=t \mathbf{i}+f(t)\mathbf{j}</code></span>。
 - 那么 <span class="course-math" data-tex="\mathbf{v}=\mathbf{i}+f&#x27;(t)\mathbf{j}" data-display="false"><code>\mathbf{v}=\mathbf{i}+f&#x27;(t)\mathbf{j}</code></span>。
-- 那么 <span class="course-math" data-tex="\lVert \mathbf{v} \rVert=\sqrt{ 1+[f&#x27;(t)]^{2} }" data-display="false"><code>\lVert \mathbf{v} \rVert=\sqrt{ 1+[f&#x27;(t)]^{2} }</code></span>，且有 <span class="course-math" data-tex="\mathbf{T}=\mathbf{v} / \lVert \mathbf{v} \rVert" data-display="false"><code>\mathbf{T}=\mathbf{v} / \lVert \mathbf{v} \rVert</code></span>。
-- 最终可以推出  <span class="course-math course-math-display" data-tex="\kappa=\frac{1}{\lVert \mathbf{v} \rVert} \lVert \frac{\mathrm{d}\mathbf{T}}{\mathrm{d}t}\rVert = \frac{\lvert y&#x27;&#x27; \rvert}{(1+(y&#x27;)^{2})^{3/2}}" data-display="true"><code>\kappa=\frac{1}{\lVert \mathbf{v} \rVert} \lVert \frac{\mathrm{d}\mathbf{T}}{\mathrm{d}t}\rVert = \frac{\lvert y&#x27;&#x27; \rvert}{(1+(y&#x27;)^{2})^{3/2}}</code></span>
+- 那么 <span class="course-math" data-tex="\lvert \mathbf{v} \rvert=\sqrt{ 1+[f&#x27;(t)]^{2} }" data-display="false"><code>\lvert \mathbf{v} \rvert=\sqrt{ 1+[f&#x27;(t)]^{2} }</code></span>，且有 <span class="course-math" data-tex="\mathbf{T}=\mathbf{v} / \lvert \mathbf{v} \rvert" data-display="false"><code>\mathbf{T}=\mathbf{v} / \lvert \mathbf{v} \rvert</code></span>。
+- 最终可以推出  <span class="course-math course-math-display" data-tex="\kappa=\frac{1}{\lvert \mathbf{v} \rvert} \lvert \frac{\mathrm{d}\mathbf{T}}{\mathrm{d}t}\rvert = \frac{\lvert y&#x27;&#x27; \rvert}{(1+(y&#x27;)^{2})^{3/2}}" data-display="true"><code>\kappa=\frac{1}{\lvert \mathbf{v} \rvert} \lvert \frac{\mathrm{d}\mathbf{T}}{\mathrm{d}t}\rvert = \frac{\lvert y&#x27;&#x27; \rvert}{(1+(y&#x27;)^{2})^{3/2}}</code></span>
 
 ### 求闭合曲线面积（简单闭曲线，沿逆时针方向）
 {: #section-2 }

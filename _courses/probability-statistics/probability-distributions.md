@@ -5,7 +5,7 @@ course_title: "概率与统计"
 section: ""
 status: "updating"
 created_at: "2026-07-25T14:57:40+08:00"
-updated_at: "2026-10-09T20:20:44+08:00"
+updated_at: "2026-10-13T11:53:49+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -53,7 +53,7 @@ excerpt: "概率与统计 · Probability Distributions - 概率分布"
 且有：
 - <span class="course-math" data-tex="\mathrm{E}(X)=\frac{1}{p}" data-display="false"><code>\mathrm{E}(X)=\frac{1}{p}</code></span>
 - <span class="course-math" data-tex="\operatorname{Var}(X)= \frac{1-p}{p^{2}}" data-display="false"><code>\operatorname{Var}(X)= \frac{1-p}{p^{2}}</code></span>
-- 无记忆性（Memoryless property）： <span class="course-math" data-tex="P(X&gt;m+n\mid X&gt;m)=P(X&gt;n)" data-display="false"><code>P(X&gt;m+n\mid X&gt;m)=P(X&gt;n)</code></span>，其中 <span class="course-math" data-tex="m,n" data-display="false"><code>m,n</code></span> 为非负整数，且条件事件的概率非零。
+- 无记忆性（Memoryless property）： <span class="course-math" data-tex="P(X&gt;m+n\mid X&gt;m)=P(X&gt;n)" data-display="false"><code>P(X&gt;m+n\mid X&gt;m)=P(X&gt;n)</code></span>，其中 <span class="course-math" data-tex="m,n" data-display="false"><code>m,n</code></span> 为非负整数（条件概率有定义时）。
 
 ### 泊松分布（Poisson Distribution）
 {: #section-5 }
@@ -82,7 +82,7 @@ excerpt: "概率与统计 · Probability Distributions - 概率分布"
 
 **超几何分布（Hypergeometric）：** <span class="course-math" data-tex="X\sim h(n,N,M)" data-display="false"><code>X\sim h(n,N,M)</code></span>。从含 <span class="course-math" data-tex="M" data-display="false"><code>M</code></span> 个成功元素的 <span class="course-math" data-tex="N" data-display="false"><code>N</code></span> 个元素中，不放回抽取 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个，<span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 为抽到的成功元素数；<span class="course-math" data-tex="\max(0,n-(N-M))\leq k\leq\min(n,M)" data-display="false"><code>\max(0,n-(N-M))\leq k\leq\min(n,M)</code></span>。
 <span class="course-math course-math-display" data-tex="P(X=k)= \frac{\binom{M}{k}\binom{N-M}{n-k}}{\binom{M}{n}}" data-display="true"><code>P(X=k)= \frac{\binom{M}{k}\binom{N-M}{n-k}}{\binom{M}{n}}</code></span>
-**负二项分布（Negative binomial）** <span class="course-math" data-tex="X\sim\mathrm{Nb}(r,p)" data-display="false"><code>X\sim\mathrm{Nb}(r,p)</code></span>。这里 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 计数直到第 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> 次成功所需的总试验次数，<span class="course-math" data-tex="r" data-display="false"><code>r</code></span> 为正整数，<span class="course-math" data-tex="0&lt;p\leq1" data-display="false"><code>0&lt;p\leq1</code></span>，<span class="course-math" data-tex="k=r,r+1,\dots" data-display="false"><code>k=r,r+1,\dots</code></span>；若改为计数失败次数，公式和期望也要相应平移。
+**负二项分布（Negative binomial）** <span class="course-math" data-tex="X\sim\text{Nb}(r,p)" data-display="false"><code>X\sim\text{Nb}(r,p)</code></span>。<span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 表示直到第 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> 次成功所需的总试验次数，<span class="course-math" data-tex="k=r,r+1,\dots" data-display="false"><code>k=r,r+1,\dots</code></span>。
 <span class="course-math course-math-display" data-tex="P(X=k)= \binom{k-1}{r-1} p^{r} \times (1-p)^{k-r}" data-display="true"><code>P(X=k)= \binom{k-1}{r-1} p^{r} \times (1-p)^{k-r}</code></span>
 
 ## 连续概率分布
@@ -117,7 +117,7 @@ CDF：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Probability%20Distributions%20-%20%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83.png' | relative_url }}{% raw %}" alt="Probability Distributions - 概率分布" width="197" height="301" loading="lazy" decoding="async">
 通常，指数分布用于描述到某个事件发生为止经过的时间。
 - 指数分布可以描述齐次泊松过程中相邻事件之间的等待时间。
-- 齐次泊松过程（Poisson Process）：计数过程 <span class="course-math" data-tex="N(t)" data-display="false"><code>N(t)</code></span> 满足 <span class="course-math" data-tex="N(0)=0" data-display="false"><code>N(0)=0</code></span>，不相交时间区间内的事件发生次数相互独立，且长度为 <span class="course-math" data-tex="t" data-display="false"><code>t</code></span> 的区间内发生次数服从 <span class="course-math" data-tex="\mathrm{Poisson}(\lambda t)" data-display="false"><code>\mathrm{Poisson}(\lambda t)</code></span>。<span class="course-math" data-tex="\lambda" data-display="false"><code>\lambda</code></span> 是恒定的平均发生速率，并不表示事件等时间间隔发生。
+- 泊松过程（Poisson Process）：事件以恒定的平均速率 <span class="course-math" data-tex="\lambda" data-display="false"><code>\lambda</code></span> 随机发生，不相交时间区间的计数相互独立；长度为 <span class="course-math" data-tex="t" data-display="false"><code>t</code></span> 的区间内计数服从 <span class="course-math" data-tex="\text{Poisson}(\lambda t)" data-display="false"><code>\text{Poisson}(\lambda t)</code></span>。
 - 设 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 是泊松过程中，到事件发生为止经过的时间，则
 <span class="course-math course-math-display" data-tex="P(X\leq t) =1-P(X&gt;t)=1-P(\text{no event occurred in } [0,t])=1- \frac{(\lambda t)^{0}}{0!}e^{-\lambda t}=1-e^{-\lambda t}" data-display="true"><code>P(X\leq t) =1-P(X&gt;t)=1-P(\text{no event occurred in } [0,t])=1- \frac{(\lambda t)^{0}}{0!}e^{-\lambda t}=1-e^{-\lambda t}</code></span>
 - 也就是说 <span class="course-math" data-tex="X\sim\mathrm{Exp}(\lambda)" data-display="false"><code>X\sim\mathrm{Exp}(\lambda)</code></span>。这个 <span class="course-math" data-tex="\lambda" data-display="false"><code>\lambda</code></span> 是泊松过程的速率；长度为 <span class="course-math" data-tex="t" data-display="false"><code>t</code></span> 的区间对应的泊松分布参数为 <span class="course-math" data-tex="\lambda t" data-display="false"><code>\lambda t</code></span>。
@@ -137,15 +137,15 @@ CDF：
 
 
 也称为高斯分布（Gaussian Distribution）。
-<span class="course-math" data-tex="X\sim\mathcal{N}(\mu,\sigma^{2})" data-display="false"><code>X\sim\mathcal{N}(\mu,\sigma^{2})</code></span>，其中 <span class="course-math" data-tex="\sigma&gt;0" data-display="false"><code>\sigma&gt;0</code></span>。PDF：
+<span class="course-math" data-tex="X\sim N(\mu,\sigma^{2})" data-display="false"><code>X\sim N(\mu,\sigma^{2})</code></span>，其中 <span class="course-math" data-tex="\sigma&gt;0" data-display="false"><code>\sigma&gt;0</code></span>。PDF：
 <span class="course-math course-math-display" data-tex="f(x)= \frac{1}{\sqrt{ 2\pi }\sigma}e^{- \frac{(x-\mu)^{2}}{2\sigma^{2}}}" data-display="true"><code>f(x)= \frac{1}{\sqrt{ 2\pi }\sigma}e^{- \frac{(x-\mu)^{2}}{2\sigma^{2}}}</code></span>
-若 <span class="course-math" data-tex="\mu=0,\sigma=1" data-display="false"><code>\mu=0,\sigma=1</code></span>，为标准正态分布 <span class="course-math" data-tex="X\sim\mathcal{N}(0,1)" data-display="false"><code>X\sim\mathcal{N}(0,1)</code></span>，其 PDF：
+若 <span class="course-math" data-tex="\mu=0,\sigma=1" data-display="false"><code>\mu=0,\sigma=1</code></span>，为标准正态分布 <span class="course-math" data-tex="X\sim N(0,1)" data-display="false"><code>X\sim N(0,1)</code></span>，其 PDF：
 <span class="course-math course-math-display" data-tex="\phi(x)= \frac{1}{\sqrt{ 2\pi }} e^{- \frac{x^{2}}{2}}" data-display="true"><code>\phi(x)= \frac{1}{\sqrt{ 2\pi }} e^{- \frac{x^{2}}{2}}</code></span>
 标准正态分布的 CDF 没有初等函数形式的表达式，但它很常用，所以我们记它的 CDF  为 <span class="course-math" data-tex="\Phi(x)" data-display="false"><code>\Phi(x)</code></span>：
 <span class="course-math course-math-display" data-tex="\Phi(x)=P(X\leq x)=\int_{-\infty}^{x} \frac{1}{\sqrt{ 2\pi }} e^{-u^{2}/2}\,\mathrm{d}u" data-display="true"><code>\Phi(x)=P(X\leq x)=\int_{-\infty}^{x} \frac{1}{\sqrt{ 2\pi }} e^{-u^{2}/2}\,\mathrm{d}u</code></span>
 其 PDF 是一个钟形曲线：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Probability%20Distributions%20-%20%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83-2.png' | relative_url }}{% raw %}" alt="Probability Distributions - 概率分布-2" width="381" height="263" loading="lazy" decoding="async">
-对 <span class="course-math" data-tex="X\sim\mathcal{N}(\mu,\sigma^2)" data-display="false"><code>X\sim\mathcal{N}(\mu,\sigma^2)</code></span>，可以做标准化：令 <span class="course-math" data-tex="Z= \frac{X-\mu}{\sigma}" data-display="false"><code>Z= \frac{X-\mu}{\sigma}</code></span>，则 <span class="course-math" data-tex="Z\sim\mathcal{N}(0,1)" data-display="false"><code>Z\sim\mathcal{N}(0,1)</code></span>。
+对 <span class="course-math" data-tex="X\sim N(\mu,\sigma^2)" data-display="false"><code>X\sim N(\mu,\sigma^2)</code></span>，可以做标准化：令 <span class="course-math" data-tex="Z= \frac{X-\mu}{\sigma}" data-display="false"><code>Z= \frac{X-\mu}{\sigma}</code></span>，则 <span class="course-math" data-tex="Z\sim N(0,1)" data-display="false"><code>Z\sim N(0,1)</code></span>。
 期望与方差：
 <span class="course-math course-math-display" data-tex="\mathrm{E}(X)=\mu" data-display="true"><code>\mathrm{E}(X)=\mu</code></span>
 <span class="course-math course-math-display" data-tex="\operatorname{Var}(X)=\sigma^{2}" data-display="true"><code>\operatorname{Var}(X)=\sigma^{2}</code></span>
@@ -159,8 +159,8 @@ CDF：
 <span class="course-math course-math-display" data-tex="X=\sum_{i=1}^{k} Z_{i}^{2}" data-display="true"><code>X=\sum_{i=1}^{k} Z_{i}^{2}</code></span>
 服从自由度为 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 的卡方分布，记作 <span class="course-math" data-tex="X\sim \chi ^{2}(k)" data-display="false"><code>X\sim \chi ^{2}(k)</code></span>。
 
-自由度为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 的情况，其 PDF 的推导：若 <span class="course-math" data-tex="X\sim \mathcal{N}(0,1)" data-display="false"><code>X\sim \mathcal{N}(0,1)</code></span> 且 <span class="course-math" data-tex="Y=X^{2}" data-display="false"><code>Y=X^{2}</code></span>，那么
+自由度为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 的情况，其 PDF 的推导：若 <span class="course-math" data-tex="X\sim N(0,1)" data-display="false"><code>X\sim N(0,1)</code></span> 且 <span class="course-math" data-tex="Y=X^{2}" data-display="false"><code>Y=X^{2}</code></span>，那么
 <span class="course-math course-math-display" data-tex="\begin{aligned}&#10;F_{Y}(y)=P(Y\leq{}y)&amp;=P(X^{2}\leq{}y) \\&#10;&amp;=P(-\sqrt{y}\leq{}X\leq{}\sqrt{y}) \\&#10;&amp;=\Phi (\sqrt{y})-\Phi (-\sqrt{y}) \\&#10;\end{aligned}" data-display="true"><code>\begin{aligned}&#10;F_{Y}(y)=P(Y\leq{}y)&amp;=P(X^{2}\leq{}y) \\&#10;&amp;=P(-\sqrt{y}\leq{}X\leq{}\sqrt{y}) \\&#10;&amp;=\Phi (\sqrt{y})-\Phi (-\sqrt{y}) \\&#10;\end{aligned}</code></span>
-从而对于 <span class="course-math" data-tex="y\geq{}0" data-display="false"><code>y\geq{}0</code></span>：
+从而对于 <span class="course-math" data-tex="y&gt;0" data-display="false"><code>y&gt;0</code></span>：
 <span class="course-math course-math-display" data-tex="\begin{aligned}&#10;f_{Y}(y)=F&#x27;_{Y}(y)&amp;=\phi (\sqrt{y})\cdot \frac{1}{2\sqrt{y}}-\phi (-\sqrt{y})\cdot \left( -\frac{1}{2\sqrt{y}} \right) \\&#10;&amp;=\frac{\phi (\sqrt{y})}{\sqrt{y}} \\&#10;&amp;= \frac{1}{\sqrt{2\pi y}}e^{-y/2} &#10;\end{aligned}" data-display="true"><code>\begin{aligned}&#10;f_{Y}(y)=F&#x27;_{Y}(y)&amp;=\phi (\sqrt{y})\cdot \frac{1}{2\sqrt{y}}-\phi (-\sqrt{y})\cdot \left( -\frac{1}{2\sqrt{y}} \right) \\&#10;&amp;=\frac{\phi (\sqrt{y})}{\sqrt{y}} \\&#10;&amp;= \frac{1}{\sqrt{2\pi y}}e^{-y/2} &#10;\end{aligned}</code></span>
 {% endraw %}

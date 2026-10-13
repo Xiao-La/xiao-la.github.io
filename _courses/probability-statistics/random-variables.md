@@ -5,7 +5,7 @@ course_title: "概率与统计"
 section: ""
 status: "updating"
 created_at: "2026-04-30T19:28:27+08:00"
-updated_at: "2026-10-10T16:52:35+08:00"
+updated_at: "2026-10-13T12:01:07+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -17,14 +17,14 @@ excerpt: "概率与统计 · Random Variables - 随机变量"
 ---
 
 {% raw %}
-随机变量的定义：定义在样本空间上的一个可测实值函数。<span class="course-math" data-tex="X:\Omega\to \mathbb{R}" data-display="false"><code>X:\Omega\to \mathbb{R}</code></span>。
+随机变量的定义：定义在样本空间上的一个实值函数。<span class="course-math" data-tex="X:\Omega\to \mathbb{R}" data-display="false"><code>X:\Omega\to \mathbb{R}</code></span>。
 
-常见的随机变量类型有离散的（Discrete）和连续的（Continuous），也存在混合型等其他类型。
+随机变量常见的类型有离散型（Discrete）和连续型（Continuous）。
 
 概率质量函数（Probability Mass Function, pmf）：对在集合 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> （称为支撑集 Support）上离散随机变量 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span>，定义它的概率质量函数：
 <span class="course-math course-math-display" data-tex="p(x)=&#10;P(X=x) (x\in S)" data-display="true"><code>p(x)=&#10;P(X=x) (x\in S)</code></span>
 
-概率密度函数（Probability Density Function, pdf）：这里讨论的连续型随机变量特指分布绝对连续、具有概率密度的情形。对在集合 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 上这样的随机变量 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span>，它落在区间 <span class="course-math" data-tex="\left[ a,b \right]" data-display="false"><code>\left[ a,b \right]</code></span> 中的概率由概率密度函数 <span class="course-math" data-tex="f(x)" data-display="false"><code>f(x)</code></span> 在 <span class="course-math" data-tex="\left[ a,b \right]" data-display="false"><code>\left[ a,b \right]</code></span> 上对 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 积分给出：
+概率密度函数（Probability Density Function, pdf）：对在集合 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 上的连续型随机变量 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span>，它落在区间 <span class="course-math" data-tex="\left[ a,b \right]" data-display="false"><code>\left[ a,b \right]</code></span> 中的概率由概率密度函数 <span class="course-math" data-tex="f(x)" data-display="false"><code>f(x)</code></span> 在 <span class="course-math" data-tex="\left[ a,b \right]" data-display="false"><code>\left[ a,b \right]</code></span> 上对 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 积分给出：
 <span class="course-math course-math-display" data-tex="P(a\leq X\leq b)=\int_{a}^b f(x)\,\mathrm{d}x" data-display="true"><code>P(a\leq X\leq b)=\int_{a}^b f(x)\,\mathrm{d}x</code></span>
 
 这里，<span class="course-math" data-tex="f(x)" data-display="false"><code>f(x)</code></span> 需要满足 <span class="course-math" data-tex="\forall x \in S, f(x)\geq 0" data-display="false"><code>\forall x \in S, f(x)\geq 0</code></span> 且 <span class="course-math" data-tex="\int_{S}f(x)\,\mathrm{d}x=1" data-display="false"><code>\int_{S}f(x)\,\mathrm{d}x=1</code></span>。
@@ -40,7 +40,6 @@ excerpt: "概率与统计 · Random Variables - 随机变量"
 <span class="course-math course-math-display" data-tex="P(a\leq X\leq b)=F(b)-F(a)" data-display="true"><code>P(a\leq X\leq b)=F(b)-F(a)</code></span>
 在 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 连续的点，有
 <span class="course-math course-math-display" data-tex="f(x)=F&#x27;(x)" data-display="true"><code>f(x)=F&#x27;(x)</code></span>
-一般而言，这个等式几乎处处成立；密度在单个点的取值不影响概率。
 CDF 是不降的而且是右连续的。
 
 
@@ -54,7 +53,7 @@ CDF 是不降的而且是右连续的。
 
 集合 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 上，概率质量函数为 <span class="course-math" data-tex="p(x)" data-display="false"><code>p(x)</code></span> 的离散随机变量 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 的期望（Expectation/Expected Value/Mean）定义为
 <span class="course-math course-math-display" data-tex="\mathrm{E}(X)=\sum_{x\in S}xp(x)" data-display="true"><code>\mathrm{E}(X)=\sum_{x\in S}xp(x)</code></span>
-以下线性性质在相关随机变量可积（绝对期望有限）时成立：
+性质（以下期望存在）：
 - 常量的期望就是它本身： <span class="course-math" data-tex="\mathrm{E}(a)=a" data-display="false"><code>\mathrm{E}(a)=a</code></span>
 - <span class="course-math" data-tex="\mathrm{E}(aX)=a\mathrm{E}(X)" data-display="false"><code>\mathrm{E}(aX)=a\mathrm{E}(X)</code></span>
 - <span class="course-math" data-tex="\mathrm{E}(aX+b)=a\mathrm{E}(X)+b" data-display="false"><code>\mathrm{E}(aX+b)=a\mathrm{E}(X)+b</code></span>
@@ -69,7 +68,7 @@ CDF 是不降的而且是右连续的。
 {: #section-2 }
 
 
-以下讨论二阶矩 <span class="course-math" data-tex="\mathrm{E}(X^2)&lt;\infty" data-display="false"><code>\mathrm{E}(X^2)&lt;\infty</code></span> 的情形。随机变量 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 的方差定义为
+随机变量 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 的方差定义为
 <span class="course-math course-math-display" data-tex="\operatorname{Var}(X)=\mathrm{E}\left[(X-\mathrm{E}(X))^2\right]" data-display="true"><code>\operatorname{Var}(X)=\mathrm{E}\left[(X-\mathrm{E}(X))^2\right]</code></span>
 可以推导出计算公式：
 <span class="course-math course-math-display" data-tex="\operatorname{Var}(X)=\mathrm{E}(X^{2})-\mathrm{E}(X)^{2}" data-display="true"><code>\operatorname{Var}(X)=\mathrm{E}(X^{2})-\mathrm{E}(X)^{2}</code></span>
@@ -121,10 +120,10 @@ CDF 是不降的而且是右连续的。
 <span class="course-math course-math-display" data-tex="\mathrm{E}(Y)=\mathrm{E}(g(X))=\int_{-\infty}^{\infty} g(x)f(x)\,\mathrm{d}x" data-display="true"><code>\mathrm{E}(Y)=\mathrm{E}(g(X))=\int_{-\infty}^{\infty} g(x)f(x)\,\mathrm{d}x</code></span>
 
 关于 <span class="course-math" data-tex="\mathrm{E}(g(X))" data-display="false"><code>\mathrm{E}(g(X))</code></span> 和 <span class="course-math" data-tex="g(\mathrm{E}(X))" data-display="false"><code>g(\mathrm{E}(X))</code></span> 的关系，根据琴生不等式（Jensen's Inequality）：
-- 若 <span class="course-math" data-tex="g(X)" data-display="false"><code>g(X)</code></span> 是 凸的 / Convex，那么  <span class="course-math" data-tex="\mathrm{E}(g(X))\geq{}g(\mathrm{E}(X))" data-display="false"><code>\mathrm{E}(g(X))\geq{}g(\mathrm{E}(X))</code></span> 。
-- 若 <span class="course-math" data-tex="g(X)" data-display="false"><code>g(X)</code></span> 是 凹的 / Concave，那么  <span class="course-math" data-tex="\mathrm{E}(g(X))\leq{}g(\mathrm{E}(X))" data-display="false"><code>\mathrm{E}(g(X))\leq{}g(\mathrm{E}(X))</code></span> 。
+- 若函数 <span class="course-math" data-tex="g" data-display="false"><code>g</code></span> 是凸的 / Convex，那么  <span class="course-math" data-tex="\mathrm{E}(g(X))\geq{}g(\mathrm{E}(X))" data-display="false"><code>\mathrm{E}(g(X))\geq{}g(\mathrm{E}(X))</code></span> 。
+- 若函数 <span class="course-math" data-tex="g" data-display="false"><code>g</code></span> 是凹的 / Concave，那么  <span class="course-math" data-tex="\mathrm{E}(g(X))\leq{}g(\mathrm{E}(X))" data-display="false"><code>\mathrm{E}(g(X))\leq{}g(\mathrm{E}(X))</code></span> 。
 
 *Extra:* 琴生不等式的应用，Kullback-Leibler divergence (KL divergence, KL散度)，衡量两个 PDF 之间的距离：
-<span class="course-math course-math-display" data-tex="D_{\mathrm{KL}}(p\Vert q) = \int_{-\infty}^{\infty} p(x) \log \left( \frac{q(x)}{p(x)} \right)\,\mathrm{d}x" data-display="true"><code>D_{\mathrm{KL}}(p\Vert q) = \int_{-\infty}^{\infty} p(x) \log \left( \frac{q(x)}{p(x)} \right)\,\mathrm{d}x</code></span>
-根据琴生不等式可以证明 <span class="course-math" data-tex="D_{\mathrm{KL}}\geq{}0" data-display="false"><code>D_{\mathrm{KL}}\geq{}0</code></span>，且取等当且仅当 <span class="course-math" data-tex="p(x)=q(x)" data-display="false"><code>p(x)=q(x)</code></span>。
+<span class="course-math course-math-display" data-tex="D_{\mathrm{KL}}(p\Vert q) = \int_{-\infty}^{\infty} p(x) \log \left( \frac{p(x)}{q(x)} \right)\,\mathrm{d}x" data-display="true"><code>D_{\mathrm{KL}}(p\Vert q) = \int_{-\infty}^{\infty} p(x) \log \left( \frac{p(x)}{q(x)} \right)\,\mathrm{d}x</code></span>
+根据琴生不等式可以证明 <span class="course-math" data-tex="D_{\mathrm{KL}}\geq{}0" data-display="false"><code>D_{\mathrm{KL}}\geq{}0</code></span>，且取等当且仅当 <span class="course-math" data-tex="p(x)=q(x)" data-display="false"><code>p(x)=q(x)</code></span> 几乎处处成立。
 {% endraw %}

@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-02-27T16:45:43+08:00"
-updated_at: "2026-10-09T16:58:39+08:00"
+updated_at: "2026-10-13T11:49:54+08:00"
 reference: false
 order: 10
 layout: "course"
@@ -104,7 +104,7 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 
 对称：球对称，柱对称，平移对称，面对称。对不同的面选不一样的高斯曲面，一般是一个球或者圆柱。
 
-静电平衡时，导体材料内部的电场为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>，因此完全位于导体材料内部的高斯曲面所包净电荷为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>；这不表示含电荷的空腔内电场也为零。
+静电平衡时，导体材料内部的电场为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>，因此完全位于导体材料内部的高斯曲面所包净电荷为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>。
 
 
 ### 电势（Electric Potential）
@@ -113,9 +113,9 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 
 电势能 <span class="course-math" data-tex="\Delta U=-W=-q_{0}\int_{i}^f \mathbf{E}\cdot \mathrm{d}\mathbf{s}" data-display="false"><code>\Delta U=-W=-q_{0}\int_{i}^f \mathbf{E}\cdot \mathrm{d}\mathbf{s}</code></span>。
 定义电势 <span class="course-math" data-tex="V=\frac{U}{q_{0}}" data-display="false"><code>V=\frac{U}{q_{0}}</code></span>，故有 <span class="course-math" data-tex="\Delta V=-\int_{i}^f \mathbf{E}\cdot \mathrm{d}\mathbf{s}" data-display="false"><code>\Delta V=-\int_{i}^f \mathbf{E}\cdot \mathrm{d}\mathbf{s}</code></span>。电势的单位为伏特（Volt）。
-电势零点可自由选取。对无穷远处电势积分收敛的电场，若选无穷远为零点，则：
+电势零点可自由选取。若取无穷远为零电势（相应积分收敛），则：
 <span class="course-math course-math-display" data-tex="V=-\int_{\infty}^f  \mathbf{E} \cdot \mathrm{d}\mathbf{s}" data-display="true"><code>V=-\int_{\infty}^f  \mathbf{E} \cdot \mathrm{d}\mathbf{s}</code></span>
-也可另选大地为零电势参考点，但不能据此要求大地与无穷远同时具有零电势。
+也可另选大地为零电势参考点。
 从这个式子可以得到：
 <span class="course-math course-math-display" data-tex="E_s=-\frac{\partial V}{\partial s}" data-display="true"><code>E_s=-\frac{\partial V}{\partial s}</code></span>
 也就是说，电场方向与电势降低的方向相同。在三维空间中：

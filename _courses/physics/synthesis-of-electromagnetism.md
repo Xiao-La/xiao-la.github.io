@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-04-28T15:01:35+08:00"
-updated_at: "2026-10-09T16:58:39+08:00"
+updated_at: "2026-10-13T11:49:54+08:00"
 reference: false
 order: 13
 layout: "course"
@@ -113,7 +113,7 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 3. 定向传播 (<span class="course-math" data-tex="\hat{\mathbf{E}} \times \hat{\mathbf{B}} = \hat{\mathbf{c}}" data-display="false"><code>\hat{\mathbf{E}} \times \hat{\mathbf{B}} = \hat{\mathbf{c}}</code></span>)。
  4. 振幅比例固定 (<span class="course-math" data-tex="E_m = cB_m" data-display="false"><code>E_m = cB_m</code></span>)：在真空中，电场的峰值大小 <span class="course-math" data-tex="E_m" data-display="false"><code>E_m</code></span> 与磁场的峰值大小 <span class="course-math" data-tex="B_m" data-display="false"><code>B_m</code></span> 之间保持一个固定的比例关系，这个比例常数就是真空中光速 <span class="course-math" data-tex="c" data-display="false"><code>c</code></span>。
  5. 波速由真空常数决定 (<span class="course-math" data-tex="c = 1/\sqrt{\mu_0\varepsilon_0}" data-display="false"><code>c = 1/\sqrt{\mu_0\varepsilon_0}</code></span>)：电磁波在真空中的传播速度（光速 <span class="course-math" data-tex="c" data-display="false"><code>c</code></span>）仅仅取决于真空磁导率 <span class="course-math" data-tex="\mu_0" data-display="false"><code>\mu_0</code></span> 和真空电容率 <span class="course-math" data-tex="\varepsilon_0" data-display="false"><code>\varepsilon_0</code></span>。这一推导证明了光本质上也是一种电磁波。
- 6. 能量均分 (<span class="course-math" data-tex="u_E = u_B" data-display="false"><code>u_E = u_B</code></span>)：电磁波在传播过程中携带着能量。对这种平面行波，在任意时空点都有 <span class="course-math" data-tex="u_E=u_B" data-display="false"><code>u_E=u_B</code></span>。一般的电磁场或多列波叠加形成的驻波并不一定逐点满足这一关系。
+6. 能量均分 (<span class="course-math" data-tex="u_E=u_B" data-display="false"><code>u_E=u_B</code></span>)：这种真空平面行波的电场能量密度与磁场能量密度处处相等。
 
 
 为了描述电磁波在某一时刻、某一点传输能量的方向和速率，物理学引入了**坡印廷矢量（Poynting vector） <span class="course-math" data-tex="\mathbf{S}" data-display="false"><code>\mathbf{S}</code></span>**。其定义式（矢量形式）为：

@@ -5,7 +5,7 @@ course_title: "计算机程序设计基础/JavaA"
 section: ""
 status: "completed"
 created_at: "2025-12-22T14:23:58+08:00"
-updated_at: "2026-10-08T21:14:49+08:00"
+updated_at: "2026-10-13T11:47:00+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -57,7 +57,7 @@ JDK：Java Development Kit = JRE + 开发工具
   byte(8 bits), short(16 bits), int(32 bits), long(64 bits)  // Integral Type
   float(32 bits), double(64 bits) // Floating-Point Type
   // 注意 float f = 1.2f 要在数字后加个 "f" 显式告诉编译器
-  boolean(true/false，存储大小未由语言规范固定为 1 bit)
+  boolean(true/false)
   char(16 bits, unicode)   
   ```
 - 引用类型（Reference Type），也叫复杂数据类型（Complex Data Type）。
@@ -267,7 +267,7 @@ int c = b; // auto-unboxing
 public enum Direction {
 	NORTH, SOUTH, EAST, WEST
 }
-// 下面仅类比枚举常量的实例；真正的 enum 还继承 Enum，并具有 values()/valueOf() 等机制
+// 用普通类示意枚举常量（不完全等价）
 public final class Direction {
 	private Direction() {} 
 	public static final Direction EAST = new Direction();
@@ -304,7 +304,7 @@ Collections.reverse(list);
 修饰符：
 
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109-1.png' | relative_url }}{% raw %}" alt="CS109-1" width="1956" height="652" loading="lazy" decoding="async">
-Java 语言规范明确：子类不继承超类的 `private` 成员；子类对象仍包含超类部分的状态，但这不等于成员继承。
+子类不继承超类的 `private` 成员，但对象仍保留超类的私有状态。
 子类可以通过 `super` 关键字调用（invoke）超类的构造方法。
 没有标识符（no modifier）相当于 `package-private`。
 使用  `extends` 关键字继承。
@@ -430,7 +430,7 @@ public static <T extends Comparable<T>> T maximum(T a, T b, T c) {
 这里的 `extends` 声明类型参数的上界：`T` 必须是 `Comparable<T>` 的子类型（类通过实现接口满足此条件）。
 
 泛型类（Generic Classes）例如 `ArrayList<T>, Stack<T>`。
-编译时会进行类型擦除（Erasure），将类型参数替换为其上界并插入必要的类型转换；字节码仍可保留泛型签名元数据供反射读取。
+泛型通过类型擦除（Erasure）实现：编译时将类型参数替换为其上界，并插入必要的类型转换。
 
 需要注意泛型的**类型安全**：
 ```java

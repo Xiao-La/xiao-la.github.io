@@ -5,7 +5,7 @@ course_title: "旧石器艺术与符号"
 section: ""
 status: "updating"
 created_at: "2026-10-10T10:33:44+08:00"
-updated_at: "2026-10-10T11:47:36+08:00"
+updated_at: "2026-10-13T11:23:11+08:00"
 reference: false
 order: 5
 layout: "course"
@@ -26,14 +26,14 @@ From primates to hominins(古人类)
 Funerary behaviour
 - Primary / secondary burial
 - Grave goods
-  - items belongings to deceased
+  - items belonging to the deceased
   - gifts from mourners
   - items from ritual activities
   - Reasons: sentimental; use in afterlife; prevent returning; reflect deeds
 - *Prevent Vampires*
 - other type: cremation, mummification, curation, dismemberment, ...
 
-Palaeolithic = Stone age(before metalworking)
+Palaeolithic = Old Stone Age（旧石器时代）
 Middle Palaeolithic
 - various hominins
 Upper Palaeolithic

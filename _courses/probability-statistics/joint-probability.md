@@ -5,7 +5,7 @@ course_title: "概率与统计"
 section: ""
 status: "updating"
 created_at: "2026-10-10T16:52:41+08:00"
-updated_at: "2026-10-10T18:10:16+08:00"
+updated_at: "2026-10-13T11:23:11+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -40,10 +40,10 @@ excerpt: "概率与统计 · Joint Probability - 联合概率"
 <span class="course-math course-math-display" data-tex="F_{X}(x)=F(x,\infty ), F_Y(y)=F(\infty ,y)" data-display="true"><code>F_{X}(x)=F(x,\infty ), F_Y(y)=F(\infty ,y)</code></span>
 
 对于离散随机向量，**joint PMF**：
-<span class="course-math course-math-display" data-tex="p(x_{i},y_{i})=P(X=x_{i},Y=y_{i})=p_{ij} \triangleq{}p_{ij}" data-display="true"><code>p(x_{i},y_{i})=P(X=x_{i},Y=y_{i})=p_{ij} \triangleq{}p_{ij}</code></span>
+<span class="course-math course-math-display" data-tex="p_{ij}\triangleq{}p(x_{i},y_{j})=P(X=x_{i},Y=y_{j})" data-display="true"><code>p_{ij}\triangleq{}p(x_{i},y_{j})=P(X=x_{i},Y=y_{j})</code></span>
 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 的 **marginal PMF**：
 <span class="course-math course-math-display" data-tex="p_{X}(x_{i})=P(X=x_{i})=\sum _{j=1}^{\infty }p_{ij}\triangleq p_{i\cdot }" data-display="true"><code>p_{X}(x_{i})=P(X=x_{i})=\sum _{j=1}^{\infty }p_{ij}\triangleq p_{i\cdot }</code></span>
-<span class="course-math course-math-display" data-tex="p_{Y}(x_{i})=P(Y=y_{i})=\sum _{i=1}^{\infty }p_{ij}\triangleq p_{\cdot j}" data-display="true"><code>p_{Y}(x_{i})=P(Y=y_{i})=\sum _{i=1}^{\infty }p_{ij}\triangleq p_{\cdot j}</code></span>
+<span class="course-math course-math-display" data-tex="p_{Y}(y_{j})=P(Y=y_{j})=\sum _{i=1}^{\infty }p_{ij}\triangleq p_{\cdot j}" data-display="true"><code>p_{Y}(y_{j})=P(Y=y_{j})=\sum _{i=1}^{\infty }p_{ij}\triangleq p_{\cdot j}</code></span>
 这些画一个表格来看就很清楚了。
 
 **Joint PDF:** 对连续随机向量 <span class="course-math" data-tex="(X,Y)" data-display="false"><code>(X,Y)</code></span>，对任意 <span class="course-math" data-tex="D\subseteq \mathbb{R} ^{2}" data-display="false"><code>D\subseteq \mathbb{R} ^{2}</code></span>：

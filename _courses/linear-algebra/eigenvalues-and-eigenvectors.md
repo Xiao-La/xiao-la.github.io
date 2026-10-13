@@ -5,7 +5,7 @@ course_title: "线性代数"
 section: ""
 status: "completed"
 created_at: "2026-05-06T16:22:03+08:00"
-updated_at: "2026-10-09T17:19:46+08:00"
+updated_at: "2026-10-13T11:47:00+08:00"
 reference: false
 order: 7
 layout: "course"
@@ -76,7 +76,7 @@ excerpt: "线性代数 · Eigenvalues and Eigenvectors - 特征值和特征向�
 <span class="course-math course-math-display" data-tex="\lambda^n \det(AB - \lambda I_{m})=\lambda ^m \det(BA-\lambda I_{n})" data-display="true"><code>\lambda^n \det(AB - \lambda I_{m})=\lambda ^m \det(BA-\lambda I_{n})</code></span>
 其中 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为 <span class="course-math" data-tex="m\times n" data-display="false"><code>m\times n</code></span> 矩阵， <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 为 <span class="course-math" data-tex="n\times m" data-display="false"><code>n\times m</code></span> 矩阵。
 
-**结论：秩为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 的 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 阶矩阵至少有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 个特征值为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>（按代数重数计）。（<span class="course-math" data-tex="N(A)" data-display="false"><code>N(A)</code></span> 有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 维，对应特征值为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 的特征向量）**
+**结论：秩为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 的 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 阶矩阵至少有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 个特征值为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>。（<span class="course-math" data-tex="N(A)" data-display="false"><code>N(A)</code></span> 有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 维，对应特征值为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 的特征向量）**
 
 ### 递推数列与 Markov 矩阵
 {: #section-2 }

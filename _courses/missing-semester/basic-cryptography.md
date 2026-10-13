@@ -5,7 +5,7 @@ course_title: "MIT Missing Semester"
 section: ""
 status: "completed"
 created_at: "2025-10-27T17:37:23+08:00"
-updated_at: "2026-10-08T21:14:49+08:00"
+updated_at: "2026-10-13T11:47:00+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -22,7 +22,7 @@ excerpt: "MIT Missing Semester · Basic Cryptography - 基础密码学"
 ### 熵
 {: #section-1 }
 
-密码学中的 **熵（Entropy）** 单位为比特，等可能选择时为 <span class="course-math" data-tex="\log_2(\text{所有可能的情况数})" data-display="false"><code>\log_2(\text{所有可能的情况数})</code></span>；一般为 <span class="course-math" data-tex="H=-\sum_i p_i\log_2p_i" data-display="false"><code>H=-\sum_i p_i\log_2p_i</code></span>。
+密码学中的 **熵（Entropy）** 单位为比特，等可能选择时为 <span class="course-math" data-tex="\log_2(\text{所有可能的情况数})" data-display="false"><code>\log_2(\text{所有可能的情况数})</code></span>。
 一个密码的熵越大，就越不容易被攻击。
 
 

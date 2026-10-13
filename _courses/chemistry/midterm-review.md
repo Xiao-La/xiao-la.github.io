@@ -5,7 +5,7 @@ course_title: "大学化学"
 section: ""
 status: "completed"
 created_at: "2025-11-04T10:04:38+08:00"
-updated_at: "2026-10-09T16:13:40+08:00"
+updated_at: "2026-10-13T11:49:54+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -244,7 +244,7 @@ Exception <span class="course-math" data-tex="\ce{[Ar] 3d^5 4s^1, [Ar] 3d^10 4s^
 - Delocalized electrons
 
 **Bond Enthalpy**
-- <span class="course-math" data-tex="\Delta H_{\mathrm{rxn}}\approx\sum D(\text{bonds broken})-\sum D(\text{bonds formed})" data-display="false"><code>\Delta H_{\mathrm{rxn}}\approx\sum D(\text{bonds broken})-\sum D(\text{bonds formed})</code></span>（<span class="course-math" data-tex="D" data-display="false"><code>D</code></span> 为正的平均键能；若使用带符号的断键/成键焓变，则将两项相加）
+- <span class="course-math" data-tex="\Delta H_{\mathrm{rxn}}\approx\sum\Delta H(\text{bonds broken})-\sum\Delta H(\text{bonds formed})" data-display="false"><code>\Delta H_{\mathrm{rxn}}\approx\sum\Delta H(\text{bonds broken})-\sum\Delta H(\text{bonds formed})</code></span>（这里两项均取正的平均键焓：断键吸热，成键放热）
 
 
 ## Chapter 9

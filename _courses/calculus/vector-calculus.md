@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-05-19T17:43:41+08:00"
-updated_at: "2026-10-09T16:58:39+08:00"
+updated_at: "2026-10-13T11:47:00+08:00"
 reference: false
 order: 12
 layout: "course"
@@ -28,8 +28,8 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 <span class="course-math course-math-display" data-tex="\int_{C}f\,\mathrm{d}s" data-display="true"><code>\int_{C}f\,\mathrm{d}s</code></span>
 计算方法：
 - 将曲线 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 参数化为 <span class="course-math" data-tex="\mathbf{r}(t)" data-display="false"><code>\mathbf{r}(t)</code></span>。
-- 则 <span class="course-math" data-tex="\mathrm{d}s=\lVert \mathbf{v}(t)\rVert\,\mathrm{d}t" data-display="false"><code>\mathrm{d}s=\lVert \mathbf{v}(t)\rVert\,\mathrm{d}t</code></span>，其中 <span class="course-math" data-tex="\mathbf{v}(t)=\mathbf{r}&#x27;(t)" data-display="false"><code>\mathbf{v}(t)=\mathbf{r}&#x27;(t)</code></span>。
-- 最后变成计算一元积分 <span class="course-math" data-tex="\int f(\mathbf{r}(t))\lVert \mathbf{v}(t)\rVert\,\mathrm{d}t" data-display="false"><code>\int f(\mathbf{r}(t))\lVert \mathbf{v}(t)\rVert\,\mathrm{d}t</code></span>。
+- 则 <span class="course-math" data-tex="\mathrm{d}s=\lvert \mathbf{v}(t)\rvert\,\mathrm{d}t" data-display="false"><code>\mathrm{d}s=\lvert \mathbf{v}(t)\rvert\,\mathrm{d}t</code></span>，其中 <span class="course-math" data-tex="\mathbf{v}(t)=\mathbf{r}&#x27;(t)" data-display="false"><code>\mathbf{v}(t)=\mathbf{r}&#x27;(t)</code></span>。
+- 最后变成计算一元积分 <span class="course-math" data-tex="\int f(\mathbf{r}(t))\lvert \mathbf{v}(t)\rvert\,\mathrm{d}t" data-display="false"><code>\int f(\mathbf{r}(t))\lvert \mathbf{v}(t)\rvert\,\mathrm{d}t</code></span>。
 用线积分可以计算线质量，转动惯量等。
 
 向量场（Vector Field）：一个函数，给空间一定区域内，每一点赋予一个矢量。
@@ -38,12 +38,12 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 <span class="course-math course-math-display" data-tex="\int_{C} \mathbf{F}\cdot \mathrm{d}\mathbf{r}" data-display="true"><code>\int_{C} \mathbf{F}\cdot \mathrm{d}\mathbf{r}</code></span>
 这里为向量的点乘。计算方法同样是参数化，转化为：
 <span class="course-math course-math-display" data-tex="\int_a^b\mathbf{F}(\mathbf{r}(t))\cdot\mathbf{r}&#x27;(t)\,\mathrm{d}t" data-display="true"><code>\int_a^b\mathbf{F}(\mathbf{r}(t))\cdot\mathbf{r}&#x27;(t)\,\mathrm{d}t</code></span>
-若 <span class="course-math" data-tex="\mathbf{F}=\left(M,N\right)^{\top}" data-display="false"><code>\mathbf{F}=\left(M,N\right)^{\top}</code></span> 也可以进一步写成点乘 <span class="course-math" data-tex="\mathbf{F}\cdot \left(\mathrm{d}x,\mathrm{d}y\right)^{\top}" data-display="false"><code>\mathbf{F}\cdot \left(\mathrm{d}x,\mathrm{d}y\right)^{\top}</code></span> 的形式
+若 <span class="course-math" data-tex="\mathbf{F}=\langle M,N\rangle" data-display="false"><code>\mathbf{F}=\langle M,N\rangle</code></span> 也可以进一步写成点乘 <span class="course-math" data-tex="\mathbf{F}\cdot \langle \mathrm{d}x,\mathrm{d}y\rangle" data-display="false"><code>\mathbf{F}\cdot \langle \mathrm{d}x,\mathrm{d}y\rangle</code></span> 的形式
 <span class="course-math course-math-display" data-tex="\int_{C}(M\,\mathrm{d}x+N\,\mathrm{d}y)" data-display="true"><code>\int_{C}(M\,\mathrm{d}x+N\,\mathrm{d}y)</code></span>
 若 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 为闭合曲线，则也把这个向量线积分叫做环流量（Circulation）。
-另外若 <span class="course-math" data-tex="\mathbf{F}=\left(M,N\right)^{\top}" data-display="false"><code>\mathbf{F}=\left(M,N\right)^{\top}</code></span> 且简单闭曲线 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 沿逆时针方向，<span class="course-math" data-tex="\mathbf{n}" data-display="false"><code>\mathbf{n}</code></span> 为外法向单位向量，则穿过 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 的向外通量（Flux）为：
+另外若 <span class="course-math" data-tex="\mathbf{F}=\langle M,N\rangle" data-display="false"><code>\mathbf{F}=\langle M,N\rangle</code></span> 且简单闭曲线 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 沿逆时针方向，<span class="course-math" data-tex="\mathbf{n}" data-display="false"><code>\mathbf{n}</code></span> 为外法向单位向量，则穿过 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 的向外通量（Flux）为：
 <span class="course-math course-math-display" data-tex="\oint_{C} \mathbf{F}\cdot \mathbf{n}\,\mathrm{d}s=\oint_{C}(M\,\mathrm{d}y-N\,\mathrm{d}x)" data-display="true"><code>\oint_{C} \mathbf{F}\cdot \mathbf{n}\,\mathrm{d}s=\oint_{C}(M\,\mathrm{d}y-N\,\mathrm{d}x)</code></span>
-可以写成点乘 <span class="course-math" data-tex="\mathbf{F}\cdot \left(\mathrm{d}y,-\mathrm{d}x\right)^{\top}" data-display="false"><code>\mathbf{F}\cdot \left(\mathrm{d}y,-\mathrm{d}x\right)^{\top}</code></span>。 计算方式同样可以参数化。
+可以写成点乘 <span class="course-math" data-tex="\mathbf{F}\cdot \langle \mathrm{d}y,-\mathrm{d}x\rangle" data-display="false"><code>\mathbf{F}\cdot \langle \mathrm{d}y,-\mathrm{d}x\rangle</code></span>。 计算方式同样可以参数化。
 
 保守场 （Conservative Field）：在保守场 <span class="course-math" data-tex="\mathbf{F}" data-display="false"><code>\mathbf{F}</code></span> 中，沿着一条路径的积分只和起点和终点有关，也就是说，存在一个标量的势函数（Potential Function） <span class="course-math" data-tex="f" data-display="false"><code>f</code></span>，使得
 <span class="course-math course-math-display" data-tex="\mathbf{F}=\nabla f" data-display="true"><code>\mathbf{F}=\nabla f</code></span>
@@ -54,7 +54,7 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 定义连通区域（Connected Domain）：完整的一块，可以从任意一点沿着光滑曲线走到另一点。
 定义单连通区域（Simply Connected Domain）：连通且没有洞，也就是说可以缩点：**在区域里随便画一个闭合的圈 (loop)，这个圈一定能像橡皮筋一样一直缩小到一个点，且在缩小的过程中**绝对不会碰到区域的外部。
 
-判定保守场的一个必要条件：对于向量场 <span class="course-math" data-tex="\mathbf{F}=\left(P,Q\right)^{\top}" data-display="false"><code>\mathbf{F}=\left(P,Q\right)^{\top}</code></span>，若它是保守场，则必有
+判定保守场的一个必要条件：对于向量场 <span class="course-math" data-tex="\mathbf{F}=\langle P,Q\rangle" data-display="false"><code>\mathbf{F}=\langle P,Q\rangle</code></span>，若它是保守场，则必有
 <span class="course-math course-math-display" data-tex="\frac{ \partial {P} }{ \partial y } =\frac{ \partial Q }{ \partial x }" data-display="true"><code>\frac{ \partial {P} }{ \partial y } =\frac{ \partial Q }{ \partial x }</code></span>
 进一步的，若区域是**单连通的开区域**，且场的分量有连续一阶偏导，则这个条件是充要的。
 定义：一个式子 <span class="course-math" data-tex="M\,\mathrm{d}x+N\,\mathrm{d}y+P\,\mathrm{d}z" data-display="false"><code>M\,\mathrm{d}x+N\,\mathrm{d}y+P\,\mathrm{d}z</code></span> 为恰当（Exact）微分形式，若存在 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 使得：
@@ -65,18 +65,14 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 <span class="course-math course-math-display" data-tex="\frac{ \partial M }{ \partial y } =\frac{ \partial N }{ \partial x } ,\frac{ \partial M }{ \partial z } =\frac{ \partial P }{ \partial x } ,\frac{ \partial N }{ \partial z } =\frac{ \partial P }{ \partial y }" data-display="true"><code>\frac{ \partial M }{ \partial y } =\frac{ \partial N }{ \partial x } ,\frac{ \partial M }{ \partial z } =\frac{ \partial P }{ \partial x } ,\frac{ \partial N }{ \partial z } =\frac{ \partial P }{ \partial y }</code></span>
 保守场的一个充要条件：对任意回路积分为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>。
 
-定义场 <span class="course-math" data-tex="\mathbf{F}=\left(M,N\right)^{\top}" data-display="false"><code>\mathbf{F}=\left(M,N\right)^{\top}</code></span> 的环流密度（circulation density）：
+定义场 <span class="course-math" data-tex="\mathbf{F}=\langle M,N\rangle" data-display="false"><code>\mathbf{F}=\langle M,N\rangle</code></span> 的环流密度（circulation density）：
 <span class="course-math course-math-display" data-tex="\frac{ \partial N }{ \partial x } -\frac{ \partial M }{ \partial y } = (\nabla \times\mathbf{F}) \cdot \mathbf{k}" data-display="true"><code>\frac{ \partial N }{ \partial x } -\frac{ \partial M }{ \partial y } = (\nabla \times\mathbf{F}) \cdot \mathbf{k}</code></span>
 也被称为**旋度的 k 分量** the k-component of the curl，记作 <span class="course-math" data-tex="(\operatorname{curl} \mathbf{F})\cdot \mathbf{k}" data-display="false"><code>(\operatorname{curl} \mathbf{F})\cdot \mathbf{k}</code></span>
 定义散度（Divergence）：
 <span class="course-math course-math-display" data-tex="\frac{ \partial M }{ \partial x } +\frac{ \partial N }{ \partial y } =\nabla \cdot \mathbf{F}" data-display="true"><code>\frac{ \partial M }{ \partial x } +\frac{ \partial N }{ \partial y } =\nabla \cdot \mathbf{F}</code></span>
 
 
-格林公式（Green's Theorem）：在满足以下条件时：
-- <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 必须是一条 **分段光滑（Piecewise smooth）** 的 **简单闭曲线（Simple closed curve）**。
-- <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 所包围的区域 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 必须是一个有界的闭区域，且其内部不能包含任何向量场无定义的奇点。
-- 向量场 <span class="course-math" data-tex="\mathbf{F} = \left(M, N\right)^{\top}" data-display="false"><code>\mathbf{F} = \left(M, N\right)^{\top}</code></span> 的分量函数 <span class="course-math" data-tex="M(x, y)" data-display="false"><code>M(x, y)</code></span> 和 <span class="course-math" data-tex="N(x, y)" data-display="false"><code>N(x, y)</code></span>，以及它们的一阶偏导数 <span class="course-math" data-tex="\frac{\partial M}{\partial x}, \frac{\partial M}{\partial y}, \frac{\partial N}{\partial x}, \frac{\partial N}{\partial y}" data-display="false"><code>\frac{\partial M}{\partial x}, \frac{\partial M}{\partial y}, \frac{\partial N}{\partial x}, \frac{\partial N}{\partial y}</code></span>，在包含 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的某个**开区域**上必须是处处连续（Continuous）的。
-- 曲线 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 的方向必须是**正向（逆时针方向）**。判别法：当你沿着曲线 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 的前进方向行走时，被包围的区域 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 必须始终位于你的左手边。如果题目给出的是顺时针方向，积分结果必须乘以 <span class="course-math" data-tex="-1" data-display="false"><code>-1</code></span>。
+格林公式（Green's Theorem）：设 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 是分段光滑、正向（逆时针）的简单闭曲线，围成区域 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span>；<span class="course-math" data-tex="M,N" data-display="false"><code>M,N</code></span> 在包含 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的开区域内有连续一阶偏导。
 那么有环流量-旋度（Circulation-Curl）形式（右边是旋度的 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 分量）：
 <span class="course-math course-math-display" data-tex="\oint_{C}\mathbf{F}\cdot \mathbf{T}\,\mathrm{d}s=\oint_C M \, \mathrm{d}x + N \, \mathrm{d}y = \iint_R \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} \right)\,\mathrm{d}A" data-display="true"><code>\oint_{C}\mathbf{F}\cdot \mathbf{T}\,\mathrm{d}s=\oint_C M \, \mathrm{d}x + N \, \mathrm{d}y = \iint_R \left( \frac{\partial N}{\partial x} - \frac{\partial M}{\partial y} \right)\,\mathrm{d}A</code></span>
 这个旋度可以写成
@@ -100,26 +96,26 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 曲面平滑（Smooth）的定义：
 1. 偏导向量 <span class="course-math" data-tex="\mathbf{r}_u = \frac{\partial \mathbf{r}}{\partial u}" data-display="false"><code>\mathbf{r}_u = \frac{\partial \mathbf{r}}{\partial u}</code></span> 和 <span class="course-math" data-tex="\mathbf{r}_v = \frac{\partial \mathbf{r}}{\partial v}" data-display="false"><code>\mathbf{r}_v = \frac{\partial \mathbf{r}}{\partial v}</code></span> 必须处处**连续 (Continuous)** 。
 2. 它们的叉乘（向量积）**<span class="course-math" data-tex="\mathbf{r}_u \times \mathbf{r}_v" data-display="false"><code>\mathbf{r}_u \times \mathbf{r}_v</code></span> 在区域内部绝不能为零向量 <span class="course-math" data-tex="\mathbf{0}" data-display="false"><code>\mathbf{0}</code></span>** 。
-在线积分中，弧长与参数的微小量的换算为 <span class="course-math" data-tex="\mathrm{d}s=\lVert \mathbf{r}&#x27;(t) \rVert\,\mathrm{d}t" data-display="false"><code>\mathrm{d}s=\lVert \mathbf{r}&#x27;(t) \rVert\,\mathrm{d}t</code></span>。在面积分中，考虑在两个参量上走一小步，形成的微小平行四边形面积为两个切向量的叉乘，故而面积与参数的微小量的换算为：
-<span class="course-math course-math-display" data-tex="\mathrm{d}\sigma=\lVert \mathbf{r}_{u}\times \mathbf{r}_{v} \rVert\,\mathrm{d}u\,\mathrm{d}v" data-display="true"><code>\mathrm{d}\sigma=\lVert \mathbf{r}_{u}\times \mathbf{r}_{v} \rVert\,\mathrm{d}u\,\mathrm{d}v</code></span>
+在线积分中，弧长与参数的微小量的换算为 <span class="course-math" data-tex="\mathrm{d}s=\lvert \mathbf{r}&#x27;(t) \rvert\,\mathrm{d}t" data-display="false"><code>\mathrm{d}s=\lvert \mathbf{r}&#x27;(t) \rvert\,\mathrm{d}t</code></span>。在面积分中，考虑在两个参量上走一小步，形成的微小平行四边形面积为两个切向量的叉乘，故而面积与参数的微小量的换算为：
+<span class="course-math course-math-display" data-tex="\mathrm{d}\sigma=\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert\,\mathrm{d}u\,\mathrm{d}v" data-display="true"><code>\mathrm{d}\sigma=\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert\,\mathrm{d}u\,\mathrm{d}v</code></span>
 其中  <span class="course-math" data-tex="\mathbf{r}_{u},\mathbf{r}_{v}" data-display="false"><code>\mathbf{r}_{u},\mathbf{r}_{v}</code></span> 为 <span class="course-math" data-tex="\mathbf{r}" data-display="false"><code>\mathbf{r}</code></span> 对 <span class="course-math" data-tex="u,v" data-display="false"><code>u,v</code></span> 求偏导的结果。
 
 注意：做这样的换算，都要把积分的区域也做投影！
 
-这里若 <span class="course-math" data-tex="z=f(x,y)" data-display="false"><code>z=f(x,y)</code></span>，则有 <span class="course-math" data-tex="\mathbf{r}=\left(u,v,f(u,v)\right)^{\top}" data-display="false"><code>\mathbf{r}=\left(u,v,f(u,v)\right)^{\top}</code></span>，<span class="course-math" data-tex="\mathbf{r}_{u}=\left(1,0,f_{x}\right)^{\top} ,\mathbf{r}_{v}=\left(0,1,f_{y}\right)^{\top}" data-display="false"><code>\mathbf{r}_{u}=\left(1,0,f_{x}\right)^{\top} ,\mathbf{r}_{v}=\left(0,1,f_{y}\right)^{\top}</code></span>，故而 <span class="course-math" data-tex="\mathbf{r}_{u}\times \mathbf{r}_{v}=\left(-f_{x},-f_{y},1\right)^{\top}" data-display="false"><code>\mathbf{r}_{u}\times \mathbf{r}_{v}=\left(-f_{x},-f_{y},1\right)^{\top}</code></span>（这里指向上面），有结论：
+这里若 <span class="course-math" data-tex="z=f(x,y)" data-display="false"><code>z=f(x,y)</code></span>，则有 <span class="course-math" data-tex="\mathbf{r}=\langle u,v,f(u,v)\rangle" data-display="false"><code>\mathbf{r}=\langle u,v,f(u,v)\rangle</code></span>，<span class="course-math" data-tex="\mathbf{r}_{u}=\langle 1,0,f_{x}\rangle ,\mathbf{r}_{v}=\langle 0,1,f_{y}\rangle" data-display="false"><code>\mathbf{r}_{u}=\langle 1,0,f_{x}\rangle ,\mathbf{r}_{v}=\langle 0,1,f_{y}\rangle</code></span>，故而 <span class="course-math" data-tex="\mathbf{r}_{u}\times \mathbf{r}_{v}=\langle -f_{x},-f_{y},1\rangle" data-display="false"><code>\mathbf{r}_{u}\times \mathbf{r}_{v}=\langle -f_{x},-f_{y},1\rangle</code></span>（这里指向上面），有结论：
 <span class="course-math course-math-display" data-tex="\mathrm{d}\sigma=\sqrt{ f_{x}^{2}+f_{y}^{2}+1 }\,\mathrm{d}x\,\mathrm{d}y" data-display="true"><code>\mathrm{d}\sigma=\sqrt{ f_{x}^{2}+f_{y}^{2}+1 }\,\mathrm{d}x\,\mathrm{d}y</code></span>
 所以
 <span class="course-math course-math-display" data-tex="A=\iint_{R}\,\mathrm{d}\sigma=\iint_{R&#x27;} \sqrt{ f_{x}^{2}+f_{y}^{2}+1 }\,\mathrm{d}x\,\mathrm{d}y" data-display="true"><code>A=\iint_{R}\,\mathrm{d}\sigma=\iint_{R&#x27;} \sqrt{ f_{x}^{2}+f_{y}^{2}+1 }\,\mathrm{d}x\,\mathrm{d}y</code></span>
 其中 <span class="course-math" data-tex="R&#x27;" data-display="false"><code>R&#x27;</code></span> 为 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 向 <span class="course-math" data-tex="xOy" data-display="false"><code>xOy</code></span> 平面投影得到。
-另外，若 <span class="course-math" data-tex="F(x,y,z)=c" data-display="false"><code>F(x,y,z)=c</code></span>，选取可单值投影且 <span class="course-math" data-tex="\nabla F\cdot\mathbf{p}\neq0" data-display="false"><code>\nabla F\cdot\mathbf{p}\neq0</code></span> 的曲面片，可以推导出（多层曲面须分片求和）：
-<span class="course-math course-math-display" data-tex="A = \iint_R \frac{\lVert \nabla F\rVert }{\lvert \nabla F \cdot \mathbf{p}\rvert } \, \mathrm{d}A" data-display="true"><code>A = \iint_R \frac{\lVert \nabla F\rVert }{\lvert \nabla F \cdot \mathbf{p}\rvert } \, \mathrm{d}A</code></span>
+另外，对可投影为单值图形的曲面片 <span class="course-math" data-tex="F(x,y,z)=c" data-display="false"><code>F(x,y,z)=c</code></span>（<span class="course-math" data-tex="\nabla F\cdot\mathbf{p}\neq0" data-display="false"><code>\nabla F\cdot\mathbf{p}\neq0</code></span>），有：
+<span class="course-math course-math-display" data-tex="A = \iint_R \frac{\lvert \nabla F\rvert }{\lvert \nabla F \cdot \mathbf{p}\rvert } \, \mathrm{d}A" data-display="true"><code>A = \iint_R \frac{\lvert \nabla F\rvert }{\lvert \nabla F \cdot \mathbf{p}\rvert } \, \mathrm{d}A</code></span>
 其中 <span class="course-math" data-tex="\mathbf{p}=\mathbf{i},\mathbf{j}\text{ or }\mathbf{k}" data-display="false"><code>\mathbf{p}=\mathbf{i},\mathbf{j}\text{ or }\mathbf{k}</code></span>，区域 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 是一个垂直于 <span class="course-math" data-tex="\mathbf{p}" data-display="false"><code>\mathbf{p}</code></span> 的平面（原来区域对这个平面做投影得到）。
 这相当于投影到某个平面去求，代数推导是，比如假设 <span class="course-math" data-tex="z=h(x,y)" data-display="false"><code>z=h(x,y)</code></span>，则 <span class="course-math" data-tex="h_{x}= - \frac{F_{x}}{F_{z}},h_{y}=- \frac{F_{y}}{F_{z}}" data-display="false"><code>h_{x}= - \frac{F_{x}}{F_{z}},h_{y}=- \frac{F_{y}}{F_{z}}</code></span>，再代入：
-<span class="course-math course-math-display" data-tex="\mathrm{d}\sigma=\sqrt{ \left( - \frac{F_{x}}{F_{z}} \right)^{2}+ \left( -\frac{F_{y}}{F_{z}} \right)^{2}+1 }\,\mathrm{d}x\,\mathrm{d}y= \frac{\lVert \nabla F \rVert }{\lvert F_{z} \rvert }\,\mathrm{d}A" data-display="true"><code>\mathrm{d}\sigma=\sqrt{ \left( - \frac{F_{x}}{F_{z}} \right)^{2}+ \left( -\frac{F_{y}}{F_{z}} \right)^{2}+1 }\,\mathrm{d}x\,\mathrm{d}y= \frac{\lVert \nabla F \rVert }{\lvert F_{z} \rvert }\,\mathrm{d}A</code></span>
+<span class="course-math course-math-display" data-tex="\mathrm{d}\sigma=\sqrt{ \left( - \frac{F_{x}}{F_{z}} \right)^{2}+ \left( -\frac{F_{y}}{F_{z}} \right)^{2}+1 }\,\mathrm{d}x\,\mathrm{d}y= \frac{\lvert \nabla F \rvert }{\lvert F_{z} \rvert }\,\mathrm{d}A" data-display="true"><code>\mathrm{d}\sigma=\sqrt{ \left( - \frac{F_{x}}{F_{z}} \right)^{2}+ \left( -\frac{F_{y}}{F_{z}} \right)^{2}+1 }\,\mathrm{d}x\,\mathrm{d}y= \frac{\lvert \nabla F \rvert }{\lvert F_{z} \rvert }\,\mathrm{d}A</code></span>
 
 总结来说，对于标量曲面积分：
 - **形式 A：参数化曲面 <span class="course-math" data-tex="\mathbf{r}(u,v)" data-display="false"><code>\mathbf{r}(u,v)</code></span> 下**（最通用）
-    <span class="course-math course-math-display" data-tex="\iint_S f(x,y,z) \, \mathrm{d}\sigma = \iint_R f(\mathbf{r}(u,v)) \, \lVert \mathbf{r}_u \times \mathbf{r}_v\rVert  \, \mathrm{d}u \, \mathrm{d}v" data-display="true"><code>\iint_S f(x,y,z) \, \mathrm{d}\sigma = \iint_R f(\mathbf{r}(u,v)) \, \lVert \mathbf{r}_u \times \mathbf{r}_v\rVert  \, \mathrm{d}u \, \mathrm{d}v</code></span>
+    <span class="course-math course-math-display" data-tex="\iint_S f(x,y,z) \, \mathrm{d}\sigma = \iint_R f(\mathbf{r}(u,v)) \, \lvert \mathbf{r}_u \times \mathbf{r}_v\rvert  \, \mathrm{d}u \, \mathrm{d}v" data-display="true"><code>\iint_S f(x,y,z) \, \mathrm{d}\sigma = \iint_R f(\mathbf{r}(u,v)) \, \lvert \mathbf{r}_u \times \mathbf{r}_v\rvert  \, \mathrm{d}u \, \mathrm{d}v</code></span>
 
 - **形式 B：显式曲面 <span class="course-math" data-tex="z = g(x,y)" data-display="false"><code>z = g(x,y)</code></span> 下**（最常见）
 
@@ -127,7 +123,7 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 
 - **形式 C：隐式曲面 <span class="course-math" data-tex="F(x,y,z) = c" data-display="false"><code>F(x,y,z) = c</code></span> 下**（投影法）
 
-    <span class="course-math course-math-display" data-tex="\iint_S f(x,y,z) \, \mathrm{d}\sigma = \iint_R f(x,y,z) \, \frac{\lVert \nabla F\rVert }{\lvert \nabla F \cdot \mathbf{p}\rvert } \, \mathrm{d}A" data-display="true"><code>\iint_S f(x,y,z) \, \mathrm{d}\sigma = \iint_R f(x,y,z) \, \frac{\lVert \nabla F\rVert }{\lvert \nabla F \cdot \mathbf{p}\rvert } \, \mathrm{d}A</code></span>
+    <span class="course-math course-math-display" data-tex="\iint_S f(x,y,z) \, \mathrm{d}\sigma = \iint_R f(x,y,z) \, \frac{\lvert \nabla F\rvert }{\lvert \nabla F \cdot \mathbf{p}\rvert } \, \mathrm{d}A" data-display="true"><code>\iint_S f(x,y,z) \, \mathrm{d}\sigma = \iint_R f(x,y,z) \, \frac{\lvert \nabla F\rvert }{\lvert \nabla F \cdot \mathbf{p}\rvert } \, \mathrm{d}A</code></span>
 
     _(其中 <span class="course-math" data-tex="\mathbf{p}" data-display="false"><code>\mathbf{p}</code></span> 是垂直于投影平面的单位法向量，通常是 <span class="course-math" data-tex="\mathbf{k}" data-display="false"><code>\mathbf{k}</code></span>)_
 
@@ -136,14 +132,14 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 **非定向曲面 (Non-orientable Surface)** 的代表——莫比乌斯带。
 
 另外：对曲面求通量，比如有一个场 <span class="course-math" data-tex="\mathbf{F}" data-display="false"><code>\mathbf{F}</code></span>，则 Surface Integral of F over S：
-<span class="course-math course-math-display" data-tex="\iint _{S}\mathbf{F}\cdot \mathbf{n}\,\mathrm{d}\sigma=\iint_{R}\mathbf{F}(\mathbf{r}(u,v))\cdot \frac{\mathbf{r}_{u}\times \mathbf{r}_{v}}{\lVert \mathbf{r}_{u}\times \mathbf{r}_{v} \rVert }\lVert \mathbf{r}_{u}\times \mathbf{r}_{v} \rVert\,\mathrm{d}u\,\mathrm{d}v=\iint_{R}\mathbf{F}(\mathbf{r}(u,v))\cdot(\mathbf{r}_{u}\times \mathbf{r}_{v})\,\mathrm{d}u\,\mathrm{d}v" data-display="true"><code>\iint _{S}\mathbf{F}\cdot \mathbf{n}\,\mathrm{d}\sigma=\iint_{R}\mathbf{F}(\mathbf{r}(u,v))\cdot \frac{\mathbf{r}_{u}\times \mathbf{r}_{v}}{\lVert \mathbf{r}_{u}\times \mathbf{r}_{v} \rVert }\lVert \mathbf{r}_{u}\times \mathbf{r}_{v} \rVert\,\mathrm{d}u\,\mathrm{d}v=\iint_{R}\mathbf{F}(\mathbf{r}(u,v))\cdot(\mathbf{r}_{u}\times \mathbf{r}_{v})\,\mathrm{d}u\,\mathrm{d}v</code></span>
+<span class="course-math course-math-display" data-tex="\iint _{S}\mathbf{F}\cdot \mathbf{n}\,\mathrm{d}\sigma=\iint_{R}\mathbf{F}(\mathbf{r}(u,v))\cdot \frac{\mathbf{r}_{u}\times \mathbf{r}_{v}}{\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert }\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert\,\mathrm{d}u\,\mathrm{d}v=\iint_{R}\mathbf{F}(\mathbf{r}(u,v))\cdot(\mathbf{r}_{u}\times \mathbf{r}_{v})\,\mathrm{d}u\,\mathrm{d}v" data-display="true"><code>\iint _{S}\mathbf{F}\cdot \mathbf{n}\,\mathrm{d}\sigma=\iint_{R}\mathbf{F}(\mathbf{r}(u,v))\cdot \frac{\mathbf{r}_{u}\times \mathbf{r}_{v}}{\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert }\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert\,\mathrm{d}u\,\mathrm{d}v=\iint_{R}\mathbf{F}(\mathbf{r}(u,v))\cdot(\mathbf{r}_{u}\times \mathbf{r}_{v})\,\mathrm{d}u\,\mathrm{d}v</code></span>
 这里的 <span class="course-math" data-tex="\mathbf{n}" data-display="false"><code>\mathbf{n}</code></span> 的方向需要确定：
 - **封闭曲面 (Closed Surfaces)**
     封闭曲面默认只有两种定向：
     1. **向外定向 (Outward Orientation)**：法向量 <span class="course-math" data-tex="\mathbf{n}" data-display="false"><code>\mathbf{n}</code></span> 处处指向几何体的**外部**（微积分和物理学默认的**正方向**）。
     2. **向内定向 (Inward Orientation)**：法向量 <span class="course-math" data-tex="\mathbf{n}" data-display="false"><code>\mathbf{n}</code></span> 处处指向几何体的**内部**。
 - **开放曲面 (Open Surfaces)** —— 如一个雷达锅盖、一个平坦圆盘。
-    开放曲面没有绝对的内外之分，应按题目指定连续法向量。对于能选定法向量的 <span class="course-math" data-tex="z" data-display="false"><code>z</code></span> 分量始终非零的曲面（如图形曲面），还可以区分：
+开放曲面按题目选定法向方向；对图形曲面 <span class="course-math" data-tex="z=f(x,y)" data-display="false"><code>z=f(x,y)</code></span>，可区分：
     1. **向上定向 (Upward Orientation)**：法向量 <span class="course-math" data-tex="\mathbf{n}" data-display="false"><code>\mathbf{n}</code></span> 的 <span class="course-math" data-tex="z" data-display="false"><code>z</code></span> 轴分量（即 <span class="course-math" data-tex="\mathbf{k}" data-display="false"><code>\mathbf{k}</code></span> 分量）必须是**正数**。
     2. **向下定向 (Downward Orientation)**：法向量 <span class="course-math" data-tex="\mathbf{n}" data-display="false"><code>\mathbf{n}</code></span> 的 <span class="course-math" data-tex="z" data-display="false"><code>z</code></span> 轴分量必须是**负数**。
 
@@ -157,7 +153,7 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 **斯托克斯定理（Stokes Theorem）：** 边界的环流量等于曲面上的旋度通量。
 - 定义在一个场 <span class="course-math" data-tex="\mathbf{F}" data-display="false"><code>\mathbf{F}</code></span> 中某点的旋度（Curl）为
 <span class="course-math course-math-display" data-tex="\nabla \times \mathbf{F}" data-display="true"><code>\nabla \times \mathbf{F}</code></span>
-- 其中 <span class="course-math" data-tex="\nabla=\left(\frac{ \partial  }{ \partial x },\frac{ \partial  }{ \partial y },\frac{ \partial  }{ \partial z }\right)^{\top}" data-display="false"><code>\nabla=\left(\frac{ \partial  }{ \partial x },\frac{ \partial  }{ \partial y },\frac{ \partial  }{ \partial z }\right)^{\top}</code></span> 为倒三角算符（Del Operator）。
+- 其中 <span class="course-math" data-tex="\nabla=\langle \frac{ \partial  }{ \partial x },\frac{ \partial  }{ \partial y },\frac{ \partial  }{ \partial z }\rangle" data-display="false"><code>\nabla=\langle \frac{ \partial  }{ \partial x },\frac{ \partial  }{ \partial y },\frac{ \partial  }{ \partial z }\rangle</code></span> 为倒三角算符（Del Operator）。
 - 那么斯托克斯定理指出：
 <span class="course-math course-math-display" data-tex="\oint_{C}\mathbf{F}\cdot \mathrm{d}\mathbf{r}=\iint_{S}(\nabla \times \mathbf{F})\cdot \mathbf{n}\,\mathrm{d}\sigma" data-display="true"><code>\oint_{C}\mathbf{F}\cdot \mathrm{d}\mathbf{r}=\iint_{S}(\nabla \times \mathbf{F})\cdot \mathbf{n}\,\mathrm{d}\sigma</code></span>
 - 其中 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 是可定向的**分段光滑曲面**，<span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 是它的正向边界（方向与法向量按右手定则相容）；<span class="course-math" data-tex="\mathbf{F}" data-display="false"><code>\mathbf{F}</code></span> 在包含整个 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 的开区域内具有连续一阶偏导。
@@ -165,7 +161,7 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 - 那么对于一个复杂的曲面积分，可以改成算一个线积分，也可以换成一个简单的（有相同边界的）曲面的积分；对于一个复杂的环流量线积分，也可以换成一个简单曲面的旋度通量积分。
 
 这里要注意，作为一个通量积分，仍然有：
-<span class="course-math course-math-display" data-tex="\mathrm{d}\mathbf{S}=\mathbf{n}\,\mathrm{d}\sigma= \frac{\mathbf{r}_{u}\times \mathbf{r}_{v}}{\lVert \mathbf{r}_{u}\times \mathbf{r}_{v} \rVert }\lVert \mathbf{r}_{u}\times \mathbf{r}_{v} \rVert\,\mathrm{d}u\,\mathrm{d}v=(\mathbf{r}_{u}\times \mathbf{r}_{v})\,\mathrm{d}u\,\mathrm{d}v" data-display="true"><code>\mathrm{d}\mathbf{S}=\mathbf{n}\,\mathrm{d}\sigma= \frac{\mathbf{r}_{u}\times \mathbf{r}_{v}}{\lVert \mathbf{r}_{u}\times \mathbf{r}_{v} \rVert }\lVert \mathbf{r}_{u}\times \mathbf{r}_{v} \rVert\,\mathrm{d}u\,\mathrm{d}v=(\mathbf{r}_{u}\times \mathbf{r}_{v})\,\mathrm{d}u\,\mathrm{d}v</code></span>
+<span class="course-math course-math-display" data-tex="\mathrm{d}\mathbf{S}=\mathbf{n}\,\mathrm{d}\sigma= \frac{\mathbf{r}_{u}\times \mathbf{r}_{v}}{\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert }\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert\,\mathrm{d}u\,\mathrm{d}v=(\mathbf{r}_{u}\times \mathbf{r}_{v})\,\mathrm{d}u\,\mathrm{d}v" data-display="true"><code>\mathrm{d}\mathbf{S}=\mathbf{n}\,\mathrm{d}\sigma= \frac{\mathbf{r}_{u}\times \mathbf{r}_{v}}{\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert }\lvert \mathbf{r}_{u}\times \mathbf{r}_{v} \rvert\,\mathrm{d}u\,\mathrm{d}v=(\mathbf{r}_{u}\times \mathbf{r}_{v})\,\mathrm{d}u\,\mathrm{d}v</code></span>
 那么对于 <span class="course-math" data-tex="z=f(x,y)" data-display="false"><code>z=f(x,y)</code></span>，仍然有 <span class="course-math" data-tex="\mathbf{r}_{u}\times \mathbf{r}_{v}=(-f_{x},-f_{y},1)" data-display="false"><code>\mathbf{r}_{u}\times \mathbf{r}_{v}=(-f_{x},-f_{y},1)</code></span>。
 
 如果曲面有洞：公式里的边界 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 会变成**一组曲线的集合**：

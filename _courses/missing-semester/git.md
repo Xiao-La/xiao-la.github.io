@@ -5,7 +5,7 @@ course_title: "MIT Missing Semester"
 section: ""
 status: "completed"
 created_at: "2025-10-21T21:37:22+08:00"
-updated_at: "2026-10-08T21:14:49+08:00"
+updated_at: "2026-10-13T12:01:07+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -22,7 +22,7 @@ excerpt: "MIT Missing Semester · Git - 版本控制"
 {: #section-1 }
 
 
- Git  模型中有 4 种对象类型：`blob`、`tree`、`commit` 和 `tag`。
+Git 的核心对象：`blob`、`tree` 和 `commit`。
 `blob`：数据对象，对应文件。
 `tree`：树对象，对应目录。
 `commit`：提交对象。
@@ -40,7 +40,7 @@ o <-- o <-- o <-- o <----  o
 {: #section-2 }
 
 
-对象内容会保存在 `.git/objects`（松散对象或 pack 文件）中；对象以内容的哈希值寻址，传统格式使用 SHA-1，也有 SHA-256 仓库格式。
+对象内容保存在 Git 对象数据库中，以内容的 SHA-1 哈希值寻址。
 为了让人类可以方便的使用这些对象，我们又用引用（References）作为指向 `commit` 的指针，来给这些哈希值取名。
 例如，引用 `master` 指向的是当前分支的最新提交。
 

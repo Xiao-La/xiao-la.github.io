@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-12-20T17:42:17+08:00"
-updated_at: "2026-10-09T16:13:40+08:00"
+updated_at: "2026-10-13T11:47:00+08:00"
 reference: false
 order: 9
 layout: "course"
@@ -76,7 +76,7 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 由于 <span class="course-math" data-tex="W=0" data-display="false"><code>W=0</code></span>，有
 
 <span class="course-math course-math-display" data-tex="\Delta E_{\mathrm{int}}=Q+W=Q=nC_{v}\Delta T" data-display="true"><code>\Delta E_{\mathrm{int}}=Q+W=Q=nC_{v}\Delta T</code></span>
-在 <span class="course-math" data-tex="C_v" data-display="false"><code>C_v</code></span> 可视为常数、并选定内能零点时，可写为
+若摩尔定容热容 <span class="course-math" data-tex="C_v" data-display="false"><code>C_v</code></span> 为常数，内能可写为
 <span class="course-math course-math-display" data-tex="E_{\mathrm{int}}=nC_{v}T" data-display="true"><code>E_{\mathrm{int}}=nC_{v}T</code></span>
 可以看出，理想气体的内能只与温度有关，是一个状态函数而不是路径函数。
 对于**单原子分子的理想气体**，内能只考虑平动动能，那么
@@ -109,7 +109,7 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 3. 转动自由度：3（非线性）或 2（线性）。
 4. 振动自由度：<span class="course-math" data-tex="3N-6" data-display="false"><code>3N-6</code></span>（非线性）或 <span class="course-math" data-tex="3N-5" data-display="false"><code>3N-5</code></span> （线性）。
 
-对于有 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 个参与能量均分的二次型能量项的气体分子（每个振动模式包含动能、势能两项）：
+对于有 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 个参与能量均分的自由度的气体分子：
 
 <span class="course-math course-math-display" data-tex="E_{\mathrm{int}}=\frac{1}{2} kT \times N\times f =n \frac{f}{2} RT" data-display="true"><code>E_{\mathrm{int}}=\frac{1}{2} kT \times N\times f =n \frac{f}{2} RT</code></span>
 对比 <span class="course-math" data-tex="E_{\mathrm{int}}=nC_{v}T" data-display="false"><code>E_{\mathrm{int}}=nC_{v}T</code></span> 可得

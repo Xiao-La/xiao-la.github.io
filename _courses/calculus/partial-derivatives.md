@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-04-07T16:57:39+08:00"
-updated_at: "2026-10-09T16:58:39+08:00"
+updated_at: "2026-10-13T12:01:07+08:00"
 reference: false
 order: 10
 layout: "course"
@@ -94,7 +94,7 @@ excerpt: "高等数学（上）/（下） · Partial Derivatives -  偏导数"
 - 也就是说，若偏导数都连续，求偏导的顺序可以交换。
 
 定义可微（Differentiable）：函数 <span class="course-math" data-tex="z=f(x,y)" data-display="false"><code>z=f(x,y)</code></span> 在 <span class="course-math" data-tex="(x_0,y_0)" data-display="false"><code>(x_0,y_0)</code></span> 处可微，当且仅当 <span class="course-math" data-tex="f_x(x_0,y_0)" data-display="false"><code>f_x(x_0,y_0)</code></span> 与 <span class="course-math" data-tex="f_y(x_0,y_0)" data-display="false"><code>f_y(x_0,y_0)</code></span> 存在，且增量 <span class="course-math" data-tex="\Delta z" data-display="false"><code>\Delta z</code></span> 满足 <span class="course-math" data-tex="\Delta z=f_x(x_0,y_0)\Delta x+f_y(x_0,y_0)\Delta y+\varepsilon_1\Delta x+\varepsilon_2\Delta y" data-display="false"><code>\Delta z=f_x(x_0,y_0)\Delta x+f_y(x_0,y_0)\Delta y+\varepsilon_1\Delta x+\varepsilon_2\Delta y</code></span> 其中当 <span class="course-math" data-tex="\Delta x,\Delta y\to 0" data-display="false"><code>\Delta x,\Delta y\to 0</code></span> 时，<span class="course-math" data-tex="\varepsilon_1,\varepsilon_2\to 0" data-display="false"><code>\varepsilon_1,\varepsilon_2\to 0</code></span>。（高阶无穷小量）
-定义函数可微（Differentiable function）：若 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在其定义域内每一点都可微，则称 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 可微。若一阶偏导数在开区域内连续（即 <span class="course-math" data-tex="f\in C^1" data-display="false"><code>f\in C^1</code></span>），则其图形是本课程意义下的光滑曲面（smooth surface）；仅处处可微并不能保证一阶偏导连续。
+定义函数可微（Differentiable function）：若 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在其定义域内每一点都可微，则称 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 可微，并称其图形为光滑曲面（smooth surface）。
 
 二元函数增量定理（Increment Theorem for Functions of Two Variables）推论：
 -  若 <span class="course-math" data-tex="f(x,y)" data-display="false"><code>f(x,y)</code></span> 的偏导 <span class="course-math" data-tex="f_x,f_y" data-display="false"><code>f_x,f_y</code></span> 在开区域 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 内处处连续，则 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的每一点都可微。
@@ -132,7 +132,7 @@ excerpt: "高等数学（上）/（下） · Partial Derivatives -  偏导数"
 <span class="course-math course-math-display" data-tex="\nabla f=\frac{ \partial f }{ \partial x } \mathbf{i}+\frac{ \partial f }{ \partial y } \mathbf{j}" data-display="true"><code>\nabla f=\frac{ \partial f }{ \partial x } \mathbf{i}+\frac{ \partial f }{ \partial y } \mathbf{j}</code></span>
 （更高维度也可以类似定义）
 那么有
-<span class="course-math course-math-display" data-tex="D_{\mathbf{u}}f=\nabla f\cdot \mathbf{u}=\left\lVert \nabla f \right\rVert  \cos\theta" data-display="true"><code>D_{\mathbf{u}}f=\nabla f\cdot \mathbf{u}=\left\lVert \nabla f \right\rVert  \cos\theta</code></span>
+<span class="course-math course-math-display" data-tex="D_{\mathbf{u}}f=\nabla f\cdot \mathbf{u}=\left\lvert \nabla f \right\rvert  \cos\theta" data-display="true"><code>D_{\mathbf{u}}f=\nabla f\cdot \mathbf{u}=\left\lvert \nabla f \right\rvert  \cos\theta</code></span>
 当 <span class="course-math" data-tex="\nabla f\neq\mathbf{0}" data-display="false"><code>\nabla f\neq\mathbf{0}</code></span> 时，<span class="course-math" data-tex="\theta=0" data-display="false"><code>\theta=0</code></span> 时 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 增长最快，<span class="course-math" data-tex="\theta=\pi" data-display="false"><code>\theta=\pi</code></span> 时 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 衰减最快，<span class="course-math" data-tex="\theta=\frac{\pi}{2}" data-display="false"><code>\theta=\frac{\pi}{2}</code></span> 时方向导数为零（一阶变化为零）。
 向量 <span class="course-math" data-tex="\nabla f" data-display="false"><code>\nabla f</code></span> 与曲线 <span class="course-math" data-tex="z=f(x,y)" data-display="false"><code>z=f(x,y)</code></span> 的等值线（Level Curve）成法向（Normal）（与方向向量垂直）。当该点 <span class="course-math" data-tex="\nabla f\ne0" data-display="false"><code>\nabla f\ne0</code></span> 时，可以写出等值线的切线：
 <span class="course-math course-math-display" data-tex="f_{x}(x-x_{0})+f_{y}(y-y_{0})=0" data-display="true"><code>f_{x}(x-x_{0})+f_{y}(y-y_{0})=0</code></span>
@@ -172,7 +172,7 @@ excerpt: "高等数学（上）/（下） · Partial Derivatives -  偏导数"
 
 定义二元函数的关键点（Critical Point）为 <span class="course-math" data-tex="f_{x},f_{y}" data-display="false"><code>f_{x},f_{y}</code></span> 全为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 或至少有一个不存在的情况。
 
-对可微的二元函数，鞍点（Saddle Point）是满足 <span class="course-math" data-tex="f_x=f_y=0" data-display="false"><code>f_x=f_y=0</code></span> 的点，且其任意邻域内都有函数值比该点更小的点和更大的点。仅有“附近有更大、更小的值”并不足以判定鞍点。
+可微二元函数的鞍点（Saddle Point）是一个关键点，且其任意邻域内都有函数值比该点更大和更小的点。
 
 二阶导测试（Second Derivative Test，要求二阶偏导在该点附近连续）：定义 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 的判别式（discriminant）或海森（Hessian）为海森矩阵的行列式：
 <span class="course-math course-math-display" data-tex="D=f_{x x}f_{yy}-f_{x y}^{2}= \left\lvert  \begin{matrix} f_{x x} &amp; f_{x y} \\&#10;f_{xy}  &amp; f_{yy} \end{matrix} \right\rvert" data-display="true"><code>D=f_{x x}f_{yy}-f_{x y}^{2}= \left\lvert  \begin{matrix} f_{x x} &amp; f_{x y} \\&#10;f_{xy}  &amp; f_{yy} \end{matrix} \right\rvert</code></span>
@@ -183,7 +183,7 @@ excerpt: "高等数学（上）/（下） · Partial Derivatives -  偏导数"
 - 若 <span class="course-math" data-tex="D&lt;0" data-display="false"><code>D&lt;0</code></span>：该点为鞍点。
 - 若 <span class="course-math" data-tex="D=0" data-display="false"><code>D=0</code></span>：测试失效。
 
-若函数在闭有界区域上连续，全局最大值和最小值一定存在。应比较内部所有关键点与边界上的候选值（包括边界端点、角点及不可微处）。开区域或无界区域上则不一定能取到最值。
+连续函数在闭有界区域上的全局最值：比较内部关键点和边界候选点（包括端点、角点）处的函数值。
 
 
 ### 拉格朗日乘子
@@ -210,6 +210,6 @@ excerpt: "高等数学（上）/（下） · Partial Derivatives -  偏导数"
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Partial%20Derivatives%20-%20%20%E5%81%8F%E5%AF%BC%E6%95%B0.png' | relative_url }}{% raw %}" alt="Partial Derivatives -  偏导数" width="2108" height="468" loading="lazy" decoding="async">
 把这里的 <span class="course-math" data-tex="h,k" data-display="false"><code>h,k</code></span> 换成 <span class="course-math" data-tex="x,y" data-display="false"><code>x,y</code></span>，可以写出在原点处的 <span class="course-math" data-tex="n+1" data-display="false"><code>n+1</code></span> 阶泰勒公式：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Partial%20Derivatives%20-%20%20%E5%81%8F%E5%AF%BC%E6%95%B0-1.png' | relative_url }}{% raw %}" alt="Partial Derivatives -  偏导数-1" width="2200" height="424" loading="lazy" decoding="async">
-也就是说
-<span class="course-math course-math-display" data-tex="f(x,y)=\sum_{k=0}^{n}\frac{1}{k!}\left[\left(x\frac{\partial}{\partial u}+y\frac{\partial}{\partial v}\right)^k f(u,v)\right]_{(u,v)=(0,0)}+\frac{1}{(n+1)!}\left[\left(x\frac{\partial}{\partial u}+y\frac{\partial}{\partial v}\right)^{n+1}f(u,v)\right]_{(u,v)=(cx,cy)},\quad 0&lt;c&lt;1" data-display="true"><code>f(x,y)=\sum_{k=0}^{n}\frac{1}{k!}\left[\left(x\frac{\partial}{\partial u}+y\frac{\partial}{\partial v}\right)^k f(u,v)\right]_{(u,v)=(0,0)}+\frac{1}{(n+1)!}\left[\left(x\frac{\partial}{\partial u}+y\frac{\partial}{\partial v}\right)^{n+1}f(u,v)\right]_{(u,v)=(cx,cy)},\quad 0&lt;c&lt;1</code></span>
+也就是说（算子展开为各阶偏导时，系数 <span class="course-math" data-tex="x,y" data-display="false"><code>x,y</code></span> 视为常数）
+<span class="course-math course-math-display" data-tex="f(x,y)=\sum_{k=0}^{n}\frac{1}{k!}\left[\left(x\frac{\partial}{\partial x}+y\frac{\partial}{\partial y}\right)^k f\right]_{(0,0)}+\frac{1}{(n+1)!}\left[\left(x\frac{\partial}{\partial x}+y\frac{\partial}{\partial y}\right)^{n+1}f\right]_{(cx,cy)},\quad 0&lt;c&lt;1" data-display="true"><code>f(x,y)=\sum_{k=0}^{n}\frac{1}{k!}\left[\left(x\frac{\partial}{\partial x}+y\frac{\partial}{\partial y}\right)^k f\right]_{(0,0)}+\frac{1}{(n+1)!}\left[\left(x\frac{\partial}{\partial x}+y\frac{\partial}{\partial y}\right)^{n+1}f\right]_{(cx,cy)},\quad 0&lt;c&lt;1</code></span>
 {% endraw %}

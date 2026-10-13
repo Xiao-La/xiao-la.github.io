@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-10-28T17:03:23+08:00"
-updated_at: "2026-10-09T16:13:40+08:00"
+updated_at: "2026-10-13T11:47:00+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -36,21 +36,12 @@ excerpt: "高等数学（上）/（下） · Antiderivative and Integral - 积�
 {: #section-2 }
 
 
-- 积分中值定理（First Mean Value Theorem for Integrals）：
-  - 适用条件：<span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在 <span class="course-math" data-tex="[a,b]" data-display="false"><code>[a,b]</code></span> 上连续。
-  - 结论：存在 <span class="course-math" data-tex="c\in(a,b)" data-display="false"><code>c\in(a,b)</code></span> 使
-    <span class="course-math course-math-display" data-tex="\int_a^b f(x)\,\mathrm{d}x \;=\; f(c)\,(b-a)." data-display="true"><code>\int_a^b f(x)\,\mathrm{d}x \;=\; f(c)\,(b-a).</code></span>
-
-- 微积分基本定理（The Fundamental Theorem of Calculus, Part 1）：
-  - 适用条件：<span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在 <span class="course-math" data-tex="[a,b]" data-display="false"><code>[a,b]</code></span> 上可积；定义 <span class="course-math" data-tex="F(x)=\int_a^x f(t)\,\mathrm{d}t" data-display="false"><code>F(x)=\int_a^x f(t)\,\mathrm{d}t</code></span>。
-  - 结论：
-    - <span class="course-math" data-tex="F" data-display="false"><code>F</code></span> 在 <span class="course-math" data-tex="[a,b]" data-display="false"><code>[a,b]</code></span> 上连续；
-    - 若 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在 <span class="course-math" data-tex="c\in(a,b)" data-display="false"><code>c\in(a,b)</code></span> 处连续，则 <span class="course-math" data-tex="F&#x27;(c)=f(c)" data-display="false"><code>F&#x27;(c)=f(c)</code></span>。特别地，若 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在 <span class="course-math" data-tex="[a,b]" data-display="false"><code>[a,b]</code></span> 上连续，则 <span class="course-math" data-tex="F" data-display="false"><code>F</code></span> 在 <span class="course-math" data-tex="(a,b)" data-display="false"><code>(a,b)</code></span> 上可导且 <span class="course-math" data-tex="F&#x27;(x)=f(x)" data-display="false"><code>F&#x27;(x)=f(x)</code></span>。
-
-- 微积分基本定理（The Fundamental Theorem of Calculus, Part 2）：
-  - 适用条件：<span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在 <span class="course-math" data-tex="[a,b]" data-display="false"><code>[a,b]</code></span> 上连续；<span class="course-math" data-tex="F" data-display="false"><code>F</code></span> 为 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 的一个原函数（<span class="course-math" data-tex="F&#x27;=f" data-display="false"><code>F&#x27;=f</code></span> 于 <span class="course-math" data-tex="[a,b]" data-display="false"><code>[a,b]</code></span>）。
-  - 结论：
-    <span class="course-math course-math-display" data-tex="\int_a^b f(x)\,\mathrm{d}x \;=\; F(b)-F(a)." data-display="true"><code>\int_a^b f(x)\,\mathrm{d}x \;=\; F(b)-F(a).</code></span>
+- 积分中值定理（First Mean Value Theorem for Integrals）：若 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在 <span class="course-math" data-tex="[a,b]" data-display="false"><code>[a,b]</code></span> 上连续，则存在 <span class="course-math" data-tex="c\in(a,b)" data-display="false"><code>c\in(a,b)</code></span>，使
+  <span class="course-math course-math-display" data-tex="\int_a^b f(x)\,\mathrm{d}x=f(c)(b-a)." data-display="true"><code>\int_a^b f(x)\,\mathrm{d}x=f(c)(b-a).</code></span>
+- 微积分基本定理（The Fundamental Theorem of Calculus, Part 1）：若 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在 <span class="course-math" data-tex="[a,b]" data-display="false"><code>[a,b]</code></span> 上连续，<span class="course-math" data-tex="F(x)=\int_a^x f(t)\,\mathrm{d}t" data-display="false"><code>F(x)=\int_a^x f(t)\,\mathrm{d}t</code></span>，则
+  <span class="course-math course-math-display" data-tex="F&#x27;(x)=f(x),\quad a&lt;x&lt;b." data-display="true"><code>F&#x27;(x)=f(x),\quad a&lt;x&lt;b.</code></span>
+- 微积分基本定理（Part 2）：若 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 连续且 <span class="course-math" data-tex="F&#x27;=f" data-display="false"><code>F&#x27;=f</code></span>，则
+  <span class="course-math course-math-display" data-tex="\int_a^b f(x)\,\mathrm{d}x=F(b)-F(a)." data-display="true"><code>\int_a^b f(x)\,\mathrm{d}x=F(b)-F(a).</code></span>
 - 莱布尼兹法则（Leibniz's Rule）：
   - 适用条件：<span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 在 <span class="course-math" data-tex="[a,b]" data-display="false"><code>[a,b]</code></span> 上连续；<span class="course-math" data-tex="u(x),v(x)" data-display="false"><code>u(x),v(x)</code></span> 可导且取值落在 <span class="course-math" data-tex="[a,b]" data-display="false"><code>[a,b]</code></span>。
   - 结论：

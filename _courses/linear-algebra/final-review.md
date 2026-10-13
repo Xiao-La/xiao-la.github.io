@@ -5,7 +5,7 @@ course_title: "线性代数"
 section: ""
 status: "completed"
 created_at: "2026-06-12T01:12:17+08:00"
-updated_at: "2026-10-09T17:19:46+08:00"
+updated_at: "2026-10-13T11:51:23+08:00"
 reference: false
 order: 10
 layout: "course"
@@ -298,7 +298,7 @@ excerpt: "线性代数 · Final Review - 期末复习"
 | 行空间 <span class="course-math" data-tex="C(A^{\top})" data-display="false"><code>C(A^{\top})</code></span> | <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> | 取 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> 个非零行 |
 | 列空间 <span class="course-math" data-tex="C(A)" data-display="false"><code>C(A)</code></span> | <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> | 找 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的主元列，取**原矩阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span>** 中对应的列 |
 | 零空间 <span class="course-math" data-tex="N(A)" data-display="false"><code>N(A)</code></span> | <span class="course-math" data-tex="n-r" data-display="false"><code>n-r</code></span> | 解 <span class="course-math" data-tex="R\boldsymbol{x} = \boldsymbol{0}" data-display="false"><code>R\boldsymbol{x} = \boldsymbol{0}</code></span>，令自由变量依次为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 得基础解系 |
-| 左零空间 <span class="course-math" data-tex="N(A^{\top})" data-display="false"><code>N(A^{\top})</code></span> | <span class="course-math" data-tex="m-r" data-display="false"><code>m-r</code></span> | 取 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 中 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 全零行对应位置的行（无换行的 <span class="course-math" data-tex="A=LU" data-display="false"><code>A=LU</code></span> 中取 <span class="course-math" data-tex="L^{-1}" data-display="false"><code>L^{-1}</code></span> 的最后 <span class="course-math" data-tex="m-r" data-display="false"><code>m-r</code></span> 行；若 <span class="course-math" data-tex="PA=LU" data-display="false"><code>PA=LU</code></span>，则取 <span class="course-math" data-tex="L^{-1}P" data-display="false"><code>L^{-1}P</code></span> 的对应行） |
+| 左零空间 <span class="course-math" data-tex="N(A^{\top})" data-display="false"><code>N(A^{\top})</code></span> | <span class="course-math" data-tex="m-r" data-display="false"><code>m-r</code></span> | 取 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 中与 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 全零行对应的行 |
 
 > 行变换**不改变**行空间（<span class="course-math" data-tex="C(A^{\top}) = C(U^{\top})" data-display="false"><code>C(A^{\top}) = C(U^{\top})</code></span>），但**改变**列空间。主元列的**列标**不变，但列向量本身变了。
 
@@ -661,7 +661,7 @@ excerpt: "线性代数 · Final Review - 期末复习"
 
 （<span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 为 <span class="course-math" data-tex="m\times n" data-display="false"><code>m\times n</code></span>，<span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 为 <span class="course-math" data-tex="n\times m" data-display="false"><code>n\times m</code></span>）
 
-**秩一矩阵的特征值：** 至少有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 个特征值为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>（按代数重数计）（<span class="course-math" data-tex="N(A)" data-display="false"><code>N(A)</code></span> 有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 维）。
+**秩一矩阵的特征值：** 至少有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 个特征值为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>（<span class="course-math" data-tex="N(A)" data-display="false"><code>N(A)</code></span> 有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 维）。
 
 
 ### 5.3 Difference Equations and Powers <span class="course-math" data-tex="A^k" data-display="false"><code>A^k</code></span>
@@ -861,7 +861,7 @@ excerpt: "线性代数 · Final Review - 期末复习"
 - 所有主子式 <span class="course-math" data-tex="\det(A_I)\geq 0" data-display="false"><code>\det(A_I)\geq 0</code></span>（包括非顺序主子式）
 - 存在矩阵 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 使得 <span class="course-math" data-tex="A = R^{\top} R" data-display="false"><code>A = R^{\top} R</code></span>（<span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 未必可逆）
 
-> 技巧：<span class="course-math" data-tex="A \geq 0 \iff A + \varepsilon I &gt; 0,\ \forall \varepsilon &gt; 0" data-display="false"><code>A \geq 0 \iff A + \varepsilon I &gt; 0,\ \forall \varepsilon &gt; 0</code></span>（充分小），取极限即得半正定性质。
+> 技巧：<span class="course-math" data-tex="A \geq 0 \iff A + \varepsilon I &gt; 0,\ \forall \varepsilon &gt; 0" data-display="false"><code>A \geq 0 \iff A + \varepsilon I &gt; 0,\ \forall \varepsilon &gt; 0</code></span>，取极限即得半正定性质。
 
 **负定：** <span class="course-math" data-tex="A &lt; 0" data-display="false"><code>A &lt; 0</code></span> 若 <span class="course-math" data-tex="-A &gt; 0" data-display="false"><code>-A &gt; 0</code></span>。等价于对所有非零 <span class="course-math" data-tex="\boldsymbol{x}" data-display="false"><code>\boldsymbol{x}</code></span> 都有 <span class="course-math" data-tex="\boldsymbol{x}^{\top} A \boldsymbol{x} &lt; 0" data-display="false"><code>\boldsymbol{x}^{\top} A \boldsymbol{x} &lt; 0</code></span>。
 

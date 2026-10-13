@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-11-11T08:09:27+08:00"
-updated_at: "2026-10-09T16:13:40+08:00"
+updated_at: "2026-10-13T11:47:00+08:00"
 reference: false
 order: 5
 layout: "course"
@@ -70,7 +70,7 @@ excerpt: "大学物理（上）/（下） · Oscillations - 振动"
 
 
 受迫振动（Forced Oscillation）的频率始终和周期性的驱动力（Driving Force）的频率相同。
-小阻尼时，驱动角频率接近固有角频率（Natural Angular Frequency）会出现共振（Resonance）。对 <span class="course-math" data-tex="m\ddot{x}+b\dot{x}+kx=F_0\cos\omega_\mathrm{d}t" data-display="false"><code>m\ddot{x}+b\dot{x}+kx=F_0\cos\omega_\mathrm{d}t</code></span>，位移振幅的峰值在 <span class="course-math" data-tex="\omega_d=\sqrt{k/m-b^2/(2m^2)}" data-display="false"><code>\omega_d=\sqrt{k/m-b^2/(2m^2)}</code></span>（要求 <span class="course-math" data-tex="b^2&lt;2mk" data-display="false"><code>b^2&lt;2mk</code></span>）；只有忽略阻尼时才趋于 <span class="course-math" data-tex="\sqrt{k/m}" data-display="false"><code>\sqrt{k/m}</code></span>。
+小阻尼时，驱动角频率 <span class="course-math" data-tex="\omega_d" data-display="false"><code>\omega_d</code></span> 接近固有角频率 <span class="course-math" data-tex="\omega_0" data-display="false"><code>\omega_0</code></span>，振幅近似达到最大，这种现象称为共振（Resonance）。
 
 
 ### 等效劲度系数

@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-09-30T19:28:05+08:00"
-updated_at: "2026-10-12T15:32:49+08:00"
+updated_at: "2026-10-13T12:01:07+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -45,7 +45,7 @@ excerpt: "离散数学 · Algorithm - 算法"
 复杂度实际上是 input size 的函数。
 **定义 input size：** 能够编码输入数据所需要的最少的比特数。
 - 例如，输入数据是一个整数 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span>，则 input size 就是 <span class="course-math" data-tex="\log_{2}n" data-display="false"><code>\log_{2}n</code></span>。也就是说，朴素的判断合数的算法（试除法）的复杂度实际上是 <span class="course-math" data-tex="O(2^{\text{size}(n)})" data-display="false"><code>O(2^{\text{size}(n)})</code></span>。
-- 例如，输入数据是一个数组 <span class="course-math" data-tex="a_{1},a_{2},\dots,a_{n}" data-display="false"><code>a_{1},a_{2},\dots,a_{n}</code></span>，则 input size 就是 <span class="course-math" data-tex="n\cdot \lceil \log _{2}( \max{\lvert a_{i} \rvert}+1)\rceil" data-display="false"><code>n\cdot \lceil \log _{2}( \max{\lvert a_{i} \rvert}+1)\rceil</code></span>。（由于这里 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 是个常数，那么表示复杂度的时候只会写成 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 的函数）。
+- 例如，输入数据是一个数组 <span class="course-math" data-tex="a_{1},a_{2},\dots,a_{n}" data-display="false"><code>a_{1},a_{2},\dots,a_{n}</code></span>。采用定长二进制编码，每个元素的编码长度记为 <span class="course-math" data-tex="m=\lceil \log _{2}(\max_i \lvert a_i\rvert+1)\rceil" data-display="false"><code>m=\lceil \log _{2}(\max_i \lvert a_i\rvert+1)\rceil</code></span>，则这种编码的 input size 为 <span class="course-math" data-tex="nm" data-display="false"><code>nm</code></span>。若元素位宽 <span class="course-math" data-tex="m" data-display="false"><code>m</code></span> 固定，可以只用元素个数 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 衡量输入规模。
 - 例如要计算 <span class="course-math" data-tex="a\times b" data-display="false"><code>a\times b</code></span>，可以定义 <span class="course-math" data-tex="t=\log_{2}\max(a,b)" data-display="false"><code>t=\log_{2}\max(a,b)</code></span>。（这和真正的最小比特数 <span class="course-math" data-tex="s=\lceil \log _{2}(a+1) \rceil+\lceil \log_2(b+1) \rceil" data-display="false"><code>s=\lceil \log _{2}(a+1) \rceil+\lceil \log_2(b+1) \rceil</code></span>是同阶的）
 
 **定义** 正函数 <span class="course-math" data-tex="f(n)" data-display="false"><code>f(n)</code></span> 和 <span class="course-math" data-tex="g(n)" data-display="false"><code>g(n)</code></span> 是同类的（of the **same type**），若
@@ -63,7 +63,7 @@ excerpt: "离散数学 · Algorithm - 算法"
 
 例如：背包问题及其判定性版本（Knapsack vs. DKnapsack）。 
 - 这里的优化问题：找到最大的 <span class="course-math" data-tex="\sum _{i \in T}v_{i}" data-display="false"><code>\sum _{i \in T}v_{i}</code></span> 使得 <span class="course-math" data-tex="\sum _{i \in T}w_{i}\leq{}W" data-display="false"><code>\sum _{i \in T}w_{i}\leq{}W</code></span>。
-- 这里的判定性问题：给定 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> ，是否存在一个背包中元素的子集 <span class="course-math" data-tex="T" data-display="false"><code>T</code></span>，使得价值至少是 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span>？
+- 这里的判定性问题：给定 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> ，是否存在一个背包中元素的子集 <span class="course-math" data-tex="T" data-display="false"><code>T</code></span>，使得总重量不超过容量 <span class="course-math" data-tex="W" data-display="false"><code>W</code></span>，且总价值至少是 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span>？
 - 我们只要解决了优化问题，就可以解决这里的判定性问题（比较 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 与优化的答案即可）。
 
 一般来说，对于互相对应的问题，难度： **Decision Problem <span class="course-math" data-tex="\leq{}" data-display="false"><code>\leq{}</code></span> Optimization Problem**。也就是说，只要能解决优化问题，对应的判定性问题就显然可以解决。**如果我们知道判定性问题是难的，那我们就会知道对应的优化问题也难。** 因此，对判定性问题分类很有意义。
@@ -111,7 +111,7 @@ DKnapsack 也属于 NP。验证一个子集，只需要求和即可。
 **例如，** Q：乘两个正数，Q'：加两个数，那么 Q 可以被归约为 Q'，通过一个对数变换：
 <span class="course-math course-math-display" data-tex="xy=\exp(\log x+\log y)" data-display="true"><code>xy=\exp(\log x+\log y)</code></span>
 
-**多项式时间归约（Polynomial-Time Reduction）**： 设有问题 <span class="course-math" data-tex="L_{1},L_{2}" data-display="false"><code>L_{1},L_{2}</code></span>，那么 <span class="course-math" data-tex="L_{1}" data-display="false"><code>L_{1}</code></span> 到 <span class="course-math" data-tex="L_{2}" data-display="false"><code>L_{2}</code></span> 的一个多项式时间归约，是一个可在多项式时间内计算的变换 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span>，使得 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 把 <span class="course-math" data-tex="L_{1}" data-display="false"><code>L_{1}</code></span> 的任一 yes-input 映射到 <span class="course-math" data-tex="L_{2}" data-display="false"><code>L_{2}</code></span> 的一个 yes-input，把 <span class="course-math" data-tex="L_{2}" data-display="false"><code>L_{2}</code></span> 的任一 no-input 映射到 <span class="course-math" data-tex="L_{2}" data-display="false"><code>L_{2}</code></span> 的一个 no-input，
+**多项式时间归约（Polynomial-Time Reduction）**： 设有问题 <span class="course-math" data-tex="L_{1},L_{2}" data-display="false"><code>L_{1},L_{2}</code></span>，那么 <span class="course-math" data-tex="L_{1}" data-display="false"><code>L_{1}</code></span> 到 <span class="course-math" data-tex="L_{2}" data-display="false"><code>L_{2}</code></span> 的一个多项式时间归约，是一个可在多项式时间内计算的变换 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span>，使得 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 把 <span class="course-math" data-tex="L_{1}" data-display="false"><code>L_{1}</code></span> 的任一 yes-input 映射到 <span class="course-math" data-tex="L_{2}" data-display="false"><code>L_{2}</code></span> 的一个 yes-input，把 <span class="course-math" data-tex="L_{1}" data-display="false"><code>L_{1}</code></span> 的任一 no-input 映射到 <span class="course-math" data-tex="L_{2}" data-display="false"><code>L_{2}</code></span> 的一个 no-input，
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Algorithm%20-%20%E7%AE%97%E6%B3%95-1.png' | relative_url }}{% raw %}" alt="Algorithm - 算法-1" width="497" height="231" loading="lazy" decoding="async">
 记作：
 <span class="course-math course-math-display" data-tex="L_{1}\leq_{{P}}L_{2}" data-display="true"><code>L_{1}\leq_{{P}}L_{2}</code></span>
