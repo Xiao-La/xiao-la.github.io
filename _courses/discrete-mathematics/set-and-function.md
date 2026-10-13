@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-09-03T17:09:42+08:00"
-updated_at: "2026-10-09T16:13:40+08:00"
+updated_at: "2026-10-13T10:41:42+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -30,7 +30,7 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 
 定义集合的势（Cardinality）<span class="course-math" data-tex="\lvert S\rvert" data-display="false"><code>\lvert S\rvert</code></span>：
 - 对于有限集，就是元素的个数。
-- 对于任意集合：我们说 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 和 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 等势（have the same cardinality），若 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 和 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 之间存在双射（one-to-one correspondence）。
+- 对于任意集合：我们说 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 和 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> a等势（have the same cardinality），若 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 和 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 之间存在双射（one-to-one correspondence）。
 - 我们说 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的势小于 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 的势或与 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 的势相同，若 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 到 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 存在一个单射（one-to-one function），记作 <span class="course-math" data-tex="\lvert A \rvert\leq \lvert B \rvert" data-display="false"><code>\lvert A \rvert\leq \lvert B \rvert</code></span>（注意，这里并不是说数值上的小于或等于）。
 - 若 <span class="course-math" data-tex="\lvert A \rvert\leq \lvert B \rvert" data-display="false"><code>\lvert A \rvert\leq \lvert B \rvert</code></span> 且 <span class="course-math" data-tex="A,B" data-display="false"><code>A,B</code></span> 不等势，那么记 <span class="course-math" data-tex="\lvert A \rvert&lt;\lvert B \rvert" data-display="false"><code>\lvert A \rvert&lt;\lvert B \rvert</code></span>。
 

@@ -5,7 +5,7 @@ course_title: "概率与统计"
 section: ""
 status: "updating"
 created_at: "2026-04-30T19:28:27+08:00"
-updated_at: "2026-10-09T18:11:09+08:00"
+updated_at: "2026-10-10T16:52:35+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -117,5 +117,14 @@ CDF 是不降的而且是右连续的。
 
 离散：
 <span class="course-math course-math-display" data-tex="\mathrm{E}(Y)=\mathrm{E}(g(X))=\sum_{k=1}^{\infty} g(x_{k})p_{k}" data-display="true"><code>\mathrm{E}(Y)=\mathrm{E}(g(X))=\sum_{k=1}^{\infty} g(x_{k})p_{k}</code></span>
-连续就是换成积分。
+连续就是换成积分（<span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 的 PDF 为 <span class="course-math" data-tex="f(x)" data-display="false"><code>f(x)</code></span>）：
+<span class="course-math course-math-display" data-tex="\mathrm{E}(Y)=\mathrm{E}(g(X))=\int_{-\infty}^{\infty} g(x)f(x)\,\mathrm{d}x" data-display="true"><code>\mathrm{E}(Y)=\mathrm{E}(g(X))=\int_{-\infty}^{\infty} g(x)f(x)\,\mathrm{d}x</code></span>
+
+关于 <span class="course-math" data-tex="\mathrm{E}(g(X))" data-display="false"><code>\mathrm{E}(g(X))</code></span> 和 <span class="course-math" data-tex="g(\mathrm{E}(X))" data-display="false"><code>g(\mathrm{E}(X))</code></span> 的关系，根据琴生不等式（Jensen's Inequality）：
+- 若 <span class="course-math" data-tex="g(X)" data-display="false"><code>g(X)</code></span> 是 凸的 / Convex，那么  <span class="course-math" data-tex="\mathrm{E}(g(X))\geq{}g(\mathrm{E}(X))" data-display="false"><code>\mathrm{E}(g(X))\geq{}g(\mathrm{E}(X))</code></span> 。
+- 若 <span class="course-math" data-tex="g(X)" data-display="false"><code>g(X)</code></span> 是 凹的 / Concave，那么  <span class="course-math" data-tex="\mathrm{E}(g(X))\leq{}g(\mathrm{E}(X))" data-display="false"><code>\mathrm{E}(g(X))\leq{}g(\mathrm{E}(X))</code></span> 。
+
+*Extra:* 琴生不等式的应用，Kullback-Leibler divergence (KL divergence, KL散度)，衡量两个 PDF 之间的距离：
+<span class="course-math course-math-display" data-tex="D_{\mathrm{KL}}(p\Vert q) = \int_{-\infty}^{\infty} p(x) \log \left( \frac{q(x)}{p(x)} \right)\,\mathrm{d}x" data-display="true"><code>D_{\mathrm{KL}}(p\Vert q) = \int_{-\infty}^{\infty} p(x) \log \left( \frac{q(x)}{p(x)} \right)\,\mathrm{d}x</code></span>
+根据琴生不等式可以证明 <span class="course-math" data-tex="D_{\mathrm{KL}}\geq{}0" data-display="false"><code>D_{\mathrm{KL}}\geq{}0</code></span>，且取等当且仅当 <span class="course-math" data-tex="p(x)=q(x)" data-display="false"><code>p(x)=q(x)</code></span>。
 {% endraw %}

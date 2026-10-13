@@ -903,7 +903,7 @@
     "coverage": "持续补充",
     "status": "updating",
     "url": "/courses/probability-statistics/",
-    "count": 3,
+    "count": 4,
     "notes": [
       {
         "title": "Probability Basic - 概率基础",
@@ -925,7 +925,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-04-30T19:28:27+08:00",
-        "updated_at": "2026-10-09T18:11:09+08:00",
+        "updated_at": "2026-10-10T16:52:35+08:00",
         "reference": false,
         "order": 2
       },
@@ -940,6 +940,18 @@
         "updated_at": "2026-10-09T20:20:44+08:00",
         "reference": false,
         "order": 3
+      },
+      {
+        "title": "Joint Probability - 联合概率",
+        "url": "/courses/probability-statistics/joint-probability/",
+        "course_id": "probability-statistics",
+        "course_title": "概率与统计",
+        "section": "",
+        "status": "updating",
+        "created_at": "2026-10-10T16:52:41+08:00",
+        "updated_at": "2026-10-10T18:10:16+08:00",
+        "reference": false,
+        "order": 4
       }
     ],
     "resources": []
@@ -950,7 +962,7 @@
     "coverage": "持续补充",
     "status": "updating",
     "url": "/courses/discrete-mathematics/",
-    "count": 3,
+    "count": 4,
     "notes": [
       {
         "title": "Set and Function - 集合与函数",
@@ -960,7 +972,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-09-03T17:09:42+08:00",
-        "updated_at": "2026-10-09T16:13:40+08:00",
+        "updated_at": "2026-10-13T10:41:42+08:00",
         "reference": false,
         "order": 1
       },
@@ -984,9 +996,21 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-09-30T19:28:05+08:00",
-        "updated_at": "2026-10-09T16:13:40+08:00",
+        "updated_at": "2026-10-12T15:32:49+08:00",
         "reference": false,
         "order": 3
+      },
+      {
+        "title": "Number Theory - 数论",
+        "url": "/courses/discrete-mathematics/number-theory/",
+        "course_id": "discrete-mathematics",
+        "course_title": "离散数学",
+        "section": "",
+        "status": "updating",
+        "created_at": "2026-10-12T15:33:52+08:00",
+        "updated_at": "2026-10-12T15:52:17+08:00",
+        "reference": false,
+        "order": 4
       }
     ],
     "resources": []
@@ -1066,7 +1090,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-09-29T16:21:34+08:00",
-        "updated_at": "2026-10-08T21:14:49+08:00",
+        "updated_at": "2026-10-12T16:24:27+08:00",
         "reference": false,
         "order": 2
       }
@@ -1079,7 +1103,7 @@
     "coverage": "持续补充",
     "status": "updating",
     "url": "/courses/prehistoric-art/",
-    "count": 4,
+    "count": 5,
     "notes": [
       {
         "title": "Week1",
@@ -1128,6 +1152,18 @@
         "updated_at": "2026-09-30T11:10:53+08:00",
         "reference": false,
         "order": 4
+      },
+      {
+        "title": "Week5",
+        "url": "/courses/prehistoric-art/week5/",
+        "course_id": "prehistoric-art",
+        "course_title": "旧石器艺术与符号",
+        "section": "",
+        "status": "updating",
+        "created_at": "2026-10-10T10:33:44+08:00",
+        "updated_at": "2026-10-10T11:47:36+08:00",
+        "reference": false,
+        "order": 5
       }
     ],
     "resources": []
