@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-05-19T17:43:41+08:00"
-updated_at: "2026-10-13T11:47:00+08:00"
+updated_at: "2026-10-13T12:14:19+08:00"
 reference: false
 order: 12
 layout: "course"
@@ -61,7 +61,7 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 <span class="course-math course-math-display" data-tex="\mathrm{d}f=M\,\mathrm{d}x+N\,\mathrm{d}y+P\,\mathrm{d}z=\frac{ \partial f }{ \partial x }\,\mathrm{d}x+\frac{ \partial f }{ \partial y }\,\mathrm{d}y+\frac{ \partial f }{ \partial z }\,\mathrm{d}z" data-display="true"><code>\mathrm{d}f=M\,\mathrm{d}x+N\,\mathrm{d}y+P\,\mathrm{d}z=\frac{ \partial f }{ \partial x }\,\mathrm{d}x+\frac{ \partial f }{ \partial y }\,\mathrm{d}y+\frac{ \partial f }{ \partial z }\,\mathrm{d}z</code></span>
 这里 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 就是势函数。
 对恰当微分形式进行线积分，由线积分基本定理，只需终点处的势函数值减去起点处的势函数值。
-在单连通开区域内、场的分量具有连续一阶偏导时，同样有一个保守场充要条件：
+若单连通，同样有一个保守场充要条件：
 <span class="course-math course-math-display" data-tex="\frac{ \partial M }{ \partial y } =\frac{ \partial N }{ \partial x } ,\frac{ \partial M }{ \partial z } =\frac{ \partial P }{ \partial x } ,\frac{ \partial N }{ \partial z } =\frac{ \partial P }{ \partial y }" data-display="true"><code>\frac{ \partial M }{ \partial y } =\frac{ \partial N }{ \partial x } ,\frac{ \partial M }{ \partial z } =\frac{ \partial P }{ \partial x } ,\frac{ \partial N }{ \partial z } =\frac{ \partial P }{ \partial y }</code></span>
 保守场的一个充要条件：对任意回路积分为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>。
 
@@ -156,7 +156,7 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 - 其中 <span class="course-math" data-tex="\nabla=\langle \frac{ \partial  }{ \partial x },\frac{ \partial  }{ \partial y },\frac{ \partial  }{ \partial z }\rangle" data-display="false"><code>\nabla=\langle \frac{ \partial  }{ \partial x },\frac{ \partial  }{ \partial y },\frac{ \partial  }{ \partial z }\rangle</code></span> 为倒三角算符（Del Operator）。
 - 那么斯托克斯定理指出：
 <span class="course-math course-math-display" data-tex="\oint_{C}\mathbf{F}\cdot \mathrm{d}\mathbf{r}=\iint_{S}(\nabla \times \mathbf{F})\cdot \mathbf{n}\,\mathrm{d}\sigma" data-display="true"><code>\oint_{C}\mathbf{F}\cdot \mathrm{d}\mathbf{r}=\iint_{S}(\nabla \times \mathbf{F})\cdot \mathbf{n}\,\mathrm{d}\sigma</code></span>
-- 其中 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 是可定向的**分段光滑曲面**，<span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 是它的正向边界（方向与法向量按右手定则相容）；<span class="course-math" data-tex="\mathbf{F}" data-display="false"><code>\mathbf{F}</code></span> 在包含整个 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 的开区域内具有连续一阶偏导。
+- 其中 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 是以闭合边界 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 为边界的**分段光滑曲面**，<span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 的方向与曲面法向量按右手定则相容。
 - 也就是说，以 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span> 为边界的曲面的旋度场的通量，等于这个边界上的环流量。
 - 那么对于一个复杂的曲面积分，可以改成算一个线积分，也可以换成一个简单的（有相同边界的）曲面的积分；对于一个复杂的环流量线积分，也可以换成一个简单曲面的旋度通量积分。
 
@@ -173,9 +173,9 @@ excerpt: "高等数学（上）/（下） · Vector Calculus - 向量微积分"
 - **内边界（Hole boundary）**：必须是**顺时针（Clockwise）**方向。
 （保持曲面在左手边）
 
-定理：**具有连续二阶偏导的标量场，其梯度场的旋度为零向量。**
+定理：**光滑标量场的梯度场，其旋度必为零向量。**
 <span class="course-math course-math-display" data-tex="\operatorname{curl}(\operatorname{grad} f) = \mathbf{0} \quad \text{或} \quad \nabla \times \nabla f = \mathbf{0}" data-display="true"><code>\operatorname{curl}(\operatorname{grad} f) = \mathbf{0} \quad \text{或} \quad \nabla \times \nabla f = \mathbf{0}</code></span>
-在**连通且单连通（Connected & Simply Connected）的开放区域 <span class="course-math" data-tex="D" data-display="false"><code>D</code></span>** 中，对具有连续一阶偏导的向量场，TFAE：
+在**连通且单连通（Connected & Simply Connected）的开放区域 <span class="course-math" data-tex="D" data-display="false"><code>D</code></span>** 中，TFAE：
 1. <span class="course-math" data-tex="\mathbf{F}" data-display="false"><code>\mathbf{F}</code></span> 是保守场（<span class="course-math" data-tex="\mathbf{F} = \nabla f" data-display="false"><code>\mathbf{F} = \nabla f</code></span> 存在势函数）。
 2. 沿着区域内任何闭合回路的线积分永远为 0（<span class="course-math" data-tex="\oint_C \mathbf{F} \cdot \mathrm{d}\mathbf{r} = 0" data-display="false"><code>\oint_C \mathbf{F} \cdot \mathrm{d}\mathbf{r} = 0</code></span>）。
 3. 向量场线积分严格路径无关（Path Independence）。

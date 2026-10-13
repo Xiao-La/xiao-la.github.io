@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-12-20T17:42:17+08:00"
-updated_at: "2026-10-13T11:47:00+08:00"
+updated_at: "2026-10-13T12:13:22+08:00"
 reference: false
 order: 9
 layout: "course"
@@ -109,14 +109,14 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 3. 转动自由度：3（非线性）或 2（线性）。
 4. 振动自由度：<span class="course-math" data-tex="3N-6" data-display="false"><code>3N-6</code></span>（非线性）或 <span class="course-math" data-tex="3N-5" data-display="false"><code>3N-5</code></span> （线性）。
 
-对于有 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 个参与能量均分的自由度的气体分子：
+对于自由度为 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 的气体分子：
 
 <span class="course-math course-math-display" data-tex="E_{\mathrm{int}}=\frac{1}{2} kT \times N\times f =n \frac{f}{2} RT" data-display="true"><code>E_{\mathrm{int}}=\frac{1}{2} kT \times N\times f =n \frac{f}{2} RT</code></span>
 对比 <span class="course-math" data-tex="E_{\mathrm{int}}=nC_{v}T" data-display="false"><code>E_{\mathrm{int}}=nC_{v}T</code></span> 可得
 <span class="course-math course-math-display" data-tex="C_{v}=\frac{f}{2}R, C_{p}=\left( \frac{f}{2}+1 \right)R" data-display="true"><code>C_{v}=\frac{f}{2}R, C_{p}=\left( \frac{f}{2}+1 \right)R</code></span>
 实际上，气体分子的自由度还和温度有关。在低温状态下，转动和振动自由度会被冻结。温度升高之后，转动自由度会先解冻，然后是振动自由度。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Gas-Kinetics-1.png' | relative_url }}{% raw %}" alt="Gas-Kinetics-1" width="1702" height="558" loading="lazy" decoding="async">
-基于**能量均分定理**，可通过自由度的比例算出动能大小，例如对于转动已激发、振动仍冻结的双原子分子，平动动能为 <span class="course-math" data-tex="\frac{3}{5}E_{\mathrm{int}}" data-display="false"><code>\frac{3}{5}E_{\mathrm{int}}</code></span>。
+基于**能量均分定理**，可通过自由度的比例算出动能大小，例如对于常温下的双原子分子，平动动能为 <span class="course-math" data-tex="\frac{3}{5}E_{\mathrm{int}}" data-display="false"><code>\frac{3}{5}E_{\mathrm{int}}</code></span>。
 
 
 ### 热力学过程计算
@@ -155,7 +155,7 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 
 <span class="course-math course-math-display" data-tex="Q=0" data-display="true"><code>Q=0</code></span>
 <span class="course-math course-math-display" data-tex="W=-\Delta E_{\mathrm{int}}=-nC_{v}\Delta T=\frac{C_{v}}{R}(p_{i}V_{i}-p_{f}V_{f})" data-display="true"><code>W=-\Delta E_{\mathrm{int}}=-nC_{v}\Delta T=\frac{C_{v}}{R}(p_{i}V_{i}-p_{f}V_{f})</code></span>
-对于可逆绝热过程，且 <span class="course-math" data-tex="C_v,C_p" data-display="false"><code>C_v,C_p</code></span> 可视为常数时，过程方程为
+对于可逆绝热过程，过程方程为
 <span class="course-math course-math-display" data-tex="pV^\gamma=\text{constant}" data-display="true"><code>pV^\gamma=\text{constant}</code></span>
 或
 <span class="course-math course-math-display" data-tex="TV^{\gamma-1}=\text{constant}" data-display="true"><code>TV^{\gamma-1}=\text{constant}</code></span>

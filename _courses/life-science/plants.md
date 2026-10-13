@@ -5,7 +5,7 @@ course_title: "生命科学概论"
 section: ""
 status: "completed"
 created_at: "2026-05-06T08:20:12+08:00"
-updated_at: "2026-10-08T21:22:39+08:00"
+updated_at: "2026-10-13T12:13:22+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -70,7 +70,7 @@ Alternation between generations
 - 酚类
 - 生物碱
 - 萜类
-Morphine（吗啡）, Caffeine（咖啡因）...（生物碱的常见例子；Endorphin 内啡肽是动物体内的肽类）
+Morphine, Caffeine...（常见例子）
 
 植物产品的作用
 - 有益防御

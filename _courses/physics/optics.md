@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-05-09T15:54:47+08:00"
-updated_at: "2026-10-09T16:13:40+08:00"
+updated_at: "2026-10-13T12:13:22+08:00"
 reference: false
 order: 14
 layout: "course"
@@ -31,7 +31,7 @@ excerpt: "大学物理（上）/（下） · Optics - 光学"
 *   **斯涅尔定律 (折射定律)：**
     <span class="course-math course-math-display" data-tex="n_1 \sin\theta_1 = n_2 \sin\theta_2" data-display="true"><code>n_1 \sin\theta_1 = n_2 \sin\theta_2</code></span>
     *(注：角度均为光线与法线的夹角)*
-*   **费马原理：** 光传播的实际路径使传播时间（或光程）取驻值；常见反射、折射问题中表现为局部最小。
+*   **费马原理：** 光传播的路径是“耗时最短”的路径。
 
 **全反射 (Total Internal Reflection)**
 *   **条件：** 光由**光密射向光疏**介质 (<span class="course-math" data-tex="n_1 &gt; n_2" data-display="false"><code>n_1 &gt; n_2</code></span>)。

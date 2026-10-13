@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-11-11T08:09:27+08:00"
-updated_at: "2026-10-13T11:47:00+08:00"
+updated_at: "2026-10-13T12:13:22+08:00"
 reference: false
 order: 5
 layout: "course"
@@ -63,7 +63,7 @@ excerpt: "大学物理（上）/（下） · Oscillations - 振动"
 <span class="course-math course-math-display" data-tex="F_{\mathrm{net}}=-bv-kx=ma" data-display="true"><code>F_{\mathrm{net}}=-bv-kx=ma</code></span>
 <span class="course-math course-math-display" data-tex="\implies m \frac{\mathrm{d}^2x}{\mathrm{d}t^2} + b \frac{\mathrm{d}x}{\mathrm{d}t} +kx = 0" data-display="true"><code>\implies m \frac{\mathrm{d}^2x}{\mathrm{d}t^2} + b \frac{\mathrm{d}x}{\mathrm{d}t} +kx = 0</code></span>
 <span class="course-math course-math-display" data-tex="\implies x(t)=x_{m} e^{-bt/2m} \cos(\omega&#x27; t + \phi)" data-display="true"><code>\implies x(t)=x_{m} e^{-bt/2m} \cos(\omega&#x27; t + \phi)</code></span>
- 其中（欠阻尼，<span class="course-math" data-tex="b^2&lt;4mk" data-display="false"><code>b^2&lt;4mk</code></span>） <span class="course-math course-math-display" data-tex="\omega&#x27; = \sqrt{ \frac{k}{m} -\frac{b^2}{4m^2}}, E(t)\simeq \frac{1}{2}kx_{m}^2 e^{-\frac{bt}{m}}" data-display="true"><code>\omega&#x27; = \sqrt{ \frac{k}{m} -\frac{b^2}{4m^2}}, E(t)\simeq \frac{1}{2}kx_{m}^2 e^{-\frac{bt}{m}}</code></span>
+ 其中 <span class="course-math course-math-display" data-tex="\omega&#x27; = \sqrt{ \frac{k}{m} -\frac{b^2}{4m^2}}, E(t)\simeq \frac{1}{2}kx_{m}^2 e^{-\frac{bt}{m}}" data-display="true"><code>\omega&#x27; = \sqrt{ \frac{k}{m} -\frac{b^2}{4m^2}}, E(t)\simeq \frac{1}{2}kx_{m}^2 e^{-\frac{bt}{m}}</code></span>
 
 ### 共振
 {: #section-4 }

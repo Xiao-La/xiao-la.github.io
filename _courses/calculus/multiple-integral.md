@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-05-07T12:53:21+08:00"
-updated_at: "2026-10-09T16:13:40+08:00"
+updated_at: "2026-10-13T12:13:22+08:00"
 reference: false
 order: 11
 layout: "course"
@@ -18,7 +18,7 @@ excerpt: "高等数学（上）/（下） · Multiple Integral - 多重积分"
 
 {% raw %}
 
-二重积分（Double Integral）用黎曼和定义（分割的最大小块直径趋于零）：
+二重积分（Double Integral）用黎曼和定义：
 <span class="course-math course-math-display" data-tex="\lim_{ n \to \infty } \sum_{i=1}^n f(x_{i},y_{i})\Delta A_{i}:=\iint _{R}f(x,y)\,\mathrm{d}x\,\mathrm{d}y" data-display="true"><code>\lim_{ n \to \infty } \sum_{i=1}^n f(x_{i},y_{i})\Delta A_{i}:=\iint _{R}f(x,y)\,\mathrm{d}x\,\mathrm{d}y</code></span>
 有时 <span class="course-math" data-tex="\mathrm{d}x\,\mathrm{d}y" data-display="false"><code>\mathrm{d}x\,\mathrm{d}y</code></span> 写成 <span class="course-math" data-tex="\mathrm{d}A" data-display="false"><code>\mathrm{d}A</code></span>。**当 <span class="course-math" data-tex="f\ge0" data-display="false"><code>f\ge0</code></span> 时，它的几何意义是曲面 <span class="course-math" data-tex="z=f(x,y)" data-display="false"><code>z=f(x,y)</code></span> 与 <span class="course-math" data-tex="xy" data-display="false"><code>xy</code></span> 平面间的体积；一般情况下是带符号的体积。**
 要计算二重积分，我们把它转化为累次积分（Iterated integral/Repeated integral），也就是切成横条或竖条计算面积，再把面积积分成体积。这种方法就是富比尼定理（Fubini's Theorem）：

@@ -5,7 +5,7 @@ course_title: "旧石器艺术与符号"
 section: ""
 status: "updating"
 created_at: "2026-09-09T10:24:19+08:00"
-updated_at: "2026-10-08T21:23:24+08:00"
+updated_at: "2026-10-13T12:13:22+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -24,15 +24,15 @@ Culture: “patterns of learned behaviour and ideas that humans acquire as membe
 - Culture is Symbolic
 - Linguistic anthropolog
 
-Vocal communication
+Verbal communication
 - Verbal language
 - Non-word sounds with meaning
 - Native speaker
 - Communication is more than individual words
 
-Non-vocal communication
+Non-verbal communication
 - Writing, Morse code, Sign language, body language, facial expressions
-- Body language alone: difficult to express time, past/future; writing and sign languages can express these.
+- Difficult - time, past/future
 
 Distinctiveness of Human language:
 - Openness

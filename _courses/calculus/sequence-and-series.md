@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-02-27T10:23:55+08:00"
-updated_at: "2026-10-09T16:13:40+08:00"
+updated_at: "2026-10-13T12:13:22+08:00"
 reference: false
 order: 8
 layout: "course"
@@ -113,7 +113,7 @@ excerpt: "高等数学（上）/（下） · Sequence and Series - 数列与级�
 - 若 <span class="course-math" data-tex="\sum c_{n}" data-display="false"><code>\sum c_{n}</code></span> 收敛，则 <span class="course-math" data-tex="\sum b_{n}" data-display="false"><code>\sum b_{n}</code></span> 收敛。
 
 **极限比较判别法（Limit Comparison test）**：若 <span class="course-math" data-tex="a_{n}&gt;0" data-display="false"><code>a_{n}&gt;0</code></span> 且 <span class="course-math" data-tex="b_{n}&gt;0" data-display="false"><code>b_{n}&gt;0</code></span> 对所有 <span class="course-math" data-tex="n\geq N" data-display="false"><code>n\geq N</code></span>：
-- 若 <span class="course-math" data-tex="\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=c\in(0,\infty)" data-display="false"><code>\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=c\in(0,\infty)</code></span>，则 <span class="course-math" data-tex="\sum a_{n}" data-display="false"><code>\sum a_{n}</code></span> 和 <span class="course-math" data-tex="\sum b_{n}" data-display="false"><code>\sum b_{n}</code></span> 同敛散。
+- 若 <span class="course-math" data-tex="\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=c&gt;0" data-display="false"><code>\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=c&gt;0</code></span>，则 <span class="course-math" data-tex="\sum a_{n}" data-display="false"><code>\sum a_{n}</code></span> 和 <span class="course-math" data-tex="\sum b_{n}" data-display="false"><code>\sum b_{n}</code></span> 同敛散。
 - 若 <span class="course-math" data-tex="\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=0" data-display="false"><code>\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=0</code></span>，则 <span class="course-math" data-tex="\sum b_{n} \text{收敛}\implies \sum a_{n}\text{收敛}" data-display="false"><code>\sum b_{n} \text{收敛}\implies \sum a_{n}\text{收敛}</code></span>。
 - 若 <span class="course-math" data-tex="\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=\infty" data-display="false"><code>\lim_{ n \to \infty } \frac{a_{n}}{b_{n}}=\infty</code></span>，则 <span class="course-math" data-tex="\sum b_{n}\text{发散}\implies \sum a_{n}\text{发散}" data-display="false"><code>\sum b_{n}\text{发散}\implies \sum a_{n}\text{发散}</code></span> 。
 
@@ -136,7 +136,7 @@ excerpt: "高等数学（上）/（下） · Sequence and Series - 数列与级�
 
 **交错级数估计定理（The Alternating Series Estimation Theorem）：** 若 <span class="course-math" data-tex="u_n&gt;0" data-display="false"><code>u_n&gt;0</code></span> 单调不增并趋于零，且 <span class="course-math" data-tex="\sum a_{n}=\sum (-1)^{n+1}u_{n}=L" data-display="false"><code>\sum a_{n}=\sum (-1)^{n+1}u_{n}=L</code></span>，则：
 -  <span class="course-math" data-tex="\lvert s_{n}-L\rvert \le u_{n+1}" data-display="false"><code>\lvert s_{n}-L\rvert \le u_{n+1}</code></span>。
-- <span class="course-math" data-tex="0\le(-1)^n(L-s_n)\le u_{n+1}" data-display="false"><code>0\le(-1)^n(L-s_n)\le u_{n+1}</code></span>（余项非零时与下一项同号）。
+- <span class="course-math" data-tex="\text{sgn}(L-s_{n})=\text{sgn}(a_{n+1})=(-1)^{n}" data-display="false"><code>\text{sgn}(L-s_{n})=\text{sgn}(a_{n+1})=(-1)^{n}</code></span>（余项非零时）。
 
 **绝对收敛数列重排定理（The Rearrangement Theorem for Absolutely Convergent Series）：** 若 <span class="course-math" data-tex="\sum a_{n}" data-display="false"><code>\sum a_{n}</code></span> 绝对收敛，且 <span class="course-math" data-tex="b_{n}" data-display="false"><code>b_{n}</code></span> 是 <span class="course-math" data-tex="a_{n}" data-display="false"><code>a_{n}</code></span> 的任意重排，则 <span class="course-math" data-tex="\sum a_{n}=\sum b_{n}" data-display="false"><code>\sum a_{n}=\sum b_{n}</code></span>。
 >  若 <span class="course-math" data-tex="\sum a_{n}" data-display="false"><code>\sum a_{n}</code></span> 条件收敛，则它重排之后极限与原来不一定相同。

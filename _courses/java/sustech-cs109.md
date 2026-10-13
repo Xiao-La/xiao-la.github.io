@@ -5,7 +5,7 @@ course_title: "计算机程序设计基础/JavaA"
 section: ""
 status: "completed"
 created_at: "2025-12-22T14:23:58+08:00"
-updated_at: "2026-10-13T11:47:00+08:00"
+updated_at: "2026-10-13T12:13:22+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -23,19 +23,19 @@ excerpt: "计算机程序设计基础/JavaA · SUSTech CS109 - Java"
 {: #section-1 }
 
 
-Java 的语法受 **C/C++** 影响，但它是一门独立的编程语言。
+Java 的语法基于 **C++**。
 
 Java 之父：James Gosling。
 
 Java 从源代码到运行：
 1. 编译器：编译源代码到**字节码**。`javac Main.java`
-2. 解释器（JVM）：加载字节码，通过解释执行或 JIT 编译等方式运行。`java Main`
+2. 解释器（JVM）：读取，识别，**解释**，运行字节码。`java Main`
 
 JVM：Java Virtual Machine，运行程序的虚拟机。
 JRE：Java Runtime Environment = JVM + 核心类库。
 JDK：Java Development Kit = JRE + 开发工具
 
-变量名，方法名都是标识符（Identifiers）。标识符支持 Unicode 字母等合法 Java 字符（也包括 `$` 和 `_`），后续可包含数字，不能以数字开头或使用保留关键字；Java 9 起不能单独使用 `_`。
+变量名，方法名都是标识符（Identifiers）。标识符允许出现字母（含 Unicode）、数字、`$` 和 `_`，不能以数字开头或使用保留关键字。
 
 多行注释在遇到第一个 `*/` 时结束，不能嵌套。
 
@@ -159,7 +159,7 @@ int[][] arr1 = {{1, 2}, {3, 4, 5}};
 {: #section-5 }
 
 
-函数中的传参数：Java 一律按值传参：基础类型复制值，引用类型复制引用值（不是对调用者变量的引用）。参数也会隐式提升。
+函数中的传参数：Java 一律按值传参：基础类型复制值，引用类型复制引用值。参数也会隐式提升。
 
 同一个方法不同的签名（Signature，包括方法名与参数类型等，不含返回类型），可实现方法重载（Method Overloading）
 
@@ -392,10 +392,10 @@ p.staticMethod(); // 输出 "Parent static"
 {: #section-10 }
 
 
-接口是一种引用类型，与抽象类具有相似用途，但不是类。使用 `interface` 关键字。
+接口与公共的抽象类类似。使用 `interface` 关键字。
 接口不可以包含构造方法。
 接口中的常量都隐式被 `public static final` 修饰。
-接口可以包含抽象方法（Abstract）、默认方法（Default）、静态方法（Static），Java 9 起也可包含私有方法（Private）；普通无方法体的接口方法隐式为 public abstract。
+接口可以包含抽象方法（Abstract） / 默认方法（Default） / 静态方法（Static）。普通无方法体的方法隐式为 `public abstract`。
 不可以直接实例化一个接口，但接口变量可以指向实现了接口的类的实例。
 ```java
 Payable p1 = new Alipay();

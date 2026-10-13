@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-11-07T10:47:03+08:00"
-updated_at: "2026-10-09T16:13:40+08:00"
+updated_at: "2026-10-13T12:13:22+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -30,7 +30,7 @@ excerpt: "高等数学（上）/（下） · Integral Techniques - 积分技巧"
 - 注意是否区间关于 0 对称而且被积函数是奇函数。
 - 区间再现： <span class="course-math course-math-display" data-tex="\int^{\pi/2}_{0}f(\sin x)\,\mathrm{d}x=\int^{\pi/2}_{0}f(\cos x)\,\mathrm{d}x" data-display="true"><code>\int^{\pi/2}_{0}f(\sin x)\,\mathrm{d}x=\int^{\pi/2}_{0}f(\cos x)\,\mathrm{d}x</code></span>
 -  更一般的，<span class="course-math course-math-display" data-tex="\int^{a}_{0}f(x)\,\mathrm{d}x=\frac{1}{2}  \int^{a}_{0} \left[f(x)+f(a-x)\right]\,\mathrm{d}x" data-display="true"><code>\int^{a}_{0}f(x)\,\mathrm{d}x=\frac{1}{2}  \int^{a}_{0} \left[f(x)+f(a-x)\right]\,\mathrm{d}x</code></span>
-- 类似的，当 <span class="course-math" data-tex="a&gt;0" data-display="false"><code>a&gt;0</code></span> 时，<span class="course-math course-math-display" data-tex="\int^{a}_{\frac{1}{a}} f(x)\,\mathrm{d}x=\frac{1}{2} \int^{a}_{\frac{1}{a}} \left[f(x)+\frac{1}{x^2}f\left( \frac{1}{x} \right)\right]\,\mathrm{d}x" data-display="true"><code>\int^{a}_{\frac{1}{a}} f(x)\,\mathrm{d}x=\frac{1}{2} \int^{a}_{\frac{1}{a}} \left[f(x)+\frac{1}{x^2}f\left( \frac{1}{x} \right)\right]\,\mathrm{d}x</code></span>
+- 类似的，<span class="course-math course-math-display" data-tex="\int^{a}_{\frac{1}{a}} f(x)\,\mathrm{d}x=\frac{1}{2} \int^{a}_{\frac{1}{a}} \left[f(x)+\frac{1}{x^2}f\left( \frac{1}{x} \right)\right]\,\mathrm{d}x" data-display="true"><code>\int^{a}_{\frac{1}{a}} f(x)\,\mathrm{d}x=\frac{1}{2} \int^{a}_{\frac{1}{a}} \left[f(x)+\frac{1}{x^2}f\left( \frac{1}{x} \right)\right]\,\mathrm{d}x</code></span>
 
 #### 不定积分
 {: #section-3 }

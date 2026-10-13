@@ -5,7 +5,7 @@ course_title: "MIT Missing Semester"
 section: ""
 status: "completed"
 created_at: "2025-10-21T21:37:22+08:00"
-updated_at: "2026-10-13T12:01:07+08:00"
+updated_at: "2026-10-13T12:13:22+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -50,7 +50,7 @@ o <-- o <-- o <-- o <----  o
 
 事实上，在硬盘上，Git 只储存对象和引用。修改历史的命令可能增加对象或更新引用，查询命令只读取状态。
 Git 有一个**暂存区**的概念，只有加入到暂存区的改动才会包含在 `commit` 中。
-HEAD 通常是指向当前分支的符号引用；分离 HEAD 时直接指向提交。
+HEAD 指向当前所在的 `commit`。
 
 ### 基础
 {: #section-4 }

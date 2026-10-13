@@ -5,7 +5,7 @@ course_title: "生命科学概论"
 section: ""
 status: "completed"
 created_at: "2026-02-25T08:08:59+08:00"
-updated_at: "2026-10-08T21:22:39+08:00"
+updated_at: "2026-10-13T12:13:22+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -23,7 +23,7 @@ excerpt: "生命科学概论 · Cell Biology - 细胞生物学"
 {: #section-1 }
 
 
-- Typical cell sizes: eukaryotic cells <span class="course-math" data-tex="10\text{–}100\,\mu\mathrm{m}" data-display="false"><code>10\text{–}100\,\mu\mathrm{m}</code></span>; prokaryotic cells <span class="course-math" data-tex="0.1\text{–}5\,\mu\mathrm{m}" data-display="false"><code>0.1\text{–}5\,\mu\mathrm{m}</code></span> (with exceptions).
+- Typical cell sizes: eukaryotic cells <span class="course-math" data-tex="10\text{–}100\,\mu\mathrm{m}" data-display="false"><code>10\text{–}100\,\mu\mathrm{m}</code></span>; prokaryotic cells <span class="course-math" data-tex="0.1\text{–}5\,\mu\mathrm{m}" data-display="false"><code>0.1\text{–}5\,\mu\mathrm{m}</code></span>.
 - The invention of **microscope** 
   - Objective lens and eye lens
 - The word "cell": Robert Hooke

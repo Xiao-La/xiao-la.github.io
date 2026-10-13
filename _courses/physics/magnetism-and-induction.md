@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-04-11T12:05:26+08:00"
-updated_at: "2026-10-09T16:13:40+08:00"
+updated_at: "2026-10-13T12:14:19+08:00"
 reference: false
 order: 12
 layout: "course"
@@ -90,7 +90,7 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 <span class="course-math course-math-display" data-tex="B=\int_{-\infty}^{\infty} \frac{\mu_{0}}{4\pi} \frac{i\,\mathrm{d}z}{z^{2}+R^{2}} \frac{R}{\sqrt{ z^{2}+R^{2} }}=\frac{\mu_{0}i}{2\pi R}" data-display="true"><code>B=\int_{-\infty}^{\infty} \frac{\mu_{0}}{4\pi} \frac{i\,\mathrm{d}z}{z^{2}+R^{2}} \frac{R}{\sqrt{ z^{2}+R^{2} }}=\frac{\mu_{0}i}{2\pi R}</code></span>
 其中 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 为某点到导线的垂直距离。
 若导线不是直的，则可以分解为 <span class="course-math" data-tex="x,y,z" data-display="false"><code>x,y,z</code></span> 三个分量分别积分。
-<span class="course-math" data-tex="1\,\mathrm{A}" data-display="false"><code>1\,\mathrm{A}</code></span> 曾由两根平行直导线间的磁力定义；2019 年起，SI 安培由固定元电荷 <span class="course-math" data-tex="e=1.602176634\times10^{-19}\,\mathrm{C}" data-display="false"><code>e=1.602176634\times10^{-19}\,\mathrm{C}</code></span> 定义。
+<span class="course-math" data-tex="1\,\mathrm{A}" data-display="false"><code>1\,\mathrm{A}</code></span> 曾通过两根平行直导线之间磁场力的大小来定义。
 一个角度为 <span class="course-math" data-tex="\varphi" data-display="false"><code>\varphi</code></span>  圆弧形导线：
 <span class="course-math course-math-display" data-tex="B=\int \frac{\mu_{0}}{4\pi} \frac{ir\,\mathrm{d}\theta}{r^{2}}=\frac{\mu_{0}i\varphi}{4\pi r}" data-display="true"><code>B=\int \frac{\mu_{0}}{4\pi} \frac{ir\,\mathrm{d}\theta}{r^{2}}=\frac{\mu_{0}i\varphi}{4\pi r}</code></span>
 

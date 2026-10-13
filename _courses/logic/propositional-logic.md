@@ -5,7 +5,7 @@ course_title: "数理逻辑导论"
 section: ""
 status: "completed"
 created_at: "2026-03-11T10:39:43+08:00"
-updated_at: "2026-10-09T16:13:40+08:00"
+updated_at: "2026-10-13T12:13:22+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -326,7 +326,7 @@ WFF 的性质：
   - 考虑有 Sub-proof 的情况，比如第 <span class="course-math" data-tex="k+1" data-display="false"><code>k+1</code></span> 行是一个 <span class="course-math" data-tex="\to\text{i}: \beta\to \gamma" data-display="false"><code>\to\text{i}: \beta\to \gamma</code></span>，I.H. 就不能直接用了，因为前 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 行不是完整的证明。但是可以令 <span class="course-math" data-tex="\Sigma&#x27;=\Sigma \cup \{ \beta \}" data-display="false"><code>\Sigma&#x27;=\Sigma \cup \{ \beta \}</code></span>，在新的 <span class="course-math" data-tex="\Sigma&#x27;" data-display="false"><code>\Sigma&#x27;</code></span> 下，前 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 行就变成完整的证明了，由于 I.H. 对任意的 <span class="course-math" data-tex="\Sigma" data-display="false"><code>\Sigma</code></span> 都成立，所以 <span class="course-math" data-tex="\Sigma&#x27;\vdash \gamma \implies \Sigma&#x27;\vDash\gamma" data-display="false"><code>\Sigma&#x27;\vdash \gamma \implies \Sigma&#x27;\vDash\gamma</code></span>，也就是 <span class="course-math" data-tex="\Sigma\cup \{ \beta \}\vDash \gamma" data-display="false"><code>\Sigma\cup \{ \beta \}\vDash \gamma</code></span>。从而可以通过反证法证明 <span class="course-math" data-tex="\Sigma\vDash \beta\to\gamma" data-display="false"><code>\Sigma\vDash \beta\to\gamma</code></span>。
 有了可靠性，证明蕴含就可以用：真值表，定义，反证法，以及 **用 ND 证明**。
 
-对有限前提集证明 ND 的完备性，设 <span class="course-math" data-tex="\Sigma=\{ a_{0},a_{1},\dots,a_{n} \}" data-display="false"><code>\Sigma=\{ a_{0},a_{1},\dots,a_{n} \}</code></span> ，可以分别证明三个引理：
+要证明 ND 的完备性，设 <span class="course-math" data-tex="\Sigma=\{ a_{0},a_{1},\dots,a_{n} \}" data-display="false"><code>\Sigma=\{ a_{0},a_{1},\dots,a_{n} \}</code></span> ，可以分别证明三个引理：
 - Lemma 1: 若 <span class="course-math" data-tex="\Sigma\vDash\beta" data-display="false"><code>\Sigma\vDash\beta</code></span>，则 <span class="course-math" data-tex="\varnothing \vDash(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta))))" data-display="false"><code>\varnothing \vDash(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta))))</code></span>。
 - Lemma 2: 对任意 wff <span class="course-math" data-tex="\gamma" data-display="false"><code>\gamma</code></span>，若 <span class="course-math" data-tex="\varnothing\vDash \gamma" data-display="false"><code>\varnothing\vDash \gamma</code></span>, 则 <span class="course-math" data-tex="\varnothing\vdash_{ND}\gamma" data-display="false"><code>\varnothing\vdash_{ND}\gamma</code></span>。（永真式可以被证明）
 - Lemma 3: 若 <span class="course-math" data-tex="\varnothing\vdash_{ND}(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta)\dots)))" data-display="false"><code>\varnothing\vdash_{ND}(a_{0}\to(a_{1}\to(\dots\to(a_{n}\to\beta)\dots)))</code></span>，则 <span class="course-math" data-tex="\{ a_{0},a_{1},\dots,a_{n} \}\vdash_{ND}\beta" data-display="false"><code>\{ a_{0},a_{1},\dots,a_{n} \}\vdash_{ND}\beta</code></span>。也就是说 <span class="course-math" data-tex="\Sigma\vdash_{ND}\beta" data-display="false"><code>\Sigma\vdash_{ND}\beta</code></span>。
