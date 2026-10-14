@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-10-12T15:33:52+08:00"
-updated_at: "2026-10-14T21:03:42+08:00"
+updated_at: "2026-10-14T21:52:12+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -87,7 +87,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 若 <span class="course-math" data-tex="(R,+)" data-display="false"><code>(R,+)</code></span> 是一个阿贝尔群，那么我们再定义一个运算 <span class="course-math" data-tex="\times" data-display="false"><code>\times</code></span>，使得：
 - **封闭性（Closure）：** <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 对 <span class="course-math" data-tex="\times" data-display="false"><code>\times</code></span> 封闭。
 - **结合律（Associativity）：** <span class="course-math" data-tex="(a\times b)\times c=a\times(b\times c)" data-display="false"><code>(a\times b)\times c=a\times(b\times c)</code></span>
-- **分配率（Distributivity）：** <span class="course-math" data-tex="a\times(b+c)=a\times b+a\times c" data-display="false"><code>a\times(b+c)=a\times b+a\times c</code></span>，且 <span class="course-math" data-tex="(a+b)\times c=a\times c+b\times c" data-display="false"><code>(a+b)\times c=a\times c+b\times c</code></span>
+- **分配律（Distributivity）：** <span class="course-math" data-tex="a\times(b+c)=a\times b+a\times c" data-display="false"><code>a\times(b+c)=a\times b+a\times c</code></span>，且 <span class="course-math" data-tex="(a+b)\times c=a\times c+b\times c" data-display="false"><code>(a+b)\times c=a\times c+b\times c</code></span>
 那么我们说 <span class="course-math" data-tex="(R,+,\times)" data-display="false"><code>(R,+,\times)</code></span> 是一个环（Ring）。
 
 **交换环（Commutative Ring）：** 若 <span class="course-math" data-tex="\times" data-display="false"><code>\times</code></span> 运算满足可交换性。
@@ -96,18 +96,18 @@ excerpt: "离散数学 · Number Theory - 数论"
 - **乘法单位元（Identity Element）：** <span class="course-math" data-tex="a\times1=1\times a=a" data-display="false"><code>a\times1=1\times a=a</code></span>
 - **非零积（Nonzero Product）：** 若 <span class="course-math" data-tex="a\times b=0" data-display="false"><code>a\times b=0</code></span>，那么 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 或 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 必有一个是 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>。
 
-例如 <span class="course-math" data-tex="(\mathbb{Z},+,\times)" data-display="false"><code>(\mathbb{Z},+,\times)</code></span> 就是整环。<span class="course-math" data-tex="(\mathbb{Z}_{m},+,\times)" data-display="false"><code>(\mathbb{Z}_{m},+,\times)</code></span> 是交换环，但不是整环。
+例如 <span class="course-math" data-tex="(\mathbb{Z},+,\times)" data-display="false"><code>(\mathbb{Z},+,\times)</code></span> 就是整环。<span class="course-math" data-tex="(\mathbb{Z}_{m},+,\times)" data-display="false"><code>(\mathbb{Z}_{m},+,\times)</code></span> 是交换环；<span class="course-math" data-tex="m" data-display="false"><code>m</code></span> 为素数时是整环，为合数时不是整环。
 
 
 ## 域（Field）
 {: #section-4 }
 
 
-若一个**整环**的 乘法 还满足任意元素**存在逆元**，那么说它是一个 **域（Field）**。
+若一个**整环**的乘法还满足任意非零元素**存在逆元**，那么说它是一个 **域（Field）**。
 
-<span class="course-math" data-tex="(\mathbb{Q},+,\times),(\mathbb{R},+,\times)" data-display="false"><code>(\mathbb{Q},+,\times),(\mathbb{R},+,\times)</code></span> 是域，而且叫 **无限域（Infinite field）**。这里默认不考虑 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>。
+<span class="course-math" data-tex="(\mathbb{Q},+,\times),(\mathbb{R},+,\times)" data-display="false"><code>(\mathbb{Q},+,\times),(\mathbb{R},+,\times)</code></span> 是域，而且叫 **无限域（Infinite field）**。
 <span class="course-math" data-tex="(\mathbb{Z}_{p},+_{p},\times _{p})" data-display="false"><code>(\mathbb{Z}_{p},+_{p},\times _{p})</code></span> 叫做素数域（Prime field）。
-一般的，<span class="course-math" data-tex="(\mathbb{Z}_{p^{m}},+_{p},\times _{p})" data-display="false"><code>(\mathbb{Z}_{p^{m}},+_{p},\times _{p})</code></span> 叫 **有限域（Finite Field）**。
+**有限域（Finite Field）** 的元素个数是素数幂 <span class="course-math" data-tex="p^{m}" data-display="false"><code>p^{m}</code></span>，通常记作 <span class="course-math" data-tex="\mathbb{F}_{p^{m}}" data-display="false"><code>\mathbb{F}_{p^{m}}</code></span>。
 
 
 ## 整数的表示
@@ -123,7 +123,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 - 在 <span class="course-math" data-tex="2,8,16" data-display="false"><code>2,8,16</code></span> 进制内互转，只需要 grouping：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-1.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-1" width="1110" height="234" loading="lazy" decoding="async">
 由于：
-<span class="course-math course-math-display" data-tex="\begin{aligned}&#10;n&amp;=a_{k}b^{k}+a_{k-1}b^{k-1}+\dots+a_{2}b^{2}+a_{1}b+a_{0} \\&#10;&amp;=b(a_{k}b^{k-1}+a_{k-1}b^{k-2}+\dots+a_{2}b+a_{1})+a_{0} \\&#10;&amp;=b(b(a_{k}b^{k-1}+a_{k-1}b^{k-3}+\dots+a_{2})+a_{1})+a_{0} \\&#10;&amp;=\dots&#10;\end{aligned}" data-display="true"><code>\begin{aligned}&#10;n&amp;=a_{k}b^{k}+a_{k-1}b^{k-1}+\dots+a_{2}b^{2}+a_{1}b+a_{0} \\&#10;&amp;=b(a_{k}b^{k-1}+a_{k-1}b^{k-2}+\dots+a_{2}b+a_{1})+a_{0} \\&#10;&amp;=b(b(a_{k}b^{k-1}+a_{k-1}b^{k-3}+\dots+a_{2})+a_{1})+a_{0} \\&#10;&amp;=\dots&#10;\end{aligned}</code></span>
+<span class="course-math course-math-display" data-tex="\begin{aligned}&#10;n&amp;=a_{k}b^{k}+a_{k-1}b^{k-1}+\dots+a_{2}b^{2}+a_{1}b+a_{0} \\&#10;&amp;=b(a_{k}b^{k-1}+a_{k-1}b^{k-2}+\dots+a_{2}b+a_{1})+a_{0} \\&#10;&amp;=b(b(a_{k}b^{k-2}+a_{k-1}b^{k-3}+\dots+a_{2})+a_{1})+a_{0} \\&#10;&amp;=\dots&#10;\end{aligned}" data-display="true"><code>\begin{aligned}&#10;n&amp;=a_{k}b^{k}+a_{k-1}b^{k-1}+\dots+a_{2}b^{2}+a_{1}b+a_{0} \\&#10;&amp;=b(a_{k}b^{k-1}+a_{k-1}b^{k-2}+\dots+a_{2}b+a_{1})+a_{0} \\&#10;&amp;=b(b(a_{k}b^{k-2}+a_{k-1}b^{k-3}+\dots+a_{2})+a_{1})+a_{0} \\&#10;&amp;=\dots&#10;\end{aligned}</code></span>
 那么要从 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 构造它的 base-<span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 展开，就相当于不停去除以 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span>，取余数，就得到了 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 进制下的低位到高位。
 
 二进制的加法，乘法运算：
@@ -133,6 +133,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 
 一个朴素的除法：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-4.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-4" width="501" height="323" loading="lazy" decoding="async">
+补充：若 <span class="course-math" data-tex="a&lt;0" data-display="false"><code>a&lt;0</code></span> 且恰好整除（<span class="course-math" data-tex="r=0" data-display="false"><code>r=0</code></span>），图中还需令 <span class="course-math" data-tex="q=-q" data-display="false"><code>q=-q</code></span>。
 可以通过分治来优化：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-5.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-5" width="392" height="332" loading="lazy" decoding="async">
 这相当于把 <span class="course-math" data-tex="a=dq+r" data-display="false"><code>a=dq+r</code></span> 写成 <span class="course-math" data-tex="a / 2=d \cdot q / 2+r / 2" data-display="false"><code>a / 2=d \cdot q / 2+r / 2</code></span>，然后去处理奇偶性细节。每次缩小一半，所以这个是 <span class="course-math" data-tex="O(\log q \log a)=O(n^{2})" data-display="false"><code>O(\log q \log a)=O(n^{2})</code></span> 的。
@@ -142,7 +143,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 复杂度是 <span class="course-math" data-tex="O((\log m) ^{2}\log n)=O(n^{3})" data-display="false"><code>O((\log m) ^{2}\log n)=O(n^{3})</code></span>。
 这是因为：
 <span class="course-math course-math-display" data-tex="b^{n}=b^{a_{k-1}2^{k-1}}\cdot b^{a_{k-2}2^{k-2}}\cdot\dots \cdot b^{a_{1} 2^{1}} b^{a_{0}}" data-display="true"><code>b^{n}=b^{a_{k-1}2^{k-1}}\cdot b^{a_{k-2}2^{k-2}}\cdot\dots \cdot b^{a_{1} 2^{1}} b^{a_{0}}</code></span>
-注意这里 <span class="course-math" data-tex="a_{i}\in \{ 0,1 \}" data-display="false"><code>a_{i}\in \{ 0,1 \}</code></span>，然后 <span class="course-math" data-tex="b^{2^{k-1}}=(b^{2^{k-2}})^{2}" data-display="false"><code>b^{2^{k-1}}=(b^{2^{k-2}})^{2}</code></span>。那么我们不断把 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 平方，然后再 <span class="course-math" data-tex="a_{i}=1" data-display="false"><code>a_{i}=1</code></span> 的时候就乘到答案里去。
+注意这里 <span class="course-math" data-tex="a_{i}\in \{ 0,1 \}" data-display="false"><code>a_{i}\in \{ 0,1 \}</code></span>，然后 <span class="course-math" data-tex="b^{2^{k-1}}=(b^{2^{k-2}})^{2}" data-display="false"><code>b^{2^{k-1}}=(b^{2^{k-2}})^{2}</code></span>。那么我们不断把 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 平方，然后在 <span class="course-math" data-tex="a_{i}=1" data-display="false"><code>a_{i}=1</code></span> 的时候就乘到答案里去。
 
 
 ## 素数与合数

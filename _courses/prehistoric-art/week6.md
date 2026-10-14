@@ -5,7 +5,7 @@ course_title: "旧石器艺术与符号"
 section: ""
 status: "updating"
 created_at: "2026-10-14T10:38:15+08:00"
-updated_at: "2026-10-14T12:10:05+08:00"
+updated_at: "2026-10-14T21:52:12+08:00"
 reference: false
 order: 6
 layout: "course"
@@ -31,7 +31,7 @@ New things in the Upper Palaeolithic
 - exaggerated sexual characteristics
 - missing / diminished faces, hands, feet
 -> Clothing, weaving tech
-Some interpretetation
+Some interpretations
 - pornography
 - selfie
 - fertility charm
@@ -43,10 +43,10 @@ Upper Palaeolithic Cave Art
 
 Chauvet, France
 
-shown
+Generally shown in Upper Palaeolithic cave art
 - adult terrestrial mammals
 - figurative, representational
-- drown in profile(side view)
+- drawn in profile(side view)
 - most common: horses, bison, deer, ibex, mammoths
 maybe:
 - binary opposites

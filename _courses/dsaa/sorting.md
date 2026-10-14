@@ -5,7 +5,7 @@ course_title: "数据结构与算法分析"
 section: ""
 status: "updating"
 created_at: "2026-09-29T16:21:34+08:00"
-updated_at: "2026-10-13T18:10:26+08:00"
+updated_at: "2026-10-14T21:52:12+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -120,7 +120,7 @@ Partition 的运行时间是 <span class="course-math" data-tex="\Theta(n)" data
 **随机化。** 为了避免最坏情况，我们可以在 partition 前面让我们选的 pivot 是随机的：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting-6.png' | relative_url }}{% raw %}" alt="Sorting-6" width="441" height="139" loading="lazy" decoding="async">
 
-可以证明，随机化的 QuickSort 的**期望运行时间**是 <span class="course-math" data-tex="\Theta(n\log n)" data-display="false"><code>\Theta(n\log n)</code></span>。
+当数组元素互异时，随机化的 QuickSort 的**期望运行时间**是 <span class="course-math" data-tex="\Theta(n\log n)" data-display="false"><code>\Theta(n\log n)</code></span>。
 - **直觉：** 一个好的 partition 是把数组分成它的某个常数比例，例如，分成 <span class="course-math" data-tex="3:1" data-display="false"><code>3:1</code></span>。一个不好的 partition 是把数组分成 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 和 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span>。如果好的和坏的等可能交替出现，那好的 partition 会主导，导致 <span class="course-math" data-tex="\Theta(n\log n)" data-display="false"><code>\Theta(n\log n)</code></span>。
 - **证明 1：** 假设每种 split <span class="course-math" data-tex="q=1,2, \dots, n" data-display="false"><code>q=1,2, \dots, n</code></span> 是等可能的。那么平均的情况就是每种情况恰好发生一次：
 <span class="course-math course-math-display" data-tex="\begin{aligned}&#10;T(n)=&amp; \frac{1}{n} \cdot \sum _{q=1}^{n}(T(q-1)+T(n-q)+\Theta(n)) \\&#10;=&amp;  \frac{1}{n} \cdot \sum _{q=1}^{n}T(q-1)+ \frac{1}{n} \sum _{q=1}^{n}T(n-q)+\frac{1}{n} \sum _{q=1}^{n}\Theta(n) \\&#10;=&amp; \frac{1}{n} \cdot \sum _{k=0}^{n-1}2T(k)+\Theta(n) &#10;\end{aligned}" data-display="true"><code>\begin{aligned}&#10;T(n)=&amp; \frac{1}{n} \cdot \sum _{q=1}^{n}(T(q-1)+T(n-q)+\Theta(n)) \\&#10;=&amp;  \frac{1}{n} \cdot \sum _{q=1}^{n}T(q-1)+ \frac{1}{n} \sum _{q=1}^{n}T(n-q)+\frac{1}{n} \sum _{q=1}^{n}\Theta(n) \\&#10;=&amp; \frac{1}{n} \cdot \sum _{k=0}^{n-1}2T(k)+\Theta(n) &#10;\end{aligned}</code></span>

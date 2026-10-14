@@ -5,7 +5,7 @@ course_title: "概率与统计"
 section: ""
 status: "updating"
 created_at: "2026-10-10T16:52:41+08:00"
-updated_at: "2026-10-14T17:57:40+08:00"
+updated_at: "2026-10-14T21:52:12+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -91,12 +91,12 @@ excerpt: "概率与统计 · Joint Probability - 联合概率"
 特例：对独立的 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span>，有 <span class="course-math" data-tex="\mathrm{E}(XY)=\mathrm{E}(X)\mathrm{E}(Y), \operatorname{Var}(X+Y)=\operatorname{Var}(X)+\operatorname{Var}(Y)" data-display="false"><code>\mathrm{E}(XY)=\mathrm{E}(X)\mathrm{E}(Y), \operatorname{Var}(X+Y)=\operatorname{Var}(X)+\operatorname{Var}(Y)</code></span>。
 注意到对一般的随机变量 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span>，
 <span class="course-math course-math-display" data-tex="\operatorname{Var}(X+Y)-\operatorname{Var}(X)-\operatorname{Var}(Y)=2\mathrm{E}((X-\mathrm{E}(X))(Y-\mathrm{E}(Y)))" data-display="true"><code>\operatorname{Var}(X+Y)-\operatorname{Var}(X)-\operatorname{Var}(Y)=2\mathrm{E}((X-\mathrm{E}(X))(Y-\mathrm{E}(Y)))</code></span>
-我们定义随机变量 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 与 <span class="course-math" data-tex="Y" data-display="false"><code>Y</code></span> **协方差（Covariant）** 为
+我们定义随机变量 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 与 <span class="course-math" data-tex="Y" data-display="false"><code>Y</code></span> **协方差（Covariance）** 为
 <span class="course-math course-math-display" data-tex="\operatorname{Cov}(X, Y)\triangleq \mathrm{E}((X-\mathrm{E}(X))(Y-\mathrm{E}(Y)))=\mathrm{E}(XY)-\mathrm{E}(X)\mathrm{E}(Y)" data-display="true"><code>\operatorname{Cov}(X, Y)\triangleq \mathrm{E}((X-\mathrm{E}(X))(Y-\mathrm{E}(Y)))=\mathrm{E}(XY)-\mathrm{E}(X)\mathrm{E}(Y)</code></span>
 这刻画了 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 的**线性相关性**。
 - 若 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 独立，那么 <span class="course-math" data-tex="\operatorname{Cov}(X, Y)=0" data-display="false"><code>\operatorname{Cov}(X, Y)=0</code></span>。
 - 若 <span class="course-math" data-tex="\operatorname{Cov}(X, Y)=0" data-display="false"><code>\operatorname{Cov}(X, Y)=0</code></span>，那么 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 不一定独立。我们说它们 **不相关（Uncorrelated）**。
-- 这是因为，协方差为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 说明线性无关，而还有可能有其他关系，因此不一定独立。
+- 这是因为，不相关的随机变量仍可能存在非线性关系，因此不一定独立。
 - 若 <span class="course-math" data-tex="\operatorname{Cov}(X, Y)&gt;0" data-display="false"><code>\operatorname{Cov}(X, Y)&gt;0</code></span>，我们说 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 正相关。
 - 若 <span class="course-math" data-tex="\operatorname{Cov}(X, Y)&lt;0" data-display="false"><code>\operatorname{Cov}(X, Y)&lt;0</code></span>，我们说 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 负相关。
 {% endraw %}

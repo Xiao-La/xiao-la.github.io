@@ -5,7 +5,7 @@ course_title: "数字逻辑"
 section: ""
 status: "updating"
 created_at: "2026-09-29T14:11:02+08:00"
-updated_at: "2026-10-14T11:09:27+08:00"
+updated_at: "2026-10-14T21:52:12+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -35,16 +35,16 @@ excerpt: "数字逻辑 · Combinational Logic - 组合逻辑"
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Combinational%20Logic%20-%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91-4.png' | relative_url }}{% raw %}" alt="Combinational Logic - 组合逻辑-4" width="460" height="390" loading="lazy" decoding="async">
 
 
-**Gate Delay.** 实际电路中，逻辑门会存在能够 **传播** 的延迟（Propagation Delay），使得门的状态不稳定。
-**Timing Hazard / Glitches（毛刺）.**   由于 Delay 的存在，在电路的特定情况下会产生跳变，跳变到错误的状态，这时又恰好进行了采样，就会发生不想要的结果。
+**Gate Delay.** 逻辑门存在传播延迟（Propagation Delay），即输出的变化会滞后于输入。
+**Timing Hazard / Glitches（毛刺）.** 由于不同路径的传播延迟不同，在电路的特定情况下会产生跳变，跳变到错误的状态，这时又恰好进行了采样，就会发生不想要的结果。
 - static 1 hazard
 - static 0 hazard
 例如这里 <span class="course-math" data-tex="F" data-display="false"><code>F</code></span> 本不应该变化，但是因为 D 与 E 是不同步的，导致有一段时间，<span class="course-math" data-tex="F" data-display="false"><code>F</code></span> 发生了变化。这就是一个 static 1 hazard.
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Combinational%20Logic%20-%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91-1.png' | relative_url }}{% raw %}" alt="Combinational Logic - 组合逻辑-1" width="555" height="271" loading="lazy" decoding="async">
-**Remark:** hazard 只可能发生在，变量的取值发生变化的时候，不在卡诺图的同一个圈内（见上图，从紫色的圈跳到了黄色的圈）。于是为了避免 hazard，我们可以在这种跨圈的地方多加一个冗余的圈。
+**Remark:** 对 static 1 hazard，若输入变化对应的两个相邻 1 不在同一个圈内，就存在毛刺风险（见上图，从紫色的圈跳到了黄色的圈）。可以增加一个覆盖这两个 1 的冗余圈来消除该风险。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Combinational%20Logic%20-%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91-2.png' | relative_url }}{% raw %}" alt="Combinational Logic - 组合逻辑-2" width="342" height="422" loading="lazy" decoding="async">
 上面是 static 1 hazard。
-对于 static 0 hazard，就是去考虑去圈 0，跨 0 圈的时候就会产生。为了避免，就要增加一些冗余的 0 圈。例如：
+对于 static 0 hazard，若两个相邻 0 不在同一个圈内，也存在毛刺风险。可以增加覆盖它们的冗余 0 圈来消除该风险。例如：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Combinational%20Logic%20-%20%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91-3.png' | relative_url }}{% raw %}" alt="Combinational Logic - 组合逻辑-3" width="324" height="307" loading="lazy" decoding="async">
 
 
