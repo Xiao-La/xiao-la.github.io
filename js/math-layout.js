@@ -3,6 +3,56 @@
 
   var roots = new Set();
   var pending = false;
+  var displaySelector = '.article-math-display, .course-math-display';
+
+  function meaningfulSibling(node, direction) {
+    while (node && (node.nodeType === 8 ||
+      (node.nodeType === 3 && !node.textContent.trim()))) {
+      node = node[direction];
+    }
+    return node;
+  }
+
+  function isDisplay(node) {
+    return node && node.nodeType === 1 && node.matches(displaySelector);
+  }
+
+  function normalizeDisplayMath(root) {
+    var displays = root.querySelectorAll(displaySelector);
+    displays.forEach(function (element) {
+      // A display formula already starts and ends a line. Markdown's hard-wrap
+      // <br> elements otherwise add an empty text line beside its block box.
+      ['previousSibling', 'nextSibling'].forEach(function (direction) {
+        var adjacent = meaningfulSibling(element[direction], direction);
+        while (adjacent && adjacent.nodeName === 'BR') {
+          var next = meaningfulSibling(adjacent[direction], direction);
+          adjacent.remove();
+          adjacent = next;
+        }
+      });
+      element.classList.remove('math-display-followed', 'math-display-continuation');
+    });
+
+    root.querySelectorAll('p').forEach(function (paragraph) {
+      var last = meaningfulSibling(paragraph.lastChild, 'previousSibling');
+      // The final formula supplies the paragraph's bottom spacing itself.
+      paragraph.classList.toggle('math-ending-paragraph', Boolean(isDisplay(last)));
+    });
+
+    displays.forEach(function (element) {
+      var previous = meaningfulSibling(element.previousSibling, 'previousSibling');
+      if (!previous && element.parentElement.tagName === 'P') {
+        var paragraph = meaningfulSibling(element.parentElement.previousSibling, 'previousSibling');
+        if (paragraph && paragraph.nodeName === 'P') {
+          previous = meaningfulSibling(paragraph.lastChild, 'previousSibling');
+        }
+      }
+      if (isDisplay(previous)) {
+        previous.classList.add('math-display-followed');
+        element.classList.add('math-display-continuation');
+      }
+    });
+  }
 
   function availableWidth(element) {
     var parent = element.parentElement;
@@ -50,6 +100,7 @@
   window.formatInlineMath = function (root) {
     if (!root) return;
     roots.add(root);
+    normalizeDisplayMath(root);
     update(root);
   };
 

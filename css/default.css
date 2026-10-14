@@ -17,6 +17,28 @@ body {
   margin: 1em 0;
 }
 
+.article-math-display, .course-math-display {
+  display: block;
+  max-width: 100%;
+  margin: .75em 0;
+  text-align: center;
+  line-height: normal;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.article-math-display > mjx-container[display="true"],
+.course-math-display > mjx-container[display="true"] {
+  margin: 0 !important;
+  line-height: 0;
+  min-width: 100%;
+  width: max-content;
+}
+
+.math-display-followed { margin-bottom: calc(.75em + 4px); }
+.math-display-continuation { margin-top: 0; }
+.main p.math-ending-paragraph { margin-bottom: 0; }
+
 .article-math-inline, .course-math:not(.course-math-display) {
   /* Keep MathJax's per-formula SVG baseline, including subscripts. */
   display: inline;
@@ -85,8 +107,12 @@ h2 {
   margin: 2em 0 .8em;
 }
 
-h3 { font-size: 1.2em; margin: 1.6em 0 .65em; }
-h4 { font-size: 1.06em; margin: 1.35em 0 .55em; }
+h3, h4 {
+  font-family: inherit;
+  font-weight: 700;
+}
+h3 { font-size: 1.3em; margin: 1.8em 0 .6em; }
+h4 { font-size: 1.12em; margin: 1.35em 0 .55em; }
 h5, h6 { font-size: 1em; margin: 1.25em 0 .5em; }
 
 .main :where(p) { margin: 0 0 1.1em; }
