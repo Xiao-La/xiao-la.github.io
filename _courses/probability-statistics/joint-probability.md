@@ -5,7 +5,7 @@ course_title: "概率与统计"
 section: ""
 status: "updating"
 created_at: "2026-10-10T16:52:41+08:00"
-updated_at: "2026-10-13T11:23:11+08:00"
+updated_at: "2026-10-14T17:57:40+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -69,4 +69,34 @@ excerpt: "概率与统计 · Joint Probability - 联合概率"
 类似的对连续随机变量，我们有 conditional PDF：
 <span class="course-math course-math-display" data-tex="f_{X\mid Y}(x\mid y)\triangleq{}\frac{f(x,y)}{f_{Y}(y)}" data-display="true"><code>f_{X\mid Y}(x\mid y)\triangleq{}\frac{f(x,y)}{f_{Y}(y)}</code></span>
 这里要求 <span class="course-math" data-tex="f_{Y}(y)&gt;0" data-display="false"><code>f_{Y}(y)&gt;0</code></span>。
+
+利用这个定义，我们有 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 的 marginal PDF 的一种求法：
+<span class="course-math course-math-display" data-tex="f_{X}(x)= \int _{-\infty}^{\infty}f(x,y)\,\mathrm{d}y=\int_{-\infty}^{\infty} f_{X\mid Y}(x\mid y)f_{Y}(y)\,\mathrm{d}y" data-display="true"><code>f_{X}(x)= \int _{-\infty}^{\infty}f(x,y)\,\mathrm{d}y=\int_{-\infty}^{\infty} f_{X\mid Y}(x\mid y)f_{Y}(y)\,\mathrm{d}y</code></span>
+这也就是连续情况下的全概率公式。回忆离散情况：
+<span class="course-math course-math-display" data-tex="p_{X}(x)=\sum _{j=1}^{\infty }p(x,y_{j})= \sum _{j=1}^{\infty} p_{X\mid Y}(x\mid y_{j})p_{Y}(y_{j})" data-display="true"><code>p_{X}(x)=\sum _{j=1}^{\infty }p(x,y_{j})= \sum _{j=1}^{\infty} p_{X\mid Y}(x\mid y_{j})p_{Y}(y_{j})</code></span>
+
+## 独立性与协方差
+{: #section-3 }
+
+
+**利用 Joint CDF 重新定义独立性。** 若 <span class="course-math" data-tex="(X_{1},X_{2},\dots,X_{n})" data-display="false"><code>(X_{1},X_{2},\dots,X_{n})</code></span> 有 joint CDF <span class="course-math" data-tex="F" data-display="false"><code>F</code></span>，那么我们说 <span class="course-math" data-tex="X_{1},X_{2},\dots,X_{n}" data-display="false"><code>X_{1},X_{2},\dots,X_{n}</code></span> 相互独立，当
+<span class="course-math course-math-display" data-tex="F(x_{1},x_{2},\dots,x_{n})=F_{X_{1}}(x_{1})F_{X_{2}}(x_{2})\dots F_{X_{n}}(x_{n})" data-display="true"><code>F(x_{1},x_{2},\dots,x_{n})=F_{X_{1}}(x_{1})F_{X_{2}}(x_{2})\dots F_{X_{n}}(x_{n})</code></span>
+推论：若离散随机变量 <span class="course-math" data-tex="X_{1},X_{2},\dots,X_{n}" data-display="false"><code>X_{1},X_{2},\dots,X_{n}</code></span> 相互独立，那么
+<span class="course-math course-math-display" data-tex="p(x_{1},x_{2},\dots,x_{n})=p_{X_{1}}(x_{1})p_{X_{2}}(x_{2})\dots p_{X_{n}}(x_{n})" data-display="true"><code>p(x_{1},x_{2},\dots,x_{n})=p_{X_{1}}(x_{1})p_{X_{2}}(x_{2})\dots p_{X_{n}}(x_{n})</code></span>
+若连续随机变量 <span class="course-math" data-tex="X_{1},X_{2},\dots,X_{n}" data-display="false"><code>X_{1},X_{2},\dots,X_{n}</code></span> 相互独立，那么
+<span class="course-math course-math-display" data-tex="f(x_{1},x_{2},\dots,x_{n})=f_{X_{1}}(x_{1})f_{X_{2}}(x_{2})\dots f_{X_{n}}(x_{n})" data-display="true"><code>f(x_{1},x_{2},\dots,x_{n})=f_{X_{1}}(x_{1})f_{X_{2}}(x_{2})\dots f_{X_{n}}(x_{n})</code></span>
+若 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 是相互独立的，那么对任意函数 <span class="course-math" data-tex="g" data-display="false"><code>g</code></span> 和 <span class="course-math" data-tex="h" data-display="false"><code>h</code></span>，有
+<span class="course-math course-math-display" data-tex="\mathrm{E}(g(X)h(Y))=\mathrm{E}(g(X))\mathrm{E}(h(Y))" data-display="true"><code>\mathrm{E}(g(X)h(Y))=\mathrm{E}(g(X))\mathrm{E}(h(Y))</code></span>
+<span class="course-math course-math-display" data-tex="\operatorname{Var}(g(X)\pm h(Y))=\operatorname{Var}(g(X))+\operatorname{Var}(h(Y))" data-display="true"><code>\operatorname{Var}(g(X)\pm h(Y))=\operatorname{Var}(g(X))+\operatorname{Var}(h(Y))</code></span>
+特例：对独立的 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span>，有 <span class="course-math" data-tex="\mathrm{E}(XY)=\mathrm{E}(X)\mathrm{E}(Y), \operatorname{Var}(X+Y)=\operatorname{Var}(X)+\operatorname{Var}(Y)" data-display="false"><code>\mathrm{E}(XY)=\mathrm{E}(X)\mathrm{E}(Y), \operatorname{Var}(X+Y)=\operatorname{Var}(X)+\operatorname{Var}(Y)</code></span>。
+注意到对一般的随机变量 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span>，
+<span class="course-math course-math-display" data-tex="\operatorname{Var}(X+Y)-\operatorname{Var}(X)-\operatorname{Var}(Y)=2\mathrm{E}((X-\mathrm{E}(X))(Y-\mathrm{E}(Y)))" data-display="true"><code>\operatorname{Var}(X+Y)-\operatorname{Var}(X)-\operatorname{Var}(Y)=2\mathrm{E}((X-\mathrm{E}(X))(Y-\mathrm{E}(Y)))</code></span>
+我们定义随机变量 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 与 <span class="course-math" data-tex="Y" data-display="false"><code>Y</code></span> **协方差（Covariant）** 为
+<span class="course-math course-math-display" data-tex="\operatorname{Cov}(X, Y)\triangleq \mathrm{E}((X-\mathrm{E}(X))(Y-\mathrm{E}(Y)))=\mathrm{E}(XY)-\mathrm{E}(X)\mathrm{E}(Y)" data-display="true"><code>\operatorname{Cov}(X, Y)\triangleq \mathrm{E}((X-\mathrm{E}(X))(Y-\mathrm{E}(Y)))=\mathrm{E}(XY)-\mathrm{E}(X)\mathrm{E}(Y)</code></span>
+这刻画了 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 的**线性相关性**。
+- 若 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 独立，那么 <span class="course-math" data-tex="\operatorname{Cov}(X, Y)=0" data-display="false"><code>\operatorname{Cov}(X, Y)=0</code></span>。
+- 若 <span class="course-math" data-tex="\operatorname{Cov}(X, Y)=0" data-display="false"><code>\operatorname{Cov}(X, Y)=0</code></span>，那么 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 不一定独立。我们说它们 **不相关（Uncorrelated）**。
+- 这是因为，协方差为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 说明线性无关，而还有可能有其他关系，因此不一定独立。
+- 若 <span class="course-math" data-tex="\operatorname{Cov}(X, Y)&gt;0" data-display="false"><code>\operatorname{Cov}(X, Y)&gt;0</code></span>，我们说 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 正相关。
+- 若 <span class="course-math" data-tex="\operatorname{Cov}(X, Y)&lt;0" data-display="false"><code>\operatorname{Cov}(X, Y)&lt;0</code></span>，我们说 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 负相关。
 {% endraw %}
