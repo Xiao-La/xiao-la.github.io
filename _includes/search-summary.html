@@ -1,0 +1,16 @@
+{%- include document-summary.html document=include.document -%}
+{%- assign search_summary = document_summary -%}
+{%- if include.document.doc_type == 'note' -%}
+  {%- assign summary_parts = include.document.content | split: '<span class="course-math' -%}
+  {%- capture search_summary -%}
+    {%- for part in summary_parts -%}
+      {%- if forloop.first -%}
+        {{- part -}}
+      {%- else -%}
+        {%- assign after_formula = part | split: '</span>' -%}
+        （公式）{{- after_formula | slice: 1, after_formula.size | join: '</span>' -}}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endcapture -%}
+  {%- assign search_summary = search_summary | strip_html | normalize_whitespace | truncate: 160 -%}
+{%- endif -%}

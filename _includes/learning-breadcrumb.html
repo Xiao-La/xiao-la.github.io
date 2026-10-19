@@ -1,4 +1,4 @@
-<nav class="learning-breadcrumb" aria-label="当前位置">
+<nav class="breadcrumb learning-breadcrumb" aria-label="当前位置">
   <a href="{{ '/study/' | relative_url }}">学习</a> /
   {% if page.learning_kind == 'topic' %}
     {% assign learning_topic = site.data.learning.topics | where: 'id', page.learning_topic | first %}

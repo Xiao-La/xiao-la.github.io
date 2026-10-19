@@ -17,7 +17,7 @@
     if (window.formatInlineMath) window.formatInlineMath(document.querySelector('main article'));
   };
 
-  document.querySelectorAll('main article table').forEach(function (table) {
+  document.querySelectorAll('main article table:not(.rouge-table)').forEach(function (table) {
     wrap(table, 'article-table-scroll', 'div');
   });
 

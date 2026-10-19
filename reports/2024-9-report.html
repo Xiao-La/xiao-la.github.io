@@ -1,52 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <style type="text/css">
-        body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            font-size: 14px;
-            line-height: 20px;
-            color: #333;
-        }
-        table {
-            max-width: 100%;
-            background-color: transparent;
-            border-spacing: 0;
-            width: 100%;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-collapse: separate;
-            border-left: 0;
-            border-radius: 4px;
-        }
-        thead th {
-            text-align: left;
-            padding: 5px;
-        }
-        tfoot th {
-            text-align: left;
-            padding: 5px;
-            border-top: 1px solid #DDD;
-        }
-        tbody tr:nth-child(odd) td {
-            background-color: #f9f9f9;
-        }
-        th, td {
-            padding: 8px;
-            border-left: 1px solid #DDD;
-        }
-        td {
-            border-top: 1px solid #DDD;
-        }
-        </style>
-        <meta charset="UTF-8"/>
-    </head>
-    <body style="padding-top: 90px;">
+---
+layout: default
+permalink: /reports/2024-9-report.html
+title: 2024 年 9 月学习时长记录
+---
+<article class="study-report">
+  <nav class="breadcrumb" aria-label="当前位置"><a href="{{ '/study/' | relative_url }}">学习</a> / <a href="{{ '/study/records/' | relative_url }}">学习记录</a> / 学习时长记录</nav>
+  <h1>2024 年 9 月学习时长记录</h1>
+
         <a href="http://www.atimelogger.com" target="_blank">
             aTimeLogger Report
         </a>
-        <h3>Time Entries</h3>
-        <table style="width: 600px">
+        <h2>Time Entries</h2>
+        <table>
             <thead>
                 <tr>
                     <th style="font-weight: bold;">Activity Type</th>
@@ -676,8 +641,8 @@
             
             </tbody>
         </table>
-        <h3>Statistics</h3>
-        <table style="width: 600px">
+        <h2>Statistics</h2>
+        <table>
             <thead>
                 <tr>
                     <th>Activity Type</th>
@@ -744,5 +709,4 @@
             
             </tbody>
         </table>
-    </body>
-</html>
+</article>

@@ -96,6 +96,18 @@
     return value;
   }
 
+  function readableSummary(item) {
+    var text = item.description || '';
+    var decoder = document.createElement('textarea');
+    decoder.innerHTML = text;
+    text = decoder.value;
+    text = text.replace(/\$\$[\s\S]*?\$\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\)|\$[^$\n]+\$/g, '（公式）')
+      // A truncated excerpt can end in the middle of a formula.
+      .replace(/\$[^$]*$|\\[([][\s\S]*$/g, '')
+      .replace(/\s+/g, ' ').trim();
+    return text.length > 160 ? text.slice(0, 157) + '…' : text;
+  }
+
   function makeResult(item) {
     var entry = document.createElement('li');
     var link = document.createElement('a');
@@ -110,7 +122,7 @@
     title.className = 'search-result-title';
     title.textContent = item.title;
     description.className = 'search-result-description';
-    description.textContent = item.description || '暂无摘要';
+    description.textContent = readableSummary(item) || '暂无摘要';
     meta.className = 'search-result-meta';
     meta.textContent = [date, item.kind, category].filter(Boolean).join(' · ');
 

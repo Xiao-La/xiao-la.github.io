@@ -9,7 +9,7 @@ learning_page: true
 {% assign learning_documents = site.posts | concat: site.study %}
 {% assign topics = learning_documents | where: 'learning_kind', 'topic' %}
 <article class="learning-index">
-  <p class="learning-breadcrumb"><a href="{{ '/study/' | relative_url }}">学习</a> / 专题笔记</p>
+  <nav class="breadcrumb learning-breadcrumb" aria-label="当前位置"><a href="{{ '/study/' | relative_url }}">学习</a> / 专题笔记</nav>
   <h1>专题笔记</h1>
   <nav class="learning-section-nav" aria-label="专题索引">
     {% for topic in site.data.learning.topics %}

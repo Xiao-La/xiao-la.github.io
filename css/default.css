@@ -88,6 +88,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: anywhere;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
   width: auto;
   line-height: 1.35;
@@ -107,13 +108,14 @@ h2 {
   margin: 2em 0 .8em;
 }
 
-h3, h4 {
+h3, h4, h5, h6 {
   font-family: inherit;
   font-weight: 700;
 }
 h3 { font-size: 1.3em; margin: 1.8em 0 .6em; }
 h4 { font-size: 1.12em; margin: 1.35em 0 .55em; }
-h5, h6 { font-size: 1em; margin: 1.25em 0 .5em; }
+h5 { font-size: 1em; margin: 1.25em 0 .5em; }
+h6 { font-size: .95em; margin: 1.25em 0 .5em; color: #555; }
 
 .main :where(p) { margin: 0 0 1.1em; }
 .main :where(ul, ol) { margin: .75em 0 1.2em; padding-left: 1.5em; }
@@ -262,14 +264,16 @@ div.tag_cloud a {
 }
 
 .category-post-list li {
+  display: grid;
+  grid-template-columns: 25% minmax(0, 1fr);
+  column-gap: 3%;
+  align-items: center;
   min-height: 1.5em;
   margin: 1.75em 1.25em;
 }
 
 .category-post-list time {
-  float: left;
-  width: 25%;
-  padding-top: 1px;
+  padding-top: 0;
   color: #555;
   font-size: 0.75em;
   font-style: italic;
@@ -280,7 +284,6 @@ div.tag_cloud a {
 
 .category-post-list a {
   display: block;
-  margin-left: 28%;
   color: #204a87;
   word-break: normal;
 }
@@ -577,13 +580,15 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 30px;
+  margin-top: 1em;
+  margin-bottom: 1em;
   max-width: 100%;
   height: auto;
 }
 
 img.emoji {
   display: inline;
+  margin-top: 0;
   margin-bottom: 0;
 }
 
@@ -591,7 +596,7 @@ video[data-animated] {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 1em auto 30px;
+  margin: 1em auto;
 }
 
 hr {
@@ -665,23 +670,10 @@ div.paginator {
   font-size: 0.75em;
 }
 
-.prev_next {
-  display: block;
-  padding: 0;
-  padding-top: 0.6em;
-}
-
-.prev_next li {
-  list-style-type: none;
-  padding: 0 0 0.2em;
-}
-
-.prev_next li span {
-  padding: 0 0.5em 0 0.5em;
-  background-color: lightslategrey;
-  color: #fff;
-  margin-right: 0.5em;
-}
+.breadcrumb { color: #777; font-size: .85em; line-height: 1.8; margin: 0 0 1em; overflow-wrap: anywhere; }
+.article-neighbors { border-top: 1px solid #ddd; margin-top: 3em; padding-top: 1em; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 1em 1.5em; }
+.neighbor-previous { grid-column: 1; }
+.neighbor-next { grid-column: 2; text-align: right; }
 
 div.post_footer {
   text-align: right;
@@ -970,25 +962,34 @@ a.contact-item small,
   margin-left: 2px;
 }
 
-table {
+table:not(.rouge-table) {
   border-collapse: collapse;
   width: 100%;
   font-size: .92em;
   line-height: 1.6;
 }
 
-th, td {
+:where(table:not(.rouge-table)) > :where(thead, tbody, tfoot) > tr > :where(th, td) {
   padding: .65em .85em;
   border: 1px solid #ddd;
   vertical-align: top;
 }
 
-th {
+:where(table:not(.rouge-table)) > :where(thead, tbody, tfoot) > tr > th {
   font-weight: 600;
   background-color: #f0f3f6;
   border-bottom: 2px solid #cfd7df;
 }
 
-tbody tr:nth-child(2n) {
+table:not(.rouge-table) > tbody > tr:nth-child(2n) {
   background-color: #fafbfc;
 }
+
+/* Rouge uses a table only to place line numbers alongside code. */
+.rouge-table { width: auto; border-collapse: collapse; font: inherit; line-height: inherit; }
+.rouge-table td { padding: 0; border: 0; vertical-align: top; }
+.rouge-table td.gutter { padding-right: 1em; color: #777; border-right: 1px solid #dde2e7; }
+.rouge-table td.code { padding-left: 1em; }
+.main .rouge-table pre { margin: 0; padding: 0; border: 0; background: transparent; border-radius: 0; font: inherit; overflow: visible; }
+.study-report table { min-width: 36em; }
+.study-report td:nth-child(2), .study-report td:nth-child(3) { white-space: nowrap; }

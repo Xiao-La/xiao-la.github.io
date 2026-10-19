@@ -6,8 +6,8 @@ permalink: /courses/
 course_page: true
 ---
 
+<nav class="breadcrumb course-breadcrumb" aria-label="当前位置"><a href="{{ '/study/' | relative_url }}">学习</a> / 课程笔记</nav>
 <h1>课程笔记</h1>
-<p class="course-breadcrumb"><a href="{{ '/study/' | relative_url }}">学习</a> / 课程笔记</p>
 {% assign course_groups = site.data.courses | group_by: 'status' %}
 {% for group in course_groups %}
 <h2>{% if group.name == 'updating' %}还在更新{% else %}已完成{% endif %}</h2>

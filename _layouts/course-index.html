@@ -3,7 +3,7 @@ layout: default
 ---
 {% assign course = site.data.courses | where: 'id', page.course_id | first %}
 <article class="course-index">
-  <p class="course-breadcrumb"><a href="{{ '/study/' | relative_url }}">学习</a> / <a href="{{ '/courses/' | relative_url }}">课程笔记</a> / {{ page.title | escape }}</p>
+  <nav class="breadcrumb course-breadcrumb" aria-label="当前位置"><a href="{{ '/study/' | relative_url }}">学习</a> / <a href="{{ '/courses/' | relative_url }}">课程笔记</a> / {{ page.title | escape }}</nav>
   <h1>{{ page.title | escape }}</h1>
   <p class="course-meta"><span class="course-status">{% if course.status == 'updating' %}更新中{% else %}已完成{% endif %}</span> · {{ course.coverage | escape }} · {{ course.count }} 篇笔记</p>
   {% assign sections = course.notes | group_by: 'section' %}

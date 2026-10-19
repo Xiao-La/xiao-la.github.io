@@ -7,6 +7,7 @@ permalink: /categories/
 ---
 
 <div class="categories-page" id="categories-top">
+  <h1>文章分类</h1>
   <nav class="category-index" aria-label="文章分类索引">
     {% for category in site.categories %}
       {% assign category_name = category[0] %}

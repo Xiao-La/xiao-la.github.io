@@ -1,0 +1,6 @@
+{% if include.previous or include.next %}
+<nav class="article-neighbors" aria-label="文章导航">
+  {% if include.previous %}<a class="neighbor-previous" href="{{ include.previous.url | relative_url }}">← {{ include.previous.title | escape }}</a>{% endif %}
+  {% if include.next %}<a class="neighbor-next" href="{{ include.next.url | relative_url }}">{{ include.next.title | escape }} →</a>{% endif %}
+</nav>
+{% endif %}
