@@ -5,7 +5,7 @@ course_title: "概率与统计"
 section: ""
 status: "updating"
 created_at: "2026-10-10T16:52:41+08:00"
-updated_at: "2026-10-24T17:42:31+08:00"
+updated_at: "2026-10-24T21:54:26+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -159,7 +159,7 @@ Bilinear Property:
 <span class="course-math course-math-display" data-tex="f_{Z}(z)=f_{X}*f_{Y}=\int_{-\infty}^{\infty} f_{X}(x)f_{Y}(z-x)\,\mathrm{d}x=\int_{-\infty}^{\infty} f_{X}(z-y)f_{Y}(y)\,\mathrm{d}y" data-display="true"><code>f_{Z}(z)=f_{X}*f_{Y}=\int_{-\infty}^{\infty} f_{X}(x)f_{Y}(z-x)\,\mathrm{d}x=\int_{-\infty}^{\infty} f_{X}(z-y)f_{Y}(y)\,\mathrm{d}y</code></span>
 这里 <span class="course-math" data-tex="f_{X}*f_{Y}" data-display="false"><code>f_{X}*f_{Y}</code></span> 称为 <span class="course-math" data-tex="f_{X}" data-display="false"><code>f_{X}</code></span> 与 <span class="course-math" data-tex="f_{Y}" data-display="false"><code>f_{Y}</code></span> 的卷积（Convolution）。
 离散的情况也类似。若 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 相互独立且取非负整数值，可以用离散卷积：
-<span class="course-math course-math-display" data-tex="p_{Z}(k)= \sum _{i=0}^{k}p_{X}(i)p_{Y}(k-i)=\sum _{j=0}^{k}p_{X}(k-j)p_{Y}(j)" data-display="true"><code>p_{Z}(k)= \sum _{i=0}^{k}p_{X}(i)p_{Y}(k-i)=\sum _{j=0}^{k}p_{X}(k-j)p_{Y}(j)</code></span>
+<span class="course-math course-math-display" data-tex="p_{Z}(k)= \sum _{i=0}^{k}P(X=i)P(Y=k-i)=\sum _{j=0}^{k}P(X=k-j)P(Y=j)" data-display="true"><code>p_{Z}(k)= \sum _{i=0}^{k}P(X=i)P(Y=k-i)=\sum _{j=0}^{k}P(X=k-j)P(Y=j)</code></span>
 
 例如，若 <span class="course-math" data-tex="T_{1},T_{2},\dots,T_{r}\overset{\text{i.i.d.}}{\sim}\mathrm{Exp}(\lambda)" data-display="false"><code>T_{1},T_{2},\dots,T_{r}\overset{\text{i.i.d.}}{\sim}\mathrm{Exp}(\lambda)</code></span>，那么通过上述的卷积公式可以算出 <span class="course-math" data-tex="Z=T_{1}+T_{2}+\dots+T_{r}" data-display="false"><code>Z=T_{1}+T_{2}+\dots+T_{r}</code></span> 的 PDF 为
 <span class="course-math course-math-display" data-tex="f_{Z}(z)= \begin{cases}&#10;\frac{\lambda ^{r}}{(r-1)!}z^{r-1}e^{-\lambda z} &amp; z&gt;0 \\&#10;0 &amp; \text{otherwise} &#10;\end{cases}" data-display="true"><code>f_{Z}(z)= \begin{cases}&#10;\frac{\lambda ^{r}}{(r-1)!}z^{r-1}e^{-\lambda z} &amp; z&gt;0 \\&#10;0 &amp; \text{otherwise} &#10;\end{cases}</code></span>
