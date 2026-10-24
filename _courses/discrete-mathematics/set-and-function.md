@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-09-03T17:09:42+08:00"
-updated_at: "2026-10-13T11:23:11+08:00"
+updated_at: "2026-10-20T00:03:18+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -22,11 +22,13 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 
 表示方式：列举；省略的列举；描述（Set builder）。
 
+定义全集（Universal set）<span class="course-math" data-tex="U" data-display="false"><code>U</code></span>：当前讨论的所有对象组成的集合。
+
 重要的集合：
 <span class="course-math course-math-display" data-tex="\mathbb{N},\mathbb{Z},\mathbb{Z}^{+},\mathbb{Q},\mathbb{R},\mathbb{C}" data-display="true"><code>\mathbb{N},\mathbb{Z},\mathbb{Z}^{+},\mathbb{Q},\mathbb{R},\mathbb{C}</code></span>
 
-子集：<span class="course-math" data-tex="A\subseteq B" data-display="false"><code>A\subseteq B</code></span>
-真子集（Proper subset）：<span class="course-math" data-tex="A\subsetneq B" data-display="false"><code>A\subsetneq B</code></span>
+子集：<span class="course-math" data-tex="A\subseteq B" data-display="false"><code>A\subseteq B</code></span>（允许相等）
+真子集（Proper subset）：<span class="course-math" data-tex="A\subset B" data-display="false"><code>A\subset B</code></span>（不相等）
 
 定义集合的势（Cardinality）<span class="course-math" data-tex="\lvert S\rvert" data-display="false"><code>\lvert S\rvert</code></span>：
 - 对于有限集，就是元素的个数。
@@ -67,6 +69,9 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 <span class="course-math" data-tex="A\times B\neq B\times A, \lvert A\times B \rvert=\lvert A \rvert\times \lvert B \rvert" data-display="false"><code>A\times B\neq B\times A, \lvert A\times B \rvert=\lvert A \rvert\times \lvert B \rvert</code></span>
 定义 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 和 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 之间的关系（Relation）：一个 <span class="course-math" data-tex="A\times B" data-display="false"><code>A\times B</code></span> 的子集。
 
+定义补集（Complement）<span class="course-math" data-tex="\bar{A}" data-display="false"><code>\bar{A}</code></span>：全集 <span class="course-math" data-tex="U" data-display="false"><code>U</code></span> 中不属于 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的元素组成的集合。
+<span class="course-math course-math-display" data-tex="\bar{A}=U-A=\{x\in U\mid x\notin A\}" data-display="true"><code>\bar{A}=U-A=\{x\in U\mid x\notin A\}</code></span>
+
 定义 **Disjoint**：两个集合无交。
 集合恒等式：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论" width="298" height="362" loading="lazy" decoding="async">
@@ -75,7 +80,7 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 要证明这些恒等式：
 - 与真值表相对的，使用成员表（其中 0 表示不在集合中，1 表示在集合中）：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-3.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论-3" width="383" height="162" loading="lazy" decoding="async">
-- 也可以通过证明对应的逻辑表达式 <span class="course-math" data-tex="\forall x (x\in LHS\leftrightarrow x\in RHS)" data-display="false"><code>\forall x (x\in LHS\leftrightarrow x\in RHS)</code></span>
+- 也可以通过证明对应的逻辑表达式 <span class="course-math" data-tex="\forall x (x\in \text{LHS}\leftrightarrow x\in \text{RHS})" data-display="false"><code>\forall x (x\in \text{LHS}\leftrightarrow x\in \text{RHS})</code></span>
 - 也可以结合 Set builder 和逻辑等价律。
 计算机中若全集确定且有限，可以通过一个比特串表示集合。
 
