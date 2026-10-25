@@ -5,7 +5,7 @@ course_title: "数据结构与算法分析"
 section: ""
 status: "updating"
 created_at: "2026-09-29T16:21:34+08:00"
-updated_at: "2026-10-24T17:42:31+08:00"
+updated_at: "2026-10-25T13:27:13+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -140,7 +140,7 @@ Partition 的运行时间是 <span class="course-math" data-tex="\Theta(n)" data
 
 任何比较排序的时间复杂度，都有 <span class="course-math" data-tex="T(n)=\Omega( n\log n)" data-display="false"><code>T(n)=\Omega( n\log n)</code></span>。这可以通过 **决策树（Decision Tree）** 说明：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting-7.png' | relative_url }}{% raw %}" alt="Sorting-7" width="438" height="207" loading="lazy" decoding="async">
-每个 **叶节点** 都是原数组的一种 **排列**，其他节点 <span class="course-math" data-tex="i:j" data-display="false"><code>i:j</code></span> 表示 <span class="course-math" data-tex="i,j" data-display="false"><code>i,j</code></span> 做了一次比较。那么，比较排序的每次运行都可以表示为根节点到一个叶节点的简单路径。
+每个 **叶节点** 都是原数组的一种 **排列**，其他节点 <span class="course-math" data-tex="i:j" data-display="false"><code>i:j</code></span> 表示 <span class="course-math" data-tex="a_{i},a_{j}" data-display="false"><code>a_{i},a_{j}</code></span> 做了一次比较，这里 <span class="course-math" data-tex="a_{i},a_{j}" data-display="false"><code>a_{i},a_{j}</code></span> 表示原数组中 <span class="course-math" data-tex="i,j" data-display="false"><code>i,j</code></span> 位置对应的值。例如，上图表示 Insertion Sort 的决策树。那么，比较排序的每次运行都可以表示为根节点到一个叶节点的简单路径。
 最坏情况下的时间复杂度，就是根节点到叶节点的 **最长路径长度**。
 由于排序算法应该对初始的所有可能的排列都给出正确的答案，叶节点的个数至少是 <span class="course-math" data-tex="n!" data-display="false"><code>n!</code></span>。高度为 <span class="course-math" data-tex="h" data-display="false"><code>h</code></span> 的二叉树最多有 <span class="course-math" data-tex="2^{h}" data-display="false"><code>2^{h}</code></span> 个叶子，因此有
 <span class="course-math course-math-display" data-tex="2^{h}\geq n!" data-display="true"><code>2^{h}\geq n!</code></span>
