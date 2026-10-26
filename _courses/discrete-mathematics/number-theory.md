@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-10-12T15:33:52+08:00"
-updated_at: "2026-10-24T17:42:31+08:00"
+updated_at: "2026-10-26T22:04:45+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -314,10 +314,122 @@ excerpt: "离散数学 · Number Theory - 数论"
 - 例如，<span class="course-math" data-tex="3" data-display="false"><code>3</code></span> 是 <span class="course-math" data-tex="\mathbb{Z}_{7}" data-display="false"><code>\mathbb{Z}_{7}</code></span> 的本原根。
 
 
-## 汇总
+## 总结
 {: #section-16 }
 
 
 
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-10.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-10" width="1504" height="950" loading="lazy" decoding="async">
+
+
+
+## 应用
+{: #section-17 }
+
+
+
+### 伪随机数生成器
+{: #section-18 }
+
+
+**线性同余法（Linear Congruential Method）。** 四个参数：
+- 模数 <span class="course-math" data-tex="m" data-display="false"><code>m</code></span>
+- 乘数 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span>
+- 增量 <span class="course-math" data-tex="c" data-display="false"><code>c</code></span>
+- 种子 <span class="course-math" data-tex="x_{0}" data-display="false"><code>x_{0}</code></span>
+那么可以得到伪随机数序列 <span class="course-math" data-tex="x_{1},x_{2},\dots,x_{n},\dots" data-display="false"><code>x_{1},x_{2},\dots,x_{n},\dots</code></span>，这里 <span class="course-math" data-tex="0\leq x_{i}&lt;m" data-display="false"><code>0\leq x_{i}&lt;m</code></span>：
+<span class="course-math course-math-display" data-tex="x_{n+1}=(ax_{n}+c)\pmod{m}" data-display="true"><code>x_{n+1}=(ax_{n}+c)\pmod{m}</code></span>
+这种方法很容易被攻击，不能用于安全性依赖于随机性的情景。
+
+
+### 哈希函数
+{: #section-19 }
+
+
+把任意长度的数据映射到固定长度。
+例如简单地使用哈希函数 <span class="course-math" data-tex="h(x)=x\bmod n" data-display="false"><code>h(x)=x\bmod n</code></span>，把 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 存到位置 <span class="course-math" data-tex="h(x)" data-display="false"><code>h(x)</code></span> 就是一种数据结构：哈希表。遇到哈希冲突，可以向后移一位存，或者在那个位置开一个链表。
+**Bloom Filter：** 一种概率性的数据结构，查询在常数时间，且让“假阳性”的概率尽可能低。
+
+
+## 数论在密码学中的应用
+{: #section-20 }
+
+
+Cryptography（密码学）=kryptos（秘密）+graphos（写）
+这个词来自 Edgar Allan Poe。
+
+
+### 对称密码学
+{: #section-21 }
+
+
+直到 1970s。
+对称：加密和解密的钥匙是相同的。因此，要提前协商一个私钥（Private Key）<span class="course-math" data-tex="k" data-display="false"><code>k</code></span>。
+例如凯撒密码：
+- 加密： <span class="course-math" data-tex="i\to(i+k)\bmod26" data-display="false"><code>i\to(i+k)\bmod26</code></span>
+- 解密：<span class="course-math" data-tex="j\to (j-k) \bmod26" data-display="false"><code>j\to (j-k) \bmod26</code></span>
+- 问题在于，密钥只有 <span class="course-math" data-tex="26" data-display="false"><code>26</code></span> 种。
+- 更进一步，有更一般的置换密码（Substitution Cipher）：把原字母表对应到另一个顺序的字母表，这样就有 <span class="course-math" data-tex="26!" data-display="false"><code>26!</code></span> 种密钥了。
+- 但是，仍然可以通过统计字母（的组合）出现的频率来破解密钥。
+
+Kerckhoffs's Principle：即使算法已知了，只要密钥未知，系统也应该安全。
+
+### 非对称密码学
+{: #section-22 }
+
+
+概念：1976 W.Diffie, M.Hellman, ***New directions in cryptography***: **"We stand today on the brink of a revolution in cryptography."**
+实现：R.**R**ivest, A.**S**hamir, L.**A**dleman,  ***A method for obtaining digital signatures and public-key cryptosystems***
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-11.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-11" width="1632" height="408" loading="lazy" decoding="async">
+在公钥密码学中，不再需要提前协商密钥了。不过由于效率比较慢，通常可以通过 **公钥密码学** 来传递 **对称密码学** 的 **密钥**，然后后续使用对称加密。
+另一方面，可以存在 **数字签名** 了。私钥可以用来证明身份，所有人都能用公钥来核验。
+
+**RSA 算法。** （Plain RSA）选择两个不同的大质数 <span class="course-math" data-tex="p,q" data-display="false"><code>p,q</code></span>，令 <span class="course-math" data-tex="n=pq" data-display="false"><code>n=pq</code></span>，那么 <span class="course-math" data-tex="\phi(n)=(p-1)(q-1)" data-display="false"><code>\phi(n)=(p-1)(q-1)</code></span>。加密（Encryption）和解密（Decryption）的密钥 <span class="course-math" data-tex="e,d" data-display="false"><code>e,d</code></span> 需要满足：
+<span class="course-math course-math-display" data-tex="\gcd(e,\phi(n))=1" data-display="true"><code>\gcd(e,\phi(n))=1</code></span>
+<span class="course-math course-math-display" data-tex="ed\equiv 1 \pmod{\phi(n)}" data-display="true"><code>ed\equiv 1 \pmod{\phi(n)}</code></span>
+那么加密：
+<span class="course-math course-math-display" data-tex="C=M^{e} \bmod n" data-display="true"><code>C=M^{e} \bmod n</code></span>
+解密：
+<span class="course-math course-math-display" data-tex="M=C^{d} \bmod n" data-display="true"><code>M=C^{d} \bmod n</code></span>
+这里公钥就是 <span class="course-math" data-tex="(e,n)" data-display="false"><code>(e,n)</code></span>，私钥就是 <span class="course-math" data-tex="d" data-display="false"><code>d</code></span>。
+
+正确性证明：只需要证明
+<span class="course-math course-math-display" data-tex="\forall x\in \mathbb{Z}_{n},x^{ed}\equiv x\pmod{n}" data-display="true"><code>\forall x\in \mathbb{Z}_{n},x^{ed}\equiv x\pmod{n}</code></span>
+- Case 1: <span class="course-math" data-tex="\gcd(x,n)=1" data-display="false"><code>\gcd(x,n)=1</code></span>。那么由欧拉定理，<span class="course-math" data-tex="x^{\phi(n)}\equiv1 \pmod{n}" data-display="false"><code>x^{\phi(n)}\equiv1 \pmod{n}</code></span>。于是
+<span class="course-math course-math-display" data-tex="x^{ed}\equiv x^{k\phi(n)+1}\equiv(x^{\phi(n)})^{k}\cdot x\equiv x \pmod{n}" data-display="true"><code>x^{ed}\equiv x^{k\phi(n)+1}\equiv(x^{\phi(n)})^{k}\cdot x\equiv x \pmod{n}</code></span>
+- 这也可以通过费马小定理+中国剩余定理证明。
+- Case 2: <span class="course-math" data-tex="\gcd(x,n)=p" data-display="false"><code>\gcd(x,n)=p</code></span>。那么 <span class="course-math" data-tex="x=tp,\gcd(t,q)=1" data-display="false"><code>x=tp,\gcd(t,q)=1</code></span>。 只需证明
+<span class="course-math course-math-display" data-tex="x^{ed}-x=x(x^{ed-1}-1)\equiv0 \pmod{n}" data-display="true"><code>x^{ed}-x=x(x^{ed-1}-1)\equiv0 \pmod{n}</code></span>
+- 这里 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 有因子 <span class="course-math" data-tex="p" data-display="false"><code>p</code></span>，<span class="course-math" data-tex="x^{ed-1}-1=x^{k(p-1)(q-1)}-1" data-display="false"><code>x^{ed-1}-1=x^{k(p-1)(q-1)}-1</code></span> 有因子 <span class="course-math" data-tex="q" data-display="false"><code>q</code></span>（由费马小定理），于是成立。
+- Case 3: <span class="course-math" data-tex="\gcd(x,n)=q" data-display="false"><code>\gcd(x,n)=q</code></span>。这与 Case 2 相同。
+- Case 4: <span class="course-math" data-tex="\gcd(x,n)=n" data-display="false"><code>\gcd(x,n)=n</code></span>，那么 <span class="course-math" data-tex="x=0" data-display="false"><code>x=0</code></span>，显然成立。
+
+安全性：给定了 <span class="course-math" data-tex="e" data-display="false"><code>e</code></span> 和 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span>，算出 <span class="course-math" data-tex="\phi(n)" data-display="false"><code>\phi(n)</code></span> 和分解 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 一样都很难，进而算出 <span class="course-math" data-tex="d" data-display="false"><code>d</code></span> 也是很难的。实际使用上，RSA 的密钥大概是 1024 到 2048 位。
+
+应用：SSL/TLS 协议；数字签名。
+数字签名：最朴素的方法就是
+<span class="course-math course-math-display" data-tex="S=M^{d}\bmod n" data-display="true"><code>S=M^{d}\bmod n</code></span>
+验证签名：
+<span class="course-math course-math-display" data-tex="M=S^{e} \bmod n" data-display="true"><code>M=S^{e} \bmod n</code></span>
+但是这不安全，因为可以从已有的签名 <span class="course-math" data-tex="(M_{1},S_{1}),(M_{2},S_{2})" data-display="false"><code>(M_{1},S_{1}),(M_{2},S_{2})</code></span>中构造新的签名 <span class="course-math" data-tex="(M_{1}M_{2},S_{1}S_{2})" data-display="false"><code>(M_{1}M_{2},S_{1}S_{2})</code></span>。
+实际上需要一整套安全的标准。
+
+
+### 离散对数问题
+{: #section-23 }
+
+
+整数 <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> 以 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 为底的 **离散对数（Discrete Logarithm）<span class="course-math" data-tex="x" data-display="false"><code>x</code></span>**，为满足下式：
+<span class="course-math course-math-display" data-tex="b^{x}\equiv y\bmod n" data-display="true"><code>b^{x}\equiv y\bmod n</code></span>
+给定 <span class="course-math" data-tex="b,y,n" data-display="false"><code>b,y,n</code></span>，计算 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 就是离散对数问题，这是很困难的。
+
+**El Gamal 加密。**
+- 私钥：<span class="course-math" data-tex="x" data-display="false"><code>x</code></span>。这里 <span class="course-math" data-tex="1&lt;x&lt;p-2" data-display="false"><code>1&lt;x&lt;p-2</code></span>。
+- 公钥：<span class="course-math" data-tex="p,g,y" data-display="false"><code>p,g,y</code></span>。这里 <span class="course-math" data-tex="p" data-display="false"><code>p</code></span> 是一个素数，<span class="course-math" data-tex="g" data-display="false"><code>g</code></span> 是 <span class="course-math" data-tex="\mathbb{Z}_{p}" data-display="false"><code>\mathbb{Z}_{p}</code></span> 的一个生成元，且 <span class="course-math" data-tex="y=g ^{x}\bmod p" data-display="false"><code>y=g ^{x}\bmod p</code></span>。
+- 加密：要加密 <span class="course-math" data-tex="M" data-display="false"><code>M</code></span>。选一个随机数 <span class="course-math" data-tex="k\in \mathbb{Z}_{p-1}" data-display="false"><code>k\in \mathbb{Z}_{p-1}</code></span>，令
+<span class="course-math course-math-display" data-tex="a=g ^{k} \bmod p, b=My ^{k} \bmod p" data-display="true"><code>a=g ^{k} \bmod p, b=My ^{k} \bmod p</code></span>
+- 那么密文就是 <span class="course-math" data-tex="(a,b)" data-display="false"><code>(a,b)</code></span>。
+- 解密： <span class="course-math" data-tex="M=b(a^{x})^{-1}\bmod p" data-display="false"><code>M=b(a^{x})^{-1}\bmod p</code></span>。
+
+量子计算对于大整数分解问题与离散对数问题有较快的解决，因此挑战了公钥密码学。
 {% endraw %}

@@ -5,7 +5,7 @@ course_title: "概率与统计"
 section: ""
 status: "updating"
 created_at: "2026-10-10T16:52:41+08:00"
-updated_at: "2026-10-24T21:54:26+08:00"
+updated_at: "2026-10-25T22:34:16+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -88,8 +88,14 @@ excerpt: "概率与统计 · Joint Probability - 联合概率"
 <span class="course-math course-math-display" data-tex="F(x_{1},x_{2},\dots,x_{n})=F_{X_{1}}(x_{1})F_{X_{2}}(x_{2})\dots F_{X_{n}}(x_{n})" data-display="true"><code>F(x_{1},x_{2},\dots,x_{n})=F_{X_{1}}(x_{1})F_{X_{2}}(x_{2})\dots F_{X_{n}}(x_{n})</code></span>
 推论：若离散随机变量 <span class="course-math" data-tex="X_{1},X_{2},\dots,X_{n}" data-display="false"><code>X_{1},X_{2},\dots,X_{n}</code></span> 相互独立，那么
 <span class="course-math course-math-display" data-tex="p(x_{1},x_{2},\dots,x_{n})=p_{X_{1}}(x_{1})p_{X_{2}}(x_{2})\dots p_{X_{n}}(x_{n})" data-display="true"><code>p(x_{1},x_{2},\dots,x_{n})=p_{X_{1}}(x_{1})p_{X_{2}}(x_{2})\dots p_{X_{n}}(x_{n})</code></span>
-若连续随机变量 <span class="course-math" data-tex="X_{1},X_{2},\dots,X_{n}" data-display="false"><code>X_{1},X_{2},\dots,X_{n}</code></span> 相互独立，那么
+若连续随机变量 <span class="course-math" data-tex="X_{1},X_{2},\dots,X_{n}" data-display="false"><code>X_{1},X_{2},\dots,X_{n}</code></span> 相互独立，那么下式几乎处处成立（反之也成立）：
 <span class="course-math course-math-display" data-tex="f(x_{1},x_{2},\dots,x_{n})=f_{X_{1}}(x_{1})f_{X_{2}}(x_{2})\dots f_{X_{n}}(x_{n})" data-display="true"><code>f(x_{1},x_{2},\dots,x_{n})=f_{X_{1}}(x_{1})f_{X_{2}}(x_{2})\dots f_{X_{n}}(x_{n})</code></span>
+几乎处处（a.e.）：除一个零测集之外成立（二维时就是面积为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 的集合）。PDF 在零测集上的取值不影响概率。
+
+要说明 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 不独立，单点不满足乘积分解一般不够；证明 <span class="course-math" data-tex="f(x,y)\neq f_{X}(x)f_{Y}(y)" data-display="false"><code>f(x,y)\neq f_{X}(x)f_{Y}(y)</code></span> 在一个面积非零的集合上成立即可，不一定要算积分。也可以找一个区域 <span class="course-math" data-tex="D" data-display="false"><code>D</code></span>，使得
+<span class="course-math course-math-display" data-tex="\iint_{D} f(x,y)\,\mathrm{d}x\mathrm{d}y\neq\iint_{D} f_{X}(x)f_{Y}(y)\,\mathrm{d}x\mathrm{d}y" data-display="true"><code>\iint_{D} f(x,y)\,\mathrm{d}x\mathrm{d}y\neq\iint_{D} f_{X}(x)f_{Y}(y)\,\mathrm{d}x\mathrm{d}y</code></span>
+若两边的密度在该点附近连续，单点不等就能推出一个邻域内不等，因此也可以判断不独立。
+
 若 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 是相互独立的，那么对任意函数 <span class="course-math" data-tex="g" data-display="false"><code>g</code></span> 和 <span class="course-math" data-tex="h" data-display="false"><code>h</code></span>，有
 <span class="course-math course-math-display" data-tex="\mathrm{E}(g(X)h(Y))=\mathrm{E}(g(X))\mathrm{E}(h(Y))" data-display="true"><code>\mathrm{E}(g(X)h(Y))=\mathrm{E}(g(X))\mathrm{E}(h(Y))</code></span>
 <span class="course-math course-math-display" data-tex="\operatorname{Var}(g(X)\pm h(Y))=\operatorname{Var}(g(X))+\operatorname{Var}(h(Y))" data-display="true"><code>\operatorname{Var}(g(X)\pm h(Y))=\operatorname{Var}(g(X))+\operatorname{Var}(h(Y))</code></span>
