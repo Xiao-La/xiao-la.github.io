@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-10-12T15:33:52+08:00"
-updated_at: "2026-10-26T22:04:45+08:00"
+updated_at: "2026-10-27T11:03:25+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -420,7 +420,7 @@ Kerckhoffs's Principle：即使算法已知了，只要密钥未知，系统也�
 
 
 整数 <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> 以 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 为底的 **离散对数（Discrete Logarithm）<span class="course-math" data-tex="x" data-display="false"><code>x</code></span>**，为满足下式：
-<span class="course-math course-math-display" data-tex="b^{x}\equiv y\bmod n" data-display="true"><code>b^{x}\equiv y\bmod n</code></span>
+<span class="course-math course-math-display" data-tex="b^{x}\equiv y\pmod n" data-display="true"><code>b^{x}\equiv y\pmod n</code></span>
 给定 <span class="course-math" data-tex="b,y,n" data-display="false"><code>b,y,n</code></span>，计算 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 就是离散对数问题，这是很困难的。
 
 **El Gamal 加密。**
@@ -430,6 +430,14 @@ Kerckhoffs's Principle：即使算法已知了，只要密钥未知，系统也�
 <span class="course-math course-math-display" data-tex="a=g ^{k} \bmod p, b=My ^{k} \bmod p" data-display="true"><code>a=g ^{k} \bmod p, b=My ^{k} \bmod p</code></span>
 - 那么密文就是 <span class="course-math" data-tex="(a,b)" data-display="false"><code>(a,b)</code></span>。
 - 解密： <span class="course-math" data-tex="M=b(a^{x})^{-1}\bmod p" data-display="false"><code>M=b(a^{x})^{-1}\bmod p</code></span>。
+
+用于数字签名：选取随机数 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span>，满足 <span class="course-math" data-tex="\gcd(k,p-1)=1" data-display="false"><code>\gcd(k,p-1)=1</code></span>。
+<span class="course-math course-math-display" data-tex="a=g ^{k} \bmod p, b= k ^{-1} (M-xa)\bmod (p-1)" data-display="true"><code>a=g ^{k} \bmod p, b= k ^{-1} (M-xa)\bmod (p-1)</code></span>
+验证：
+<span class="course-math course-math-display" data-tex="y ^{a} a^{b} \equiv g ^{M} \pmod{p}" data-display="true"><code>y ^{a} a^{b} \equiv g ^{M} \pmod{p}</code></span>
+
+**Diffie-Hellman Key Exchange Protocol**
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-12.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-12" width="1540" height="862" loading="lazy" decoding="async">
 
 量子计算对于大整数分解问题与离散对数问题有较快的解决，因此挑战了公钥密码学。
 {% endraw %}
