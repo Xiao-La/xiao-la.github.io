@@ -5,7 +5,7 @@ course_title: "数据结构与算法分析"
 section: ""
 status: "updating"
 created_at: "2026-09-29T16:21:34+08:00"
-updated_at: "2026-10-25T13:27:13+08:00"
+updated_at: "2026-10-28T21:08:24+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -146,4 +146,38 @@ Partition 的运行时间是 <span class="course-math" data-tex="\Theta(n)" data
 <span class="course-math course-math-display" data-tex="2^{h}\geq n!" data-display="true"><code>2^{h}\geq n!</code></span>
 因此我们有路径长度的下界：
 <span class="course-math course-math-display" data-tex="T(n)=\Omega(h)=\Omega(\log (n!))=\Omega(n\log n)" data-display="true"><code>T(n)=\Omega(h)=\Omega(\log (n!))=\Omega(n\log n)</code></span>
+
+
+
+
+## 线性排序
+{: #section-8 }
+
+
+在值域满足特定性质的时候，可以实现线性排序。
+
+### 计数排序（Counting Sort）
+{: #section-9 }
+
+
+适用于元素为 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 到 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 的整数的数组。
+
+伪代码：
+
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting-8.png' | relative_url }}{% raw %}" alt="Sorting-8" width="890" height="742" loading="lazy" decoding="async">
+
+时间复杂度：<span class="course-math" data-tex="\Theta(n+k)" data-display="false"><code>\Theta(n+k)</code></span>，其中 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 为数组长度，<span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 为最大元素。若 <span class="course-math" data-tex="k=O(n)" data-display="false"><code>k=O(n)</code></span>，则时间复杂度为 <span class="course-math" data-tex="\Theta (n)" data-display="false"><code>\Theta (n)</code></span>。
+正确性可以用 Loop Invariant 证明。
+
+计数排序是稳定的（Stable）：排序之后，**相等的元素** 在输出数组中的顺序和在输入数组中的顺序相同。
+
+
+### 基数排序（Radix Sort）
+{: #section-10 }
+
+
+从最低位到最高位，用 Stable Sort 对每一位排序。
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting-9.png' | relative_url }}{% raw %}" alt="Sorting-9" width="1354" height="264" loading="lazy" decoding="async">
+
+每一位用计数排序时，运行时间为 <span class="course-math" data-tex="\Theta(d(n+k))" data-display="false"><code>\Theta(d(n+k))</code></span>，其中 <span class="course-math" data-tex="d" data-display="false"><code>d</code></span> 为位数，<span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 为每一位的最大值。
 {% endraw %}

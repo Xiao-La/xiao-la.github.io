@@ -984,7 +984,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-09-07T15:27:48+08:00",
-        "updated_at": "2026-10-08T20:59:37+08:00",
+        "updated_at": "2026-10-28T21:08:24+08:00",
         "reference": false,
         "order": 2
       },
@@ -1008,7 +1008,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-10-12T15:33:52+08:00",
-        "updated_at": "2026-10-27T11:03:25+08:00",
+        "updated_at": "2026-10-28T21:08:24+08:00",
         "reference": false,
         "order": 4
       }
@@ -1079,7 +1079,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-10-20T15:28:58+08:00",
-        "updated_at": "2026-10-20T15:50:05+08:00",
+        "updated_at": "2026-10-28T21:08:42+08:00",
         "reference": false,
         "order": 5
       }
@@ -1114,7 +1114,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-09-29T16:21:34+08:00",
-        "updated_at": "2026-10-25T13:27:13+08:00",
+        "updated_at": "2026-10-28T21:08:24+08:00",
         "reference": false,
         "order": 2
       }

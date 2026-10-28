@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-09-07T15:27:48+08:00"
-updated_at: "2026-10-08T20:59:37+08:00"
+updated_at: "2026-10-28T21:08:24+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -156,6 +156,7 @@ Predicate <span class="course-math" data-tex="P(x_{1},\dots,x_{n})" data-display
 ## 数学证明（Mathematical Proof）
 {: #section-4 }
 
+
 **Axiom（公理）：** 在一个理论中选定、不经证明而作为推理起点的命题。
 **Theorem（定理）：** 可以证明的命题。
 **Lemma（引理）：** 可以证明的命题，用于证明其他命题。
@@ -170,6 +171,7 @@ Predicate <span class="course-math" data-tex="P(x_{1},\dots,x_{n})" data-display
 - Proof by contradiction（说明 <span class="course-math" data-tex="p\land \neg q" data-display="false"><code>p\land \neg q</code></span> 不可能发生以说明 <span class="course-math" data-tex="p\to q" data-display="false"><code>p\to q</code></span>）
 - Proof by cases （<span class="course-math" data-tex="(p_{1}\lor\dots \lor p_{n})\to q \equiv(p_{1}\to q)\land(p_{2}\to q)\land\dots \land(p_{n}\to q)" data-display="false"><code>(p_{1}\lor\dots \lor p_{n})\to q \equiv(p_{1}\to q)\land(p_{2}\to q)\land\dots \land(p_{n}\to q)</code></span>）
 - Proof of equivalence （<span class="course-math" data-tex="p\leftrightarrow q\equiv(p\to q)\land(q\to p)" data-display="false"><code>p\leftrightarrow q\equiv(p\to q)\land(q\to p)</code></span>）
+
 Vacuous Proof：证明 <span class="course-math" data-tex="p" data-display="false"><code>p</code></span> 永远是假的，那么 <span class="course-math" data-tex="p\to q" data-display="false"><code>p\to q</code></span> 就是真的。
 Trivial Proof：证明 <span class="course-math" data-tex="q" data-display="false"><code>q</code></span> 永远是真的，那么 <span class="course-math" data-tex="p\to q" data-display="false"><code>p\to q</code></span> 就是真的。
 证明含量词的命题
@@ -177,4 +179,57 @@ Trivial Proof：证明 <span class="course-math" data-tex="q" data-display="fals
 - Counterexample
 - Constructive proof
 - Non constructive - proof by contradiction
+
+## 数学归纳法
+{: #section-5 }
+
+
+数学归纳法（Mathematical Induction），其实是把反证法（非直接证明）转换成一个直接的证明的结果。
+
+**Proof by Smallest Counterexample.**  要证明 <span class="course-math" data-tex="P(n)" data-display="false"><code>P(n)</code></span> 成立 <span class="course-math" data-tex="\forall n=0,1,2, \dots" data-display="false"><code>\forall n=0,1,2, \dots</code></span>：
+- 假设有反例。首先验证 <span class="course-math" data-tex="P(0)" data-display="false"><code>P(0)</code></span> 成立。那么就可以令 <span class="course-math" data-tex="m&gt;0" data-display="false"><code>m&gt;0</code></span> 是 **最小的** 使得 <span class="course-math" data-tex="P(n)" data-display="false"><code>P(n)</code></span> 为假的反例。
+- 那么 <span class="course-math" data-tex="P(m&#x27;)" data-display="false"><code>P(m&#x27;)</code></span> 成立 <span class="course-math" data-tex="\forall0\leq m&#x27;&lt;m" data-display="false"><code>\forall0\leq m&#x27;&lt;m</code></span>。用这件事去说明 <span class="course-math" data-tex="P(m)" data-display="false"><code>P(m)</code></span> 是真的，那就导致了矛盾。
+- 于是没有反例，也就是说 <span class="course-math" data-tex="P(n)" data-display="false"><code>P(n)</code></span> 成立 <span class="course-math" data-tex="\forall n=0,1,2, \dots" data-display="false"><code>\forall n=0,1,2, \dots</code></span>。
+
+要使用这种“找最小反例”的证明，需要证明的集合需要是 **良序集（Well-Ordered Set）**。自然数/正整数的集合自然就是良序集。
+
+Proof by Smallest Counterexample 的证明过程，其实就相当于数学归纳法。因此有：
+**The Weak Principle of Mathematical Induction.**
+- （Base Step）：若 <span class="course-math" data-tex="P(b)" data-display="false"><code>P(b)</code></span> 成立。
+- （Inductive Step）：<span class="course-math" data-tex="P(n-1)\to P(n)" data-display="false"><code>P(n-1)\to P(n)</code></span> 对所有 <span class="course-math" data-tex="n&gt; b" data-display="false"><code>n&gt; b</code></span> 成立，那么 <span class="course-math" data-tex="P(n)" data-display="false"><code>P(n)</code></span> 对所有 <span class="course-math" data-tex="n\geq b" data-display="false"><code>n\geq b</code></span> 成立。
+
+另外还有：
+**The Strong Principle of Mathematical Induction.**
+- （Base Step）：若 <span class="course-math" data-tex="P(b)" data-display="false"><code>P(b)</code></span> 成立。
+- （Inductive Step）：<span class="course-math" data-tex="P(b)\land P(b+1)\land\dots  \land P(n-1)\to P(n)" data-display="false"><code>P(b)\land P(b+1)\land\dots  \land P(n-1)\to P(n)</code></span> 对所有 <span class="course-math" data-tex="n&gt; b" data-display="false"><code>n&gt; b</code></span> 成立，那么 <span class="course-math" data-tex="P(n)" data-display="false"><code>P(n)</code></span> 对所有 <span class="course-math" data-tex="n\geq b" data-display="false"><code>n\geq b</code></span> 成立。
+
+格式：
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20and%20Proofs%20-%20%E9%80%BB%E8%BE%91%E4%B8%8E%E8%AF%81%E6%98%8E-1.png' | relative_url }}{% raw %}" alt="Logic and Proofs - 逻辑与证明-1" width="440" height="304" loading="lazy" decoding="async">
+
+
+## 递归
+{: #section-6 }
+
+
+一个函数的 **递归式（Recurrence Equation / Recurrence）** 告诉我们如何从前 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 个函数值计算出 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 处的函数值：
+<span class="course-math course-math-display" data-tex="f(n)=F(f(1),f(2), \dots,f(n-1))" data-display="true"><code>f(n)=F(f(1),f(2), \dots,f(n-1))</code></span>
+例如解汉诺塔的递归算法。
+- 正确性。用 implicit 的归纳法，说明能解 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 层的，并且能解 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 层的汉诺塔就能解 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 层的即可。(<span class="course-math" data-tex="[n,0,0]\to[1,n-1,0]\to[0,n-1,1]\to[0,0,n]" data-display="false"><code>[n,0,0]\to[1,n-1,0]\to[0,n-1,1]\to[0,0,n]</code></span>)。
+- 复杂度。<span class="course-math" data-tex="M(n)=2M(n-1)+1,M(1)=1" data-display="false"><code>M(n)=2M(n-1)+1,M(1)=1</code></span>。 可以用 explicit 的归纳法证明 <span class="course-math" data-tex="M(n)=2^{n}-1" data-display="false"><code>M(n)=2^{n}-1</code></span>。
+
+**一阶线性递归式（First-Order Linear Recurrence）：** <span class="course-math" data-tex="T(n)" data-display="false"><code>T(n)</code></span> 只和 <span class="course-math" data-tex="T(n-1)" data-display="false"><code>T(n-1)</code></span> 有关，且 <span class="course-math" data-tex="T(n-1)" data-display="false"><code>T(n-1)</code></span> 只有一次。可以写成：
+<span class="course-math course-math-display" data-tex="T(n)=f(n) T(n-1) +g(n)" data-display="true"><code>T(n)=f(n) T(n-1) +g(n)</code></span>
+
+**定理：** 对递归式
+<span class="course-math course-math-display" data-tex="T(n)=rT(n-1)+g(n)" data-display="true"><code>T(n)=rT(n-1)+g(n)</code></span>
+有
+<span class="course-math course-math-display" data-tex="T(n)=r^{n}T(0)+ \sum _{i=1}^{n} r^{n-i}g(i)" data-display="true"><code>T(n)=r^{n}T(0)+ \sum _{i=1}^{n} r^{n-i}g(i)</code></span>
+显然可以通过数学归纳法证明。
+
+**主定理（The Master Theorem）。** 对递归式
+<span class="course-math course-math-display" data-tex="T(n)= aT(n / b) + c n^{d}" data-display="true"><code>T(n)= aT(n / b) + c n^{d}</code></span>
+其中 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 为正整数，<span class="course-math" data-tex="b&gt;1,c&gt;0,d\geq0" data-display="false"><code>b&gt;1,c&gt;0,d\geq0</code></span>，<span class="course-math" data-tex="T(1)\geq0" data-display="false"><code>T(1)\geq0</code></span>。那么：
+- 若 <span class="course-math" data-tex="a&lt;b^{d}" data-display="false"><code>a&lt;b^{d}</code></span>，则 <span class="course-math" data-tex="T(n)=\Theta(n^{d})" data-display="false"><code>T(n)=\Theta(n^{d})</code></span>。
+- 若 <span class="course-math" data-tex="a=b^{d}" data-display="false"><code>a=b^{d}</code></span>，则 <span class="course-math" data-tex="T(n) =\Theta(n^{d}\log n)" data-display="false"><code>T(n) =\Theta(n^{d}\log n)</code></span>
+- 若 <span class="course-math" data-tex="a&gt;b^{d}" data-display="false"><code>a&gt;b^{d}</code></span>，则 <span class="course-math" data-tex="T(n)=\Theta(n^{\log _{b}a})" data-display="false"><code>T(n)=\Theta(n^{\log _{b}a})</code></span>
 {% endraw %}

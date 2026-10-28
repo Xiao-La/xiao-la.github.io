@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-10-12T15:33:52+08:00"
-updated_at: "2026-10-27T11:03:25+08:00"
+updated_at: "2026-10-28T21:08:24+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -437,7 +437,18 @@ Kerckhoffs's Principle：即使算法已知了，只要密钥未知，系统也�
 <span class="course-math course-math-display" data-tex="y ^{a} a^{b} \equiv g ^{M} \pmod{p}" data-display="true"><code>y ^{a} a^{b} \equiv g ^{M} \pmod{p}</code></span>
 
 **Diffie-Hellman Key Exchange Protocol**
+这里 <span class="course-math" data-tex="\alpha" data-display="false"><code>\alpha</code></span> 是 <span class="course-math" data-tex="\mathbb{Z}_{p}" data-display="false"><code>\mathbb{Z}_{p}</code></span> 的一个生成元，<span class="course-math" data-tex="X_{A},X_{B}" data-display="false"><code>X_{A},X_{B}</code></span> 保密作为私钥，于是就在只交换 <span class="course-math" data-tex="Y_{A},Y_{B}" data-display="false"><code>Y_{A},Y_{B}</code></span> 的情况下得到了相同的密钥 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span>。
+
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-12.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-12" width="1540" height="862" loading="lazy" decoding="async">
 
-量子计算对于大整数分解问题与离散对数问题有较快的解决，因此挑战了公钥密码学。
+量子计算对于大整数分解问题与离散对数问题有较快的解决，因此挑战了公钥密码学。后量子时代的公钥密码学需要解决密钥封装（KEM），数字签名；需要找其他的困难问题。技术路线有：
+- Lattice, Code, Isogeny, Multivariable, Hash
+密码学除了加密解密之外：
+- 数字签名
+- 零知识证明
+- 保护隐私的数据查询
+- 网上（无需信任中心化服务器与彼此）的打牌
+- 电子投票（E-Voting）
+- 电子拍卖
+- 全同态加密（加密 <span class="course-math" data-tex="E(m)" data-display="false"><code>E(m)</code></span>，且要可以用来算 <span class="course-math" data-tex="E(f(m))" data-display="false"><code>E(f(m))</code></span>）
 {% endraw %}
