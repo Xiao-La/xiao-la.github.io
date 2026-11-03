@@ -5,8 +5,8 @@ categories: study
 description: study
 keywords: report
 date: 2024-11-20
-learning_kind: record
-learning_stage: high-school
+learning_area: high-school
+learning_format: reports
 ---
 
 本月经历 0 次大考。

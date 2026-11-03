@@ -4,8 +4,7 @@ title: OI 笔记 | 线段树合并笔记
 categories: Note
 description: Note
 keywords: NOIP, OI, Note
-learning_kind: topic
-learning_topic: algorithms
+learning_area: informatics
 learning_format: notes
 math: true
 ---

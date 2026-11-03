@@ -1,0 +1,26 @@
+{% assign learning_documents = site.posts | concat: site.study %}
+{% assign learning_area = site.data.learning.areas | where: 'id', page.learning_area | first %}
+{% assign area_documents = learning_documents | where: 'learning_area', page.learning_area %}
+<article class="learning-index">
+  <nav class="breadcrumb learning-breadcrumb" aria-label="当前位置">
+    <a href="{{ '/study/' | relative_url }}">学习</a> / {{ learning_area.title | escape }}
+  </nav>
+  <h1>{{ learning_area.title | escape }}</h1>
+  {% if learning_area.formats.size > 1 %}
+    <nav class="learning-section-nav" aria-label="{{ learning_area.title | escape }}索引">
+      {% for format_id in learning_area.formats %}
+        {% assign format = site.data.learning.formats | where: 'id', format_id | first %}
+        {% assign articles = area_documents | where: 'learning_format', format_id %}
+        <a href="#{{ format.id }}">{{ format.title | escape }} <small>{{ articles.size }} 篇</small></a>
+      {% endfor %}
+    </nav>
+  {% endif %}
+  {% for format_id in learning_area.formats %}
+    {% assign format = site.data.learning.formats | where: 'id', format_id | first %}
+    {% assign articles = area_documents | where: 'learning_format', format_id | sort: 'date' | reverse %}
+    <section class="learning-section" id="{{ format.id }}">
+      {% if learning_area.formats.size > 1 %}<h2>{{ format.title | escape }}</h2>{% endif %}
+      {% include learning-list.html documents=articles %}
+    </section>
+  {% endfor %}
+</article>

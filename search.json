@@ -10,7 +10,7 @@ layout: null
       "title": {{ post.title | jsonify }},
       "category": {% if post.collection == 'courses' %}{{ post.course_title | default: post.title | jsonify }}{% else %}{{ category_names | strip | jsonify }}{% endif %},
       "categories": {{ post.categories | join: ', ' | jsonify }},
-      "kind": {% if post.collection == 'courses' %}"课程笔记"{% elsif post.learning_kind == 'topic' %}"专题笔记"{% elsif post.learning_kind == 'record' %}"学习记录"{% else %}"博客文章"{% endif %},
+      "kind": {% if post.collection == 'courses' %}"课程笔记"{% elsif post.learning_area %}{% assign learning_area = site.data.learning.areas | where: 'id', post.learning_area | first %}{{ learning_area.title | jsonify }}{% else %}"博客文章"{% endif %},
       "tags": {{ post.tags | join: ', ' | jsonify }},
       "keywords": {{ post.keywords | join: ', ' | jsonify }},
       "description": {{ search_summary | jsonify }},

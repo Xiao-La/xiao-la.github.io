@@ -4,7 +4,6 @@
 .learning-entry:hover h2, .learning-entry:focus-visible h2 { text-decoration: underline; }
 .learning-entry:hover { text-decoration: none; }
 .learning-entry h2 { font-size: 1.1em; padding: 0; border: 0; margin: 0; color: inherit; width: auto; }
-.learning-entry p { grid-column: 1 / -1; margin: 0; color: #777; font-size: .85em; }
 .learning-entry > span { grid-column: 2; grid-row: 1; color: #777; font-size: .75em; white-space: nowrap; }
 .learning-active ul { display: flex; flex-wrap: wrap; gap: .65em 1.5em; list-style: none; padding: 0; }
 .learning-active li { margin: 0; }

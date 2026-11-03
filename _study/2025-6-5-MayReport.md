@@ -5,8 +5,8 @@ categories: study
 description: study
 keywords: report
 date: 2025-06-05
-learning_kind: record
-learning_stage: high-school
+learning_area: high-school
+learning_format: reports
 ---
 
 本月模拟考发挥一般，故不在此整理。

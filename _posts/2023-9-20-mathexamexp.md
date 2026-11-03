@@ -4,8 +4,8 @@ title: 本校数学小考的方法论
 categories: Note
 description: Note
 keywords: NOIP, OI, Note
-learning_kind: record
-learning_stage: methods
+learning_area: mathematics
+learning_format: methods
 math: true
 ---
 

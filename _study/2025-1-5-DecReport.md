@@ -5,8 +5,8 @@ categories: study
 description: study
 keywords: report
 date: 2025-01-05
-learning_kind: record
-learning_stage: high-school
+learning_area: high-school
+learning_format: reports
 ---
 
 本月经历 2 次大考，数据如下。

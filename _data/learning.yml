@@ -1,19 +1,24 @@
-topics:
+areas:
+  - id: informatics
+    title: 信息学竞赛
+    url: /study/topics/
+    formats: [notes, solutions, diaries]
   - id: mathematics
-    title: 数学
-  - id: algorithms
-    title: 算法与信息学竞赛
+    title: 中学数学
+    url: /study/mathematics/
+    formats: [notes, methods]
+  - id: high-school
+    title: 高中学习报告
+    url: /study/records/
+    formats: [reports]
 formats:
   - id: notes
-    title: 知识专题
+    title: 学习笔记
   - id: solutions
-    title: 题解与刷题
-stages:
-  - id: high-school
-    title: 高三 · 2024—2025
-  - id: oi
-    title: 信息学竞赛 · 2022—2023
+    title: 做题记录
+  - id: diaries
+    title: OI 日志
   - id: methods
-    title: 学习方法
-  - id: early
-    title: 早期记录
+    title: 考试方法
+  - id: reports
+    title: 学习报告

@@ -1,33 +1,35 @@
 ---
 layout: default
 title: 学习
-description: 课程笔记、专题笔记与学习过程记录。
-keywords: 学习, 课程, 数学, 算法, 学习记录
+description: 大学课程、信息学竞赛、中学数学与高中学习记录。
+keywords: 学习, 课程, 数学, 算法, 信息学竞赛, 学习记录
 permalink: /study/
 learning_page: true
 ---
 
 {% assign learning_documents = site.posts | concat: site.study %}
-{% assign topics = learning_documents | where: 'learning_kind', 'topic' %}
-{% assign records = learning_documents | where: 'learning_kind', 'record' %}
+{% assign informatics_documents = learning_documents | where: 'learning_area', 'informatics' %}
+{% assign mathematics_documents = learning_documents | where: 'learning_area', 'mathematics' %}
+{% assign high_school_documents = learning_documents | where: 'learning_area', 'high-school' %}
 {% assign updating_courses = site.data.courses | where: 'status', 'updating' %}
 <article class="learning-hub">
   <h1>学习</h1>
   <nav class="learning-entries" aria-label="学习内容入口">
     <a class="learning-entry" href="{{ '/courses/' | relative_url }}">
-      <h2>课程笔记</h2>
-      <p>大学课程与公开课笔记，按课程和章节整理。</p>
-      <span>{{ site.data.courses.size }} 门课程 · {{ updating_courses.size }} 门更新中</span>
+      <h2>大学课程笔记</h2>
+      <span>共 {{ site.data.courses.size }} 门</span>
     </a>
     <a class="learning-entry" href="{{ '/study/topics/' | relative_url }}">
-      <h2>专题笔记</h2>
-      <p>数学证明、算法专题、代码模板与题解。</p>
-      <span>{{ topics.size }} 篇专题笔记</span>
+      <h2>信息学竞赛</h2>
+      <span>共 {{ informatics_documents.size }} 篇</span>
+    </a>
+    <a class="learning-entry" href="{{ '/study/mathematics/' | relative_url }}">
+      <h2>中学数学</h2>
+      <span>共 {{ mathematics_documents.size }} 篇</span>
     </a>
     <a class="learning-entry" href="{{ '/study/records/' | relative_url }}">
-      <h2>学习记录</h2>
-      <p>阶段报告、竞赛经历与学习方法。</p>
-      <span>{{ records.size }} 篇学习记录</span>
+      <h2>高中学习报告</h2>
+      <span>共 {{ high_school_documents.size }} 篇</span>
     </a>
   </nav>
   {% if updating_courses.size > 0 %}
@@ -40,7 +42,7 @@ learning_page: true
   {% endif %}
   <section class="learning-recent">
     <h2>最近的笔记与记录</h2>
-    {% assign learning_articles = learning_documents | where_exp: 'article', 'article.learning_kind' %}
+    {% assign learning_articles = learning_documents | where_exp: 'article', 'article.learning_area' %}
     {% assign course_articles = site.courses | where: 'doc_type', 'note' %}
     {% assign recent_documents = learning_articles | concat: course_articles %}
     {% capture recent_keys %}{% for document in recent_documents %}{{ document.created_at | default: document.date | date: '%Y%m%d%H%M%S' }}::{{ document.url }}|{% endfor %}{% endcapture %}
