@@ -948,8 +948,8 @@
         "course_title": "概率与统计",
         "section": "",
         "status": "updating",
-        "created_at": "2026-10-10T16:52:41+08:00",
-        "updated_at": "2026-10-25T22:34:16+08:00",
+        "created_at": "2026-11-06T22:04:32+08:00",
+        "updated_at": "2026-11-06T22:04:32+08:00",
         "reference": false,
         "order": 4
       }
@@ -1079,7 +1079,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-10-20T15:28:58+08:00",
-        "updated_at": "2026-10-28T21:08:42+08:00",
+        "updated_at": "2026-11-03T15:38:23+08:00",
         "reference": false,
         "order": 5
       }
@@ -1092,7 +1092,7 @@
     "coverage": "持续补充",
     "status": "updating",
     "url": "/courses/dsaa/",
-    "count": 2,
+    "count": 3,
     "notes": [
       {
         "title": "Introduction",
@@ -1117,6 +1117,18 @@
         "updated_at": "2026-10-28T21:08:24+08:00",
         "reference": false,
         "order": 2
+      },
+      {
+        "title": "Data Structures",
+        "url": "/courses/dsaa/data-structures/",
+        "course_id": "dsaa",
+        "course_title": "数据结构与算法分析",
+        "section": "",
+        "status": "updating",
+        "created_at": "2026-11-06T22:04:29+08:00",
+        "updated_at": "2026-11-06T22:04:29+08:00",
+        "reference": false,
+        "order": 3
       }
     ],
     "resources": []

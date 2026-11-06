@@ -5,7 +5,7 @@ course_title: "数字逻辑"
 section: ""
 status: "updating"
 created_at: "2026-10-20T15:28:58+08:00"
-updated_at: "2026-10-28T21:08:42+08:00"
+updated_at: "2026-11-03T15:38:23+08:00"
 reference: false
 order: 5
 layout: "course"
@@ -184,4 +184,90 @@ T: Toggle. 功能就是，当 <span class="course-math" data-tex="T=0" data-disp
 <span class="course-math course-math-display" data-tex="Q_{t+1}=T&#x27;Q_{t}+TQ&#x27;_{t}=T \oplus Q_{t}" data-display="true"><code>Q_{t+1}=T&#x27;Q_{t}+TQ&#x27;_{t}=T \oplus Q_{t}</code></span>
 这可以用 DFF 实现，也可以用 JKFF 实现。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-21.png' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-21" width="2448" height="638" loading="lazy" decoding="async">
+
+## 分析同步时序电路
+{: #section-11 }
+
+
+用 Flip-Flop 实现的同步时序电路：
+
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-22.png' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-22" width="1226" height="376" loading="lazy" decoding="async">
+
+一个 Flip-Flop 可以存 1 bit 的状态。
+
+分析步骤：
+- 推导 FF 的 input equation
+- 推导 state & output equations
+- 生成 state & output tables
+- 生成 state diagram
+
+例如这个电路：
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-23.png' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-23" width="368" height="342" loading="lazy" decoding="async">
+- FF 的 input equation：
+<span class="course-math course-math-display" data-tex="D_{A}=Q_{A}x+Q_{B}x,\quad D_{B}=Q_{A}&#x27;x" data-display="true"><code>D_{A}=Q_{A}x+Q_{B}x,\quad D_{B}=Q_{A}&#x27;x</code></span>
+- State equation：
+<span class="course-math course-math-display" data-tex="\begin{aligned}&#10;&amp;Q_{A}(t+1)=D_{A}(t)=Q_{A}(t)x(t)+Q_{B}(t)x(t) \\&#10;&amp;Q_{B}(t+1)=D_{B}(t)=Q_{A}&#x27;(t)x(t)&#10;\end{aligned}" data-display="true"><code>\begin{aligned}&#10;&amp;Q_{A}(t+1)=D_{A}(t)=Q_{A}(t)x(t)+Q_{B}(t)x(t) \\&#10;&amp;Q_{B}(t+1)=D_{B}(t)=Q_{A}&#x27;(t)x(t)&#10;\end{aligned}</code></span>
+- Output equation：
+<span class="course-math course-math-display" data-tex="y(t)=(Q_{A}(t)+Q_{B}(t))x&#x27;(t)\leftrightarrow y=(Q_{A}+Q_{B})x&#x27;" data-display="true"><code>y(t)=(Q_{A}(t)+Q_{B}(t))x&#x27;(t)\leftrightarrow y=(Q_{A}+Q_{B})x&#x27;</code></span>
+- 从而得到 state table：
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-24.png' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-24" width="570" height="223" loading="lazy" decoding="async">
+- 进一步可以画出 state diagram：
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-25.png' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-25" width="399" height="305" loading="lazy" decoding="async">
+这里每一个节点表示 <span class="course-math" data-tex="Q_{A},Q_{B}" data-display="false"><code>Q_{A},Q_{B}</code></span> 的值（也就是一个状态），一条边表示从一个状态到下一个状态，边上写这个状态转移发生时的 input / output。
+
+其他例子：
+- 用 JKFF 实现的电路：
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-26.png' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-26" width="455" height="265" loading="lazy" decoding="async">
+
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-27.png' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-27" width="512" height="228" loading="lazy" decoding="async">
+- 用 TFF 实现的电路
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-28.png' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-28" width="478" height="430" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-29.png' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-29" width="469" height="257" loading="lazy" decoding="async">
+
+
+## 有限状态机（Finite State Machine）
+{: #section-12 }
+
+
+有两种模型：
+- Moore FSM（输出只和当前状态有关）
+- Mealy FSM（输出和当前状态以及输入有关）
+
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-30.png' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-30" width="490" height="312" loading="lazy" decoding="async">
+
+可以从 state diagram 去理解：
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-31.png' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-31" width="449" height="201" loading="lazy" decoding="async">
+
+
+### 化简
+{: #section-13 }
+
+
+若有些状态在 state table 中对应的 next state 和 output 都一模一样，那么可以只保留其中一个，把表中用到 **去掉的状态** 的地方直接换成保留的那个就行。输出会是等效的，例如：
+
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-32.png' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-32" width="1602" height="1114" loading="lazy" decoding="async">
+
+
+### 赋值（Assignment）
+{: #section-14 }
+
+
+在上面的表里面，化简后有五种状态 <span class="course-math" data-tex="a,b,c,d,e" data-display="false"><code>a,b,c,d,e</code></span>，它们可以根据实际的用途进行具体的赋值。例如这样的三种：
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-33.png' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-33" width="459" height="336" loading="lazy" decoding="async">
+
+
+## 设计时序电路
+{: #section-15 }
+
+
+也就是把分析步骤反过来。
+1. Specification: design description or timing diagram
+2. Formulation: develop state diagram
+3. Generate state and output tables
+4. Minimize States if necessary
+5. Assign binary values to the state (encoding)
+6. Derive state and output equations
+7. Choose memory elements (DFFs, JKFFs, TFFs)
+8. Derive simplified input equations and output equations
+9. Draw logic schematic
 {% endraw %}

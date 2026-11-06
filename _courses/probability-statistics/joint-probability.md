@@ -4,8 +4,8 @@ course_id: "probability-statistics"
 course_title: "概率与统计"
 section: ""
 status: "updating"
-created_at: "2026-10-10T16:52:41+08:00"
-updated_at: "2026-10-25T22:34:16+08:00"
+created_at: "2026-11-06T22:04:32+08:00"
+updated_at: "2026-11-06T22:04:32+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -156,8 +156,14 @@ Bilinear Property:
 {: #section-6 }
 
 
+
 若连续随机变量  <span class="course-math" data-tex="Z=g(X,Y)" data-display="false"><code>Z=g(X,Y)</code></span>，则 <span class="course-math" data-tex="z" data-display="false"><code>z</code></span> 的 CDF 可以这样去求：
-<span class="course-math course-math-display" data-tex="F_{Z}(z)=P(g(X,Y)\leq z)= \int _{g(x,y)\leq z} f(x,y)\,\mathrm{d}x \mathrm{d}y" data-display="true"><code>F_{Z}(z)=P(g(X,Y)\leq z)= \int _{g(x,y)\leq z} f(x,y)\,\mathrm{d}x \mathrm{d}y</code></span>
+<span class="course-math course-math-display" data-tex="F_{Z}(z)=P(g(X,Y)\leq z)= \iint _{g(x,y)\leq z} f(x,y)\,\mathrm{d}x \mathrm{d}y" data-display="true"><code>F_{Z}(z)=P(g(X,Y)\leq z)= \iint _{g(x,y)\leq z} f(x,y)\,\mathrm{d}x \mathrm{d}y</code></span>
+
+
+### 随机变量之和
+{: #section-7 }
+
 
 若 <span class="course-math" data-tex="Z=X+Y" data-display="false"><code>Z=X+Y</code></span>，有如下结论，可以直接算出 PDF：
 <span class="course-math course-math-display" data-tex="f_{Z}(z)= \int_{-\infty}^{\infty} f(x,z-x)\,\mathrm{d}x" data-display="true"><code>f_{Z}(z)= \int_{-\infty}^{\infty} f(x,z-x)\,\mathrm{d}x</code></span>
@@ -178,8 +184,21 @@ Bilinear Property:
 再比如，独立的泊松分布随机变量的和也是泊松分布，且 <span class="course-math" data-tex="\lambda" data-display="false"><code>\lambda</code></span> 为这些随机变量的 <span class="course-math" data-tex="\lambda" data-display="false"><code>\lambda</code></span> 之和。
 
 
+### 随机变量求最值
+{: #section-8 }
+
+
+若 <span class="course-math" data-tex="Z=\max(X,Y)" data-display="false"><code>Z=\max(X,Y)</code></span>，且 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 相互独立，那么有：
+<span class="course-math course-math-display" data-tex="F_{Z}(z)= F_{X}(z)F_{Y}(z)" data-display="true"><code>F_{Z}(z)= F_{X}(z)F_{Y}(z)</code></span>
+若 <span class="course-math" data-tex="Z=\min(X,Y)" data-display="false"><code>Z=\min(X,Y)</code></span>，且 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 相互独立，那么有：
+<span class="course-math course-math-display" data-tex="F_{Z}(z)= 1-(1-F_{X}(z))(1-F_{Y}(z))" data-display="true"><code>F_{Z}(z)= 1-(1-F_{X}(z))(1-F_{Y}(z))</code></span>
+特别地，若 <span class="course-math" data-tex="X_{1},X_{2}, \dots , X_{n} \overset{\text{i.i.d.}}{\sim}F(x)" data-display="false"><code>X_{1},X_{2}, \dots , X_{n} \overset{\text{i.i.d.}}{\sim}F(x)</code></span>，那么
+<span class="course-math course-math-display" data-tex="F_{\max}(z)=(F(z))^{n},\quad F_{\min}(z)=1-(1-F(z))^{n}" data-display="true"><code>F_{\max}(z)=(F(z))^{n},\quad F_{\min}(z)=1-(1-F(z))^{n}</code></span>
+
+
+
 ## 中心极限定理（Central Limit Theorem, CLT）
-{: #section-7 }
+{: #section-9 }
 
 
 若 <span class="course-math" data-tex="X_{1},X_{2}, \dots" data-display="false"><code>X_{1},X_{2}, \dots</code></span> 是一系列 i.i.d 随机变量，令 <span class="course-math" data-tex="\mu \triangleq \mathrm{E}(X_{i}), \sigma ^{2}\triangleq \operatorname{Var}(X_{i})" data-display="false"><code>\mu \triangleq \mathrm{E}(X_{i}), \sigma ^{2}\triangleq \operatorname{Var}(X_{i})</code></span>。令 <span class="course-math" data-tex="S_{n}=X_{1}+X_{2}+\dots+X_{n}" data-display="false"><code>S_{n}=X_{1}+X_{2}+\dots+X_{n}</code></span>，以及 <span class="course-math" data-tex="\overline{X}_{n}=S_{n} / n" data-display="false"><code>\overline{X}_{n}=S_{n} / n</code></span>，考虑 <span class="course-math" data-tex="S_{n}" data-display="false"><code>S_{n}</code></span> 的标准化的版本：
@@ -201,4 +220,44 @@ Bilinear Property:
 **连续性修正。**
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Joint%20Probability%20-%20%E8%81%94%E5%90%88%E6%A6%82%E7%8E%87.png' | relative_url }}{% raw %}" alt="Joint Probability - 联合概率" width="559" height="135" loading="lazy" decoding="async">
 对整数值随机变量应用中心极限定理的时候（例如估计二项分布），若要算一个区间上的概率，先写成整数端点的闭区间，再把区间左右各扩大 <span class="course-math" data-tex="0.5" data-display="false"><code>0.5</code></span> 会算得更准确。极端情况： <span class="course-math" data-tex="P(X=x)" data-display="false"><code>P(X=x)</code></span> 转而计算 <span class="course-math" data-tex="P(x-0.5\leq X\leq x+0.5)" data-display="false"><code>P(x-0.5\leq X\leq x+0.5)</code></span>。
+
+
+## 多元正态分布
+{: #section-10 }
+
+
+二元随机变量 <span class="course-math" data-tex="(X,Y)" data-display="false"><code>(X,Y)</code></span> 是二元正态分布，当它的 PDF 为
+<span class="course-math course-math-display" data-tex="f(x,y)=\frac{1}{2\pi \sigma _{X}\sigma _{Y}\sqrt{1-\rho ^{2}}} \exp\left( - \frac{1}{2(1-\rho ^{2})} \left[  \frac{(x-\mu _{X})^{2}}{\sigma _{X}^{2}} -2\rho \frac{(x-\mu _{X})(y-\mu _{Y})}{\sigma _{X}\sigma _{Y}}+ \frac{(y-\mu _{Y})^{2}}{\sigma _{Y}^{2}}\right]\right)" data-display="true"><code>f(x,y)=\frac{1}{2\pi \sigma _{X}\sigma _{Y}\sqrt{1-\rho ^{2}}} \exp\left( - \frac{1}{2(1-\rho ^{2})} \left[  \frac{(x-\mu _{X})^{2}}{\sigma _{X}^{2}} -2\rho \frac{(x-\mu _{X})(y-\mu _{Y})}{\sigma _{X}\sigma _{Y}}+ \frac{(y-\mu _{Y})^{2}}{\sigma _{Y}^{2}}\right]\right)</code></span>
+这里 <span class="course-math" data-tex="\mu _{X},\mu _{Y}" data-display="false"><code>\mu _{X},\mu _{Y}</code></span> 就是 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 的均值，<span class="course-math" data-tex="\sigma _{X},\sigma _{Y}" data-display="false"><code>\sigma _{X},\sigma _{Y}</code></span> 为标准差，<span class="course-math" data-tex="\rho" data-display="false"><code>\rho</code></span> 是 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 之间的相关系数。
+这可以写成：
+<span class="course-math course-math-display" data-tex="\begin{bmatrix}&#10;X \\&#10;Y&#10;\end{bmatrix}\sim N(\begin{bmatrix}&#10;\mu _{X} \\&#10;\mu _{Y}&#10;\end{bmatrix}, \begin{bmatrix}&#10;\sigma _{X}^{2} &amp; \rho \sigma _{X}\sigma _{Y} \\&#10; \rho \sigma _{X}\sigma _{Y} &amp; \sigma _{Y}^{2}&#10;\end{bmatrix})= N(\boldsymbol{\mu}, \boldsymbol{\Sigma})" data-display="true"><code>\begin{bmatrix}&#10;X \\&#10;Y&#10;\end{bmatrix}\sim N(\begin{bmatrix}&#10;\mu _{X} \\&#10;\mu _{Y}&#10;\end{bmatrix}, \begin{bmatrix}&#10;\sigma _{X}^{2} &amp; \rho \sigma _{X}\sigma _{Y} \\&#10; \rho \sigma _{X}\sigma _{Y} &amp; \sigma _{Y}^{2}&#10;\end{bmatrix})= N(\boldsymbol{\mu}, \boldsymbol{\Sigma})</code></span>
+这里 <span class="course-math" data-tex="\boldsymbol{\mu}" data-display="false"><code>\boldsymbol{\mu}</code></span> 称为均值向量（Mean Vector），而 <span class="course-math" data-tex="\boldsymbol{\Sigma}" data-display="false"><code>\boldsymbol{\Sigma}</code></span> 称为方差-协方差矩阵（Variance-Covariance Matrix）。
+特别地，若 <span class="course-math" data-tex="\mu _{X}=\mu _{Y}=0,\sigma _{X}=\sigma _{Y}=1,\rho=0" data-display="false"><code>\mu _{X}=\mu _{Y}=0,\sigma _{X}=\sigma _{Y}=1,\rho=0</code></span>，那么称为**标准二元正态分布**：
+<span class="course-math course-math-display" data-tex="N(\boldsymbol{0},\boldsymbol{I})" data-display="true"><code>N(\boldsymbol{0},\boldsymbol{I})</code></span>
+
+**性质 1：** 若 <span class="course-math" data-tex="\begin{bmatrix}X_{1} \\  X_{2}\end{bmatrix}\sim N(\boldsymbol{\mu},\boldsymbol{\Sigma})" data-display="false"><code>\begin{bmatrix}X_{1} \\  X_{2}\end{bmatrix}\sim N(\boldsymbol{\mu},\boldsymbol{\Sigma})</code></span>，那么 <span class="course-math" data-tex="X\sim N(\mu _{X},\sigma _{X}^{2}),Y\sim N(\mu _{Y},\sigma _{Y}^{2})" data-display="false"><code>X\sim N(\mu _{X},\sigma _{X}^{2}),Y\sim N(\mu _{Y},\sigma _{Y}^{2})</code></span>，且 <span class="course-math" data-tex="\rho _{XY}=\rho" data-display="false"><code>\rho _{XY}=\rho</code></span>。
+
+**性质 2：** 对于二元正态分布，若 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 不相关，那么 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 相互独立。(多元正态分布中，变量之间只存在线性关系)
+- 注意，这个“相关推独立”需要 <span class="course-math" data-tex="(X,Y)" data-display="false"><code>(X,Y)</code></span> 服从**二元正态分布**。如果 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 只是各自服从正态，不会有这个结论。
+- 一个反例：令 <span class="course-math" data-tex="X\sim N(0,1)" data-display="false"><code>X\sim N(0,1)</code></span>，<span class="course-math" data-tex="Z" data-display="false"><code>Z</code></span> 与 <span class="course-math" data-tex="X" data-display="false"><code>X</code></span> 独立，满足 <span class="course-math" data-tex="P(Z=1)=P(Z=-1)=0.5" data-display="false"><code>P(Z=1)=P(Z=-1)=0.5</code></span>，那么随机变量 <span class="course-math" data-tex="Y=ZX" data-display="false"><code>Y=ZX</code></span> 也服从 <span class="course-math" data-tex="N(0,1)" data-display="false"><code>N(0,1)</code></span>，且 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 不相关。
+- 但是，<span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 并不相互独立。
+- 这里还有一个结论：若 <span class="course-math" data-tex="X,Y" data-display="false"><code>X,Y</code></span> 各自服从正态，且它们相互独立，那么 <span class="course-math" data-tex="(X,Y)" data-display="false"><code>(X,Y)</code></span> 满足二元正态分布。
+
+**性质3：** 若 <span class="course-math" data-tex="\begin{bmatrix}X \\  Y \end{bmatrix}\sim N(\boldsymbol{\mu},\boldsymbol{\Sigma})" data-display="false"><code>\begin{bmatrix}X \\  Y \end{bmatrix}\sim N(\boldsymbol{\mu},\boldsymbol{\Sigma})</code></span> ，那么有
+<span class="course-math course-math-display" data-tex="X\mid Y=y\sim N\left( \mu _{X}+ \frac{\rho \sigma _{X}}{\sigma _{Y}}(y-\mu _{Y}) , (1-\rho ^{2})\sigma _{X} ^{2}\right)" data-display="true"><code>X\mid Y=y\sim N\left( \mu _{X}+ \frac{\rho \sigma _{X}}{\sigma _{Y}}(y-\mu _{Y}) , (1-\rho ^{2})\sigma _{X} ^{2}\right)</code></span>
+<span class="course-math course-math-display" data-tex="Y\mid X = x\sim N\left( \mu _{Y}+ \frac{ \rho \sigma _{Y}}{\sigma _{X}}(x-\mu _{X}), (1-\rho ^{2})\sigma _{Y}^{2} \right)" data-display="true"><code>Y\mid X = x\sim N\left( \mu _{Y}+ \frac{ \rho \sigma _{Y}}{\sigma _{X}}(x-\mu _{X}), (1-\rho ^{2})\sigma _{Y}^{2} \right)</code></span>
+也就是说，条件分布也是正态分布，且也能看出线性关系：
+<span class="course-math course-math-display" data-tex="\mathrm{E}(Y\mid X=x)=a+bx" data-display="true"><code>\mathrm{E}(Y\mid X=x)=a+bx</code></span>
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Joint%20Probability%20-%20%E8%81%94%E5%90%88%E6%A6%82%E7%8E%87-1.png' | relative_url }}{% raw %}" alt="Joint Probability - 联合概率-1" width="485" height="398" loading="lazy" decoding="async">
+
+**性质 4：** 若 <span class="course-math" data-tex="\begin{bmatrix}X \\  Y \end{bmatrix}\sim N(\boldsymbol{\mu},\boldsymbol{\Sigma})" data-display="false"><code>\begin{bmatrix}X \\  Y \end{bmatrix}\sim N(\boldsymbol{\mu},\boldsymbol{\Sigma})</code></span> ，那么对于任意常数 <span class="course-math" data-tex="c_{1},c_{2}" data-display="false"><code>c_{1},c_{2}</code></span> 有
+<span class="course-math course-math-display" data-tex="c_{1}X+c_{2}Y\sim N(c_{1}\mu _{X}+c_{2}\mu _{Y},c_{1}^{2}\sigma _{X}^{2}+2c_{1}c_{2}\rho \sigma _{X}\sigma _{Y}+c_{2}^{2}\sigma _{Y}^{2})" data-display="true"><code>c_{1}X+c_{2}Y\sim N(c_{1}\mu _{X}+c_{2}\mu _{Y},c_{1}^{2}\sigma _{X}^{2}+2c_{1}c_{2}\rho \sigma _{X}\sigma _{Y}+c_{2}^{2}\sigma _{Y}^{2})</code></span>
+更一般的情况：对于任何 <span class="course-math" data-tex="2\times2" data-display="false"><code>2\times2</code></span> 实矩阵 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span>，有：
+<span class="course-math course-math-display" data-tex="\boldsymbol{A}\begin{bmatrix}&#10;X \\&#10;Y&#10;\end{bmatrix} \sim N(\boldsymbol{A}\boldsymbol{\mu},\boldsymbol{A}\boldsymbol{\Sigma}\boldsymbol{A}^{\top})" data-display="true"><code>\boldsymbol{A}\begin{bmatrix}&#10;X \\&#10;Y&#10;\end{bmatrix} \sim N(\boldsymbol{A}\boldsymbol{\mu},\boldsymbol{A}\boldsymbol{\Sigma}\boldsymbol{A}^{\top})</code></span>
+
+
+扩展成多元的情况：
+<span class="course-math course-math-display" data-tex="\boldsymbol{X}=\begin{bmatrix}&#10;X_{1} \\&#10;X_{2} \\&#10;\vdots \\&#10;X_{n}&#10;\end{bmatrix},\quad \boldsymbol{\mu}=\mathrm{E}(\boldsymbol{X})=\begin{bmatrix}&#10;\mathrm{E}(X_{1}) \\&#10;\mathrm{E}(X_{2}) \\&#10;\vdots \\&#10;\mathrm{E}(X_{n})&#10;\end{bmatrix}" data-display="true"><code>\boldsymbol{X}=\begin{bmatrix}&#10;X_{1} \\&#10;X_{2} \\&#10;\vdots \\&#10;X_{n}&#10;\end{bmatrix},\quad \boldsymbol{\mu}=\mathrm{E}(\boldsymbol{X})=\begin{bmatrix}&#10;\mathrm{E}(X_{1}) \\&#10;\mathrm{E}(X_{2}) \\&#10;\vdots \\&#10;\mathrm{E}(X_{n})&#10;\end{bmatrix}</code></span>
+以及方差-协方差矩阵：
+<span class="course-math course-math-display" data-tex="\boldsymbol{\Sigma}=\operatorname{Cov}(\boldsymbol{X})=\mathrm{E}[(\boldsymbol{X}-\mathrm{E}(\boldsymbol{X}))(\boldsymbol{X}-\mathrm{E}(\boldsymbol{X}))^{\top}]=\begin{bmatrix}&#10;\operatorname{Var}(X_{1}) &amp; \operatorname{Cov}(X_{1}, X_{2}) &amp; \cdots &amp; \operatorname{Cov}(X_{1}, X_{n}) \\&#10;\operatorname{Cov}(X_{1}, X_{2}) &amp; \operatorname{Var}(X_{2})  &amp;  &amp; \vdots \\&#10;\vdots &amp;  &amp; \ddots &amp; \vdots \\&#10;\operatorname{Cov}(X_{1}, X_{n}) &amp; \cdots &amp; \cdots &amp; \operatorname{Var}(X_{n})&#10;\end{bmatrix}" data-display="true"><code>\boldsymbol{\Sigma}=\operatorname{Cov}(\boldsymbol{X})=\mathrm{E}[(\boldsymbol{X}-\mathrm{E}(\boldsymbol{X}))(\boldsymbol{X}-\mathrm{E}(\boldsymbol{X}))^{\top}]=\begin{bmatrix}&#10;\operatorname{Var}(X_{1}) &amp; \operatorname{Cov}(X_{1}, X_{2}) &amp; \cdots &amp; \operatorname{Cov}(X_{1}, X_{n}) \\&#10;\operatorname{Cov}(X_{1}, X_{2}) &amp; \operatorname{Var}(X_{2})  &amp;  &amp; \vdots \\&#10;\vdots &amp;  &amp; \ddots &amp; \vdots \\&#10;\operatorname{Cov}(X_{1}, X_{n}) &amp; \cdots &amp; \cdots &amp; \operatorname{Var}(X_{n})&#10;\end{bmatrix}</code></span>
 {% endraw %}
