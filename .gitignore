@@ -15,7 +15,7 @@ assets/vendor/*
 .course-test-results/
 node_modules/
 __pycache__/
-/scripts/
-/tests/
-/docs/
+# Review reports stay local; only the sync tool documentation is tracked.
+/docs/*
+!/docs/courses-sync.md
 /reports/courses-sync.json

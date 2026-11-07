@@ -1,0 +1,5 @@
+const fs=require('fs'),{request}=require('playwright');
+const pages=JSON.parse(fs.readFileSync('.course-test-results/full-audit-manifest.json')), urls=new Map;
+for(const p of pages)for(const [kind,vs]of [['link',p.links],['image',p.images]])for(const v of vs){const u=new URL(v,p.url);if(!['http:','https:'].includes(u.protocol))continue;u.hash='';const key=u.href;if(!urls.has(key))urls.set(key,{url:key,kind,pages:[]});urls.get(key).pages.push(p.url)}
+(async()=>{const ctx=await request.newContext({ignoreHTTPSErrors:false,timeout:25000,userAgent:'Mozilla/5.0'});const list=[...urls.values()],res=[];let n=0;
+await Promise.all(Array.from({length:12},async()=>{while(n<list.length){const x=list[n++];try{const r=await ctx.get(x.url);x.status=r.status();x.finalUrl=r.url();x.type=r.headers()['content-type'];if(x.status>=400)x.snippet=(await r.text()).replace(/\s+/g,' ').slice(0,220);await r.dispose();}catch(e){x.error=e.message.split('\n')[0]}res.push(x);if(res.length%50===0)console.log(res.length+'/'+list.length);fs.writeFileSync('.course-test-results/full-audit/urls.json',JSON.stringify(res,null,2));}}));await ctx.dispose();console.log('URL audit complete')})()

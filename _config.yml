@@ -66,6 +66,9 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
+  - AGENTS.md
+  - CLAUDE.md
+  - LICENSE
   - vendor
   - scripts
   - tests

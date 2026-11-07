@@ -1,0 +1,186 @@
+[
+  {
+    "id": "physics",
+    "title": "大学物理（上）/（下）",
+    "coverage": "全",
+    "sources": [
+      "其他通识课/大学物理"
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "calculus",
+    "title": "高等数学（上）/（下）",
+    "coverage": "全",
+    "sources": [
+      "数学/高等数学"
+    ],
+    "status": "completed",
+    "note_order": [
+      "limit-and-derivative",
+      "antiderivative-and-integral",
+      "integral-techniques",
+      "transcendental-function",
+      "complex-number",
+      "differential-equation",
+      "polar-coordinates",
+      "sequence-and-series",
+      "quadric-surfaces",
+      "partial-derivatives",
+      "multiple-integral",
+      "vector-calculus"
+    ]
+  },
+  {
+    "id": "linear-algebra",
+    "title": "线性代数",
+    "coverage": "全",
+    "sources": [
+      "数学/线性代数"
+    ],
+    "status": "completed",
+    "note_order": [
+      "matrices-and-system-of-linear-equations",
+      "determinant",
+      "the-properties-of-matrices",
+      "vector-space",
+      "linear-transformation",
+      "orthogonal",
+      "eigenvalues-and-eigenvectors",
+      "complex-matrices",
+      "positive-definite-matrices",
+      "final-review"
+    ]
+  },
+  {
+    "id": "civilization-history",
+    "title": "科学与文明史概论",
+    "coverage": "全",
+    "sources": [
+      "其他通识课/科学与文明史概论"
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "java",
+    "title": "计算机程序设计基础/JavaA",
+    "coverage": "仅期末复习",
+    "sources": [
+      "计算机/SUSTech CS109 - Java.md"
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "life-science",
+    "title": "生命科学概论",
+    "coverage": "仅期末复习",
+    "sources": [
+      "其他通识课/生命科学概论"
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "chemistry",
+    "title": "大学化学",
+    "coverage": "仅期中复习",
+    "sources": [
+      "其他通识课/大化 Midterm Review.md"
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "english-iii",
+    "title": "SUSTech English III",
+    "coverage": "仅少量草稿",
+    "sources": [
+      "其他通识课/SE III Draft.md"
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "logic",
+    "title": "数理逻辑导论",
+    "coverage": "全",
+    "sources": [
+      "数学/数理逻辑导论"
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "cs50-ai",
+    "title": "CS50's Introduction to Artificial Intelligence with Python",
+    "coverage": "全",
+    "sources": [
+      "计算机/Harvard CS50 - AI"
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "missing-semester",
+    "title": "MIT Missing Semester",
+    "coverage": "仅重点",
+    "sources": [
+      "计算机/MIT Missing Semester"
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "probability-statistics",
+    "title": "概率与统计",
+    "coverage": "持续补充",
+    "status": "updating",
+    "sources": [
+      "数学/概率与统计"
+    ],
+    "note_order": [
+      "probability-basic",
+      "random-variables",
+      "probability-distributions"
+    ]
+  },
+  {
+    "id": "discrete-mathematics",
+    "title": "离散数学",
+    "coverage": "持续补充",
+    "status": "updating",
+    "sources": [
+      "数学/离散数学"
+    ]
+  },
+  {
+    "id": "digital-logic",
+    "title": "数字逻辑",
+    "coverage": "持续补充",
+    "status": "updating",
+    "sources": [
+      "计算机/数字逻辑"
+    ]
+  },
+  {
+    "id": "dsaa",
+    "title": "数据结构与算法分析",
+    "coverage": "持续补充",
+    "status": "updating",
+    "sources": [
+      "计算机/DSAA"
+    ]
+  },
+  {
+    "id": "prehistoric-art",
+    "title": "旧石器艺术与符号",
+    "coverage": "持续补充",
+    "status": "updating",
+    "sources": [
+      "其他通识课/旧石器艺术与符号"
+    ]
+  },
+  {
+    "id": "philosophy-science",
+    "title": "科学哲学",
+    "coverage": "持续补充",
+    "status": "updating",
+    "sources": [
+      "其他通识课/科学哲学"
+    ]
+  }
+]
