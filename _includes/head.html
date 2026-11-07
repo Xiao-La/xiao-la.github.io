@@ -33,8 +33,7 @@
     <script>
       window.MathJax = {
         loader: {
-          paths: { mathjax: {{ '/assets/vendor/mathjax' | relative_url | jsonify }} },
-          load: ['[tex]/mhchem']
+          paths: { mathjax: {{ '/assets/vendor/mathjax' | relative_url | jsonify }} }
         },
         tex: {
           packages: { '[+]': ['mhchem'] },

@@ -2,7 +2,8 @@
   "name": "joy-blog-course-checks",
   "private": true,
   "scripts": {
-    "test": "node courses-browser.cjs"
+    "test": "node courses-browser.cjs",
+    "test:learning": "node learning-browser.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"

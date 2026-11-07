@@ -1,3 +1,4 @@
+Encoding.default_external = Encoding::UTF_8
 require 'json';require 'nokogiri'
 ps=JSON.parse(File.read('.course-test-results/full-audit/after/manifest.json'))
 issues=[];literals=[];layout_tables=[]

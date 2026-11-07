@@ -71,7 +71,4 @@ exclude:
   - scripts
   - tests
   - docs
-  - reports/course-content-audit.json
-  - reports/course-content-audit.md
-  - reports/course-content-audit.patch
   - reports/courses-sync.json

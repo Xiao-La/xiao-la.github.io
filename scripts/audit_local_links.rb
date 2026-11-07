@@ -1,3 +1,4 @@
+Encoding.default_external = Encoding::UTF_8
 require 'nokogiri';require 'json';require 'uri'
 ps=JSON.parse(File.read(ENV.fetch('AUDIT_MANIFEST','.course-test-results/full-audit-manifest.json')))
 root=(ENV['AUDIT_SOURCE']||JSON.parse(File.read('.course-test-results/isolated-release.json'))['source'])+'/_site'
