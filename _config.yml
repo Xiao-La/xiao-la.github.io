@@ -72,3 +72,4 @@ exclude:
   - tests
   - docs
   - reports/courses-sync.json
+  - assets/vendor/README.md

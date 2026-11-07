@@ -8,6 +8,7 @@ _site/
 vendor/
 !assets/vendor/
 assets/vendor/*
+!assets/vendor/README.md
 !assets/vendor/mathjax/
 !assets/vendor/mathjax/**
 !assets/vendor/pseudocode/

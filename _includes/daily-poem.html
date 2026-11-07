@@ -1,1 +1,10 @@
-<script defer src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script>
+  window.dailyPoemFallback = function () {
+    var sentence = document.getElementById('jinrishici-sentence');
+    if (sentence && sentence.textContent.trim() === '加载中...') {
+      sentence.textContent = '山高月小，水落石出。';
+    }
+  };
+  window.setTimeout(window.dailyPoemFallback, 8000);
+</script>
+<script defer src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8" onerror="window.dailyPoemFallback()"></script>
