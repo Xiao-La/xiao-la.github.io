@@ -18,13 +18,14 @@ Obsidian 是正文的编辑源，博客保存可直接由 GitHub Pages 构建的
 ## 文件与入口
 
 - `scripts/sync_courses.py`：依赖 Python 3 标准库的同步命令；超过 50KB 的 PNG/JPEG 用 `cwebp`（`brew install webp`）以 q90 转成 WebP 发布，压缩不足 10% 的保留原图。转码结果按源文件哈希缓存在已忽略的 `.course-cache/`，Obsidian 中的原图不变。
+- 笔记的创建时间取源文件的创建时间，更新时间取修改时间。编辑器或同步盘整体重写文件会重置创建时间，所以已发布过的笔记沿用 `_courses/` 中更早的 `created_at`。
 - `scripts/courses.json`：课程范围映射。只修改这里和原始笔记，不编辑生成正文。
 - `_courses/`：生成的课程索引、正文和补充材料。URL 在 front matter 中显式指定。
 - `_data/courses.json`、`_data/course_references.json`：生成的目录数据。
 - `assets/courses/`：复制引用附件和已完成课程目录内的 PDF，保留原始目录，URL 编码空格和中文。
 - `reports/courses-sync.json`：生成文件清单、引用关系和转换计数，不对外发布。
 - `_layouts/course*.html`、`css/courses.css`、`js/courses.js`：阅读页面、目录和渲染。
-- `assets/vendor/`：固定版本的 MathJax、化学扩展和 pseudocode.js，附上游许可证。
+- `assets/vendor/`：固定版本的 MathJax（完整包自带化学扩展）、pseudocode.js、Waline 和 ECharts，附上游许可证。
 
 课程入口为 `/courses/`，每门课程有独立章节目录。
 课程页面加入站内搜索和 sitemap，不进入博客文章归档或文章 RSS。
@@ -43,7 +44,7 @@ Obsidian 是正文的编辑源，博客保存可直接由 GitHub Pages 构建的
 | 标题链接与 Markdown 本页目录 | 映射到显式 `section-N` 锚点 |
 | `^block-id` 和块链接 | `block-block-id` 网页锚点 |
 | `$…$`、`$$…$$` | 原始 TeX 存在 HTML 属性中，避免 Markdown 消耗反斜线、下划线或表格分隔符 |
-| `\ce{…}` | 本地 mhchem 扩展 |
+| `\ce{…}` | MathJax 完整包自带的 mhchem |
 | `pseudo` 代码块 | LaTeX 风格的伪代码及行号，数学符号使用 SVG |
 | `image-layout-a` | 桌面并排、手机纵向图片布局 |
 | `==高亮==`、`%%注释%%` | `<mark>`、去除注释 |

@@ -119,8 +119,9 @@ def normalize_tables(text):
 
 
 class Exporter:
-    def __init__(self, vault, courses, cache=ROOT/'.course-cache'/'webp'):
-        self.vault, self.courses, self.cache = vault, courses, cache
+    def __init__(self, vault, courses, cache=ROOT/'.course-cache'/'webp', site=None):
+        # site: blog root whose published notes keep their first known created_at.
+        self.vault, self.courses, self.cache, self.site = vault, courses, cache, site
         self.files = sorted(p for p in vault.rglob('*') if p.is_file()
                             and not any(part.startswith('.') for part in p.relative_to(vault).parts))
         self.notes = {}
@@ -160,14 +161,26 @@ class Exporter:
         stat = path.stat()
         def timestamp(value):
             return datetime.fromtimestamp(value, ZoneInfo('Asia/Shanghai')).isoformat(timespec='seconds')
+        created = timestamp(getattr(stat, 'st_birthtime', stat.st_mtime))
+        published = self.published_created(f'_courses/{cid}/{note_slug}.md')
+        if published and datetime.fromisoformat(published) < datetime.fromisoformat(created):
+            # Editors and sync clients may replace a file and reset its birth time.
+            created = published
         self.notes[path] = {'title': path.stem, 'url': url, 'course_id': cid,
                             'course_title': course['title'] if course else '补充材料',
                             'section': section, 'source_path': str(path.relative_to(self.vault)),
                             'status': course.get('status', 'completed') if course else 'reference',
-                            'created_at': timestamp(getattr(stat, 'st_birthtime', stat.st_mtime)),
+                            'created_at': created,
                             'updated_at': timestamp(stat.st_mtime),
                             'output': f'_courses/{cid}/{note_slug}.md',
                             'reference': course is None}
+
+    def published_created(self, output):
+        path = self.site / output if self.site else None
+        if not path or not path.is_file():
+            return None
+        match = re.search(r'^created_at: "([^"]+)"$', path.read_text(), re.M)
+        return match[1] if match else None
 
     def collect(self):
         readme = (self.vault / 'README.md').read_text()
@@ -446,7 +459,8 @@ def main():
     parser.add_argument('--vault', type=Path, default=Path.home()/'Documents/Obsidian Vault')
     parser.add_argument('--check', action='store_true', help='Check that committed exports match the current vault')
     args = parser.parse_args()
-    exporter = Exporter(args.vault.resolve(), json.loads((ROOT/'scripts/courses.json').read_text()))
+    exporter = Exporter(args.vault.resolve(), json.loads((ROOT/'scripts/courses.json').read_text()),
+                        site=ROOT)
     output, assets, report = exporter.export()  # Validate everything before writing.
     report_path = ROOT/'reports/courses-sync.json'
     old = json.loads(report_path.read_text()) if report_path.exists() else {}

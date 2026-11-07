@@ -178,6 +178,19 @@ class CourseExportTests(unittest.TestCase):
             sync.WEBP_MAX_RATIO = ratio
         self.assertEqual(assets['assets/courses/笔记依赖/图片/Slide.png'], big)
 
+    def test_published_notes_keep_their_earlier_creation_time(self):
+        self.write('Example/First.md', 'Rewritten')
+        self.write('Example/Second.md', 'New')
+        site = self.vault/'site'
+        self.write('site/_courses/example/first.md', '---\ncreated_at: "2020-01-02T03:04:05+08:00"\n---\n')
+        self.write('site/_courses/example/second.md', '---\ncreated_at: "2999-01-01T00:00:00+08:00"\n---\n')
+        e = sync.Exporter(self.vault, [self.course.copy()], site=site)
+        e.collect()
+        notes = {n['title']: n for n in e.notes.values()}
+        self.assertEqual(notes['First']['created_at'], '2020-01-02T03:04:05+08:00')
+        self.assertNotEqual(notes['Second']['created_at'], '2999-01-01T00:00:00+08:00')
+        self.assertEqual([n['title'] for n in e.courses[0]['notes']], ['First', 'Second'])
+
     def test_table_followed_by_paragraph_gets_a_block_boundary(self):
         p = self.write('Example/First.md', '| A | B |\n| --- | --- |\n| $a$ | $b$ |\n**Next paragraph**')
         e = self.exporter()
