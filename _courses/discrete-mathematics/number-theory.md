@@ -135,7 +135,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-4.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-4" width="501" height="323" loading="lazy" decoding="async">
 补充：若 <span class="course-math" data-tex="a&lt;0" data-display="false"><code>a&lt;0</code></span> 且恰好整除（<span class="course-math" data-tex="r=0" data-display="false"><code>r=0</code></span>），图中还需令 <span class="course-math" data-tex="q=-q" data-display="false"><code>q=-q</code></span>。
 可以通过分治来优化：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-5.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-5" width="392" height="332" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-5.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-5" width="392" height="332" loading="lazy" decoding="async">
 这相当于把 <span class="course-math" data-tex="a=dq+r" data-display="false"><code>a=dq+r</code></span> 写成 <span class="course-math" data-tex="a / 2=d \cdot q / 2+r / 2" data-display="false"><code>a / 2=d \cdot q / 2+r / 2</code></span>，然后去处理奇偶性细节。每次缩小一半，所以这个是 <span class="course-math" data-tex="O(\log q \log a)=O(n^{2})" data-display="false"><code>O(\log q \log a)=O(n^{2})</code></span> 的。
 
 模指数算法：
@@ -253,7 +253,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 当模逆存在时（<span class="course-math" data-tex="\gcd(a,m)=1" data-display="false"><code>\gcd(a,m)=1</code></span>），求解线性同余式，只需要找到 <span class="course-math" data-tex="\overline{a}=s" data-display="false"><code>\overline{a}=s</code></span>，其中 <span class="course-math" data-tex="1=sa+tm" data-display="false"><code>1=sa+tm</code></span>。
 
 解的个数：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-9.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-9" width="443" height="296" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-9.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-9" width="443" height="296" loading="lazy" decoding="async">
 
 ### 中国剩余定理（The Chinese Remainder Theorem, CRT）
 {: #section-12 }
@@ -319,7 +319,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 
 
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-10.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-10" width="1504" height="950" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-10.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-10" width="1504" height="950" loading="lazy" decoding="async">
 
 
 
@@ -380,7 +380,7 @@ Kerckhoffs's Principle：即使算法已知了，只要密钥未知，系统也�
 
 概念：1976 W.Diffie, M.Hellman, ***New directions in cryptography***: **"We stand today on the brink of a revolution in cryptography."**
 实现：R.**R**ivest, A.**S**hamir, L.**A**dleman,  ***A method for obtaining digital signatures and public-key cryptosystems***
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-11.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-11" width="1632" height="408" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-11.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-11" width="1632" height="408" loading="lazy" decoding="async">
 在公钥密码学中，不再需要提前协商密钥了。不过由于效率比较慢，通常可以通过 **公钥密码学** 来传递 **对称密码学** 的 **密钥**，然后后续使用对称加密。
 另一方面，可以存在 **数字签名** 了。私钥可以用来证明身份，所有人都能用公钥来核验。
 
@@ -439,7 +439,7 @@ Kerckhoffs's Principle：即使算法已知了，只要密钥未知，系统也�
 **Diffie-Hellman Key Exchange Protocol**
 这里 <span class="course-math" data-tex="\alpha" data-display="false"><code>\alpha</code></span> 是 <span class="course-math" data-tex="\mathbb{Z}_{p}" data-display="false"><code>\mathbb{Z}_{p}</code></span> 的一个生成元，<span class="course-math" data-tex="X_{A},X_{B}" data-display="false"><code>X_{A},X_{B}</code></span> 保密作为私钥，于是就在只交换 <span class="course-math" data-tex="Y_{A},Y_{B}" data-display="false"><code>Y_{A},Y_{B}</code></span> 的情况下得到了相同的密钥 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span>。
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-12.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-12" width="1540" height="862" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-12.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-12" width="1540" height="862" loading="lazy" decoding="async">
 
 量子计算对于大整数分解问题与离散对数问题有较快的解决，因此挑战了公钥密码学。后量子时代的公钥密码学需要解决密钥封装（KEM），数字签名；需要找其他的困难问题。技术路线有：
 - Lattice, Code, Isogeny, Multivariable, Hash

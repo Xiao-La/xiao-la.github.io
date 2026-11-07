@@ -76,9 +76,9 @@ WFF 的性质：
 
 可以使用这些性质来判定一个表达式不是一个 WFF，但要判定一个表达式是 WFF，需要使用定义中的构造规则。
 也就是说，一个表达式是 WFF 当且仅当它有一个解析树（Parse Tree）：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91.png' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑" width="505" height="254" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91.webp' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑" width="505" height="254" loading="lazy" decoding="async">
 或简化形式：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-1.png' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-1" width="504" height="382" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-1.webp' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-1" width="504" height="382" loading="lazy" decoding="async">
 
 概念
 - 子公式（subformula）：公式 <span class="course-math" data-tex="G" data-display="false"><code>G</code></span> 若在公式 <span class="course-math" data-tex="F" data-display="false"><code>F</code></span> 内出现，则称 <span class="course-math" data-tex="G" data-display="false"><code>G</code></span> 是 <span class="course-math" data-tex="F" data-display="false"><code>F</code></span> 的子公式。
@@ -140,9 +140,9 @@ WFF 的性质：
 - 真值表
 
 逻辑等价（Logical Equivalence）：在任意赋值下，两个式子都有相同的值，则称它们等价。也就是说，<span class="course-math" data-tex="A\leftrightarrow B" data-display="false"><code>A\leftrightarrow B</code></span> 是永真式。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-3.png' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-3" width="440" height="310" loading="lazy" decoding="async">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-4.png' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-4" width="540" height="303" loading="lazy" decoding="async">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-5.png' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-5" width="541" height="114" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-3.webp' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-3" width="440" height="310" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-4.webp' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-4" width="540" height="303" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-5.webp' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-5" width="541" height="114" loading="lazy" decoding="async">
 
 **代换实例（Substitution Instance）：** 将公式中的原子命题统一替换为其他公式，且保持替换的一致性（同一原子命题的所有出现均替换为同一公式）得到的式子。
 - 一个永真式的代换实例仍然是永真式。
@@ -222,7 +222,7 @@ WFF 的性质：
 - 若 <span class="course-math" data-tex="\Sigma=\varnothing" data-display="false"><code>\Sigma=\varnothing</code></span>，则简记为 <span class="course-math" data-tex="\vdash A_{n}" data-display="false"><code>\vdash A_{n}</code></span>。
 
 例如 (Theorem H1) <span class="course-math" data-tex="A\to A" data-display="false"><code>A\to A</code></span> 的证明：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-6.png' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-6" width="496" height="96" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-6.webp' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-6" width="496" height="96" loading="lazy" decoding="async">
 
 **（可靠性定理/Soundness）若 <span class="course-math" data-tex="\vdash A" data-display="false"><code>\vdash A</code></span>，则 <span class="course-math" data-tex="\vDash A" data-display="false"><code>\vDash A</code></span> 。**
 也就是说，任何 Hilbert 系统证明出来的结论都是永真式。
@@ -236,7 +236,7 @@ WFF 的性质：
 **导出规则（Derived rules）：** 从 MP 出发可以证明的一些推导规则，用于简化证明。
 - Deduction Rule：<span class="course-math course-math-display" data-tex="\Sigma\cup \{ A \} \vdash B \text{ iff } \Sigma \vdash A\to B" data-display="true"><code>\Sigma\cup \{ A \} \vdash B \text{ iff } \Sigma \vdash A\to B</code></span>
 例如 (Theorem H2) <span class="course-math" data-tex="(A\to B)\to((B\to C)\to(A\to C))" data-display="false"><code>(A\to B)\to((B\to C)\to(A\to C))</code></span> 的证明：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-8.png' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-8" width="516" height="183" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-8.webp' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-8" width="516" height="183" loading="lazy" decoding="async">
 - Contrapositive Rule:
 <span class="course-math course-math-display" data-tex="\text{if } \Sigma\vdash \neg B\to \neg A, \text{then } \Sigma\vdash  A\to B" data-display="true"><code>\text{if } \Sigma\vdash \neg B\to \neg A, \text{then } \Sigma\vdash  A\to B</code></span>
 
@@ -280,7 +280,7 @@ WFF 的性质：
 - <span class="course-math" data-tex="\to\text{i}" data-display="false"><code>\to\text{i}</code></span>：
 <span class="course-math course-math-display" data-tex="\frac{\boxed{\begin{aligned}&#10;\alpha \\&#10;\dots \\&#10;\beta&#10;\end{aligned}}}{\alpha\to\beta}" data-display="true"><code>\frac{\boxed{\begin{aligned}&#10;\alpha \\&#10;\dots \\&#10;\beta&#10;\end{aligned}}}{\alpha\to\beta}</code></span>
 或： 若 <span class="course-math" data-tex="\Sigma,\alpha\vdash_{ND} \beta" data-display="false"><code>\Sigma,\alpha\vdash_{ND} \beta</code></span>，则 <span class="course-math" data-tex="\Sigma\vdash_{ND}(\alpha\to\beta)" data-display="false"><code>\Sigma\vdash_{ND}(\alpha\to\beta)</code></span>。这里被框起来的就是一个子证明（Subproof）。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-9.png' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-9" width="428" height="253" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-9.webp' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-9" width="428" height="253" loading="lazy" decoding="async">
 子证明里面可以用外部的行，外部不可以用子证明里面的行。
 - <span class="course-math" data-tex="\lor\text{i}" data-display="false"><code>\lor\text{i}</code></span> ：
 <span class="course-math course-math-display" data-tex="\frac{\alpha}{(\alpha \lor\beta)}, \frac{\alpha}{(\beta \lor\alpha)}" data-display="true"><code>\frac{\alpha}{(\alpha \lor\beta)}, \frac{\alpha}{(\beta \lor\alpha)}</code></span>
@@ -389,7 +389,7 @@ Theorem: 任何式子 <span class="course-math" data-tex="A\in\text{Form}(\maths
   - 另外， <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的真值表与 （not row 2 and not row4）相同，即 <span class="course-math" data-tex="A\equiv \neg(\neg p\land q)\land \neg(p\land q)\equiv(p\lor \neg q)\land(\neg p\lor \neg q)" data-display="false"><code>A\equiv \neg(\neg p\land q)\land \neg(p\land q)\equiv(p\lor \neg q)\land(\neg p\lor \neg q)</code></span>（CNF）.
 
 将任意式子转化为 DNF/CNF：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-11.png' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-11" width="555" height="248" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Propositional%20Logic%20-%20%E5%91%BD%E9%A2%98%E9%80%BB%E8%BE%91-11.webp' | relative_url }}{% raw %}" alt="Propositional Logic - 命题逻辑-11" width="555" height="248" loading="lazy" decoding="async">
 
 定义 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 为 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的主合取/析取范式（Principal CNF/DNF）：
 - <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 是 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的 CNF/DNF。

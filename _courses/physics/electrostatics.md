@@ -70,7 +70,7 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 当距离电偶极子很远的时候：
 <span class="course-math course-math-display" data-tex="E=\frac{1}{2\pi \varepsilon_{0}} \frac{p}{z^{3}}\text{(electric dipole)}" data-display="true"><code>E=\frac{1}{2\pi \varepsilon_{0}} \frac{p}{z^{3}}\text{(electric dipole)}</code></span>
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6.png' | relative_url }}{% raw %}" alt="Electrostatics - 静电学" width="298" height="308" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6.webp' | relative_url }}{% raw %}" alt="Electrostatics - 静电学" width="298" height="308" loading="lazy" decoding="async">
 则可以推出：
 - 当 <span class="course-math" data-tex="y\gg d" data-display="false"><code>y\gg d</code></span> 时， <span class="course-math" data-tex="E(y)= \frac{\mathbf{p}}{2\pi \varepsilon_{0}y^3}" data-display="false"><code>E(y)= \frac{\mathbf{p}}{2\pi \varepsilon_{0}y^3}</code></span>。
 - 当 <span class="course-math" data-tex="x\gg d" data-display="false"><code>x\gg d</code></span> 时，<span class="course-math" data-tex="\mathbf{E}(x)=- \frac{\mathbf{p}}{4\pi \varepsilon_{0}x^3}" data-display="false"><code>\mathbf{E}(x)=- \frac{\mathbf{p}}{4\pi \varepsilon_{0}x^3}</code></span>。
@@ -137,7 +137,7 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 {: #section-6 }
 
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6-2.png' | relative_url }}{% raw %}" alt="Electrostatics - 静电学-2" width="204" height="271" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6-2.webp' | relative_url }}{% raw %}" alt="Electrostatics - 静电学-2" width="204" height="271" loading="lazy" decoding="async">
 <span class="course-math course-math-display" data-tex="\begin{aligned}&#10;V&amp;=V_{(+)}+V_{(-)}=k\left( \frac{q}{r_{(+)}}-\frac{q}{r_{(-)}} \right) \\&#10;&amp;=kq \frac{r_{(-)}-r_{(+)}}{r_{(+)}r_{{(-)}}}\\&#10;&amp;\xlongequal{r\gg d} kq \frac{\mathrm{d}\cos\theta}{r^{2}}\\&#10;&amp;= \frac{1}{4\pi\varepsilon_{0}} \frac{p\cos\theta}{r^{2}}&#10;\end{aligned}" data-display="true"><code>\begin{aligned}&#10;V&amp;=V_{(+)}+V_{(-)}=k\left( \frac{q}{r_{(+)}}-\frac{q}{r_{(-)}} \right) \\&#10;&amp;=kq \frac{r_{(-)}-r_{(+)}}{r_{(+)}r_{{(-)}}}\\&#10;&amp;\xlongequal{r\gg d} kq \frac{\mathrm{d}\cos\theta}{r^{2}}\\&#10;&amp;= \frac{1}{4\pi\varepsilon_{0}} \frac{p\cos\theta}{r^{2}}&#10;\end{aligned}</code></span>
 
 ## 电容器（Capacitor）
@@ -158,7 +158,7 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 <span class="course-math course-math-display" data-tex="\begin{aligned}&#10;&amp;W=\int v\,\mathrm{d}q=\frac{1}{C}\int q\,\mathrm{d}q=\frac{Q^{2}}{2C}\\&#10;\implies&amp; U=\frac{Q^{2}}{2C}=\frac{1}{2}CV^{2}=\frac{1}{2}QV&#10;\end{aligned}" data-display="true"><code>\begin{aligned}&#10;&amp;W=\int v\,\mathrm{d}q=\frac{1}{C}\int q\,\mathrm{d}q=\frac{Q^{2}}{2C}\\&#10;\implies&amp; U=\frac{Q^{2}}{2C}=\frac{1}{2}CV^{2}=\frac{1}{2}QV&#10;\end{aligned}</code></span>
 能量密度
 <span class="course-math course-math-display" data-tex="u=\frac{U}{Ad}=\frac{\frac{1}{2}CV^{2}}{Ad}=\frac{1}{2}\varepsilon_{0}E^{2}" data-display="true"><code>u=\frac{U}{Ad}=\frac{\frac{1}{2}CV^{2}}{Ad}=\frac{1}{2}\varepsilon_{0}E^{2}</code></span>
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6-3.png' | relative_url }}{% raw %}" alt="Electrostatics - 静电学-3" width="403" height="549" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6-3.webp' | relative_url }}{% raw %}" alt="Electrostatics - 静电学-3" width="403" height="549" loading="lazy" decoding="async">
 若存在电介质（dielectric）：
 <span class="course-math course-math-display" data-tex="E= \frac{\sigma-\sigma_{i}}{\varepsilon_{0}}=\frac{E_{0}}{\frac{\sigma}{\sigma-\sigma_{i}}}=\frac{E_{0}}{\kappa}" data-display="true"><code>E= \frac{\sigma-\sigma_{i}}{\varepsilon_{0}}=\frac{E_{0}}{\frac{\sigma}{\sigma-\sigma_{i}}}=\frac{E_{0}}{\kappa}</code></span>
 其中 <span class="course-math" data-tex="\kappa=\frac{\sigma}{\sigma-\sigma _{i}}&gt;1" data-display="false"><code>\kappa=\frac{\sigma}{\sigma-\sigma _{i}}&gt;1</code></span> 为介电常数（dielectric constant）。

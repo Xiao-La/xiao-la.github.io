@@ -144,13 +144,13 @@ Predicate <span class="course-math" data-tex="P(x_{1},\dots,x_{n})" data-display
 
 
 对于命题逻辑有如下的 **Inference Rules:**
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-1.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-1" width="433" height="108" loading="lazy" decoding="async">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-2.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-2" width="432" height="260" loading="lazy" decoding="async">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-3.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-3" width="434" height="356" loading="lazy" decoding="async">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-4.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-4" width="436" height="259" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-1.webp' | relative_url }}{% raw %}" alt="Logic - 逻辑-1" width="433" height="108" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-2.webp' | relative_url }}{% raw %}" alt="Logic - 逻辑-2" width="432" height="260" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-3.webp' | relative_url }}{% raw %}" alt="Logic - 逻辑-3" width="434" height="356" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-4.webp' | relative_url }}{% raw %}" alt="Logic - 逻辑-4" width="436" height="259" loading="lazy" decoding="async">
 
 对于一阶逻辑：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-5.png' | relative_url }}{% raw %}" alt="Logic - 逻辑-5" width="437" height="395" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-5.webp' | relative_url }}{% raw %}" alt="Logic - 逻辑-5" width="437" height="395" loading="lazy" decoding="async">
 
 
 ## 数学证明（Mathematical Proof）
@@ -204,7 +204,7 @@ Proof by Smallest Counterexample 的证明过程，其实就相当于数学归�
 - （Inductive Step）：<span class="course-math" data-tex="P(b)\land P(b+1)\land\dots  \land P(n-1)\to P(n)" data-display="false"><code>P(b)\land P(b+1)\land\dots  \land P(n-1)\to P(n)</code></span> 对所有 <span class="course-math" data-tex="n&gt; b" data-display="false"><code>n&gt; b</code></span> 成立，那么 <span class="course-math" data-tex="P(n)" data-display="false"><code>P(n)</code></span> 对所有 <span class="course-math" data-tex="n\geq b" data-display="false"><code>n\geq b</code></span> 成立。
 
 格式：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20and%20Proofs%20-%20%E9%80%BB%E8%BE%91%E4%B8%8E%E8%AF%81%E6%98%8E-1.png' | relative_url }}{% raw %}" alt="Logic and Proofs - 逻辑与证明-1" width="440" height="304" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20and%20Proofs%20-%20%E9%80%BB%E8%BE%91%E4%B8%8E%E8%AF%81%E6%98%8E-1.webp' | relative_url }}{% raw %}" alt="Logic and Proofs - 逻辑与证明-1" width="440" height="304" loading="lazy" decoding="async">
 
 
 ## 递归

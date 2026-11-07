@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Export README-listed Obsidian courses without changing the source vault.
 
-Only Python's standard library is needed. Generated files are tracked so a later
-sync can remove stale exports without deleting hand-written website content.
+Only Python's standard library and `cwebp` (for large PNG/JPEG attachments) are
+needed. Generated files are tracked so a later sync can remove stale exports
+without deleting hand-written website content.
 """
 import argparse
 from collections import defaultdict
@@ -14,10 +15,15 @@ from pathlib import Path
 import re
 import shutil
 import struct
+import subprocess
 from urllib.parse import quote, unquote, urlsplit
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
+# Large slide screenshots are published as WebP; q90 keeps text edges sharp.
+WEBP_MIN_BYTES = 50_000
+WEBP_MAX_RATIO = 0.9
+WEBP_ARGS = ['-quiet', '-q', '90', '-m', '6', '-metadata', 'none']
 FENCE = re.compile(r"(?m)^ {0,3}(`{3,}|~{3,})([^\n]*)\n([\s\S]*?)^ {0,3}\1[ \t]*$")
 CODE = re.compile(r"(`+)([^`\n]*?)\1")
 MATH = re.compile(r"(?<!\\)\$\$([\s\S]*?)(?<!\\)\$\$|(?<![\\$])\$(?!\$)([^\n$]*?)(?<!\\)\$(?!\$)")
@@ -113,12 +119,12 @@ def normalize_tables(text):
 
 
 class Exporter:
-    def __init__(self, vault, courses):
-        self.vault, self.courses = vault, courses
+    def __init__(self, vault, courses, cache=ROOT/'.course-cache'/'webp'):
+        self.vault, self.courses, self.cache = vault, courses, cache
         self.files = sorted(p for p in vault.rglob('*') if p.is_file()
                             and not any(part.startswith('.') for part in p.relative_to(vault).parts))
         self.notes = {}
-        self.assets = set()
+        self.assets = {}  # published path -> file to copy
         self.links = []
         self.stats = defaultdict(int)
         self.warnings = []
@@ -214,8 +220,35 @@ class Exporter:
     def asset_url(self, path):
         if path.suffix.lower() not in {'.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.pdf'}:
             raise ValueError(f'Unsupported public attachment: {path}')
-        self.assets.add(path)
-        return '/assets/courses/' + quote(str(path.relative_to(self.vault)), safe='/')
+        published, source = path.relative_to(self.vault), path
+        webp = self.webp(path)
+        if webp:
+            published, source = published.with_suffix('.webp'), webp
+        name = f'assets/courses/{published}'
+        if self.assets.get(name, source) != source:
+            raise ValueError(f'Two attachments publish to {name}')
+        self.assets[name] = source
+        return '/' + quote(name, safe='/')
+
+    def webp(self, path):
+        """Return a cached WebP copy of a large PNG/JPEG, or None to publish it as is."""
+        if path.suffix.lower() not in {'.png', '.jpg', '.jpeg'} or path.stat().st_size <= WEBP_MIN_BYTES:
+            return None
+        data = path.read_bytes()
+        key = hashlib.sha256(data + ' '.join(WEBP_ARGS).encode()).hexdigest()
+        out, skip = self.cache/f'{key}.webp', self.cache/f'{key}.skip'
+        if not out.exists() and not skip.exists():
+            if not shutil.which('cwebp'):
+                raise SystemExit('cwebp is required for large course images (brew install webp)')
+            self.cache.mkdir(parents=True, exist_ok=True)
+            tmp = out.with_suffix('.tmp')
+            subprocess.run(['cwebp', *WEBP_ARGS, str(path), '-o', str(tmp)], check=True)
+            if tmp.stat().st_size <= len(data) * WEBP_MAX_RATIO:
+                tmp.replace(out)
+            else:
+                tmp.unlink()
+                skip.touch()
+        return out if out.exists() else None
 
     def wiki(self, source, match):
         embed, value = match[1], match[2]
@@ -391,7 +424,7 @@ class Exporter:
             public_courses.append(public)
         output['_data/courses.json'] = dump(public_courses)
         output['_data/course_references.json'] = dump([{k: v for k, v in n.items() if k != 'source_path'} for n in references])
-        asset_files = {f'assets/courses/{p.relative_to(self.vault)}': p for p in self.assets}
+        asset_files = dict(self.assets)
         generated = sorted([*output, *asset_files, 'reports/courses-sync.json'])
         report = {'source_readme_sha256': hashlib.sha256((self.vault/'README.md').read_bytes()).hexdigest(),
                   'courses': len(self.courses), 'course_notes': sum(c['count'] for c in self.courses),

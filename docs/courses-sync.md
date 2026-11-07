@@ -17,7 +17,7 @@ Obsidian 是正文的编辑源，博客保存可直接由 GitHub Pages 构建的
 
 ## 文件与入口
 
-- `scripts/sync_courses.py`：仅依赖 Python 3 标准库的同步命令。
+- `scripts/sync_courses.py`：依赖 Python 3 标准库的同步命令；超过 50KB 的 PNG/JPEG 用 `cwebp`（`brew install webp`）以 q90 转成 WebP 发布，压缩不足 10% 的保留原图。转码结果按源文件哈希缓存在已忽略的 `.course-cache/`，Obsidian 中的原图不变。
 - `scripts/courses.json`：课程范围映射。只修改这里和原始笔记，不编辑生成正文。
 - `_courses/`：生成的课程索引、正文和补充材料。URL 在 front matter 中显式指定。
 - `_data/courses.json`、`_data/course_references.json`：生成的目录数据。

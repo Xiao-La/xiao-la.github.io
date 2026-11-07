@@ -42,7 +42,7 @@ excerpt: "数据结构与算法分析 · Data Structures"
 
 后进先出（last-in, first-out / LIFO）。可以用数组实现：
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures.png' | relative_url }}{% raw %}" alt="Data Structures" width="363" height="296" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures.webp' | relative_url }}{% raw %}" alt="Data Structures" width="363" height="296" loading="lazy" decoding="async">
 
 
 ### 队列（Queue） 
@@ -51,7 +51,7 @@ excerpt: "数据结构与算法分析 · Data Structures"
 
 先进先出（first-in, first-out / FIFO）。也可以用数组实现：
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-1.png' | relative_url }}{% raw %}" alt="Data Structures-1" width="360" height="299" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-1.webp' | relative_url }}{% raw %}" alt="Data Structures-1" width="360" height="299" loading="lazy" decoding="async">
 
 这些操作都是 <span class="course-math" data-tex="O(1)" data-display="false"><code>O(1)</code></span> 的。
 
@@ -62,9 +62,9 @@ excerpt: "数据结构与算法分析 · Data Structures"
 
 用一个堆来实现。这里就是把出队操作变成弹出具有最大/最小的 key 的元素。另外，以最大堆实现的 max-priority queue为例，还可以支持增大一个元素的 key，只需要 float up 即可。
 - **handle:** 把一个对象与它在一个数据结构（比如堆）中的位置映射起来。在操作中我们也要去维护每个对象的 handle。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-2.png' | relative_url }}{% raw %}" alt="Data Structures-2" width="393" height="276" loading="lazy" decoding="async">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-3.png' | relative_url }}{% raw %}" alt="Data Structures-3" width="391" height="141" loading="lazy" decoding="async">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-4.png' | relative_url }}{% raw %}" alt="Data Structures-4" width="395" height="250" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-2.webp' | relative_url }}{% raw %}" alt="Data Structures-2" width="393" height="276" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-3.webp' | relative_url }}{% raw %}" alt="Data Structures-3" width="391" height="141" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-4.webp' | relative_url }}{% raw %}" alt="Data Structures-4" width="395" height="250" loading="lazy" decoding="async">
 
 这些操作最多都是 <span class="course-math" data-tex="O(\log n)" data-display="false"><code>O(\log n)</code></span> 的。
 
@@ -78,8 +78,8 @@ excerpt: "数据结构与算法分析 · Data Structures"
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-8.png' | relative_url }}{% raw %}" alt="Data Structures-8" width="2046" height="254" loading="lazy" decoding="async">
 一些支持的操作：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-5.png' | relative_url }}{% raw %}" alt="Data Structures-5" width="468" height="150" loading="lazy" decoding="async">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-6.png' | relative_url }}{% raw %}" alt="Data Structures-6" width="473" height="204" loading="lazy" decoding="async">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-7.png' | relative_url }}{% raw %}" alt="Data Structures-7" width="479" height="219" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-6.webp' | relative_url }}{% raw %}" alt="Data Structures-6" width="473" height="204" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-7.webp' | relative_url }}{% raw %}" alt="Data Structures-7" width="479" height="219" loading="lazy" decoding="async">
 如果我们创建一个 dummy 的 sentinel 元素，记为 <span class="course-math" data-tex="L.nil" data-display="false"><code>L.nil</code></span>，令它的后继为 head，前驱为 tail，那么就得到一个双向的循环链表，这里上述的代码可以简化，因为一些边界情况不用考虑了。
 
 这里插入和删除一个已知的元素都是 <span class="course-math" data-tex="O(1)" data-display="false"><code>O(1)</code></span> 的。搜索是 <span class="course-math" data-tex="O(n)" data-display="false"><code>O(n)</code></span> 的。

@@ -80,5 +80,5 @@ Program Variables / Logic Variables：因为程序中的变量会变，在 Hoare
 - Partial-While：
 <span class="course-math course-math-display" data-tex="\frac{&#10;    (\!\lvert  I \land B \rvert \!) \; C \; (\!\lvert  I \rvert \!)&#10;}{&#10;    (\!\lvert  I \rvert \!) \text{ while } B \; \{C\} \; (\!\lvert  I \land \neg B \rvert \!)&#10;}" data-display="true"><code>\frac{&#10;    (\!\lvert  I \land B \rvert \!) \; C \; (\!\lvert  I \rvert \!)&#10;}{&#10;    (\!\lvert  I \rvert \!) \text{ while } B \; \{C\} \; (\!\lvert  I \land \neg B \rvert \!)&#10;}</code></span>
 这里 <span class="course-math" data-tex="I" data-display="false"><code>I</code></span> 就是一个 Loop Invariant。需要合适地选取一个循环不变式，用来完成我们的证明。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Program%20Verification%20-%20%E7%A8%8B%E5%BA%8F%E9%AA%8C%E8%AF%81-4.png' | relative_url }}{% raw %}" alt="Program Verification - 程序验证-4" width="487" height="409" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Program%20Verification%20-%20%E7%A8%8B%E5%BA%8F%E9%AA%8C%E8%AF%81-4.webp' | relative_url }}{% raw %}" alt="Program Verification - 程序验证-4" width="487" height="409" loading="lazy" decoding="async">
 {% endraw %}

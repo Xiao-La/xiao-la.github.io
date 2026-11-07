@@ -1,7 +1,10 @@
 import importlib.util
 from pathlib import Path
+import shutil
+import struct
 import tempfile
 import unittest
+import zlib
 
 spec = importlib.util.spec_from_file_location('sync_courses', Path(__file__).resolve().parents[1]/'scripts/sync_courses.py')
 sync = importlib.util.module_from_spec(spec)
@@ -133,6 +136,47 @@ class CourseExportTests(unittest.TestCase):
         self.assertIn(pdf, assets.values())
         self.assertNotIn(other, assets.values())
         self.assertEqual(report['pdf_resources'], 1)
+
+    def write_png(self, name, width=300, height=200):
+        """Write an uncompressed gradient PNG, large enough to be converted."""
+        rows = b''.join(b'\0' + b''.join(bytes((x % 256, y % 256, 128)) for x in range(width))
+                        for y in range(height))
+        def chunk(kind, data):
+            return struct.pack('>I', len(data)) + kind + data + struct.pack('>I', zlib.crc32(kind + data))
+        png = (b'\x89PNG\r\n\x1a\n' + chunk(b'IHDR', struct.pack('>IIBBBBB', width, height, 8, 2, 0, 0, 0))
+               + chunk(b'IDAT', zlib.compress(rows, 0)) + chunk(b'IEND', b''))
+        p = self.vault/name
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_bytes(png)
+        return p
+
+    @unittest.skipUnless(shutil.which('cwebp'), 'cwebp not installed')
+    def test_large_images_are_published_as_webp_and_small_ones_unchanged(self):
+        big = self.write_png('笔记依赖/图片/Slide.png')
+        small = self.write('笔记依赖/图片/Icon.png', 'image')
+        p = self.write('Example/First.md', '![[Slide.png]]\n![[Icon.png]]')
+        e = sync.Exporter(self.vault, [self.course.copy()], cache=self.vault/'.cache')
+        e.collect()
+        result = e.convert(p)
+        self.assertIn('/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Slide.webp', result)
+        self.assertIn('width="300" height="200"', result)
+        self.assertIn('Icon.png', result)
+        webp = e.assets['assets/courses/笔记依赖/图片/Slide.webp']
+        self.assertEqual(webp.read_bytes()[8:12], b'WEBP')
+        self.assertLess(webp.stat().st_size, big.stat().st_size)
+        self.assertEqual(e.assets['assets/courses/笔记依赖/图片/Icon.png'], small)
+
+    @unittest.skipUnless(shutil.which('cwebp'), 'cwebp not installed')
+    def test_images_that_barely_shrink_keep_their_format(self):
+        big = self.write_png('笔记依赖/图片/Slide.png')
+        self.write('Example/First.md', '![[Slide.png]]')
+        ratio, sync.WEBP_MAX_RATIO = sync.WEBP_MAX_RATIO, 0.0001
+        try:
+            e = sync.Exporter(self.vault, [self.course.copy()], cache=self.vault/'.cache')
+            output, assets, report = e.export()
+        finally:
+            sync.WEBP_MAX_RATIO = ratio
+        self.assertEqual(assets['assets/courses/笔记依赖/图片/Slide.png'], big)
 
     def test_table_followed_by_paragraph_gets_a_block_boundary(self):
         p = self.write('Example/First.md', '| A | B |\n| --- | --- |\n| $a$ | $b$ |\n**Next paragraph**')

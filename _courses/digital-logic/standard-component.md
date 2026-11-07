@@ -29,7 +29,7 @@ excerpt: "数字逻辑 · Standard Component - 标准组件"
 例如： **3-to-8-Line Decoder.**
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Standard%20Component%20-%20%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6.png' | relative_url }}{% raw %}" alt="Standard Component - 标准组件" width="538" height="188" loading="lazy" decoding="async">
 可以用框图来省略 decoder 内部的内容。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Standard%20Component%20-%20%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6-1.png' | relative_url }}{% raw %}" alt="Standard Component - 标准组件-1" width="1954" height="1090" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Standard%20Component%20-%20%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6-1.webp' | relative_url }}{% raw %}" alt="Standard Component - 标准组件-1" width="1954" height="1090" loading="lazy" decoding="async">
 这种 decoder 实际上生成了所有的 minterm。把它们连出来可以造出 SOM 形式的输出。
 
 其他 decoder 的例子：
@@ -43,10 +43,10 @@ excerpt: "数字逻辑 · Standard Component - 标准组件"
 使能信号 Decoder (Enable)：有一个 Enable 信号，控制电路是否生效。
 反向的 Enable（Active Low）
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Standard%20Component%20-%20%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6-2.png' | relative_url }}{% raw %}" alt="Standard Component - 标准组件-2" width="2164" height="464" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Standard%20Component%20-%20%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6-2.webp' | relative_url }}{% raw %}" alt="Standard Component - 标准组件-2" width="2164" height="464" loading="lazy" decoding="async">
 
 两个 3x8 decoder（带 enable 信号）可以拼成一个 4x16 decoder：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Standard%20Component%20-%20%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6-3.png' | relative_url }}{% raw %}" alt="Standard Component - 标准组件-3" width="2558" height="1352" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Standard%20Component%20-%20%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6-3.webp' | relative_url }}{% raw %}" alt="Standard Component - 标准组件-3" width="2558" height="1352" loading="lazy" decoding="async">
 这里通过 <span class="course-math" data-tex="w" data-display="false"><code>w</code></span> 控制使能信号：<span class="course-math" data-tex="w=0" data-display="false"><code>w=0</code></span> 时上面的 decoder 使能，<span class="course-math" data-tex="w=1" data-display="false"><code>w=1</code></span> 时下面的 decoder 使能。
 
 其他：BCD-to-7-Segment Display Decoder
@@ -73,12 +73,12 @@ MUX 可以用来实现某个真值表。例如要实现 AND gate：
 
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Standard%20Component%20-%20%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6-7.png' | relative_url }}{% raw %}" alt="Standard Component - 标准组件-7" width="530" height="159" loading="lazy" decoding="async">
 类似的，一个 3 输入的真值表，也可以从 8:1 MUX 化简成 4:1 MUX 来实现。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Standard%20Component%20-%20%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6-8.png' | relative_url }}{% raw %}" alt="Standard Component - 标准组件-8" width="445" height="200" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Standard%20Component%20-%20%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6-8.webp' | relative_url }}{% raw %}" alt="Standard Component - 标准组件-8" width="445" height="200" loading="lazy" decoding="async">
 如果再化简呢？用 2:1 MUX，也可以实现：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Standard%20Component%20-%20%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6-9.png' | relative_url }}{% raw %}" alt="Standard Component - 标准组件-9" width="430" height="216" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Standard%20Component%20-%20%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6-9.webp' | relative_url }}{% raw %}" alt="Standard Component - 标准组件-9" width="430" height="216" loading="lazy" decoding="async">
 
 另一方面，也可以用小的 MUX 去直接实现更宽的 MUX。例如下图中用 3 个 2:1 MUX 实现了一个 4:1 MUX。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Standard%20Component%20-%20%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6-10.png' | relative_url }}{% raw %}" alt="Standard Component - 标准组件-10" width="488" height="222" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Standard%20Component%20-%20%E6%A0%87%E5%87%86%E7%BB%84%E4%BB%B6-10.webp' | relative_url }}{% raw %}" alt="Standard Component - 标准组件-10" width="488" height="222" loading="lazy" decoding="async">
 
 
 ## 编码器（Encoder）
