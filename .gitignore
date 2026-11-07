@@ -12,6 +12,8 @@ assets/vendor/*
 !assets/vendor/mathjax/**
 !assets/vendor/pseudocode/
 !assets/vendor/pseudocode/**
+!assets/vendor/waline/
+!assets/vendor/waline/**
 .course-test-results/
 node_modules/
 __pycache__/

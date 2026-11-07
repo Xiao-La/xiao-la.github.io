@@ -4,27 +4,27 @@
       <div>
         <h2 class="comments-title" id="comments-title">评论</h2>
       </div>
-      <p id="{{ page.url }}" class="visitor-count leancloud_visitors" data-flag-title="{{ page.title | escape }}" aria-label="正在读取页面访问次数">
+      <p class="visitor-count" aria-label="正在读取页面访问次数">
         <span class="visitor-icon" aria-hidden="true"></span>
         <span>阅读</span>
-        <strong class="leancloud-visitors-count" aria-live="polite">加载中</strong>
+        <strong class="waline-pageview-count" data-path="{{ page.url | url_decode | escape }}" aria-live="polite">加载中</strong>
         <span class="visitor-count-suffix">次</span>
       </p>
     </header>
 
-    <div id="vcomments"></div>
+    <div id="waline"></div>
     <p class="comments-status" id="comments-status" role="status" hidden>评论服务暂时无法加载，请稍后再试。</p>
     <noscript><p class="comments-status">启用 JavaScript 后即可查看和发表评论。</p></noscript>
   </section>
 
   <!-- Keep browser dependencies on the same origin as the GitHub Pages site. -->
-  <script src="{{ '/assets/vendor/leancloud-storage/3.15.0/av-min.js' | relative_url }}"></script>
-  <script src="{{ '/assets/vendor/valine/1.5.2/Valine.min.js' | relative_url }}"></script>
+  <link rel="stylesheet" href="{{ '/assets/vendor/waline/3.16.1/waline.css' | relative_url }}">
+  <script src="{{ '/assets/vendor/waline/3.16.1/waline.umd.js' | relative_url }}"></script>
   <script>
     (function () {
       var status = document.getElementById('comments-status');
       var visitor = document.querySelector('.visitor-count');
-      var visitorValue = visitor.querySelector('.leancloud-visitors-count');
+      var visitorValue = visitor.querySelector('.waline-pageview-count');
       var visitorSuffix = visitor.querySelector('.visitor-count-suffix');
 
       function markVisitorUnavailable() {
@@ -41,21 +41,24 @@
         markVisitorUnavailable();
       }
 
-      if (!window.AV || !window.Valine) {
+      if (!window.Waline) {
         showCommentsUnavailable();
         return;
       }
 
       try {
-        new Valine({
-          el: '#vcomments',
-          appId: {{ site.comments.valine.app_id | jsonify }},
-          appKey: {{ site.comments.valine.app_key | jsonify }},
-          placeholder: '写下你的评论…',
-          serverURLs: {{ site.comments.valine.server_url | jsonify }},
-          path: {{ page.url | jsonify }},
+        // Key comments and counters by the decoded page.url, matching the migrated Valine data.
+        Waline.init({
+          el: '#waline',
+          serverURL: {{ site.comments.waline.server_url | jsonify }},
+          path: {{ page.url | url_decode | jsonify }},
           lang: 'zh-CN',
-          visitor: true
+          locale: { placeholder: '写下你的评论…' },
+          pageview: true,
+          comment: false,
+          emoji: false,
+          search: false,
+          imageUploader: false
         });
 
         window.setTimeout(function () {
@@ -67,7 +70,7 @@
         }, 10000);
       } catch (error) {
         showCommentsUnavailable();
-        console.error('Valine failed to initialize:', error);
+        console.error('Waline failed to initialize:', error);
       }
     }());
   </script>

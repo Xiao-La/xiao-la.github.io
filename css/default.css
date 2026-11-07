@@ -894,58 +894,33 @@ a.contact-item small,
   text-align: center;
 }
 
-/* Bring Valine's injected interface into the site's visual language. */
-.comments-panel .v[data-class="v"] {
+/* Bring Waline's injected interface into the site's visual language. */
+.comments-panel {
+  --waline-font-size: 0.9em;
+  --waline-theme-color: #204a87;
+  --waline-active-color: #2c5fa8;
+  --waline-color: #444;
+  --waline-border-color: #d8dee7;
+  --waline-badge-color: #204a87;
+}
+
+.comments-panel [data-waline] {
   color: #555;
-  font-size: 0.9em;
 }
 
-.comments-panel .v[data-class="v"] .vwrap {
-  overflow: hidden;
-  border: 1px solid #d8dee7;
+.comments-panel [data-waline] .wl-panel {
+  margin: 0;
   border-radius: 6px;
-  background: #ffffff;
 }
 
-.comments-panel .v[data-class="v"] .vheader .vinput {
-  border-bottom-color: #e3e7ed;
-  color: #444;
-}
-
-.comments-panel .v[data-class="v"] .vedit .veditor {
-  color: #444;
+.comments-panel [data-waline] .wl-editor,
+.comments-panel [data-waline] .wl-input {
   font-family: inherit;
 }
 
-.comments-panel .v[data-class="v"] .vbtn {
-  border: 1px solid #204a87;
-  border-radius: 4px;
-  color: #204a87;
-}
-
-.comments-panel .v[data-class="v"] .vbtn:hover,
-.comments-panel .v[data-class="v"] .vsubmit {
-  border-color: #204a87;
-  background: #204a87;
-  color: #ffffff;
-}
-
-.comments-panel .v[data-class="v"] .vcard {
-  padding-top: 1em;
-  border-top: 1px solid #eeeeee;
-}
-
-.comments-panel .v[data-class="v"] .vcard .vhead .vnick {
-  color: #204a87;
-}
-
-.comments-panel .v[data-class="v"] .vpower {
+.comments-panel [data-waline] .wl-power {
   color: #999;
   font-size: 0.75em;
-}
-
-.comments-panel .v[data-class="v"] .vpower a {
-  color: #204a87;
 }
 
 .site-footer {

@@ -7,7 +7,7 @@ const base=process.env.AUDIT_BASE;
  const browser=await chromium.launch({headless:true}); let cursor=0; const results=fs.existsSync(`${out}/browser.json`)?JSON.parse(fs.readFileSync(`${out}/browser.json`)).filter(x=>!x.error):[]; let done=results.length; const todo=manifest.map((x,i)=>({...x,number:i})).filter(x=>!results.some(r=>r.number===x.number));
  await Promise.all(Array.from({length:4},async(_,worker)=>{
   const ctx=await browser.newContext({viewport:{width:1280,height:900}});
-  await ctx.route('**/*',route=>{const u=route.request().url(); if(/leancloud|valine|unpkg.com|counter\.vercel|busuanzi/.test(u))return route.abort(); return route.continue();});
+  await ctx.route('**/*',route=>{const u=route.request().url(); if(/leancloud|valine|waline|unpkg.com|counter\.vercel|busuanzi/.test(u))return route.abort(); return route.continue();});
   const page=await ctx.newPage();
   while(cursor<todo.length){
    const item=todo[cursor++],n=item.number,errors=[]; const fail=[]; const rec={...item,number:n}; delete rec.file;

@@ -57,10 +57,8 @@ defaults:
 # External services are configured here instead of inside templates.
 comments:
   enabled: true
-  valine:
-    app_id: YHAa8KVAgllvIvixOSZFNLjZ-MdYXbMMI
-    app_key: ZGi29AAOtj9dSsltGGpBDYb8
-    server_url: https://valine.joyslog.top
+  waline:
+    server_url: https://waline.joyslog.top
 
 exclude:
   - Gemfile
