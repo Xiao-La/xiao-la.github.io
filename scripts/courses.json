@@ -182,5 +182,14 @@
     "sources": [
       "其他通识课/科学哲学"
     ]
+  },
+  {
+    "id": "differential-geometry",
+    "title": "微分几何",
+    "coverage": "持续补充",
+    "status": "updating",
+    "sources": [
+      "数学/微分几何"
+    ]
   }
 ]

@@ -5,7 +5,7 @@ course_title: "概率与统计"
 section: ""
 status: "updating"
 created_at: "2026-10-10T16:52:41+08:00"
-updated_at: "2026-11-06T22:04:32+08:00"
+updated_at: "2026-11-07T20:24:04+08:00"
 reference: false
 order: 4
 layout: "course"

@@ -949,7 +949,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-10-10T16:52:41+08:00",
-        "updated_at": "2026-11-06T22:04:32+08:00",
+        "updated_at": "2026-11-07T20:24:04+08:00",
         "reference": false,
         "order": 4
       }
@@ -1235,6 +1235,41 @@
         "updated_at": "2026-10-24T21:54:26+08:00",
         "reference": false,
         "order": 1
+      }
+    ],
+    "resources": []
+  },
+  {
+    "id": "differential-geometry",
+    "title": "微分几何",
+    "coverage": "持续补充",
+    "status": "updating",
+    "url": "/courses/differential-geometry/",
+    "count": 2,
+    "notes": [
+      {
+        "title": "Manifold - 流形",
+        "url": "/courses/differential-geometry/manifold/",
+        "course_id": "differential-geometry",
+        "course_title": "微分几何",
+        "section": "",
+        "status": "updating",
+        "created_at": "2026-10-15T15:36:26+08:00",
+        "updated_at": "2026-11-08T17:51:58+08:00",
+        "reference": false,
+        "order": 1
+      },
+      {
+        "title": "Coordinate Systems and Vectors - 坐标系与向量",
+        "url": "/courses/differential-geometry/coordinate-systems-and-vectors/",
+        "course_id": "differential-geometry",
+        "course_title": "微分几何",
+        "section": "",
+        "status": "updating",
+        "created_at": "2026-11-03T10:28:31+08:00",
+        "updated_at": "2026-11-08T17:53:05+08:00",
+        "reference": false,
+        "order": 2
       }
     ],
     "resources": []
