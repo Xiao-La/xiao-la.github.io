@@ -8,13 +8,36 @@ body {
   padding: 8px;
 }
 
+/* Images, tables, code blocks and pseudocode in articles and course notes
+   share one square card frame. Lines inside a card stay lighter than its edge. */
+:root {
+  --card-border: 1.5px solid #8c959f;
+  --card-shadow: 0 2px 6px rgba(31, 35, 40, .2);
+  --card-line: #a8b1ba;
+}
+
 .article-table-scroll, .article-math-display {
   max-width: 100%;
   overflow-x: auto;
 }
 
-.article-table-scroll {
-  margin: 1em 0;
+.article-table-scroll, .course-table-scroll {
+  margin: 1.25em 0;
+  box-sizing: border-box;
+  border: var(--card-border);
+  background: #fff;
+  box-shadow: var(--card-shadow);
+}
+
+/* The card is the table's outer edge; keep only the inner cell lines. */
+:is(.article-table-scroll, .course-table-scroll) table { border-style: hidden; }
+
+.main article img:not(.emoji) {
+  box-sizing: border-box;
+  padding: .35em;
+  border: var(--card-border);
+  background: #fff;
+  box-shadow: var(--card-shadow);
 }
 
 .article-math-display, .course-math-display {
@@ -162,7 +185,7 @@ pre code {
   white-space: pre;
 }
 
-.main pre { background-color: #f6f8fa; border-color: #dde2e7; border-radius: 5px; }
+.main pre { background-color: #f6f8fa; border: var(--card-border); border-radius: 0; box-shadow: var(--card-shadow); }
 
 a {
   text-decoration: none;
@@ -946,14 +969,14 @@ table:not(.rouge-table) {
 
 :where(table:not(.rouge-table)) > :where(thead, tbody, tfoot) > tr > :where(th, td) {
   padding: .65em .85em;
-  border: 1px solid #ddd;
+  border: 1px solid var(--card-line);
   vertical-align: top;
 }
 
 :where(table:not(.rouge-table)) > :where(thead, tbody, tfoot) > tr > th {
   font-weight: 600;
   background-color: #f0f3f6;
-  border-bottom: 2px solid #cfd7df;
+  border-bottom: 2px solid var(--card-line);
 }
 
 table:not(.rouge-table) > tbody > tr:nth-child(2n) {
@@ -965,6 +988,6 @@ table:not(.rouge-table) > tbody > tr:nth-child(2n) {
 .rouge-table td { padding: 0; border: 0; vertical-align: top; }
 .rouge-table td.gutter { padding-right: 1em; color: #777; border-right: 1px solid #dde2e7; }
 .rouge-table td.code { padding-left: 1em; }
-.main .rouge-table pre { margin: 0; padding: 0; border: 0; background: transparent; border-radius: 0; font: inherit; overflow: visible; }
+.main .rouge-table pre { margin: 0; padding: 0; border: 0; background: transparent; border-radius: 0; box-shadow: none; font: inherit; overflow: visible; }
 .study-report table { min-width: 36em; }
 .study-report td:nth-child(2), .study-report td:nth-child(3) { white-space: nowrap; }

@@ -9,7 +9,7 @@
 const PS = {};
 
 /* ------------------------------------------------------------------ */
-/* AST constructors                                                    */
+/* AST helpers                                                         */
 /* ------------------------------------------------------------------ */
 
 let uid = 0;
@@ -19,81 +19,128 @@ PS.node = function node(type, fields) {
   return Object.assign({ id: PS.nextId(), type }, fields || {});
 };
 
-PS.isContainer = (node) => ['if', 'while', 'for', 'repeat', 'function'].includes(node.type);
+PS.CONTAINERS = new Set(['if', 'while', 'for', 'repeat', 'function']);
+PS.isContainer = (node) => PS.CONTAINERS.has(node.type);
 
-PS.bodyOf = function bodyOf(node) {
+/** Every statement list directly owned by `node` (if: branches, then else). */
+PS.childLists = function childLists(node) {
   if (node.type === 'if') {
-    const branch = node.branches[node.branches.length - 1];
-    return branch ? branch.body : [];
+    const lists = node.branches.map((branch) => branch.body);
+    if (Array.isArray(node.elseBody)) lists.push(node.elseBody);
+    return lists;
   }
-  return node.body || [];
+  return Array.isArray(node.body) ? [node.body] : [];
+};
+
+/** Depth-first walk; visit(node, array, index, parent). */
+PS.walk = function walk(nodes, visit, parent = null) {
+  nodes.forEach((node, index) => {
+    visit(node, nodes, index, parent);
+    PS.childLists(node).forEach((list) => walk(list, visit, node));
+  });
 };
 
 /**
- * Move a node within the tree. `mode` is 'before' | 'after' | 'inside'.
- * Refuses to move a node into its own subtree.
+ * The statement list of a container that new children go into. For an if,
+ * `slot` is a branch index or 'else'; without a slot it is the last segment
+ * (else when present), which is what sits visually right above the next row.
  */
-PS.reorder = function reorder(nodes, dragId, targetId, mode) {
+PS.slotBody = function slotBody(node, slot) {
+  if (node.type === 'if') {
+    if (slot === 'else' && node.elseBody) return node.elseBody;
+    if (Number.isInteger(slot) && node.branches[slot]) return node.branches[slot].body;
+    return node.elseBody || node.branches[node.branches.length - 1].body;
+  }
+  return node.body || [];
+};
+PS.bodyOf = (node) => PS.slotBody(node);
+
+/**
+ * Move a node within the tree. `mode` is 'before' | 'after' | 'inside'
+ * (`slot` picks the if segment for 'inside'). Refuses to move a node into
+ * its own subtree.
+ */
+PS.reorder = function reorder(nodes, dragId, targetId, mode, slot) {
   if (!dragId || !targetId || dragId === targetId) return false;
-  const build = () => {
-    const map = new Map();
-    const walk = (array, parent) => {
-      array.forEach((node, position) => {
-        map.set(node.id, { node, array, position, parent });
-        if (Array.isArray(node.branches)) node.branches.forEach((branch) => walk(branch.body, node));
-        if (Array.isArray(node.elseBody)) walk(node.elseBody, node);
-        if (Array.isArray(node.body)) walk(node.body, node);
-      });
-    };
-    walk(nodes, null);
-    return map;
+  const locate = (id) => {
+    let found = null;
+    PS.walk(nodes, (node, array, index) => {
+      if (node.id === id) found = { node, array, index };
+    });
+    return found;
   };
-  let map = build();
-  const drag = map.get(dragId);
-  const target = map.get(targetId);
+  const drag = locate(dragId);
+  const target = locate(targetId);
   if (!drag || !target) return false;
   if (mode === 'inside' && !PS.isContainer(target.node)) return false;
-  const contains = (node, id) => {
-    if (node.id === id) return true;
-    if (Array.isArray(node.branches)) return node.branches.some((branch) => branch.body.some((child) => contains(child, id)));
-    if (Array.isArray(node.elseBody)) return node.elseBody.some((child) => contains(child, id));
-    if (Array.isArray(node.body)) return node.body.some((child) => contains(child, id));
-    return false;
-  };
-  if (contains(drag.node, targetId)) return false;
+  let inside = false;
+  PS.walk([drag.node], (node) => { if (node.id === targetId) inside = true; });
+  if (inside) return false;
 
-  drag.array.splice(drag.position, 1);
-  map = build();
-  const nextTarget = map.get(targetId);
-  if (!nextTarget) return false;
+  drag.array.splice(drag.index, 1);
   if (mode === 'inside') {
-    PS.bodyOf(nextTarget.node).push(drag.node);
+    PS.slotBody(target.node, slot).push(drag.node);
   } else {
-    nextTarget.array.splice(nextTarget.position + (mode === 'after' ? 1 : 0), 0, drag.node);
+    const next = locate(targetId);
+    next.array.splice(next.index + (mode === 'after' ? 1 : 0), 0, drag.node);
   }
   return true;
 };
 
-/** Normalize LaTeX operators typed in the builder, without touching fonts. */
+/* ------------------------------------------------------------------ */
+/* Operators                                                           */
+/* ------------------------------------------------------------------ */
+
+/** LaTeX / alternative spellings → the canonical ASCII form the builder shows. */
+const OPERATOR_ALIASES = [
+  [/\\neq\b/g, '!='],
+  [/\\ne\b/g, '!='],
+  [/\\leq?\b/g, '<='],
+  [/\\geq?\b/g, '>='],
+  [/\\gets\b/g, '='],
+  [/:=/g, '='],
+  [/<-|←/g, '='],
+  [/<>/g, '!='],
+  [/&&/g, 'and'],
+  [/\|\|/g, 'or'],
+  [/\\(?:land|And)\b/g, 'and'],
+  [/\\(?:lor|Or)\b/g, 'or'],
+  [/\\(?:lnot|Not)\b/g, 'not'],
+];
+
+/** Canonical ASCII operators → TeX. */
+const SYMBOL_TEX = [
+  [/<=/g, '\\le '],
+  [/>=/g, '\\ge '],
+  [/!=/g, '\\ne '],
+  [/->/g, '\\to '],
+];
+const WORD_TEX = [
+  [/(?<!\\)\band\b/g, '\\land '],
+  [/(?<!\\)\bor\b/g, '\\lor '],
+  [/(?<!\\)\bnot\b/g, '\\lnot '],
+];
+
+const applyAll = (text, table) => table.reduce((value, [pattern, replacement]) => value.replace(pattern, replacement), text);
+
+/** Normalize operators typed in the builder (or read from LaTeX) to ASCII. */
 PS.normalizeOperators = function normalizeOperators(text) {
-  return String(text == null ? '' : text)
-    .replace(/\\neq\b/g, '!=')
-    .replace(/\\ne\b/g, '!=')
-    .replace(/\\le\b/g, '<=')
-    .replace(/\\ge\b/g, '>=')
-    .replace(/\\gets\b/g, '=')
-    .replace(/:=/g, '=')
-    .replace(/<-|←/g, '=')
-    .replace(/<>/g, '!=')
-    .replace(/&&/g, 'and')
-    .replace(/\|\|/g, 'or')
-    .replace(/\\to\b/g, 'to')
-    .replace(/\\land\b/g, 'and')
-    .replace(/\\lor\b/g, 'or')
-    .replace(/\\lnot\b/g, 'not')
-    .replace(/\\And\b/g, 'and')
-    .replace(/\\Or\b/g, 'or')
-    .replace(/\\Not\b/g, 'not');
+  return applyAll(String(text == null ? '' : text), OPERATOR_ALIASES);
+};
+
+/** ASCII operators and logic words → TeX (inside math). */
+PS.texOperators = function texOperators(text, words = true) {
+  const value = applyAll(String(text), SYMBOL_TEX);
+  return words ? applyAll(value, WORD_TEX) : value;
+};
+
+// Font commands keep their argument as written; mask them while rewriting.
+const FONT_GROUP = /\\(?:text|textbf|textit|texttt|textrm|textsf|textup|mathrm|mathit|mathbf|mathsf|mathtt|operatorname)\{[^{}]*\}/g;
+
+PS.maskFontGroups = function maskFontGroups(tex, transform) {
+  const kept = [];
+  const masked = String(tex).replace(FONT_GROUP, (group) => `\u0000${kept.push(group) - 1}\u0001`);
+  return transform(masked).replace(/\u0000(\d+)\u0001/g, (all, index) => kept[Number(index)]);
 };
 
 /* ------------------------------------------------------------------ */
@@ -125,21 +172,6 @@ function firstGroup(text) {
   return readGroup(text, start);
 }
 
-function lastGroup(text) {
-  const end = text.lastIndexOf('}');
-  if (end < 0) return null;
-  let depth = 0;
-  for (let i = end; i >= 0; i--) {
-    const ch = text[i];
-    if (ch === '}') depth += 1;
-    else if (ch === '{') {
-      depth -= 1;
-      if (depth === 0) return { value: text.slice(i + 1, end), start: i };
-    }
-  }
-  return null;
-}
-
 /** Split a trailing `\Comment{...}` off a line. */
 function splitComment(text) {
   const match = String(text).match(/^(.*?)\s*\\Comment\{([\s\S]*)\}\s*$/);
@@ -147,102 +179,91 @@ function splitComment(text) {
   return { body: match[1], comment: match[2] };
 }
 
+const countDollars = (value) => (value.match(/\$/g) || []).length;
+
+function isSingleMath(text) {
+  const value = String(text == null ? '' : text).trim();
+  return value.startsWith('$') && value.endsWith('$') && countDollars(value) === 2;
+}
+
+const subscript = (all, letter, digits) => (digits.length === 1 ? `${letter}_${digits}` : `${letter}_{${digits}}`);
+const UNWRAP_FONT = /\\(?:text(?:bf|it|rm|sf|up)?|mathrm|mathit|mathbf)\{([^{}]*)\}/g;
+
 /**
  * Normalize a LaTeX fragment into something better for the visual editor:
  * drop `$` delimiters, turn \gets into "=", unwrap \mathrm/\text/\textbf, etc.
+ * (\texttt marks code identifiers and is kept.)
  */
 function fromMath(text) {
   let value = String(text == null ? '' : text).trim();
-  const dollars = (value.match(/\$/g) || []).length;
-  if (dollars === 2 && value.startsWith('$') && value.endsWith('$')) {
-    value = value.slice(1, -1).trim();
+  if (isSingleMath(value)) value = value.slice(1, -1).trim();
+  value = PS.normalizeOperators(value)
+    .replace(/\\To\b/g, 'to')
+    .replace(/\\DownTo\b/g, 'downto');
+  // Innermost first; repeat so nested \mathrm{..\text{..}..} unwraps.
+  for (let previous = null; previous !== value;) {
+    previous = value;
+    value = value.replace(UNWRAP_FONT, '$1');
   }
   value = value
-    .replace(/\\gets\b/g, '=')
-    .replace(/:=/g, '=')
-    .replace(/<-|←/g, '=')
-    .replace(/<>/g, '!=')
-    .replace(/&&/g, 'and')
-    .replace(/\|\|/g, 'or')
-    .replace(/\\le\b/g, '<=')
-    .replace(/\\ge\b/g, '>=')
-    .replace(/\\neq\b/g, '!=')
-    .replace(/\\ne\b/g, '!=')
-    .replace(/\\land\b/g, 'and')
-    .replace(/\\lor\b/g, 'or')
-    .replace(/\\lnot\b/g, 'not')
-    .replace(/\\And\b/g, 'and')
-    .replace(/\\Or\b/g, 'or')
-    .replace(/\\Not\b/g, 'not')
-    .replace(/\\To\b/g, 'to')
-    .replace(/\\DownTo\b/g, 'downto')
-    // innermost font commands first; repeat so nested \mathrm{..\text{..}..} unwraps
-    // \texttt marks code identifiers (CS50 notes); keep it.
-    .replace(/\\text(?:bf|it|rm|sf|up)\{([^{}]*)\}/g, '$1')
-    .replace(/\\text\{([^{}]*)\}/g, '$1')
-    .replace(/\\mathrm\{([^{}]*)\}/g, '$1')
-    .replace(/\\mathrm\{([^{}]*)\}/g, '$1')
-    .replace(/\\mathit\{([^{}]*)\}/g, '$1')
-    .replace(/\\mathbf\{([^{}]*)\}/g, '$1')
-    // canonical subscript display: S_{1} -> S_1 (braces only for 2+ digits)
-    .replace(/([A-Za-z])_\{(\d+)\}/g, (all, letter, digits) => digits.length === 1 ? `${letter}_${digits}` : `${letter}_{${digits}}`)
+    .replace(/([A-Za-z])_\{(\d+)\}/g, subscript)
     .replace(/\\textbackslash\b/g, '\\')
     .replace(/\\_/g, '_')
     .replace(/\\[,;: ]/g, ' ');
   return value.replace(/[ \t]+/g, ' ').trim();
 }
 
-function isSingleMath(text) {
-  const value = String(text == null ? '' : text).trim();
-  return value.startsWith('$') && value.endsWith('$') && (value.match(/\$/g) || []).length === 2;
-}
-
 PS.readGroup = readGroup;
 PS.firstGroup = firstGroup;
-PS.lastGroup = lastGroup;
 PS.splitComment = splitComment;
 PS.fromMath = fromMath;
+PS.isSingleMath = isSingleMath;
 
 /* ------------------------------------------------------------------ */
 /* Parser                                                              */
 /* ------------------------------------------------------------------ */
 
-const BLOCK_LINES = new Set(['Function', 'Procedure', 'If', 'Elif', 'ElsIf', 'ElseIf', 'Else', 'While', 'For', 'ForAll', 'Repeat']);
+// Lines whose own `{...}` groups must not swallow a trailing \Comment.
+const COMMENTABLE = new Set([
+  'Function', 'Procedure', 'If', 'Elif', 'ElsIf', 'ElseIf', 'Else', 'While', 'For', 'ForAll', 'Repeat', 'Until',
+  'Call', 'Break', 'Continue',
+]);
 
-const OPENERS = {
-  If: (node) => [node.branches[0].body],
-  While: (node) => [node.body],
-  For: (node) => [node.body],
-  Repeat: (node) => [node.body],
-  Function: (node) => [node.body],
-  Procedure: (node) => [node.body],
-};
+/** `{ field: value, fieldMath: wasSingleMath }` for a math-carrying field. */
+function mathField(name, raw) {
+  const source = raw == null ? '' : raw;
+  return { [name]: fromMath(source), [`${name}Math`]: isSingleMath(source) };
+}
 
-PS.parseLatex = function parseLatex(source) {
-  const model = { caption: '', nodes: [] };
-  const stack = [{ target: model.nodes, node: null }];
-  const target = () => stack[stack.length - 1].target;
-  const push = (node) => target().push(node);
-  const pop = () => {
-    if (stack.length > 1) stack.pop();
-  };
-
-  const physical = String(source == null ? '' : source).split(/\r?\n/);
-  // Join continuation lines: a line with an odd number of `$` continues on the
-  // next line (multi-line math in \State, as in Exercise Sheet 3).
+/** Join physical lines: an odd number of `$` continues on the next line. */
+function logicalLines(source) {
   const lines = [];
   let pending = '';
-  for (const piece of physical) {
+  for (const piece of String(source == null ? '' : source).split(/\r?\n/)) {
     pending = pending ? `${pending} ${piece.trim()}` : piece;
-    const dollars = (pending.match(/\$/g) || []).length;
-    if (dollars % 2 === 0) {
+    if (countDollars(pending) % 2 === 0) {
       lines.push(pending);
       pending = '';
     }
   }
   if (pending) lines.push(pending);
+  return lines;
+}
 
-  for (const rawLine of lines) {
+PS.parseLatex = function parseLatex(source) {
+  const model = { caption: '', nodes: [] };
+  const stack = [{ target: model.nodes, node: null }];
+  const top = () => stack[stack.length - 1];
+  const push = (node) => top().target.push(node);
+  const open = (node, target) => {
+    push(node);
+    stack.push({ target, node });
+  };
+  const pop = () => {
+    if (stack.length > 1) stack.pop();
+  };
+
+  for (const rawLine of logicalLines(source)) {
     const line = rawLine.trim();
     if (!line) continue;
     if (/^\\(?:[Bb]egin|[Ee]nd)\{algorithm(?:ic)?\}/.test(line)) continue;
@@ -250,20 +271,17 @@ PS.parseLatex = function parseLatex(source) {
 
     const match = line.match(/^\\([A-Za-z]+)([\s\S]*)$/);
     if (!match) {
-      push({ id: PS.nextId(), type: 'raw', text: line });
+      const { body, comment } = splitComment(line);
+      push(withComment(PS.node('raw', { text: body.trim() }), comment));
       continue;
     }
     const name = match[1];
     let rest = (match[2] || '').trim();
-    // A trailing \Comment on a block line (\If{...} \Comment{...}) belongs to
-    // that line; split it off before reading the line's own groups.
     let lineComment = null;
-    if (BLOCK_LINES.has(name)) {
+    if (COMMENTABLE.has(name)) {
       const split = splitComment(rest);
-      if (split.comment !== null) {
-        rest = split.body.trim();
-        lineComment = split.comment;
-      }
+      rest = split.body.trim();
+      lineComment = split.comment;
     }
     const group = firstGroup(rest);
 
@@ -275,162 +293,113 @@ PS.parseLatex = function parseLatex(source) {
       case 'Function':
       case 'Procedure': {
         const args = group ? readGroup(rest, group.end) : null;
-        const node = {
-          id: PS.nextId(),
-          type: 'function',
-          kind: name,
-          name: group ? group.value : '',
-          args: args ? fromMath(args.value) : '',
-          argsMath: args ? isSingleMath(args.value) : false,
-          body: [],
-        };
-        if (lineComment !== null) node.comment = lineComment;
-        push(node);
-        stack.push({ target: node.body, node });
+        const node = PS.node('function', Object.assign(
+          { kind: name, name: group ? group.value : '' },
+          mathField('args', args ? args.value : ''),
+          { body: [] },
+        ));
+        open(withComment(node, lineComment), node.body);
         break;
       }
-      case 'EndFunction':
-      case 'EndProcedure':
-        pop();
-        break;
 
       case 'If': {
-        const node = {
-          id: PS.nextId(),
-          type: 'if',
-          branches: [{ cond: group ? fromMath(group.value) : '', condMath: group ? isSingleMath(group.value) : false, body: [] }],
-          elseBody: null,
-        };
-        if (lineComment !== null) node.comment = lineComment;
-        push(node);
-        stack.push({ target: node.branches[0].body, node });
+        const branch = Object.assign(mathField('cond', group ? group.value : ''), { body: [] });
+        const node = PS.node('if', { branches: [branch], elseBody: null });
+        open(withComment(node, lineComment), branch.body);
         break;
       }
       case 'Elif':
       case 'ElsIf':
       case 'ElseIf': {
-        const top = stack[stack.length - 1];
-        if (!top.node || top.node.type !== 'if') break;
-        const branch = { cond: group ? fromMath(group.value) : '', condMath: group ? isSingleMath(group.value) : false, body: [] };
-        if (lineComment !== null) branch.comment = lineComment;
-        top.node.branches.push(branch);
-        stack[stack.length - 1] = { target: branch.body, node: top.node };
+        const { node } = top();
+        if (!node || node.type !== 'if') break;
+        const branch = withComment(Object.assign(mathField('cond', group ? group.value : ''), { body: [] }), lineComment);
+        node.branches.push(branch);
+        stack[stack.length - 1] = { target: branch.body, node };
         break;
       }
       case 'Else': {
-        const top = stack[stack.length - 1];
-        if (!top.node || top.node.type !== 'if') break;
-        top.node.elseBody = [];
-        if (lineComment !== null) top.node.elseComment = lineComment;
-        stack[stack.length - 1] = { target: top.node.elseBody, node: top.node };
+        const { node } = top();
+        if (!node || node.type !== 'if') break;
+        node.elseBody = [];
+        if (lineComment !== null) node.elseComment = lineComment;
+        stack[stack.length - 1] = { target: node.elseBody, node };
         break;
       }
-      case 'EndIf':
-        pop();
-        break;
 
       case 'While': {
-        const node = {
-          id: PS.nextId(), type: 'while',
-          cond: group ? fromMath(group.value) : '',
-          condMath: group ? isSingleMath(group.value) : false,
-          body: [],
-        };
-        if (lineComment !== null) node.comment = lineComment;
-        push(node);
-        stack.push({ target: node.body, node });
+        const node = PS.node('while', Object.assign(mathField('cond', group ? group.value : ''), { body: [] }));
+        open(withComment(node, lineComment), node.body);
         break;
       }
-      case 'EndWhile':
-        pop();
-        break;
 
       case 'ForAll': {
-        const content = group ? group.value : '';
-        const clean = fromMath(content).replace(/\$/g, '').trim();
-        const node = {
-          id: PS.nextId(),
-          type: 'for',
-          all: true,
-          init: clean,
-          initMath: false,
-          bound: '',
-          body: [],
-        };
-        if (lineComment !== null) node.comment = lineComment;
-        push(node);
-        stack.push({ target: node.body, node });
+        const clean = fromMath(group ? group.value : '').replace(/\$/g, '').trim();
+        const node = PS.node('for', { all: true, init: clean, initMath: false, bound: '', body: [] });
+        open(withComment(node, lineComment), node.body);
         break;
       }
       case 'For': {
         const content = group ? group.value : '';
         const parts = content.split(/\s*(?:\\To|\\DownTo|\bto\b|\bdownto\b)\s*/i);
-        const node = {
-          id: PS.nextId(),
-          type: 'for',
-          init: fromMath(parts[0] || ''),
-          initMath: isSingleMath(parts[0] || ''),
-          bound: parts.length > 1 ? fromMath(parts.slice(1).join('')) : '',
-          boundMath: parts.length > 1 ? isSingleMath(parts.slice(1).join('')) : false,
-          downto: /\bDownTo\b/i.test(content),
-          body: [],
-        };
-        if (lineComment !== null) node.comment = lineComment;
-        push(node);
-        stack.push({ target: node.body, node });
+        const bound = parts.length > 1 ? parts.slice(1).join('') : '';
+        const node = PS.node('for', Object.assign(
+          mathField('init', parts[0] || ''),
+          parts.length > 1 ? mathField('bound', bound) : { bound: '', boundMath: false },
+          { downto: /\bDownTo\b/i.test(content), body: [] },
+        ));
+        open(withComment(node, lineComment), node.body);
         break;
       }
-      case 'EndFor':
-        pop();
-        break;
 
       case 'Repeat': {
-        const node = { id: PS.nextId(), type: 'repeat', body: [], until: '' };
-        if (lineComment !== null) node.comment = lineComment;
-        push(node);
-        stack.push({ target: node.body, node });
+        const node = PS.node('repeat', { body: [], until: '' });
+        open(withComment(node, lineComment), node.body);
         break;
       }
       case 'Until': {
-        const top = stack[stack.length - 1];
-        if (!top.node || top.node.type !== 'repeat') break;
-        top.node.until = group ? fromMath(group.value) : '';
-        top.node.untilMath = group ? isSingleMath(group.value) : false;
+        const { node } = top();
+        if (!node || node.type !== 'repeat') break;
+        Object.assign(node, mathField('until', group ? group.value : ''));
+        if (lineComment !== null) node.untilComment = lineComment;
         pop();
         break;
       }
+
+      case 'EndFunction':
+      case 'EndProcedure':
+      case 'EndIf':
+      case 'EndWhile':
+      case 'EndFor':
+        pop();
+        break;
 
       case 'State': {
         const { body, comment } = splitComment(rest);
         // \State \Return / \Break / \Continue / \Print are common shorthand.
         const keyword = body.match(/^\\(Return|Break|Continue|Print)\b\s*([\s\S]*)$/);
+        const call = body.match(/^\\Call\{([^{}]*)\}\{([\s\S]*)\}$/);
+        let node;
         if (keyword) {
           const kind = keyword[1].toLowerCase();
-          const node = kind === 'break' || kind === 'continue'
-            ? { id: PS.nextId(), type: kind }
-            : { id: PS.nextId(), type: kind, text: fromMath(keyword[2]), textMath: isSingleMath(keyword[2]) };
-          if (comment !== null) node.comment = comment;
-          push(node);
-          break;
+          node = kind === 'break' || kind === 'continue'
+            ? PS.node(kind)
+            : PS.node(kind, mathField('text', keyword[2]));
+        } else if (call) {
+          node = PS.node('call', Object.assign({ name: call[1] }, mathField('args', call[2])));
+        } else {
+          node = PS.node('state', mathField('text', body));
         }
-        const call = body.match(/^\\Call\{([^{}]*)\}\{([\s\S]*)\}$/);
-        const node = call
-          ? { id: PS.nextId(), type: 'call', name: call[1], args: fromMath(call[2]), argsMath: isSingleMath(call[2]) }
-          : { id: PS.nextId(), type: 'state', text: fromMath(body), textMath: isSingleMath(body) };
-        if (comment !== null) node.comment = comment;
-        push(node);
+        push(withComment(node, comment));
         break;
       }
 
       case 'Call': {
         const args = group ? readGroup(rest, group.end) : null;
-        push({
-          id: PS.nextId(),
-          type: 'call',
-          name: group ? group.value : '',
-          args: args ? fromMath(args.value) : '',
-          argsMath: args ? isSingleMath(args.value) : false,
-        });
+        push(withComment(PS.node('call', Object.assign(
+          { name: group ? group.value : '' },
+          mathField('args', args ? args.value : ''),
+        )), lineComment));
         break;
       }
 
@@ -442,27 +411,26 @@ PS.parseLatex = function parseLatex(source) {
       case 'Print': {
         const { body, comment } = splitComment(rest);
         const inner = body.startsWith('{') ? firstGroup(body) : null;
-        const value = inner ? inner.value : body;
         const type = name === 'Input' ? 'require'
           : name === 'Output' ? 'ensure'
             : name.toLowerCase();
-        const node = { id: PS.nextId(), type, text: fromMath(value), textMath: isSingleMath(value) };
-        if (comment !== null) node.comment = comment;
-        push(node);
+        push(withComment(PS.node(type, mathField('text', inner ? inner.value : body)), comment));
         break;
       }
 
       case 'Break':
       case 'Continue':
-        push({ id: PS.nextId(), type: name.toLowerCase() });
+        push(withComment(PS.node(name.toLowerCase()), lineComment));
         break;
 
       case 'Comment': {
+        // A standalone \Comment line belongs to the previous statement (LaTeX
+        // joins the lines); only a comment that opens a body stands alone.
         const text = group ? group.value : rest;
-        const array = target();
+        const array = top().target;
         const previous = array[array.length - 1];
-        if (previous) previous.comment = text;
-        else array.push({ id: PS.nextId(), type: 'comment', text });
+        if (previous && !previous.comment) previous.comment = text;
+        else array.push(PS.node('comment', { text }));
         break;
       }
 
@@ -470,164 +438,170 @@ PS.parseLatex = function parseLatex(source) {
         // \Statex is a blank spacing line in algorithmicx; render nothing.
         break;
 
-      default:
-        push({ id: PS.nextId(), type: 'raw', text: line });
+      default: {
+        const { body, comment } = splitComment(line);
+        push(withComment(PS.node('raw', { text: body.trim() }), comment));
+      }
     }
   }
   return model;
 };
 
+function withComment(target, comment) {
+  if (comment != null) target.comment = comment;
+  return target;
+}
+
 /* ------------------------------------------------------------------ */
 /* Serializer                                                          */
 /* ------------------------------------------------------------------ */
 
-const KEYWORD_WORDS = new Set(['and', 'or', 'not', 'to', 'downto', 'true', 'false', 'nil', 'null']);
+const KEYWORD_WORDS = new Set(['and', 'or', 'not']);
+
+// A word rendered upright in math; spaces next to one are real word gaps.
+const WORDISH = String.raw`\\(?:mathrm|text|textbf)\{[^{}]*\}`;
+const SPACE_AFTER_WORD = new RegExp(`(${WORDISH})\\s+(?=[A-Za-z0-9(\\[“‘"']|${WORDISH})`, 'g');
+const SPACE_BEFORE_WORD = new RegExp(`([A-Za-z0-9\\])”’"'])\\s+(?=${WORDISH})`, 'g');
+
+/**
+ * Builder typesetting rules for a math fragment: multi-letter identifiers
+ * upright, all-caps constants and booleans as text, digits after a letter as
+ * subscripts, ASCII operators as TeX. Font groups already present are kept.
+ */
+function normalizeExpr(expr) {
+  const out = PS.maskFontGroups(expr, (masked) => {
+    const value = masked.replace(/([A-Za-z])_\{(\d+)\}/g, subscript);
+    const whole = value.trim();
+    if (/^[A-Z]{2,}[A-Z0-9_-]*$/.test(whole)) return `\\text{${whole}}`;
+    if (/^(true|false)$/i.test(whole)) return `\\textbf{${whole.toLowerCase()}}`;
+
+    const words = value
+      .replace(/([A-Za-z])_?(\d+)/g, subscript)
+      .replace(/([A-Za-z])-([A-Za-z])/g, '$1\\text{-}$2')
+      .replace(/(?<!\\)\b[A-Za-z]{2,}\b/g, (word) => {
+        if (/^[A-Z]{2,}$/.test(word)) return `\\text{${word}}`;
+        if (/^(true|false)$/i.test(word)) return `\\textbf{${word.toLowerCase()}}`;
+        return KEYWORD_WORDS.has(word) ? word : `\\mathrm{${word}}`;
+      });
+    return PS.texOperators(words);
+  });
+  // Math mode drops spaces: "exchange A[i] with A[j]" needs explicit gaps.
+  return out
+    .replace(SPACE_AFTER_WORD, '$1\\ ')
+    .replace(SPACE_BEFORE_WORD, '$1\\ ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
 
 /** Turn a plain builder expression into a LaTeX math fragment (with $...$). */
 function toMath(raw) {
   let expr = String(raw == null ? '' : raw).trim();
-  if (!expr) return '';
-  const dollars = (expr.match(/\$/g) || []).length;
-  if (dollars === 2 && expr.startsWith('$') && expr.endsWith('$')) {
-    expr = expr.slice(1, -1).trim();
-  }
+  if (isSingleMath(expr)) expr = expr.slice(1, -1).trim();
   if (!expr) return '';
   // CJK prose must stay outside math mode.
-  if (/[\u4e00-\u9fff]/.test(expr)) return expr;
-  if (expr.includes('\\')) return `$${expr}$`;
+  if (/[一-鿿]/.test(expr)) return expr;
+  if (expr.includes('\\')) return `$${PS.texOperators(expr, false)}$`;
   return `$${normalizeExpr(expr)}$`;
 }
 
-function normalizeExpr(expr) {
-  expr = expr.replace(/([A-Za-z])_\{(\d+)\}/g, (all, letter, digits) =>
-    digits.length === 1 ? `${letter}_${digits}` : `${letter}_{${digits}}`);
-  if (/^[A-Z]{2,}[A-Z0-9_-]*$/.test(expr)) return `\\text{${expr}}`;
-  if (/^(true|false)$/i.test(expr)) return `\\textbf{${expr.toLowerCase()}}`;
-
-  let value = expr
-    .replace(/([A-Za-z])_?(\d+)/g, (all, letter, digits) => digits.length === 1 ? `${letter}_${digits}` : `${letter}_{${digits}}`)
-    .replace(/([A-Za-z])-([A-Za-z])/g, '$1\\text{-}$2');
-
-  value = value.replace(/(?<!\\)\b[A-Za-z]{2,}\b/g, (word) => {
-    // Constants (NIL, OVERFLOW) and booleans read as text inside expressions too.
-    if (/^[A-Z]{2,}$/.test(word)) return `\\text{${word}}`;
-    if (/^(true|false)$/i.test(word)) return `\\textbf{${word.toLowerCase()}}`;
-    return KEYWORD_WORDS.has(word.toLowerCase()) ? word : `\\mathrm{${word}}`;
-  });
-
-  value = value
-    .replace(/\band\b/g, '\\land ')
-    .replace(/\bor\b/g, '\\lor ')
-    .replace(/\bnot\b/g, '\\lnot ')
-    .replace(/<=/g, '\\le ')
-    .replace(/>=/g, '\\ge ')
-    .replace(/!=/g, '\\ne ')
-    .replace(/->/g, '\\to ');
-  return value.replace(/\s+/g, ' ').trim();
+/**
+ * Serialize one field. `isMath === false` marks text that was prose in the
+ * source (`\State Initialize the array`): it stays prose instead of being
+ * turned into math. Text already carrying `$...$` keeps its structure.
+ */
+function mathOrRaw(text, isMath) {
+  const value = String(text == null ? '' : text);
+  if (!value) return '';
+  if (!value.includes('$')) {
+    if (isMath !== false) return toMath(value);
+    return value.includes('\\') ? PS.texOperators(value, false).replace(/[ \t]{2,}/g, ' ') : value;
+  }
+  return value
+    .replace(/\$([^$]+)\$/g, (all, inner) =>
+      `$${inner.includes('\\') ? PS.texOperators(inner, false) : normalizeExpr(inner)}$`)
+    .replace(/[ \t]{2,}/g, ' ');
 }
 
 PS.toMath = toMath;
 PS.normalizeExpr = normalizeExpr;
-
-/** Text that already carries LaTeX (or inline math) is kept verbatim. */
-function mathOrRaw(text) {
-  const value = String(text == null ? '' : text);
-  if (!value) return '';
-  if (!/[\\$]/.test(value)) return toMath(value);
-
-  const plainOps = (s) => s
-    .replace(/<=/g, '\\le ')
-    .replace(/>=/g, '\\ge ')
-    .replace(/!=/g, '\\ne ');
-
-  if (!value.includes('$')) return plainOps(value).replace(/[ \t]{2,}/g, ' ');
-
-  return value
-    .replace(/\$([^$]+)\$/g, (all, inner) =>
-      `$${inner.includes('\\') ? plainOps(inner) : normalizeExpr(inner)}$`)
-    .replace(/[ \t]{2,}/g, ' ');
-}
 PS.mathOrRaw = mathOrRaw;
 
-function commentSuffix(node) {
-  return node.comment ? ` \\Comment{${node.comment}}` : '';
-}
+const commentSuffix = (comment) => (comment ? ` \\Comment{${comment}}` : '');
+const field = (node, key) => mathOrRaw(node[key], node[`${key}Math`]);
 
 function emitNodes(nodes, depth, out) {
   const pad = '  '.repeat(depth);
+  const line = (text, comment) => out.push(`${pad}${text}${commentSuffix(comment)}`);
+  const body = (list) => emitNodes(list, depth + 1, out);
+
   for (const node of nodes) {
     switch (node.type) {
       case 'state':
-        out.push(`${pad}\\State ${mathOrRaw(node.text) || '\\text{}'}${commentSuffix(node)}`);
+        line(`\\State ${field(node, 'text') || '\\text{}'}`, node.comment);
         break;
       case 'call':
-        out.push(`${pad}\\State \\Call{${node.name || ''}}{${mathOrRaw(node.args) || ''}}${commentSuffix(node)}`);
+        line(`\\State \\Call{${node.name || ''}}{${field(node, 'args')}}`, node.comment);
         break;
       case 'require':
       case 'ensure':
-        out.push(`${pad}\\${node.type === 'require' ? 'Require' : 'Ensure'} ${mathOrRaw(node.text)}${commentSuffix(node)}`);
+        line(`\\${node.type === 'require' ? 'Require' : 'Ensure'} ${field(node, 'text')}`, node.comment);
         break;
       case 'return':
-        out.push(`${pad}\\Return${node.text ? ` ${mathOrRaw(node.text)}` : ''}${commentSuffix(node)}`);
+        line(`\\Return${node.text ? ` ${field(node, 'text')}` : ''}`, node.comment);
         break;
       case 'print':
-        out.push(`${pad}\\Print ${mathOrRaw(node.text)}${commentSuffix(node)}`);
+        line(`\\Print ${field(node, 'text')}`, node.comment);
         break;
       case 'break':
-        out.push(`${pad}\\Break`);
+        line('\\Break', node.comment);
         break;
       case 'continue':
-        out.push(`${pad}\\Continue`);
+        line('\\Continue', node.comment);
         break;
       case 'comment':
-        out.push(`${pad}\\Comment{${node.text || ''}}`);
+        line(`\\Comment{${node.text || ''}}`);
         break;
       case 'if':
         node.branches.forEach((branch, index) => {
-          const suffix = commentSuffix(index === 0 ? node : branch);
-          out.push(`${pad}${index === 0 ? '\\If{' : '\\Elif{'}${mathOrRaw(branch.cond)}}${suffix}`);
-          emitNodes(branch.body, depth + 1, out);
+          line(`${index === 0 ? '\\If' : '\\Elif'}{${field(branch, 'cond')}}`, index === 0 ? node.comment : branch.comment);
+          body(branch.body);
         });
         if (node.elseBody) {
-          out.push(`${pad}\\Else${node.elseComment ? ` \\Comment{${node.elseComment}}` : ''}`);
-          emitNodes(node.elseBody, depth + 1, out);
+          line('\\Else', node.elseComment);
+          body(node.elseBody);
         }
-        out.push(`${pad}\\EndIf`);
+        line('\\EndIf');
         break;
       case 'while':
-        out.push(`${pad}\\While{${mathOrRaw(node.cond)}}${commentSuffix(node)}`);
-        emitNodes(node.body, depth + 1, out);
-        out.push(`${pad}\\EndWhile`);
+        line(`\\While{${field(node, 'cond')}}`, node.comment);
+        body(node.body);
+        line('\\EndWhile');
         break;
       case 'for': {
-        if (node.all) {
-          out.push(`${pad}\\ForAll{${node.init || ''}}${commentSuffix(node)}`);
-          emitNodes(node.body, depth + 1, out);
-          out.push(`${pad}\\EndFor`);
-          break;
-        }
-        const head = node.bound
-          ? `${mathOrRaw(node.init)} ${node.downto ? '\\DownTo' : '\\To'} ${mathOrRaw(node.bound)}`
-          : mathOrRaw(node.init);
-        out.push(`${pad}\\For{${head}}${commentSuffix(node)}`);
-        emitNodes(node.body, depth + 1, out);
-        out.push(`${pad}\\EndFor`);
+        const head = node.all
+          ? node.init || ''
+          : node.bound
+            ? `${field(node, 'init')} ${node.downto ? '\\DownTo' : '\\To'} ${field(node, 'bound')}`
+            : field(node, 'init');
+        line(`\\${node.all ? 'ForAll' : 'For'}{${head}}`, node.comment);
+        body(node.body);
+        line('\\EndFor');
         break;
       }
       case 'repeat':
-        out.push(`${pad}\\Repeat${commentSuffix(node)}`);
-        emitNodes(node.body, depth + 1, out);
-        out.push(`${pad}\\Until{${mathOrRaw(node.until)}}${commentSuffix(node)}`);
+        line('\\Repeat', node.comment);
+        body(node.body);
+        line(`\\Until{${field(node, 'until')}}`, node.untilComment);
         break;
       case 'function': {
         const kind = node.kind === 'Procedure' ? 'Procedure' : 'Function';
-        out.push(`${pad}\\${kind}{${node.name || ''}}{${mathOrRaw(node.args) || ''}}${commentSuffix(node)}`);
-        emitNodes(node.body, depth + 1, out);
-        out.push(`${pad}\\End${kind}`);
+        line(`\\${kind}{${node.name || ''}}{${field(node, 'args')}}`, node.comment);
+        body(node.body);
+        line(`\\End${kind}`);
         break;
       }
       default:
-        out.push(pad + (node.text || ''));
+        line(node.text || '', node.comment);
     }
   }
 }
@@ -665,29 +639,25 @@ PS.serializeLatex = function serializeLatex(model) {
 
   const SYMBOLS = {
     gets: '=',
-    le: '\u2264',
-    ge: '\u2265',
-    ne: '\u2260',
-    ldots: '\u2026',
-    cdots: '\u22ef',
-    times: '\u00d7',
-    pm: '\u00b1',
-    infty: '\u221e',
-    to: '\u2192',
-    DownTo: '\u2193',
-    And: '\u2227',
-    Or: '\u2228',
-    Not: '\u00ac',
-    lfloor: '\u230a',
-    rfloor: '\u230b',
-    lceil: '\u2308',
-    rceil: '\u2309',
+    le: '≤',
+    ge: '≥',
+    ne: '≠',
+    ldots: '…',
+    cdots: '⋯',
+    times: '×',
+    pm: '±',
+    infty: '∞',
+    to: '→',
+    DownTo: '↓',
+    And: '∧',
+    Or: '∨',
+    Not: '¬',
+    lfloor: '⌊',
+    rfloor: '⌋',
+    lceil: '⌈',
+    rceil: '⌉',
     quad: ' ',
     qquad: ' ',
-  };
-
-  const ESCAPED = {
-    '{': '{', '}': '}', '_': '_', '&': '&', '%': '%', '$': '$', '#': '#', '\\': '\\',
   };
 
   function el(tag, className, text) {
@@ -697,21 +667,10 @@ PS.serializeLatex = function serializeLatex(model) {
     return node;
   }
 
-  // Font commands already present keep their argument as written.
-  const FONT_GROUP = /\\(?:text|textbf|textit|texttt|textrm|textsf|textup|mathrm|mathit|mathbf|mathsf|mathtt|operatorname)\{[^{}]*\}/g;
+  // In a condition a single `=` is a comparison and shows as `==`.
+  const asComparison = (tex) => tex.replace(/(?<![<>=!:\\])=(?!=)/g, '==');
 
-  /**
-   * Apply the builder's typesetting rules (PS.normalizeExpr) to a math
-   * fragment: multi-letter identifiers upright, all-caps constants as text,
-   * digits after a letter as subscripts. The parser strips \text/\mathit from
-   * the source, so without this NIL would render as the product N·I·L.
-   */
-  function upright(tex) {
-    const kept = [];
-    const masked = String(tex).replace(FONT_GROUP, (group) => `\u0000${kept.push(group) - 1}\u0001`);
-    return PS.normalizeExpr(masked).replace(/\u0000(\d+)\u0001/g, (all, index) => kept[Number(index)]);
-  }
-
+  /** A field value → inline source for parseInline (math wrapped in $...$). */
   const expr = (value, isMath, comparison) => {
     const text = String(value == null ? '' : value);
     if (!text) return '';
@@ -719,26 +678,11 @@ PS.serializeLatex = function serializeLatex(model) {
       // Constants and booleans are text, not a product of variables.
       if (/^[A-Z]{2,}[A-Z0-9_-]*$/.test(text)) return text;
       if (/^(true|false)$/i.test(text)) return `\\textbf{${text.toLowerCase()}}`;
-      let tex = upright(text)
-        .replace(/:=/g, '=')
-        .replace(/<-|←/g, '=')
-        .replace(/<>/g, '\\ne ')
-        .replace(/&&/g, '\\land ')
-        .replace(/\|\|/g, '\\lor ')
-        .replace(/!=/g, '\\ne ')
-        .replace(/<=/g, '\\le ')
-        .replace(/>=/g, '\\ge ')
-        .replace(/->/g, '\\to ')
-        .replace(/(?<!\\)\b(and|or|not)\b/g, (all, word) => (
-          word === 'and' ? '\\land ' : word === 'or' ? '\\lor ' : '\\lnot '
-        ));
-      if (comparison) tex = tex.replace(/(?<![<>=!:])=(?!=)/g, '==');
-      return `$${tex}$`;
+      const tex = PS.normalizeExpr(PS.normalizeOperators(text));
+      return `$${comparison ? asComparison(tex) : tex}$`;
     }
     // Conditions mixing text and math ($a = b$ and $c$): `=` still means `==`.
-    if (comparison) {
-      return text.replace(/\$([^$]*)\$/g, (all, inner) => `$${inner.replace(/(?<![<>=!:])=(?!=)/g, '==')}$`);
-    }
+    if (comparison) return text.replace(/\$([^$]*)\$/g, (all, inner) => `$${asComparison(inner)}$`);
     return text;
   };
 
@@ -748,31 +692,15 @@ PS.serializeLatex = function serializeLatex(model) {
     return i;
   }
 
+  /** `$...$` from the source → TeX for MathJax. */
   function normalizeMath(source, prose) {
-    const tex = (String(source)
-      .replace(/\\gets\b/g, '=')
-      .replace(/:=/g, '=')
-      .replace(/<-|←/g, '=')
-      .replace(/<>/g, '\\ne ')
-      .replace(/&&/g, '\\land ')
-      .replace(/\|\|/g, '\\lor ')
-      .replace(/!=/g, '\\ne ')
-      .replace(/<=/g, '\\le ')
-      .replace(/>=/g, '\\ge ')
-      .replace(/->/g, '\\to ')
-      .replace(/(?<!\\)\b(and|or|not)\b/g, (all, word) => (
-        word === 'and' ? '\\land ' : word === 'or' ? '\\lor ' : '\\lnot '
-      ))
-      .replace(/\\And\b/g, '\\land')
-      .replace(/\\Or\b/g, '\\lor')
-      .replace(/\\Not\b/g, '\\lnot')
+    const tex = PS.maskFontGroups(source, (masked) => PS.texOperators(PS.normalizeOperators(masked))
       .replace(/\\To\b/g, '\\to')
-      .replace(/\\DownTo\b/g, '\\downarrow')
+      .replace(/\\DownTo\b/g, '\\downarrow'))
       .replace(/\\textbf\{([^{}]*)\}/g, '\\mathbf{$1}')
-      .replace(/\\textit\{([^{}]*)\}/g, '\\mathit{$1}')
-      .replace(/\\text\{([^{}]*)\}/g, '\\text{$1}'));
+      .replace(/\\textit\{([^{}]*)\}/g, '\\mathit{$1}');
     // Comments are prose: `$ab$` there is a product, not an identifier.
-    return prose ? tex : upright(tex);
+    return (prose ? tex : PS.normalizeExpr(tex)).trim();
   }
 
   /**
@@ -788,6 +716,7 @@ PS.serializeLatex = function serializeLatex(model) {
       tokens.push({ type: 'text', value: buffer });
       buffer = '';
     };
+    const group = (at) => PS.readGroup(text, skipSpace(text, at));
 
     let i = 0;
     while (i < text.length) {
@@ -795,51 +724,42 @@ PS.serializeLatex = function serializeLatex(model) {
 
       if (ch === '$') {
         let j = i + 1;
-        let closed = false;
-        while (j < text.length) {
-          if (text[j] === '\\') { j += 2; continue; }
-          if (text[j] === '$') { closed = true; break; }
-          j++;
-        }
-        if (closed) {
+        while (j < text.length && text[j] !== '$') j += text[j] === '\\' ? 2 : 1;
+        if (j < text.length) {
           flush();
           tokens.push({ type: 'math', value: normalizeMath(text.slice(i + 1, j), prose) });
           i = j + 1;
           continue;
         }
-        buffer += ch;
-        i++;
-        continue;
       }
 
       if (ch === '\\') {
         const command = text.slice(i).match(/^\\([A-Za-z]+)/);
         if (!command) {
-          const next = text[i + 1];
-          if (next != null) {
-            buffer += ESCAPED[next] != null ? ESCAPED[next] : next;
+          // Escaped character (\{, \_, \$, ...): show it literally.
+          if (i + 1 < text.length) {
+            buffer += text[i + 1];
             i += 2;
             continue;
           }
-        }
-        if (command) {
+        } else {
           const name = command[1];
           const after = i + command[0].length;
 
           // Custom markers produced by the row builder.
           if (name === 'kw' || name === 'fn') {
-            const group = PS.readGroup(text, skipSpace(text, after));
-            if (group) {
+            const value = group(after);
+            if (value) {
               flush();
-              tokens.push({ type: name === 'kw' ? 'keyword' : 'function', value: group.value });
-              i = group.end;
+              tokens.push({ type: name === 'kw' ? 'keyword' : 'function', value: value.value });
+              i = value.end;
               continue;
             }
           }
 
           if (name === 'Call') {
-            const nameGroup = PS.readGroup(text, skipSpace(text, after));
-            const argsGroup = nameGroup ? PS.readGroup(text, skipSpace(text, nameGroup.end)) : null;
+            const nameGroup = group(after);
+            const argsGroup = nameGroup ? group(nameGroup.end) : null;
             if (nameGroup && argsGroup) {
               flush();
               tokens.push({ type: 'call', name: nameGroup.value, args: argsGroup.value });
@@ -849,23 +769,18 @@ PS.serializeLatex = function serializeLatex(model) {
           }
 
           if (FONT_COMMANDS[name]) {
-            const group = PS.readGroup(text, skipSpace(text, after));
-            if (group) {
+            const value = group(after);
+            if (value) {
               flush();
-              tokens.push({ type: 'styled', tag: FONT_COMMANDS[name], value: group.value });
-              i = group.end;
+              tokens.push({ type: 'styled', tag: FONT_COMMANDS[name], value: value.value });
+              i = value.end;
               continue;
             }
           }
 
-          if (SYMBOLS[name] != null) {
-            buffer += SYMBOLS[name];
-            i = after;
-            continue;
-          }
-
-          // Unknown command: keep it visible, minus the backslash.
-          buffer += name;
+          // Known symbols render as Unicode; unknown commands stay visible
+          // minus the backslash.
+          buffer += SYMBOLS[name] != null ? SYMBOLS[name] : name;
           i = after;
           continue;
         }
@@ -879,201 +794,207 @@ PS.serializeLatex = function serializeLatex(model) {
     return tokens;
   }
 
-  async function renderInline(app, container, source, sourcePath, component, prose) {
-    const tokens = parseInline(source, prose);
-    for (const token of tokens) {
-      if (token.type === 'text') {
-        container.appendChild(document.createTextNode(token.value));
-      } else if (token.type === 'keyword') {
-        container.appendChild(el('span', 'ps-kw', token.value));
-      } else if (token.type === 'function') {
-        container.appendChild(el('span', 'ps-fn', token.value));
-      } else if (token.type === 'styled') {
-        const wrapper = el(token.tag, token.tag === 'span' ? 'ps-styled' : null);
-        await renderInline(app, wrapper, token.value, sourcePath, component, prose);
-        container.appendChild(wrapper);
-      } else if (token.type === 'call') {
-        container.appendChild(el('span', 'ps-fn', token.name));
-        container.appendChild(document.createTextNode('('));
-        await renderInline(app, container, token.args, sourcePath, component, prose);
-        container.appendChild(document.createTextNode(')'));
-      } else if (token.type === 'math') {
-        const wrapper = el('span', 'ps-math');
-        wrapper.dataset.tex = token.value;
-        wrapper.textContent = token.value;
-        container.appendChild(wrapper);
+  function renderInline(container, source, prose) {
+    for (const token of parseInline(source, prose)) {
+      switch (token.type) {
+        case 'text':
+          container.appendChild(document.createTextNode(token.value));
+          break;
+        case 'keyword':
+          container.appendChild(el('span', 'ps-kw', token.value));
+          break;
+        case 'function':
+          container.appendChild(el('span', 'ps-fn', token.value));
+          break;
+        case 'styled': {
+          const wrapper = el(token.tag, token.tag === 'span' ? 'ps-styled' : null);
+          renderInline(wrapper, token.value, prose);
+          container.appendChild(wrapper);
+          break;
+        }
+        case 'call':
+          container.appendChild(el('span', 'ps-fn', token.name));
+          container.appendChild(document.createTextNode('('));
+          renderInline(container, token.args, prose);
+          container.appendChild(document.createTextNode(')'));
+          break;
+        case 'math': {
+          const wrapper = el('span', 'ps-math', token.value);
+          wrapper.dataset.tex = token.value;
+          container.appendChild(wrapper);
+          break;
+        }
+        default:
+          break;
       }
-    }
-  }
-
-  function unwrapSingleParagraph(container) {
-    if (container.childElementCount === 1 && container.firstElementChild.tagName === 'P') {
-      const paragraph = container.firstElementChild;
-      while (paragraph.firstChild) container.insertBefore(paragraph.firstChild, paragraph);
-      paragraph.remove();
     }
   }
 
   /* ---------------- row building ---------------- */
 
+  /** Inline source of a simple (non-container) statement, or null. */
   function simpleText(node) {
     switch (node.type) {
       case 'state': return expr(node.text, node.textMath);
       case 'call': return `\\Call{${node.name || ''}}{${expr(node.args, node.argsMath)}}`;
       case 'return': return `\\kw{return}${node.text ? ` ${expr(node.text, node.textMath)}` : ''}`;
       case 'print': return `\\kw{print} ${expr(node.text, node.textMath)}`;
-      case 'break': return '\\kw{break}';
-      case 'continue': return '\\kw{continue}';
-      default: return node.text || '';
+      case 'break':
+      case 'continue': return `\\kw{${node.type}}`;
+      case 'raw': return expr(node.text, node.textMath);
+      default: return null;
     }
   }
 
-  const SIMPLE = new Set(['state', 'call', 'return', 'print', 'break', 'continue']);
+  const MERGEABLE = new Set(['state', 'call', 'return', 'print', 'break', 'continue']);
 
   function buildRows(nodes, depth, counter, rows) {
+    const row = (text, comment, numbered = true, extra = {}) => rows.push(Object.assign({
+      number: numbered ? ++counter.value : null,
+      depth,
+      text,
+      comment: comment || null,
+    }, extra));
+    const body = (list) => buildRows(list || [], depth + 1, counter, rows);
+
     for (const node of nodes) {
       switch (node.type) {
         case 'function': {
-          rows.push({
-            number: null,
-            depth,
-            text: `\\fn{${node.name || ''}}(${expr(node.args, node.argsMath)})`,
-            comment: node.comment || null,
-            kind: 'function',
-          });
+          row(`\\fn{${node.name || ''}}(${expr(node.args, node.argsMath)})`, node.comment, false, { kind: 'function' });
+          // Each procedure numbers its own lines from 1.
           const saved = counter.value;
           counter.value = 0;
-          buildRows(node.body || [], depth + 1, counter, rows);
+          body(node.body);
           counter.value = saved;
           break;
         }
 
         case 'if': {
           node.branches.forEach((branch, index) => {
-            rows.push({
-              number: ++counter.value,
-              depth,
-              text: `\\kw{${index === 0 ? 'if' : 'else if'}} ${expr(branch.cond, branch.condMath, true)}`,
-              comment: (index === 0 ? node.comment || branch.comment : branch.comment) || null,
-            });
-            buildRows(branch.body || [], depth + 1, counter, rows);
+            const comment = index === 0 ? node.comment || branch.comment : branch.comment;
+            row(`\\kw{${index === 0 ? 'if' : 'else if'}} ${expr(branch.cond, branch.condMath, true)}`, comment);
+            body(branch.body);
           });
           if (node.elseBody) {
+            // CLRS style: a single plain statement joins the else line.
             const only = node.elseBody.length === 1 ? node.elseBody[0] : null;
-            if (only && SIMPLE.has(only.type) && !only.comment && !node.elseComment) {
-              rows.push({
-                number: ++counter.value,
-                depth,
-                text: `\\kw{else} ${simpleText(only)}`,
-                comment: null,
-              });
+            if (only && MERGEABLE.has(only.type) && !only.comment && !node.elseComment) {
+              row(`\\kw{else} ${simpleText(only)}`);
             } else {
-              rows.push({ number: ++counter.value, depth, text: '\\kw{else}', comment: node.elseComment || null });
-              buildRows(node.elseBody, depth + 1, counter, rows);
+              row('\\kw{else}', node.elseComment);
+              body(node.elseBody);
             }
           }
           break;
         }
 
         case 'while':
-          rows.push({ number: ++counter.value, depth, text: `\\kw{while} ${expr(node.cond, node.condMath, true)}`, comment: node.comment || null });
-          buildRows(node.body || [], depth + 1, counter, rows);
+          row(`\\kw{while} ${expr(node.cond, node.condMath, true)}`, node.comment);
+          body(node.body);
           break;
 
         case 'for': {
+          let head;
           if (node.all) {
             const parts = String(node.init || '').split(/\s+in\s+/);
             // A head already written with text commands (\texttt{child} of
             // \texttt{u}) is prose; math mode would swallow its spaces.
-            const head = parts.length === 2
-              ? `${expr(parts[0], true)} \\kw{in} ${expr(parts[1], true)}`
-              : expr(node.init, !/\\text(?:tt|rm|sf|up)?\{/.test(node.init || ''));
-            rows.push({ number: ++counter.value, depth, text: `\\kw{for all} ${head}`, comment: node.comment || null });
-            buildRows(node.body || [], depth + 1, counter, rows);
-            break;
+            head = parts.length === 2
+              ? `\\kw{for all} ${expr(parts[0], true)} \\kw{in} ${expr(parts[1], true)}`
+              : `\\kw{for all} ${expr(node.init, !/\\text(?:tt|rm|sf|up)?\{/.test(node.init || ''))}`;
+          } else {
+            head = node.bound
+              ? `\\kw{for} ${expr(node.init, node.initMath)} \\kw{${node.downto ? 'downto' : 'to'}} ${expr(node.bound, node.boundMath)}`
+              : `\\kw{for} ${expr(node.init, node.initMath)}`;
           }
-          const head = node.bound
-            ? `${expr(node.init, node.initMath)} \\kw{${node.downto ? 'downto' : 'to'}} ${expr(node.bound, node.boundMath)}`
-            : expr(node.init, node.initMath);
-          rows.push({ number: ++counter.value, depth, text: `\\kw{for} ${head}`, comment: node.comment || null });
-          buildRows(node.body || [], depth + 1, counter, rows);
+          row(head, node.comment);
+          body(node.body);
           break;
         }
 
         case 'repeat':
-          rows.push({ number: ++counter.value, depth, text: '\\kw{repeat}', comment: node.comment || null });
-          buildRows(node.body || [], depth + 1, counter, rows);
-          rows.push({ number: ++counter.value, depth, text: `\\kw{until} ${expr(node.until, node.untilMath, true)}`, comment: null });
+          row('\\kw{repeat}', node.comment);
+          body(node.body);
+          row(`\\kw{until} ${expr(node.until, node.untilMath, true)}`, node.untilComment);
           break;
 
         case 'state':
-          if (!node.text && node.comment) {
-            rows.push({ number: null, depth, text: '', comment: node.comment });
-          } else {
-            rows.push({ number: ++counter.value, depth, text: expr(node.text, node.textMath), comment: node.comment || null });
-          }
-          break;
-
-        case 'call':
-          rows.push({
-            number: ++counter.value,
-            depth,
-            text: `\\Call{${node.name || ''}}{${expr(node.args, node.argsMath)}}`,
-            comment: node.comment || null,
-          });
-          break;
-
-        case 'return':
-          rows.push({ number: ++counter.value, depth, text: `\\kw{return}${node.text ? ` ${expr(node.text, node.textMath)}` : ''}`, comment: node.comment || null });
-          break;
-
-        case 'print':
-          rows.push({ number: ++counter.value, depth, text: `\\kw{print} ${expr(node.text, node.textMath)}`, comment: node.comment || null });
-          break;
-
-        case 'break':
-        case 'continue':
-          rows.push({ number: ++counter.value, depth, text: `\\kw{${node.type}}`, comment: node.comment || null });
+          if (!node.text && node.comment) row('', node.comment, false, { note: true });
+          else row(simpleText(node), node.comment);
           break;
 
         case 'require':
         case 'ensure':
-          rows.push({ number: null, depth, text: `\\kw{${node.type === 'require' ? 'Require' : 'Ensure'}:} ${expr(node.text, node.textMath)}`, comment: null });
+          row(`\\kw{${node.type === 'require' ? 'Require' : 'Ensure'}:} ${expr(node.text, node.textMath)}`, node.comment, false);
           break;
 
-        case 'comment':
-          if (rows.length) {
-            rows[rows.length - 1].comment = node.text || '';
-          } else {
-            rows.push({ number: null, depth, text: '', comment: node.text || '' });
-          }
+        case 'comment': {
+          const last = rows[rows.length - 1];
+          if (last && !last.comment) last.comment = node.text || '';
+          else row('', node.text || '', false, { note: true });
           break;
+        }
 
         default:
-          rows.push({ number: ++counter.value, depth, text: expr(node.text, node.textMath), comment: node.comment || null });
+          row(simpleText(node) || '', node.comment);
       }
     }
   }
 
   /* ---------------- public renderer ---------------- */
 
+  function adoptRendered(span, holder) {
+    // MarkdownRenderer wraps inline content in a paragraph; keep its children.
+    const source = holder.childElementCount === 1 && holder.firstElementChild.tagName === 'P'
+      ? holder.firstElementChild
+      : holder;
+    span.replaceChildren(...source.childNodes);
+  }
+
+  async function typesetOne(app, span, tex, sourcePath, component) {
+    const holder = document.createElement('div');
+    try {
+      await MarkdownRenderer.render(app, `$${tex}$`, holder, sourcePath, component);
+      adoptRendered(span, holder);
+    } catch (error) {
+      span.classList.add('ps-math-error');
+      span.textContent = `$${tex}$`;
+    }
+  }
+
+  /**
+   * Typeset every `.ps-math` span under root. Uses Obsidian's own Markdown
+   * math (so exports behave like normal notes) but in one render call per
+   * block: each formula becomes its own paragraph, mapped back by position.
+   */
   PS.typesetMath = async function typesetMath(app, root, sourcePath, component) {
     const spans = Array.from(root.querySelectorAll('.ps-math[data-tex]'));
-    await Promise.all(spans.map(async (span) => {
+    if (!spans.length) return;
+    const texts = spans.map((span) => {
       const tex = span.dataset.tex;
       delete span.dataset.tex;
-      const holder = document.createElement('span');
-      holder.className = 'ps-math-render';
-      try {
-        await MarkdownRenderer.render(app, `$${tex}$`, holder, sourcePath, component);
-        unwrapSingleParagraph(holder);
-        span.textContent = '';
-        while (holder.firstChild) span.appendChild(holder.firstChild);
-      } catch (error) {
-        span.classList.add('ps-math-error');
-        span.textContent = `$${tex}$`;
+      return tex;
+    });
+
+    let pending = spans.map((span, index) => index);
+    try {
+      const holder = document.createElement('div');
+      await MarkdownRenderer.render(app, texts.map((tex) => `$${tex}$`).join('\n\n'), holder, sourcePath, component);
+      const paragraphs = Array.from(holder.children);
+      if (paragraphs.length === spans.length) {
+        pending = pending.filter((index) => {
+          const paragraph = paragraphs[index];
+          const ok = paragraph.tagName === 'P' && paragraph.childElementCount === 1
+            && paragraph.firstElementChild.classList.contains('math')
+            && paragraph.textContent.trim() === paragraph.firstElementChild.textContent.trim();
+          if (ok) spans[index].replaceChildren(paragraph.firstElementChild);
+          return !ok;
+        });
       }
-    }));
+    } catch (error) { /* fall back below */ }
+
+    // Anything the batch could not map is rendered on its own.
+    await Promise.all(pending.map((index) => typesetOne(app, spans[index], texts[index], sourcePath, component)));
   };
 
   PS.buildRows = function buildRowsForModel(model) {
@@ -1082,40 +1003,57 @@ PS.serializeLatex = function serializeLatex(model) {
     return rows;
   };
 
-  PS.renderBlock = async function renderBlock(app, model, options, sourcePath, component) {
-    const settings = Object.assign({ lineNumbers: true, indentSize: '1.2em' }, options || {});
+  /** AST → DOM. Math is left as `.ps-math` placeholders for PS.typesetMath. */
+  PS.renderBlock = function renderBlock(model, options) {
+    const settings = Object.assign({ lineNumbers: true, indentSize: '1.2em', commentDelimiter: '//' }, options || {});
     const block = el('div', 'ps-block');
     block.style.setProperty('--ps-indent', settings.indentSize || '1.2em');
 
     if (model.caption) {
       const title = el('div', 'ps-title');
-      title.appendChild(document.createTextNode('Algorithm '));
-      await renderInline(app, title, model.caption, sourcePath, component);
+      title.appendChild(el('span', 'ps-title-label', 'Algorithm'));
+      const text = el('span', 'ps-title-text');
+      renderInline(text, model.caption);
+      title.appendChild(text);
       block.appendChild(title);
     }
 
     const grid = el('div', 'ps-grid');
-    const rows = PS.buildRows(model);
-
-    for (const row of rows) {
+    for (const row of PS.buildRows(model)) {
       const rowEl = el('div', 'ps-row');
+      if (row.kind) rowEl.classList.add(`ps-row-${row.kind}`);
       rowEl.style.setProperty('--ps-depth', String(row.depth));
-      const numberEl = el('span', 'ps-num', settings.lineNumbers && row.number != null ? String(row.number) : '');
-      const codeEl = el('span', 'ps-code');
-      codeEl.style.paddingLeft = `calc(var(--ps-indent) * ${row.depth})`;
-      await renderInline(app, codeEl, row.text, sourcePath, component);
-      const commentEl = el('span', 'ps-comment');
+      rowEl.appendChild(el('span', 'ps-num', settings.lineNumbers && row.number != null ? String(row.number) : ''));
+      // A comment-only line has no code cell: its comment starts at the code
+      // column, at the line's indent, and runs to the right edge (CLRS).
+      if (!row.note) {
+        const codeEl = el('span', 'ps-code');
+        renderInline(codeEl, row.text);
+        rowEl.appendChild(codeEl);
+      }
+      const commentEl = el('span', row.note ? 'ps-comment ps-note' : 'ps-comment');
       if (row.comment) {
         commentEl.appendChild(document.createTextNode(`${settings.commentDelimiter || '//'} `));
-        await renderInline(app, commentEl, row.comment, sourcePath, component, true);
+        renderInline(commentEl, row.comment, true);
       }
-      rowEl.appendChild(numberEl);
-      rowEl.appendChild(codeEl);
       rowEl.appendChild(commentEl);
       grid.appendChild(rowEl);
     }
 
     block.appendChild(grid);
+    return block;
+  };
+
+  /** Render and typeset into `container`, revealing it once math is done. */
+  PS.paint = async function paint(app, container, model, options, sourcePath, component) {
+    const block = PS.renderBlock(model, options);
+    block.style.visibility = 'hidden';
+    container.appendChild(block);
+    try {
+      await PS.typesetMath(app, block, sourcePath, component);
+    } finally {
+      block.style.visibility = '';
+    }
     return block;
   };
 

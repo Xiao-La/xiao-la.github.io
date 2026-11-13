@@ -58,7 +58,7 @@
       for (var block of content.querySelectorAll('.course-pseudocode')) {
         try {
           var model = PseudocodeSuite.parseLatex(block.textContent);
-          var rendered = await PseudocodeSuite.renderBlock(null, model, {
+          var rendered = PseudocodeSuite.renderBlock(model, {
             lineNumbers: true, indentSize: '1.2em', commentDelimiter: '//'
           });
           for (var span of rendered.querySelectorAll('.ps-math[data-tex]')) {

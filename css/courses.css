@@ -13,22 +13,18 @@
 .course-toc summary { cursor: pointer; }
 .course-toc ol { padding-left: 1.3em; }
 .course-toc li { margin: .35em 0; }
-/* Screenshots share the pseudocode card's frame, so slides cut from
-   different sources sit on the page the same way. */
-.course-content .course-image {
-  height: auto; max-width: 100%; box-sizing: border-box;
-  margin: 1.25em auto; padding: .35em;
-  border: 1px solid #d0d7de; border-radius: 6px; background: #fff;
-}
+/* Screenshots use the site's card frame (css/default.css), so slides cut
+   from different sources sit on the page the same way. */
+.course-content .course-image { height: auto; max-width: 100%; margin: 1.25em auto; }
 /* Dark slides (marked by the sync tool) fill their frame instead of sitting
    in a white mat. */
-.course-content .course-image-dark { padding: 0; border-color: #57606a; background: #000; }
+.main .course-content .course-image-dark { padding: 0; border-color: #57606a; background: #000; }
 .course-image-layout { display: flex; flex-wrap: wrap; gap: 1em; align-items: center; margin: 1.5em 0; }
 .course-image-layout .course-image { margin-top: 0; margin-bottom: 0; flex: 1 1 220px; min-width: 0; max-width: calc(50% - .5em); object-fit: contain; }
 .course-math > mjx-container { margin: 0 !important; }
 .course-math > code { white-space: pre-wrap; }
 .course-math-error { outline: 1px solid #b33; }
-.course-table-scroll { overflow-x: auto; max-width: 100%; margin: 1em 0; }
+.course-table-scroll { overflow-x: auto; max-width: 100%; }
 .course-table-scroll table { min-width: 100%; overflow-wrap: normal; word-break: normal; }
 @font-face { font-family: 'CM Pseudocode'; font-style: normal; font-weight: normal; font-display: swap; src: url('../assets/vendor/pseudocode-suite/fonts/cm-regular.woff2') format('woff2'); }
 @font-face { font-family: 'CM Pseudocode'; font-style: italic; font-weight: normal; font-display: swap; src: url('../assets/vendor/pseudocode-suite/fonts/cm-italic.woff2') format('woff2'); }
@@ -36,18 +32,25 @@
 @font-face { font-family: 'CM Pseudocode'; font-style: italic; font-weight: bold; font-display: swap; src: url('../assets/vendor/pseudocode-suite/fonts/cm-bolditalic.woff2') format('woff2'); }
 /* ```pseudo blocks: mirrors the Pseudocode Suite plugin's styles.css. */
 /* Computer Modern has a small x-height, so the box runs at 1.1em to read at
-   the body's size; it hugs its content like a card with a visible edge. */
+   the body's size; the card spans the full column. */
 .course-content .ps-block {
   --ps-indent: 1.2em;
-  width: fit-content; min-width: min(100%, 22em); max-width: 100%;
+  width: 100%; max-width: 100%;
   margin: 1.25em 0; padding: .75em 1.1em .8em; box-sizing: border-box;
-  border: 1px solid #d0d7de; border-radius: 6px; background: #f6f8fa;
+  border: var(--card-border); background: #f0f2f4;
+  box-shadow: var(--card-shadow);
   font-family: 'CM Pseudocode', 'Computer Modern', 'CMU Serif', serif; font-size: 1.1em; line-height: 1.55;
 }
 /* MathJax sizes SVG in ex of the surrounding font; measure against the body
    font so formulas match the ones in the prose around the block. */
 .course-content .ps-math { font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, sans-serif; font-size: .909em; }
-.course-content .ps-title { font-weight: 700; padding-bottom: .3em; margin-bottom: .4em; border-bottom: 1px solid #d0d7de; }
+/* Caption: a heading for the whole block, ruled off like a LaTeX float. */
+.course-content .ps-title {
+  display: flex; flex-wrap: wrap; align-items: baseline; column-gap: .45em;
+  font-size: 1.12em; font-weight: 700; line-height: 1.35;
+  padding-bottom: .35em; margin-bottom: .55em; border-bottom: 1.5px solid #afb8c1;
+}
+.course-content .ps-title-label { font-variant: small-caps; font-variant-caps: small-caps; letter-spacing: .04em; }
 .course-content .ps-grid {
   /* Code keeps its full width when it fits; comments wrap first. */
   display: grid; grid-template-columns: max-content minmax(auto, max-content) 0;
@@ -58,8 +61,19 @@
 }
 .course-content .ps-row { display: contents; }
 .course-content .ps-num { text-align: right; color: #6e7781; font-size: .8em; font-variant-numeric: tabular-nums; user-select: none; }
-.course-content .ps-code { white-space: pre-wrap; overflow-wrap: anywhere; }
+.course-content .ps-code { padding-left: calc(var(--ps-indent) * var(--ps-depth, 0)); white-space: pre-wrap; overflow-wrap: anywhere; }
 .course-content .ps-comment { color: #6e7781; font-size: .92em; white-space: pre-wrap; overflow-wrap: anywhere; max-width: 20em; }
+/* Comment-only line: no code cell; starts at the line's indent in the code
+   column and runs to the right edge (CLRS). */
+.course-content .ps-comment.ps-note {
+  grid-column: 2 / -1; max-width: none; margin-top: 0;
+  padding-left: calc(var(--ps-indent) * var(--ps-depth, 0));
+}
+/* Procedure header: leads its body, with air before each later procedure. */
+.course-content .ps-row-function > .ps-code { font-size: 1.14em; line-height: 1.4; }
+.course-content .ps-row-function > .ps-code .ps-fn { letter-spacing: .04em; }
+.course-content .ps-row-function:not(:first-child) > * { padding-top: .8em; }
+.course-content .ps-row-function + .ps-row > * { padding-top: .15em; }
 .course-content .ps-kw { font-weight: 700; }
 .course-content .ps-fn { font-variant: small-caps; font-variant-caps: small-caps; font-feature-settings: "smcp"; letter-spacing: .02em; }
 .course-content .ps-block code { font-size: .9em; white-space: pre-wrap; overflow-wrap: anywhere; }
