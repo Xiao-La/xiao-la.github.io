@@ -5,7 +5,7 @@ course_title: "数字逻辑"
 section: ""
 status: "updating"
 created_at: "2026-09-15T14:47:35+08:00"
-updated_at: "2026-11-13T19:41:30+08:00"
+updated_at: "2026-11-13T20:14:57+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -38,7 +38,15 @@ excerpt: "数字逻辑 · Boolean Algebra - 布尔代数"
 - 一些公理和定理
 公理和定理都保持对偶性（Duality）。
 - 把 <span class="course-math" data-tex="\cdot" data-display="false"><code>\cdot</code></span> 替换为 <span class="course-math" data-tex="+" data-display="false"><code>+</code></span>，同时把 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 替换为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>，等号仍然成立。
- <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Boolean%20Algebra%20-%20%E5%B8%83%E5%B0%94%E4%BB%A3%E6%95%B0.webp' | relative_url }}{% raw %}" alt="Boolean Algebra - 布尔代数" width="417" height="154" loading="lazy" decoding="async">
+
+| #   | Theorem          | Dual form        | Name         |
+| --- | ---------------- | ---------------- | ------------ |
+| 1   | <span class="course-math" data-tex="x+0=x" data-display="false"><code>x+0=x</code></span>          | <span class="course-math" data-tex="x\cdot 1=x" data-display="false"><code>x\cdot 1=x</code></span>     | Identity     |
+| 2   | <span class="course-math" data-tex="x+1=1" data-display="false"><code>x+1=1</code></span>          | <span class="course-math" data-tex="x\cdot 0=0" data-display="false"><code>x\cdot 0=0</code></span>     | Null Element |
+| 3   | <span class="course-math" data-tex="x+x=x" data-display="false"><code>x+x=x</code></span>          | <span class="course-math" data-tex="x\cdot x=x" data-display="false"><code>x\cdot x=x</code></span>     | Idempotency  |
+| 4   | <span class="course-math" data-tex="(x&#x27;)&#x27;=x" data-display="false"><code>(x&#x27;)&#x27;=x</code></span>        |                  | Involution   |
+| 5   | <span class="course-math" data-tex="x+x&#x27;=1" data-display="false"><code>x+x&#x27;=1</code></span>         | <span class="course-math" data-tex="x\cdot x&#x27;=0" data-display="false"><code>x\cdot x&#x27;=0</code></span>    | Complements  |
+
 运算优先级
 - 括号>NOT>AND>OR
 

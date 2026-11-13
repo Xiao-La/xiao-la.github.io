@@ -188,6 +188,16 @@ class CourseExportTests(unittest.TestCase):
         self.assertIn(f'width="{round(150 * (100 + 2 * sync.TRIM_PAD) / 300)}"', result)
         self.assertNotIn('course-image-dark', result)
 
+    def test_unsized_embeds_use_the_author_scale_but_keep_small_images(self):
+        self.write_png('笔记依赖/图片/Wide.png', width=1500, height=30)
+        self.write_png('笔记依赖/图片/Small.png', width=200, height=100)
+        note = self.write('Example/First.md', '![[Wide.png]]\n![[Small.png]]')
+        e = sync.Exporter(self.vault, [self.course.copy()], cache=self.vault/'.cache')
+        e.collect()
+        result = e.convert(note)
+        self.assertIn(f'width="{round(1500 * sync.UNSIZED_SCALE)}" height="{round(1500 * sync.UNSIZED_SCALE * 30 / 1500)}"', result)
+        self.assertIn('width="200" height="100"', result)
+
     @unittest.skipUnless(shutil.which('cwebp'), 'cwebp not installed')
     def test_images_that_barely_shrink_keep_their_format(self):
         big = self.write_png('笔记依赖/图片/Slide.png')

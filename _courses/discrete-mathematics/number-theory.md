@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-10-12T15:33:52+08:00"
-updated_at: "2026-11-13T19:45:00+08:00"
+updated_at: "2026-11-13T20:14:57+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -121,7 +121,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 <span class="course-math course-math-display" data-tex="n=(a_{k}a_{k-1}\dots a_{0})_{b}" data-display="true"><code>n=(a_{k}a_{k-1}\dots a_{0})_{b}</code></span>
 - 从其他进制转 <span class="course-math" data-tex="10" data-display="false"><code>10</code></span> 进制，只需根据定义计算即可。
 - 在 <span class="course-math" data-tex="2,8,16" data-display="false"><code>2,8,16</code></span> 进制内互转，只需要 grouping：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-1.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-1" width="989" height="234" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-1.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-1" width="400" height="95" loading="lazy" decoding="async">
 由于：
 <span class="course-math course-math-display" data-tex="\begin{aligned}&#10;n&amp;=a_{k}b^{k}+a_{k-1}b^{k-1}+\dots+a_{2}b^{2}+a_{1}b+a_{0} \\&#10;&amp;=b(a_{k}b^{k-1}+a_{k-1}b^{k-2}+\dots+a_{2}b+a_{1})+a_{0} \\&#10;&amp;=b(b(a_{k}b^{k-2}+a_{k-1}b^{k-3}+\dots+a_{2})+a_{1})+a_{0} \\&#10;&amp;=\dots&#10;\end{aligned}" data-display="true"><code>\begin{aligned}&#10;n&amp;=a_{k}b^{k}+a_{k-1}b^{k-1}+\dots+a_{2}b^{2}+a_{1}b+a_{0} \\&#10;&amp;=b(a_{k}b^{k-1}+a_{k-1}b^{k-2}+\dots+a_{2}b+a_{1})+a_{0} \\&#10;&amp;=b(b(a_{k}b^{k-2}+a_{k-1}b^{k-3}+\dots+a_{2})+a_{1})+a_{0} \\&#10;&amp;=\dots&#10;\end{aligned}</code></span>
 那么要从 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 构造它的 base-<span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 展开，就相当于不停去除以 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span>，取余数，就得到了 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 进制下的低位到高位。
@@ -541,7 +541,7 @@ Kerckhoffs's Principle：即使算法已知了，只要密钥未知，系统也�
 
 概念：1976 W.Diffie, M.Hellman, ***New directions in cryptography***: **"We stand today on the brink of a revolution in cryptography."**
 实现：R.**R**ivest, A.**S**hamir, L.**A**dleman,  ***A method for obtaining digital signatures and public-key cryptosystems***
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-11.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-11" width="1289" height="375" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-11.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-11" width="438" height="127" loading="lazy" decoding="async">
 在公钥密码学中，不再需要提前协商密钥了。不过由于效率比较慢，通常可以通过 **公钥密码学** 来传递 **对称密码学** 的 **密钥**，然后后续使用对称加密。
 另一方面，可以存在 **数字签名** 了。私钥可以用来证明身份，所有人都能用公钥来核验。
 
@@ -600,7 +600,12 @@ Kerckhoffs's Principle：即使算法已知了，只要密钥未知，系统也�
 **Diffie-Hellman Key Exchange Protocol**
 这里 <span class="course-math" data-tex="\alpha" data-display="false"><code>\alpha</code></span> 是 <span class="course-math" data-tex="\mathbb{Z}_{p}" data-display="false"><code>\mathbb{Z}_{p}</code></span> 的一个生成元，<span class="course-math" data-tex="X_{A},X_{B}" data-display="false"><code>X_{A},X_{B}</code></span> 保密作为私钥，于是就在只交换 <span class="course-math" data-tex="Y_{A},Y_{B}" data-display="false"><code>Y_{A},Y_{B}</code></span> 的情况下得到了相同的密钥 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span>。
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-12.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-12" width="1449" height="739" loading="lazy" decoding="async">
+| User A | User B |
+| --- | --- |
+| Generate random <span class="course-math" data-tex="X_A&lt;p" data-display="false"><code>X_A&lt;p</code></span> | Generate random <span class="course-math" data-tex="X_B&lt;p" data-display="false"><code>X_B&lt;p</code></span> |
+| Calculate <span class="course-math" data-tex="Y_A=\alpha^{X_A}\bmod p" data-display="false"><code>Y_A=\alpha^{X_A}\bmod p</code></span> | Calculate <span class="course-math" data-tex="Y_B=\alpha^{X_B}\bmod p" data-display="false"><code>Y_B=\alpha^{X_B}\bmod p</code></span> |
+| <span class="course-math" data-tex="Y_A\rightarrow" data-display="false"><code>Y_A\rightarrow</code></span> | <span class="course-math" data-tex="\leftarrow Y_B" data-display="false"><code>\leftarrow Y_B</code></span> |
+| Calculate <span class="course-math" data-tex="k=(Y_B)^{X_A}\bmod p" data-display="false"><code>k=(Y_B)^{X_A}\bmod p</code></span> | Calculate <span class="course-math" data-tex="k=(Y_A)^{X_B}\bmod p" data-display="false"><code>k=(Y_A)^{X_B}\bmod p</code></span> |
 
 量子计算对于大整数分解问题与离散对数问题有较快的解决，因此挑战了公钥密码学。后量子时代的公钥密码学需要解决密钥封装（KEM），数字签名；需要找其他的困难问题。技术路线有：
 - Lattice, Code, Isogeny, Multivariable, Hash

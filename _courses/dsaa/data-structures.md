@@ -166,7 +166,7 @@ excerpt: "数据结构与算法分析 · Data Structures"
 
 除了 key，还对每一个元素 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 存两个 attribute：<span class="course-math" data-tex="x.prev" data-display="false"><code>x.prev</code></span> 和 <span class="course-math" data-tex="x.next" data-display="false"><code>x.next</code></span>，分别指向 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 的前驱和后继，这就是双向链表（doubly linked list）。若只存后继，那就是单向链表（singly linked list），把列表的头（head）和尾（tail）接起来，就会有循环链表（circular list）。
 一个双向链表：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-8.webp' | relative_url }}{% raw %}" alt="Data Structures-8" width="1751" height="212" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-8.webp' | relative_url }}{% raw %}" alt="Data Structures-8" width="595" height="72" loading="lazy" decoding="async">
 一些支持的操作：
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}

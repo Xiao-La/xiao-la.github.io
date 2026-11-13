@@ -5,7 +5,7 @@ course_title: "高等数学（上）/（下）"
 section: "下"
 status: "completed"
 created_at: "2026-04-07T16:57:39+08:00"
-updated_at: "2026-10-13T12:01:07+08:00"
+updated_at: "2026-11-13T20:15:05+08:00"
 reference: false
 order: 10
 layout: "course"
@@ -207,9 +207,13 @@ excerpt: "高等数学（上）/（下） · Partial Derivatives -  偏导数"
 
 
 在 <span class="course-math" data-tex="(a,b)" data-display="false"><code>(a,b)</code></span> 处的 <span class="course-math" data-tex="n+1" data-display="false"><code>n+1</code></span> 阶泰勒公式：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Partial%20Derivatives%20-%20%20%E5%81%8F%E5%AF%BC%E6%95%B0.webp' | relative_url }}{% raw %}" alt="Partial Derivatives -  偏导数" width="2013" height="438" loading="lazy" decoding="async">
+
+<span class="course-math course-math-display" data-tex="\begin{aligned}&#10;f(a+h,b+k)={}&amp;f(a,b)+\left(hf_x+kf_y\right)\Big\vert_{(a,b)}+\frac{1}{2!}\left(h^2f_{xx}+2hkf_{xy}+k^2f_{yy}\right)\Big\vert_{(a,b)}\\&#10;&amp;+\frac{1}{3!}\left(h^3f_{xxx}+3h^2kf_{xxy}+3hk^2f_{xyy}+k^3f_{yyy}\right)\Big\vert_{(a,b)}+\cdots+\frac{1}{n!}\left(h\frac{\partial}{\partial x}+k\frac{\partial}{\partial y}\right)^{n}f\Big\vert_{(a,b)}\\&#10;&amp;+\frac{1}{(n+1)!}\left(h\frac{\partial}{\partial x}+k\frac{\partial}{\partial y}\right)^{n+1}f\Big\vert_{(a+ch,\,b+ck)}.&#10;\end{aligned}\tag{7}" data-display="true"><code>\begin{aligned}&#10;f(a+h,b+k)={}&amp;f(a,b)+\left(hf_x+kf_y\right)\Big\vert_{(a,b)}+\frac{1}{2!}\left(h^2f_{xx}+2hkf_{xy}+k^2f_{yy}\right)\Big\vert_{(a,b)}\\&#10;&amp;+\frac{1}{3!}\left(h^3f_{xxx}+3h^2kf_{xxy}+3hk^2f_{xyy}+k^3f_{yyy}\right)\Big\vert_{(a,b)}+\cdots+\frac{1}{n!}\left(h\frac{\partial}{\partial x}+k\frac{\partial}{\partial y}\right)^{n}f\Big\vert_{(a,b)}\\&#10;&amp;+\frac{1}{(n+1)!}\left(h\frac{\partial}{\partial x}+k\frac{\partial}{\partial y}\right)^{n+1}f\Big\vert_{(a+ch,\,b+ck)}.&#10;\end{aligned}\tag{7}</code></span>
+
 把这里的 <span class="course-math" data-tex="h,k" data-display="false"><code>h,k</code></span> 换成 <span class="course-math" data-tex="x,y" data-display="false"><code>x,y</code></span>，可以写出在原点处的 <span class="course-math" data-tex="n+1" data-display="false"><code>n+1</code></span> 阶泰勒公式：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Partial%20Derivatives%20-%20%20%E5%81%8F%E5%AF%BC%E6%95%B0-1.webp' | relative_url }}{% raw %}" alt="Partial Derivatives -  偏导数-1" width="2168" height="424" loading="lazy" decoding="async">
+
+<span class="course-math course-math-display" data-tex="\begin{aligned}&#10;f(x,y)={}&amp;f(0,0)+xf_x+yf_y+\frac{1}{2!}\left(x^2f_{xx}+2xyf_{xy}+y^2f_{yy}\right)\\&#10;&amp;+\frac{1}{3!}\left(x^3f_{xxx}+3x^2yf_{xxy}+3xy^2f_{xyy}+y^3f_{yyy}\right)+\cdots+\frac{1}{n!}\left(x^n\frac{\partial^n f}{\partial x^n}+nx^{n-1}y\frac{\partial^n f}{\partial x^{n-1}\partial y}+\cdots+y^n\frac{\partial^n f}{\partial y^n}\right)\\&#10;&amp;+\frac{1}{(n+1)!}\left(x^{n+1}\frac{\partial^{n+1} f}{\partial x^{n+1}}+(n+1)x^ny\frac{\partial^{n+1} f}{\partial x^n\partial y}+\cdots+y^{n+1}\frac{\partial^{n+1} f}{\partial y^{n+1}}\right)\Bigg\vert_{(cx,\,cy)}&#10;\end{aligned}\tag{8}" data-display="true"><code>\begin{aligned}&#10;f(x,y)={}&amp;f(0,0)+xf_x+yf_y+\frac{1}{2!}\left(x^2f_{xx}+2xyf_{xy}+y^2f_{yy}\right)\\&#10;&amp;+\frac{1}{3!}\left(x^3f_{xxx}+3x^2yf_{xxy}+3xy^2f_{xyy}+y^3f_{yyy}\right)+\cdots+\frac{1}{n!}\left(x^n\frac{\partial^n f}{\partial x^n}+nx^{n-1}y\frac{\partial^n f}{\partial x^{n-1}\partial y}+\cdots+y^n\frac{\partial^n f}{\partial y^n}\right)\\&#10;&amp;+\frac{1}{(n+1)!}\left(x^{n+1}\frac{\partial^{n+1} f}{\partial x^{n+1}}+(n+1)x^ny\frac{\partial^{n+1} f}{\partial x^n\partial y}+\cdots+y^{n+1}\frac{\partial^{n+1} f}{\partial y^{n+1}}\right)\Bigg\vert_{(cx,\,cy)}&#10;\end{aligned}\tag{8}</code></span>
+
 也就是说（算子展开为各阶偏导时，系数 <span class="course-math" data-tex="x,y" data-display="false"><code>x,y</code></span> 视为常数）
 <span class="course-math course-math-display" data-tex="f(x,y)=\sum_{k=0}^{n}\frac{1}{k!}\left[\left(x\frac{\partial}{\partial x}+y\frac{\partial}{\partial y}\right)^k f\right]_{(0,0)}+\frac{1}{(n+1)!}\left[\left(x\frac{\partial}{\partial x}+y\frac{\partial}{\partial y}\right)^{n+1}f\right]_{(cx,cy)},\quad 0&lt;c&lt;1" data-display="true"><code>f(x,y)=\sum_{k=0}^{n}\frac{1}{k!}\left[\left(x\frac{\partial}{\partial x}+y\frac{\partial}{\partial y}\right)^k f\right]_{(0,0)}+\frac{1}{(n+1)!}\left[\left(x\frac{\partial}{\partial x}+y\frac{\partial}{\partial y}\right)^{n+1}f\right]_{(cx,cy)},\quad 0&lt;c&lt;1</code></span>
 {% endraw %}

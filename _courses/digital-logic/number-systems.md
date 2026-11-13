@@ -5,7 +5,7 @@ course_title: "数字逻辑"
 section: ""
 status: "updating"
 created_at: "2026-09-08T13:58:29+08:00"
-updated_at: "2026-11-13T14:55:50+08:00"
+updated_at: "2026-11-13T20:14:57+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -83,8 +83,29 @@ Physical Layer -> transistor -> logic gate -> mircroarchitecture -> system
 小数部分：不断去乘以 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span>，考察每次的整数部分。
 MSD (Most-significant Digit)：权重最高的位。
 LSD（Least-significant Digit）：权重最低的位。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-3.webp' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-3" width="362" height="234" loading="lazy" decoding="async">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-4.webp' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-4" width="386" height="220" loading="lazy" decoding="async">
+
+<span class="course-math" data-tex="(13)_{10}" data-display="false"><code>(13)_{10}</code></span>
+
+|           | Quotient | Remainder | Coefficient |
+| --------- | -------- | --------- | ----------- |
+| <span class="course-math" data-tex="13/2=" data-display="false"><code>13/2=</code></span>   | 6        | 1         | <span class="course-math" data-tex="a_0=1" data-display="false"><code>a_0=1</code></span>     |
+| <span class="course-math" data-tex="6/2=" data-display="false"><code>6/2=</code></span>    | 3        | 0         | <span class="course-math" data-tex="a_1=0" data-display="false"><code>a_1=0</code></span>     |
+| <span class="course-math" data-tex="3/2=" data-display="false"><code>3/2=</code></span>    | 1        | 1         | <span class="course-math" data-tex="a_2=1" data-display="false"><code>a_2=1</code></span>     |
+| <span class="course-math" data-tex="1/2=" data-display="false"><code>1/2=</code></span>    | 0        | 1         | <span class="course-math" data-tex="a_3=1" data-display="false"><code>a_3=1</code></span>     |
+
+Answer：<span class="course-math" data-tex="(13)_{10}=(a_3a_2a_1a_0)_2=(1101)_2" data-display="false"><code>(13)_{10}=(a_3a_2a_1a_0)_2=(1101)_2</code></span>，<span class="course-math" data-tex="a_3" data-display="false"><code>a_3</code></span> 为 MSB，<span class="course-math" data-tex="a_0" data-display="false"><code>a_0</code></span> 为 LSB
+
+
+<span class="course-math" data-tex="(0.625)_{10}" data-display="false"><code>(0.625)_{10}</code></span>
+
+|             | Integer | Fraction | Coefficient |
+| ----------- | ------- | -------- | ----------- |
+| <span class="course-math" data-tex="0.625\times 2=" data-display="false"><code>0.625\times 2=</code></span> | 1       | .25      | <span class="course-math" data-tex="a_{-1}=1" data-display="false"><code>a_{-1}=1</code></span>  |
+| <span class="course-math" data-tex="0.25\times 2=" data-display="false"><code>0.25\times 2=</code></span>  | 0       | .5       | <span class="course-math" data-tex="a_{-2}=0" data-display="false"><code>a_{-2}=0</code></span>  |
+| <span class="course-math" data-tex="0.5\times 2=" data-display="false"><code>0.5\times 2=</code></span>   | 1       | .0       | <span class="course-math" data-tex="a_{-3}=1" data-display="false"><code>a_{-3}=1</code></span>  |
+
+Answer：<span class="course-math" data-tex="(0.625)_{10}=(0.a_{-1}a_{-2}a_{-3})_2=(0.101)_2" data-display="false"><code>(0.625)_{10}=(0.a_{-1}a_{-2}a_{-3})_2=(0.101)_2</code></span>，<span class="course-math" data-tex="a_{-1}" data-display="false"><code>a_{-1}</code></span> 为 MSB，<span class="course-math" data-tex="a_{-3}" data-display="false"><code>a_{-3}</code></span> 为 LSB
+
 
 
 ### 其他进制之间转换
@@ -119,7 +140,7 @@ LSD（Least-significant Digit）：权重最低的位。
 用 BCD 码表示的数，加法应该使用十进制的办法来加。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-8.webp' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-8" width="385" height="168" loading="lazy" decoding="async">
 做减法可以转换为做 10's complement 再加。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-12.webp' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-12" width="1422" height="574" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Systems%20-%20%E6%95%B0%E5%AD%97%E7%B3%BB%E7%BB%9F-12.webp' | relative_url }}{% raw %}" alt="Number Systems - 数字系统-12" width="483" height="195" loading="lazy" decoding="async">
 
 ## 格雷码
 {: #section-8 }

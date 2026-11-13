@@ -29,6 +29,10 @@ WEBP_ARGS = ['-quiet', '-q', '90', '-m', '6', '-metadata', 'none']
 TRIM_TOLERANCE = 24
 TRIM_PAD = 12
 TRIM_MIN = 24
+# Embeds without a width: the median ratio of the author's own `|width` to the
+# screenshot's pixel width, but never below UNSIZED_MIN_WIDTH (or the image's own width).
+UNSIZED_SCALE = 0.34
+UNSIZED_MIN_WIDTH = 400
 # Mean luminance below this marks a dark slide, framed dark on the page.
 DARK_LUMA = 110
 FENCE = re.compile(r"(?m)^ {0,3}(`{3,}|~{3,})([^\n]*)\n([\s\S]*?)^ {0,3}\1[ \t]*$")
@@ -399,7 +403,12 @@ class Exporter:
             intrinsic = struct.unpack('>II', header[16:24]) if header[:8] == b'\x89PNG\r\n\x1a\n' and len(header) == 24 else None
             info = self.scan(dest)
             shown = tuple(info['box'][2:]) if info and info['box'] else intrinsic
-            size = f' width="{shown[0]}" height="{shown[1]}"' if shown else ''
+            size = ''
+            if shown:
+                # Unsized embeds are mostly Retina slide captures: show them at the
+                # scale the author gives sized ones, without shrinking small figures.
+                width = max(min(shown[0], UNSIZED_MIN_WIDTH), round(shown[0] * UNSIZED_SCALE))
+                size = f' width="{width}" height="{round(width * shown[1] / shown[0])}"'
             if alias:
                 dims = re.fullmatch(r'(\d+)(?:x(\d+))?', alias)
                 if not dims:

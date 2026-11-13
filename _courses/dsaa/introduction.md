@@ -5,7 +5,7 @@ course_title: "数据结构与算法分析"
 section: ""
 status: "updating"
 created_at: "2026-09-08T16:23:16+08:00"
-updated_at: "2026-11-13T14:51:35+08:00"
+updated_at: "2026-11-13T20:14:57+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -50,7 +50,23 @@ excerpt: "数据结构与算法分析 · Introduction"
 {: #section-2 }
 
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Introduction.webp' | relative_url }}{% raw %}" alt="Introduction" width="419" height="196" loading="lazy" decoding="async">
+<pre class="course-pseudocode">\begin{algorithm}
+\begin{algorithmic}
+\Procedure{Insertion-Sort}{$A$}
+\For{$j = 2$ to $A.\mathit{length}$}
+\State $\mathit{key} = A[j]$
+\State \Comment{Insert $A[j]$ into the sorted sequence $A[1 \dots j-1]$.}
+\State $i = j - 1$
+\While{$i &gt; 0$ and $A[i] &gt; \mathit{key}$}
+\State $A[i+1] = A[i]$
+\State $i = i - 1$
+\EndWhile
+\State $A[i+1] = \mathit{key}$
+\EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
 
 
 #### 证明正确性
@@ -105,7 +121,17 @@ Proof by loop invariant （通过循环不变量证明）
 | <span class="course-math" data-tex="f(n)=\omega(g(n))" data-display="false"><code>f(n)=\omega(g(n))</code></span> | <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> grows faster than <span class="course-math" data-tex="g" data-display="false"><code>g</code></span> | “<span class="course-math" data-tex="f&gt;g" data-display="false"><code>f&gt;g</code></span>” |
 
 常用的：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Introduction-3.webp' | relative_url }}{% raw %}" alt="Introduction-3" width="272" height="147" loading="lazy" decoding="async">
+
+| 增长                  | 名称                |
+| ------------------- | ----------------- |
+| <span class="course-math" data-tex="\Theta(1)" data-display="false"><code>\Theta(1)</code></span>         | constant time     |
+| <span class="course-math" data-tex="\Theta(\log n)" data-display="false"><code>\Theta(\log n)</code></span>   | logarithmic time  |
+| <span class="course-math" data-tex="\Theta(n)" data-display="false"><code>\Theta(n)</code></span>         | linear time       |
+| <span class="course-math" data-tex="\Theta(n^{2})" data-display="false"><code>\Theta(n^{2})</code></span>     | quadratic time    |
+| <span class="course-math" data-tex="\Theta(n^{3})" data-display="false"><code>\Theta(n^{3})</code></span>     | cubic time        |
+| <span class="course-math" data-tex="n^{k}" data-display="false"><code>n^{k}</code></span> for <span class="course-math" data-tex="k=\Theta(1)" data-display="false"><code>k=\Theta(1)</code></span> | polynomial time |
+| <span class="course-math" data-tex="2^{n}" data-display="false"><code>2^{n}</code></span>             | exponential time  |
+
 其中，任何 <span class="course-math" data-tex="\log n" data-display="false"><code>\log n</code></span> 的多项式都比 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 的多项式增长得慢；任何 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 的多项式都比 <span class="course-math" data-tex="2^{n^{\varepsilon}}" data-display="false"><code>2^{n^{\varepsilon}}</code></span> 增长得慢。
 渐进记号表示的是运行时间的增长速度和 <span class="course-math" data-tex="g(n)" data-display="false"><code>g(n)</code></span> 之间的关系（一样快/至少/至多/大于/小于...）
 
@@ -202,7 +228,9 @@ A design paradigms: Divide-and-conquer.
 其中 <span class="course-math" data-tex="a\geq 1, b&gt;1" data-display="false"><code>a\geq 1, b&gt;1</code></span>。
 我们称 <span class="course-math" data-tex="f(n)" data-display="false"><code>f(n)</code></span> 为 driving function（表示 divide 和 combine 的代价），而 <span class="course-math" data-tex="T(n)" data-display="false"><code>T(n)</code></span> 称为 master recurrence（表示我们分成 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 个子问题，每个需要 <span class="course-math" data-tex="T(n / b)" data-display="false"><code>T(n / b)</code></span> 的时间解决）。另外称 <span class="course-math" data-tex="n^{\log_{b}a}" data-display="false"><code>n^{\log_{b}a}</code></span> 为 watershed function。
 那么 **The Master Theorem** 指出：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Introduction-7.webp' | relative_url }}{% raw %}" alt="Introduction-7" width="476" height="149" loading="lazy" decoding="async">
+1. If there exists a constant <span class="course-math" data-tex="\epsilon&gt;0" data-display="false"><code>\epsilon&gt;0</code></span> such that <span class="course-math" data-tex="f(n)=O(n^{\log_{b}a-\epsilon})" data-display="false"><code>f(n)=O(n^{\log_{b}a-\epsilon})</code></span>, then <span class="course-math" data-tex="T(n)=\Theta(n^{\log_{b}a})" data-display="false"><code>T(n)=\Theta(n^{\log_{b}a})</code></span>.
+2. If there exists a constant <span class="course-math" data-tex="k\geq 0" data-display="false"><code>k\geq 0</code></span> such that <span class="course-math" data-tex="f(n)=\Theta(n^{\log_{b}a}\lg^{k}n)" data-display="false"><code>f(n)=\Theta(n^{\log_{b}a}\lg^{k}n)</code></span>, then <span class="course-math" data-tex="T(n)=\Theta(n^{\log_{b}a}\lg^{k+1}n)" data-display="false"><code>T(n)=\Theta(n^{\log_{b}a}\lg^{k+1}n)</code></span>.
+3. If there exists a constant <span class="course-math" data-tex="\epsilon&gt;0" data-display="false"><code>\epsilon&gt;0</code></span> such that <span class="course-math" data-tex="f(n)=\Omega(n^{\log_{b}a+\epsilon})" data-display="false"><code>f(n)=\Omega(n^{\log_{b}a+\epsilon})</code></span>, and if <span class="course-math" data-tex="f(n)" data-display="false"><code>f(n)</code></span> additionally satisfies the ***regularity condition*** <span class="course-math" data-tex="af(n/b)\leq cf(n)" data-display="false"><code>af(n/b)\leq cf(n)</code></span> for some constant <span class="course-math" data-tex="c&lt;1" data-display="false"><code>c&lt;1</code></span> and all sufficiently large <span class="course-math" data-tex="n" data-display="false"><code>n</code></span>, then <span class="course-math" data-tex="T(n)=\Theta(f(n))" data-display="false"><code>T(n)=\Theta(f(n))</code></span>.
 三种情况分别为：
 - <span class="course-math" data-tex="f(n)" data-display="false"><code>f(n)</code></span> 相比于 watershed 来说小一个多项式的量级（慢  <span class="course-math" data-tex="\Theta(n^{\varepsilon})" data-display="false"><code>\Theta(n^{\varepsilon})</code></span>）。
 - <span class="course-math" data-tex="f(n)" data-display="false"><code>f(n)</code></span> 和 watershed 差不多量级（差的只是 <span class="course-math" data-tex="\log^kn" data-display="false"><code>\log^kn</code></span> 的量级）。

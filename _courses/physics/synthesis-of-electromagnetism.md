@@ -22,7 +22,7 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 ### LC 振荡电路 （LC Oscillator）
 {: #section-1 }
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88.webp' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合" width="1679" height="444" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88.webp' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合" width="571" height="151" loading="lazy" decoding="async">
 能量守恒：
 <span class="course-math course-math-display" data-tex="\frac{Q^{2}}{2C}+ \frac{1}{2}Li^{2}=U" data-display="true"><code>\frac{Q^{2}}{2C}+ \frac{1}{2}Li^{2}=U</code></span>
 这是一个关于 <span class="course-math" data-tex="q" data-display="false"><code>q</code></span> 的二阶微分方程（假定电流流进正极板，才有 <span class="course-math" data-tex="i=\frac{\mathrm{d}Q}{\mathrm{d}t}" data-display="false"><code>i=\frac{\mathrm{d}Q}{\mathrm{d}t}</code></span>），类似与弹簧振子。那么有
@@ -30,10 +30,10 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 这里 <span class="course-math" data-tex="\omega= \frac{1}{\sqrt{ LC }}" data-display="false"><code>\omega= \frac{1}{\sqrt{ LC }}</code></span>。
 
 有电阻的情况，就相当于阻尼振荡（Damped Oscillator）：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-1.webp' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合-1" width="1794" height="525" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-1.webp' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合-1" width="610" height="179" loading="lazy" decoding="async">
 
 有交流电源和电阻的情况，就相当于受迫振荡。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-2.webp' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合-2" width="1676" height="758" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-2.webp' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合-2" width="570" height="258" loading="lazy" decoding="async">
 有如下关系，其中 <span class="course-math" data-tex="\omega" data-display="false"><code>\omega</code></span> 是电源频率：
 <span class="course-math course-math-display" data-tex="\varepsilon=\varepsilon_{m}\sin \omega t" data-display="true"><code>\varepsilon=\varepsilon_{m}\sin \omega t</code></span>
 <span class="course-math course-math-display" data-tex="i=I_{m}\sin(\omega t-\phi)" data-display="true"><code>i=I_{m}\sin(\omega t-\phi)</code></span>
@@ -42,7 +42,7 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 <span class="course-math course-math-display" data-tex="V_{C} = \frac{\int i\,\mathrm{d}t}{C}= \frac{1}{\omega C} I_{m} \sin\left( \omega t-\phi-\frac{\pi}{2} \right)" data-display="true"><code>V_{C} = \frac{\int i\,\mathrm{d}t}{C}= \frac{1}{\omega C} I_{m} \sin\left( \omega t-\phi-\frac{\pi}{2} \right)</code></span>
 **直观理解：电感是对抗电流的变化的，所以电压提前于电流；电容器是先有电流充电才有电压的，所以电压落后于电流。**
 这里称 <span class="course-math" data-tex="X_{L}=\omega L" data-display="false"><code>X_{L}=\omega L</code></span> 为感抗（Inductive Reactance），<span class="course-math" data-tex="X_{C}=\frac{1}{\omega C}" data-display="false"><code>X_{C}=\frac{1}{\omega C}</code></span> 为容抗（Capacitive Reactance）。上方是相图（Phasor Diagram），因此电感的电势差相位领先电流 <span class="course-math" data-tex="\frac{\pi}{2}" data-display="false"><code>\frac{\pi}{2}</code></span>，电容的落后电流 <span class="course-math" data-tex="\frac{\pi}{2}" data-display="false"><code>\frac{\pi}{2}</code></span>。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-3.webp' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合-3" width="2168" height="704" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-3.webp' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合-3" width="737" height="239" loading="lazy" decoding="async">
 图中可以看到， <span class="course-math" data-tex="\varepsilon" data-display="false"><code>\varepsilon</code></span> 领先电流相位 <span class="course-math" data-tex="\phi" data-display="false"><code>\phi</code></span>。
 这里定义阻抗 (Impedance)
 <span class="course-math course-math-display" data-tex="Z= \sqrt{ R^{2}+(X_{L}-X_{C})^{2} }" data-display="true"><code>Z= \sqrt{ R^{2}+(X_{L}-X_{C})^{2} }</code></span>

@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-09-30T19:28:05+08:00"
-updated_at: "2026-10-13T14:04:27+08:00"
+updated_at: "2026-11-13T20:14:57+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -25,7 +25,12 @@ excerpt: "离散数学 · Algorithm - 算法"
 我们关心随着 input size（记作 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span>）变大，运行时间的渐进表现（Asymptotic behavior）。使用大 <span class="course-math" data-tex="O" data-display="false"><code>O</code></span> 记号表示上界：<span class="course-math" data-tex="f(n)=O(g(n))" data-display="false"><code>f(n)=O(g(n))</code></span> 若
 <span class="course-math course-math-display" data-tex="\exists c&gt;0,n_0,\ \forall n&gt;n_0 , \lvert f(n) \rvert\leq c \lvert g(n) \rvert" data-display="true"><code>\exists c&gt;0,n_0,\ \forall n&gt;n_0 , \lvert f(n) \rvert\leq c \lvert g(n) \rvert</code></span>
 结论：<span class="course-math" data-tex="f(x)=\sum_{i=0}^{n} a_{i}x^{i}=O(x^{n})" data-display="false"><code>f(x)=\sum_{i=0}^{n} a_{i}x^{i}=O(x^{n})</code></span>。（多项式的主项决定增长速度）
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Algorithm%20-%20%E7%AE%97%E6%B3%95.webp' | relative_url }}{% raw %}" alt="Algorithm - 算法" width="262" height="232" loading="lazy" decoding="async">
+- <span class="course-math" data-tex="1+2+\cdots+n=O(n^{2})" data-display="false"><code>1+2+\cdots+n=O(n^{2})</code></span>
+- <span class="course-math" data-tex="n!=O(n^{n})" data-display="false"><code>n!=O(n^{n})</code></span>
+- <span class="course-math" data-tex="\log n!=O(n\log n)" data-display="false"><code>\log n!=O(n\log n)</code></span>
+- <span class="course-math" data-tex="\log_{a}n=O(n)" data-display="false"><code>\log_{a}n=O(n)</code></span>，<span class="course-math" data-tex="a\geq 2" data-display="false"><code>a\geq 2</code></span> 为整数
+- <span class="course-math" data-tex="n^{a}=O(n^{b})" data-display="false"><code>n^{a}=O(n^{b})</code></span>，<span class="course-math" data-tex="a\leq b" data-display="false"><code>a\leq b</code></span> 为整数
+- <span class="course-math" data-tex="n^{a}=O(2^{n})" data-display="false"><code>n^{a}=O(2^{n})</code></span>，<span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 为整数
 - <span class="course-math" data-tex="n^{n}" data-display="false"><code>n^{n}</code></span> 并不是 <span class="course-math" data-tex="O(n!)" data-display="false"><code>O(n!)</code></span> 的。
 - 但是，<span class="course-math" data-tex="n\log n=O(\log n!)" data-display="false"><code>n\log n=O(\log n!)</code></span>。
 - 这是因为，<span class="course-math" data-tex="n^{n}\leq(n!)^{2}" data-display="false"><code>n^{n}\leq(n!)^{2}</code></span>。

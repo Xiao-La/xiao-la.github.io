@@ -67,7 +67,7 @@ excerpt: "大学物理（上）/（下） · Longitudinal Wave - 纵波"
 
 两列波 <span class="course-math" data-tex="s_{1}=s_{m}\cos \omega_{1}t, s_{2}=s_{m} \cos \omega_{2}t" data-display="false"><code>s_{1}=s_{m}\cos \omega_{1}t, s_{2}=s_{m} \cos \omega_{2}t</code></span>，那么它们的叠加 <span class="course-math" data-tex="s = 2s_{m} \cos (\frac{\omega_{1}-\omega_{2}}{2}t)  \cos (\frac{\omega_{1}+\omega_{2}}{2}t)" data-display="false"><code>s = 2s_{m} \cos (\frac{\omega_{1}-\omega_{2}}{2}t)  \cos (\frac{\omega_{1}+\omega_{2}}{2}t)</code></span>
 叠加会形成这样的波形：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-7.webp' | relative_url }}{% raw %}" alt="Wave-7" width="877" height="176" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-7.webp' | relative_url }}{% raw %}" alt="Wave-7" width="400" height="80" loading="lazy" decoding="async">
 <span class="course-math" data-tex="\omega_{\mathrm{beat}}=\lvert \omega_{1}-\omega_{2}\rvert , f_{\mathrm{beat}}=\lvert f_{1}-f_{2}\rvert" data-display="false"><code>\omega_{\mathrm{beat}}=\lvert \omega_{1}-\omega_{2}\rvert , f_{\mathrm{beat}}=\lvert f_{1}-f_{2}\rvert</code></span>
 
 

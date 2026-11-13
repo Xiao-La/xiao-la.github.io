@@ -88,11 +88,11 @@ excerpt: "大学物理（上）/（下） · Transverse Wave - 横波"
 **可以证明，产生共振的必要条件是硬边界都在节点，软边界都在波腹**。
 
 两边都是硬边界的情况，需要 <span class="course-math" data-tex="L=n \frac{\lambda}{2}" data-display="false"><code>L=n \frac{\lambda}{2}</code></span> 形成共振：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-3.webp' | relative_url }}{% raw %}" alt="Wave-3" width="1217" height="1251" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-3.webp' | relative_url }}{% raw %}" alt="Wave-3" width="414" height="426" loading="lazy" decoding="async">
 2. 一边是硬边界一边是软边界的情况，需要 <span class="course-math" data-tex="L=\frac{\lambda}{4} + \frac{\lambda}{2} n" data-display="false"><code>L=\frac{\lambda}{4} + \frac{\lambda}{2} n</code></span>，即 <span class="course-math" data-tex="\lambda=\frac{4L}{m}(m=1,3,5\dots)" data-display="false"><code>\lambda=\frac{4L}{m}(m=1,3,5\dots)</code></span> 的情况：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-4.webp' | relative_url }}{% raw %}" alt="Wave-4" width="534" height="352" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-4.webp' | relative_url }}{% raw %}" alt="Wave-4" width="400" height="264" loading="lazy" decoding="async">
 3. 两边都是软边界的情况，需要 <span class="course-math" data-tex="L=n \frac{\lambda}{2}" data-display="false"><code>L=n \frac{\lambda}{2}</code></span>：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-5.webp' | relative_url }}{% raw %}" alt="Wave-5" width="522" height="572" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Wave-5.webp' | relative_url }}{% raw %}" alt="Wave-5" width="400" height="438" loading="lazy" decoding="async">
 
 注意，所谓 <span class="course-math" data-tex="\text{nth harmonic}" data-display="false"><code>\text{nth harmonic}</code></span> ，可以理解成谐波的频率 <span class="course-math" data-tex="f_{n}=nf_{1}" data-display="false"><code>f_{n}=nf_{1}</code></span>，其中 <span class="course-math" data-tex="f_{1}" data-display="false"><code>f_{1}</code></span> 为 <span class="course-math" data-tex="\text{Foundamental Frequency}" data-display="false"><code>\text{Foundamental Frequency}</code></span>；所谓 <span class="course-math" data-tex="\text{nth lowest harmonic}" data-display="false"><code>\text{nth lowest harmonic}</code></span>，对一边硬边界一边软边界的情况，则取第 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个可以形成谐波的频率。
 {% endraw %}

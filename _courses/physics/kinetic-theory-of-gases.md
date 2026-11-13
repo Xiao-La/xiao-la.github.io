@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-12-20T17:42:17+08:00"
-updated_at: "2026-10-13T12:13:22+08:00"
+updated_at: "2026-11-13T20:14:57+08:00"
 reference: false
 order: 9
 layout: "course"
@@ -115,7 +115,15 @@ excerpt: "大学物理（上）/（下） · Kinetic Theory of Gases - 气体动
 对比 <span class="course-math" data-tex="E_{\mathrm{int}}=nC_{v}T" data-display="false"><code>E_{\mathrm{int}}=nC_{v}T</code></span> 可得
 <span class="course-math course-math-display" data-tex="C_{v}=\frac{f}{2}R, C_{p}=\left( \frac{f}{2}+1 \right)R" data-display="true"><code>C_{v}=\frac{f}{2}R, C_{p}=\left( \frac{f}{2}+1 \right)R</code></span>
 实际上，气体分子的自由度还和温度有关。在低温状态下，转动和振动自由度会被冻结。温度升高之后，转动自由度会先解冻，然后是振动自由度。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Gas-Kinetics-1.webp' | relative_url }}{% raw %}" alt="Gas-Kinetics-1" width="1658" height="532" loading="lazy" decoding="async">
+
+Only considered translational and rotational freedom:
+
+| Molecule | Degrees | <span class="course-math" data-tex="C_V" data-display="false"><code>C_V</code></span> | <span class="course-math" data-tex="C_p" data-display="false"><code>C_p</code></span> |
+| --- | --- | --- | --- |
+| Monatomic | <span class="course-math" data-tex="t=3" data-display="false"><code>t=3</code></span> | <span class="course-math" data-tex="3R/2" data-display="false"><code>3R/2</code></span> | <span class="course-math" data-tex="5R/2" data-display="false"><code>5R/2</code></span> |
+| Diatomic | <span class="course-math" data-tex="t+r=3+2=5" data-display="false"><code>t+r=3+2=5</code></span> | <span class="course-math" data-tex="5R/2" data-display="false"><code>5R/2</code></span> | <span class="course-math" data-tex="7R/2" data-display="false"><code>7R/2</code></span> |
+| Polyatomic (non-linear) | <span class="course-math" data-tex="t+r=3+3=6" data-display="false"><code>t+r=3+3=6</code></span> | <span class="course-math" data-tex="3R" data-display="false"><code>3R</code></span> | <span class="course-math" data-tex="4R" data-display="false"><code>4R</code></span> |
+
 基于**能量均分定理**，可通过自由度的比例算出动能大小，例如对于常温下的双原子分子，平动动能为 <span class="course-math" data-tex="\frac{3}{5}E_{\mathrm{int}}" data-display="false"><code>\frac{3}{5}E_{\mathrm{int}}</code></span>。
 
 

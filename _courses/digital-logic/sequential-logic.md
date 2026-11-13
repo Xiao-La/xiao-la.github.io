@@ -5,7 +5,7 @@ course_title: "数字逻辑"
 section: ""
 status: "updating"
 created_at: "2026-10-20T15:28:58+08:00"
-updated_at: "2026-11-13T14:54:50+08:00"
+updated_at: "2026-11-13T20:14:57+08:00"
 reference: false
 order: 5
 layout: "course"
@@ -127,7 +127,7 @@ Latch 是对电平（Level）敏感的；而使用 flip-flop 就可以只对上�
 
 用两个 D Latch 来设计出一个 flip-flop：
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-10.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-10" width="1246" height="332" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-10.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-10" width="424" height="113" loading="lazy" decoding="async">
 
 这里 M 是 Master D Latch，对低电平敏感；S 是 Slave D Latch，对高电平敏感。
 
@@ -153,7 +153,7 @@ Symbol：
 
 用这个可以实现 **异步 Reset 的 DFF：**
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-15.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-15" width="2468" height="1326" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-15.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-15" width="839" height="451" loading="lazy" decoding="async">
 
 也就是说，reset 信号会立即导致 reset。
 而 **同步 Reset**，就只会在 clock 上升沿时检查 reset 信号是否被触发。
@@ -164,7 +164,25 @@ Symbol：
 
 
 对于 FF，我们知道 Clock 信号不变的时候，输出的值是不变的；我们只关心上升沿的瞬间。因此，可以把 Function Table 进行简化，只看上升沿时 <span class="course-math" data-tex="Q" data-display="false"><code>Q</code></span> 和 <span class="course-math" data-tex="D" data-display="false"><code>D</code></span>，这里 D 是在第 t 个时间周期， Q 是在第 t+1 个时间周期 的关系：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-16.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-16" width="2085" height="518" loading="lazy" decoding="async">
+
+Function table
+
+| Clk | D   | Q      | Q'      |           |
+| --- | --- | ------ | ------- | --------- |
+| 0   | X   | last Q | last Q' | no change |
+| 1   | X   | last Q | last Q' | no change |
+| ↑   | 0   | 0      | 1       | Q follows D |
+| ↑   | 1   | 1      | 0       | Q follows D |
+
+Convert to Characteristic table：
+
+D Flip-Flop Characteristic table
+
+| D   | Q(t + 1) |       |
+| --- | -------- | ----- |
+| 0   | 0        | Reset |
+| 1   | 1        | Set   |
+
 这里就有 Characteristic Equation（特性方程 ）：
 <span class="course-math course-math-display" data-tex="Q_{t+1}=D&#x27; \cdot 0+ D \cdot 1=D" data-display="true"><code>Q_{t+1}=D&#x27; \cdot 0+ D \cdot 1=D</code></span>
 
@@ -202,7 +220,7 @@ JKFF 可以通过 DFF 实现。
 这是因为，从特性方程上看：
 <span class="course-math course-math-display" data-tex="Q_{t+1}=D=JQ_{t}&#x27;+K&#x27;Q_{t}" data-display="true"><code>Q_{t+1}=D=JQ_{t}&#x27;+K&#x27;Q_{t}</code></span>
 那只需要把 <span class="course-math" data-tex="JQ_{t}&#x27;+K&#x27;Q_{t}" data-display="false"><code>JQ_{t}&#x27;+K&#x27;Q_{t}</code></span> 接到 DFF 的 <span class="course-math" data-tex="D" data-display="false"><code>D</code></span> 上即可。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-20.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-20" width="1323" height="646" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-20.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-20" width="450" height="220" loading="lazy" decoding="async">
 
 
 ### T Flip-Flop
@@ -212,7 +230,7 @@ JKFF 可以通过 DFF 实现。
 T: Toggle. 功能就是，当 <span class="course-math" data-tex="T=0" data-display="false"><code>T=0</code></span> 时，上升沿处输出保持不变；当 <span class="course-math" data-tex="T=1" data-display="false"><code>T=1</code></span> 时，上升沿处输出取反。也就是说：
 <span class="course-math course-math-display" data-tex="Q_{t+1}=T&#x27;Q_{t}+TQ&#x27;_{t}=T \oplus Q_{t}" data-display="true"><code>Q_{t+1}=T&#x27;Q_{t}+TQ&#x27;_{t}=T \oplus Q_{t}</code></span>
 这可以用 DFF 实现，也可以用 JKFF 实现。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-21.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-21" width="2366" height="487" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-21.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-21" width="804" height="165" loading="lazy" decoding="async">
 
 ## 分析同步时序电路
 {: #section-11 }
@@ -220,7 +238,7 @@ T: Toggle. 功能就是，当 <span class="course-math" data-tex="T=0" data-disp
 
 用 Flip-Flop 实现的同步时序电路：
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-22.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-22" width="1083" height="303" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-22.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-22" width="400" height="112" loading="lazy" decoding="async">
 
 一个 Flip-Flop 可以存 1 bit 的状态。
 
@@ -239,7 +257,29 @@ T: Toggle. 功能就是，当 <span class="course-math" data-tex="T=0" data-disp
 - Output equation：
 <span class="course-math course-math-display" data-tex="y(t)=(Q_{A}(t)+Q_{B}(t))x&#x27;(t)\leftrightarrow y=(Q_{A}+Q_{B})x&#x27;" data-display="true"><code>y(t)=(Q_{A}(t)+Q_{B}(t))x&#x27;(t)\leftrightarrow y=(Q_{A}+Q_{B})x&#x27;</code></span>
 - 从而得到 state table：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-24.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-24" width="552" height="211" loading="lazy" decoding="async">
+
+*First Form of the State Table*
+
+| Present State <span class="course-math" data-tex="Q_AQ_B" data-display="false"><code>Q_AQ_B</code></span> | Input <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> | Next State <span class="course-math" data-tex="Q_AQ_B" data-display="false"><code>Q_AQ_B</code></span> | Output <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> |
+| :---: | :---: | :---: | :---: |
+| 00 | 0 | 00 | 0 |
+| 00 | 1 | 01 | 0 |
+| 01 | 0 | 00 | 1 |
+| 01 | 1 | 11 | 0 |
+| 10 | 0 | 00 | 1 |
+| 10 | 1 | 10 | 0 |
+| 11 | 0 | 00 | 1 |
+| 11 | 1 | 10 | 0 |
+
+*Second Form of the State Table*
+
+| Present State <span class="course-math" data-tex="Q_AQ_B" data-display="false"><code>Q_AQ_B</code></span> | Next State (<span class="course-math" data-tex="x=0" data-display="false"><code>x=0</code></span>) | Next State (<span class="course-math" data-tex="x=1" data-display="false"><code>x=1</code></span>) | Output <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> (<span class="course-math" data-tex="x=0" data-display="false"><code>x=0</code></span>) | Output <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> (<span class="course-math" data-tex="x=1" data-display="false"><code>x=1</code></span>) |
+| :---: | :---: | :---: | :---: | :---: |
+| 00 | 00 | 01 | 0 | 0 |
+| 01 | 00 | 11 | 1 | 0 |
+| 10 | 00 | 10 | 1 | 0 |
+| 11 | 00 | 10 | 1 | 0 |
+
 - 进一步可以画出 state diagram：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-25.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-25" width="373" height="261" loading="lazy" decoding="async">
 这里每一个节点表示 <span class="course-math" data-tex="Q_{A},Q_{B}" data-display="false"><code>Q_{A},Q_{B}</code></span> 的值（也就是一个状态），一条边表示从一个状态到下一个状态，边上写这个状态转移发生时的 input / output。
@@ -274,7 +314,7 @@ T: Toggle. 功能就是，当 <span class="course-math" data-tex="T=0" data-disp
 
 若有些状态在 state table 中对应的 next state 和 output 都一模一样，那么可以只保留其中一个，把表中用到 **去掉的状态** 的地方直接换成保留的那个就行。输出会是等效的，例如：
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-32.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-32" width="1434" height="1051" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-32.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-32" width="488" height="358" loading="lazy" decoding="async">
 
 
 ### 赋值（Assignment）
@@ -282,7 +322,27 @@ T: Toggle. 功能就是，当 <span class="course-math" data-tex="T=0" data-disp
 
 
 在上面的表里面，化简后有五种状态 <span class="course-math" data-tex="a,b,c,d,e" data-display="false"><code>a,b,c,d,e</code></span>，它们可以根据实际的用途进行具体的赋值。例如这样的三种：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-33.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-33" width="459" height="336" loading="lazy" decoding="async">
+
+*Three Possible Binary State Assignments*
+
+| State | Assignment 1, Binary | Assignment 2, Gray Code | Assignment 3, One-Hot |
+| :---: | :---: | :---: | :---: |
+| <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> | 000 | 000 | 00001 |
+| <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> | 001 | 001 | 00010 |
+| <span class="course-math" data-tex="c" data-display="false"><code>c</code></span> | 010 | 011 | 00100 |
+| <span class="course-math" data-tex="d" data-display="false"><code>d</code></span> | 011 | 010 | 01000 |
+| <span class="course-math" data-tex="e" data-display="false"><code>e</code></span> | 100 | 110 | 10000 |
+
+*Reduced State Table with Binary Assignment 1*
+
+| Present State | Next State (<span class="course-math" data-tex="x=0" data-display="false"><code>x=0</code></span>) | Next State (<span class="course-math" data-tex="x=1" data-display="false"><code>x=1</code></span>) | Output (<span class="course-math" data-tex="x=0" data-display="false"><code>x=0</code></span>) | Output (<span class="course-math" data-tex="x=1" data-display="false"><code>x=1</code></span>) |
+| :---: | :---: | :---: | :---: | :---: |
+| 000 | 000 | 001 | 0 | 0 |
+| 001 | 010 | 011 | 0 | 0 |
+| 010 | 000 | 011 | 0 | 0 |
+| 011 | 100 | 011 | 0 | 1 |
+| 100 | 000 | 011 | 0 | 1 |
+
 
 
 ### 激励表（Excitation Table）
@@ -290,7 +350,7 @@ T: Toggle. 功能就是，当 <span class="course-math" data-tex="T=0" data-disp
 
 
 把 Characteristic Table 反过来，也就是去列出每个输出对应的输入。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-34.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-34" width="1826" height="867" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-34.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-34" width="621" height="295" loading="lazy" decoding="async">
 
 
 ## 设计时序电路

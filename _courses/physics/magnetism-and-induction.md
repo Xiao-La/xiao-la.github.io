@@ -157,10 +157,10 @@ excerpt: "大学物理（上）/（下） · Magnetism and Induction - 磁学与
 <span class="course-math course-math-display" data-tex="L= \frac{N\Phi_{B}}{i}=\frac{(nl)(\mu_{0}in)A}{i}=\mu_{0}n^{2}lA" data-display="true"><code>L= \frac{N\Phi_{B}}{i}=\frac{(nl)(\mu_{0}in)A}{i}=\mu_{0}n^{2}lA</code></span>
 RL 电路：
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20and%20Induction%20-%20%E7%A3%81%E5%AD%A6%E4%B8%8E%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94.webp' | relative_url }}{% raw %}" alt="Magnetism and Induction - 磁学与电磁感应" width="2084" height="535" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20and%20Induction%20-%20%E7%A3%81%E5%AD%A6%E4%B8%8E%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94.webp' | relative_url }}{% raw %}" alt="Magnetism and Induction - 磁学与电磁感应" width="709" height="182" loading="lazy" decoding="async">
 令时间常数 <span class="course-math" data-tex="\tau=\frac{L}{R}" data-display="false"><code>\tau=\frac{L}{R}</code></span>，时间常数大，电流就变化得慢。
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20and%20Induction%20-%20%E7%A3%81%E5%AD%A6%E4%B8%8E%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94-1.webp' | relative_url }}{% raw %}" alt="Magnetism and Induction - 磁学与电磁感应-1" width="2153" height="530" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Magnetism%20and%20Induction%20-%20%E7%A3%81%E5%AD%A6%E4%B8%8E%E7%94%B5%E7%A3%81%E6%84%9F%E5%BA%94-1.webp' | relative_url }}{% raw %}" alt="Magnetism and Induction - 磁学与电磁感应-1" width="732" height="180" loading="lazy" decoding="async">
 
 电感器件的磁场中可以存储能量：
 <span class="course-math course-math-display" data-tex="\frac{\mathrm{d}U_{B}}{\mathrm{d}t}=iL \frac{\mathrm{d}i}{\mathrm{d}t}" data-display="true"><code>\frac{\mathrm{d}U_{B}}{\mathrm{d}t}=iL \frac{\mathrm{d}i}{\mathrm{d}t}</code></span>

@@ -49,7 +49,7 @@ Reference
 - 基因考古学：通过 DNA 复制产生的错误来考据继承关系。
 - 人类共同祖先 - 智人 - 非洲。
 - 智人打败尼安德特人/丹尼索瓦人 ：语言能力强。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Lecture1.webp' | relative_url }}{% raw %}" alt="Lecture1" width="500" height="234" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Lecture1.webp' | relative_url }}{% raw %}" alt="Lecture1" width="400" height="187" loading="lazy" decoding="async">
 
 古语言的痕迹
 - 罗塞塔石碑（托马斯·杨、商博良破译） - 希腊文对照 - 破译埃及文（表音+表意）
