@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-10-12T15:33:52+08:00"
-updated_at: "2026-10-28T21:08:24+08:00"
+updated_at: "2026-11-13T14:11:30+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -168,6 +168,10 @@ excerpt: "离散数学 · Number Theory - 数论"
 
 设 <span class="course-math" data-tex="a&gt;b" data-display="false"><code>a&gt;b</code></span>，欧几里得算法中，while 循环执行的次数是 <span class="course-math" data-tex="O(\log b)" data-display="false"><code>O(\log b)</code></span>。若考虑除法操作的复杂度 <span class="course-math" data-tex="O(\log ^{2}a)" data-display="false"><code>O(\log ^{2}a)</code></span>，总的复杂度可以写成 <span class="course-math" data-tex="O(\log ^{3}a)" data-display="false"><code>O(\log ^{3}a)</code></span>。这是多项式时间的。
 
+### 正确性
+{: #section-8 }
+
+
 欧几里得算法的正确性依赖于这个引理：
 <span class="course-math course-math-display" data-tex="a=bq+r\to\gcd(a,b)=\gcd(b,r)" data-display="true"><code>a=bq+r\to\gcd(a,b)=\gcd(b,r)</code></span>
 证明：令 <span class="course-math" data-tex="D_{n}" data-display="false"><code>D_{n}</code></span> 表示 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 的所有因子组成的集合，那么 <span class="course-math" data-tex="\gcd(a,b)=\max (D_{a}\cap D_{b})" data-display="false"><code>\gcd(a,b)=\max (D_{a}\cap D_{b})</code></span> 。只需证明
@@ -177,9 +181,29 @@ excerpt: "离散数学 · Number Theory - 数论"
 - 若 <span class="course-math" data-tex="d" data-display="false"><code>d</code></span> 是 <span class="course-math" data-tex="b,r" data-display="false"><code>b,r</code></span> 的因数，那它也是 <span class="course-math" data-tex="a=bq+r" data-display="false"><code>a=bq+r</code></span> 的因数，即 <span class="course-math" data-tex="\text{RHS}\subseteq\text{LHS}" data-display="false"><code>\text{RHS}\subseteq\text{LHS}</code></span>。
 - 那么 <span class="course-math" data-tex="\text{LHS}=\text{RHS}" data-display="false"><code>\text{LHS}=\text{RHS}</code></span>。
 
+### 时间复杂度证明
+{: #section-9 }
+
+
+ while 循环的次数 <span class="course-math" data-tex="n=O(\log b)" data-display="false"><code>n=O(\log b)</code></span> 的。一种证明方法：
+- 每次除法：<span class="course-math" data-tex="r_{i+2}=r_{i}\bmod r_{i+1}" data-display="false"><code>r_{i+2}=r_{i}\bmod r_{i+1}</code></span>，这里 <span class="course-math" data-tex="r_{1}=b" data-display="false"><code>r_{1}=b</code></span>。
+- 我们声称 <span class="course-math" data-tex="r_{i+2}&lt; \frac{1}{2}r_{i}" data-display="false"><code>r_{i+2}&lt; \frac{1}{2}r_{i}</code></span>。分类证明：
+- 若 <span class="course-math" data-tex="r_{i+1}\leq \frac{1}{2}r_{i}" data-display="false"><code>r_{i+1}\leq \frac{1}{2}r_{i}</code></span>，那么直接得到 <span class="course-math" data-tex="r_{i+2}&lt;r_{i+1}\leq \frac{1}{2}r_{i}" data-display="false"><code>r_{i+2}&lt;r_{i+1}\leq \frac{1}{2}r_{i}</code></span>。
+- 若 <span class="course-math" data-tex="r_{i+1}&gt; \frac{1}{2} r_{i}" data-display="false"><code>r_{i+1}&gt; \frac{1}{2} r_{i}</code></span>，那么得到 <span class="course-math" data-tex="r_{i+2}=r_{i}\bmod r_{i+1}=r_{i}-r_{i+1}&lt; \frac{1}{2}r_{i}" data-display="false"><code>r_{i+2}=r_{i}\bmod r_{i+1}=r_{i}-r_{i+1}&lt; \frac{1}{2}r_{i}</code></span>.
+- 最后 <span class="course-math" data-tex="r_{n}\geq1" data-display="false"><code>r_{n}\geq1</code></span>，于是：
+<span class="course-math course-math-display" data-tex="b=r_{1}&gt;2r_{3}&gt;2^{2}r_{5}&gt; \dots&gt; 2^{i}r_{2i+1} &gt; \dots &gt; 2^{(n-1)/2} r_{n}\geq 2^{(n-1) / 2}" data-display="true"><code>b=r_{1}&gt;2r_{3}&gt;2^{2}r_{5}&gt; \dots&gt; 2^{i}r_{2i+1} &gt; \dots &gt; 2^{(n-1)/2} r_{n}\geq 2^{(n-1) / 2}</code></span>
+- 于是 <span class="course-math" data-tex="\frac{n-1}{2}\leq \log(b)" data-display="false"><code>\frac{n-1}{2}\leq \log(b)</code></span>，有 <span class="course-math" data-tex="n=O(\log b)" data-display="false"><code>n=O(\log b)</code></span>。
+另一种证明方法：注意到
+<span class="course-math course-math-display" data-tex="q_{1},q_{2}, \dots, q _{n-1}\geq1, \quad q _{n} \geq2" data-display="true"><code>q_{1},q_{2}, \dots, q _{n-1}\geq1, \quad q _{n} \geq2</code></span>
+那么
+<span class="course-math course-math-display" data-tex="\begin{aligned}&#10;&amp;r_{n}\geq 1 = f_{2} \\&#10;\implies &amp;r_{n-1}\geq 2r_{n} \geq 2f_{2}=f_{3} \\&#10;\implies &amp;r_{n-2}\geq r_{n-1}+r_{n}\geq f_{3} + f_{2} = f_{4} \\&#10;&amp;\dots \\&#10;\implies &amp; r_{2}\geq r_{3}+r_{4}\geq f_{n-1}+f_{n-2}=f_{n} \\&#10;\implies &amp; b=r_{1}\geq r_{2}+r_{3}\geq f_{n+1}=\Omega(c^{n}) &#10;\end{aligned}" data-display="true"><code>\begin{aligned}&#10;&amp;r_{n}\geq 1 = f_{2} \\&#10;\implies &amp;r_{n-1}\geq 2r_{n} \geq 2f_{2}=f_{3} \\&#10;\implies &amp;r_{n-2}\geq r_{n-1}+r_{n}\geq f_{3} + f_{2} = f_{4} \\&#10;&amp;\dots \\&#10;\implies &amp; r_{2}\geq r_{3}+r_{4}\geq f_{n-1}+f_{n-2}=f_{n} \\&#10;\implies &amp; b=r_{1}\geq r_{2}+r_{3}\geq f_{n+1}=\Omega(c^{n}) &#10;\end{aligned}</code></span>
+于是 <span class="course-math" data-tex="n=O(\log b)" data-display="false"><code>n=O(\log b)</code></span>。
+
+
+
 
 ### 裴蜀定理（Bezout's Theorem）
-{: #section-8 }
+{: #section-10 }
 
 
 **裴蜀定理**：<span class="course-math" data-tex="a,b" data-display="false"><code>a,b</code></span> 的最大公因数可以写成 <span class="course-math" data-tex="a,b" data-display="false"><code>a,b</code></span> 的线性组合：
@@ -211,7 +235,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 
 
 ### 梅森素数（Mersenne Primes）
-{: #section-9 }
+{: #section-11 }
 
 
 梅森素数：可以写成 <span class="course-math" data-tex="2^{p}-1" data-display="false"><code>2^{p}-1</code></span> 形式的素数，其中 <span class="course-math" data-tex="p" data-display="false"><code>p</code></span> 是素数。
@@ -220,7 +244,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 
 
 ### 素数相关的猜想
-{: #section-10 }
+{: #section-12 }
 
 
 **哥德巴赫猜想（Goldbach's Conjecture，1+1）：** 每个大于 <span class="course-math" data-tex="2" data-display="false"><code>2</code></span> 的偶数都能写成两个素数的和。
@@ -231,7 +255,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 
 
 ## 线性同余式
-{: #section-11 }
+{: #section-13 }
 
 
 线性同余式（Linear Congruence）：
@@ -256,7 +280,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-9.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-9" width="443" height="296" loading="lazy" decoding="async">
 
 ### 中国剩余定理（The Chinese Remainder Theorem, CRT）
-{: #section-12 }
+{: #section-14 }
 
 
 若 <span class="course-math" data-tex="m_{1},m_{2},\dots,m_{n}" data-display="false"><code>m_{1},m_{2},\dots,m_{n}</code></span> **两两互素**，那么线性同余方程组
@@ -280,7 +304,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 - 另一个方程也类似，
 
 ## 费马小定理
-{: #section-13 }
+{: #section-15 }
 
 
 **费马小定理（Fermat’s little theorem）**：若 <span class="course-math" data-tex="p\not\mid x" data-display="false"><code>p\not\mid x</code></span>，有
@@ -293,7 +317,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 <span class="course-math course-math-display" data-tex="x^{p-1}\equiv1 \pmod{p}" data-display="true"><code>x^{p-1}\equiv1 \pmod{p}</code></span>
 
 ### 欧拉定理
-{: #section-14 }
+{: #section-16 }
 
 
 欧拉函数（Euler's totient function）： <span class="course-math" data-tex="\phi(n)" data-display="false"><code>\phi(n)</code></span> ，表示 <span class="course-math" data-tex="\mathbb{Z}_{n}" data-display="false"><code>\mathbb{Z}_{n}</code></span> 中与 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 互素的数的个数：
@@ -307,7 +331,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 
 
 ## 本原根 / 生成元（Primitive Root）
-{: #section-15 }
+{: #section-17 }
 
 
 模素数 <span class="course-math" data-tex="p" data-display="false"><code>p</code></span> 的本原根是一个整数 <span class="course-math" data-tex="r\in \mathbb{Z}_{p}" data-display="false"><code>r\in \mathbb{Z}_{p}</code></span> 使得所有 <span class="course-math" data-tex="\mathbb{Z}_{p}" data-display="false"><code>\mathbb{Z}_{p}</code></span> 中的非零元素都是 <span class="course-math" data-tex="r" data-display="false"><code>r</code></span> 的幂。
@@ -315,7 +339,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 
 
 ## 总结
-{: #section-16 }
+{: #section-18 }
 
 
 
@@ -324,12 +348,12 @@ excerpt: "离散数学 · Number Theory - 数论"
 
 
 ## 应用
-{: #section-17 }
+{: #section-19 }
 
 
 
 ### 伪随机数生成器
-{: #section-18 }
+{: #section-20 }
 
 
 **线性同余法（Linear Congruential Method）。** 四个参数：
@@ -343,7 +367,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 
 
 ### 哈希函数
-{: #section-19 }
+{: #section-21 }
 
 
 把任意长度的数据映射到固定长度。
@@ -352,7 +376,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 
 
 ## 数论在密码学中的应用
-{: #section-20 }
+{: #section-22 }
 
 
 Cryptography（密码学）=kryptos（秘密）+graphos（写）
@@ -360,7 +384,7 @@ Cryptography（密码学）=kryptos（秘密）+graphos（写）
 
 
 ### 对称密码学
-{: #section-21 }
+{: #section-23 }
 
 
 直到 1970s。
@@ -375,7 +399,7 @@ Cryptography（密码学）=kryptos（秘密）+graphos（写）
 Kerckhoffs's Principle：即使算法已知了，只要密钥未知，系统也应该安全。
 
 ### 非对称密码学
-{: #section-22 }
+{: #section-24 }
 
 
 概念：1976 W.Diffie, M.Hellman, ***New directions in cryptography***: **"We stand today on the brink of a revolution in cryptography."**
@@ -416,7 +440,7 @@ Kerckhoffs's Principle：即使算法已知了，只要密钥未知，系统也�
 
 
 ### 离散对数问题
-{: #section-23 }
+{: #section-25 }
 
 
 整数 <span class="course-math" data-tex="y" data-display="false"><code>y</code></span> 以 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 为底的 **离散对数（Discrete Logarithm）<span class="course-math" data-tex="x" data-display="false"><code>x</code></span>**，为满足下式：

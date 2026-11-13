@@ -903,7 +903,7 @@
     "coverage": "持续补充",
     "status": "updating",
     "url": "/courses/probability-statistics/",
-    "count": 4,
+    "count": 5,
     "notes": [
       {
         "title": "Probability Basic - 概率基础",
@@ -952,6 +952,18 @@
         "updated_at": "2026-11-07T20:24:04+08:00",
         "reference": false,
         "order": 4
+      },
+      {
+        "title": "Monte Carlo Methods - 蒙特卡洛方法",
+        "url": "/courses/probability-statistics/monte-carlo-methods/",
+        "course_id": "probability-statistics",
+        "course_title": "概率与统计",
+        "section": "",
+        "status": "updating",
+        "created_at": "2026-11-11T16:20:45+08:00",
+        "updated_at": "2026-11-13T14:14:44+08:00",
+        "reference": false,
+        "order": 5
       }
     ],
     "resources": []
@@ -962,7 +974,7 @@
     "coverage": "持续补充",
     "status": "updating",
     "url": "/courses/discrete-mathematics/",
-    "count": 4,
+    "count": 6,
     "notes": [
       {
         "title": "Set and Function - 集合与函数",
@@ -984,7 +996,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-09-07T15:27:48+08:00",
-        "updated_at": "2026-10-28T21:08:24+08:00",
+        "updated_at": "2026-11-11T20:08:34+08:00",
         "reference": false,
         "order": 2
       },
@@ -1008,9 +1020,33 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-10-12T15:33:52+08:00",
-        "updated_at": "2026-10-28T21:08:24+08:00",
+        "updated_at": "2026-11-13T14:11:30+08:00",
         "reference": false,
         "order": 4
+      },
+      {
+        "title": "Counting - 计数",
+        "url": "/courses/discrete-mathematics/counting/",
+        "course_id": "discrete-mathematics",
+        "course_title": "离散数学",
+        "section": "",
+        "status": "updating",
+        "created_at": "2026-11-09T14:04:06+08:00",
+        "updated_at": "2026-11-13T14:14:44+08:00",
+        "reference": false,
+        "order": 5
+      },
+      {
+        "title": "Recurrence - 递归",
+        "url": "/courses/discrete-mathematics/recurrence/",
+        "course_id": "discrete-mathematics",
+        "course_title": "离散数学",
+        "section": "",
+        "status": "updating",
+        "created_at": "2026-11-11T20:08:35+08:00",
+        "updated_at": "2026-11-13T14:14:44+08:00",
+        "reference": false,
+        "order": 6
       }
     ],
     "resources": []
@@ -1079,7 +1115,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-10-20T15:28:58+08:00",
-        "updated_at": "2026-11-03T15:38:23+08:00",
+        "updated_at": "2026-11-10T14:35:38+08:00",
         "reference": false,
         "order": 5
       }
@@ -1126,7 +1162,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-11-06T22:04:29+08:00",
-        "updated_at": "2026-11-06T22:04:29+08:00",
+        "updated_at": "2026-11-10T17:54:15+08:00",
         "reference": false,
         "order": 3
       }

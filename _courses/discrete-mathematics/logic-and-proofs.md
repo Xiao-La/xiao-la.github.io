@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-09-07T15:27:48+08:00"
-updated_at: "2026-10-28T21:08:24+08:00"
+updated_at: "2026-11-11T20:08:34+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -205,31 +205,4 @@ Proof by Smallest Counterexample 的证明过程，其实就相当于数学归�
 
 格式：
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20and%20Proofs%20-%20%E9%80%BB%E8%BE%91%E4%B8%8E%E8%AF%81%E6%98%8E-1.webp' | relative_url }}{% raw %}" alt="Logic and Proofs - 逻辑与证明-1" width="440" height="304" loading="lazy" decoding="async">
-
-
-## 递归
-{: #section-6 }
-
-
-一个函数的 **递归式（Recurrence Equation / Recurrence）** 告诉我们如何从前 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 个函数值计算出 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 处的函数值：
-<span class="course-math course-math-display" data-tex="f(n)=F(f(1),f(2), \dots,f(n-1))" data-display="true"><code>f(n)=F(f(1),f(2), \dots,f(n-1))</code></span>
-例如解汉诺塔的递归算法。
-- 正确性。用 implicit 的归纳法，说明能解 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 层的，并且能解 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 层的汉诺塔就能解 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 层的即可。(<span class="course-math" data-tex="[n,0,0]\to[1,n-1,0]\to[0,n-1,1]\to[0,0,n]" data-display="false"><code>[n,0,0]\to[1,n-1,0]\to[0,n-1,1]\to[0,0,n]</code></span>)。
-- 复杂度。<span class="course-math" data-tex="M(n)=2M(n-1)+1,M(1)=1" data-display="false"><code>M(n)=2M(n-1)+1,M(1)=1</code></span>。 可以用 explicit 的归纳法证明 <span class="course-math" data-tex="M(n)=2^{n}-1" data-display="false"><code>M(n)=2^{n}-1</code></span>。
-
-**一阶线性递归式（First-Order Linear Recurrence）：** <span class="course-math" data-tex="T(n)" data-display="false"><code>T(n)</code></span> 只和 <span class="course-math" data-tex="T(n-1)" data-display="false"><code>T(n-1)</code></span> 有关，且 <span class="course-math" data-tex="T(n-1)" data-display="false"><code>T(n-1)</code></span> 只有一次。可以写成：
-<span class="course-math course-math-display" data-tex="T(n)=f(n) T(n-1) +g(n)" data-display="true"><code>T(n)=f(n) T(n-1) +g(n)</code></span>
-
-**定理：** 对递归式
-<span class="course-math course-math-display" data-tex="T(n)=rT(n-1)+g(n)" data-display="true"><code>T(n)=rT(n-1)+g(n)</code></span>
-有
-<span class="course-math course-math-display" data-tex="T(n)=r^{n}T(0)+ \sum _{i=1}^{n} r^{n-i}g(i)" data-display="true"><code>T(n)=r^{n}T(0)+ \sum _{i=1}^{n} r^{n-i}g(i)</code></span>
-显然可以通过数学归纳法证明。
-
-**主定理（The Master Theorem）。** 对递归式
-<span class="course-math course-math-display" data-tex="T(n)= aT(n / b) + c n^{d}" data-display="true"><code>T(n)= aT(n / b) + c n^{d}</code></span>
-其中 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 为正整数，<span class="course-math" data-tex="b&gt;1,c&gt;0,d\geq0" data-display="false"><code>b&gt;1,c&gt;0,d\geq0</code></span>，<span class="course-math" data-tex="T(1)\geq0" data-display="false"><code>T(1)\geq0</code></span>。那么：
-- 若 <span class="course-math" data-tex="a&lt;b^{d}" data-display="false"><code>a&lt;b^{d}</code></span>，则 <span class="course-math" data-tex="T(n)=\Theta(n^{d})" data-display="false"><code>T(n)=\Theta(n^{d})</code></span>。
-- 若 <span class="course-math" data-tex="a=b^{d}" data-display="false"><code>a=b^{d}</code></span>，则 <span class="course-math" data-tex="T(n) =\Theta(n^{d}\log n)" data-display="false"><code>T(n) =\Theta(n^{d}\log n)</code></span>
-- 若 <span class="course-math" data-tex="a&gt;b^{d}" data-display="false"><code>a&gt;b^{d}</code></span>，则 <span class="course-math" data-tex="T(n)=\Theta(n^{\log _{b}a})" data-display="false"><code>T(n)=\Theta(n^{\log _{b}a})</code></span>
 {% endraw %}

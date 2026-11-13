@@ -5,7 +5,7 @@ course_title: "数字逻辑"
 section: ""
 status: "updating"
 created_at: "2026-10-20T15:28:58+08:00"
-updated_at: "2026-11-03T15:38:23+08:00"
+updated_at: "2026-11-10T14:35:38+08:00"
 reference: false
 order: 5
 layout: "course"
@@ -256,8 +256,16 @@ T: Toggle. 功能就是，当 <span class="course-math" data-tex="T=0" data-disp
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-33.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-33" width="459" height="336" loading="lazy" decoding="async">
 
 
-## 设计时序电路
+### 激励表（Excitation Table）
 {: #section-15 }
+
+
+把 Characteristic Table 反过来，也就是去列出每个输出对应的输入。
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-34.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-34" width="1984" height="922" loading="lazy" decoding="async">
+
+
+## 设计时序电路
+{: #section-16 }
 
 
 也就是把分析步骤反过来。
@@ -270,4 +278,10 @@ T: Toggle. 功能就是，当 <span class="course-math" data-tex="T=0" data-disp
 7. Choose memory elements (DFFs, JKFFs, TFFs)
 8. Derive simplified input equations and output equations
 9. Draw logic schematic
+
+例如：用 JKFF 实现这个真值表：
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-35.png' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-35" width="311" height="280" loading="lazy" decoding="async">
+那么可以结合 excitation table 得到 JKFF 的输入：
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sequential%20Logic%20-%20%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91-36.webp' | relative_url }}{% raw %}" alt="Sequential Logic - 时序逻辑-36" width="313" height="204" loading="lazy" decoding="async">
+再结合卡诺图得到 input equation，就可以进一步去做实现了。
 {% endraw %}
