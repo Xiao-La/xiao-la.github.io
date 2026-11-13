@@ -5,7 +5,7 @@ course_title: "计算机程序设计基础/JavaA"
 section: ""
 status: "completed"
 created_at: "2025-12-22T14:23:58+08:00"
-updated_at: "2026-10-13T12:13:22+08:00"
+updated_at: "2026-11-13T19:45:00+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -67,8 +67,23 @@ JDK：Java Development Kit = JRE + 开发工具
 逻辑运算符：与，或，非，异或。
 `&& or ||` 和 `& or |` 的区别：前者会短路，后者不会短路。
 
-**运算符优先级：** 四则 > 比较 > 赋值。细则看这个图：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109%20-%202.webp' | relative_url }}{% raw %}" alt="CS109 - 2" width="1280" height="686" loading="lazy" decoding="async">
+**运算符优先级：** 四则 > 比较 > 赋值。细则看这个表：
+
+| Operators | Associativity | Type |
+| --- | --- | --- |
+| `++` `--` | right to left | unary postfix |
+| `++` `--` `+` `-` `!` (*type*) | right to left | unary prefix |
+| `*` `/` `%` | left to right | multiplicative |
+| `+` `-` | left to right | additive |
+| `<` `<=` `>` `>=` | left to right | relational |
+| `==` `!=` | left to right | equality |
+| `&` | left to right | boolean logical AND |
+| `^` | left to right | boolean logical exclusive OR |
+| <code>&#124;</code> | left to right | boolean logical inclusive OR |
+| `&&` | left to right | conditional AND |
+| <code>&#124;&#124;</code> | left to right | conditional OR |
+| `?:` | right to left | conditional |
+| `=` `+=` `-=` `*=` `/=` `%=` | right to left | assignment |
 
 `String.format("%d", 1)` 返回格式化后的字符串 `"1"`。
 
@@ -76,7 +91,16 @@ JDK：Java Development Kit = JRE + 开发工具
 
 拓宽转换不一定保留精度（例如 `int/long` 转 `float` 或 `long` 转 `double`）；比如 `float` 可以提升为 `double`，`short` 可以提升为 `long`，反过来却不安全。
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109%20-%203.webp' | relative_url }}{% raw %}" alt="CS109 - 3" width="1396" height="630" loading="lazy" decoding="async">
+| Type | Valid promotions |
+| --- | --- |
+| `double` | None |
+| `float` | `double` |
+| `long` | `float` or `double` |
+| `int` | `long`, `float` or `double` |
+| `char` | `int`, `long`, `float` or `double` |
+| `short` | `int`, `long`, `float` or `double` (but not `char`) |
+| `byte` | `short`, `int`, `long`, `float` or `double` (but not `char`) |
+| `boolean` | None (`boolean` values are not considered to be numbers in Java) |
 
 八大基础类型有对应的 Wrapper Classes
 `ArrayList<Integer> list = new ArrayList<Integer>();`
@@ -227,7 +251,45 @@ String concated1 = "hello" + " world";
 
 可变字符串 `StringBuilder` 的操作效率比较高。
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109%20-%204.webp' | relative_url }}{% raw %}" alt="CS109 - 4" width="1302" height="760" loading="lazy" decoding="async">
+```java
+String string = "goodbye";
+char[] charArray = {'a', 'b', 'c', 'd', 'e', 'f'};
+boolean booleanValue = true;
+char charValue = 'Z';
+int intValue = 7;
+long longValue = 10000000000L;
+float floatValue = 2.5f;
+double doubleValue = 33.3333;
+StringBuilder buffer = new StringBuilder();
+StringBuilder lastBuffer = new StringBuilder("last buffer");
+
+buffer.append(string); buffer.append("\n");
+buffer.append(charArray); buffer.append("\n");
+buffer.append(charArray, 0, 3); buffer.append("\n");
+buffer.append(booleanValue); buffer.append("\n");
+buffer.append(charValue); buffer.append("\n");
+buffer.append(intValue); buffer.append("\n");
+buffer.append(longValue); buffer.append("\n");
+buffer.append(floatValue); buffer.append("\n");
+buffer.append(doubleValue); buffer.append("\n");
+buffer.append(lastBuffer);
+
+System.out.printf("buffer contains:\n%s", buffer.toString());
+```
+
+```
+buffer contains:
+goodbye
+abcdef
+abc
+true
+Z
+7
+10000000000
+2.5
+33.3333
+last buffer
+```
 
 包装类（Wrapper Class）可以将八大基础类型作为对象处理：
 ```java
@@ -303,7 +365,13 @@ Collections.reverse(list);
 一个类只能有一个直接超类。
 修饰符：
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109-1.webp' | relative_url }}{% raw %}" alt="CS109-1" width="1956" height="652" loading="lazy" decoding="async">
+| Modifier | Class | Package | Subclass (Same package) | Subclass (Different packages) | World |
+| --- | --- | --- | --- | --- | --- |
+| `public` | Y | Y | Y | Y | Y |
+| `protected` | Y | Y | Y | Y | N |
+| *(no modifier)* | Y | Y | Y | N | N |
+| `private` | Y | N | N | N | N |
+
 子类不继承超类的 `private` 成员，但对象仍保留超类的私有状态。
 子类可以通过 `super` 关键字调用（invoke）超类的构造方法。
 没有标识符（no modifier）相当于 `package-private`。
@@ -402,7 +470,14 @@ Payable p1 = new Alipay();
 ```
 一个类只能继承 `extends`  一个类，但可以实现 ` implements `  很多个接口。
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/CS109%20-%205.webp' | relative_url }}{% raw %}" alt="CS109 - 5" width="1382" height="556" loading="lazy" decoding="async">
+**接口 vs 抽象类**
+
+- 抽象类只能继承**一个**类。接口可以继承**任意数量**的接口
+- 抽象类**可以**继承另一个具体类或抽象类。接口**不能**继承类
+- 在抽象类中，**必须使用** `abstract` 关键字来声明抽象方法。在接口中，声明抽象方法**可以省略** `abstract` 关键字
+- 抽象类**可以有**构造函数。接口**不能有**构造函数
+- 抽象类**可以有** `protected` 和 `public` 的抽象方法。接口**只能有** `public` 的抽象方法
+- 抽象类可以具有**任何访问修饰符**的 `static final` 或 `static` 或 `final` 变量。接口只能具有 `public static final` 常量
 
 
 

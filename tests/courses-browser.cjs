@@ -52,7 +52,7 @@ fs.mkdirSync(output, { recursive: true });
           visibleAssistiveMath: [...content.querySelectorAll('mjx-assistive-mml')].filter(e => getComputedStyle(e).position !== 'absolute').length,
           images: content.querySelectorAll('.course-image').length,
           brokenImages: [...content.querySelectorAll('.course-image')].filter(i => !i.complete || !i.naturalWidth).map(i => i.src),
-          pseudocode: content.querySelectorAll('.ps-root').length,
+          pseudocode: content.querySelectorAll('.ps-block').length,
           tables: content.querySelectorAll('table').length,
           unrenderedPseudocode: content.querySelectorAll('.course-pseudocode').length,
           duplicateIds: [...document.querySelectorAll('[id]')].map(e => e.id).filter((id, i, ids) => ids.indexOf(id) !== i),
@@ -138,7 +138,7 @@ fs.mkdirSync(output, { recursive: true });
       await page.setViewportSize({ width, height: width === 390 ? 844 : 900 });
       await page.goto(base + url);
       if (await page.locator('.course-content').count()) await page.waitForFunction(() => document.querySelector('.course-content').dataset.rendered);
-      if (name === 'pseudocode') await page.locator('.ps-root').scrollIntoViewIfNeeded();
+      if (name === 'pseudocode') await page.locator('.ps-block').scrollIntoViewIfNeeded();
       if (name === 'images') await page.locator('.course-image-layout').scrollIntoViewIfNeeded();
       await page.evaluate(async () => {
         await Promise.all([...document.querySelectorAll('.course-image-layout img')].map(image => image.decode().catch(() => {})));
@@ -151,7 +151,7 @@ fs.mkdirSync(output, { recursive: true });
     // The algorithm must contain rendered mathematical symbols too.
     await page.goto(base + '/courses/cs50-ai/0/');
     await page.waitForFunction(() => document.querySelector('.course-content').dataset.rendered);
-    assert.ok(await page.locator('.ps-root svg').count());
+    assert.ok(await page.locator('.ps-block svg').count());
     // Java's literal double braces must survive Liquid processing.
     await page.goto(base + '/courses/java/sustech-cs109/');
     assert.ok((await page.locator('pre').allTextContents()).some(t => t.includes('{{1, 2}, {3, 4, 5}}')));

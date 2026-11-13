@@ -166,6 +166,28 @@ class CourseExportTests(unittest.TestCase):
         self.assertLess(webp.stat().st_size, big.stat().st_size)
         self.assertEqual(e.assets['assets/courses/笔记依赖/图片/Icon.png'], small)
 
+    @unittest.skipUnless(shutil.which('cwebp') and shutil.which('sips'), 'cwebp or sips not installed')
+    def test_screenshot_margins_are_trimmed_at_the_same_scale(self):
+        # 300x200 white slide whose content is a 100x50 block at (40, 30).
+        rows = b''.join(b'\0' + b''.join(b'\0\0\0' if 40 <= x < 140 and 30 <= y < 80 else b'\xff\xff\xff'
+                                         for x in range(300)) for y in range(200))
+        def chunk(kind, data):
+            return struct.pack('>I', len(data)) + kind + data + struct.pack('>I', zlib.crc32(kind + data))
+        p = self.vault/'笔记依赖/图片/Slide.png'
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_bytes(b'\x89PNG\r\n\x1a\n' + chunk(b'IHDR', struct.pack('>IIBBBBB', 300, 200, 8, 2, 0, 0, 0))
+                      + chunk(b'IDAT', zlib.compress(rows)) + chunk(b'IEND', b''))
+        note = self.write('Example/First.md', '![[Slide.png|150]]')
+        e = sync.Exporter(self.vault, [self.course.copy()], cache=self.vault/'.cache')
+        e.collect()
+        result = e.convert(note)
+        # The 30px top margin is under TRIM_PAD + TRIM_MIN and stays; the others shrink to TRIM_PAD.
+        left = 40 - sync.TRIM_PAD
+        self.assertEqual(e.scan(p)['box'], [left, 0, 100 + 2 * sync.TRIM_PAD, 80 + sync.TRIM_PAD])
+        self.assertIn('Slide.webp', result)
+        self.assertIn(f'width="{round(150 * (100 + 2 * sync.TRIM_PAD) / 300)}"', result)
+        self.assertNotIn('course-image-dark', result)
+
     @unittest.skipUnless(shutil.which('cwebp'), 'cwebp not installed')
     def test_images_that_barely_shrink_keep_their_format(self):
         big = self.write_png('笔记依赖/图片/Slide.png')

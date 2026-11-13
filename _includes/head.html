@@ -68,8 +68,7 @@
   {% endif %}
   {% if page.doc_type == 'note' %}
     {% if content contains 'course-pseudocode' %}
-      <link rel="stylesheet" href="{{ '/assets/vendor/pseudocode/pseudocode.min.css' | relative_url }}">
-      <script defer src="{{ '/assets/vendor/pseudocode/pseudocode.min.js' | relative_url }}"></script>
+      <script defer src="{{ '/assets/vendor/pseudocode-suite/pseudocode-suite.js' | relative_url }}"></script>
     {% endif %}
     <script defer src="{{ '/js/courses.js' | relative_url }}"></script>
   {% else %}

@@ -5,7 +5,7 @@ course_title: "数据结构与算法分析"
 section: ""
 status: "updating"
 created_at: "2026-09-29T16:21:34+08:00"
-updated_at: "2026-10-28T21:08:24+08:00"
+updated_at: "2026-11-13T14:52:01+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -29,7 +29,7 @@ excerpt: "数据结构与算法分析 · Sorting"
 
 大根堆：一个完全二叉树，具有 Max-heap Property：
 <span class="course-math course-math-display" data-tex="A[\text{Parent}(i)]\geq A[i]" data-display="true"><code>A[\text{Parent}(i)]\geq A[i]</code></span>
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting.webp' | relative_url }}{% raw %}" alt="Sorting" width="471" height="268" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting.webp' | relative_url }}{% raw %}" alt="Sorting" width="458" height="268" loading="lazy" decoding="async">
 小根堆，一个完全二叉树，具有 Min-heap Property：
 <span class="course-math course-math-display" data-tex="A[\text{Parent}(i)]\leq A[i]" data-display="true"><code>A[\text{Parent}(i)]\leq A[i]</code></span>
 以大根堆为例，堆排序的步骤：
@@ -37,12 +37,42 @@ excerpt: "数据结构与算法分析 · Sorting"
 - 不断拿出堆顶的最大元素放到数组的末尾，然后维护堆的性质（Max-Heapify）。这里用 <span class="course-math" data-tex="A.\text{heap-size}" data-display="false"><code>A.\text{heap-size}</code></span> 表示还没有放到末尾的元素个数。
 
 <span class="course-math" data-tex="\text{Max-Heapify}(A,i)" data-display="false"><code>\text{Max-Heapify}(A,i)</code></span>：考虑以 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 为根的子树。假设 <span class="course-math" data-tex="\text{Left}(i),\text{Right}(i)" data-display="false"><code>\text{Left}(i),\text{Right}(i)</code></span> 都是大根堆，但 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 处可能破坏堆的性质。那么，可以通过不断向下调整（"float down"），把 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 与它的**较大的**子节点（如果比 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 大）交换，不断递归地重复即可。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting-1.webp' | relative_url }}{% raw %}" alt="Sorting-1" width="493" height="335" loading="lazy" decoding="async">
+<pre class="course-pseudocode">\begin{algorithm}
+\begin{algorithmic}
+\Procedure{Max-Heapify}{$A, i$}
+\State $l =$ \Call{Left}{$i$}
+\State $r =$ \Call{Right}{$i$}
+\If{$l \le A.\mathit{heap}\text{-}\mathit{size}$ and $A[l] &gt; A[i]$}
+\State $\mathit{largest} = l$
+\Else
+\State $\mathit{largest} = i$
+\EndIf
+\If{$r \le A.\mathit{heap}\text{-}\mathit{size}$ and $A[r] &gt; A[\mathit{largest}]$}
+\State $\mathit{largest} = r$
+\EndIf
+\If{$\mathit{largest} \neq i$}
+\State exchange $A[i]$ with $A[\mathit{largest}]$
+\State \Call{Max-Heapify}{$A, \mathit{largest}$}
+\EndIf
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
 运行时间：我们说树中一个节点的高度（height）是它到叶子节点的最长简单路径的长度。那么若 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 的高度为 <span class="course-math" data-tex="h" data-display="false"><code>h</code></span>，则运行时间是 <span class="course-math" data-tex="O(h)" data-display="false"><code>O(h)</code></span> 的。（不是 <span class="course-math" data-tex="\Omega (h)" data-display="false"><code>\Omega (h)</code></span>，因为可能提前停下）这里 <span class="course-math" data-tex="h" data-display="false"><code>h</code></span> 最多是 <span class="course-math" data-tex="\log n" data-display="false"><code>\log n</code></span>，因为高度为 <span class="course-math" data-tex="h" data-display="false"><code>h</code></span> 的完全二叉树至少有 <span class="course-math" data-tex="1+2+4+\dots+2^{h-1}+1=2^{h}" data-display="false"><code>1+2+4+\dots+2^{h-1}+1=2^{h}</code></span> 个节点。
 正确性：对高度进行归纳证明。Base case 就是叶子节点。假设对 <span class="course-math" data-tex="i-1" data-display="false"><code>i-1</code></span> 高度已经成立，那么对 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 高度，交换之后就化为了 <span class="course-math" data-tex="i-1" data-display="false"><code>i-1</code></span> 的情况，所以也成立。
 
 <span class="course-math" data-tex="\text{Build-Max-Heap}(A,n)" data-display="false"><code>\text{Build-Max-Heap}(A,n)</code></span>：从叶子节点开始，从下至上不断执行 <span class="course-math" data-tex="\text{Max-Heapify}" data-display="false"><code>\text{Max-Heapify}</code></span>。这是因为 <span class="course-math" data-tex="\text{Max-Heapify}" data-display="false"><code>\text{Max-Heapify}</code></span> 假设了 <span class="course-math" data-tex="\text{Left}(i)" data-display="false"><code>\text{Left}(i)</code></span> 和 <span class="course-math" data-tex="\text{Right}(i)" data-display="false"><code>\text{Right}(i)</code></span> 都是大根堆。另外我们注意到 <span class="course-math" data-tex="A[( \lfloor n / 2 \rfloor + 1),\dots,n]" data-display="false"><code>A[( \lfloor n / 2 \rfloor + 1),\dots,n]</code></span> 都是叶子节点，所以不需要操作就自然形成大根堆。那么只需要从 <span class="course-math" data-tex="\lfloor n / 2 \rfloor" data-display="false"><code>\lfloor n / 2 \rfloor</code></span> 开始往前做即可。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting-2.webp' | relative_url }}{% raw %}" alt="Sorting-2" width="267" height="117" loading="lazy" decoding="async">
+<pre class="course-pseudocode">\begin{algorithm}
+\begin{algorithmic}
+\Procedure{Build-Max-Heap}{$A, n$}
+\State $A.\mathit{heap}\text{-}\mathit{size} = n$
+\For{$i = \lfloor n/2 \rfloor$ downto $1$}
+\State \Call{Max-Heapify}{$A, i$}
+\EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
 正确性：可以通过 Loop invariant “在迭代 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 开始时，<span class="course-math" data-tex="i+1,i+2,\dots,n" data-display="false"><code>i+1,i+2,\dots,n</code></span> 都是一个大根堆的根节点“ 证明。
 运行时间：显然是 <span class="course-math" data-tex="O(n\log n)" data-display="false"><code>O(n\log n)</code></span> 的。一个更紧的界是 <span class="course-math" data-tex="\Theta(n)" data-display="false"><code>\Theta(n)</code></span>。
 - 这是因为，大多数节点的高度都很小。实际上，高度为 <span class="course-math" data-tex="h" data-display="false"><code>h</code></span> 的节点最多只有 <span class="course-math" data-tex="\left\lceil  \frac{n}{2^{h+1}}  \right\rceil" data-display="false"><code>\left\lceil  \frac{n}{2^{h+1}}  \right\rceil</code></span> 个。
@@ -53,7 +83,19 @@ excerpt: "数据结构与算法分析 · Sorting"
 - 因此是 <span class="course-math" data-tex="\Theta(n)" data-display="false"><code>\Theta(n)</code></span> 的。
 
 结合上面的两个函数，得到堆排序：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting-3.webp' | relative_url }}{% raw %}" alt="Sorting-3" width="484" height="173" loading="lazy" decoding="async">
+<pre class="course-pseudocode">\begin{algorithm}
+\begin{algorithmic}
+\Procedure{Heap-Sort}{$A$}
+\State \Call{Build-Max-Heap}{$A$}
+\For{$i = A.\mathit{length}$ downto $2$}
+\State exchange $A[1]$ with $A[i]$
+\State $A.\mathit{heap}\text{-}\mathit{size} = A.\mathit{heap}\text{-}\mathit{size} - 1$
+\State \Call{Max-Heapify}{$A, 1$}
+\EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
 运行时间是 <span class="course-math" data-tex="O(n)+(n-1)\cdot O(\log n)=O(n\log n)" data-display="false"><code>O(n)+(n-1)\cdot O(\log n)=O(n\log n)</code></span> 的。
 可以通过循环不变量证明正确性。
 
@@ -69,8 +111,19 @@ excerpt: "数据结构与算法分析 · Sorting"
 - Combine：不需要。
 
 伪代码：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting-4.png' | relative_url }}{% raw %}" alt="Sorting-4" width="434" height="160" loading="lazy" decoding="async">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting-5.webp' | relative_url }}{% raw %}" alt="Sorting-5" width="438" height="252" loading="lazy" decoding="async">
+<pre class="course-pseudocode">\begin{algorithm}
+\begin{algorithmic}
+\Procedure{Quick-Sort}{$A, p, r$}
+\If{$p &lt; r$}
+\State $q =$ \Call{Partition}{$A, p, r$}
+\State \Call{Quick-Sort}{$A, p, q - 1$}
+\State \Call{Quick-Sort}{$A, q + 1, r$}
+\EndIf
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting-5.webp' | relative_url }}{% raw %}" alt="Sorting-5" width="385" height="252" loading="lazy" decoding="async">
 
 Partition 的正确性可以用 loop invariant 证明。在每次迭代开始时：
 - <span class="course-math" data-tex="A[k]\leq x" data-display="false"><code>A[k]\leq x</code></span> 对于 <span class="course-math" data-tex="p\leq k\leq i" data-display="false"><code>p\leq k\leq i</code></span>。
@@ -118,7 +171,16 @@ Partition 的运行时间是 <span class="course-math" data-tex="\Theta(n)" data
 
 
 **随机化。** 为了避免最坏情况，我们可以在 partition 前面让我们选的 pivot 是随机的：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting-6.png' | relative_url }}{% raw %}" alt="Sorting-6" width="441" height="139" loading="lazy" decoding="async">
+<pre class="course-pseudocode">\begin{algorithm}
+\begin{algorithmic}
+\Procedure{Randomized-Partition}{$A, p, r$}
+\State $i =$ \Call{Random}{$p, r$}
+\State exchange $A[r]$ with $A[i]$
+\Return \Call{Partition}{$A, p, r$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
 
 当数组元素互异时，随机化的 QuickSort 的**期望运行时间**是 <span class="course-math" data-tex="\Theta(n\log n)" data-display="false"><code>\Theta(n\log n)</code></span>。
 - **直觉：** 一个好的 partition 是把数组分成它的某个常数比例，例如，分成 <span class="course-math" data-tex="3:1" data-display="false"><code>3:1</code></span>。一个不好的 partition 是把数组分成 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 和 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span>。如果好的和坏的等可能交替出现，那好的 partition 会主导，导致 <span class="course-math" data-tex="\Theta(n\log n)" data-display="false"><code>\Theta(n\log n)</code></span>。
@@ -139,7 +201,7 @@ Partition 的运行时间是 <span class="course-math" data-tex="\Theta(n)" data
 
 
 任何比较排序的时间复杂度，都有 <span class="course-math" data-tex="T(n)=\Omega( n\log n)" data-display="false"><code>T(n)=\Omega( n\log n)</code></span>。这可以通过 **决策树（Decision Tree）** 说明：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting-7.webp' | relative_url }}{% raw %}" alt="Sorting-7" width="438" height="207" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting-7.webp' | relative_url }}{% raw %}" alt="Sorting-7" width="408" height="181" loading="lazy" decoding="async">
 每个 **叶节点** 都是原数组的一种 **排列**，其他节点 <span class="course-math" data-tex="i:j" data-display="false"><code>i:j</code></span> 表示 <span class="course-math" data-tex="a_{i},a_{j}" data-display="false"><code>a_{i},a_{j}</code></span> 做了一次比较，这里 <span class="course-math" data-tex="a_{i},a_{j}" data-display="false"><code>a_{i},a_{j}</code></span> 表示原数组中 <span class="course-math" data-tex="i,j" data-display="false"><code>i,j</code></span> 位置对应的值。例如，上图表示 Insertion Sort 的决策树。那么，比较排序的每次运行都可以表示为根节点到一个叶节点的简单路径。
 最坏情况下的时间复杂度，就是根节点到叶节点的 **最长路径长度**。
 由于排序算法应该对初始的所有可能的排列都给出正确的答案，叶节点的个数至少是 <span class="course-math" data-tex="n!" data-display="false"><code>n!</code></span>。高度为 <span class="course-math" data-tex="h" data-display="false"><code>h</code></span> 的二叉树最多有 <span class="course-math" data-tex="2^{h}" data-display="false"><code>2^{h}</code></span> 个叶子，因此有
@@ -164,7 +226,27 @@ Partition 的运行时间是 <span class="course-math" data-tex="\Theta(n)" data
 
 伪代码：
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting-8.webp' | relative_url }}{% raw %}" alt="Sorting-8" width="890" height="742" loading="lazy" decoding="async">
+<pre class="course-pseudocode">\begin{algorithm}
+\begin{algorithmic}
+\Procedure{Counting-Sort}{$A, B, k$}
+\State let $C[0 \ldots k]$ be a new array
+\For{$i = 0$ to $k$}
+\State $C[i] = 0$
+\EndFor
+\For{$j = 1$ to $A.\mathit{length}$}
+\State $C[A[j]] = C[A[j]] + 1$
+\EndFor
+\For{$i = 1$ to $k$}
+\State $C[i] = C[i] + C[i-1]$
+\EndFor
+\For{$j = A.\mathit{length}$ downto $1$}
+\State $B[C[A[j]]] = A[j]$
+\State $C[A[j]] = C[A[j]] - 1$
+\EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
 
 时间复杂度：<span class="course-math" data-tex="\Theta(n+k)" data-display="false"><code>\Theta(n+k)</code></span>，其中 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 为数组长度，<span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 为最大元素。若 <span class="course-math" data-tex="k=O(n)" data-display="false"><code>k=O(n)</code></span>，则时间复杂度为 <span class="course-math" data-tex="\Theta (n)" data-display="false"><code>\Theta (n)</code></span>。
 正确性可以用 Loop Invariant 证明。
@@ -177,7 +259,16 @@ Partition 的运行时间是 <span class="course-math" data-tex="\Theta(n)" data
 
 
 从最低位到最高位，用 Stable Sort 对每一位排序。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Sorting-9.png' | relative_url }}{% raw %}" alt="Sorting-9" width="1354" height="264" loading="lazy" decoding="async">
+<pre class="course-pseudocode">\begin{algorithm}
+\begin{algorithmic}
+\Procedure{Radix-Sort}{$A, d$}
+\For{$i = 1$ to $d$}
+\State use a stable sort to sort array $A$ on digit $i$
+\EndFor
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
 
 每一位用计数排序时，运行时间为 <span class="course-math" data-tex="\Theta(d(n+k))" data-display="false"><code>\Theta(d(n+k))</code></span>，其中 <span class="course-math" data-tex="d" data-display="false"><code>d</code></span> 为位数，<span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 为每一位的最大值。
 {% endraw %}

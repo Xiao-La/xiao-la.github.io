@@ -22,7 +22,7 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 ### LC 振荡电路 （LC Oscillator）
 {: #section-1 }
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88.webp' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合" width="1754" height="474" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88.webp' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合" width="1679" height="444" loading="lazy" decoding="async">
 能量守恒：
 <span class="course-math course-math-display" data-tex="\frac{Q^{2}}{2C}+ \frac{1}{2}Li^{2}=U" data-display="true"><code>\frac{Q^{2}}{2C}+ \frac{1}{2}Li^{2}=U</code></span>
 这是一个关于 <span class="course-math" data-tex="q" data-display="false"><code>q</code></span> 的二阶微分方程（假定电流流进正极板，才有 <span class="course-math" data-tex="i=\frac{\mathrm{d}Q}{\mathrm{d}t}" data-display="false"><code>i=\frac{\mathrm{d}Q}{\mathrm{d}t}</code></span>），类似与弹簧振子。那么有
@@ -30,10 +30,10 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 这里 <span class="course-math" data-tex="\omega= \frac{1}{\sqrt{ LC }}" data-display="false"><code>\omega= \frac{1}{\sqrt{ LC }}</code></span>。
 
 有电阻的情况，就相当于阻尼振荡（Damped Oscillator）：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-1.webp' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合-1" width="1794" height="568" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-1.webp' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合-1" width="1794" height="525" loading="lazy" decoding="async">
 
 有交流电源和电阻的情况，就相当于受迫振荡。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-2.webp' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合-2" width="1716" height="758" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-2.webp' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合-2" width="1676" height="758" loading="lazy" decoding="async">
 有如下关系，其中 <span class="course-math" data-tex="\omega" data-display="false"><code>\omega</code></span> 是电源频率：
 <span class="course-math course-math-display" data-tex="\varepsilon=\varepsilon_{m}\sin \omega t" data-display="true"><code>\varepsilon=\varepsilon_{m}\sin \omega t</code></span>
 <span class="course-math course-math-display" data-tex="i=I_{m}\sin(\omega t-\phi)" data-display="true"><code>i=I_{m}\sin(\omega t-\phi)</code></span>
@@ -70,7 +70,7 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 {: #section-3 }
 
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-4.webp' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合-4" width="294" height="288" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-4.webp' | relative_url }}{% raw %}" alt="Electromagnetism - 电磁学综合-4" width="294" height="266" loading="lazy" decoding="async">
 电压关系：
 <span class="course-math course-math-display" data-tex="\frac{V_{2}}{V_{1}}= \frac{N_{2}}{N_{1}}" data-display="true"><code>\frac{V_{2}}{V_{1}}= \frac{N_{2}}{N_{1}}</code></span>
 能量守恒，有
@@ -105,7 +105,7 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 在自由空间中，沿 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 轴正方向传播的最简单的电磁波形式是平面简谐波：
 <span class="course-math course-math-display" data-tex="\begin{cases}&#10;E = E_m \sin(kx - \omega t) \\&#10;B = B_m \sin(kx - \omega t)&#10;\end{cases}" data-display="true"><code>\begin{cases}&#10;E = E_m \sin(kx - \omega t) \\&#10;B = B_m \sin(kx - \omega t)&#10;\end{cases}</code></span>
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Synthesis%20of%20Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88.png' | relative_url }}{% raw %}" alt="Synthesis of Electromagnetism - 电磁学综合" width="468" height="429" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Synthesis%20of%20Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88.webp' | relative_url }}{% raw %}" alt="Synthesis of Electromagnetism - 电磁学综合" width="468" height="383" loading="lazy" decoding="async">
 
 上述真空平面行波具有以下六个重要特征：
 1. 步调一致 (<span class="course-math" data-tex="E \text{ and } B" data-display="false"><code>E \text{ and } B</code></span> are in phase)：电场 <span class="course-math" data-tex="\mathbf{E}" data-display="false"><code>\mathbf{E}</code></span> 和磁场 <span class="course-math" data-tex="\mathbf{B}" data-display="false"><code>\mathbf{B}</code></span> 是**同相**的。
@@ -183,7 +183,7 @@ excerpt: "大学物理（上）/（下） · Synthesis of Electromagnetism - 电
 *   **线偏振光：** 电场 <span class="course-math" data-tex="\mathbf{E}" data-display="false"><code>\mathbf{E}</code></span> 只在单一固定方向上振动的光。
 *   **非偏振光 (自然光)：** 电场 <span class="course-math" data-tex="\mathbf{E}" data-display="false"><code>\mathbf{E}</code></span> 在各个方向振动概率相等的随机光。可等效为**两个相互垂直、强度相等的线偏振光叠加**。
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Synthesis%20of%20Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-1.webp' | relative_url }}{% raw %}" alt="Synthesis of Electromagnetism - 电磁学综合-1" width="326" height="169" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Synthesis%20of%20Electromagnetism%20-%20%E7%94%B5%E7%A3%81%E5%AD%A6%E7%BB%BC%E5%90%88-1.webp' | relative_url }}{% raw %}" alt="Synthesis of Electromagnetism - 电磁学综合-1" width="318" height="169" loading="lazy" decoding="async">
 
 **1. 起偏：非偏振光 <span class="course-math" data-tex="\rightarrow" data-display="false"><code>\rightarrow</code></span> 线偏振光**
 *   **原理：** 当强度为 <span class="course-math" data-tex="I_0" data-display="false"><code>I_0</code></span> 的非偏振光穿过偏振片时，只有平行于偏振轴的电场分量通过。

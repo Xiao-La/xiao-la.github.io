@@ -70,7 +70,7 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 当距离电偶极子很远的时候：
 <span class="course-math course-math-display" data-tex="E=\frac{1}{2\pi \varepsilon_{0}} \frac{p}{z^{3}}\text{(electric dipole)}" data-display="true"><code>E=\frac{1}{2\pi \varepsilon_{0}} \frac{p}{z^{3}}\text{(electric dipole)}</code></span>
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6.webp' | relative_url }}{% raw %}" alt="Electrostatics - 静电学" width="298" height="308" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6.webp' | relative_url }}{% raw %}" alt="Electrostatics - 静电学" width="284" height="295" loading="lazy" decoding="async">
 则可以推出：
 - 当 <span class="course-math" data-tex="y\gg d" data-display="false"><code>y\gg d</code></span> 时， <span class="course-math" data-tex="E(y)= \frac{\mathbf{p}}{2\pi \varepsilon_{0}y^3}" data-display="false"><code>E(y)= \frac{\mathbf{p}}{2\pi \varepsilon_{0}y^3}</code></span>。
 - 当 <span class="course-math" data-tex="x\gg d" data-display="false"><code>x\gg d</code></span> 时，<span class="course-math" data-tex="\mathbf{E}(x)=- \frac{\mathbf{p}}{4\pi \varepsilon_{0}x^3}" data-display="false"><code>\mathbf{E}(x)=- \frac{\mathbf{p}}{4\pi \varepsilon_{0}x^3}</code></span>。
@@ -96,7 +96,7 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 <span class="course-math course-math-display" data-tex="\Phi= \frac{q_{\mathrm{enc}}}{\varepsilon_{0}}" data-display="true"><code>\Phi= \frac{q_{\mathrm{enc}}}{\varepsilon_{0}}</code></span>
 或
 <span class="course-math course-math-display" data-tex="\varepsilon_{0} \oint \mathbf{E}\cdot \mathrm{d}\mathbf{A}=q_{\mathrm{enc}}" data-display="true"><code>\varepsilon_{0} \oint \mathbf{E}\cdot \mathrm{d}\mathbf{A}=q_{\mathrm{enc}}</code></span>
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6-1.png' | relative_url }}{% raw %}" alt="Electrostatics - 静电学-1" width="364" height="207" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6-1.webp' | relative_url }}{% raw %}" alt="Electrostatics - 静电学-1" width="321" height="196" loading="lazy" decoding="async">
 例如无穷大均匀带电面的电场，满足 <span class="course-math" data-tex="q_{\mathrm{enc}}=\sigma A=\varepsilon_{0} \oint E\,\mathrm{d}A=\varepsilon_{0} E (2A)\implies E=\frac{\sigma}{2\varepsilon_{0}}" data-display="false"><code>q_{\mathrm{enc}}=\sigma A=\varepsilon_{0} \oint E\,\mathrm{d}A=\varepsilon_{0} E (2A)\implies E=\frac{\sigma}{2\varepsilon_{0}}</code></span>。
 从而平行板电容器的电场 <span class="course-math" data-tex="E=\frac{\sigma}{\varepsilon_{0}}" data-display="false"><code>E=\frac{\sigma}{\varepsilon_{0}}</code></span>。
 静电平衡时，导体表面外侧紧邻处的法向电场满足 <span class="course-math" data-tex="E_n=\frac{\sigma}{\varepsilon_0}" data-display="false"><code>E_n=\frac{\sigma}{\varepsilon_0}</code></span>。
@@ -137,7 +137,7 @@ excerpt: "大学物理（上）/（下） · Electrostatics - 静电学"
 {: #section-6 }
 
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6-2.webp' | relative_url }}{% raw %}" alt="Electrostatics - 静电学-2" width="204" height="271" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Electrostatics%20-%20%E9%9D%99%E7%94%B5%E5%AD%A6-2.webp' | relative_url }}{% raw %}" alt="Electrostatics - 静电学-2" width="204" height="263" loading="lazy" decoding="async">
 <span class="course-math course-math-display" data-tex="\begin{aligned}&#10;V&amp;=V_{(+)}+V_{(-)}=k\left( \frac{q}{r_{(+)}}-\frac{q}{r_{(-)}} \right) \\&#10;&amp;=kq \frac{r_{(-)}-r_{(+)}}{r_{(+)}r_{{(-)}}}\\&#10;&amp;\xlongequal{r\gg d} kq \frac{\mathrm{d}\cos\theta}{r^{2}}\\&#10;&amp;= \frac{1}{4\pi\varepsilon_{0}} \frac{p\cos\theta}{r^{2}}&#10;\end{aligned}" data-display="true"><code>\begin{aligned}&#10;V&amp;=V_{(+)}+V_{(-)}=k\left( \frac{q}{r_{(+)}}-\frac{q}{r_{(-)}} \right) \\&#10;&amp;=kq \frac{r_{(-)}-r_{(+)}}{r_{(+)}r_{{(-)}}}\\&#10;&amp;\xlongequal{r\gg d} kq \frac{\mathrm{d}\cos\theta}{r^{2}}\\&#10;&amp;= \frac{1}{4\pi\varepsilon_{0}} \frac{p\cos\theta}{r^{2}}&#10;\end{aligned}</code></span>
 
 ## 电容器（Capacitor）

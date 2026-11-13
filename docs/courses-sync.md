@@ -25,7 +25,7 @@ Obsidian 是正文的编辑源，博客保存可直接由 GitHub Pages 构建的
 - `assets/courses/`：复制引用附件和已完成课程目录内的 PDF，保留原始目录，URL 编码空格和中文。
 - `reports/courses-sync.json`：生成文件清单、引用关系和转换计数，不对外发布。
 - `_layouts/course*.html`、`css/courses.css`、`js/courses.js`：阅读页面、目录和渲染。
-- `assets/vendor/`：固定版本的 MathJax（完整包自带化学扩展）、pseudocode.js、Waline 和 ECharts，附上游许可证。
+- `assets/vendor/`：固定版本的 MathJax（完整包自带化学扩展）、Waline 和 ECharts，附上游许可证；`pseudocode-suite/` 是同步工具从 Obsidian 插件 Pseudocode Suite 源码生成的伪代码渲染器及其字体。
 
 课程入口为 `/courses/`，每门课程有独立章节目录。
 课程页面加入站内搜索和 sitemap，不进入博客文章归档或文章 RSS。
@@ -45,7 +45,7 @@ Obsidian 是正文的编辑源，博客保存可直接由 GitHub Pages 构建的
 | `^block-id` 和块链接 | `block-block-id` 网页锚点 |
 | `$…$`、`$$…$$` | 原始 TeX 存在 HTML 属性中，避免 Markdown 消耗反斜线、下划线或表格分隔符 |
 | `\ce{…}` | MathJax 完整包自带的 mhchem |
-| `pseudo` 代码块 | LaTeX 风格的伪代码及行号，数学符号使用 SVG |
+| `pseudo` 代码块 | 与 Obsidian 插件 Pseudocode Suite 相同的 CLRS 扁平风格伪代码，数学符号使用 SVG |
 | `image-layout-a` | 桌面并排、手机纵向图片布局 |
 | `==高亮==`、`%%注释%%` | `<mark>`、去除注释 |
 | Markdown 表格 | 补充块间空行；表格外的竖线保持为普通文字，避免被 kramdown 误判成表格 |

@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-10-12T15:33:52+08:00"
-updated_at: "2026-11-13T14:11:30+08:00"
+updated_at: "2026-11-13T19:45:00+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -121,25 +121,121 @@ excerpt: "离散数学 · Number Theory - 数论"
 <span class="course-math course-math-display" data-tex="n=(a_{k}a_{k-1}\dots a_{0})_{b}" data-display="true"><code>n=(a_{k}a_{k-1}\dots a_{0})_{b}</code></span>
 - 从其他进制转 <span class="course-math" data-tex="10" data-display="false"><code>10</code></span> 进制，只需根据定义计算即可。
 - 在 <span class="course-math" data-tex="2,8,16" data-display="false"><code>2,8,16</code></span> 进制内互转，只需要 grouping：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-1.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-1" width="1110" height="234" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-1.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-1" width="989" height="234" loading="lazy" decoding="async">
 由于：
 <span class="course-math course-math-display" data-tex="\begin{aligned}&#10;n&amp;=a_{k}b^{k}+a_{k-1}b^{k-1}+\dots+a_{2}b^{2}+a_{1}b+a_{0} \\&#10;&amp;=b(a_{k}b^{k-1}+a_{k-1}b^{k-2}+\dots+a_{2}b+a_{1})+a_{0} \\&#10;&amp;=b(b(a_{k}b^{k-2}+a_{k-1}b^{k-3}+\dots+a_{2})+a_{1})+a_{0} \\&#10;&amp;=\dots&#10;\end{aligned}" data-display="true"><code>\begin{aligned}&#10;n&amp;=a_{k}b^{k}+a_{k-1}b^{k-1}+\dots+a_{2}b^{2}+a_{1}b+a_{0} \\&#10;&amp;=b(a_{k}b^{k-1}+a_{k-1}b^{k-2}+\dots+a_{2}b+a_{1})+a_{0} \\&#10;&amp;=b(b(a_{k}b^{k-2}+a_{k-1}b^{k-3}+\dots+a_{2})+a_{1})+a_{0} \\&#10;&amp;=\dots&#10;\end{aligned}</code></span>
 那么要从 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 构造它的 base-<span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 展开，就相当于不停去除以 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span>，取余数，就得到了 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 进制下的低位到高位。
 
 二进制的加法，乘法运算：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-2.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-2" width="2226" height="1020" loading="lazy" decoding="async"><img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-3.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-3" width="2216" height="938" loading="lazy" decoding="async">这是因为：
+<pre class="course-pseudocode">\begin{algorithm}
+\begin{algorithmic}
+\Procedure{add}{$a, b$: positive integers}
+\State \Comment{the binary expansions of $a$ and $b$ are $(a_{n-1}, a_{n-2}, \ldots, a_0)_2$ and $(b_{n-1}, b_{n-2}, \ldots, b_0)_2$, respectively}
+\State $c := 0$
+\For{$j := 0$ to $n - 1$}
+\State $d := \lfloor (a_j + b_j + c)/2 \rfloor$
+\State $s_j := a_j + b_j + c - 2d$
+\State $c := d$
+\EndFor
+\State $s_n := c$
+\Return $(s_0, s_1, \ldots, s_n)$ \Comment{the binary expansion of the sum is $(s_n, s_{n-1}, \ldots, s_0)_2$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
+<span class="course-math" data-tex="O(n)" data-display="false"><code>O(n)</code></span> bit additions
+
+<pre class="course-pseudocode">\begin{algorithm}
+\begin{algorithmic}
+\Procedure{multiply}{$a, b$: positive integers}
+\State \Comment{the binary expansions of $a$ and $b$ are $(a_{n-1}, a_{n-2}, \ldots, a_0)_2$ and $(b_{n-1}, b_{n-2}, \ldots, b_0)_2$, respectively}
+\For{$j := 0$ to $n - 1$}
+\If{$b_j = 1$}
+\State $c_j = a$ shifted $j$ places
+\Else
+\State $c_j := 0$
+\EndIf
+\EndFor
+\State \Comment{$c_0, c_1, \ldots, c_{n-1}$ are the partial products}
+\State $p := 0$
+\For{$j := 0$ to $n - 1$}
+\State $p := p + c_j$
+\EndFor
+\Return $p$ \Comment{$p$ is the value of $ab$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
+<span class="course-math" data-tex="O(n^{2})" data-display="false"><code>O(n^{2})</code></span> shifts and <span class="course-math" data-tex="O(n^{2})" data-display="false"><code>O(n^{2})</code></span> bit additions
+
+这是因为：
 <span class="course-math course-math-display" data-tex="ab=b_{0}(a\cdot2^{0})+b_{1}(a\cdot2^{1})+\dots+b_{n-1}(a\cdot2^{n-1})" data-display="true"><code>ab=b_{0}(a\cdot2^{0})+b_{1}(a\cdot2^{1})+\dots+b_{n-1}(a\cdot2^{n-1})</code></span>
 那么只需要把 <span class="course-math" data-tex="b_{j}=1" data-display="false"><code>b_{j}=1</code></span> 的那些 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 的移位加起来。
 
 一个朴素的除法：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-4.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-4" width="501" height="323" loading="lazy" decoding="async">
-补充：若 <span class="course-math" data-tex="a&lt;0" data-display="false"><code>a&lt;0</code></span> 且恰好整除（<span class="course-math" data-tex="r=0" data-display="false"><code>r=0</code></span>），图中还需令 <span class="course-math" data-tex="q=-q" data-display="false"><code>q=-q</code></span>。
+<pre class="course-pseudocode">\begin{algorithm}
+\begin{algorithmic}
+\Procedure{division-algorithm}{$a$: integer, $d$: positive integer}
+\State $q := 0$
+\State $r := \vert a \vert$
+\While{$r \ge d$}
+\State $r := r - d$
+\State $q := q + 1$
+\EndWhile
+\If{$a &lt; 0$ and $r &gt; 0$}
+\State $r := d - r$
+\State $q := -(q + 1)$
+\EndIf
+\Return $(q, r)$ \Comment{$q = a$ \textbf{div} $d$ is the quotient, $r = a$ \textbf{mod} $d$ is the remainder}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
+<span class="course-math" data-tex="O(q \log a)" data-display="false"><code>O(q \log a)</code></span> bit operations. But there exist more efficient algorithms with complexity <span class="course-math" data-tex="O(n^{2})" data-display="false"><code>O(n^{2})</code></span>, where <span class="course-math" data-tex="n = \max(\log a, \log d)" data-display="false"><code>n = \max(\log a, \log d)</code></span>
+
+补充：若 <span class="course-math" data-tex="a&lt;0" data-display="false"><code>a&lt;0</code></span> 且恰好整除（<span class="course-math" data-tex="r=0" data-display="false"><code>r=0</code></span>），上面的算法中还需令 <span class="course-math" data-tex="q=-q" data-display="false"><code>q=-q</code></span>。
 可以通过分治来优化：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-5.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-5" width="392" height="332" loading="lazy" decoding="async">
+<pre class="course-pseudocode">\begin{algorithm}
+\begin{algorithmic}
+\Procedure{division2}{$a, d \in \mathbb{N},\ d \ge 1$}
+\If{$a &lt; d$}
+\Return $(q, r) = (0, a)$
+\EndIf
+\State $(q, r) =$ \Call{division2}{$\lfloor a/2 \rfloor, d$}
+\State $q = 2q,\ r = 2r$
+\If{$a$ is odd}
+\State $r = r + 1$
+\EndIf
+\If{$r \ge d$}
+\State $r = r - d$
+\State $q = q + 1$
+\EndIf
+\Return $(q, r)$
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
+
 这相当于把 <span class="course-math" data-tex="a=dq+r" data-display="false"><code>a=dq+r</code></span> 写成 <span class="course-math" data-tex="a / 2=d \cdot q / 2+r / 2" data-display="false"><code>a / 2=d \cdot q / 2+r / 2</code></span>，然后去处理奇偶性细节。每次缩小一半，所以这个是 <span class="course-math" data-tex="O(\log q \log a)=O(n^{2})" data-display="false"><code>O(\log q \log a)=O(n^{2})</code></span> 的。
 
 模指数算法：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-6.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-6" width="2228" height="758" loading="lazy" decoding="async">
+<pre class="course-pseudocode">\begin{algorithm}
+\begin{algorithmic}
+\Procedure{modular-exponentiation}{$b$: integer, $n = (a_{k-1}a_{k-2} \ldots a_1 a_0)_2$, $m$: positive integers}
+\State $x := 1$
+\State $\mathit{power} := b \bmod m$
+\For{$i := 0$ to $k - 1$}
+\If{$a_i = 1$}
+\State $x := (x \cdot \mathit{power}) \bmod m$
+\EndIf
+\State $\mathit{power} := (\mathit{power} \cdot \mathit{power}) \bmod m$
+\EndFor
+\Return $x$ \Comment{$x$ equals $b^{n} \bmod m$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
+
 复杂度是 <span class="course-math" data-tex="O((\log m) ^{2}\log n)=O(n^{3})" data-display="false"><code>O((\log m) ^{2}\log n)=O(n^{3})</code></span>。
 这是因为：
 <span class="course-math course-math-display" data-tex="b^{n}=b^{a_{k-1}2^{k-1}}\cdot b^{a_{k-2}2^{k-2}}\cdot\dots \cdot b^{a_{1} 2^{1}} b^{a_{0}}" data-display="true"><code>b^{n}=b^{a_{k-1}2^{k-1}}\cdot b^{a_{k-2}2^{k-2}}\cdot\dots \cdot b^{a_{1} 2^{1}} b^{a_{0}}</code></span>
@@ -164,7 +260,22 @@ excerpt: "离散数学 · Number Theory - 数论"
 {: #section-7 }
 
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-7.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-7" width="366" height="220" loading="lazy" decoding="async">
+<pre class="course-pseudocode">\begin{algorithm}
+\begin{algorithmic}
+\Procedure{gcd}{$a, b$: positive integers}
+\State $x := a$
+\State $y := b$
+\While{$y \neq 0$}
+\State $r := x \bmod y$
+\State $x := y$
+\State $y := r$
+\EndWhile
+\Return $x$ \Comment{$\gcd(a, b)$ is $x$}
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
+
 
 设 <span class="course-math" data-tex="a&gt;b" data-display="false"><code>a&gt;b</code></span>，欧几里得算法中，while 循环执行的次数是 <span class="course-math" data-tex="O(\log b)" data-display="false"><code>O(\log b)</code></span>。若考虑除法操作的复杂度 <span class="course-math" data-tex="O(\log ^{2}a)" data-display="false"><code>O(\log ^{2}a)</code></span>，总的复杂度可以写成 <span class="course-math" data-tex="O(\log ^{3}a)" data-display="false"><code>O(\log ^{3}a)</code></span>。这是多项式时间的。
 
@@ -211,7 +322,7 @@ excerpt: "离散数学 · Number Theory - 数论"
 
 证明：考虑欧几里得算法的步骤：
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-8.png' | relative_url }}{% raw %}" alt="Number Theory - 数论-8" width="349" height="218" loading="lazy" decoding="async">
+<span class="course-math course-math-display" data-tex="\begin{aligned}&#10;r_0 &amp;= r_1q_1+r_2 &amp;\quad 0\le r_2&lt;r_1,\\&#10;r_1 &amp;= r_2q_2+r_3 &amp;\quad 0\le r_3&lt;r_2,\\&#10;&amp;\ \ \vdots &amp; \\&#10;r_{n-2} &amp;= r_{n-1}q_{n-1}+r_n &amp;\quad 0\le r_n&lt;r_{n-1},\\&#10;r_{n-1} &amp;= r_nq_n\,.&#10;\end{aligned}" data-display="true"><code>\begin{aligned}&#10;r_0 &amp;= r_1q_1+r_2 &amp;\quad 0\le r_2&lt;r_1,\\&#10;r_1 &amp;= r_2q_2+r_3 &amp;\quad 0\le r_3&lt;r_2,\\&#10;&amp;\ \ \vdots &amp; \\&#10;r_{n-2} &amp;= r_{n-1}q_{n-1}+r_n &amp;\quad 0\le r_n&lt;r_{n-1},\\&#10;r_{n-1} &amp;= r_nq_n\,.&#10;\end{aligned}</code></span>
 
 那么从最后一步开始往前代入：
 <span class="course-math course-math-display" data-tex="\gcd(a,b)=r_{n}=r_{n-2}-r_{n-1}q_{n-1}=\dots=sa+tb" data-display="true"><code>\gcd(a,b)=r_{n}=r_{n-2}-r_{n-1}q_{n-1}=\dots=sa+tb</code></span>
@@ -277,7 +388,15 @@ excerpt: "离散数学 · Number Theory - 数论"
 当模逆存在时（<span class="course-math" data-tex="\gcd(a,m)=1" data-display="false"><code>\gcd(a,m)=1</code></span>），求解线性同余式，只需要找到 <span class="course-math" data-tex="\overline{a}=s" data-display="false"><code>\overline{a}=s</code></span>，其中 <span class="course-math" data-tex="1=sa+tm" data-display="false"><code>1=sa+tm</code></span>。
 
 解的个数：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-9.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-9" width="443" height="296" loading="lazy" decoding="async">
+
+**Theorem**\* Let <span class="course-math" data-tex="d=\gcd(a,m)" data-display="false"><code>d=\gcd(a,m)</code></span> and <span class="course-math" data-tex="m&#x27;=m/d" data-display="false"><code>m&#x27;=m/d</code></span>. The congruence <span class="course-math" data-tex="ax\equiv b\pmod m" data-display="false"><code>ax\equiv b\pmod m</code></span> has solutions if and only if <span class="course-math" data-tex="d\mid b" data-display="false"><code>d\mid b</code></span>. If <span class="course-math" data-tex="d\mid b" data-display="false"><code>d\mid b</code></span>, then there are exactly <span class="course-math" data-tex="d" data-display="false"><code>d</code></span> solutions. If <span class="course-math" data-tex="x_0" data-display="false"><code>x_0</code></span> is a solution, then the other solutions are given by <span class="course-math" data-tex="x_0+m&#x27;,x_0+2m&#x27;,\dots,x_0+(d-1)m&#x27;" data-display="false"><code>x_0+m&#x27;,x_0+2m&#x27;,\dots,x_0+(d-1)m&#x27;</code></span>.
+
+**Proof.**
+
+1) "only if": If <span class="course-math" data-tex="x_0" data-display="false"><code>x_0</code></span> is a solution, then <span class="course-math" data-tex="ax_0-b=km" data-display="false"><code>ax_0-b=km</code></span>. Thus, <span class="course-math" data-tex="ax_0-km=b" data-display="false"><code>ax_0-km=b</code></span>. Since <span class="course-math" data-tex="d" data-display="false"><code>d</code></span> divides <span class="course-math" data-tex="ax_0-km" data-display="false"><code>ax_0-km</code></span>, we must have <span class="course-math" data-tex="d\mid b" data-display="false"><code>d\mid b</code></span>.
+2) "if": Suppose that <span class="course-math" data-tex="d\mid b" data-display="false"><code>d\mid b</code></span>. Let <span class="course-math" data-tex="b=kd" data-display="false"><code>b=kd</code></span>. There exist integers <span class="course-math" data-tex="s,t" data-display="false"><code>s,t</code></span> such that <span class="course-math" data-tex="d=as+mt" data-display="false"><code>d=as+mt</code></span>. Multiply both sides by <span class="course-math" data-tex="k" data-display="false"><code>k</code></span>. Then <span class="course-math" data-tex="b=ask+mtk" data-display="false"><code>b=ask+mtk</code></span>. Let <span class="course-math" data-tex="x_0=sk" data-display="false"><code>x_0=sk</code></span>. Then <span class="course-math" data-tex="ax_0\equiv b\pmod m" data-display="false"><code>ax_0\equiv b\pmod m</code></span>.
+3) "<span class="course-math" data-tex="\#=d" data-display="false"><code>\#=d</code></span>": <span class="course-math" data-tex="ax_0\equiv b\pmod m" data-display="false"><code>ax_0\equiv b\pmod m</code></span> <span class="course-math" data-tex="ax_1\equiv b\pmod m" data-display="false"><code>ax_1\equiv b\pmod m</code></span> imply that <span class="course-math" data-tex="m\mid a(x_1-x_0)" data-display="false"><code>m\mid a(x_1-x_0)</code></span> and <span class="course-math" data-tex="m&#x27;\mid a&#x27;(x_1-x_0)" data-display="false"><code>m&#x27;\mid a&#x27;(x_1-x_0)</code></span>. This implies further that <span class="course-math" data-tex="x_1=x_0+km&#x27;" data-display="false"><code>x_1=x_0+km&#x27;</code></span>, where <span class="course-math" data-tex="k=0,1,\dots,d-1" data-display="false"><code>k=0,1,\dots,d-1</code></span>.
+
 
 ### 中国剩余定理（The Chinese Remainder Theorem, CRT）
 {: #section-14 }
@@ -343,7 +462,25 @@ excerpt: "离散数学 · Number Theory - 数论"
 
 
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-10.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-10" width="1504" height="950" loading="lazy" decoding="async">
+- Division, Primes
+
+  <span class="course-math" data-tex="a=dq+r\qquad q=a\ \text{div}\ d\qquad r=a\ \text{mod}\ d" data-display="false"><code>a=dq+r\qquad q=a\ \text{div}\ d\qquad r=a\ \text{mod}\ d</code></span>
+
+- Congruence
+
+  <span class="course-math" data-tex="a\equiv b\pmod m" data-display="false"><code>a\equiv b\pmod m</code></span> if <span class="course-math" data-tex="m" data-display="false"><code>m</code></span> divides <span class="course-math" data-tex="a-b" data-display="false"><code>a-b</code></span>
+
+- Greatest Common Divisor (GCD)
+
+  (extended) Euclidean algorithm
+  find the modular inverse
+  solve linear congruence <span class="course-math" data-tex="ax\equiv b\pmod m" data-display="false"><code>ax\equiv b\pmod m</code></span> (<span class="course-math" data-tex="\gcd(a,m)=1" data-display="false"><code>\gcd(a,m)=1</code></span>)
+  Chinese Remainder Theorem / back substitution
+
+- Euler's Theorem / Fermat's Little Theorem
+
+  <span class="course-math" data-tex="x^{\phi(n)}\equiv1\bmod n" data-display="false"><code>x^{\phi(n)}\equiv1\bmod n</code></span> if <span class="course-math" data-tex="\gcd(x,n)=1" data-display="false"><code>\gcd(x,n)=1</code></span>
+  <span class="course-math" data-tex="x^{p-1}\equiv1\bmod p" data-display="false"><code>x^{p-1}\equiv1\bmod p</code></span> if <span class="course-math" data-tex="x\not\equiv0\bmod p" data-display="false"><code>x\not\equiv0\bmod p</code></span>
 
 
 
@@ -404,7 +541,7 @@ Kerckhoffs's Principle：即使算法已知了，只要密钥未知，系统也�
 
 概念：1976 W.Diffie, M.Hellman, ***New directions in cryptography***: **"We stand today on the brink of a revolution in cryptography."**
 实现：R.**R**ivest, A.**S**hamir, L.**A**dleman,  ***A method for obtaining digital signatures and public-key cryptosystems***
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-11.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-11" width="1632" height="408" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-11.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-11" width="1289" height="375" loading="lazy" decoding="async">
 在公钥密码学中，不再需要提前协商密钥了。不过由于效率比较慢，通常可以通过 **公钥密码学** 来传递 **对称密码学** 的 **密钥**，然后后续使用对称加密。
 另一方面，可以存在 **数字签名** 了。私钥可以用来证明身份，所有人都能用公钥来核验。
 
@@ -463,7 +600,7 @@ Kerckhoffs's Principle：即使算法已知了，只要密钥未知，系统也�
 **Diffie-Hellman Key Exchange Protocol**
 这里 <span class="course-math" data-tex="\alpha" data-display="false"><code>\alpha</code></span> 是 <span class="course-math" data-tex="\mathbb{Z}_{p}" data-display="false"><code>\mathbb{Z}_{p}</code></span> 的一个生成元，<span class="course-math" data-tex="X_{A},X_{B}" data-display="false"><code>X_{A},X_{B}</code></span> 保密作为私钥，于是就在只交换 <span class="course-math" data-tex="Y_{A},Y_{B}" data-display="false"><code>Y_{A},Y_{B}</code></span> 的情况下得到了相同的密钥 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span>。
 
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-12.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-12" width="1540" height="862" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Number%20Theory%20-%20%E6%95%B0%E8%AE%BA-12.webp' | relative_url }}{% raw %}" alt="Number Theory - 数论-12" width="1449" height="739" loading="lazy" decoding="async">
 
 量子计算对于大整数分解问题与离散对数问题有较快的解决，因此挑战了公钥密码学。后量子时代的公钥密码学需要解决密钥封装（KEM），数字签名；需要找其他的困难问题。技术路线有：
 - Lattice, Code, Isogeny, Multivariable, Hash

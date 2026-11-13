@@ -11,8 +11,8 @@ assets/vendor/*
 !assets/vendor/README.md
 !assets/vendor/mathjax/
 !assets/vendor/mathjax/**
-!assets/vendor/pseudocode/
-!assets/vendor/pseudocode/**
+!assets/vendor/pseudocode-suite/
+!assets/vendor/pseudocode-suite/**
 !assets/vendor/waline/
 !assets/vendor/waline/**
 !assets/vendor/echarts/

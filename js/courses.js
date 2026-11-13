@@ -53,18 +53,29 @@
           window.courseRenderErrors.push({ tex: element.dataset.tex, error: error.message });
         }
       }
-      content.querySelectorAll('.course-pseudocode').forEach(function (element) {
+      // ```pseudo blocks use the Obsidian plugin's own parser and flat renderer
+      // (assets/vendor/pseudocode-suite), so both look the same.
+      for (var block of content.querySelectorAll('.course-pseudocode')) {
         try {
-          // pseudocode.js 2.4 calls tex2chtml on MathJax 3; the course renderer
-          // ships the self-contained SVG backend instead.
-          if (!MathJax.tex2chtml) MathJax.tex2chtml = MathJax.tex2svg;
-          // Keep the source visible if parsing fails.
-          var rendered = pseudocode.render(element.textContent, null, { lineNumber: true });
-          element.replaceWith(rendered);
+          var model = PseudocodeSuite.parseLatex(block.textContent);
+          var rendered = await PseudocodeSuite.renderBlock(null, model, {
+            lineNumbers: true, indentSize: '1.2em', commentDelimiter: '//'
+          });
+          for (var span of rendered.querySelectorAll('.ps-math[data-tex]')) {
+            var tex = span.dataset.tex;
+            var svg = await MathJax.tex2svgPromise(tex, { display: false });
+            if (svg.querySelector('[data-mjx-error]')) {
+              throw new Error(svg.querySelector('[data-mjx-error]').getAttribute('data-mjx-error') + ': ' + tex);
+            }
+            delete span.dataset.tex;
+            span.replaceChildren(svg);
+          }
+          // Keep the source visible if parsing or typesetting fails.
+          block.replaceWith(rendered);
         } catch (error) {
           window.courseRenderErrors.push({ pseudocode: true, error: error.message });
         }
-      });
+      }
       // Direct tex2svg conversion does not install the document styles by
       // itself. This also hides visual duplicates of assistive MathML.
       MathJax.startup.document.updateDocument();

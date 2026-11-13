@@ -218,7 +218,7 @@ Bilinear Property:
 - 若 <span class="course-math" data-tex="np\geq 5,n(1-p)\geq5" data-display="false"><code>np\geq 5,n(1-p)\geq5</code></span>，考虑用正态分布 <span class="course-math" data-tex="N(np,np(1-p))" data-display="false"><code>N(np,np(1-p))</code></span> 近似。
 
 **连续性修正。**
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Joint%20Probability%20-%20%E8%81%94%E5%90%88%E6%A6%82%E7%8E%87.webp' | relative_url }}{% raw %}" alt="Joint Probability - 联合概率" width="559" height="135" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Joint%20Probability%20-%20%E8%81%94%E5%90%88%E6%A6%82%E7%8E%87.webp' | relative_url }}{% raw %}" alt="Joint Probability - 联合概率" width="543" height="135" loading="lazy" decoding="async">
 对整数值随机变量应用中心极限定理的时候（例如估计二项分布），若要算一个区间上的概率，先写成整数端点的闭区间，再把区间左右各扩大 <span class="course-math" data-tex="0.5" data-display="false"><code>0.5</code></span> 会算得更准确。极端情况： <span class="course-math" data-tex="P(X=x)" data-display="false"><code>P(X=x)</code></span> 转而计算 <span class="course-math" data-tex="P(x-0.5\leq X\leq x+0.5)" data-display="false"><code>P(x-0.5\leq X\leq x+0.5)</code></span>。
 
 
@@ -248,7 +248,7 @@ Bilinear Property:
 <span class="course-math course-math-display" data-tex="Y\mid X = x\sim N\left( \mu _{Y}+ \frac{ \rho \sigma _{Y}}{\sigma _{X}}(x-\mu _{X}), (1-\rho ^{2})\sigma _{Y}^{2} \right)" data-display="true"><code>Y\mid X = x\sim N\left( \mu _{Y}+ \frac{ \rho \sigma _{Y}}{\sigma _{X}}(x-\mu _{X}), (1-\rho ^{2})\sigma _{Y}^{2} \right)</code></span>
 也就是说，条件分布也是正态分布，且也能看出线性关系：
 <span class="course-math course-math-display" data-tex="\mathrm{E}(Y\mid X=x)=a+bx" data-display="true"><code>\mathrm{E}(Y\mid X=x)=a+bx</code></span>
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Joint%20Probability%20-%20%E8%81%94%E5%90%88%E6%A6%82%E7%8E%87-1.webp' | relative_url }}{% raw %}" alt="Joint Probability - 联合概率-1" width="485" height="398" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Joint%20Probability%20-%20%E8%81%94%E5%90%88%E6%A6%82%E7%8E%87-1.webp' | relative_url }}{% raw %}" alt="Joint Probability - 联合概率-1" width="444" height="387" loading="lazy" decoding="async">
 
 **性质 4：** 若 <span class="course-math" data-tex="\begin{bmatrix}X \\  Y \end{bmatrix}\sim N(\boldsymbol{\mu},\boldsymbol{\Sigma})" data-display="false"><code>\begin{bmatrix}X \\  Y \end{bmatrix}\sim N(\boldsymbol{\mu},\boldsymbol{\Sigma})</code></span> ，那么对于任意常数 <span class="course-math" data-tex="c_{1},c_{2}" data-display="false"><code>c_{1},c_{2}</code></span> 有
 <span class="course-math course-math-display" data-tex="c_{1}X+c_{2}Y\sim N(c_{1}\mu _{X}+c_{2}\mu _{Y},c_{1}^{2}\sigma _{X}^{2}+2c_{1}c_{2}\rho \sigma _{X}\sigma _{Y}+c_{2}^{2}\sigma _{Y}^{2})" data-display="true"><code>c_{1}X+c_{2}Y\sim N(c_{1}\mu _{X}+c_{2}\mu _{Y},c_{1}^{2}\sigma _{X}^{2}+2c_{1}c_{2}\rho \sigma _{X}\sigma _{Y}+c_{2}^{2}\sigma _{Y}^{2})</code></span>

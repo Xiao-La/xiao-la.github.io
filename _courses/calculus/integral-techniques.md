@@ -85,7 +85,7 @@ excerpt: "高等数学（上）/（下） · Integral Techniques - 积分技巧"
 <span class="course-math course-math-display" data-tex="\int f(x)\,\mathrm{d}x=xf(x)-\int x\,\mathrm{d}f(x)" data-display="true"><code>\int f(x)\,\mathrm{d}x=xf(x)-\int x\,\mathrm{d}f(x)</code></span>
 也就是说如果一个函数的反函数容易积分，则分部积分法可用。
 表格法：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Integral-1.webp' | relative_url }}{% raw %}" alt="Integral-1" width="1442" height="982" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Integral-1.webp' | relative_url }}{% raw %}" alt="Integral-1" width="1374" height="920" loading="lazy" decoding="async">
 
 ### 部分分式（Integration Using Partial Fractions）
 {: #section-8 }

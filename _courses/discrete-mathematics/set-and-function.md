@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-09-03T17:09:42+08:00"
-updated_at: "2026-10-20T00:03:18+08:00"
+updated_at: "2026-11-13T19:44:49+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -41,7 +41,7 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 - 要证明可数，只需说明用一个序列可以把这个集合列尽。
 - <span class="course-math" data-tex="\mathbb{Z}" data-display="false"><code>\mathbb{Z}</code></span> 可数。可以列一个序列 <span class="course-math" data-tex="0,1,-1,2,-2,\dots" data-display="false"><code>0,1,-1,2,-2,\dots</code></span>
 - <span class="course-math" data-tex="\mathbb{Q}^{+}" data-display="false"><code>\mathbb{Q}^{+}</code></span> 可数。可以按这个来列举（依次去列 <span class="course-math" data-tex="p+q=2" data-display="false"><code>p+q=2</code></span> ，<span class="course-math" data-tex="p+q=3" data-display="false"><code>p+q=3</code></span> ... 的 <span class="course-math" data-tex="p / q" data-display="false"><code>p / q</code></span>，再加一个 filter 要求 <span class="course-math" data-tex="p,q" data-display="false"><code>p,q</code></span> 不可约）：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20and%20Function%20-%20%E9%9B%86%E5%90%88%E4%B8%8E%E5%87%BD%E6%95%B0.webp' | relative_url }}{% raw %}" alt="Set and Function - 集合与函数" width="190" height="182" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20and%20Function%20-%20%E9%9B%86%E5%90%88%E4%B8%8E%E5%87%BD%E6%95%B0.webp' | relative_url }}{% raw %}" alt="Set and Function - 集合与函数" width="173" height="168" loading="lazy" decoding="async">
 - 若 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 可数，则 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 的任意子集都可数。（加一个 filter 去掉不在子集里的，形成新的序列）
 - 非空有限字母表 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 上的有限字符串集 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 是可数无穷的。先按长度、再在同一长度内按字典序枚举即可。
 - 从上面这条，可以推出，所有 Java 程序组成的集合是可数的。（加一个 filter: Java Compiler）。
@@ -74,12 +74,30 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 
 定义 **Disjoint**：两个集合无交。
 集合恒等式：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA.webp' | relative_url }}{% raw %}" alt="Set Theory - 集合论" width="298" height="362" loading="lazy" decoding="async">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-1.webp' | relative_url }}{% raw %}" alt="Set Theory - 集合论-1" width="299" height="272" loading="lazy" decoding="async">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-2.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论-2" width="302" height="226" loading="lazy" decoding="async">
+
+| 名称 | 恒等式 |
+| --- | --- |
+| Identity laws | <span class="course-math" data-tex="A\cup\emptyset=A" data-display="false"><code>A\cup\emptyset=A</code></span><br><span class="course-math" data-tex="A\cap U=A" data-display="false"><code>A\cap U=A</code></span> |
+| Domination laws | <span class="course-math" data-tex="A\cup U=U" data-display="false"><code>A\cup U=U</code></span><br><span class="course-math" data-tex="A\cap\emptyset=\emptyset" data-display="false"><code>A\cap\emptyset=\emptyset</code></span> |
+| Idempotent laws | <span class="course-math" data-tex="A\cup A=A" data-display="false"><code>A\cup A=A</code></span><br><span class="course-math" data-tex="A\cap A=A" data-display="false"><code>A\cap A=A</code></span> |
+| Complementation laws | <span class="course-math" data-tex="\overline{\overline{A}}=A" data-display="false"><code>\overline{\overline{A}}=A</code></span> |
+| Commutative laws | <span class="course-math" data-tex="A\cup B=B\cup A" data-display="false"><code>A\cup B=B\cup A</code></span><br><span class="course-math" data-tex="A\cap B=B\cap A" data-display="false"><code>A\cap B=B\cap A</code></span> |
+| Associative laws | <span class="course-math" data-tex="A\cup(B\cup C)=(A\cup B)\cup C" data-display="false"><code>A\cup(B\cup C)=(A\cup B)\cup C</code></span><br><span class="course-math" data-tex="A\cap(B\cap C)=(A\cap B)\cap C" data-display="false"><code>A\cap(B\cap C)=(A\cap B)\cap C</code></span> |
+| Distributive laws | <span class="course-math" data-tex="A\cup(B\cap C)=(A\cup B)\cap(A\cup C)" data-display="false"><code>A\cup(B\cap C)=(A\cup B)\cap(A\cup C)</code></span><br><span class="course-math" data-tex="A\cap(B\cup C)=(A\cap B)\cup(A\cap C)" data-display="false"><code>A\cap(B\cup C)=(A\cap B)\cup(A\cap C)</code></span> |
+| De Morgan's laws | <span class="course-math" data-tex="\overline{A\cap B}=\overline{A}\cup\overline{B}" data-display="false"><code>\overline{A\cap B}=\overline{A}\cup\overline{B}</code></span><br><span class="course-math" data-tex="\overline{A\cup B}=\overline{A}\cap\overline{B}" data-display="false"><code>\overline{A\cup B}=\overline{A}\cap\overline{B}</code></span> |
+| Absorption laws | <span class="course-math" data-tex="A\cup(A\cap B)=A" data-display="false"><code>A\cup(A\cap B)=A</code></span><br><span class="course-math" data-tex="A\cap(A\cup B)=A" data-display="false"><code>A\cap(A\cup B)=A</code></span> |
+| Complement laws | <span class="course-math" data-tex="A\cup\overline{A}=U" data-display="false"><code>A\cup\overline{A}=U</code></span><br><span class="course-math" data-tex="A\cap\overline{A}=\emptyset" data-display="false"><code>A\cap\overline{A}=\emptyset</code></span> |
+
 要证明这些恒等式：
 - 与真值表相对的，使用成员表（其中 0 表示不在集合中，1 表示在集合中）：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-3.png' | relative_url }}{% raw %}" alt="Set Theory - 集合论-3" width="383" height="162" loading="lazy" decoding="async">
+
+| <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> | <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> | <span class="course-math" data-tex="\overline{A}" data-display="false"><code>\overline{A}</code></span> | <span class="course-math" data-tex="\overline{B}" data-display="false"><code>\overline{B}</code></span> | <span class="course-math" data-tex="\overline{A \cap B}" data-display="false"><code>\overline{A \cap B}</code></span> | <span class="course-math" data-tex="\overline{A} \cup \overline{B}" data-display="false"><code>\overline{A} \cup \overline{B}</code></span> |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 1 | 0 | 0 | 0 | 0 |
+| 1 | 0 | 0 | 1 | 1 | 1 |
+| 0 | 1 | 1 | 0 | 1 | 1 |
+| 0 | 0 | 1 | 1 | 1 | 1 |
+
 - 也可以通过证明对应的逻辑表达式 <span class="course-math" data-tex="\forall x (x\in \text{LHS}\leftrightarrow x\in \text{RHS})" data-display="false"><code>\forall x (x\in \text{LHS}\leftrightarrow x\in \text{RHS})</code></span>
 - 也可以结合 Set builder 和逻辑等价律。
 计算机中若全集确定且有限，可以通过一个比特串表示集合。
@@ -119,7 +137,7 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 
 可以定义反函数（Inverse Function） <span class="course-math" data-tex="f^{-1}(b)=a" data-display="false"><code>f^{-1}(b)=a</code></span> ，当且仅当 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 是双射。
 定义复合函数 <span class="course-math" data-tex="(f\circ g)(x)=f(g(x))" data-display="false"><code>(f\circ g)(x)=f(g(x))</code></span>。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-5.webp' | relative_url }}{% raw %}" alt="Set Theory - 集合论-5" width="609" height="292" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-5.webp' | relative_url }}{% raw %}" alt="Set Theory - 集合论-5" width="609" height="280" loading="lazy" decoding="async">
 若 <span class="course-math" data-tex="f:A\to B" data-display="false"><code>f:A\to B</code></span> 是双射，那么可以记集合 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 中的恒等函数（Identity Function）：<span class="course-math" data-tex="I_{A}=f^{-1}\circ f" data-display="false"><code>I_{A}=f^{-1}\circ f</code></span>。
 
 定义一个函数是可计算的（Computable）：存在一个计算机程序可以找到函数的值。
@@ -131,7 +149,21 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 
 
 上/下取整函数 <span class="course-math" data-tex="\lceil x \rceil,\lfloor x \rfloor" data-display="false"><code>\lceil x \rceil,\lfloor x \rfloor</code></span>
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20Theory%20-%20%E9%9B%86%E5%90%88%E8%AE%BA-4.webp' | relative_url }}{% raw %}" alt="Set Theory - 集合论-4" width="353" height="293" loading="lazy" decoding="async">
+
+**TABLE 1** Useful Properties of the Floor and Ceiling Functions. (<span class="course-math" data-tex="n" data-display="false"><code>n</code></span> is an integer, <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> is a real number)
+
+| | Property |
+| --- | --- |
+| (1a) | <span class="course-math" data-tex="\lfloor x\rfloor=n \text{ if and only if } n\le x&lt;n+1" data-display="false"><code>\lfloor x\rfloor=n \text{ if and only if } n\le x&lt;n+1</code></span> |
+| (1b) | <span class="course-math" data-tex="\lceil x\rceil=n \text{ if and only if } n-1&lt;x\le n" data-display="false"><code>\lceil x\rceil=n \text{ if and only if } n-1&lt;x\le n</code></span> |
+| (1c) | <span class="course-math" data-tex="\lfloor x\rfloor=n \text{ if and only if } x-1&lt;n\le x" data-display="false"><code>\lfloor x\rfloor=n \text{ if and only if } x-1&lt;n\le x</code></span> |
+| (1d) | <span class="course-math" data-tex="\lceil x\rceil=n \text{ if and only if } x\le n&lt;x+1" data-display="false"><code>\lceil x\rceil=n \text{ if and only if } x\le n&lt;x+1</code></span> |
+| (2) | <span class="course-math" data-tex="x-1&lt;\lfloor x\rfloor\le x\le\lceil x\rceil&lt;x+1" data-display="false"><code>x-1&lt;\lfloor x\rfloor\le x\le\lceil x\rceil&lt;x+1</code></span> |
+| (3a) | <span class="course-math" data-tex="\lfloor -x\rfloor=-\lceil x\rceil" data-display="false"><code>\lfloor -x\rfloor=-\lceil x\rceil</code></span> |
+| (3b) | <span class="course-math" data-tex="\lceil -x\rceil=-\lfloor x\rfloor" data-display="false"><code>\lceil -x\rceil=-\lfloor x\rfloor</code></span> |
+| (4a) | <span class="course-math" data-tex="\lfloor x+n\rfloor=\lfloor x\rfloor+n" data-display="false"><code>\lfloor x+n\rfloor=\lfloor x\rfloor+n</code></span> |
+| (4b) | <span class="course-math" data-tex="\lceil x+n\rceil=\lceil x\rceil+n" data-display="false"><code>\lceil x+n\rceil=\lceil x\rceil+n</code></span> |
+
 证明取整函数相关的式子考虑拆 <span class="course-math" data-tex="x=\widetilde{x}+a" data-display="false"><code>x=\widetilde{x}+a</code></span> 其中 <span class="course-math" data-tex="\widetilde{x}" data-display="false"><code>\widetilde{x}</code></span> 为整数部分。
 
 

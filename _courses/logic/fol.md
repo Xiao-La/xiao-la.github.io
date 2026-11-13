@@ -5,7 +5,7 @@ course_title: "数理逻辑导论"
 section: ""
 status: "completed"
 created_at: "2026-04-29T11:06:10+08:00"
-updated_at: "2026-10-09T16:13:40+08:00"
+updated_at: "2026-11-13T19:45:00+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -99,7 +99,7 @@ Formula（公式）的定义为， <span class="course-math" data-tex="\alpha \i
 - 在 <span class="course-math" data-tex="\neg,\exists,\forall" data-display="false"><code>\neg,\exists,\forall</code></span> 之间是右结合的
 
 解析树（Parse Tree）例如 <span class="course-math" data-tex="\forall x((P(x)\to Q(x))\land S(x,y))" data-display="false"><code>\forall x((P(x)\to Q(x))\land S(x,y))</code></span>
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/FOL%20-%20%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91.png' | relative_url }}{% raw %}" alt="FOL - 一阶逻辑" width="283" height="342" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/FOL%20-%20%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91.webp' | relative_url }}{% raw %}" alt="FOL - 一阶逻辑" width="262" height="307" loading="lazy" decoding="async">
 
 
 ### 形式化表达（Formalization）
@@ -129,16 +129,28 @@ Scope（作用域）：在公式 <span class="course-math" data-tex="\forall x\a
 - Free Variables（自由变元）：不在量化变量 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 的 scope 中的 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 就是自由变元。
 - Bound Variables（约束变元）：其他情况。
 另一种定义方式：解析树中，如果一个叶子节点 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 到根节点的路径中不存在 <span class="course-math" data-tex="\forall x" data-display="false"><code>\forall x</code></span> 或 <span class="course-math" data-tex="\exists x" data-display="false"><code>\exists x</code></span>，则它是一个自由变元。否则，为约束变元。
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/FOL%20-%20%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91-1.png' | relative_url }}{% raw %}" alt="FOL - 一阶逻辑-1" width="323" height="375" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/FOL%20-%20%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91-1.webp' | relative_url }}{% raw %}" alt="FOL - 一阶逻辑-1" width="288" height="342" loading="lazy" decoding="async">
 定义：没有自由变量的公式叫做 **Closed Formula / Sentence**（闭公式/句子）。闭公式的真值不依赖于变量赋值；开放公式在给定阐释和变量赋值后也可以决定真或假。
-对闭公式赋予意义需要对其中非逻辑符号（常量，谓词和函数）做阐释（Interpretation）（对应到定定义域上）。例如：<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/FOL%20-%20%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91-2.webp' | relative_url }}{% raw %}" alt="FOL - 一阶逻辑-2" width="1948" height="620" loading="lazy" decoding="async">
+对闭公式赋予意义需要对其中非逻辑符号（常量，谓词和函数）做阐释（Interpretation）（对应到定义域上）。例如：
+
+Let <span class="course-math" data-tex="f^{(1)}" data-display="false"><code>f^{(1)}</code></span> and <span class="course-math" data-tex="h^{(2)}" data-display="false"><code>h^{(2)}</code></span> be function symbols, <span class="course-math" data-tex="P^{(1)}" data-display="false"><code>P^{(1)}</code></span> and <span class="course-math" data-tex="Q^{(2)}" data-display="false"><code>Q^{(2)}</code></span> be predicate symbols, <span class="course-math" data-tex="a,b,c" data-display="false"><code>a,b,c</code></span> be constant symbols.
+Define an interpretation <span class="course-math" data-tex="\mathcal{I}" data-display="false"><code>\mathcal{I}</code></span> by
+
+- Domain: <span class="course-math" data-tex="D=\{1,2,3\}" data-display="false"><code>D=\{1,2,3\}</code></span>
+- Constant: <span class="course-math" data-tex="a^{\mathcal{I}}=1,\ b^{\mathcal{I}}=2,\ c^{\mathcal{I}}=3" data-display="false"><code>a^{\mathcal{I}}=1,\ b^{\mathcal{I}}=2,\ c^{\mathcal{I}}=3</code></span>
+- Functions: <span class="course-math" data-tex="f^{\mathcal{I}}(1)=2,\ f^{\mathcal{I}}(2)=3,\ f^{\mathcal{I}}(3)=1,\ h^{\mathcal{I}}:(x,y)\mapsto\min\{x,y\}" data-display="false"><code>f^{\mathcal{I}}(1)=2,\ f^{\mathcal{I}}(2)=3,\ f^{\mathcal{I}}(3)=1,\ h^{\mathcal{I}}:(x,y)\mapsto\min\{x,y\}</code></span>
+- Predicates: <span class="course-math" data-tex="P^{\mathcal{I}}=\{1,3\},\ Q^{\mathcal{I}}=\{\langle1,2\rangle,\langle3,3\rangle,\langle3,1\rangle\}" data-display="false"><code>P^{\mathcal{I}}=\{1,3\},\ Q^{\mathcal{I}}=\{\langle1,2\rangle,\langle3,3\rangle,\langle3,1\rangle\}</code></span>
+
 对变量也赋予一个值，就是环境（Environment）。例如：<span class="course-math" data-tex="E(x)=1" data-display="false"><code>E(x)=1</code></span> 就是说在环境 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 中， <span class="course-math" data-tex="x=1" data-display="false"><code>x=1</code></span>。
 定义：在 <span class="course-math" data-tex="\mathcal{I}" data-display="false"><code>\mathcal{I}</code></span> 和 <span class="course-math" data-tex="E" data-display="false"><code>E</code></span> 中，项 <span class="course-math" data-tex="t" data-display="false"><code>t</code></span> 的值记为 <span class="course-math" data-tex="t^{(\mathcal{I},E)}" data-display="false"><code>t^{(\mathcal{I},E)}</code></span>。若它是常量，则为 <span class="course-math" data-tex="c^{\mathcal{I}}" data-display="false"><code>c^{\mathcal{I}}</code></span>。若它为变量，则为 <span class="course-math" data-tex="x^E" data-display="false"><code>x^E</code></span>。若为函数，则为迭代的产物。
 有了阐释和环境，原子公式（Atom Formula）的值也就可以确定了：<span class="course-math" data-tex="P(t_{1},\dots,t_{n})^{(\mathcal{I},E)}" data-display="false"><code>P(t_{1},\dots,t_{n})^{(\mathcal{I},E)}</code></span>。进一步，可迭代定义出任何 wff 的值。
 为了形式化定义含有量词的公式的值，我们定义一个新的记号 <span class="course-math" data-tex="E\left[ x\mapsto d \right]" data-display="false"><code>E\left[ x\mapsto d \right]</code></span>：
 <span class="course-math course-math-display" data-tex="E\left[ x \mapsto d \right](y):=\begin{cases}&#10;d &amp; \text{if } y=x \\&#10;E(y) &amp; \text{if } y\neq x&#10;\end{cases}" data-display="true"><code>E\left[ x \mapsto d \right](y):=\begin{cases}&#10;d &amp; \text{if } y=x \\&#10;E(y) &amp; \text{if } y\neq x&#10;\end{cases}</code></span>
 那么定义
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/FOL%20-%20%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91-3.webp' | relative_url }}{% raw %}" alt="FOL - 一阶逻辑-3" width="1826" height="426" loading="lazy" decoding="async">
+
+<span class="course-math course-math-display" data-tex="(\forall x\ \alpha)^{(\mathcal{I},E)}=\begin{cases}&#10;1 &amp; \text{if } \alpha^{(\mathcal{I},E[x\mapsto d])}=1 \text{ for every } d \text{ in the domain of } \mathcal{I} \\&#10;0 &amp; \text{otherwise}&#10;\end{cases}" data-display="true"><code>(\forall x\ \alpha)^{(\mathcal{I},E)}=\begin{cases}&#10;1 &amp; \text{if } \alpha^{(\mathcal{I},E[x\mapsto d])}=1 \text{ for every } d \text{ in the domain of } \mathcal{I} \\&#10;0 &amp; \text{otherwise}&#10;\end{cases}</code></span>
+
+<span class="course-math course-math-display" data-tex="(\exists x\ \alpha)^{(\mathcal{I},E)}=\begin{cases}&#10;1 &amp; \text{if } \alpha^{(\mathcal{I},E[x\mapsto d])}=1 \text{ for some } d \text{ in the domain of } \mathcal{I} \\&#10;0 &amp; \text{otherwise}&#10;\end{cases}" data-display="true"><code>(\exists x\ \alpha)^{(\mathcal{I},E)}=\begin{cases}&#10;1 &amp; \text{if } \alpha^{(\mathcal{I},E[x\mapsto d])}=1 \text{ for some } d \text{ in the domain of } \mathcal{I} \\&#10;0 &amp; \text{otherwise}&#10;\end{cases}</code></span>
 
 **逻辑等价：**
 对偶性 （Duality）：
@@ -193,7 +205,7 @@ Scope（作用域）：在公式 <span class="course-math" data-tex="\forall x\a
 - <span class="course-math" data-tex="\forall i" data-display="false"><code>\forall i</code></span>：
 <span class="course-math course-math-display" data-tex="\dfrac{&#10;\boxed{&#10;\begin{aligned}&#10;y\text{ fresh} \\&#10;\vdots \\&#10;\alpha [y/x]&#10;\end{aligned}}&#10;}{\forall x \, \alpha}" data-display="true"><code>\dfrac{&#10;\boxed{&#10;\begin{aligned}&#10;y\text{ fresh} \\&#10;\vdots \\&#10;\alpha [y/x]&#10;\end{aligned}}&#10;}{\forall x \, \alpha}</code></span>
 这里 fresh variable 不可以出现在 subproof 之外。最好不要出现在任何的 <span class="course-math" data-tex="\alpha" data-display="false"><code>\alpha</code></span> 和 <span class="course-math" data-tex="\Sigma" data-display="false"><code>\Sigma</code></span> 中。
-例如：<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/FOL%20-%20%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91-4.webp' | relative_url }}{% raw %}" alt="FOL - 一阶逻辑-4" width="1204" height="786" loading="lazy" decoding="async">
+例如：<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/FOL%20-%20%E4%B8%80%E9%98%B6%E9%80%BB%E8%BE%91-4.webp' | relative_url }}{% raw %}" alt="FOL - 一阶逻辑-4" width="998" height="630" loading="lazy" decoding="async">
 - <span class="course-math" data-tex="\exists e" data-display="false"><code>\exists e</code></span>：
 <span class="course-math course-math-display" data-tex="\dfrac{(\exists x\,\alpha)_\,\boxed{\begin{aligned}&#10;\alpha[u / x], u\text{ fresh} \\&#10;\vdots \\&#10;\beta&#10;\end{aligned}} }{\beta}" data-display="true"><code>\dfrac{(\exists x\,\alpha)_\,\boxed{\begin{aligned}&#10;\alpha[u / x], u\text{ fresh} \\&#10;\vdots \\&#10;\beta&#10;\end{aligned}} }{\beta}</code></span>
 ND for FOL 是完备的（Complete）和可靠的（Sound）。

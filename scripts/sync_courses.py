@@ -24,11 +24,20 @@ ROOT = Path(__file__).resolve().parents[1]
 WEBP_MIN_BYTES = 50_000
 WEBP_MAX_RATIO = 0.9
 WEBP_ARGS = ['-quiet', '-q', '90', '-m', '6', '-metadata', 'none']
+# Screenshot margins: pixels within TRIM_TOLERANCE of the corner colour are
+# background; keep TRIM_PAD of it and crop only sides that lose TRIM_MIN or more.
+TRIM_TOLERANCE = 24
+TRIM_PAD = 12
+TRIM_MIN = 24
+# Mean luminance below this marks a dark slide, framed dark on the page.
+DARK_LUMA = 110
 FENCE = re.compile(r"(?m)^ {0,3}(`{3,}|~{3,})([^\n]*)\n([\s\S]*?)^ {0,3}\1[ \t]*$")
 CODE = re.compile(r"(`+)([^`\n]*?)\1")
 MATH = re.compile(r"(?<!\\)\$\$([\s\S]*?)(?<!\\)\$\$|(?<![\\$])\$(?!\$)([^\n$]*?)(?<!\\)\$(?!\$)")
 WIKI = re.compile(r"(!?)\[\[([^\n]+?)\]\]")
 HEADING = re.compile(r'^#{1,6}[ \t]+.+$', re.M)
+PSEUDOCODE_PLUGIN = Path('.obsidian/plugins/pseudocode-suite')
+PSEUDOCODE_BUNDLE = 'assets/vendor/pseudocode-suite/pseudocode-suite.js'
 
 
 def dump(value):
@@ -118,6 +127,49 @@ def normalize_tables(text):
     return '\n'.join(output), count
 
 
+def scan_bmp(data):
+    """Return the padded content box and darkness of a 24/32-bit BMP screenshot."""
+    if data[:2] != b'BM':
+        raise ValueError('not a BMP')
+    offset = int.from_bytes(data[10:14], 'little')
+    width, height = struct.unpack('<ii', data[18:26])
+    step = struct.unpack('<H', data[28:30])[0] // 8
+    if step not in (3, 4) or width <= 0 or not height:
+        raise ValueError('unsupported BMP')
+    stride, rows = (width * step + 3) // 4 * 4, abs(height)
+    lines = [data[offset + i * stride:offset + i * stride + width * step] for i in range(rows)]
+    if height > 0:
+        lines.reverse()  # bottom-up bitmap
+    corner = lines[0][:step]
+    # One lookup table per channel marks bytes that differ from the corner colour.
+    tables = [bytes(int(abs(v - c) > TRIM_TOLERANCE) for v in range(256)) for c in corner]
+    left, right, top, bottom, light = width, -1, None, None, 0
+    for y, line in enumerate(lines):
+        hit = False
+        for c in range(step):
+            channel = line[c::step]
+            if c < 3:
+                light += sum(channel)
+            marks = channel.translate(tables[c])
+            first = marks.find(1)
+            if first >= 0:
+                hit, left, right = True, min(left, first), max(right, marks.rfind(1))
+        if hit:
+            top = y if top is None else top
+            bottom = y
+    transparent = step == 4 and corner[3] < 255
+    dark = not transparent and light / (3 * width * rows) < DARK_LUMA
+    box = None
+    if top is not None:
+        def shed(margin):
+            return margin - TRIM_PAD if margin - TRIM_PAD >= TRIM_MIN else 0
+        l, t = shed(left), shed(top)
+        r, b = shed(width - 1 - right), shed(rows - 1 - bottom)
+        if l or t or r or b:
+            box = [l, t, width - l - r, rows - t - b]
+    return {'size': [width, rows], 'box': box, 'dark': dark}
+
+
 class Exporter:
     def __init__(self, vault, courses, cache=ROOT/'.course-cache'/'webp', site=None):
         # site: blog root whose published notes keep their first known created_at.
@@ -129,6 +181,7 @@ class Exporter:
         self.links = []
         self.stats = defaultdict(int)
         self.warnings = []
+        self.scans = {}
 
     def resolve(self, source, target):
         name = unquote(target).replace('\\', '/')
@@ -234,7 +287,7 @@ class Exporter:
         if path.suffix.lower() not in {'.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.pdf'}:
             raise ValueError(f'Unsupported public attachment: {path}')
         published, source = path.relative_to(self.vault), path
-        webp = self.webp(path)
+        webp = self.trimmed(path) or self.webp(path)
         if webp:
             published, source = published.with_suffix('.webp'), webp
         name = f'assets/courses/{published}'
@@ -242,6 +295,59 @@ class Exporter:
             raise ValueError(f'Two attachments publish to {name}')
         self.assets[name] = source
         return '/' + quote(name, safe='/')
+
+    def scan(self, path):
+        """Size, content box and darkness of a PNG/JPEG screenshot, cached by content.
+
+        Screenshots cut from slides carry uneven background margins; the box is
+        the content plus TRIM_PAD of background. macOS `sips` decodes the image
+        to BMP, so the exporter itself stays dependency-free; without it, or for
+        anything unexpected, images are simply published untrimmed.
+        """
+        if path.suffix.lower() not in {'.png', '.jpg', '.jpeg'}:
+            return None
+        if path in self.scans:
+            return self.scans[path]
+        data = path.read_bytes()
+        key = hashlib.sha256(data + f'scan{TRIM_TOLERANCE},{TRIM_PAD},{TRIM_MIN}'.encode()).hexdigest()
+        cached = self.cache/f'{key}.scan.json'
+        info = None
+        if cached.exists():
+            info = json.loads(cached.read_text())
+        elif shutil.which('sips'):
+            self.cache.mkdir(parents=True, exist_ok=True)
+            bmp = self.cache/f'{key}.bmp'
+            try:
+                subprocess.run(['sips', '-s', 'format', 'bmp', str(path), '--out', str(bmp)],
+                               check=True, capture_output=True)
+                info = scan_bmp(bmp.read_bytes())
+            except (subprocess.CalledProcessError, ValueError, struct.error):
+                info = None
+            finally:
+                bmp.unlink(missing_ok=True)
+            if info:
+                cached.write_text(json.dumps(info))
+        self.scans[path] = info
+        return info
+
+    def trimmed(self, path):
+        """Return a cached WebP of the image cropped to its content, or None."""
+        info = self.scan(path)
+        if not info or not info['box']:
+            return None
+        x, y, w, h = info['box']
+        args = WEBP_ARGS if path.stat().st_size > WEBP_MIN_BYTES else ['-quiet', '-lossless', '-metadata', 'none']
+        crop = ['-crop', str(x), str(y), str(w), str(h)]
+        key = hashlib.sha256(path.read_bytes() + ' '.join(args + crop).encode()).hexdigest()
+        out = self.cache/f'{key}.webp'
+        if not out.exists():
+            if not shutil.which('cwebp'):
+                raise SystemExit('cwebp is required for course images (brew install webp)')
+            self.cache.mkdir(parents=True, exist_ok=True)
+            tmp = out.with_suffix('.tmp')
+            subprocess.run(['cwebp', *args, *crop, str(path), '-o', str(tmp)], check=True)
+            tmp.replace(out)
+        return out
 
     def webp(self, path):
         """Return a cached WebP copy of a large PNG/JPEG, or None to publish it as is."""
@@ -291,14 +397,19 @@ class Exporter:
             with dest.open('rb') as image_file:
                 header = image_file.read(24)
             intrinsic = struct.unpack('>II', header[16:24]) if header[:8] == b'\x89PNG\r\n\x1a\n' and len(header) == 24 else None
-            size = f' width="{intrinsic[0]}" height="{intrinsic[1]}"' if intrinsic else ''
+            info = self.scan(dest)
+            shown = tuple(info['box'][2:]) if info and info['box'] else intrinsic
+            size = f' width="{shown[0]}" height="{shown[1]}"' if shown else ''
             if alias:
                 dims = re.fullmatch(r'(\d+)(?:x(\d+))?', alias)
                 if not dims:
                     raise ValueError(f'Unknown image size: {value}')
-                height = dims[2] or (str(round(int(dims[1]) * intrinsic[1] / intrinsic[0])) if intrinsic else None)
-                size = f' width="{dims[1]}"' + (f' height="{height}"' if height else '')
-            return f'<img class="course-image" src="{self.url_token(url)}" alt="{html.escape(dest.stem, quote=True)}"{size} loading="lazy" decoding="async">'
+                # The alias sizes the whole screenshot; keep that scale after trimming.
+                width = round(int(dims[1]) * shown[0] / intrinsic[0]) if shown and intrinsic and not dims[2] else int(dims[1])
+                height = dims[2] or (str(round(width * shown[1] / shown[0])) if shown else None)
+                size = f' width="{width}"' + (f' height="{height}"' if height else '')
+            css = 'course-image course-image-dark' if info and info['dark'] else 'course-image'
+            return f'<img class="{css}" src="{self.url_token(url)}" alt="{html.escape(dest.stem, quote=True)}"{size} loading="lazy" decoding="async">'
         return f'<a href="{self.url_token(url)}">{html.escape(alias or dest.name)}</a>'
 
     def url_token(self, url):
@@ -407,6 +518,18 @@ class Exporter:
             text = text.replace(token, "{% endraw %}{{ '" + url.replace("'", '%27') + "' | relative_url }}{% raw %}")
         return text
 
+    def pseudocode_renderer(self):
+        """Bundle the vault's Pseudocode Suite parser and renderer for the site,
+        so ```pseudo blocks look the same in Obsidian and on the blog."""
+        src = self.vault/PSEUDOCODE_PLUGIN/'src'
+        if not src.is_dir():
+            return None
+        parts = [(src/name).read_text().rstrip() + '\n' for name in ('core.js', 'render.js')]
+        return ('/* Generated by scripts/sync_courses.py from the Obsidian plugin '
+                'pseudocode-suite (src/core.js, src/render.js). Do not edit. */\n'
+                '(function () {\n' + '\n'.join(parts) +
+                '\nwindow.PseudocodeSuite = PS;\n}());\n')
+
     def export(self):
         self.collect()
         output = {}
@@ -437,6 +560,9 @@ class Exporter:
             public_courses.append(public)
         output['_data/courses.json'] = dump(public_courses)
         output['_data/course_references.json'] = dump([{k: v for k, v in n.items() if k != 'source_path'} for n in references])
+        renderer = self.pseudocode_renderer()
+        if renderer:
+            output[PSEUDOCODE_BUNDLE] = renderer
         asset_files = dict(self.assets)
         generated = sorted([*output, *asset_files, 'reports/courses-sync.json'])
         report = {'source_readme_sha256': hashlib.sha256((self.vault/'README.md').read_bytes()).hexdigest(),

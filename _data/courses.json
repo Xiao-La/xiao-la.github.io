@@ -563,7 +563,7 @@
         "section": "",
         "status": "completed",
         "created_at": "2025-12-22T14:23:58+08:00",
-        "updated_at": "2026-10-13T12:13:22+08:00",
+        "updated_at": "2026-11-13T19:45:00+08:00",
         "reference": false,
         "order": 1
       }
@@ -700,7 +700,7 @@
         "section": "",
         "status": "completed",
         "created_at": "2026-03-11T10:39:43+08:00",
-        "updated_at": "2026-10-13T12:13:22+08:00",
+        "updated_at": "2026-11-13T19:42:22+08:00",
         "reference": false,
         "order": 2
       },
@@ -712,7 +712,7 @@
         "section": "",
         "status": "completed",
         "created_at": "2026-04-29T11:06:10+08:00",
-        "updated_at": "2026-10-09T16:13:40+08:00",
+        "updated_at": "2026-11-13T19:45:00+08:00",
         "reference": false,
         "order": 3
       },
@@ -724,7 +724,7 @@
         "section": "",
         "status": "completed",
         "created_at": "2026-05-27T11:32:43+08:00",
-        "updated_at": "2026-10-09T16:13:40+08:00",
+        "updated_at": "2026-11-13T19:45:00+08:00",
         "reference": false,
         "order": 4
       },
@@ -984,7 +984,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-09-03T17:09:42+08:00",
-        "updated_at": "2026-10-20T00:03:18+08:00",
+        "updated_at": "2026-11-13T19:44:49+08:00",
         "reference": false,
         "order": 1
       },
@@ -996,7 +996,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-09-07T15:27:48+08:00",
-        "updated_at": "2026-11-11T20:08:34+08:00",
+        "updated_at": "2026-11-13T19:44:49+08:00",
         "reference": false,
         "order": 2
       },
@@ -1020,7 +1020,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-10-12T15:33:52+08:00",
-        "updated_at": "2026-11-13T14:11:30+08:00",
+        "updated_at": "2026-11-13T19:45:00+08:00",
         "reference": false,
         "order": 4
       },
@@ -1067,7 +1067,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-09-08T13:58:29+08:00",
-        "updated_at": "2026-10-09T16:13:40+08:00",
+        "updated_at": "2026-11-13T14:55:50+08:00",
         "reference": false,
         "order": 1
       },
@@ -1079,7 +1079,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-09-15T14:47:35+08:00",
-        "updated_at": "2026-10-08T21:14:49+08:00",
+        "updated_at": "2026-11-13T19:41:30+08:00",
         "reference": false,
         "order": 2
       },
@@ -1103,7 +1103,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-10-13T15:24:29+08:00",
-        "updated_at": "2026-10-24T17:42:31+08:00",
+        "updated_at": "2026-11-13T14:54:50+08:00",
         "reference": false,
         "order": 4
       },
@@ -1115,7 +1115,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-10-20T15:28:58+08:00",
-        "updated_at": "2026-11-10T14:35:38+08:00",
+        "updated_at": "2026-11-13T14:54:50+08:00",
         "reference": false,
         "order": 5
       }
@@ -1138,7 +1138,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-09-08T16:23:16+08:00",
-        "updated_at": "2026-10-09T16:13:40+08:00",
+        "updated_at": "2026-11-13T14:51:35+08:00",
         "reference": false,
         "order": 1
       },
@@ -1150,7 +1150,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-09-29T16:21:34+08:00",
-        "updated_at": "2026-10-28T21:08:24+08:00",
+        "updated_at": "2026-11-13T14:52:01+08:00",
         "reference": false,
         "order": 2
       },
@@ -1162,7 +1162,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-11-06T22:04:29+08:00",
-        "updated_at": "2026-11-10T17:54:15+08:00",
+        "updated_at": "2026-11-13T14:52:31+08:00",
         "reference": false,
         "order": 3
       }

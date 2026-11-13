@@ -25,7 +25,7 @@ excerpt: "离散数学 · Algorithm - 算法"
 我们关心随着 input size（记作 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span>）变大，运行时间的渐进表现（Asymptotic behavior）。使用大 <span class="course-math" data-tex="O" data-display="false"><code>O</code></span> 记号表示上界：<span class="course-math" data-tex="f(n)=O(g(n))" data-display="false"><code>f(n)=O(g(n))</code></span> 若
 <span class="course-math course-math-display" data-tex="\exists c&gt;0,n_0,\ \forall n&gt;n_0 , \lvert f(n) \rvert\leq c \lvert g(n) \rvert" data-display="true"><code>\exists c&gt;0,n_0,\ \forall n&gt;n_0 , \lvert f(n) \rvert\leq c \lvert g(n) \rvert</code></span>
 结论：<span class="course-math" data-tex="f(x)=\sum_{i=0}^{n} a_{i}x^{i}=O(x^{n})" data-display="false"><code>f(x)=\sum_{i=0}^{n} a_{i}x^{i}=O(x^{n})</code></span>。（多项式的主项决定增长速度）
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Algorithm%20-%20%E7%AE%97%E6%B3%95.webp' | relative_url }}{% raw %}" alt="Algorithm - 算法" width="332" height="264" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Algorithm%20-%20%E7%AE%97%E6%B3%95.webp' | relative_url }}{% raw %}" alt="Algorithm - 算法" width="262" height="232" loading="lazy" decoding="async">
 - <span class="course-math" data-tex="n^{n}" data-display="false"><code>n^{n}</code></span> 并不是 <span class="course-math" data-tex="O(n!)" data-display="false"><code>O(n!)</code></span> 的。
 - 但是，<span class="course-math" data-tex="n\log n=O(\log n!)" data-display="false"><code>n\log n=O(\log n!)</code></span>。
 - 这是因为，<span class="course-math" data-tex="n^{n}\leq(n!)^{2}" data-display="false"><code>n^{n}\leq(n!)^{2}</code></span>。
@@ -112,11 +112,11 @@ DKnapsack 也属于 NP。验证一个子集，只需要求和即可。
 <span class="course-math course-math-display" data-tex="xy=\exp(\log x+\log y)" data-display="true"><code>xy=\exp(\log x+\log y)</code></span>
 
 **多项式时间归约（Polynomial-Time Reduction）**： 设有问题 <span class="course-math" data-tex="L_{1},L_{2}" data-display="false"><code>L_{1},L_{2}</code></span>，那么 <span class="course-math" data-tex="L_{1}" data-display="false"><code>L_{1}</code></span> 到 <span class="course-math" data-tex="L_{2}" data-display="false"><code>L_{2}</code></span> 的一个多项式时间归约，是一个可在多项式时间内计算的变换 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span>，使得 <span class="course-math" data-tex="f" data-display="false"><code>f</code></span> 把 <span class="course-math" data-tex="L_{1}" data-display="false"><code>L_{1}</code></span> 的任一 yes-input 映射到 <span class="course-math" data-tex="L_{2}" data-display="false"><code>L_{2}</code></span> 的一个 yes-input，把 <span class="course-math" data-tex="L_{1}" data-display="false"><code>L_{1}</code></span> 的任一 no-input 映射到 <span class="course-math" data-tex="L_{2}" data-display="false"><code>L_{2}</code></span> 的一个 no-input，
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Algorithm%20-%20%E7%AE%97%E6%B3%95-1.png' | relative_url }}{% raw %}" alt="Algorithm - 算法-1" width="497" height="231" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Algorithm%20-%20%E7%AE%97%E6%B3%95-1.webp' | relative_url }}{% raw %}" alt="Algorithm - 算法-1" width="413" height="207" loading="lazy" decoding="async">
 记作：
 <span class="course-math course-math-display" data-tex="L_{1}\leq_{{P}}L_{2}" data-display="true"><code>L_{1}\leq_{{P}}L_{2}</code></span>
 直观来说这代表 <span class="course-math" data-tex="L_{1}" data-display="false"><code>L_{1}</code></span> 不难于 <span class="course-math" data-tex="L_{2}" data-display="false"><code>L_{2}</code></span>。这是因为，有了 <span class="course-math" data-tex="L_{2}" data-display="false"><code>L_{2}</code></span> 的算法，就能得到 <span class="course-math" data-tex="L_{1}" data-display="false"><code>L_{1}</code></span> 的算法：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Algorithm%20-%20%E7%AE%97%E6%B3%95-2.webp' | relative_url }}{% raw %}" alt="Algorithm - 算法-2" width="585" height="163" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Algorithm%20-%20%E7%AE%97%E6%B3%95-2.webp' | relative_url }}{% raw %}" alt="Algorithm - 算法-2" width="513" height="118" loading="lazy" decoding="async">
 如果 <span class="course-math" data-tex="A_{2}" data-display="false"><code>A_{2}</code></span> 是多项式时间的，那么 <span class="course-math" data-tex="A_{1}" data-display="false"><code>A_{1}</code></span> 也是多项式时间的。这就推出了下面的定理：
 
 **如果 <span class="course-math" data-tex="L_{1}\leq _{P}L_{2}" data-display="false"><code>L_{1}\leq _{P}L_{2}</code></span>，且 <span class="course-math" data-tex="L_{2}\in \mathrm{P}" data-display="false"><code>L_{2}\in \mathrm{P}</code></span>，那么 <span class="course-math" data-tex="L_{1}\in \mathrm{P}" data-display="false"><code>L_{1}\in \mathrm{P}</code></span>**。
@@ -139,5 +139,5 @@ DKnapsack 也属于 NP。验证一个子集，只需要求和即可。
 那么，要么所有 NPC 问题都在多项式时间内可解，要么所有 NPC 问题都在多项式时间内不可解。
 
 假如 <span class="course-math" data-tex="\mathrm{P}\neq{}\mathrm{NP}" data-display="false"><code>\mathrm{P}\neq{}\mathrm{NP}</code></span>，那么可以画这样一个集合关系图：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Algorithm%20-%20%E7%AE%97%E6%B3%95-3.webp' | relative_url }}{% raw %}" alt="Algorithm - 算法-3" width="418" height="373" loading="lazy" decoding="async">
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Algorithm%20-%20%E7%AE%97%E6%B3%95-3.webp' | relative_url }}{% raw %}" alt="Algorithm - 算法-3" width="351" height="352" loading="lazy" decoding="async">
 {% endraw %}

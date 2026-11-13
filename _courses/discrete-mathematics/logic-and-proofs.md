@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-09-07T15:27:48+08:00"
-updated_at: "2026-11-11T20:08:34+08:00"
+updated_at: "2026-11-13T19:44:49+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -37,7 +37,14 @@ excerpt: "离散数学 · Logic and Proofs - 逻辑与证明"
 真值表（Truth table）：表示不同的命题之间，所有真值（T/F）之间的关系。
 - 行数：若涉及 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个命题，则有 <span class="course-math" data-tex="2^{n}" data-display="false"><code>2^{n}</code></span> 行。
 例如异或的真值表：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91.png' | relative_url }}{% raw %}" alt="Logic - 逻辑" width="233" height="179" loading="lazy" decoding="async">
+
+| <span class="course-math" data-tex="p" data-display="false"><code>p</code></span> | <span class="course-math" data-tex="q" data-display="false"><code>q</code></span> | <span class="course-math" data-tex="p \oplus q" data-display="false"><code>p \oplus q</code></span> |
+| --- | --- | --- |
+| T | T | F |
+| T | F | T |
+| F | T | T |
+| F | F | F |
+
 - <span class="course-math" data-tex="p\oplus q\equiv \neg(p\leftrightarrow q)" data-display="false"><code>p\oplus q\equiv \neg(p\leftrightarrow q)</code></span>
 - <span class="course-math" data-tex="p\to q \equiv \neg p\lor q" data-display="false"><code>p\to q \equiv \neg p\lor q</code></span> (Useful Law)
 
@@ -144,13 +151,56 @@ Predicate <span class="course-math" data-tex="P(x_{1},\dots,x_{n})" data-display
 
 
 对于命题逻辑有如下的 **Inference Rules:**
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-1.webp' | relative_url }}{% raw %}" alt="Logic - 逻辑-1" width="433" height="108" loading="lazy" decoding="async">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-2.webp' | relative_url }}{% raw %}" alt="Logic - 逻辑-2" width="432" height="260" loading="lazy" decoding="async">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-3.webp' | relative_url }}{% raw %}" alt="Logic - 逻辑-3" width="434" height="356" loading="lazy" decoding="async">
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-4.webp' | relative_url }}{% raw %}" alt="Logic - 逻辑-4" width="436" height="259" loading="lazy" decoding="async">
+
+**modus ponens** (*law of detachment*) 肯定前件式
+
+<span class="course-math course-math-display" data-tex="\begin{array}{l}p\to q\\p\\\hline \therefore q\end{array}\qquad \text{corresponding tautology: } (p\land(p\to q))\to q" data-display="true"><code>\begin{array}{l}p\to q\\p\\\hline \therefore q\end{array}\qquad \text{corresponding tautology: } (p\land(p\to q))\to q</code></span>
+
+**modus tollens** 否定后件式
+
+<span class="course-math course-math-display" data-tex="\begin{array}{l}p\to q\\\neg q\\\hline \therefore \neg p\end{array}\qquad \text{corresponding tautology: } (\neg q\land(p\to q))\to\neg p" data-display="true"><code>\begin{array}{l}p\to q\\\neg q\\\hline \therefore \neg p\end{array}\qquad \text{corresponding tautology: } (\neg q\land(p\to q))\to\neg p</code></span>
+
+**hypothetical syllogism** 假言三段论
+
+<span class="course-math course-math-display" data-tex="\begin{array}{l}p\to q\\q\to r\\\hline \therefore p\to r\end{array}\qquad \text{corresponding tautology: } ((p\to q)\land(q\to r))\to(p\to r)" data-display="true"><code>\begin{array}{l}p\to q\\q\to r\\\hline \therefore p\to r\end{array}\qquad \text{corresponding tautology: } ((p\to q)\land(q\to r))\to(p\to r)</code></span>
+
+**disjunctive syllogism** 选言三段论
+
+<span class="course-math course-math-display" data-tex="\begin{array}{l}p\lor q\\\neg p\\\hline \therefore q\end{array}\qquad \text{corresponding tautology: } (\neg p\land(p\lor q))\to q" data-display="true"><code>\begin{array}{l}p\lor q\\\neg p\\\hline \therefore q\end{array}\qquad \text{corresponding tautology: } (\neg p\land(p\lor q))\to q</code></span>
+
+**Addition**
+
+<span class="course-math course-math-display" data-tex="\begin{array}{l}p\\\hline \therefore p\lor q\end{array}\qquad \text{corresponding tautology: } p\to(p\lor q)" data-display="true"><code>\begin{array}{l}p\\\hline \therefore p\lor q\end{array}\qquad \text{corresponding tautology: } p\to(p\lor q)</code></span>
+
+**Simplification**
+
+<span class="course-math course-math-display" data-tex="\begin{array}{l}p\land q\\\hline \therefore p\end{array}\qquad \text{corresponding tautology: } (p\land q)\to p" data-display="true"><code>\begin{array}{l}p\land q\\\hline \therefore p\end{array}\qquad \text{corresponding tautology: } (p\land q)\to p</code></span>
+
+**Conjunction**
+
+<span class="course-math course-math-display" data-tex="\begin{array}{l}p\\q\\\hline \therefore p\land q\end{array}\qquad \text{corresponding tautology: } ((p)\land(q))\to(p\land q)" data-display="true"><code>\begin{array}{l}p\\q\\\hline \therefore p\land q\end{array}\qquad \text{corresponding tautology: } ((p)\land(q))\to(p\land q)</code></span>
+
+**Resolution**
+
+<span class="course-math course-math-display" data-tex="\begin{array}{l}\neg p\lor r\\p\lor q\\\hline \therefore q\lor r\end{array}\qquad \text{corresponding tautology: } ((p\lor q)\land(\neg p\lor r))\to(q\lor r)" data-display="true"><code>\begin{array}{l}\neg p\lor r\\p\lor q\\\hline \therefore q\lor r\end{array}\qquad \text{corresponding tautology: } ((p\lor q)\land(\neg p\lor r))\to(q\lor r)</code></span>
 
 对于一阶逻辑：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20-%20%E9%80%BB%E8%BE%91-5.webp' | relative_url }}{% raw %}" alt="Logic - 逻辑-5" width="437" height="395" loading="lazy" decoding="async">
+
+- **Universal Instantiation** (UI)
+
+  <span class="course-math course-math-display" data-tex="\begin{array}{l}\forall x P(x)\\\hline \therefore P(c)\end{array}" data-display="true"><code>\begin{array}{l}\forall x P(x)\\\hline \therefore P(c)\end{array}</code></span>
+
+- **Universal Generalization** (UG)
+
+  <span class="course-math course-math-display" data-tex="\begin{array}{l}P(c)\text{ for an arbitrary }c\\\hline \therefore \forall x P(x)\end{array}" data-display="true"><code>\begin{array}{l}P(c)\text{ for an arbitrary }c\\\hline \therefore \forall x P(x)\end{array}</code></span>
+
+- **Existential Instantiation** (EI)
+
+  <span class="course-math course-math-display" data-tex="\begin{array}{l}\exists x P(x)\\\hline \therefore P(c)\text{ for some element }c\end{array}" data-display="true"><code>\begin{array}{l}\exists x P(x)\\\hline \therefore P(c)\text{ for some element }c\end{array}</code></span>
+
+- **Existential Generalization** (EG)
+
+  <span class="course-math course-math-display" data-tex="\begin{array}{l}P(c)\text{ for some element }c\\\hline \therefore \exists x P(x)\end{array}" data-display="true"><code>\begin{array}{l}P(c)\text{ for some element }c\\\hline \therefore \exists x P(x)\end{array}</code></span>
 
 
 ## 数学证明（Mathematical Proof）
@@ -204,5 +254,18 @@ Proof by Smallest Counterexample 的证明过程，其实就相当于数学归�
 - （Inductive Step）：<span class="course-math" data-tex="P(b)\land P(b+1)\land\dots  \land P(n-1)\to P(n)" data-display="false"><code>P(b)\land P(b+1)\land\dots  \land P(n-1)\to P(n)</code></span> 对所有 <span class="course-math" data-tex="n&gt; b" data-display="false"><code>n&gt; b</code></span> 成立，那么 <span class="course-math" data-tex="P(n)" data-display="false"><code>P(n)</code></span> 对所有 <span class="course-math" data-tex="n\geq b" data-display="false"><code>n\geq b</code></span> 成立。
 
 格式：
-<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Logic%20and%20Proofs%20-%20%E9%80%BB%E8%BE%91%E4%B8%8E%E8%AF%81%E6%98%8E-1.webp' | relative_url }}{% raw %}" alt="Logic and Proofs - 逻辑与证明-1" width="440" height="304" loading="lazy" decoding="async">
+
+A *typical* proof by mathematical induction, showing that a statement <span class="course-math" data-tex="P(n)" data-display="false"><code>P(n)</code></span> is true for all integers <span class="course-math" data-tex="n\ge b" data-display="false"><code>n\ge b</code></span> consists of three steps:
+
+1. We show that <span class="course-math" data-tex="P(b)" data-display="false"><code>P(b)</code></span> is true. – Base Step
+2. We then, <span class="course-math" data-tex="\forall n&gt;b" data-display="false"><code>\forall n&gt;b</code></span>, show either
+
+   <span class="course-math" data-tex="(*)\quad P(n-1)\to P(n)" data-display="false"><code>(*)\quad P(n-1)\to P(n)</code></span>
+
+   or
+
+   <span class="course-math" data-tex="(**)\quad P(b)\land P(b+1)\land\cdots\land P(n-1)\to P(n)" data-display="false"><code>(**)\quad P(b)\land P(b+1)\land\cdots\land P(n-1)\to P(n)</code></span>
+
+   We need to make the inductive hypothesis of either <span class="course-math" data-tex="P(n-1)" data-display="false"><code>P(n-1)</code></span> or <span class="course-math" data-tex="P(b)\land P(b+1)\land\cdots\land P(n-1)" data-display="false"><code>P(b)\land P(b+1)\land\cdots\land P(n-1)</code></span>. We then use <span class="course-math" data-tex="(*)" data-display="false"><code>(*)</code></span> or <span class="course-math" data-tex="(**)" data-display="false"><code>(**)</code></span> to derive <span class="course-math" data-tex="P(n)" data-display="false"><code>P(n)</code></span>.
+3. We conclude on the basis of the principle of mathematical induction that <span class="course-math" data-tex="P(n)" data-display="false"><code>P(n)</code></span> is true for all <span class="course-math" data-tex="n\ge b" data-display="false"><code>n\ge b</code></span>.
 {% endraw %}
