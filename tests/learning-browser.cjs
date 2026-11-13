@@ -6,6 +6,8 @@ const root = path.resolve(__dirname, '..');
 const base = 'http://127.0.0.1:4173';
 const output = path.join(root, '.course-test-results');
 const expected = JSON.parse(fs.readFileSync(path.join(output, 'learning-expected.json')));
+const updatingCourses = JSON.parse(fs.readFileSync(path.join(root, '_data', 'courses.json')))
+  .filter(course => course.status === 'updating').length;
 
 (async () => {
   const browser = await chromium.launch({ headless: true });
@@ -66,7 +68,7 @@ const expected = JSON.parse(fs.readFileSync(path.join(output, 'learning-expected
     assert.deepEqual(dates, [...dates].sort().reverse());
     await page.goto(base + '/study/');
     assert.equal(await page.locator('.learning-entries a').count(), 4);
-    assert.equal(await page.locator('.learning-active a').count(), 6);
+    assert.equal(await page.locator('.learning-active a').count(), updatingCourses);
     assert.equal(await page.locator('.learning-recent li').count(), 5);
     for (const item of expected.filter(item => !decodeURI(item.url).includes('屏幕使用时间'))) {
       const response = await context.request.get(base + encodeURI(item.url));
