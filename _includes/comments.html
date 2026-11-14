@@ -19,7 +19,6 @@
 
   <!-- Keep browser dependencies on the same origin as the GitHub Pages site. -->
   <link rel="stylesheet" href="{{ '/assets/vendor/waline/3.16.1/waline.css' | relative_url }}">
-  <script src="{{ '/assets/vendor/waline/3.16.1/waline.umd.js' | relative_url }}"></script>
   <script>
     (function () {
       var status = document.getElementById('comments-status');
@@ -41,6 +40,7 @@
         markVisitorUnavailable();
       }
 
+      function start() {
       if (!window.Waline) {
         showCommentsUnavailable();
         return;
@@ -72,6 +72,24 @@
         showCommentsUnavailable();
         console.error('Waline failed to initialize:', error);
       }
+      }
+
+      // The comments sit below the article: fetch Waline once the page has
+      // loaded and the browser is idle, so it never holds up the article.
+      // It still loads on every visit, so page views keep being counted.
+      function load() {
+        var script = document.createElement('script');
+        script.src = {{ '/assets/vendor/waline/3.16.1/waline.umd.js' | relative_url | jsonify }};
+        script.onload = start;
+        script.onerror = showCommentsUnavailable;
+        document.head.appendChild(script);
+      }
+      function whenIdle() {
+        if (window.requestIdleCallback) requestIdleCallback(load, { timeout: 2000 });
+        else setTimeout(load, 0);
+      }
+      if (document.readyState === 'complete') whenIdle();
+      else window.addEventListener('load', whenIdle, { once: true });
     }());
   </script>
 {% endif %}

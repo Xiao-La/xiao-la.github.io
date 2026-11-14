@@ -36,50 +36,84 @@
     content.dataset.rendered = 'true';
     return;
   }
+  function renderMath(element) {
+    try {
+      var rendered = MathJax.tex2svg(element.dataset.tex, { display: element.dataset.display === 'true' });
+      if (rendered.querySelector('[data-mjx-error]')) {
+        throw new Error(rendered.querySelector('[data-mjx-error]').getAttribute('data-mjx-error'));
+      }
+      element.replaceChildren(rendered);
+    } catch (error) {
+      element.classList.add('course-math-error');
+      window.courseRenderErrors.push({ tex: element.dataset.tex, error: error.message });
+    }
+  }
+
+  // ```pseudo blocks use the Obsidian plugin's own parser and flat renderer
+  // (assets/vendor/pseudocode-suite), so both look the same.
+  function renderPseudocode(block) {
+    try {
+      var model = PseudocodeSuite.parseLatex(block.textContent);
+      var rendered = PseudocodeSuite.renderBlock(model, {
+        lineNumbers: true, indentSize: '1.2em', commentDelimiter: '//'
+      });
+      for (var span of rendered.querySelectorAll('.ps-math[data-tex]')) {
+        var tex = span.dataset.tex;
+        var svg = MathJax.tex2svg(tex, { display: false });
+        if (svg.querySelector('[data-mjx-error]')) {
+          throw new Error(svg.querySelector('[data-mjx-error]').getAttribute('data-mjx-error') + ': ' + tex);
+        }
+        delete span.dataset.tex;
+        span.replaceChildren(svg);
+      }
+      // Keep the source visible if parsing or typesetting fails.
+      block.replaceWith(rendered);
+    } catch (error) {
+      window.courseRenderErrors.push({ pseudocode: true, error: error.message });
+    }
+  }
+
+  function settle() {
+    // Direct tex2svg conversion does not install the document styles by
+    // itself. This also hides visual duplicates of assistive MathML.
+    MathJax.startup.document.updateDocument();
+    if (window.formatInlineMath) window.formatInlineMath(content);
+  }
+
+  var yieldToBrowser = window.scheduler && scheduler.yield
+    ? function () { return scheduler.yield(); }
+    : function () { return new Promise(function (resolve) { setTimeout(resolve, 0); }); };
+
   window.courseRendering = Promise.resolve(window.MathJax && MathJax.startup.promise)
     .then(async function () {
-      if (!window.MathJax || !MathJax.tex2svgPromise) throw new Error('公式渲染器未加载');
-      for (var element of content.querySelectorAll('.course-math')) {
-        try {
-          var rendered = await MathJax.tex2svgPromise(element.dataset.tex, {
-            display: element.dataset.display === 'true'
-          });
-          if (rendered.querySelector('[data-mjx-error]')) {
-            throw new Error(rendered.querySelector('[data-mjx-error]').getAttribute('data-mjx-error'));
-          }
-          element.replaceChildren(rendered);
-        } catch (error) {
-          element.classList.add('course-math-error');
-          window.courseRenderErrors.push({ tex: element.dataset.tex, error: error.message });
+      if (!window.MathJax || !MathJax.tex2svg) throw new Error('公式渲染器未加载');
+      // Long notes hold hundreds of formulas. Typeset what is on screen first,
+      // then the rest in short slices so the page stays scrollable meanwhile.
+      var jobs = Array.from(content.querySelectorAll('.course-math, .course-pseudocode'));
+      var near = window.innerHeight;
+      var first = [];
+      var rest = [];
+      jobs.forEach(function (job) {
+        var box = job.getBoundingClientRect();
+        (box.bottom > -near && box.top < 2 * near ? first : rest).push(job);
+      });
+      var queue = first.concat(rest);
+      var shown = false;
+      var sliceStart = performance.now();
+      for (var i = 0; i < queue.length; i++) {
+        var job = queue[i];
+        if (job.classList.contains('course-pseudocode')) renderPseudocode(job);
+        else renderMath(job);
+        if (i + 1 === first.length) {
+          settle();
+          shown = true;
+        }
+        if (performance.now() - sliceStart > 40) {
+          await yieldToBrowser();
+          sliceStart = performance.now();
         }
       }
-      // ```pseudo blocks use the Obsidian plugin's own parser and flat renderer
-      // (assets/vendor/pseudocode-suite), so both look the same.
-      for (var block of content.querySelectorAll('.course-pseudocode')) {
-        try {
-          var model = PseudocodeSuite.parseLatex(block.textContent);
-          var rendered = PseudocodeSuite.renderBlock(model, {
-            lineNumbers: true, indentSize: '1.2em', commentDelimiter: '//'
-          });
-          for (var span of rendered.querySelectorAll('.ps-math[data-tex]')) {
-            var tex = span.dataset.tex;
-            var svg = await MathJax.tex2svgPromise(tex, { display: false });
-            if (svg.querySelector('[data-mjx-error]')) {
-              throw new Error(svg.querySelector('[data-mjx-error]').getAttribute('data-mjx-error') + ': ' + tex);
-            }
-            delete span.dataset.tex;
-            span.replaceChildren(svg);
-          }
-          // Keep the source visible if parsing or typesetting fails.
-          block.replaceWith(rendered);
-        } catch (error) {
-          window.courseRenderErrors.push({ pseudocode: true, error: error.message });
-        }
-      }
-      // Direct tex2svg conversion does not install the document styles by
-      // itself. This also hides visual duplicates of assistive MathML.
-      MathJax.startup.document.updateDocument();
-      if (window.formatInlineMath) window.formatInlineMath(content);
+      if (!shown || rest.length) settle();
       content.dataset.rendered = 'true';
       if (window.courseRenderErrors.length) console.error('Course render errors:', window.courseRenderErrors);
     }).catch(function (error) {
