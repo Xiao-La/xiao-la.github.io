@@ -5,7 +5,7 @@ course_title: "数据结构与算法分析"
 section: ""
 status: "updating"
 created_at: "2026-09-29T16:21:34+08:00"
-updated_at: "2026-11-13T14:52:01+08:00"
+updated_at: "2026-11-15T12:52:35+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -39,22 +39,22 @@ excerpt: "数据结构与算法分析 · Sorting"
 <span class="course-math" data-tex="\text{Max-Heapify}(A,i)" data-display="false"><code>\text{Max-Heapify}(A,i)</code></span>：考虑以 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 为根的子树。假设 <span class="course-math" data-tex="\text{Left}(i),\text{Right}(i)" data-display="false"><code>\text{Left}(i),\text{Right}(i)</code></span> 都是大根堆，但 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 处可能破坏堆的性质。那么，可以通过不断向下调整（"float down"），把 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 与它的**较大的**子节点（如果比 <span class="course-math" data-tex="i" data-display="false"><code>i</code></span> 大）交换，不断递归地重复即可。
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Max-Heapify}{$A, i$}
-\State $l =$ \Call{Left}{$i$}
-\State $r =$ \Call{Right}{$i$}
-\If{$l \le A.\mathit{heap}\text{-}\mathit{size}$ and $A[l] &gt; A[i]$}
-\State $\mathit{largest} = l$
-\Else
-\State $\mathit{largest} = i$
-\EndIf
-\If{$r \le A.\mathit{heap}\text{-}\mathit{size}$ and $A[r] &gt; A[\mathit{largest}]$}
-\State $\mathit{largest} = r$
-\EndIf
-\If{$\mathit{largest} \neq i$}
-\State exchange $A[i]$ with $A[\mathit{largest}]$
-\State \Call{Max-Heapify}{$A, \mathit{largest}$}
-\EndIf
-\EndProcedure
+  \Procedure{Max-Heapify}{$A, i$}
+    \State $l =$ \Call{Left}{$i$}
+    \State $r =$ \Call{Right}{$i$}
+    \If{$l \le A.\mathit{heap}\text{-}\mathit{size}$ and $A[l] &gt; A[i]$}
+      \State $\mathit{largest} = l$
+    \Else
+      \State $\mathit{largest} = i$
+    \EndIf
+    \If{$r \le A.\mathit{heap}\text{-}\mathit{size}$ and $A[r] &gt; A[\mathit{largest}]$}
+      \State $\mathit{largest} = r$
+    \EndIf
+    \If{$\mathit{largest} \ne i$}
+      \State exchange $A[i]$ with $A[\mathit{largest}]$
+      \State \Call{Max-Heapify}{$A, \mathit{largest}$}
+    \EndIf
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -64,12 +64,12 @@ excerpt: "数据结构与算法分析 · Sorting"
 <span class="course-math" data-tex="\text{Build-Max-Heap}(A,n)" data-display="false"><code>\text{Build-Max-Heap}(A,n)</code></span>：从叶子节点开始，从下至上不断执行 <span class="course-math" data-tex="\text{Max-Heapify}" data-display="false"><code>\text{Max-Heapify}</code></span>。这是因为 <span class="course-math" data-tex="\text{Max-Heapify}" data-display="false"><code>\text{Max-Heapify}</code></span> 假设了 <span class="course-math" data-tex="\text{Left}(i)" data-display="false"><code>\text{Left}(i)</code></span> 和 <span class="course-math" data-tex="\text{Right}(i)" data-display="false"><code>\text{Right}(i)</code></span> 都是大根堆。另外我们注意到 <span class="course-math" data-tex="A[( \lfloor n / 2 \rfloor + 1),\dots,n]" data-display="false"><code>A[( \lfloor n / 2 \rfloor + 1),\dots,n]</code></span> 都是叶子节点，所以不需要操作就自然形成大根堆。那么只需要从 <span class="course-math" data-tex="\lfloor n / 2 \rfloor" data-display="false"><code>\lfloor n / 2 \rfloor</code></span> 开始往前做即可。
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Build-Max-Heap}{$A, n$}
-\State $A.\mathit{heap}\text{-}\mathit{size} = n$
-\For{$i = \lfloor n/2 \rfloor$ downto $1$}
-\State \Call{Max-Heapify}{$A, i$}
-\EndFor
-\EndProcedure
+  \Procedure{Build-Max-Heap}{$A, n$}
+    \State $A.\mathit{heap}\text{-}\mathit{size} = n$
+    \For{$i = \lfloor n/2 \rfloor$ \DownTo $1$}
+      \State \Call{Max-Heapify}{$A, i$}
+    \EndFor
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -85,14 +85,14 @@ excerpt: "数据结构与算法分析 · Sorting"
 结合上面的两个函数，得到堆排序：
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Heap-Sort}{$A$}
-\State \Call{Build-Max-Heap}{$A$}
-\For{$i = A.\mathit{length}$ downto $2$}
-\State exchange $A[1]$ with $A[i]$
-\State $A.\mathit{heap}\text{-}\mathit{size} = A.\mathit{heap}\text{-}\mathit{size} - 1$
-\State \Call{Max-Heapify}{$A, 1$}
-\EndFor
-\EndProcedure
+  \Procedure{Heap-Sort}{$A$}
+    \State \Call{Build-Max-Heap}{$A$}
+    \For{$i = A.\mathit{length}$ \DownTo $2$}
+      \State exchange $A[1]$ with $A[i]$
+      \State $A.\mathit{heap}\text{-}\mathit{size} = A.\mathit{heap}\text{-}\mathit{size} - 1$
+      \State \Call{Max-Heapify}{$A, 1$}
+    \EndFor
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -113,13 +113,13 @@ excerpt: "数据结构与算法分析 · Sorting"
 伪代码：
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Quick-Sort}{$A, p, r$}
-\If{$p &lt; r$}
-\State $q =$ \Call{Partition}{$A, p, r$}
-\State \Call{Quick-Sort}{$A, p, q - 1$}
-\State \Call{Quick-Sort}{$A, q + 1, r$}
-\EndIf
-\EndProcedure
+  \Procedure{Quick-Sort}{$A, p, r$}
+    \If{$p &lt; r$}
+      \State $q =$ \Call{Partition}{$A, p, r$}
+      \State \Call{Quick-Sort}{$A, p, q - 1$}
+      \State \Call{Quick-Sort}{$A, q + 1, r$}
+    \EndIf
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -173,11 +173,11 @@ Partition 的运行时间是 <span class="course-math" data-tex="\Theta(n)" data
 **随机化。** 为了避免最坏情况，我们可以在 partition 前面让我们选的 pivot 是随机的：
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Randomized-Partition}{$A, p, r$}
-\State $i =$ \Call{Random}{$p, r$}
-\State exchange $A[r]$ with $A[i]$
-\Return \Call{Partition}{$A, p, r$}
-\EndProcedure
+  \Procedure{Randomized-Partition}{$A, p, r$}
+    \State $i =$ \Call{Random}{$p, r$}
+    \State exchange $A[r]$ with $A[i]$
+    \Return \Call{Partition}{$A, p, r$}
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -228,22 +228,22 @@ Partition 的运行时间是 <span class="course-math" data-tex="\Theta(n)" data
 
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Counting-Sort}{$A, B, k$}
-\State let $C[0 \ldots k]$ be a new array
-\For{$i = 0$ to $k$}
-\State $C[i] = 0$
-\EndFor
-\For{$j = 1$ to $A.\mathit{length}$}
-\State $C[A[j]] = C[A[j]] + 1$
-\EndFor
-\For{$i = 1$ to $k$}
-\State $C[i] = C[i] + C[i-1]$
-\EndFor
-\For{$j = A.\mathit{length}$ downto $1$}
-\State $B[C[A[j]]] = A[j]$
-\State $C[A[j]] = C[A[j]] - 1$
-\EndFor
-\EndProcedure
+  \Procedure{Counting-Sort}{$A, B, k$}
+    \State let $C[0 \twodots k]$ be a new array
+    \For{$i = 0$ \To $k$}
+      \State $C[i] = 0$
+    \EndFor
+    \For{$j = 1$ \To $A.\mathit{length}$}
+      \State $C[A[j]] = C[A[j]] + 1$
+    \EndFor
+    \For{$i = 1$ \To $k$}
+      \State $C[i] = C[i] + C[i-1]$
+    \EndFor
+    \For{$j = A.\mathit{length}$ \DownTo $1$}
+      \State $B[C[A[j]]] = A[j]$
+      \State $C[A[j]] = C[A[j]] - 1$
+    \EndFor
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -261,11 +261,11 @@ Partition 的运行时间是 <span class="course-math" data-tex="\Theta(n)" data
 从最低位到最高位，用 Stable Sort 对每一位排序。
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Radix-Sort}{$A, d$}
-\For{$i = 1$ to $d$}
-\State use a stable sort to sort array $A$ on digit $i$
-\EndFor
-\EndProcedure
+  \Procedure{Radix-Sort}{$A, d$}
+    \For{$i = 1$ \To $d$}
+      \State use a stable sort to sort array $A$ on digit $i$
+    \EndFor
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>

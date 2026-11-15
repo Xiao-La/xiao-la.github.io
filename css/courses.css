@@ -30,6 +30,7 @@
 @font-face { font-family: 'CM Pseudocode'; font-style: italic; font-weight: normal; font-display: swap; src: url('../assets/vendor/pseudocode-suite/fonts/cm-italic.woff2') format('woff2'); }
 @font-face { font-family: 'CM Pseudocode'; font-style: normal; font-weight: bold; font-display: swap; src: url('../assets/vendor/pseudocode-suite/fonts/cm-bold.woff2') format('woff2'); }
 @font-face { font-family: 'CM Pseudocode'; font-style: italic; font-weight: bold; font-display: swap; src: url('../assets/vendor/pseudocode-suite/fonts/cm-bolditalic.woff2') format('woff2'); }
+@font-face { font-family: 'CM Pseudocode SC'; font-style: normal; font-weight: normal; font-display: swap; src: url('../assets/vendor/pseudocode-suite/fonts/cm-smallcaps.woff2') format('woff2'); }
 /* ```pseudo blocks: mirrors the Pseudocode Suite plugin's styles.css. */
 /* Computer Modern has a small x-height, so the box runs at 1.1em to read at
    the body's size; the card spans the full column. */
@@ -60,9 +61,17 @@
   grid-template-columns: max-content minmax(auto, max-content) minmax(8em, 1fr);
 }
 .course-content .ps-row { display: contents; }
-.course-content .ps-num { text-align: right; color: #6e7781; font-size: .8em; font-variant-numeric: tabular-nums; user-select: none; }
+/* CLRS: line numbers in the text font, same size and colour as the code. */
+.course-content .ps-num { text-align: right; font-variant-numeric: tabular-nums; user-select: none; }
 .course-content .ps-code { padding-left: calc(var(--ps-indent) * var(--ps-depth, 0)); white-space: pre-wrap; overflow-wrap: anywhere; }
-.course-content .ps-comment { color: #6e7781; font-size: .92em; white-space: pre-wrap; overflow-wrap: anywhere; max-width: 20em; }
+/* A procedure header without a comment spans the comment column too. */
+.course-content .ps-code.ps-span { grid-column: 2 / -1; }
+/* CLRS comments are ordinary roman text after a bold // . */
+.course-content .ps-comment { white-space: pre-wrap; overflow-wrap: anywhere; max-width: 20em; }
+.course-content .ps-comment-mark {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: .95em; font-weight: 700; letter-spacing: -.3em; margin-right: .3em;
+}
 /* Comment-only line: no code cell; starts at the line's indent in the code
    column and runs to the right edge (CLRS). */
 .course-content .ps-comment.ps-note {
@@ -70,12 +79,21 @@
   padding-left: calc(var(--ps-indent) * var(--ps-depth, 0));
 }
 /* Procedure header: leads its body, with air before each later procedure. */
-.course-content .ps-row-function > .ps-code { font-size: 1.14em; line-height: 1.4; }
-.course-content .ps-row-function > .ps-code .ps-fn { letter-spacing: .04em; }
 .course-content .ps-row-function:not(:first-child) > * { padding-top: .8em; }
 .course-content .ps-row-function + .ps-row > * { padding-top: .15em; }
 .course-content .ps-kw { font-weight: 700; }
-.course-content .ps-fn { font-variant: small-caps; font-variant-caps: small-caps; font-feature-settings: "smcp"; letter-spacing: .02em; }
+/* CLRS \proc / \const: a real small-caps face, so no font-variant (the
+   browser would fake the small caps again). */
+.course-content .ps-fn, .course-content .ps-const {
+  font-family: 'CM Pseudocode SC', 'CM Pseudocode', serif; font-style: normal; font-weight: normal;
+}
+/* CLRS \isequal: two `=` narrowed to 80% and drawn together. The blog's
+   MathJax renders SVG, where each `=` is a <g class="ps-eq"> positioned by
+   its own transform attribute, so the glyph inside carries the change (in
+   user units: 1000 per em). */
+.course-content .ps-block g.ps-eq > use { transform-box: fill-box; transform-origin: center; }
+.course-content .ps-block g.ps-eq:first-child > use { transform: translateX(78px) scaleX(.8); }
+.course-content .ps-block g.ps-eq:last-child > use { transform: translateX(-78px) scaleX(.8); }
 .course-content .ps-block code { font-size: .9em; white-space: pre-wrap; overflow-wrap: anywhere; }
 /* Long unbreakable formulas scroll inside the box rather than the page. */
 .course-content .ps-block { overflow-x: auto; }

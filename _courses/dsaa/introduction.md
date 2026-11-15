@@ -5,7 +5,7 @@ course_title: "数据结构与算法分析"
 section: ""
 status: "updating"
 created_at: "2026-09-08T16:23:16+08:00"
-updated_at: "2026-11-13T20:14:57+08:00"
+updated_at: "2026-11-15T12:52:35+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -52,18 +52,18 @@ excerpt: "数据结构与算法分析 · Introduction"
 
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Insertion-Sort}{$A$}
-\For{$j = 2$ to $A.\mathit{length}$}
-\State $\mathit{key} = A[j]$
-\State \Comment{Insert $A[j]$ into the sorted sequence $A[1 \dots j-1]$.}
-\State $i = j - 1$
-\While{$i &gt; 0$ and $A[i] &gt; \mathit{key}$}
-\State $A[i+1] = A[i]$
-\State $i = i - 1$
-\EndWhile
-\State $A[i+1] = \mathit{key}$
-\EndFor
-\EndProcedure
+  \Procedure{Insertion-Sort}{$A$}
+    \For{$j = 2$ \To $A.\mathit{length}$}
+      \State $\mathit{key} = A[j]$
+      \State \Comment{Insert $A[j]$ into the sorted sequence $A[1 \twodots j-1]$.}
+      \State $i = j - 1$
+      \While{$i &gt; 0$ and $A[i] &gt; \mathit{key}$}
+        \State $A[i+1] = A[i]$
+        \State $i = i - 1$
+      \EndWhile
+      \State $A[i+1] = \mathit{key}$
+    \EndFor
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -164,43 +164,43 @@ A design paradigms: Divide-and-conquer.
 
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Merge}{$A, p, q, r$}
-\State $n_1 = q - p + 1$
-\State $n_2 = r - q$
-\State let $L[1 \ldots n_1 + 1]$ and $R[1 \ldots n_2 + 1]$ be new arrays
-\For{$i = 1$ to $n_1$}
-\State $L[i] = A[p + i - 1]$
-\EndFor
-\For{$j = 1$ to $n_2$}
-\State $R[j] = A[q + j]$
-\EndFor
-\State $L[n_1 + 1] = \infty$
-\State $R[n_2 + 1] = \infty$
-\State $i = 1$
-\State $j = 1$
-\For{$k = p$ to $r$}
-\If{$L[i] \le R[j]$}
-\State $A[k] = L[i]$
-\State $i = i + 1$
-\Else
-\State $A[k] = R[j]$
-\State $j = j + 1$
-\EndIf
-\EndFor
-\EndProcedure
+  \Procedure{Merge}{$A, p, q, r$}
+    \State $n_1 = q - p + 1$
+    \State $n_2 = r - q$
+    \State let $L[1 \twodots n_1 + 1]$ and $R[1 \twodots n_2 + 1]$ be new arrays
+    \For{$i = 1$ \To $n_1$}
+      \State $L[i] = A[p + i - 1]$
+    \EndFor
+    \For{$j = 1$ \To $n_2$}
+      \State $R[j] = A[q + j]$
+    \EndFor
+    \State $L[n_1 + 1] = \infty$
+    \State $R[n_2 + 1] = \infty$
+    \State $i = 1$
+    \State $j = 1$
+    \For{$k = p$ \To $r$}
+      \If{$L[i] \le R[j]$}
+        \State $A[k] = L[i]$
+        \State $i = i + 1$
+      \Else
+        \State $A[k] = R[j]$
+        \State $j = j + 1$
+      \EndIf
+    \EndFor
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Merge-Sort}{$A, p, r$}
-\If{$p &lt; r$}
-\State $q = \lfloor (p + r)/2 \rfloor$
-\State \Call{Merge-Sort}{$A, p, q$}
-\State \Call{Merge-Sort}{$A, q + 1, r$}
-\State \Call{Merge}{$A, p, q, r$}
-\EndIf
-\EndProcedure
+  \Procedure{Merge-Sort}{$A, p, r$}
+    \If{$p &lt; r$}
+      \State $q = \lfloor (p + r)/2 \rfloor$
+      \State \Call{Merge-Sort}{$A, p, q$}
+      \State \Call{Merge-Sort}{$A, q + 1, r$}
+      \State \Call{Merge}{$A, p, q, r$}
+    \EndIf
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>

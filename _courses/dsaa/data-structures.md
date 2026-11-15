@@ -5,7 +5,7 @@ course_title: "数据结构与算法分析"
 section: ""
 status: "updating"
 created_at: "2026-11-06T22:04:29+08:00"
-updated_at: "2026-11-13T14:52:31+08:00"
+updated_at: "2026-11-15T12:45:11+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -44,25 +44,25 @@ excerpt: "数据结构与算法分析 · Data Structures"
 
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Stack-Empty}{$S$}
-\If{$S.\mathit{top} == 0$}
-\Return TRUE
-\Else
-\Return FALSE
-\EndIf
-\EndProcedure
-\Procedure{Push}{$S, x$}
-\State $S.\mathit{top} = S.\mathit{top} + 1$
-\State $S[S.\mathit{top}] = x$
-\EndProcedure
-\Procedure{Pop}{$S$}
-\If{\Call{Stack-Empty}{$S$}}
-\State \textbf{error} “underflow”
-\Else
-\State $S.\mathit{top} = S.\mathit{top} - 1$
-\Return $S[S.\mathit{top} + 1]$
-\EndIf
-\EndProcedure
+  \Procedure{Stack-Empty}{$S$}
+    \If{$S.\mathit{top} == 0$}
+      \Return $\textsc{true}$
+    \Else
+      \Return $\textsc{false}$
+    \EndIf
+  \EndProcedure
+  \Procedure{Push}{$S, x$}
+    \State $S.\mathit{top} = S.\mathit{top} + 1$
+    \State $S[S.\mathit{top}] = x$
+  \EndProcedure
+  \Procedure{Pop}{$S$}
+    \If{\Call{Stack-Empty}{$S$}}
+      \State \textbf{error} “underflow”
+    \Else
+      \State $S.\mathit{top} = S.\mathit{top} - 1$
+      \Return $S[S.\mathit{top} + 1]$
+    \EndIf
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -76,23 +76,23 @@ excerpt: "数据结构与算法分析 · Data Structures"
 
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Enqueue}{$Q, x$}
-\State $Q[Q.\mathit{tail}] = x$
-\If{$Q.\mathit{tail} == Q.\mathit{length}$}
-\State $Q.\mathit{tail} = 1$
-\Else
-\State $Q.\mathit{tail} = Q.\mathit{tail} + 1$
-\EndIf
-\EndProcedure
-\Procedure{Dequeue}{$Q$}
-\State $x = Q[Q.\mathit{head}]$
-\If{$Q.\mathit{head} == Q.\mathit{length}$}
-\State $Q.\mathit{head} = 1$
-\Else
-\State $Q.\mathit{head} = Q.\mathit{head} + 1$
-\EndIf
-\Return $x$
-\EndProcedure
+  \Procedure{Enqueue}{$Q, x$}
+    \State $Q[Q.\mathit{tail}] = x$
+    \If{$Q.\mathit{tail} == Q.\mathit{length}$}
+      \State $Q.\mathit{tail} = 1$
+    \Else
+      \State $Q.\mathit{tail} = Q.\mathit{tail} + 1$
+    \EndIf
+  \EndProcedure
+  \Procedure{Dequeue}{$Q$}
+    \State $x = Q[Q.\mathit{head}]$
+    \If{$Q.\mathit{head} == Q.\mathit{length}$}
+      \State $Q.\mathit{head} = 1$
+    \Else
+      \State $Q.\mathit{head} = Q.\mathit{head} + 1$
+    \EndIf
+    \Return $x$
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -108,51 +108,51 @@ excerpt: "数据结构与算法分析 · Data Structures"
 - **handle:** 把一个对象与它在一个数据结构（比如堆）中的位置映射起来。在操作中我们也要去维护每个对象的 handle。
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Max-Heap-Maximum}{$A$}
-\If{$A.\mathit{heap}\text{-}\mathit{size} &lt; 1$}
-\State \textbf{error} “heap underflow”
-\EndIf
-\Return $A[1]$
-\EndProcedure
-\Procedure{Max-Heap-Extract-Max}{$A$}
-\State $\mathit{max} =$ \Call{Max-Heap-Maximum}{$A$}
-\State $A[1] = A[A.\mathit{heap}\text{-}\mathit{size}]$
-\State $A.\mathit{heap}\text{-}\mathit{size} = A.\mathit{heap}\text{-}\mathit{size} - 1$
-\State \Call{Max-Heapify}{$A, 1$}
-\Return $\mathit{max}$
-\EndProcedure
+  \Procedure{Max-Heap-Maximum}{$A$}
+    \If{$A.\mathit{heap}\text{-}\mathit{size} &lt; 1$}
+      \State \textbf{error} “heap underflow”
+    \EndIf
+    \Return $A[1]$
+  \EndProcedure
+  \Procedure{Max-Heap-Extract-Max}{$A$}
+    \State $\mathit{max} =$ \Call{Max-Heap-Maximum}{$A$}
+    \State $A[1] = A[A.\mathit{heap}\text{-}\mathit{size}]$
+    \State $A.\mathit{heap}\text{-}\mathit{size} = A.\mathit{heap}\text{-}\mathit{size} - 1$
+    \State \Call{Max-Heapify}{$A, 1$}
+    \Return $\mathit{max}$
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Max-Heap-Increase-Key}{$A, x, k$}
-\If{$k &lt; x.\mathit{key}$}
-\State \textbf{error} “new key is smaller than current key”
-\EndIf
-\State $x.\mathit{key} = k$
-\State find the index $i$ in array $A$ where object $x$ occurs
-\While{$i &gt; 1$ and $A[$\Call{Parent}{$i$}$].\mathit{key} &lt; A[i].\mathit{key}$}
-\State exchange $A[i]$ with $A[$\Call{Parent}{$i$}$]$, updating the information that maps priority queue objects to array indices
-\State $i =$ \Call{Parent}{$i$}
-\EndWhile
-\EndProcedure
+  \Procedure{Max-Heap-Increase-Key}{$A, x, k$}
+    \If{$k &lt; x.\mathit{key}$}
+      \State \textbf{error} “new key is smaller than current key”
+    \EndIf
+    \State $x.\mathit{key} = k$
+    \State find the index $i$ in array $A$ where object $x$ occurs
+    \While{$i &gt; 1$ and $A[$\Call{Parent}{$i$}$].\mathit{key} &lt; A[i].\mathit{key}$}
+      \State exchange $A[i]$ with $A[$\Call{Parent}{$i$}$]$, updating the information that maps priority queue objects to array indices
+      \State $i =$ \Call{Parent}{$i$}
+    \EndWhile
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Max-Heap-Insert}{$A, x, n$}
-\If{$A.\mathit{heap}\text{-}\mathit{size} == n$}
-\State \textbf{error} “heap overflow”
-\EndIf
-\State $A.\mathit{heap}\text{-}\mathit{size} = A.\mathit{heap}\text{-}\mathit{size} + 1$
-\State $k = x.\mathit{key}$
-\State $x.\mathit{key} = -\infty$
-\State $A[A.\mathit{heap}\text{-}\mathit{size}] = x$
-\State map $x$ to index $\mathit{heap}\text{-}\mathit{size}$ in the array
-\State \Call{Max-Heap-Increase-Key}{$A, x, k$}
-\EndProcedure
+  \Procedure{Max-Heap-Insert}{$A, x, n$}
+    \If{$A.\mathit{heap}\text{-}\mathit{size} == n$}
+      \State \textbf{error} “heap overflow”
+    \EndIf
+    \State $A.\mathit{heap}\text{-}\mathit{size} = A.\mathit{heap}\text{-}\mathit{size} + 1$
+    \State $k = x.\mathit{key}$
+    \State $x.\mathit{key} = -\infty$
+    \State $A[A.\mathit{heap}\text{-}\mathit{size}] = x$
+    \State map $x$ to index $\mathit{heap}\text{-}\mathit{size}$ in the array
+    \State \Call{Max-Heap-Increase-Key}{$A, x, k$}
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -170,41 +170,41 @@ excerpt: "数据结构与算法分析 · Data Structures"
 一些支持的操作：
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{List-Search}{$L, k$}
-\State $x = L.\mathit{head}$
-\While{$x \neq \text{NIL}$ and $x.\mathit{key} \neq k$}
-\State $x = x.\mathit{next}$
-\EndWhile
-\Return $x$
-\EndProcedure
+  \Procedure{List-Search}{$L, k$}
+    \State $x = L.\mathit{head}$
+    \While{$x \ne \textsc{nil}$ and $x.\mathit{key} \ne k$}
+      \State $x = x.\mathit{next}$
+    \EndWhile
+    \Return $x$
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{List-Insert}{$L, x$}
-\State $x.\mathit{next} = L.\mathit{head}$
-\If{$L.\mathit{head} \neq \text{NIL}$}
-\State $L.\mathit{head}.\mathit{prev} = x$
-\EndIf
-\State $L.\mathit{head} = x$
-\State $x.\mathit{prev} = \text{NIL}$
-\EndProcedure
+  \Procedure{List-Insert}{$L, x$}
+    \State $x.\mathit{next} = L.\mathit{head}$
+    \If{$L.\mathit{head} \ne \textsc{nil}$}
+      \State $L.\mathit{head}.\mathit{prev} = x$
+    \EndIf
+    \State $L.\mathit{head} = x$
+    \State $x.\mathit{prev} = \textsc{nil}$
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{List-Delete}{$L, x$}
-\If{$x.\mathit{prev} \neq \text{NIL}$}
-\State $x.\mathit{prev}.\mathit{next} = x.\mathit{next}$
-\Else
-\State $L.\mathit{head} = x.\mathit{next}$
-\EndIf
-\If{$x.\mathit{next} \neq \text{NIL}$}
-\State $x.\mathit{next}.\mathit{prev} = x.\mathit{prev}$
-\EndIf
-\EndProcedure
+  \Procedure{List-Delete}{$L, x$}
+    \If{$x.\mathit{prev} \ne \textsc{nil}$}
+      \State $x.\mathit{prev}.\mathit{next} = x.\mathit{next}$
+    \Else
+      \State $L.\mathit{head} = x.\mathit{next}$
+    \EndIf
+    \If{$x.\mathit{next} \ne \textsc{nil}$}
+      \State $x.\mathit{next}.\mathit{prev} = x.\mathit{prev}$
+    \EndIf
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -259,60 +259,60 @@ Induction step:  更大的树由根节点，左子树，右子树（可能为空
 二叉搜索树上的一些操作：
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Tree-Search}{$x, k$}
-\If{$x == \text{NIL}$ or $k == x.\mathit{key}$}
-\Return $x$
-\EndIf
-\If{$k &lt; x.\mathit{key}$}
-\Return \Call{Tree-Search}{$x.\mathit{left}, k$}
-\Else
-\Return \Call{Tree-Search}{$x.\mathit{right}, k$}
-\EndIf
-\EndProcedure
-\Procedure{Iterative-Tree-Search}{$x, k$}
-\While{$x \neq \text{NIL}$ and $k \neq x.\mathit{key}$}
-\If{$k &lt; x.\mathit{key}$}
-\State $x = x.\mathit{left}$
-\Else
-\State $x = x.\mathit{right}$
-\EndIf
-\EndWhile
-\Return $x$
-\EndProcedure
+  \Procedure{Tree-Search}{$x, k$}
+    \If{$x == \textsc{nil}$ or $k == x.\mathit{key}$}
+      \Return $x$
+    \EndIf
+    \If{$k &lt; x.\mathit{key}$}
+      \Return \Call{Tree-Search}{$x.\mathit{left}, k$}
+    \Else
+      \Return \Call{Tree-Search}{$x.\mathit{right}, k$}
+    \EndIf
+  \EndProcedure
+  \Procedure{Iterative-Tree-Search}{$x, k$}
+    \While{$x \ne \textsc{nil}$ and $k \ne x.\mathit{key}$}
+      \If{$k &lt; x.\mathit{key}$}
+        \State $x = x.\mathit{left}$
+      \Else
+        \State $x = x.\mathit{right}$
+      \EndIf
+    \EndWhile
+    \Return $x$
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Tree-Minimum}{$x$}
-\While{$x.\mathit{left} \neq \text{NIL}$}
-\State $x = x.\mathit{left}$
-\EndWhile
-\Return $x$
-\EndProcedure
-\Procedure{Tree-Maximum}{$x$}
-\While{$x.\mathit{right} \neq \text{NIL}$}
-\State $x = x.\mathit{right}$
-\EndWhile
-\Return $x$
-\EndProcedure
+  \Procedure{Tree-Minimum}{$x$}
+    \While{$x.\mathit{left} \ne \textsc{nil}$}
+      \State $x = x.\mathit{left}$
+    \EndWhile
+    \Return $x$
+  \EndProcedure
+  \Procedure{Tree-Maximum}{$x$}
+    \While{$x.\mathit{right} \ne \textsc{nil}$}
+      \State $x = x.\mathit{right}$
+    \EndWhile
+    \Return $x$
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Tree-Successor}{$x$}
-\If{$x.\mathit{right} \neq \text{NIL}$}
-\Return \Call{Tree-Minimum}{$x.\mathit{right}$} \Comment{leftmost node in right subtree}
-\Else \Comment{find the lowest ancestor of $x$ whose left child is an ancestor of $x$}
-\State $y = x.p$
-\While{$y \neq \text{NIL}$ and $x == y.\mathit{right}$}
-\State $x = y$
-\State $y = y.p$
-\EndWhile
-\Return $y$
-\EndIf
-\EndProcedure
+  \Procedure{Tree-Successor}{$x$}
+    \If{$x.\mathit{right} \ne \textsc{nil}$}
+      \Return \Call{Tree-Minimum}{$x.\mathit{right}$} \Comment{leftmost node in right subtree}
+    \Else \Comment{find the lowest ancestor of $x$ whose left child is an ancestor of $x$}
+      \State $y = x.p$
+      \While{$y \ne \textsc{nil}$ and $x == y.\mathit{right}$}
+        \State $x = y$
+        \State $y = y.p$
+      \EndWhile
+      \Return $y$
+    \EndIf
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -324,26 +324,26 @@ Induction step:  更大的树由根节点，左子树，右子树（可能为空
 
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Tree-Insert}{$T, z$}
-\State $x = T.\mathit{root}$
-\State $y = \text{NIL}$
-\While{$x \neq \text{NIL}$}
-\State $y = x$
-\If{$z.\mathit{key} &lt; x.\mathit{key}$}
-\State $x = x.\mathit{left}$
-\Else
-\State $x = x.\mathit{right}$
-\EndIf
-\EndWhile
-\State $z.p = y$
-\If{$y == \text{NIL}$}
-\State $T.\mathit{root} = z$
-\ElsIf{$z.\mathit{key} &lt; y.\mathit{key}$}
-\State $y.\mathit{left} = z$
-\Else
-\State $y.\mathit{right} = z$
-\EndIf
-\EndProcedure
+  \Procedure{Tree-Insert}{$T, z$}
+    \State $x = T.\mathit{root}$
+    \State $y = \textsc{nil}$
+    \While{$x \ne \textsc{nil}$}
+      \State $y = x$
+      \If{$z.\mathit{key} &lt; x.\mathit{key}$}
+        \State $x = x.\mathit{left}$
+      \Else
+        \State $x = x.\mathit{right}$
+      \EndIf
+    \EndWhile
+    \State $z.p = y$
+    \If{$y == \textsc{nil}$}
+      \State $T.\mathit{root} = z$
+    \Elif{$z.\mathit{key} &lt; y.\mathit{key}$}
+      \State $y.\mathit{left} = z$
+    \Else
+      \State $y.\mathit{right} = z$
+    \EndIf
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -354,41 +354,41 @@ Induction step:  更大的树由根节点，左子树，右子树（可能为空
 具体实现：要先实现一个移植（Transplant）操作，能把 <span class="course-math" data-tex="u" data-display="false"><code>u</code></span> 为根节点的子树换成 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 为根节点的子树：
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Transplant}{$T, u, v$}
-\If{$u.p == \text{NIL}$}
-\State $T.\mathit{root} = v$
-\ElsIf{$u == u.p.\mathit{left}$}
-\State $u.p.\mathit{left} = v$
-\Else
-\State $u.p.\mathit{right} = v$
-\EndIf
-\If{$v \neq \text{NIL}$}
-\State $v.p = u.p$
-\EndIf
-\EndProcedure
+  \Procedure{Transplant}{$T, u, v$}
+    \If{$u.p == \textsc{nil}$}
+      \State $T.\mathit{root} = v$
+    \Elif{$u == u.p.\mathit{left}$}
+      \State $u.p.\mathit{left} = v$
+    \Else
+      \State $u.p.\mathit{right} = v$
+    \EndIf
+    \If{$v \ne \textsc{nil}$}
+      \State $v.p = u.p$
+    \EndIf
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
 这个 操作并不更新 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 的左右孩子，需要手动更新。然后就可以实现删除：
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{Tree-Delete}{$T, z$}
-\If{$z.\mathit{left} == \text{NIL}$}
-\State \Call{Transplant}{$T, z, z.\mathit{right}$} \Comment{replace $z$ by its right child}
-\ElsIf{$z.\mathit{right} == \text{NIL}$}
-\State \Call{Transplant}{$T, z, z.\mathit{left}$} \Comment{replace $z$ by its left child}
-\Else
-\State $y =$ \Call{Tree-Minimum}{$z.\mathit{right}$} \Comment{$y$ is $z$&#x27;s successor}
-\If{$y \neq z.\mathit{right}$} \Comment{is $y$ farther down the tree?}
-\State \Call{Transplant}{$T, y, y.\mathit{right}$} \Comment{replace $y$ by its right child}
-\State $y.\mathit{right} = z.\mathit{right}$ \Comment{$z$&#x27;s right child becomes $y$&#x27;s right child}
-\State $y.\mathit{right}.p = y$
-\EndIf
-\State \Call{Transplant}{$T, z, y$} \Comment{replace $z$ by its successor $y$}
-\State $y.\mathit{left} = z.\mathit{left}$ \Comment{and give $z$&#x27;s left child to $y$, which had no left child}
-\State $y.\mathit{left}.p = y$
-\EndIf
-\EndProcedure
+  \Procedure{Tree-Delete}{$T, z$}
+    \If{$z.\mathit{left} == \textsc{nil}$}
+      \State \Call{Transplant}{$T, z, z.\mathit{right}$} \Comment{replace $z$ by its right child}
+    \Elif{$z.\mathit{right} == \textsc{nil}$}
+      \State \Call{Transplant}{$T, z, z.\mathit{left}$} \Comment{replace $z$ by its left child}
+    \Else
+      \State $y =$ \Call{Tree-Minimum}{$z.\mathit{right}$} \Comment{$y$ is $z$&#x27;s successor}
+      \If{$y \ne z.\mathit{right}$} \Comment{is $y$ farther down the tree?}
+        \State \Call{Transplant}{$T, y, y.\mathit{right}$} \Comment{replace $y$ by its right child}
+        \State $y.\mathit{right} = z.\mathit{right}$ \Comment{$z$&#x27;s right child becomes $y$&#x27;s right child}
+        \State $y.\mathit{right}.p = y$
+      \EndIf
+      \State \Call{Transplant}{$T, z, y$} \Comment{replace $z$ by its successor $y$}
+      \State $y.\mathit{left} = z.\mathit{left}$ \Comment{and give $z$&#x27;s left child to $y$, which had no left child}
+      \State $y.\mathit{left}.p = y$
+    \EndIf
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -398,4 +398,47 @@ Induction step:  更大的树由根节点，左子树，右子树（可能为空
 - 前序（Preorder）：根，左，右。
 - 中序（Inorder）：左，根，右。
 - 后序（Postorder）：左，右，根。
+
+平衡树（self-balancing trees）通过一些操作让二叉查找树的树高变成 <span class="course-math" data-tex="O(\log n)" data-display="false"><code>O(\log n)</code></span> 的。
+
+### AVL Trees
+{: #section-9 }
+
+
+名字来源于发明者：Adelson-Velskii & Landis。
+不变量：所有节点都是局部平衡的。
+- 对于每个节点，左子树的树高和右子树的树高最多差 1。
+- 也就是说，对于每个节点 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span>，左右子树分别为 <span class="course-math" data-tex="T_{l},T_{r}" data-display="false"><code>T_{l},T_{r}</code></span>，定义平衡因子（Balance Factor）：
+<span class="course-math course-math-display" data-tex="bal(v)=h(T_{l})-h(T_{r})" data-display="true"><code>bal(v)=h(T_{l})-h(T_{r})</code></span>
+- 那么 AVL 树需要保证 <span class="course-math" data-tex="bal(v)\in \{ -1,0,1 \}" data-display="false"><code>bal(v)\in \{ -1,0,1 \}</code></span> 对任意节点 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span>。
+
+**定理：** 令 <span class="course-math" data-tex="\varphi= \frac{\sqrt{5}+1}{2}" data-display="false"><code>\varphi= \frac{\sqrt{5}+1}{2}</code></span>，那么 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个节点的 AVL 树的树高满足
+<span class="course-math course-math-display" data-tex="h\leq \frac{\log n}{\log \varphi}" data-display="true"><code>h\leq \frac{\log n}{\log \varphi}</code></span>
+证明：
+- 设 <span class="course-math" data-tex="A(h)" data-display="false"><code>A(h)</code></span> 表示，高度为 <span class="course-math" data-tex="h" data-display="false"><code>h</code></span> 的 AVL 树中，最少有多少个节点。那么，对于任意的有 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个节点且高度为 <span class="course-math" data-tex="h" data-display="false"><code>h</code></span> 的 AVL 树，都有 <span class="course-math" data-tex="n\geq A(h)" data-display="false"><code>n\geq A(h)</code></span>。
+- 显然 <span class="course-math" data-tex="A(0)=1" data-display="false"><code>A(0)=1</code></span>，<span class="course-math" data-tex="A(1)=2" data-display="false"><code>A(1)=2</code></span>。
+- 对于 <span class="course-math" data-tex="h\geq 2" data-display="false"><code>h\geq 2</code></span>，则必须由一个根节点，一个高度为 <span class="course-math" data-tex="h-1" data-display="false"><code>h-1</code></span> 的子树，和一个高度至少为 <span class="course-math" data-tex="h-2" data-display="false"><code>h-2</code></span> 的子树组成，于是
+<span class="course-math course-math-display" data-tex="A(h)=1+A(h-1)+A(h-2)" data-display="true"><code>A(h)=1+A(h-1)+A(h-2)</code></span>
+- 这里有 <span class="course-math" data-tex="A(h)=Fib(h+2)-1" data-display="false"><code>A(h)=Fib(h+2)-1</code></span>，其中 <span class="course-math" data-tex="Fib(k)" data-display="false"><code>Fib(k)</code></span> 为下标从零开始的斐波那契数列（<span class="course-math" data-tex="Fib(0)=Fib(1)=1" data-display="false"><code>Fib(0)=Fib(1)=1</code></span>）。这可以用归纳证明。
+-  根据斐波那契数列的闭式公式，有不等式
+<span class="course-math course-math-display" data-tex="Fib(k)\geq \frac{1}{\sqrt{5} }\left[ \varphi^{k+1}-1 \right]" data-display="true"><code>Fib(k)\geq \frac{1}{\sqrt{5} }\left[ \varphi^{k+1}-1 \right]</code></span>
+- 因此，有
+<span class="course-math course-math-display" data-tex="n\geq A(h)= Fib(h+2)-1\geq \frac{1}{\sqrt{5} }\left[ \varphi^{h+3}-1 \right]-1" data-display="true"><code>n\geq A(h)= Fib(h+2)-1\geq \frac{1}{\sqrt{5} }\left[ \varphi^{h+3}-1 \right]-1</code></span>
+- 化简得到
+<span class="course-math course-math-display" data-tex="\sqrt{5}n+\sqrt{5}+1 \geq \varphi ^{h+3}" data-display="true"><code>\sqrt{5}n+\sqrt{5}+1 \geq \varphi ^{h+3}</code></span>
+- 因此
+<span class="course-math course-math-display" data-tex="h \leq  \frac{\log(\sqrt{5}n+\sqrt{5}+1)}{\log \varphi}-3\leq \frac{\log n}{\log \varphi}" data-display="true"><code>h \leq  \frac{\log(\sqrt{5}n+\sqrt{5}+1)}{\log \varphi}-3\leq \frac{\log n}{\log \varphi}</code></span>
+
+**插入操作。** 插入 <span class="course-math" data-tex="z" data-display="false"><code>z</code></span>，先按正常的 BST 去做；考虑搜索路径，我们从下至上回溯搜索路径，同时做 **重新平衡**。考虑做到了节点 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> ，假设它的**右孩子** <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> **在搜索路径上**（左孩子的情况是对称的）。那么有三种情况：
+- <span class="course-math" data-tex="bal(v)=1" data-display="false"><code>bal(v)=1</code></span>。那么，只需要设 <span class="course-math" data-tex="bal(v)=0" data-display="false"><code>bal(v)=0</code></span> 即可。并且，<span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 这个子树的高度没变，所以不需要再向上回溯了。<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures.webp' | relative_url }}{% raw %}" alt="Data Structures" width="480" height="144" loading="lazy" decoding="async">
+- <span class="course-math" data-tex="bal(v)=0" data-display="false"><code>bal(v)=0</code></span>。那么，只需要设 <span class="course-math" data-tex="bal(v)=-1" data-display="false"><code>bal(v)=-1</code></span> 即可。这时候 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 这个子树的高度增加了，所以还需要向上回溯，除非 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 已经是根节点了。
+- <span class="course-math" data-tex="bal(v)=-1" data-display="false"><code>bal(v)=-1</code></span>，那么插入之后，这个子树变得不平衡了！考虑搜索路径上向下连着的三个节点 <span class="course-math" data-tex="v,x,w" data-display="false"><code>v,x,w</code></span>。分两种情况：
+  - <span class="course-math" data-tex="w" data-display="false"><code>w</code></span> 是 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 的右孩子。那么我们需要向左旋转（rotate）这个树：令 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 为 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 的 parent，令 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 的左子树变成 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 的右子树，那么操作之后 <span class="course-math" data-tex="bal(x)=bal(v)=0" data-display="false"><code>bal(x)=bal(v)=0</code></span>。旋转后也不需要再向上回溯。<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-9.webp' | relative_url }}{% raw %}" alt="Data Structures-9" width="413" height="213" loading="lazy" decoding="async">
+  - <span class="course-math" data-tex="w" data-display="false"><code>w</code></span> 是 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 的左孩子。可以先在 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 处右旋一次，再在 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 处左旋一次。这里，最后的结果会是 <span class="course-math" data-tex="w" data-display="false"><code>w</code></span> 成为了根节点，且 <span class="course-math" data-tex="bal(w)=0" data-display="false"><code>bal(w)=0</code></span>。若初始 <span class="course-math" data-tex="bal(w)=-1" data-display="false"><code>bal(w)=-1</code></span>，那么结果（如下图）为 <span class="course-math" data-tex="bal(v)=1,bal(x)=0" data-display="false"><code>bal(v)=1,bal(x)=0</code></span>。若初始 <span class="course-math" data-tex="bal(w)=1" data-display="false"><code>bal(w)=1</code></span>，那么结果为 <span class="course-math" data-tex="bal(v)=0,bal(x)=-1" data-display="false"><code>bal(v)=0,bal(x)=-1</code></span>。若初始 <span class="course-math" data-tex="bal(w)=0(w=z)" data-display="false"><code>bal(w)=0(w=z)</code></span>，那么 <span class="course-math" data-tex="bal(v)=bal(x)=0" data-display="false"><code>bal(v)=bal(x)=0</code></span>。<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-10.webp' | relative_url }}{% raw %}" alt="Data Structures-10" width="499" height="288" loading="lazy" decoding="async">
+**删除操作。** 类似地，我们正常按 BST 删完之后，我们回溯搜索路径。这里不妨假设删除减少了 **左子树** 的树高（右子树是对称的）。分三种情况：
+- <span class="course-math" data-tex="bal(v)=1" data-display="false"><code>bal(v)=1</code></span>，那么只需要设 <span class="course-math" data-tex="bal(v)=0" data-display="false"><code>bal(v)=0</code></span> 即可。这里 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 子树的高度减少了，所以需要继续向上回溯。
+- <span class="course-math" data-tex="bal(v)=0" data-display="false"><code>bal(v)=0</code></span>，那么只需要设 <span class="course-math" data-tex="bal(v)=-1" data-display="false"><code>bal(v)=-1</code></span> 即可。这里 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 子树的高度没变，所以不需要再向上回溯。
+- <span class="course-math" data-tex="bal(v)=-1" data-display="false"><code>bal(v)=-1</code></span>。那么左子树会变得比右子树的树高少 <span class="course-math" data-tex="2" data-display="false"><code>2</code></span>！考虑右子树向下的搜索路径三个节点 <span class="course-math" data-tex="v,x,w" data-display="false"><code>v,x,w</code></span>。 有两种情况：
+  - <span class="course-math" data-tex="bal(x)\in \{ -1,0 \}" data-display="false"><code>bal(x)\in \{ -1,0 \}</code></span>。那么在 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 处向左旋转就好了。这里若 <span class="course-math" data-tex="bal(x)=-1" data-display="false"><code>bal(x)=-1</code></span>，那么最后 <span class="course-math" data-tex="bal(v)=-1,bal(x)=0" data-display="false"><code>bal(v)=-1,bal(x)=0</code></span>，就不用向上回溯了。若 <span class="course-math" data-tex="bal(x)=0" data-display="false"><code>bal(x)=0</code></span>，那么最后 <span class="course-math" data-tex="bal(v)=bal(x)=0" data-display="false"><code>bal(v)=bal(x)=0</code></span>，还需要向上回溯，因为树高变了。<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-11.webp' | relative_url }}{% raw %}" alt="Data Structures-11" width="451" height="213" loading="lazy" decoding="async">
+  - <span class="course-math" data-tex="bal(x)=1" data-display="false"><code>bal(x)=1</code></span>。需要两次旋转，旋转完也还要向上回溯。<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-12.webp' | relative_url }}{% raw %}" alt="Data Structures-12" width="498" height="294" loading="lazy" decoding="async">
 {% endraw %}

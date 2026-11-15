@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-10-12T15:33:52+08:00"
-updated_at: "2026-11-13T20:14:57+08:00"
+updated_at: "2026-11-15T12:45:11+08:00"
 reference: false
 order: 4
 layout: "course"
@@ -129,17 +129,17 @@ excerpt: "离散数学 · Number Theory - 数论"
 二进制的加法，乘法运算：
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{add}{$a, b$: positive integers}
-\State \Comment{the binary expansions of $a$ and $b$ are $(a_{n-1}, a_{n-2}, \ldots, a_0)_2$ and $(b_{n-1}, b_{n-2}, \ldots, b_0)_2$, respectively}
-\State $c := 0$
-\For{$j := 0$ to $n - 1$}
-\State $d := \lfloor (a_j + b_j + c)/2 \rfloor$
-\State $s_j := a_j + b_j + c - 2d$
-\State $c := d$
-\EndFor
-\State $s_n := c$
-\Return $(s_0, s_1, \ldots, s_n)$ \Comment{the binary expansion of the sum is $(s_n, s_{n-1}, \ldots, s_0)_2$}
-\EndProcedure
+  \Procedure{Add}{$a, b$: positive integers}
+    \State \Comment{the binary expansions of $a$ and $b$ are $(a_{n-1}, a_{n-2}, \ldots, a_0)_2$ and $(b_{n-1}, b_{n-2}, \ldots, b_0)_2$, respectively}
+    \State $c = 0$
+    \For{$j = 0$ \To $n - 1$}
+      \State $d = \lfloor (a_j + b_j + c)/2 \rfloor$
+      \State $s_j = a_j + b_j + c - 2d$
+      \State $c = d$
+    \EndFor
+    \State $s_n = c$
+    \Return $(s_0, s_1, \ldots, s_n)$ \Comment{the binary expansion of the sum is $(s_n, s_{n-1}, \ldots, s_0)_2$}
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -147,22 +147,22 @@ excerpt: "离散数学 · Number Theory - 数论"
 
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{multiply}{$a, b$: positive integers}
-\State \Comment{the binary expansions of $a$ and $b$ are $(a_{n-1}, a_{n-2}, \ldots, a_0)_2$ and $(b_{n-1}, b_{n-2}, \ldots, b_0)_2$, respectively}
-\For{$j := 0$ to $n - 1$}
-\If{$b_j = 1$}
-\State $c_j = a$ shifted $j$ places
-\Else
-\State $c_j := 0$
-\EndIf
-\EndFor
-\State \Comment{$c_0, c_1, \ldots, c_{n-1}$ are the partial products}
-\State $p := 0$
-\For{$j := 0$ to $n - 1$}
-\State $p := p + c_j$
-\EndFor
-\Return $p$ \Comment{$p$ is the value of $ab$}
-\EndProcedure
+  \Procedure{Multiply}{$a, b$: positive integers}
+    \State \Comment{the binary expansions of $a$ and $b$ are $(a_{n-1}, a_{n-2}, \ldots, a_0)_2$ and $(b_{n-1}, b_{n-2}, \ldots, b_0)_2$, respectively}
+    \For{$j = 0$ \To $n - 1$}
+      \If{$b_j == 1$}
+        \State $c_j = a$ shifted $j$ places
+      \Else
+        \State $c_j = 0$
+      \EndIf
+    \EndFor
+    \State \Comment{$c_0, c_1, \ldots, c_{n-1}$ are the partial products}
+    \State $p = 0$
+    \For{$j = 0$ \To $n - 1$}
+      \State $p = p + c_j$
+    \EndFor
+    \Return $p$ \Comment{$p$ is the value of $ab$}
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -175,19 +175,19 @@ excerpt: "离散数学 · Number Theory - 数论"
 一个朴素的除法：
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{division-algorithm}{$a$: integer, $d$: positive integer}
-\State $q := 0$
-\State $r := \vert a \vert$
-\While{$r \ge d$}
-\State $r := r - d$
-\State $q := q + 1$
-\EndWhile
-\If{$a &lt; 0$ and $r &gt; 0$}
-\State $r := d - r$
-\State $q := -(q + 1)$
-\EndIf
-\Return $(q, r)$ \Comment{$q = a$ \textbf{div} $d$ is the quotient, $r = a$ \textbf{mod} $d$ is the remainder}
-\EndProcedure
+  \Procedure{Division-Algorithm}{$a$: integer, $d$: positive integer}
+    \State $q = 0$
+    \State $r = \vert a \vert$
+    \While{$r \ge d$}
+      \State $r = r - d$
+      \State $q = q + 1$
+    \EndWhile
+    \If{$a &lt; 0$ and $r &gt; 0$}
+      \State $r = d - r$
+      \State $q = -(q + 1)$
+    \EndIf
+    \Return $(q, r)$ \Comment{$q = a$ \textbf{div} $d$ is the quotient, $r = a$ \textbf{mod} $d$ is the remainder}
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -197,21 +197,22 @@ excerpt: "离散数学 · Number Theory - 数论"
 可以通过分治来优化：
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{division2}{$a, d \in \mathbb{N},\ d \ge 1$}
-\If{$a &lt; d$}
-\Return $(q, r) = (0, a)$
-\EndIf
-\State $(q, r) =$ \Call{division2}{$\lfloor a/2 \rfloor, d$}
-\State $q = 2q,\ r = 2r$
-\If{$a$ is odd}
-\State $r = r + 1$
-\EndIf
-\If{$r \ge d$}
-\State $r = r - d$
-\State $q = q + 1$
-\EndIf
-\Return $(q, r)$
-\EndProcedure
+  \Procedure{Division2}{$a, d \in \mathbb{N}, d \ge 1$}
+    \If{$a &lt; d$}
+      \Return $(0, a)$
+    \EndIf
+    \State $(q, r) =$ \Call{Division2}{$\lfloor a/2 \rfloor, d$}
+    \State $q = 2q$
+    \State $r = 2r$
+    \If{$a$ is odd}
+      \State $r = r + 1$
+    \EndIf
+    \If{$r \ge d$}
+      \State $r = r - d$
+      \State $q = q + 1$
+    \EndIf
+    \Return $(q, r)$
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -221,17 +222,17 @@ excerpt: "离散数学 · Number Theory - 数论"
 模指数算法：
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{modular-exponentiation}{$b$: integer, $n = (a_{k-1}a_{k-2} \ldots a_1 a_0)_2$, $m$: positive integers}
-\State $x := 1$
-\State $\mathit{power} := b \bmod m$
-\For{$i := 0$ to $k - 1$}
-\If{$a_i = 1$}
-\State $x := (x \cdot \mathit{power}) \bmod m$
-\EndIf
-\State $\mathit{power} := (\mathit{power} \cdot \mathit{power}) \bmod m$
-\EndFor
-\Return $x$ \Comment{$x$ equals $b^{n} \bmod m$}
-\EndProcedure
+  \Procedure{Modular-Exponentiation}{$b$: integer, $n = (a_{k-1}a_{k-2} \ldots a_1 a_0)_2$, $m$: positive integers}
+    \State $x = 1$
+    \State $\mathit{power} = b \bmod m$
+    \For{$i = 0$ \To $k - 1$}
+      \If{$a_i == 1$}
+        \State $x = (x \cdot \mathit{power}) \bmod m$
+      \EndIf
+      \State $\mathit{power} = (\mathit{power} \cdot \mathit{power}) \bmod m$
+    \EndFor
+    \Return $x$ \Comment{$x$ equals $b^{n} \bmod m$}
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
@@ -262,16 +263,16 @@ excerpt: "离散数学 · Number Theory - 数论"
 
 <pre class="course-pseudocode">\begin{algorithm}
 \begin{algorithmic}
-\Procedure{gcd}{$a, b$: positive integers}
-\State $x := a$
-\State $y := b$
-\While{$y \neq 0$}
-\State $r := x \bmod y$
-\State $x := y$
-\State $y := r$
-\EndWhile
-\Return $x$ \Comment{$\gcd(a, b)$ is $x$}
-\EndProcedure
+  \Procedure{Gcd}{$a, b$: positive integers}
+    \State $x = a$
+    \State $y = b$
+    \While{$y \ne 0$}
+      \State $r = x \bmod y$
+      \State $x = y$
+      \State $y = r$
+    \EndWhile
+    \Return $x$ \Comment{$\gcd(a, b)$ is $x$}
+  \EndProcedure
 \end{algorithmic}
 \end{algorithm}
 </pre>
