@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-11-09T14:04:06+08:00"
-updated_at: "2026-11-13T14:14:44+08:00"
+updated_at: "2026-11-16T17:32:42+08:00"
 reference: false
 order: 5
 layout: "course"
@@ -127,4 +127,64 @@ excerpt: "离散数学 · Counting - 计数"
 求解反函数：
 <span class="course-math course-math-display" data-tex="n(p;H)\approx \sqrt{2H\ln \frac{1}{1-p}} \sim \sqrt{H}" data-display="true"><code>n(p;H)\approx \sqrt{2H\ln \frac{1}{1-p}} \sim \sqrt{H}</code></span>
 那么，要让找到碰撞（Collision, 也就是两个人有相同的值）的概率至少为 <span class="course-math" data-tex="p" data-display="false"><code>p</code></span> ，所需要的人数只有 <span class="course-math" data-tex="\sqrt{H}" data-display="false"><code>\sqrt{H}</code></span>。从这个也可以看出生日悖论。
+
+
+## 生成函数（Generating Function）
+{: #section-6 }
+
+
+一个序列 <span class="course-math" data-tex="a_{0},a_{1}, \dots, a_{k}, \dots" data-display="false"><code>a_{0},a_{1}, \dots, a_{k}, \dots</code></span> 对应的生成函数为
+<span class="course-math course-math-display" data-tex="G(x)= \sum _{k=0}^{\infty} a_{k} x^{k}" data-display="true"><code>G(x)= \sum _{k=0}^{\infty} a_{k} x^{k}</code></span>
+这个函数包含了序列的所有信息（下标与对应的值）。通过生成函数，计数等 **离散** 的问题，可以变成 **连续** 函数的 **分析** 问题。
+这里如果序列 <span class="course-math" data-tex="a_{0},a_{1}, \dots, a_{n}" data-display="false"><code>a_{0},a_{1}, \dots, a_{n}</code></span> 有限，可以让 <span class="course-math" data-tex="a_{n+1}=a_{n+2}= \dots = 0" data-display="false"><code>a_{n+1}=a_{n+2}= \dots = 0</code></span>，继续沿用上面的定义，因此生成函数是一个 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 阶的多项式
+<span class="course-math course-math-display" data-tex="G(x)=\sum _{k=0}^{n} a_{k}x^{k}" data-display="true"><code>G(x)=\sum _{k=0}^{n} a_{k}x^{k}</code></span>
+
+例如：
+- <span class="course-math" data-tex="G(x)= \frac{1}{1-x}=1+x+x^{2}+ \dots" data-display="false"><code>G(x)= \frac{1}{1-x}=1+x+x^{2}+ \dots</code></span> 对应的序列为 <span class="course-math" data-tex="1,1,1, \dots" data-display="false"><code>1,1,1, \dots</code></span>。
+- <span class="course-math" data-tex="G(x)= \frac{1}{(1-x)^{2}}=1+2x+3x^{2}+\dots" data-display="false"><code>G(x)= \frac{1}{(1-x)^{2}}=1+2x+3x^{2}+\dots</code></span> 对应的序列为 <span class="course-math" data-tex="1,2,3, \dots" data-display="false"><code>1,2,3, \dots</code></span>。
+
+生成函数的运算：若 <span class="course-math" data-tex="f(x)=\sum _{k=0}^{\infty}a_{k}x^{k}" data-display="false"><code>f(x)=\sum _{k=0}^{\infty}a_{k}x^{k}</code></span>，且 <span class="course-math" data-tex="g(x)= \sum _{k=0}^{\infty}b_{k}x^{k}" data-display="false"><code>g(x)= \sum _{k=0}^{\infty}b_{k}x^{k}</code></span>，那么加法：
+<span class="course-math course-math-display" data-tex="f(x)+g(x)= \sum _{k=0}^{\infty}(a_{k}+b_{k})x^{k}" data-display="true"><code>f(x)+g(x)= \sum _{k=0}^{\infty}(a_{k}+b_{k})x^{k}</code></span>
+乘法：
+<span class="course-math course-math-display" data-tex="f(x)g(x)= \sum _{k=0}^{\infty} \left(\sum _{j=0}^{k} a_{j}b_{k-j} \right)x^{k}" data-display="true"><code>f(x)g(x)= \sum _{k=0}^{\infty} \left(\sum _{j=0}^{k} a_{j}b_{k-j} \right)x^{k}</code></span>
+例如，按照这个乘法运算：
+<span class="course-math course-math-display" data-tex="G(x)= \frac{1}{(1-x)^{2}} = \sum _{k=0}^{\infty} \left( \sum _{j=0}^{k} 1\cdot1 \right)x^{k}=\sum _{k=0}^{\infty}(k+1)x^{k}" data-display="true"><code>G(x)= \frac{1}{(1-x)^{2}} = \sum _{k=0}^{\infty} \left( \sum _{j=0}^{k} 1\cdot1 \right)x^{k}=\sum _{k=0}^{\infty}(k+1)x^{k}</code></span>
+<span class="course-math course-math-display" data-tex="G(x)= \frac{1}{(1-ax)^{2}} = \sum _{k=0}^{\infty}\left( \sum _{j=0}^{k} a^{j}a^{k-j} \right)x^{k}=\sum _{k=0}^\infty (k+1)a^{k} x^{k}" data-display="true"><code>G(x)= \frac{1}{(1-ax)^{2}} = \sum _{k=0}^{\infty}\left( \sum _{j=0}^{k} a^{j}a^{k-j} \right)x^{k}=\sum _{k=0}^\infty (k+1)a^{k} x^{k}</code></span>
+**卷积规则（Convolution Rule）：**
+- 集合 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 中选取物品，选 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 个的选法数为 <span class="course-math" data-tex="a_{k}" data-display="false"><code>a_{k}</code></span>，对应的生成函数为 <span class="course-math" data-tex="A(x)" data-display="false"><code>A(x)</code></span>；
+- 集合 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 中选取物品，选 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 个的选法数为 <span class="course-math" data-tex="b_{k}" data-display="false"><code>b_{k}</code></span>，对应的生成函数为 <span class="course-math" data-tex="B(x)" data-display="false"><code>B(x)</code></span>；
+- 集合 <span class="course-math" data-tex="A,B" data-display="false"><code>A,B</code></span> 无交。
+- 那么，从并集 <span class="course-math" data-tex="A\cup B" data-display="false"><code>A\cup B</code></span> 中选取物品的选法数对应生成函数 <span class="course-math" data-tex="A(x) \cdot B(x)" data-display="false"><code>A(x) \cdot B(x)</code></span>。
+
+例题1：有 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个颜色的球，选 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 个球，有多少种选择方案？
+- 设 <span class="course-math" data-tex="A_{1}, A_{2}, \dots, A_{n}" data-display="false"><code>A_{1}, A_{2}, \dots, A_{n}</code></span> 表示这 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 种颜色的球对应的纯色球的集合，那么对应的生成函数 <span class="course-math" data-tex="A_{i}(x)=\frac{1}{1-x}" data-display="false"><code>A_{i}(x)=\frac{1}{1-x}</code></span>（从只有一种颜色的集合中选，那么只有一种选法，序列为全 1）。
+- 那么总的选法就对应生成函数 <span class="course-math" data-tex="G(x)=\frac{1}{(1-x)^{n}}" data-display="false"><code>G(x)=\frac{1}{(1-x)^{n}}</code></span>，问题变成展开这个式子。结果是，选法数
+<span class="course-math course-math-display" data-tex="d_{k}= [x^{k}] (1 / (1-x)^{n}) = \binom{n+k-1}{k}" data-display="true"><code>d_{k}= [x^{k}] (1 / (1-x)^{n}) = \binom{n+k-1}{k}</code></span>
+- 怎么展开？一种方式是使用 **麦克劳林公式（Maclaurin's Theorem）**：
+<span class="course-math course-math-display" data-tex="f(x)= f(0)+ f&#x27;(0)x + \frac{f&#x27;&#x27;(0)}{2!}x^{2}+ \dots + \frac{f^{(n)}(0)}{n!}x^{n}+ \dots" data-display="true"><code>f(x)= f(0)+ f&#x27;(0)x + \frac{f&#x27;&#x27;(0)}{2!}x^{2}+ \dots + \frac{f^{(n)}(0)}{n!}x^{n}+ \dots</code></span>
+- 这里
+<span class="course-math course-math-display" data-tex="G^{(k)}(x)= n(n+1)(n+2) \dots (n+k-1)(1-x)^{-(n+k)}" data-display="true"><code>G^{(k)}(x)= n(n+1)(n+2) \dots (n+k-1)(1-x)^{-(n+k)}</code></span>
+- 那么
+<span class="course-math course-math-display" data-tex="[x^{k}] (1 / (1-x)^{n}) =  \frac{G^{(k)}(0)}{k!}= \frac{(n+k-1)(n+k-2)\dots (n+1)n}{k!}= \binom{n+k-1}{k}" data-display="true"><code>[x^{k}] (1 / (1-x)^{n}) =  \frac{G^{(k)}(0)}{k!}= \frac{(n+k-1)(n+k-2)\dots (n+1)n}{k!}= \binom{n+k-1}{k}</code></span>
+- 另一种展开方法，使用**扩展二项式定理（Extended Binomial Theorem）：**
+<span class="course-math course-math-display" data-tex="\binom{-n}{k}= \frac{(-n)(-n-1)\dots (-n-k+1)}{k!} =(-1)^{k}  \binom{n+k-1}{k}" data-display="true"><code>\binom{-n}{k}= \frac{(-n)(-n-1)\dots (-n-k+1)}{k!} =(-1)^{k}  \binom{n+k-1}{k}</code></span>
+- 从而得到 <span class="course-math" data-tex="G(x)=(1-x)^{-n}=\sum _{k=0}^{\infty} \binom{n+k-1}{k}x^{k}" data-display="false"><code>G(x)=(1-x)^{-n}=\sum _{k=0}^{\infty} \binom{n+k-1}{k}x^{k}</code></span>。
+
+例题2：这个方程的解的个数为？
+<span class="course-math course-math-display" data-tex="x_{1}+x_{2}+x_{3}=17" data-display="true"><code>x_{1}+x_{2}+x_{3}=17</code></span>
+这里 <span class="course-math" data-tex="2\leq x_{1}\leq5, 3\leq x_{2}\leq6, 4\leq x_{3}\leq7" data-display="false"><code>2\leq x_{1}\leq5, 3\leq x_{2}\leq6, 4\leq x_{3}\leq7</code></span>，且 <span class="course-math" data-tex="x_{1},x_{2},x_{3}" data-display="false"><code>x_{1},x_{2},x_{3}</code></span> 为整数。
+- <span class="course-math" data-tex="x_{1}" data-display="false"><code>x_{1}</code></span> 对应生成函数 <span class="course-math" data-tex="G_{1}(x)=x^{2}+x^{3}+x^{4}+x^{5}" data-display="false"><code>G_{1}(x)=x^{2}+x^{3}+x^{4}+x^{5}</code></span>；
+- <span class="course-math" data-tex="x_{2}" data-display="false"><code>x_{2}</code></span> 对应生成函数 <span class="course-math" data-tex="G_{2}(x)=x^{3}+x^{4}+x^{5}+x^{6}" data-display="false"><code>G_{2}(x)=x^{3}+x^{4}+x^{5}+x^{6}</code></span>；
+- <span class="course-math" data-tex="x_{3}" data-display="false"><code>x_{3}</code></span> 对应生成函数 <span class="course-math" data-tex="G_{3}(x)=x^{4}+x^{5}+x^{6}+x^{7}" data-display="false"><code>G_{3}(x)=x^{4}+x^{5}+x^{6}+x^{7}</code></span>；
+- 那么解的个数就是 <span class="course-math" data-tex="G_{1}(x)G_{2}(x)G_{3}(x)" data-display="false"><code>G_{1}(x)G_{2}(x)G_{3}(x)</code></span> 中 <span class="course-math" data-tex="x^{17}" data-display="false"><code>x^{17}</code></span> 的系数。
+
+例题3：
+<span class="course-math course-math-display" data-tex="x_{1}+x_{2}+ \dots+ x_{n}=k" data-display="true"><code>x_{1}+x_{2}+ \dots+ x_{n}=k</code></span>
+这里 <span class="course-math" data-tex="x_{1},x_{2}, \dots, x_{n}" data-display="false"><code>x_{1},x_{2}, \dots, x_{n}</code></span> 为非负整数。
+这等价于 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个元素的集合里选 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 个元素，**允许重复**的个数（<span class="course-math" data-tex="k" data-display="false"><code>k</code></span>-combinations from a set with <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> elements when **repetition is allowed**）（从 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个元素中选取 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 个元素的重集计数），我们在例题 1 中通过生成函数得到答案了：
+<span class="course-math course-math-display" data-tex="\binom{n+k-1}{k}" data-display="true"><code>\binom{n+k-1}{k}</code></span>
+- 组合意义上，这就相当于在 <span class="course-math" data-tex="n+k-1" data-display="false"><code>n+k-1</code></span> 个格子里，选 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span> 个作为挡板，这样就会把剩下的 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 个元素分成 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个部分，一种选法就对应一个解。
+
+例题 4：用生成函数解释二项式定理。<span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个元素里选 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 个的组合数 <span class="course-math" data-tex="\binom{n}{k}" data-display="false"><code>\binom{n}{k}</code></span>；每种元素选或不选，对应生成函数 <span class="course-math" data-tex="(1+x)" data-display="false"><code>(1+x)</code></span>，那么根据卷积规则，选法数对应的生成函数为 <span class="course-math" data-tex="(1+x)^{n}" data-display="false"><code>(1+x)^{n}</code></span>，因此
+<span class="course-math course-math-display" data-tex="[x^{k}](1+x)^{n }= \binom{n}{k}" data-display="true"><code>[x^{k}](1+x)^{n }= \binom{n}{k}</code></span>
 {% endraw %}

@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-09-03T17:09:42+08:00"
-updated_at: "2026-11-13T19:44:49+08:00"
+updated_at: "2026-11-16T17:32:21+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -205,4 +205,37 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 <span class="course-math course-math-display" data-tex="\sum_{k=0}^{\infty}x^{k}=\lim_{ n \to \infty } \sum_{k=0}^{n} x^{k}= \frac{1}{1-x}" data-display="true"><code>\sum_{k=0}^{\infty}x^{k}=\lim_{ n \to \infty } \sum_{k=0}^{n} x^{k}= \frac{1}{1-x}</code></span>
 <span class="course-math course-math-display" data-tex="\sum_{k=0}^{\infty}kx^{k-1}= \frac{1}{(1-x)^{2}}" data-display="true"><code>\sum_{k=0}^{\infty}kx^{k-1}= \frac{1}{(1-x)^{2}}</code></span>
 （第二个式子可以用求导或**错位相减**的方法求得）
+
+
+## 关系（Relation）
+{: #section-5 }
+
+
+二元关系（Binary Relation）：从集合 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 到 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 的一个二元关系，是它们笛卡尔积 <span class="course-math" data-tex="A\times B" data-display="false"><code>A\times B</code></span> 的一个子集 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span>。用记号 <span class="course-math" data-tex="aRb" data-display="false"><code>aRb</code></span> 表示 <span class="course-math" data-tex="(a,b)\in R" data-display="false"><code>(a,b)\in R</code></span>，用记号 <span class="course-math" data-tex="a\not R b" data-display="false"><code>a\not R b</code></span> 表示 <span class="course-math" data-tex="(a,b)\notin R" data-display="false"><code>(a,b)\notin R</code></span>。
+
+要表示一个关系：可以枚举出 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 里面的所有有序对；也可以用图（箭头）来表示有序对，从而表示关系；也可以用表格/矩阵来表示（对应的分量为 1/0 表示这个有序对是否在关系中）。
+
+关系可以是一对多的。因此，函数都是关系；而关系不总是函数。
+
+定义集合 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 上的关系（relation on a set <span class="course-math" data-tex="A" data-display="false"><code>A</code></span>）为 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 到 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的一个二元关系。若 <span class="course-math" data-tex="\lvert A \rvert=n" data-display="false"><code>\lvert A \rvert=n</code></span>，那么集合 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 上的关系有 <span class="course-math" data-tex="2^{n^{2}}" data-display="false"><code>2^{n^{2}}</code></span> 种。
+
+对于一个集合 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 上的关系 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span>，它可能具有一些特别的性质：
+- **自反性（Reflexive）：** <span class="course-math" data-tex="(a,a)\in R \,\forall a\in A" data-display="false"><code>(a,a)\in R \,\forall a\in A</code></span>。用矩阵表示，就是对角线上全 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>。个数为 <span class="course-math" data-tex="2^{n^{2}-n}" data-display="false"><code>2^{n^{2}-n}</code></span> 种。
+- **反自反性（Irreflexive）：** <span class="course-math" data-tex="(a,a)\notin R\, \forall a\in A" data-display="false"><code>(a,a)\notin R\, \forall a\in A</code></span>。用矩阵表示，就是对角线上全 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>。个数为 <span class="course-math" data-tex="2^{n^{2}-n}" data-display="false"><code>2^{n^{2}-n}</code></span> 种。
+- **对称性（Symmetric）：** <span class="course-math" data-tex="(a,b)\in R\to(b,a)\in R\, \forall a,b\in A" data-display="false"><code>(a,b)\in R\to(b,a)\in R\, \forall a,b\in A</code></span>。用矩阵表示，就是对称矩阵。个数为 <span class="course-math" data-tex="2^{\frac{n^{2}+n}{2}}" data-display="false"><code>2^{\frac{n^{2}+n}{2}}</code></span>。
+- **反对称性（Antisymmetric）：** <span class="course-math" data-tex="(a,b)\in R \land(b,a)\in R\to a=b \, \forall a,b\in A" data-display="false"><code>(a,b)\in R \land(b,a)\in R\to a=b \, \forall a,b\in A</code></span>。用矩阵表示，就是对于 <span class="course-math" data-tex="i\neq j" data-display="false"><code>i\neq j</code></span>，<span class="course-math" data-tex="m_{ij}=1\to m_{ji}=0" data-display="false"><code>m_{ij}=1\to m_{ji}=0</code></span>。计数，主对角线上自由，所以是 <span class="course-math" data-tex="2^{n}" data-display="false"><code>2^{n}</code></span>；其他，每组对称的位置一共有三种选法：<span class="course-math" data-tex="(1,0),(0,1),(0,0)" data-display="false"><code>(1,0),(0,1),(0,0)</code></span>，一共有 <span class="course-math" data-tex="\frac{n^{2}-n}{2}" data-display="false"><code>\frac{n^{2}-n}{2}</code></span> 组，因此总的个数为 <span class="course-math" data-tex="2^{n}\cdot3^{\frac{n^{2}-n}{2}}" data-display="false"><code>2^{n}\cdot3^{\frac{n^{2}-n}{2}}</code></span>。
+- **传递性（Transitive）：** <span class="course-math" data-tex="(a,b)\in R\land(b,c)\in R\to(a,c)\in R \,\forall a,b,c\in A" data-display="false"><code>(a,b)\in R\land(b,c)\in R\to(a,c)\in R \,\forall a,b,c\in A</code></span>。
+
+自反性+对称性+传递性 得到 **等价关系（Equivalence Relation）；**
+自反性+反对称性+传递性 得到 **偏序关系（Partial Ordering Relation）。**
+
+关系之间的运算：既然关系实际上是一个集合，那么集合之间的运算（并，交，差）可以作用到关系上。
+
+**复合关系（Composite of Relations）：** <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 从 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 到 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span>；<span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 从 <span class="course-math" data-tex="B" data-display="false"><code>B</code></span> 到 <span class="course-math" data-tex="C" data-display="false"><code>C</code></span>，那么它们的复合 <span class="course-math" data-tex="S \circ R" data-display="false"><code>S \circ R</code></span> 定义为
+<span class="course-math course-math-display" data-tex="(a,b)\in R \land (b,c)\in S\to(a,c)\in S\circ R" data-display="true"><code>(a,b)\in R \land (b,c)\in S\to(a,c)\in S\circ R</code></span>
+- 从 01 矩阵的表示方法看，这相当于矩阵乘法 <span class="course-math" data-tex="M_{R}M_{S}" data-display="false"><code>M_{R}M_{S}</code></span>（这里结果大于 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 的设置为 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 即可）
+
+定义**关系的幂（power relation）**：
+<span class="course-math course-math-display" data-tex="R^{1}=R,\quad R^{n+1}=R^{n} \circ R" data-display="true"><code>R^{1}=R,\quad R^{n+1}=R^{n} \circ R</code></span>
+关于传递性，有**定理**：<span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 上的关系 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 具有传递性，当且仅当 <span class="course-math" data-tex="R^{n}\subseteq R\, \forall n=1,2,3, \dots" data-display="false"><code>R^{n}\subseteq R\, \forall n=1,2,3, \dots</code></span>。
 {% endraw %}
