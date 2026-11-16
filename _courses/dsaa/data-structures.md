@@ -5,7 +5,7 @@ course_title: "数据结构与算法分析"
 section: ""
 status: "updating"
 created_at: "2026-11-06T22:04:29+08:00"
-updated_at: "2026-11-15T18:07:01+08:00"
+updated_at: "2026-11-16T16:34:14+08:00"
 reference: false
 order: 3
 layout: "course"
@@ -438,7 +438,7 @@ Induction step:  更大的树由根节点，左子树，右子树（可能为空
 **删除操作。** 类似地，我们正常按 BST 删完之后，我们回溯搜索路径。这里不妨假设删除减少了 **左子树** 的树高（右子树是对称的）。分三种情况：
 - <span class="course-math" data-tex="bal(v)=1" data-display="false"><code>bal(v)=1</code></span>，那么只需要设 <span class="course-math" data-tex="bal(v)=0" data-display="false"><code>bal(v)=0</code></span> 即可。这里 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 子树的高度减少了，所以需要继续向上回溯。
 - <span class="course-math" data-tex="bal(v)=0" data-display="false"><code>bal(v)=0</code></span>，那么只需要设 <span class="course-math" data-tex="bal(v)=-1" data-display="false"><code>bal(v)=-1</code></span> 即可。这里 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 子树的高度没变，所以不需要再向上回溯。
-- <span class="course-math" data-tex="bal(v)=-1" data-display="false"><code>bal(v)=-1</code></span>。那么左子树会变得比右子树的树高少 <span class="course-math" data-tex="2" data-display="false"><code>2</code></span>！考虑右子树向下的搜索路径三个节点 <span class="course-math" data-tex="v,x,w" data-display="false"><code>v,x,w</code></span>。 有两种情况：
+- <span class="course-math" data-tex="bal(v)=-1" data-display="false"><code>bal(v)=-1</code></span>。那么左子树会变得比右子树的树高少 <span class="course-math" data-tex="2" data-display="false"><code>2</code></span>！考虑 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 的右孩子 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span>（也就是较高的那一侧）。有两种情况：
   - <span class="course-math" data-tex="bal(x)\in \{ -1,0 \}" data-display="false"><code>bal(x)\in \{ -1,0 \}</code></span>。那么在 <span class="course-math" data-tex="v" data-display="false"><code>v</code></span> 处向左旋转就好了。这里若 <span class="course-math" data-tex="bal(x)=0" data-display="false"><code>bal(x)=0</code></span>，那么最后 <span class="course-math" data-tex="bal(v)=-1,bal(x)=1" data-display="false"><code>bal(v)=-1,bal(x)=1</code></span>，树高没变，就不用向上回溯了。若 <span class="course-math" data-tex="bal(x)=-1" data-display="false"><code>bal(x)=-1</code></span>，那么最后 <span class="course-math" data-tex="bal(v)=bal(x)=0" data-display="false"><code>bal(v)=bal(x)=0</code></span>，还需要向上回溯，因为树高变了。<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-11.webp' | relative_url }}{% raw %}" alt="Data Structures-11" width="451" height="213" loading="lazy" decoding="async">
   - <span class="course-math" data-tex="bal(x)=1" data-display="false"><code>bal(x)=1</code></span>。需要两次旋转，旋转完也还要向上回溯。<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Data%20Structures-12.webp' | relative_url }}{% raw %}" alt="Data Structures-12" width="483" height="266" loading="lazy" decoding="async">
 {% endraw %}
