@@ -1,0 +1,260 @@
+---
+layout: default
+title: 旅行足迹
+description: Joy 去过的中国城市地图，可拖动和缩放。
+keywords: Travel, Footprint, Joy
+permalink: /footprint/
+---
+<style>
+  .footprint-summary { color: #57606a; margin: -.4em 0 1em; }
+  .footprint-summary strong { color: #222; font-size: 1.15em; }
+  .footprint-card {
+    position: relative; box-sizing: border-box;
+    border: var(--card-border); background: #fff; box-shadow: var(--card-shadow);
+  }
+  /* 卡片比例贴近整张中国地图（含南海诸岛），地图四周不留大片空白 */
+  #footprint-map { width: 100%; aspect-ratio: 1.08 / 1; max-height: 86vh; }
+  .footprint-tools {
+    position: absolute; left: .7em; bottom: .6em; right: .7em;
+    display: flex; flex-wrap: wrap; align-items: center; gap: .4em 1em;
+    font-size: .8em; color: #57606a; pointer-events: none;
+  }
+  .footprint-reset {
+    margin-left: auto; pointer-events: auto; font: inherit; color: inherit; cursor: pointer;
+    padding: .2em .7em; border: 1px solid #b8c0c8; background: #fff;
+  }
+  .footprint-reset:hover { color: #222; border-color: #8c959f; }
+  #map-status { position: absolute; top: 1em; left: 1em; right: 1em; margin: 0; }
+  .footprint-list { margin: 1.5em 0 0; padding: 0; list-style: none; columns: 2 16em; column-gap: 2em; }
+  .footprint-list li {
+    display: grid; grid-template-columns: 3.2em 1fr; column-gap: .5em;
+    break-inside: avoid; padding: .45em 0; border-bottom: 1px solid #e4e4e4;
+  }
+  .footprint-list span { color: #57606a; }
+</style>
+
+<p class="footprint-summary">
+  去过 <strong id="province-count">14</strong> 个省级行政区，<strong id="city-count">27</strong> 座城市。
+</p>
+
+<div class="footprint-card">
+  <div id="footprint-map" role="img" aria-label="Joy 的中国旅行足迹地图，可拖动和缩放"></div>
+  <p id="map-status" role="status" hidden></p>
+  <div class="footprint-tools">
+    <button class="footprint-reset" type="button" id="map-reset">复位</button>
+  </div>
+</div>
+
+<ul class="footprint-list" id="footprint-list"></ul>
+
+<script src="{{ '/assets/vendor/echarts/5.3.1/echarts.min.js' | relative_url }}"></script>
+<script>
+(function () {
+  // 去过的地方：按省份分组，每个省里第一个城市在缩小时优先显示名字。
+  // 坐标为 [经度, 纬度]。
+  var PLACES = [
+    { province: '北京市', short: '北京', cities: [['北京', 116.4074, 39.9042]] },
+    { province: '上海市', short: '上海', cities: [['上海', 121.4737, 31.2304]] },
+    { province: '重庆市', short: '重庆', cities: [['重庆', 106.5049, 29.5332]] },
+    { province: '福建省', short: '福建', cities: [
+      ['福州', 119.3062, 26.0751], ['厦门', 118.0894, 24.4798], ['泉州', 118.5894, 24.9078],
+      ['漳州', 117.6478, 24.5130], ['宁德', 119.5420, 26.6657], ['南平', 118.1784, 26.6415]] },
+    { province: '甘肃省', short: '甘肃', cities: [['兰州', 103.8343, 36.0611], ['张掖', 100.4498, 38.9259]] },
+    { province: '广东省', short: '广东', cities: [
+      ['广州', 113.2644, 23.1291], ['深圳', 114.0579, 22.5431], ['东莞', 113.7518, 23.0207],
+      ['惠州', 114.4055, 23.0791]] },
+    { province: '贵州省', short: '贵州', cities: [['贵阳', 106.6302, 26.6470]] },
+    { province: '湖南省', short: '湖南', cities: [['长沙', 112.9388, 28.2282]] },
+    { province: '青海省', short: '青海', cities: [['西宁', 101.7778, 36.6171]] },
+    { province: '浙江省', short: '浙江', cities: [['杭州', 120.1552, 30.2741], ['温州', 120.6994, 27.9991]] },
+    { province: '江西省', short: '江西', cities: [
+      ['南昌', 115.8581, 28.6832], ['九江', 115.9850, 29.7000], ['景德镇', 117.2272, 29.2901]] },
+    { province: '云南省', short: '云南', cities: [['丽江', 100.2330, 26.8721], ['香格里拉', 99.7065, 27.8253]] },
+    { province: '香港特别行政区', short: '香港', cities: [['香港', 114.1733, 22.3193]] },
+    { province: '澳门特别行政区', short: '澳门', cities: [['澳门', 113.5439, 22.1987]] }
+  ];
+
+  var COLORS = {
+    land: '#e8ebee', border: '#98a3ae', visitedBorder: '#5f84a5', outline: '#57606a',
+    dot: '#e8590c', text: '#24292f'
+  };
+  function fillFor(count) {
+    return count >= 4 ? '#74a9d8' : count >= 2 ? '#a9cdea' : '#c3dbf0';
+  }
+
+  // 城市列表（地图上挤在一起、名字被隐藏的城市，也能在这里看到）
+  var cities = [];
+  var list = document.getElementById('footprint-list');
+  PLACES.forEach(function (place) {
+    place.cities.forEach(function (city, index) {
+      cities.push({ name: city[0], value: [city[1], city[2]], province: place.province, lead: index === 0 });
+    });
+    var item = document.createElement('li');
+    var name = document.createElement('b');
+    var names = document.createElement('span');
+    name.textContent = place.short;
+    names.textContent = place.cities.map(function (city) { return city[0]; }).join('、');
+    item.append(name, names);
+    list.appendChild(item);
+  });
+  document.getElementById('province-count').textContent = PLACES.length;
+  document.getElementById('city-count').textContent = cities.length;
+  // 缩小时谁先显示名字：各省第一个城市优先，其余按列表顺序。
+  var order = cities.slice().sort(function (a, b) { return (b.lead - a.lead); });
+
+  var status = document.getElementById('map-status');
+  function showError() {
+    status.hidden = false;
+    status.textContent = '地图暂时无法加载，请刷新页面重试。';
+  }
+  if (!window.echarts) { showError(); return; }
+
+  var chart = echarts.init(document.getElementById('footprint-map'));
+  chart.showLoading({ text: '', color: COLORS.dot, maskColor: 'rgba(251, 252, 253, .8)' });
+
+  function buildOption() {
+    return {
+      animation: false,
+      tooltip: {
+        trigger: 'item', confine: true,
+        backgroundColor: '#fff', borderColor: '#8c959f', borderWidth: 1,
+        textStyle: { color: COLORS.text, fontSize: 13 },
+        extraCssText: 'border-radius: 0; box-shadow: 0 2px 6px rgba(31, 35, 40, .2);',
+        formatter: function (params) {
+          if (params.componentType === 'series') return params.name;
+          var place = PLACES.filter(function (p) { return p.province === params.name; })[0];
+          if (!place) return params.name;
+          return '<b>' + place.short + '</b><br>' + place.cities.map(function (c) { return c[0]; }).join('、');
+        }
+      },
+      geo: [{
+        // 底层：只用来画国界。每个省的粗描边一半落在省内、被上层盖住，
+        // 只有国界外侧那一半露出来，就成了一圈外轮廓，再加一点阴影。
+        map: 'china', silent: true, z: 1,
+        itemStyle: {
+          areaColor: COLORS.land, borderColor: COLORS.outline, borderWidth: 2.5,
+          shadowColor: 'rgba(31, 35, 40, .25)', shadowBlur: 8, shadowOffsetY: 2
+        },
+        emphasis: { disabled: true }
+      }, {
+        map: 'china', roam: true, z: 2,
+        // 缩得比初始还小时，城市点会挤在一起，所以只限制下限
+        scaleLimit: { min: 1, max: 24 },
+        label: { show: false },
+        itemStyle: { areaColor: COLORS.land, borderColor: COLORS.border, borderWidth: .8 },
+        emphasis: { label: { show: false }, itemStyle: { areaColor: '#dbe0e5' } },
+        select: { disabled: true },
+        tooltip: { show: true },
+        regions: PLACES.map(function (place) {
+          var fill = fillFor(place.cities.length);
+          return {
+            name: place.province,
+            itemStyle: { areaColor: fill, borderColor: COLORS.visitedBorder, borderWidth: 1 },
+            emphasis: { itemStyle: { areaColor: fill, borderColor: '#3d6f99', borderWidth: 1.5 } }
+          };
+        })
+      }].map(function (geo) {
+        // 两层位置一致；整张中国（含南海诸岛）完整放进卡片。
+        // 用 layoutCenter/layoutSize 保持经纬比例，不随卡片形状拉伸；
+        // aspectScale 约为 cos 37°，对应本土中部纬度的经纬度长度比。
+        return Object.assign({
+          layoutCenter: ['50%', '50%'], layoutSize: '96%', aspectScale: 0.8
+        }, geo);
+      }),
+      series: [{
+        type: 'scatter', coordinateSystem: 'geo', geoIndex: 1, z: 3,
+        symbolSize: 7,
+        itemStyle: { color: COLORS.dot, borderColor: '#fff', borderWidth: 1.5 },
+        emphasis: { scale: 1.6, label: { show: true } },
+        label: {
+          show: true, formatter: '{b}', position: 'right', distance: 4,
+          color: COLORS.text, fontSize: 12, fontWeight: 'bold',
+          textBorderColor: '#fff', textBorderWidth: 3
+        },
+        data: order.map(function (c) { return { name: c.name, value: c.value }; })
+      }]
+    };
+  }
+
+  // —— 标签布局 ——
+  // 每个城市的名字只放在圆点紧挨着的一圈位置（右、左、下、上和四个斜角）；
+  // 都会压到别的名字或圆点时，就不显示名字（悬停圆点仍能看到）。
+  // 每次缩放后重新计算：放大后点与点拉开，被隐藏的名字会陆续出现。
+  var measure = document.createElement('canvas').getContext('2d');
+  measure.font = 'bold 12px sans-serif';
+  var DOT = 5, H = 14, GAP = 2, D = 7;
+  var widths = order.map(function (c) { return measure.measureText(c.name).width + 4; });
+  // [ECharts 的 position, 额外偏移, 文字框相对圆点的左上角]
+  var SPOTS = [
+    ['right', [0, 0], function (w) { return [D, -H / 2]; }],
+    ['left', [0, 0], function (w) { return [-D - w, -H / 2]; }],
+    ['bottom', [0, 0], function (w) { return [-w / 2, D - 2]; }],
+    ['top', [0, 0], function (w) { return [-w / 2, -D + 2 - H]; }],
+    ['right', [-2, -9], function (w) { return [D - 2, -H / 2 - 9]; }],
+    ['right', [-2, 9], function (w) { return [D - 2, -H / 2 + 9]; }],
+    ['left', [2, -9], function (w) { return [-D + 2 - w, -H / 2 - 9]; }],
+    ['left', [2, 9], function (w) { return [-D + 2 - w, -H / 2 + 9]; }]
+  ];
+  function overlaps(a, b) {
+    return a.x < b.x + b.w + GAP && b.x < a.x + a.w + GAP && a.y < b.y + b.h + GAP && b.y < a.y + a.h + GAP;
+  }
+  function layoutLabels() {
+    var width = chart.getWidth(), height = chart.getHeight();
+    var points = order.map(function (c) { return chart.convertToPixel({ geoIndex: 1 }, c.value); });
+    if (!points[0]) return;
+    var dots = points.map(function (p) { return { x: p[0] - DOT, y: p[1] - DOT, w: 2 * DOT, h: 2 * DOT }; });
+    var placed = [];
+    var data = order.map(function (c, i) {
+      var spot = null;
+      for (var s = 0; s < SPOTS.length && !spot; s++) {
+        var at = SPOTS[s][2](widths[i]);
+        var box = { x: points[i][0] + at[0], y: points[i][1] + at[1], w: widths[i], h: H };
+        if (box.x < 0 || box.y < 0 || box.x + box.w > width || box.y + box.h > height) continue;
+        var clear = placed.every(function (b) { return !overlaps(box, b); }) &&
+          dots.every(function (d, j) { return j === i || !overlaps(box, d); });
+        if (clear) { spot = SPOTS[s]; placed.push(box); }
+      }
+      return {
+        name: c.name, value: c.value,
+        label: spot ? { show: true, position: spot[0], offset: spot[1] } : { show: false }
+      };
+    });
+    chart.setOption({ series: [{ data: data }] });
+  }
+
+  var timer = null;
+  function relayout() {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(function () { timer = null; layoutLabels(); }, 100);
+  }
+
+  fetch({{ '/reports/100000_full.json' | relative_url | jsonify }})
+    .then(function (response) {
+      if (!response.ok) throw new Error('HTTP ' + response.status);
+      return response.json();
+    })
+    .then(function (geoJson) {
+      chart.hideLoading();
+      echarts.registerMap('china', geoJson);
+      chart.setOption(buildOption());
+      // 地图第一次画完才有准确的像素坐标，下一帧再摆名字
+      requestAnimationFrame(function () { requestAnimationFrame(layoutLabels); });
+      chart.on('georoam', function () {
+        // 只有上层可拖动缩放，底层的国界轮廓跟着它走
+        var top = chart.getOption().geo[1];
+        chart.setOption({ geo: [{ zoom: top.zoom, center: top.center }] });
+        relayout();
+      });
+      document.getElementById('map-reset').addEventListener('click', function () {
+        chart.setOption(buildOption(), true);
+        requestAnimationFrame(layoutLabels);
+      });
+      window.addEventListener('resize', function () { chart.resize(); relayout(); });
+    })
+    .catch(function (error) {
+      chart.hideLoading();
+      showError();
+      console.error('Map failed to load:', error);
+    });
+}());
+</script>

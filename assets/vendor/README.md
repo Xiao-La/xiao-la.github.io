@@ -16,7 +16,7 @@ The site uses local copies of these pinned packages, so pages need no CDN.
   by Andrey V. Panov), SIL Open Font License 1.1, converted from the plugin's
   TTF files to WOFF2 without other changes.
 - Apache ECharts **5.3.1**, Apache-2.0: `echarts/5.3.1/echarts.min.js` from npm
-  `echarts@5.3.1`, used by `reports/202508footprint.html`.
+  `echarts@5.3.1`, used by `pages/footprint.html`.
   Upstream: <https://github.com/apache/echarts>.
 
 The third-party directories include the upstream license and are unmodified.

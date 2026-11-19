@@ -24,4 +24,4 @@ permalink: /about/
 
 - 一些学术、技术问题的讨论
 
-你可以在[这里]({{ '/reports/202508footprint.html' | relative_url }})看到我曾旅游过的中国的城市。
+你可以在[这里]({{ '/footprint/' | relative_url }})看到我曾旅游过的中国的城市。
