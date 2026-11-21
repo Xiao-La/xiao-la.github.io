@@ -183,7 +183,7 @@
         "section": "下",
         "status": "completed",
         "created_at": "2026-05-29T17:22:15+08:00",
-        "updated_at": "2026-10-13T11:49:54+08:00",
+        "updated_at": "2026-11-18T17:43:16+08:00",
         "reference": false,
         "order": 15
       },
@@ -903,7 +903,7 @@
     "coverage": "持续补充",
     "status": "updating",
     "url": "/courses/probability-statistics/",
-    "count": 5,
+    "count": 6,
     "notes": [
       {
         "title": "Probability Basic - 概率基础",
@@ -961,9 +961,21 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-11-11T16:20:45+08:00",
-        "updated_at": "2026-11-13T14:14:44+08:00",
+        "updated_at": "2026-11-21T13:27:50+08:00",
         "reference": false,
         "order": 5
+      },
+      {
+        "title": "Statistics Basic - 统计基础",
+        "url": "/courses/probability-statistics/statistics-basic/",
+        "course_id": "probability-statistics",
+        "course_title": "概率与统计",
+        "section": "",
+        "status": "updating",
+        "created_at": "2026-11-20T18:00:00+08:00",
+        "updated_at": "2026-11-20T18:11:00+08:00",
+        "reference": false,
+        "order": 6
       }
     ],
     "resources": []
@@ -1057,7 +1069,7 @@
     "coverage": "持续补充",
     "status": "updating",
     "url": "/courses/digital-logic/",
-    "count": 5,
+    "count": 6,
     "notes": [
       {
         "title": "Number Systems - 数字系统",
@@ -1096,8 +1108,8 @@
         "order": 3
       },
       {
-        "title": "Standard Component - 标准组件",
-        "url": "/courses/digital-logic/standard-component/",
+        "title": "Standard Component 1 - 标准组件（组合电路）",
+        "url": "/courses/digital-logic/standard-component-1/",
         "course_id": "digital-logic",
         "course_title": "数字逻辑",
         "section": "",
@@ -1115,9 +1127,21 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-10-20T15:28:58+08:00",
-        "updated_at": "2026-11-13T20:14:57+08:00",
+        "updated_at": "2026-11-17T14:27:29+08:00",
         "reference": false,
         "order": 5
+      },
+      {
+        "title": "Standard Component 2 - 标准组件（时序电路）",
+        "url": "/courses/digital-logic/standard-component-2/",
+        "course_id": "digital-logic",
+        "course_title": "数字逻辑",
+        "section": "",
+        "status": "updating",
+        "created_at": "2026-11-17T14:28:13+08:00",
+        "updated_at": "2026-11-17T15:50:14+08:00",
+        "reference": false,
+        "order": 6
       }
     ],
     "resources": []
@@ -1128,7 +1152,7 @@
     "coverage": "持续补充",
     "status": "updating",
     "url": "/courses/dsaa/",
-    "count": 3,
+    "count": 4,
     "notes": [
       {
         "title": "Introduction",
@@ -1165,6 +1189,18 @@
         "updated_at": "2026-11-16T16:34:14+08:00",
         "reference": false,
         "order": 3
+      },
+      {
+        "title": "Dynamic Programming",
+        "url": "/courses/dsaa/dynamic-programming/",
+        "course_id": "dsaa",
+        "course_title": "数据结构与算法分析",
+        "section": "",
+        "status": "updating",
+        "created_at": "2026-11-17T16:46:38+08:00",
+        "updated_at": "2026-11-21T13:27:50+08:00",
+        "reference": false,
+        "order": 4
       }
     ],
     "resources": []

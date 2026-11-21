@@ -5,7 +5,7 @@ course_title: "数字逻辑"
 section: ""
 status: "updating"
 created_at: "2026-10-20T15:28:58+08:00"
-updated_at: "2026-11-13T20:14:57+08:00"
+updated_at: "2026-11-17T14:27:29+08:00"
 reference: false
 order: 5
 layout: "course"

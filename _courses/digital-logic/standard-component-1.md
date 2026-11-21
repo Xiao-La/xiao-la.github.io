@@ -1,5 +1,5 @@
 ---
-title: "Standard Component - 标准组件"
+title: "Standard Component 1 - 标准组件（组合电路）"
 course_id: "digital-logic"
 course_title: "数字逻辑"
 section: ""
@@ -9,11 +9,11 @@ updated_at: "2026-11-13T20:14:57+08:00"
 reference: false
 order: 4
 layout: "course"
-permalink: "/courses/digital-logic/standard-component/"
+permalink: "/courses/digital-logic/standard-component-1/"
 course_page: true
 doc_type: "note"
-description: "数字逻辑 · Standard Component - 标准组件"
-excerpt: "数字逻辑 · Standard Component - 标准组件"
+description: "数字逻辑 · Standard Component 1 - 标准组件（组合电路）"
+excerpt: "数字逻辑 · Standard Component 1 - 标准组件（组合电路）"
 ---
 
 {% raw %}
