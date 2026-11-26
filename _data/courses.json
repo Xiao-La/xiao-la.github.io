@@ -27,7 +27,7 @@
         "section": "上",
         "status": "completed",
         "created_at": "2025-10-23T11:02:29+08:00",
-        "updated_at": "2026-10-09T16:13:40+08:00",
+        "updated_at": "2026-11-24T15:23:17+08:00",
         "reference": false,
         "order": 2
       },
@@ -973,7 +973,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-11-20T18:00:00+08:00",
-        "updated_at": "2026-11-20T18:11:00+08:00",
+        "updated_at": "2026-11-26T17:47:00+08:00",
         "reference": false,
         "order": 6
       }
@@ -986,7 +986,7 @@
     "coverage": "持续补充",
     "status": "updating",
     "url": "/courses/discrete-mathematics/",
-    "count": 6,
+    "count": 7,
     "notes": [
       {
         "title": "Set and Function - 集合与函数",
@@ -996,7 +996,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-09-03T17:09:42+08:00",
-        "updated_at": "2026-11-16T17:32:21+08:00",
+        "updated_at": "2026-11-26T17:48:19+08:00",
         "reference": false,
         "order": 1
       },
@@ -1059,6 +1059,18 @@
         "updated_at": "2026-11-13T14:14:44+08:00",
         "reference": false,
         "order": 6
+      },
+      {
+        "title": "Graph Theorem - 图论",
+        "url": "/courses/discrete-mathematics/graph-theorem/",
+        "course_id": "discrete-mathematics",
+        "course_title": "离散数学",
+        "section": "",
+        "status": "updating",
+        "created_at": "2026-11-25T20:35:00+08:00",
+        "updated_at": "2026-11-26T17:46:44+08:00",
+        "reference": false,
+        "order": 7
       }
     ],
     "resources": []
@@ -1091,7 +1103,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-09-15T14:47:35+08:00",
-        "updated_at": "2026-11-13T20:14:57+08:00",
+        "updated_at": "2026-11-24T15:50:20+08:00",
         "reference": false,
         "order": 2
       },
@@ -1139,7 +1151,7 @@
         "section": "",
         "status": "updating",
         "created_at": "2026-11-17T14:28:13+08:00",
-        "updated_at": "2026-11-17T15:50:14+08:00",
+        "updated_at": "2026-11-26T17:46:44+08:00",
         "reference": false,
         "order": 6
       }
@@ -1152,7 +1164,7 @@
     "coverage": "持续补充",
     "status": "updating",
     "url": "/courses/dsaa/",
-    "count": 4,
+    "count": 5,
     "notes": [
       {
         "title": "Introduction",
@@ -1201,6 +1213,18 @@
         "updated_at": "2026-11-21T13:27:50+08:00",
         "reference": false,
         "order": 4
+      },
+      {
+        "title": "Greedy Algorithms",
+        "url": "/courses/dsaa/greedy-algorithms/",
+        "course_id": "dsaa",
+        "course_title": "数据结构与算法分析",
+        "section": "",
+        "status": "updating",
+        "created_at": "2026-11-24T16:37:06+08:00",
+        "updated_at": "2026-11-26T17:46:44+08:00",
+        "reference": false,
+        "order": 5
       }
     ],
     "resources": []

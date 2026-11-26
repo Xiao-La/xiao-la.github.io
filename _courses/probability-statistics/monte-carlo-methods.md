@@ -18,7 +18,7 @@ excerpt: "概率与统计 · Monte Carlo Methods - 蒙特卡洛方法"
 
 {% raw %}
 - 来源：Monte Carlo Casino（Monaco）
-
+
 蒙特卡洛算法，是通过大量重复随机抽样来求解数值近似解的方法。
 
 

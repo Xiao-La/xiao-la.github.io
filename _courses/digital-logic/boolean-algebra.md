@@ -5,7 +5,7 @@ course_title: "数字逻辑"
 section: ""
 status: "updating"
 created_at: "2026-09-15T14:47:35+08:00"
-updated_at: "2026-11-13T20:14:57+08:00"
+updated_at: "2026-11-24T15:50:20+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -160,4 +160,18 @@ Essential prime implicant（EPI, 基本质蕴含）：当 Minterm 只被一个 P
 那么我们优先圈 EPI。
 
 **Don't Care Condition：** 在电路中有些位不涉及到输入输出，它们是 0 是 1 无所谓，所以卡诺图里面可以把它们用 X 表示代替 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span> 或 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span>。
+
+
+## Universal Gates
+{: #section-4 }
+
+
+所有的 Gate 都可以只用 NAND 或者只用 NOR 实现。
+- 从代数上看，NAND 的形式就是 <span class="course-math" data-tex="(FG)&#x27;" data-display="false"><code>(FG)&#x27;</code></span>。
+- 非门：<span class="course-math" data-tex="F=A&#x27;=(AA)&#x27;" data-display="false"><code>F=A&#x27;=(AA)&#x27;</code></span>。
+- 与门：<span class="course-math" data-tex="F=AB=((AB)&#x27;)&#x27;=((AB)&#x27;(AB)&#x27;)&#x27;" data-display="false"><code>F=AB=((AB)&#x27;)&#x27;=((AB)&#x27;(AB)&#x27;)&#x27;</code></span>
+- 或门：<span class="course-math" data-tex="F=A+B=((A+B)&#x27;)&#x27;=(A&#x27;B&#x27;)&#x27;=((AA)&#x27;(BB)&#x27;)&#x27;" data-display="false"><code>F=A+B=((A+B)&#x27;)&#x27;=(A&#x27;B&#x27;)&#x27;=((AA)&#x27;(BB)&#x27;)&#x27;</code></span>
+- 异或：
+  - 一种方式：<span class="course-math" data-tex="F=AB&#x27;+A&#x27;B=((AB&#x27;+A&#x27;B)&#x27;)&#x27;=((A&#x27;+B)(A+B&#x27;))&#x27;=\dots" data-display="false"><code>F=AB&#x27;+A&#x27;B=((AB&#x27;+A&#x27;B)&#x27;)&#x27;=((A&#x27;+B)(A+B&#x27;))&#x27;=\dots</code></span>
+  - 另一种方式：<span class="course-math" data-tex="F=AB&#x27;+A&#x27;B+AA&#x27;+BB&#x27;=\dots=((A(AB)&#x27;)&#x27;(B(AB)&#x27;)&#x27;)&#x27;" data-display="false"><code>F=AB&#x27;+A&#x27;B+AA&#x27;+BB&#x27;=\dots=((A(AB)&#x27;)&#x27;(B(AB)&#x27;)&#x27;)&#x27;</code></span>
 {% endraw %}

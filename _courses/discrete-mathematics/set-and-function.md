@@ -5,7 +5,7 @@ course_title: "离散数学"
 section: ""
 status: "updating"
 created_at: "2026-09-03T17:09:42+08:00"
-updated_at: "2026-11-16T17:32:21+08:00"
+updated_at: "2026-11-26T17:48:19+08:00"
 reference: false
 order: 1
 layout: "course"
@@ -55,8 +55,6 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 **Schroder-Bernstein Theorem**：
 <span class="course-math course-math-display" data-tex="(\lvert A \rvert \leq \lvert B \rvert\land\lvert B \rvert \leq \lvert A \rvert )\to \lvert A \rvert =\lvert B \rvert" data-display="true"><code>(\lvert A \rvert \leq \lvert B \rvert\land\lvert B \rvert \leq \lvert A \rvert )\to \lvert A \rvert =\lvert B \rvert</code></span>
 这可以让证明等势从找双射，变成找两个单射就好了。
-
-**Disjoint Union（<span class="course-math" data-tex="\sqcup" data-display="false"><code>\sqcup</code></span>）**：先标记两个集合，再做并集。例如，<span class="course-math" data-tex="A=\{ 1,2 \},B=\{ 2,3 \}" data-display="false"><code>A=\{ 1,2 \},B=\{ 2,3 \}</code></span>，那么 <span class="course-math" data-tex="A\sqcup B=A^*\cup B^*=\{ (1,1),(2,1) \}\cup \{ (2,2),(3,2) \}= \{ (1,1),(2,1),(2,2),(3,2) \}" data-display="false"><code>A\sqcup B=A^*\cup B^*=\{ (1,1),(2,1) \}\cup \{ (2,2),(3,2) \}= \{ (1,1),(2,1),(2,2),(3,2) \}</code></span>。
 
 定义幂集（Power set）<span class="course-math" data-tex="\mathcal{P}(S)" data-display="false"><code>\mathcal{P}(S)</code></span>：所有 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 的子集组成的集合。
 - <span class="course-math" data-tex="\mathcal{P}(\varnothing)=\{ \varnothing \}" data-display="false"><code>\mathcal{P}(\varnothing)=\{ \varnothing \}</code></span>
@@ -224,10 +222,75 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 - **反自反性（Irreflexive）：** <span class="course-math" data-tex="(a,a)\notin R\, \forall a\in A" data-display="false"><code>(a,a)\notin R\, \forall a\in A</code></span>。用矩阵表示，就是对角线上全 <span class="course-math" data-tex="0" data-display="false"><code>0</code></span>。个数为 <span class="course-math" data-tex="2^{n^{2}-n}" data-display="false"><code>2^{n^{2}-n}</code></span> 种。
 - **对称性（Symmetric）：** <span class="course-math" data-tex="(a,b)\in R\to(b,a)\in R\, \forall a,b\in A" data-display="false"><code>(a,b)\in R\to(b,a)\in R\, \forall a,b\in A</code></span>。用矩阵表示，就是对称矩阵。个数为 <span class="course-math" data-tex="2^{\frac{n^{2}+n}{2}}" data-display="false"><code>2^{\frac{n^{2}+n}{2}}</code></span>。
 - **反对称性（Antisymmetric）：** <span class="course-math" data-tex="(a,b)\in R \land(b,a)\in R\to a=b \, \forall a,b\in A" data-display="false"><code>(a,b)\in R \land(b,a)\in R\to a=b \, \forall a,b\in A</code></span>。用矩阵表示，就是对于 <span class="course-math" data-tex="i\neq j" data-display="false"><code>i\neq j</code></span>，<span class="course-math" data-tex="m_{ij}=1\to m_{ji}=0" data-display="false"><code>m_{ij}=1\to m_{ji}=0</code></span>。计数，主对角线上自由，所以是 <span class="course-math" data-tex="2^{n}" data-display="false"><code>2^{n}</code></span>；其他，每组对称的位置一共有三种选法：<span class="course-math" data-tex="(1,0),(0,1),(0,0)" data-display="false"><code>(1,0),(0,1),(0,0)</code></span>，一共有 <span class="course-math" data-tex="\frac{n^{2}-n}{2}" data-display="false"><code>\frac{n^{2}-n}{2}</code></span> 组，因此总的个数为 <span class="course-math" data-tex="2^{n}\cdot3^{\frac{n^{2}-n}{2}}" data-display="false"><code>2^{n}\cdot3^{\frac{n^{2}-n}{2}}</code></span>。
-- **传递性（Transitive）：** <span class="course-math" data-tex="(a,b)\in R\land(b,c)\in R\to(a,c)\in R \,\forall a,b,c\in A" data-display="false"><code>(a,b)\in R\land(b,c)\in R\to(a,c)\in R \,\forall a,b,c\in A</code></span>。
+- **传递性（Transitive）：** <span class="course-math" data-tex="(a,b)\in R\land(b,c)\in R\to(a,c)\in R \,\forall a,b,c\in A" data-display="false"><code>(a,b)\in R\land(b,c)\in R\to(a,c)\in R \,\forall a,b,c\in A</code></span>。
 
-自反性+对称性+传递性 得到 **等价关系（Equivalence Relation）；**
-自反性+反对称性+传递性 得到 **偏序关系（Partial Ordering Relation）。**
+### 等价关系
+{: #section-6 }
+
+
+具有 自反性+对称性+传递性 的关系就是 **等价关系（Equivalence Relation）。**
+例如，模 <span class="course-math" data-tex="m" data-display="false"><code>m</code></span> 同余就是等价关系。
+
+若 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 是 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 上的等价关系，所有与 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 有关系的元素组成的集合叫做 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 的等价类（Equivalence Class），记作 <span class="course-math" data-tex="[a]_{R}" data-display="false"><code>[a]_{R}</code></span>。如果只考虑一个关系，可以直接记作 <span class="course-math" data-tex="[a]" data-display="false"><code>[a]</code></span>。
+<span class="course-math course-math-display" data-tex="[a]_{R}=\{ b:(a,b)\in R \}" data-display="true"><code>[a]_{R}=\{ b:(a,b)\in R \}</code></span>
+所有等价类的 disjoint union 就是原集合 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span>。
+
+定理：若 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 是 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 上的等价关系，那么以下是等价的：
+1. <span class="course-math" data-tex="aRb" data-display="false"><code>aRb</code></span>
+2. <span class="course-math" data-tex="[a]=[b]" data-display="false"><code>[a]=[b]</code></span>
+3. <span class="course-math" data-tex="[a]\cap[b]\neq \varnothing" data-display="false"><code>[a]\cap[b]\neq \varnothing</code></span>。
+证明：
+- <span class="course-math" data-tex="1\implies2" data-display="false"><code>1\implies2</code></span>：若 <span class="course-math" data-tex="x\in[a]" data-display="false"><code>x\in[a]</code></span>，那么 <span class="course-math" data-tex="(a,x)\in R" data-display="false"><code>(a,x)\in R</code></span>，于是 <span class="course-math" data-tex="(x,a)\in R" data-display="false"><code>(x,a)\in R</code></span>，由于 <span class="course-math" data-tex="(a,b)\in R" data-display="false"><code>(a,b)\in R</code></span>，那么有 <span class="course-math" data-tex="(x,b)\in R" data-display="false"><code>(x,b)\in R</code></span>，于是 <span class="course-math" data-tex="(b,x)\in R" data-display="false"><code>(b,x)\in R</code></span>，也就是说 <span class="course-math" data-tex="x\in[b]" data-display="false"><code>x\in[b]</code></span>，所以 <span class="course-math" data-tex="[a]\subseteq [b]" data-display="false"><code>[a]\subseteq [b]</code></span>。由对称性，<span class="course-math" data-tex="[b]\subseteq[a]" data-display="false"><code>[b]\subseteq[a]</code></span>。于是 <span class="course-math" data-tex="[a]=[b]" data-display="false"><code>[a]=[b]</code></span>。
+- <span class="course-math" data-tex="2\implies3" data-display="false"><code>2\implies3</code></span>：由 2，得到 <span class="course-math" data-tex="[a] \cap[b]=[a]=[b]" data-display="false"><code>[a] \cap[b]=[a]=[b]</code></span>。由自反性，<span class="course-math" data-tex="(a,a)\in R" data-display="false"><code>(a,a)\in R</code></span>，于是 <span class="course-math" data-tex="a\in [a]" data-display="false"><code>a\in [a]</code></span>。那么 <span class="course-math" data-tex="[a]\cap[b]\neq \varnothing" data-display="false"><code>[a]\cap[b]\neq \varnothing</code></span>。
+- <span class="course-math" data-tex="3\implies1" data-display="false"><code>3\implies1</code></span>。不失一般性，设 <span class="course-math" data-tex="c\in[a]\cap[b]" data-display="false"><code>c\in[a]\cap[b]</code></span>，那么有 <span class="course-math" data-tex="(a,c),(b,c)\in R" data-display="false"><code>(a,c),(b,c)\in R</code></span>，于是 <span class="course-math" data-tex="(c,b)\in R" data-display="false"><code>(c,b)\in R</code></span>，从而 <span class="course-math" data-tex="(a,b)\in R" data-display="false"><code>(a,b)\in R</code></span>，也就是说 <span class="course-math" data-tex="aRb" data-display="false"><code>aRb</code></span>。
+
+定义 **划分（partition）：** 集合 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 一些非空子集 <span class="course-math" data-tex="A_{1},A_{2}, \dots, A_{k}" data-display="false"><code>A_{1},A_{2}, \dots, A_{k}</code></span> 是 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 的一个划分，若：
+<span class="course-math course-math-display" data-tex="A_{i}\cap A_{j}=\varnothing,i\neq j,\quad \bigcup _{i=1}^{k}A_{i}=S" data-display="true"><code>A_{i}\cap A_{j}=\varnothing,i\neq j,\quad \bigcup _{i=1}^{k}A_{i}=S</code></span>
+定理：若 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 是 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 上的等价关系，那么 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的所有等价类是 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的一个划分。
+- 并起来是 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span>：这个显然，因为 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 里的每个元素都在它自己的等价类里。
+- 由上面的定理，如果两个元素的等价类有交集，那么它们就是同一个等价类。
+
+
+###  偏序
+{: #section-7 }
+
+
+具有 自反性+反对称性+传递性 的关系就是 **偏序（Partial Ordering）。**
+一个带有偏序 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的集合 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 叫做偏序集（Partially Ordered Set / poset），记作 <span class="course-math" data-tex="(S,R)" data-display="false"><code>(S,R)</code></span>。
+例如 <span class="course-math" data-tex="(\mathbb{R}, \geq)" data-display="false"><code>(\mathbb{R}, \geq)</code></span> 是一个偏序集。正整数上的整除关系也是偏序。
+
+**可比性（Comparability）：** 在一个偏序集 <span class="course-math" data-tex="(S,\preceq)" data-display="false"><code>(S,\preceq)</code></span> 中的两个元素 <span class="course-math" data-tex="a,b" data-display="false"><code>a,b</code></span> 是可比的（Comparable），若 <span class="course-math" data-tex="a\preceq b" data-display="false"><code>a\preceq b</code></span> 或 <span class="course-math" data-tex="b\preceq a" data-display="false"><code>b\preceq a</code></span> 至少有一个成立。
+
+**全序（Total Ordering）：** 在一个偏序集 <span class="course-math" data-tex="(S,\preceq)" data-display="false"><code>(S,\preceq)</code></span> 中的任意两个元素 <span class="course-math" data-tex="a,b" data-display="false"><code>a,b</code></span> 都是可比的。那么说 <span class="course-math" data-tex="\preceq" data-display="false"><code>\preceq</code></span> 是全序，<span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 是全序集（Totally Ordered Set / Linearly Ordered Set），也叫链（Chain）。
+
+**字典序（Lexicographic Ordering）：** 有两个偏序集 <span class="course-math" data-tex="(A_{1},\preceq _{1})" data-display="false"><code>(A_{1},\preceq _{1})</code></span> 和 <span class="course-math" data-tex="(A_{2},\preceq _{2})" data-display="false"><code>(A_{2},\preceq _{2})</code></span>，那么称 <span class="course-math" data-tex="A_{1}\times A_{2}" data-display="false"><code>A_{1}\times A_{2}</code></span> 上的字典序 <span class="course-math" data-tex="(a_{1},a_{2})\preceq (b_{1},b_{2})" data-display="false"><code>(a_{1},a_{2})\preceq (b_{1},b_{2})</code></span>，定义为要么 <span class="course-math" data-tex="a_{1} \prec _{1}b_{1}" data-display="false"><code>a_{1} \prec _{1}b_{1}</code></span>，要么 <span class="course-math" data-tex="a_{1}=b_{1}" data-display="false"><code>a_{1}=b_{1}</code></span> 且 <span class="course-math" data-tex="a_{2}\preceq _{2} b_{2}" data-display="false"><code>a_{2}\preceq _{2} b_{2}</code></span>。
+
+**Hasse Diagram：** 去掉偏序的有向图表示中：
+- 去掉由自反性得到的边，也就是自环。
+- 去掉由传递性得到的边，也就是去掉 <span class="course-math" data-tex="(x,y)" data-display="false"><code>(x,y)</code></span> 若存在 <span class="course-math" data-tex="z" data-display="false"><code>z</code></span> 使得有边 <span class="course-math" data-tex="(x,z)" data-display="false"><code>(x,z)</code></span> 和 <span class="course-math" data-tex="(z,y)" data-display="false"><code>(z,y)</code></span>。
+- 去掉箭头，把箭头起始的点放在指向的点的 **下方** 来表示序。
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20and%20Function%20-%20%E9%9B%86%E5%90%88%E4%B8%8E%E5%87%BD%E6%95%B0-3.webp' | relative_url }}{% raw %}" alt="Set and Function - 集合与函数-3" width="277" height="194" loading="lazy" decoding="async">
+定义 <span class="course-math" data-tex="(S,\preceq)" data-display="false"><code>(S,\preceq)</code></span> 的 **极大/极小元（Maximal / Minimal Element） <span class="course-math" data-tex="a" data-display="false"><code>a</code></span>：**  不存在 <span class="course-math" data-tex="b\in S" data-display="false"><code>b\in S</code></span> 使得 <span class="course-math" data-tex="a\prec b" data-display="false"><code>a\prec b</code></span> / <span class="course-math" data-tex="b\prec a" data-display="false"><code>b\prec a</code></span>。
+定义 <span class="course-math" data-tex="(S,\preceq)" data-display="false"><code>(S,\preceq)</code></span> 的  **最大/最小元（Greatest / Least Element）<span class="course-math" data-tex="a" data-display="false"><code>a</code></span>：** 任意 <span class="course-math" data-tex="b\in S" data-display="false"><code>b\in S</code></span> 都有 <span class="course-math" data-tex="b\preceq a" data-display="false"><code>b\preceq a</code></span> / <span class="course-math" data-tex="a \preceq b" data-display="false"><code>a \preceq b</code></span>。
+可以用 Hasse Diagram 来找这些。
+
+定义 **上界/下界（Upper Bound / Lower Bound）：** 考虑 <span class="course-math" data-tex="(S,\preceq)" data-display="false"><code>(S,\preceq)</code></span> 的子集 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span>，那么我们说 <span class="course-math" data-tex="u\in S" data-display="false"><code>u\in S</code></span> 是 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 的一个上界，如果 <span class="course-math" data-tex="a\preceq u" data-display="false"><code>a\preceq u</code></span> 对任意 <span class="course-math" data-tex="a\in A" data-display="false"><code>a\in A</code></span>。（下界类似）
+进一步可以定义 **最小上界/最大下界（Least upper bound / greatest lower bound）**。
+
+定义 **良序集（Well-Ordered Set）：** <span class="course-math" data-tex="(S,\preceq)" data-display="false"><code>(S,\preceq)</code></span> 的每个非空子集都有**最小元**。
+
+良序集上可以用归纳法（The principle of well-ordered induction）：
+- Inductive Step：对任意 <span class="course-math" data-tex="y\in S" data-display="false"><code>y\in S</code></span>，若 <span class="course-math" data-tex="P(x)" data-display="false"><code>P(x)</code></span> 对任意 <span class="course-math" data-tex="x\in S,x\prec y" data-display="false"><code>x\in S,x\prec y</code></span> 成立，则 <span class="course-math" data-tex="P(y)" data-display="false"><code>P(y)</code></span> 成立。
+（证明：考虑所有反例组成的集合，一定会有一个最小元，根据 I.S. 这个最小元将会成立）
+（不需要 Base Case，因为 I.S. 可以直接推出最小元成立）
+
+定义 **格（Lattice）：** 一个偏序集，其中每一对元素都有最小上界和最大下界。这里第一幅图就是格，第二幅图不是格。
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20and%20Function%20-%20%E9%9B%86%E5%90%88%E4%B8%8E%E5%87%BD%E6%95%B0-4.webp' | relative_url }}{% raw %}" alt="Set and Function - 集合与函数-4" width="380" height="256" loading="lazy" decoding="async">
+有限偏序集上的 **拓扑排序（Topological Sorting）：** 不断取出某个极小元素。这就得到了一个全序。
+
+### 关系运算
+{: #section-8 }
+
 
 关系之间的运算：既然关系实际上是一个集合，那么集合之间的运算（并，交，差）可以作用到关系上。
 
@@ -238,4 +301,108 @@ excerpt: "离散数学 · Set and Function - 集合与函数"
 定义**关系的幂（power relation）**：
 <span class="course-math course-math-display" data-tex="R^{1}=R,\quad R^{n+1}=R^{n} \circ R" data-display="true"><code>R^{1}=R,\quad R^{n+1}=R^{n} \circ R</code></span>
 关于传递性，有**定理**：<span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 上的关系 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 具有传递性，当且仅当 <span class="course-math" data-tex="R^{n}\subseteq R\, \forall n=1,2,3, \dots" data-display="false"><code>R^{n}\subseteq R\, \forall n=1,2,3, \dots</code></span>。
+证明：
+- “当”：令 <span class="course-math" data-tex="n=2" data-display="false"><code>n=2</code></span>，那么有 <span class="course-math" data-tex="R^{2}\subseteq R" data-display="false"><code>R^{2}\subseteq R</code></span>，按照定义，<span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 具有传递性。
+- “仅当”：数学归纳法。
+  - Base Case： <span class="course-math" data-tex="n=1" data-display="false"><code>n=1</code></span> 时， <span class="course-math" data-tex="R^{1}\subseteq R" data-display="false"><code>R^{1}\subseteq R</code></span> 显然成立。
+  - I.H.：<span class="course-math" data-tex="R^{n}\subseteq R" data-display="false"><code>R^{n}\subseteq R</code></span>。
+  - I.S.：<span class="course-math" data-tex="R^{n+1}=R^{n}\circ R" data-display="false"><code>R^{n+1}=R^{n}\circ R</code></span>。由定义，对于任意 <span class="course-math" data-tex="(a,b)\in R^{n+1}" data-display="false"><code>(a,b)\in R^{n+1}</code></span>，存在 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 使得 <span class="course-math" data-tex="(a,x)\in R" data-display="false"><code>(a,x)\in R</code></span>，以及 <span class="course-math" data-tex="(x,b)\in R^{n}\subseteq R" data-display="false"><code>(x,b)\in R^{n}\subseteq R</code></span>。那么由 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的传递性，<span class="course-math" data-tex="(a,b)\in R" data-display="false"><code>(a,b)\in R</code></span>。于是 <span class="course-math" data-tex="R^{n+1}\subseteq R" data-display="false"><code>R^{n+1}\subseteq R</code></span>。
+
+
+### 表示关系
+{: #section-9 }
+
+
+表示 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 元关系的方式：
+- 用显式的列表/表格存它的元组。这就是一个关系数据库（Relational Database）。
+- 用一个从定义域到 <span class="course-math" data-tex="\{ T,F \}" data-display="false"><code>\{ T,F \}</code></span> 上的函数表示。
+表示二元关系的方式：
+- 零一矩阵。
+- 有向图。
+<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20and%20Function%20-%20%E9%9B%86%E5%90%88%E4%B8%8E%E5%87%BD%E6%95%B0-1.webp' | relative_url }}{% raw %}" alt="Set and Function - 集合与函数-1" width="504" height="149" loading="lazy" decoding="async">
+
+### 闭包（Closures of Relations）
+{: #section-10 }
+
+
+**定义。** <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 是 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的**自反闭包**（Reflexive Closure of <span class="course-math" data-tex="R" data-display="false"><code>R</code></span>），当：
+- <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 包含 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span>。
+- <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 是自反的。
+- <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 是最小的（对所有包含 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的自反关系 <span class="course-math" data-tex="Q" data-display="false"><code>Q</code></span>，有 <span class="course-math" data-tex="S\subseteq Q" data-display="false"><code>S\subseteq Q</code></span>）。
+
+对于其他性质，也可以类似地定义：
+- **对称闭包**（Symmetric Closure）
+- **传递闭包**（Transitive Closure）
+
+反自反和反对称不可以定义闭包，因为不能通过添加元素让性质满足。
+一般的，可以定义关系 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 关于性质 <span class="course-math" data-tex="P" data-display="false"><code>P</code></span> 的闭包：最小的包含 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 且满足性质 <span class="course-math" data-tex="P" data-display="false"><code>P</code></span> 的集合 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span>。
+
+自反闭包和对称闭包是容易找的，添加主对角线/对称位置缺失的部分即可。
+而传递闭包没那么直观，可以看有向图：找传递闭包，就相当于在有向图中，把所有连通的 pair 加进去。
+
+定义有向图中的路径（Path）是一系列边 <span class="course-math" data-tex="(x_{0},x_{1}),(x_{1},x_{2}), \dots, (x_{n-1},x_{n})" data-display="false"><code>(x_{0},x_{1}),(x_{1},x_{2}), \dots, (x_{n-1},x_{n})</code></span>，其中 <span class="course-math" data-tex="n\geq0" data-display="false"><code>n\geq0</code></span>。若<span class="course-math" data-tex="x_{0}=x_{n}" data-display="false"><code>x_{0}=x_{n}</code></span>，那么说这个路径是一个回路（Circuit / Cycle）。
+**定理：** <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 是 <span class="course-math" data-tex="A" data-display="false"><code>A</code></span> 上的一个关系，那么存在一个从 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 到 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 的长度为 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 的路径，当且仅当 <span class="course-math" data-tex="(a,b)\in R^{n}" data-display="false"><code>(a,b)\in R^{n}</code></span>。证明：
+- 数学归纳法。Base Case： <span class="course-math" data-tex="n=1" data-display="false"><code>n=1</code></span>，根据定义，<span class="course-math" data-tex="(a,b)\in R" data-display="false"><code>(a,b)\in R</code></span>，当且仅当有路径 <span class="course-math" data-tex="a\to b" data-display="false"><code>a\to b</code></span>。
+- I.H.：<span class="course-math" data-tex="(a,b)\in R^{n}" data-display="false"><code>(a,b)\in R^{n}</code></span> 当且仅当有路径 <span class="course-math" data-tex="\overbrace{a\to\dots\to b}^{n}" data-display="false"><code>\overbrace{a\to\dots\to b}^{n}</code></span>。
+- I.S.：<span class="course-math" data-tex="(a,b)\in R^{n+1}=R^{n}\circ R" data-display="false"><code>(a,b)\in R^{n+1}=R^{n}\circ R</code></span> 当且仅当存在 <span class="course-math" data-tex="x" data-display="false"><code>x</code></span> 使得 <span class="course-math" data-tex="(a,x)\in R,(x,b)\in R^{n}" data-display="false"><code>(a,x)\in R,(x,b)\in R^{n}</code></span>，那么根据归纳假设，这等价于存在路径 <span class="course-math" data-tex="\underbrace{a\to \overbrace{x\to\dots\to b}^{n}}_{n+1}" data-display="false"><code>\underbrace{a\to \overbrace{x\to\dots\to b}^{n}}_{n+1}</code></span>。
+
+定义 关系 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的 **连通关系（Connectivity Relation）：**
+<span class="course-math course-math-display" data-tex="R^{*}= \bigcup _{k=1}^{\infty}R^{k}" data-display="true"><code>R^{*}= \bigcup _{k=1}^{\infty}R^{k}</code></span>
+这也就是 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 所有长度的所有路径的起终点组成的关系。
+
+**引理：** 若 <span class="course-math" data-tex="\lvert A \rvert=n" data-display="false"><code>\lvert A \rvert=n</code></span>，那么，若存在一个 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 到 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> （<span class="course-math" data-tex="a\neq b" data-display="false"><code>a\neq b</code></span>）的路径，就会有一个长度 <span class="course-math" data-tex="\leq n-1" data-display="false"><code>\leq n-1</code></span> 的路径。
+- 证明：把路径上的所有回路删掉，那么每个顶点最多被访问一次，只有 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 个顶点，最长路径就只有 <span class="course-math" data-tex="n-1" data-display="false"><code>n-1</code></span>。
+于是连通关系可以写成：
+<span class="course-math course-math-display" data-tex="R^{*}= \bigcup _{k=1}^{n} R^{k}" data-display="true"><code>R^{*}= \bigcup _{k=1}^{n} R^{k}</code></span>
+**定理：** <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的传递闭包（Transitive Closure）就是它的连通关系（Connectivity Relation） <span class="course-math" data-tex="R^{*}" data-display="false"><code>R^{*}</code></span>。
+证明：需要分别考虑传递闭包的三条定义。
+- <span class="course-math" data-tex="R^{*}" data-display="false"><code>R^{*}</code></span> 显然包含 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span>。
+- <span class="course-math" data-tex="R^{*}" data-display="false"><code>R^{*}</code></span> 是传递的。
+  - 证明：对任意 <span class="course-math" data-tex="(a,b),(b,c)\in R^{*}" data-display="false"><code>(a,b),(b,c)\in R^{*}</code></span>，我们知道 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 到 <span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 有一个路径，<span class="course-math" data-tex="b" data-display="false"><code>b</code></span> 到 <span class="course-math" data-tex="c" data-display="false"><code>c</code></span> 有一个路径，把路径连起来，就得到有一个 <span class="course-math" data-tex="a" data-display="false"><code>a</code></span> 到 <span class="course-math" data-tex="c" data-display="false"><code>c</code></span> 的路径，于是 <span class="course-math" data-tex="(a,c)\in R^{*}" data-display="false"><code>(a,c)\in R^{*}</code></span>。
+- <span class="course-math" data-tex="R^{*}\subseteq S" data-display="false"><code>R^{*}\subseteq S</code></span> 对任意包含 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的传递的关系 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span>。
+  - 证明：假设 <span class="course-math" data-tex="S" data-display="false"><code>S</code></span> 是一个包含 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的传递的关系。由上面的定理，<span class="course-math" data-tex="S^{n}\subseteq S" data-display="false"><code>S^{n}\subseteq S</code></span> 对任意 <span class="course-math" data-tex="n\geq 1" data-display="false"><code>n\geq 1</code></span> 成立，于是 <span class="course-math" data-tex="S^{*}\subseteq S" data-display="false"><code>S^{*}\subseteq S</code></span>。
+  - 又因为 <span class="course-math" data-tex="R\subseteq S" data-display="false"><code>R\subseteq S</code></span>，所以 <span class="course-math" data-tex="R^{n}\subseteq S^{n}" data-display="false"><code>R^{n}\subseteq S^{n}</code></span>，从而 <span class="course-math" data-tex="R^{*}\subseteq S^{*}\subseteq S" data-display="false"><code>R^{*}\subseteq S^{*}\subseteq S</code></span>。
+
+找传递闭包的算法：
+- 考虑零一矩阵 <span class="course-math" data-tex="\boldsymbol{M}_{R}" data-display="false"><code>\boldsymbol{M}_{R}</code></span>。
+- 那么传递闭包对应矩阵就是 <span class="course-math" data-tex="\boldsymbol{M}_{R^{*}}= \boldsymbol{M}_{R}\lor\boldsymbol{M}_{R}^{[2]}\lor \dots \lor\boldsymbol{M}_{R}^{[n]}" data-display="false"><code>\boldsymbol{M}_{R^{*}}= \boldsymbol{M}_{R}\lor\boldsymbol{M}_{R}^{[2]}\lor \dots \lor\boldsymbol{M}_{R}^{[n]}</code></span>（<span class="course-math" data-tex="\boldsymbol{M}_{R}^{[k]}" data-display="false"><code>\boldsymbol{M}_{R}^{[k]}</code></span> 是布尔矩阵乘积的 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 次幂，<span class="course-math" data-tex="\lor" data-display="false"><code>\lor</code></span> 是逐项取或）。
+- 硬算是 <span class="course-math" data-tex="\Theta(n^{4})" data-display="false"><code>\Theta(n^{4})</code></span> 的，若矩阵乘法视为 <span class="course-math" data-tex="\Theta(n^{3})" data-display="false"><code>\Theta(n^{3})</code></span>。
+- 改进的算法：Roy-Warshall（<span class="course-math" data-tex="\Theta(n^{3})" data-display="false"><code>\Theta(n^{3})</code></span>），类似于 Floyd，不断引入第 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 个节点（<span class="course-math" data-tex="k=1,2, \dots n" data-display="false"><code>k=1,2, \dots n</code></span>），看能不能改善连通性（让更多的边连通），这样迭代到 <span class="course-math" data-tex="k" data-display="false"><code>k</code></span> 的时候就求出了中间只经过编号 <span class="course-math" data-tex="\leq k" data-display="false"><code>\leq k</code></span> 的节点的连通性。
+<pre class="course-pseudocode">\begin{algorithm}
+\begin{algorithmic}
+  \Procedure{Roy-Warshall}{$\boldsymbol{M}_R$}
+    \State $W = \boldsymbol{M}_R$
+    \For{$k=1$ \To $n$}
+      \For{$i=1$ \To $n$}
+        \For{$j=1$ \To $n$}
+          \State $w_{\mathit{ij}}=w_{\mathit{ij}}\lor(w_{\mathit{ik}}\land w_{\mathit{kj}})$
+        \EndFor
+      \EndFor
+    \EndFor
+    \Return $W$
+  \EndProcedure
+\end{algorithmic}
+\end{algorithm}
+</pre>
+
+
+### <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 元关系与数据库
+{: #section-11 }
+
+
+<span class="course-math" data-tex="R:A_{1},A_{2}, \dots, A_{n}" data-display="false"><code>R:A_{1},A_{2}, \dots, A_{n}</code></span>，定义为 <span class="course-math" data-tex="R\subseteq A_{1}\times A_{2}\times\dots \times A_{n}" data-display="false"><code>R\subseteq A_{1}\times A_{2}\times\dots \times A_{n}</code></span>。
+- <span class="course-math" data-tex="A_{i}" data-display="false"><code>A_{i}</code></span> 叫 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的定义域（Domains）
+- <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 的度（degree）为 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span>。
+- 若对于定义域 <span class="course-math" data-tex="A_{i}" data-display="false"><code>A_{i}</code></span> 中的任意元素 <span class="course-math" data-tex="a_{i}" data-display="false"><code>a_{i}</code></span>，<span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 包含至多一个 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 元组 <span class="course-math" data-tex="(\dots,a_{i},\dots)" data-display="false"><code>(\dots,a_{i},\dots)</code></span>，那么称 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 在定义域 <span class="course-math" data-tex="A_{i}" data-display="false"><code>A_{i}</code></span> 上是功能性的（Functional）。
+
+**主键（Primary Key）：** 若 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 在 定义域 <span class="course-math" data-tex="A_{i}" data-display="false"><code>A_{i}</code></span> 上是功能性的，就说 <span class="course-math" data-tex="A_{i}" data-display="false"><code>A_{i}</code></span> 是主键。
+类似的，有**复合键（Composite Key）**： 把上面主键的定义，换成对一个定义域的集合 <span class="course-math" data-tex="\{ A_{i},A_{j}, \dots \}" data-display="false"><code>\{ A_{i},A_{j}, \dots \}</code></span>，<span class="course-math" data-tex="R" data-display="false"><code>R</code></span> 包含至多一个 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 元组 <span class="course-math" data-tex="(\dots, a_{i}, \dots, a_{j}, \dots)" data-display="false"><code>(\dots, a_{i}, \dots, a_{j}, \dots)</code></span>。
+
+可以用 E-R 图表示关系数据库（Entity-Relationship）<img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Set%20and%20Function%20-%20%E9%9B%86%E5%90%88%E4%B8%8E%E5%87%BD%E6%95%B0-2.webp' | relative_url }}{% raw %}" alt="Set and Function - 集合与函数-2" width="502" height="450" loading="lazy" decoding="async">若 <span class="course-math" data-tex="A=A_{1}\times A_{2}\times \dots \times A_{n}" data-display="false"><code>A=A_{1}\times A_{2}\times \dots \times A_{n}</code></span> 上有一个关系 <span class="course-math" data-tex="R" data-display="false"><code>R</code></span>，那么有一些运算符：
+- 选择（Selection Operator）：定义一个条件 <span class="course-math" data-tex="C:A\to \{ T,F \}" data-display="false"><code>C:A\to \{ T,F \}</code></span>。那么选择就是选出关系中满足这个条件的一些行：
+<span class="course-math course-math-display" data-tex="s_{C}(R)=\{ a\in R \mid C(a)=T \}" data-display="true"><code>s_{C}(R)=\{ a\in R \mid C(a)=T \}</code></span>
+- 投影（Projection Operator）：令一系列 <span class="course-math" data-tex="1" data-display="false"><code>1</code></span> 到 <span class="course-math" data-tex="n" data-display="false"><code>n</code></span> 之间的下标 <span class="course-math" data-tex="\{ i_{k} \}=(i_{1},i_{2}, \dots, i_{m})" data-display="false"><code>\{ i_{k} \}=(i_{1},i_{2}, \dots, i_{m})</code></span>，那么投影就是保留这些下标对应的一些列：
+<span class="course-math course-math-display" data-tex="P_{\{ i_{k} \}}: A\to A_{i_{1}}\times A_{i_{2}}\times \dots \times A_{i_{m}}" data-display="true"><code>P_{\{ i_{k} \}}: A\to A_{i_{1}}\times A_{i_{2}}\times \dots \times A_{i_{m}}</code></span>
+<span class="course-math course-math-display" data-tex="P_{\{ i_{k} \}}(a_{1},a_{2}, \dots, a_{n}) = (a_{i_{1}},a_{i_{2}},\dots,a_{i_{m}})" data-display="true"><code>P_{\{ i_{k} \}}(a_{1},a_{2}, \dots, a_{n}) = (a_{i_{1}},a_{i_{2}},\dots,a_{i_{m}})</code></span>
+- 合并（Join Operator）：若 <span class="course-math" data-tex="R_{1}" data-display="false"><code>R_{1}</code></span> 中有 <span class="course-math" data-tex="(A,B)" data-display="false"><code>(A,B)</code></span>，<span class="course-math" data-tex="R_{2}" data-display="false"><code>R_{2}</code></span> 中有 <span class="course-math" data-tex="(B,C)" data-display="false"><code>(B,C)</code></span>，那么合并的关系 <span class="course-math" data-tex="J(R_{1},R_{2})" data-display="false"><code>J(R_{1},R_{2})</code></span> 中就有 <span class="course-math" data-tex="(A,B,C)" data-display="false"><code>(A,B,C)</code></span>。
 {% endraw %}
