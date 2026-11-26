@@ -50,7 +50,16 @@
   }
 
   // ```pseudo blocks use the Obsidian plugin's own parser and flat renderer
-  // (assets/vendor/pseudocode-suite), so both look the same.
+  // (assets/vendor/pseudocode-suite), so both look the same. The renderer
+  // calls a few element helpers that Obsidian adds to the DOM; give the
+  // browser the same ones.
+  var proto = HTMLElement.prototype;
+  if (!proto.setCssProps) proto.setCssProps = function (props) {
+    for (var name in props) this.style.setProperty(name, props[name]);
+  };
+  if (!proto.addClass) proto.addClass = function () { this.classList.add.apply(this.classList, arguments); };
+  if (!proto.removeClass) proto.removeClass = function () { this.classList.remove.apply(this.classList, arguments); };
+
   function renderPseudocode(block) {
     try {
       var model = PseudocodeSuite.parseLatex(block.textContent);

@@ -60,7 +60,7 @@ def slug(value):
 
 
 def visible_text(text):
-    text = FENCE.sub(lambda m: m[3] if m[2].strip().startswith('image-layout-') else '', text)
+    text = FENCE.sub('', text)
     return MATH.sub('', CODE.sub('', text))
 
 
@@ -440,10 +440,6 @@ class Exporter:
             if lang == 'pseudo':
                 self.stats['pseudocode_blocks'] += 1
                 return protect('<pre class="course-pseudocode">' + html.escape(body) + '</pre>')
-            if lang == 'image-layout-a':
-                self.stats['image_layouts'] += 1
-                imgs = WIKI.sub(lambda match: self.wiki(source, match), body)
-                return protect('<div class="course-image-layout">\n' + imgs + '</div>')
             if lang in {'dataview', 'dataviewjs', 'mermaid'} or lang.startswith('image-layout'):
                 raise ValueError(f'Unsupported plugin block: {source}: {lang}')
             return protect(m[0])

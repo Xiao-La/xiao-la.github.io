@@ -139,9 +139,13 @@ fs.mkdirSync(output, { recursive: true });
       await page.goto(base + url);
       if (await page.locator('.course-content').count()) await page.waitForFunction(() => document.querySelector('.course-content').dataset.rendered);
       if (name === 'pseudocode') await page.locator('.ps-block').scrollIntoViewIfNeeded();
-      if (name === 'images') await page.locator('.course-image-layout').scrollIntoViewIfNeeded();
+      if (name === 'images') await page.locator('.course-image').nth(1).scrollIntoViewIfNeeded();
       await page.evaluate(async () => {
-        await Promise.all([...document.querySelectorAll('.course-image-layout img')].map(image => image.decode().catch(() => {})));
+        // A lazy image outside the viewport never loads, so decode() would wait forever.
+        await Promise.all([...document.querySelectorAll('.course-content img')].map(image => {
+          image.loading = 'eager';
+          return image.decode().catch(() => {});
+        }));
       });
       if (name === 'chemistry') await page.locator('.course-table-scroll').last().scrollIntoViewIfNeeded();
       const filename = `${name}.png`;

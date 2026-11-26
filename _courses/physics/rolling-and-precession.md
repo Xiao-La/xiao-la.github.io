@@ -5,7 +5,7 @@ course_title: "大学物理（上）/（下）"
 section: "上"
 status: "completed"
 created_at: "2025-10-23T11:02:29+08:00"
-updated_at: "2026-10-09T16:13:40+08:00"
+updated_at: "2026-11-24T15:23:17+08:00"
 reference: false
 order: 2
 layout: "course"
@@ -46,10 +46,8 @@ excerpt: "大学物理（上）/（下） · Rolling and Precession - 滚动和�
 
 **进动（Precession）** 是指自转刚体受外力作用时自转轴绕某一中心旋转的现象。
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Precesssion-1.webp' | relative_url }}{% raw %}" alt="Precesssion-1" width="400" height="465" loading="lazy" decoding="async">
-<div class="course-image-layout">
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Precession-2.webp' | relative_url }}{% raw %}" alt="Precession-2" width="400" height="312" loading="lazy" decoding="async">
 <img class="course-image" src="{% endraw %}{{ '/assets/courses/%E7%AC%94%E8%AE%B0%E4%BE%9D%E8%B5%96/%E5%9B%BE%E7%89%87/Precession-3.webp' | relative_url }}{% raw %}" alt="Precession-3" width="400" height="218" loading="lazy" decoding="async">
-</div>
 
 过程中，进动角速度 <span class="course-math" data-tex="\Omega=\frac{\mathrm{d}\phi}{\mathrm{d}t}=\frac{\frac{\mathrm{d}L}{L}}{\mathrm{d}t}=\frac{\tau}{L}= \frac{Mgr}{I\omega}" data-display="false"><code>\Omega=\frac{\mathrm{d}\phi}{\mathrm{d}t}=\frac{\frac{\mathrm{d}L}{L}}{\mathrm{d}t}=\frac{\tau}{L}= \frac{Mgr}{I\omega}</code></span>。
 进动角速度的方向和 <span class="course-math" data-tex="\omega" data-display="false"><code>\omega</code></span> 的方向有关。

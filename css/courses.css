@@ -19,8 +19,6 @@
 /* Dark slides (marked by the sync tool) fill their frame instead of sitting
    in a white mat. */
 .main .course-content .course-image-dark { padding: 0; border-color: #57606a; background: #000; }
-.course-image-layout { display: flex; flex-wrap: wrap; gap: 1em; align-items: center; margin: 1.5em 0; }
-.course-image-layout .course-image { margin-top: 0; margin-bottom: 0; flex: 1 1 220px; min-width: 0; max-width: calc(50% - .5em); object-fit: contain; }
 .course-math > mjx-container { margin: 0 !important; }
 .course-math > code { white-space: pre-wrap; }
 .course-math-error { outline: 1px solid #b33; }
@@ -57,12 +55,13 @@
   display: grid; grid-template-columns: max-content minmax(auto, max-content) 0;
   column-gap: .9em; row-gap: .1em; align-items: baseline; max-width: 100%;
 }
-.course-content .ps-block:has(.ps-comment:not(:empty)) .ps-grid {
+/* The renderer marks blocks that have a comment on some line. */
+.course-content .ps-block.ps-commented .ps-grid {
   grid-template-columns: max-content minmax(auto, max-content) minmax(8em, 1fr);
 }
-.course-content .ps-row { display: contents; }
-/* CLRS: line numbers in the text font, same size and colour as the code. */
-.course-content .ps-num { text-align: right; font-variant-numeric: tabular-nums; user-select: none; }
+/* CLRS: line numbers in the text font, same size and colour as the code.
+   Each number starts a new line of the grid. */
+.course-content .ps-num { grid-column: 1; text-align: right; font-variant-numeric: tabular-nums; user-select: none; }
 .course-content .ps-code { padding-left: calc(var(--ps-indent) * var(--ps-depth, 0)); white-space: pre-wrap; overflow-wrap: anywhere; }
 /* A procedure header without a comment spans the comment column too. */
 .course-content .ps-code.ps-span { grid-column: 2 / -1; }
@@ -79,8 +78,15 @@
   padding-left: calc(var(--ps-indent) * var(--ps-depth, 0));
 }
 /* Procedure header: leads its body, with air before each later procedure. */
-.course-content .ps-row-function:not(:first-child) > * { padding-top: .8em; }
-.course-content .ps-row-function + .ps-row > * { padding-top: .15em; }
+.course-content .ps-fn-later { padding-top: .8em; }
+.course-content .ps-after-fn { padding-top: .15em; }
+/* Highlighted line (`% highlight`): every cell, with the column gaps filled in. */
+.course-content .ps-block .ps-mark {
+  background-color: rgba(255, 208, 0, .4);
+  box-shadow: -.45em 0 0 rgba(255, 208, 0, .4), .45em 0 0 rgba(255, 208, 0, .4);
+}
+/* A blank \Statex line keeps its height. */
+.course-content .ps-code.ps-row-statex:empty::before { content: '\200b'; }
 .course-content .ps-kw { font-weight: 700; }
 /* CLRS \proc / \const: a real small-caps face, so no font-variant (the
    browser would fake the small caps again). */
@@ -98,11 +104,10 @@
 /* Long unbreakable formulas scroll inside the box rather than the page. */
 .course-content .ps-block { overflow-x: auto; }
 @media (max-width: 720px) {
-  .course-image-layout .course-image { max-width: 100%; flex-basis: 100%; }
   /* Phones: comments move under their line instead of squeezing the code. */
   .course-content .ps-block { font-size: 1.05em; padding: .65em .8em .7em; }
   .course-content .ps-grid,
-  .course-content .ps-block:has(.ps-comment:not(:empty)) .ps-grid { grid-template-columns: max-content minmax(0, 1fr); column-gap: .7em; }
+  .course-content .ps-block.ps-commented .ps-grid { grid-template-columns: max-content minmax(0, 1fr); column-gap: .7em; }
   .course-content .ps-comment { grid-column: 2; max-width: none; margin-top: -.15em; padding-left: calc(var(--ps-indent) * var(--ps-depth, 0)); }
   .course-content .ps-comment:empty { display: none; }
 }

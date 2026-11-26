@@ -19,7 +19,7 @@ PS.node = function node(type, fields) {
   return Object.assign({ id: PS.nextId(), type }, fields || {});
 };
 
-PS.CONTAINERS = new Set(['if', 'while', 'for', 'repeat', 'function']);
+PS.CONTAINERS = new Set(['if', 'while', 'for', 'repeat', 'function', 'loop', 'switch', 'case']);
 PS.isContainer = (node) => PS.CONTAINERS.has(node.type);
 
 /** Every statement list directly owned by `node` (if: branches, then else). */
@@ -103,6 +103,8 @@ const OPERATOR_ALIASES = [
   [/<>/g, '!='],
   [/&&/g, 'and'],
   [/\|\|/g, 'or'],
+  // C / Python negation `!done`, `!(a and b)`; a factorial `n!` and `!=` stay.
+  [/(^|[\s(])!(?=[A-Za-z(])/g, '$1not '],
   [/\\(?:And|AND)\b/g, 'and'],
   [/\\(?:Or|OR)\b/g, 'or'],
   [/\\(?:Not|NOT)\b/g, 'not'],
@@ -116,11 +118,12 @@ const SYMBOL_TEX = [
   [/>=/g, '\\ge '],
   [/!=/g, '\\ne '],
   [/->/g, '\\to '],
-  [/\s*(?<![.\\])\.\.(?!\.)\s*/g, ' \\twodots '],
+  [/∞/g, '\\infty '],
+  [/(\s*)\.\.(?!\.)\s*/g, (match, space, offset, text) => (/[.\\]/.test(text[offset + space.length - 1] || '') ? match : ' \\twodots ')],
 ];
 const WORD_TEX = [
   // Inside math (a field written with backslashes): roman words, as in CLRS.
-  [/(?<![\\{])\b(and|or|not)\b/g, '\\text{ $1 }'],
+  [/\b(and|or|not)\b/g, (match, word, offset, text) => (/[\\{]/.test(text[offset - 1] || '') ? match : `\\text{ ${word} }`)],
 ];
 
 const applyAll = (text, table) => table.reduce((value, [pattern, replacement]) => value.replace(pattern, replacement), text);
@@ -181,7 +184,61 @@ function splitComment(text) {
   return { body: match[1], comment: match[2] };
 }
 
-const countDollars = (value) => (value.match(/\$/g) || []).length;
+/** Math delimiters in `value`; an escaped `\$` is a dollar sign, not a delimiter. */
+function countDollars(value) {
+  let count = 0;
+  for (let i = 0; i < value.length; i++) {
+    if (value[i] === '\\') i++;
+    else if (value[i] === '$') count++;
+  }
+  return count;
+}
+
+/*
+ * Characters TeX treats as syntax. In a builder field written without any LaTeX they
+ * mean themselves (`i % 2`, `S ∪ {u}`, `heap_size`, `cost $5`), so they are escaped on
+ * the way into math and unescaped on the way back.
+ */
+const ESCAPED_SPECIAL = /\\([%&#{}$_])/g;
+
+/** `heap_size` (two or more letters before `_`) is one name, not heap with subscript s. */
+const SNAKE_NAME = /(^|[^\\A-Za-z0-9])([A-Za-z][A-Za-z0-9]+(?:_[A-Za-z0-9]+)+)(?![A-Za-z0-9({])/g;
+
+/** Plain builder text → text safe inside `$...$` (no-op for text already written in LaTeX). */
+function escapePlain(text) {
+  const value = String(text == null ? '' : text);
+  if (value.includes('\\')) return value;
+  // Braces right after ^ or _ group a superscript or subscript (n^{k+1}): TeX, kept.
+  let out = '';
+  const groups = [];
+  for (let i = 0; i < value.length; i++) {
+    const ch = value[i];
+    if (ch === '{' && /[\^_]/.test(value[i - 1] || '')) {
+      groups.push(true);
+      out += ch;
+    } else if (ch === '{') {
+      groups.push(false);
+      out += '\\{';
+    } else if (ch === '}') {
+      out += groups.pop() ? '}' : '\\}';
+    } else {
+      out += /[%&#$]/.test(ch) ? `\\${ch}` : ch;
+    }
+  }
+  return out.replace(SNAKE_NAME, (all, before, name) => `${before}\\mathit{${name.replace(/_/g, '\\_')}}`);
+}
+
+/** The reverse, when nothing but escaped specials carries a backslash. */
+function unescapePlain(text) {
+  const value = String(text == null ? '' : text);
+  if (!value.includes('\\')) return value;
+  const plain = value
+    .replace(/\\mathit\{([A-Za-z][A-Za-z0-9]*(?:\\_[A-Za-z0-9]+)+)\}/g, '$1')
+    .replace(ESCAPED_SPECIAL, '$1');
+  return plain.includes('\\') ? value : plain;
+}
+PS.escapePlain = escapePlain;
+PS.unescapePlain = unescapePlain;
 
 function isSingleMath(text) {
   const value = String(text == null ? '' : text).trim();
@@ -220,7 +277,8 @@ function fromMath(text) {
       .replace(/\\textsc\{([a-z]+)\}/g, (all, word) => word.toUpperCase())
       .replace(/\u0002(\d+)\u0003/g, (all, index) => kept[Number(index)]);
   };
-  value = value.includes('$')
+  const mixed = countDollars(value) > 0;
+  value = mixed
     ? value.split(/(\$[^$]*\$)/).map((chunk, index) => (index % 2 ? unwrap(chunk) : chunk)).join('')
     // Prose without any math (`\Return \textbf{true}`) keeps its fonts as written.
     : single ? unwrap(value) : value;
@@ -229,8 +287,24 @@ function fromMath(text) {
     .replace(/\\textbackslash\b/g, '\\')
     .replace(/\\_/g, '_')
     .replace(/\\[,;: ]/g, ' ');
+  // In math, the builder's spellings of what normalizeExpr writes as TeX.
+  if (single || mixed) value = plainFunctions(value);
   // `\State \text{}` is the empty placeholder of a comment-only line.
-  return value.replace(/\\text\{\}/g, '').replace(/[ \t]+/g, ' ').trim();
+  value = value.replace(/\\text\{\}/g, '').replace(/[ \t]+/g, ' ').trim();
+  return mixed ? value : unescapePlain(value);
+}
+
+/** `\lfloor n/2 \rfloor` → `floor(n/2)`, `\sqrt{n}` → `sqrt(n)`, `\infty` → `∞` (see normalizeExpr). */
+function plainFunctions(text) {
+  let value = text;
+  for (let previous = null; previous !== value;) {
+    previous = value;
+    value = value
+      .replace(/(^|[^t])\\lfloor\s*((?:(?!\\[lr]floor)[\s\S])*?)\s*\\rfloor/g, (all, before, inner) => `${before}floor(${inner})`)
+      .replace(/(^|[^t])\\lceil\s*((?:(?!\\[lr]ceil)[\s\S])*?)\s*\\rceil/g, (all, before, inner) => `${before}ceil(${inner})`)
+      .replace(/\\sqrt\{([^{}]*)\}/g, 'sqrt($1)');
+  }
+  return value.replace(/\\infty\b\s?/g, '∞');
 }
 
 PS.readGroup = readGroup;
@@ -253,12 +327,17 @@ PS.isSingleMath = isSingleMath;
  * roman between the math (clrscode: `\While $i > 0$ and $A[i] > \id{key}$`), so
  * they are saved as plain text between math runs; only `error` is bold.
  */
-const CALL_AT = /(?<![A-Za-z0-9_.'])([A-Z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)*)\(/g;
+// No regex lookbehind anywhere: iOS before 16.4 cannot parse it. Matches that a
+// lookbehind would reject are skipped by checking the character before them.
+const precededBy = (text, index, pattern) => index > 0 && pattern.test(text[index - 1]);
+const CALL_AT = /([A-Z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)*)\(/g;
 const isCallName = (name) => /^[A-Z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)*$/.test(name) && (name.match(/[A-Za-z]/g) || []).length >= 2;
-const LOGIC_WORD = /(?<![A-Za-z0-9_.])(and|or|not)(?![A-Za-z0-9_])/g;
+const LOGIC_WORD = /(and|or|not|spawn|sync)(?![A-Za-z0-9_])/g;
+// CLRS's multithreading keywords (spawn, sync) are bold, like error.
+const BOLD_WORDS = new Set(['error', 'spawn', 'sync']);
 // `\textbf{and}` is how older notes wrote them; read, and saved back as plain words.
-const LOGIC_TEX = /^\\textbf\{(and|or|not|error)\}/;
-const LOGIC_PLAIN = /^(and|or|not)(?![A-Za-z0-9_])/;
+const LOGIC_TEX = /^\\textbf\{(and|or|not|error|spawn|sync)\}/;
+const LOGIC_PLAIN = /^(and|or|not|spawn|sync)(?![A-Za-z0-9_])/;
 // Quoted strings stay text, with typographic quotes: error “heap underflow”.
 const STRING = /(“[^”]*”|"[^"]*")/;
 
@@ -268,6 +347,10 @@ function splitLogic(value) {
   let last = 0;
   LOGIC_WORD.lastIndex = 0;
   for (let match; (match = LOGIC_WORD.exec(value));) {
+    if (precededBy(value, match.index, /[A-Za-z0-9_.]/)) {
+      LOGIC_WORD.lastIndex = match.index + 1;
+      continue;
+    }
     if (match.index > last) parts.push({ type: 'text', value: value.slice(last, match.index) });
     parts.push({ type: 'keyword', value: match[1] });
     last = match.index + match[0].length;
@@ -296,6 +379,10 @@ function splitCalls(text) {
   }
   CALL_AT.lastIndex = last;
   for (let match; (match = CALL_AT.exec(value));) {
+    if (precededBy(value, match.index, /[A-Za-z0-9_.']/)) {
+      CALL_AT.lastIndex = match.index + 1;
+      continue;
+    }
     if (!isCallName(match[1])) continue;
     const open = match.index + match[0].length - 1;
     let depth = 0;
@@ -330,7 +417,7 @@ function inlineWithCalls(text, mathFn) {
   };
   return parts.map((part) => {
     if (part.type === 'call') return `\\Call{${part.name}}{${inlineWithCalls(part.args, mathFn) || math(part.args).trim()}}`;
-    if (part.type === 'keyword') return part.value === 'error' ? '\\textbf{error}' : part.value;
+    if (part.type === 'keyword') return BOLD_WORDS.has(part.value) ? `\\textbf{${part.value}}` : part.value;
     if (part.type === 'string') return `“${part.value}”`;
     return math(part.value);
   }).join('').trim();
@@ -414,12 +501,12 @@ PS.callsToPlain = callsToPlain;
 
 // Lines whose own `{...}` groups must not swallow a trailing \Comment.
 const COMMENTABLE = new Set([
-  'Function', 'Procedure', 'If', 'Elif', 'ElsIf', 'ElseIf', 'Else', 'While', 'For', 'ForAll', 'Repeat', 'Until',
-  'Call', 'Break', 'Continue',
+  'Function', 'Procedure', 'If', 'Elif', 'ElsIf', 'ElseIf', 'Else', 'While', 'For', 'ForAll', 'ForEach', 'ParFor',
+  'Repeat', 'Until', 'Loop', 'Switch', 'Case', 'Default', 'Call', 'Break', 'Continue',
 ]);
 
 // Fields that may be calls, constants or math joined by logic words.
-const LOGIC_SOURCE = /\\Call\b|\\textbf\{(?:and|or|not|error)\}|\\textsc\{|(?:^|\$)\s*(?:and|or|not)\s+\$/;
+const LOGIC_SOURCE = /\\Call\b|\\textbf\{(?:and|or|not|error|spawn|sync)\}|\\textsc\{|(?:^|\$)\s*(?:and|or|not)\s+\$/;
 
 /** `{ field: value, fieldMath: wasSingleMath }` for a math-carrying field. */
 function mathField(name, raw) {
@@ -455,29 +542,106 @@ function logicalLines(source) {
   return lines;
 }
 
+/*
+ * Per-line extras kept on whatever owns the line: `\label{…}` (for `\ref{…}` and
+ * LaTeX export) and a trailing `% highlight` mark. A node keeps them as `label` /
+ * `mark`; an if's else line and a repeat's until line as `elseLabel`, `untilMark` ….
+ */
+const metaKey = (prefix, name) => (prefix ? `${prefix}${name[0].toUpperCase()}${name.slice(1)}` : name);
+PS.metaKey = metaKey;
+
+/** Take `\label{…}` and a trailing `% highlight` off a line. */
+function splitLineMeta(line) {
+  let text = line;
+  let mark = false;
+  const highlight = text.match(/(^|[^\\])%\s*highlight\s*$/i);
+  if (highlight) {
+    text = text.slice(0, highlight.index + highlight[1].length).trimEnd();
+    mark = true;
+  }
+  let label = null;
+  text = text.replace(/\s*\\label\{([^{}]*)\}/, (all, name) => {
+    label = name;
+    return '';
+  }).trim();
+  return { text, label, mark };
+}
+
+// End commands → the container type they close.
+const END_OF = {
+  EndFunction: 'function', EndProcedure: 'function', EndIf: 'if', EndWhile: 'while',
+  EndFor: 'for', EndParFor: 'for', EndForAll: 'for', EndForEach: 'for', EndLoop: 'loop',
+  EndSwitch: 'switch', EndCase: 'case', EndDefault: 'case',
+};
+
 PS.parseLatex = function parseLatex(source) {
   const model = { caption: '', nodes: [] };
   const stack = [{ target: model.nodes, node: null }];
   const top = () => stack[stack.length - 1];
-  const push = (node) => top().target.push(node);
+  // What the line just read belongs to, for a `\label` on a line of its own.
+  let lastLine = null;
+  const own = (holder, prefix) => { lastLine = { holder, prefix }; };
+  const push = (node) => {
+    top().target.push(node);
+    own(node, '');
+  };
   const open = (node, target) => {
     push(node);
     stack.push({ target, node });
   };
-  const pop = () => {
-    if (stack.length > 1) stack.pop();
+  /** Close the innermost open block of `type` (and anything left open inside it). */
+  const closeTo = (type) => {
+    for (let i = stack.length - 1; i > 0; i--) {
+      if (stack[i].node.type === type) {
+        stack.length = i;
+        return true;
+      }
+    }
+    return false; // nothing of that kind is open: a stray end changes nothing
+  };
+  /** The innermost open block of `type`, made the top of the stack (null if none). */
+  const reopen = (type) => {
+    for (let i = stack.length - 1; i > 0; i--) {
+      if (stack[i].node.type === type) {
+        stack.length = i + 1;
+        return stack[i].node;
+      }
+    }
+    return null;
   };
 
   for (const rawLine of logicalLines(source)) {
-    const line = rawLine.trim();
-    if (!line) continue;
+    const meta = splitLineMeta(rawLine.trim());
+    const line = meta.text;
+    const applyMeta = () => {
+      if (!lastLine) return;
+      if (meta.label != null) lastLine.holder[metaKey(lastLine.prefix, 'label')] = meta.label;
+      if (meta.mark) lastLine.holder[metaKey(lastLine.prefix, 'mark')] = true;
+    };
+    if (!line) {
+      applyMeta(); // `\label{…}` alone: names the line above
+      continue;
+    }
+    const options = line.match(/^\\begin\{algorithmic\}\s*(?:\[\s*(\d+)\s*\])?/);
+    if (options) {
+      if (options[1] != null) model.numbers = Number(options[1]) > 0;
+      continue;
+    }
     if (/^\\(?:[Bb]egin|[Ee]nd)\{algorithm(?:ic)?\}/.test(line)) continue;
-    if (/^\\label\{/.test(line)) continue;
+    // algorithmicx line numbering: `\setcounter{ALG@line}{4}` → the next line is 5.
+    const counter = line.match(/^(?:\\makeatletter\s*)?\\setcounter\{ALG@line\}\{\s*(\d+)\s*\}(?:\s*\\makeatother)?$/);
+    if (counter) {
+      const next = Number(counter[1]) + 1;
+      if (!model.nodes.length && stack.length === 1) model.start = next;
+      else push(PS.node('counter', { value: String(next) }));
+      continue;
+    }
 
     const match = line.match(/^\\([A-Za-z]+)([\s\S]*)$/);
     if (!match) {
       const { body, comment } = splitComment(line);
       push(withComment(PS.node('raw', { text: body.trim() }), comment));
+      applyMeta();
       continue;
     }
     const name = match[1];
@@ -516,19 +680,21 @@ PS.parseLatex = function parseLatex(source) {
       case 'Elif':
       case 'ElsIf':
       case 'ElseIf': {
-        const { node } = top();
-        if (!node || node.type !== 'if') break;
+        const node = reopen('if');
+        if (!node) break;
         const branch = withComment(Object.assign(conditionField('cond', group ? group.value : ''), { body: [] }), lineComment);
         node.branches.push(branch);
         stack[stack.length - 1] = { target: branch.body, node };
+        own(branch, '');
         break;
       }
       case 'Else': {
-        const { node } = top();
-        if (!node || node.type !== 'if') break;
+        const node = reopen('if');
+        if (!node) break;
         node.elseBody = [];
         if (lineComment !== null) node.elseComment = lineComment;
         stack[stack.length - 1] = { target: node.elseBody, node };
+        own(node, 'else');
         break;
       }
 
@@ -538,13 +704,15 @@ PS.parseLatex = function parseLatex(source) {
         break;
       }
 
-      case 'ForAll': {
+      case 'ForAll':
+      case 'ForEach': {
         const clean = fromMath(group ? group.value : '').replace(/\$/g, '').trim();
         const node = PS.node('for', { all: true, init: clean, initMath: false, bound: '', body: [] });
         open(withComment(node, lineComment), node.body);
         break;
       }
-      case 'For': {
+      case 'For':
+      case 'ParFor': {
         const content = group ? group.value : '';
         const parts = content.split(/\s*(?:\\textbf\{(?:to|downto)\}|\\To\b|\\DownTo\b|\bto\b|\bdownto\b)\s*/i);
         const bound = parts.length > 1 ? parts.slice(1).join('') : '';
@@ -553,6 +721,29 @@ PS.parseLatex = function parseLatex(source) {
           parts.length > 1 ? mathField('bound', bound) : { bound: '', boundMath: false },
           { downto: /\bDownTo\b/i.test(content), body: [] },
         ));
+        if (name === 'ParFor') node.parallel = true;
+        open(withComment(node, lineComment), node.body);
+        break;
+      }
+
+      case 'Loop': {
+        const node = PS.node('loop', { body: [] });
+        open(withComment(node, lineComment), node.body);
+        break;
+      }
+
+      case 'Switch': {
+        const node = PS.node('switch', Object.assign(mathField('cond', group ? group.value : ''), { body: [] }));
+        open(withComment(node, lineComment), node.body);
+        break;
+      }
+      case 'Case':
+      case 'Default': {
+        // A case ends where the next one starts, even without \EndCase.
+        if (top().node && top().node.type === 'case') stack.pop();
+        const node = name === 'Default'
+          ? PS.node('case', { default: true, value: '', body: [] })
+          : PS.node('case', Object.assign(mathField('value', group ? group.value : ''), { body: [] }));
         open(withComment(node, lineComment), node.body);
         break;
       }
@@ -563,11 +754,12 @@ PS.parseLatex = function parseLatex(source) {
         break;
       }
       case 'Until': {
-        const { node } = top();
-        if (!node || node.type !== 'repeat') break;
+        const node = reopen('repeat');
+        if (!node) break;
         Object.assign(node, conditionField('until', group ? group.value : ''));
         if (lineComment !== null) node.untilComment = lineComment;
-        pop();
+        stack.pop();
+        own(node, 'until');
         break;
       }
 
@@ -576,7 +768,14 @@ PS.parseLatex = function parseLatex(source) {
       case 'EndIf':
       case 'EndWhile':
       case 'EndFor':
-        pop();
+      case 'EndParFor':
+      case 'EndForAll':
+      case 'EndForEach':
+      case 'EndLoop':
+      case 'EndSwitch':
+      case 'EndCase':
+      case 'EndDefault':
+        closeTo(END_OF[name]);
         break;
 
       case 'State': {
@@ -635,19 +834,25 @@ PS.parseLatex = function parseLatex(source) {
         const array = top().target;
         const previous = array[array.length - 1];
         if (previous && !previous.comment) previous.comment = text;
-        else array.push(PS.node('comment', { text }));
+        else push(PS.node('comment', { text }));
         break;
       }
 
-      case 'Statex':
-        // \Statex is a blank spacing line in algorithmicx; render nothing.
+      case 'Statex': {
+        // An unnumbered line: blank, or a heading such as \Statex \textbf{Phase 1}.
+        const { body, comment } = splitComment(rest);
+        const node = PS.node('statex', mathField('text', body.trim()));
+        if (!node.text) node.textMath = false;
+        push(withComment(node, comment));
         break;
+      }
 
       default: {
         const { body, comment } = splitComment(line);
         push(withComment(PS.node('raw', { text: body.trim() }), comment));
       }
     }
+    applyMeta();
   }
   return model;
 };
@@ -666,7 +871,9 @@ const KEYWORD_WORDS = new Set(['and', 'or', 'not']);
 // A word rendered upright in math; spaces next to one are real word gaps.
 const WORDISH = String.raw`\\(?:mathrm|text|textbf|textsc)\{[^{}]*\}`;
 const SPACE_AFTER_WORD = new RegExp(`(${WORDISH})\\s+(?=[A-Za-z0-9(\\[“‘"']|${WORDISH})`, 'g');
-const SPACE_BEFORE_WORD = new RegExp(`((?<!\\\\[A-Za-z]*)[A-Za-z0-9\\])”’"'])\\s+(?=${WORDISH})`, 'g');
+const SPACE_BEFORE_WORD = new RegExp(`([A-Za-z0-9\\])”’"'])\\s+(?=${WORDISH})`, 'g');
+// True when `index` sits inside a control word like \alpha.
+const inCommand = (text, index) => /\\[A-Za-z]*$/.test(text.slice(0, index));
 
 // Upright math operators, as in CLRS: max(a, b), lg n, x mod y. Only when used as one
 // (`max = A[1]` is the variable *max*).
@@ -683,16 +890,64 @@ const constantTex = (word) => `\\textsc{${word.toLowerCase()}}`;
  * after a letter as subscripts, ASCII operators as TeX. Font groups already
  * present are kept.
  */
+/** Text before a word ends in a word, variable or closing bracket, then spaces. */
+function endsWithPhraseWord(before) {
+  const tail = before.match(/(?:[A-Za-z0-9]|[)\]”"']|\u0001)\s+$/);
+  if (!tail) return false;
+  return !(/[A-Za-z0-9]/.test(tail[0][0]) && inCommand(before, tail.index));
+}
+
+/** `floor(x)` → ⌊x⌋, `ceil(x)` → ⌈x⌉, `sqrt(x)` → √x, `abs(x)` → |x| (nested calls too). */
+const MATH_WRAPPERS = {
+  floor: (inner) => `\\lfloor ${inner} \\rfloor`,
+  ceil: (inner) => `\\lceil ${inner} \\rceil`,
+  sqrt: (inner) => `\\sqrt{${inner}}`,
+  abs: (inner) => `\\lvert ${inner} \\rvert`,
+};
+function wrapFunctions(text) {
+  const pattern = /(floor|ceil|sqrt|abs)\s*\(/g;
+  let out = '';
+  let last = 0;
+  for (let match; (match = pattern.exec(text));) {
+    if (precededBy(text, match.index, /[\\A-Za-z0-9_.]/)) continue;
+    const open = match.index + match[0].length - 1;
+    let depth = 0;
+    let close = -1;
+    for (let i = open; i < text.length && close < 0; i++) {
+      if (text[i] === '(') depth += 1;
+      else if (text[i] === ')' && --depth === 0) close = i;
+    }
+    if (close < 0) break;
+    out += text.slice(last, match.index) + MATH_WRAPPERS[match[1]](wrapFunctions(text.slice(open + 1, close).trim()));
+    last = close + 1;
+    pattern.lastIndex = last;
+  }
+  return out + text.slice(last);
+}
+
+/** Python's `n**2`, `2 ** (k + 1)` → a superscript. */
+const powers = (text) => text.replace(/\s*\*\*\s*(\([^()]*\)|-?[A-Za-z0-9.]+)/g, (all, operand) => `^{${operand.replace(/^\((.*)\)$/, '$1')}}`);
+
+/** A builder field written without LaTeX → math: TeX specials escaped, then normalizeExpr. */
+function plainMath(segment) {
+  return normalizeExpr(escapePlain(segment));
+}
+PS.plainMath = plainMath;
+
 function normalizeExpr(expr) {
   const out = PS.maskFontGroups(expr, (masked) => {
-    const words = masked
+    const words = powers(wrapFunctions(masked))
       .replace(/([A-Za-z])_\{(\d+)\}/g, subscript)
       .replace(/([A-Za-z])_?(\d+)/g, subscript)
       .replace(/([A-Za-z])-([A-Za-z])/g, '$1\\text{-}$2')
-      .replace(/(?<!\\)\b[A-Za-z]{2,}\b/g, (word, offset, text) => {
+      .replace(/\b[A-Za-z]{2,}\b/g, (word, offset, text) => {
+        if (text[offset - 1] === '\\') return word;
         const before = text.slice(0, offset);
         const after = text.slice(offset + word.length);
         if (/^[A-Z]{2,}$/.test(word) || /^(true|false)$/i.test(word)) return constantTex(word);
+        // Python None, Java null and a lower-case nil are all CLRS's NIL.
+        if (/^(nil|null|None)$/.test(word)) return constantTex('nil');
+        if (/^(inf|infinity|Infinity)$/.test(word)) return '\\infty';
         if (KEYWORD_WORDS.has(word)) return word;
         if (word === 'mod') return '\\bmod';
         if (MATH_FUNCTIONS.has(word)
@@ -701,7 +956,7 @@ function normalizeExpr(expr) {
         }
         // A word spaced off from a neighbouring word or variable is part of a phrase.
         const phrase = /^\s+(?:[A-Za-z0-9(“"']|\u0000)/.test(after)
-          || /(?:(?<!\\[A-Za-z]*)[A-Za-z0-9]|[)\]”"']|\u0001)\s+$/.test(before);
+          || endsWithPhraseWord(before);
         return phrase ? `\\mathrm{${word}}` : `\\mathit{${word}}`;
       });
     return PS.texOperators(words);
@@ -709,7 +964,7 @@ function normalizeExpr(expr) {
   // Math mode drops spaces: "exchange A[i] with A[j]" needs explicit gaps.
   return out
     .replace(SPACE_AFTER_WORD, '$1\\ ')
-    .replace(SPACE_BEFORE_WORD, '$1\\ ')
+    .replace(SPACE_BEFORE_WORD, (match, last, offset, text) => (inCommand(text, offset) ? match : `${last}\\ `))
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -720,10 +975,13 @@ function toMath(raw) {
   if (isSingleMath(expr)) expr = expr.slice(1, -1).trim();
   if (!expr) return '';
   // CJK prose must stay outside math mode.
-  if (/[一-鿿]/.test(expr)) return expr;
+  if (/[一-鿿]/.test(expr)) return escapeProse(expr);
   if (expr.includes('\\')) return `$${normalizeExpr(expr)}$`;
-  return inlineWithCalls(expr, normalizeExpr) || `$${normalizeExpr(expr)}$`;
+  return inlineWithCalls(expr, plainMath) || `$${plainMath(expr)}$`;
 }
+
+/** Prose (text outside math) written without LaTeX: `%`, `&`, `#` are characters, not syntax. */
+const escapeProse = (text) => (/\\/.test(text) ? text : text.replace(/[%&#{}$_]/g, (ch) => `\\${ch}`));
 
 /**
  * Serialize one field. `isMath === false` marks text that was prose in the
@@ -733,13 +991,15 @@ function toMath(raw) {
 function mathOrRaw(text, isMath) {
   const value = String(text == null ? '' : text);
   if (!value) return '';
-  if (!value.includes('$')) {
+  const dollars = countDollars(value);
+  // A lone `$` (cost $5) is a dollar sign: escaped as a TeX special below.
+  if (dollars === 0 || dollars % 2 === 1) {
     if (isMath !== false) return toMath(value);
-    return value.includes('\\') ? PS.texOperators(value, false).replace(/[ \t]{2,}/g, ' ') : value;
+    return value.includes('\\') ? PS.texOperators(value, false).replace(/[ \t]{2,}/g, ' ') : escapeProse(value);
   }
   return value
     .replace(/\$([^$]+)\$/g, (all, inner) =>
-      `$${normalizeExpr(inner)}$`)
+      `$${inner.includes('\\') ? normalizeExpr(inner) : plainMath(inner)}$`)
     .replace(/[ \t]{2,}/g, ' ');
 }
 
@@ -751,7 +1011,7 @@ const commentSuffix = (comment) => (comment ? ` \\Comment{${comment}}` : '');
 const field = (node, key) => mathOrRaw(node[key], node[`${key}Math`]);
 
 // CLRS: `=` assigns, `==` tests. A single `=` in a condition is written as `==`.
-const asComparison = (tex) => tex.replace(/(?<![<>=!:\\])=(?!=)/g, '==');
+const asComparison = (tex) => tex.replace(/=(?!=)/g, (match, offset, text) => (precededBy(text, offset, /[<>=!:\\]/) ? match : '=='));
 PS.asComparison = asComparison;
 const condition = (node, key) => field(node, key).replace(/\$([^$]*)\$/g, (all, inner) => `$${asComparison(inner)}$`);
 
@@ -763,10 +1023,20 @@ function forAllHead(init) {
   return toMath(init);
 }
 
-function emitNodes(nodes, depth, out) {
+/**
+ * `standard` writes what stock algpseudocode compiles (for LaTeX export):
+ * \ElsIf, `\State \Return`, bold to / print / break …; the stored dialect is
+ * shorter and is what the renderer reads.
+ */
+function emitNodes(nodes, depth, out, standard = false, used = new Set()) {
   const pad = '  '.repeat(depth);
-  const line = (text, comment) => out.push(`${pad}${text}${commentSuffix(comment)}`);
-  const body = (list) => emitNodes(list, depth + 1, out);
+  const line = (text, comment, holder, prefix = '') => {
+    const label = holder && holder[metaKey(prefix, 'label')];
+    const mark = holder && holder[metaKey(prefix, 'mark')];
+    out.push(`${pad}${text}${label ? ` \\label{${label}}` : ''}${commentSuffix(comment)}${mark ? ' % highlight' : ''}`);
+  };
+  const body = (list) => emitNodes(list, depth + 1, out, standard, used);
+  const keyword = (word) => (standard ? `\\State \\textbf{${word}}` : `\\${word[0].toUpperCase()}${word.slice(1)}`);
 
   for (const node of nodes) {
     switch (node.type) {
@@ -774,84 +1044,891 @@ function emitNodes(nodes, depth, out) {
       {
         // A comment-only line is `\State \Comment{...}`; `\text{}` only keeps an empty one alive.
         const text = field(node, 'text');
-        line(text ? `\\State ${text}` : node.comment ? '\\State' : '\\State \\text{}', node.comment);
+        line(text ? `\\State ${text}` : node.comment ? '\\State' : '\\State \\text{}', node.comment, node);
       }
         break;
       case 'call':
-        line(`\\State \\Call{${node.name || ''}}{${field(node, 'args')}}`, node.comment);
+        line(`\\State \\Call{${node.name || ''}}{${field(node, 'args')}}`, node.comment, node);
         break;
       case 'require':
       case 'ensure':
-        line(`\\${node.type === 'require' ? 'Require' : 'Ensure'} ${field(node, 'text')}`, node.comment);
+        line(`\\${node.type === 'require' ? 'Require' : 'Ensure'} ${field(node, 'text')}`, node.comment, node);
         break;
       case 'return':
-        line(`\\Return${node.text ? ` ${field(node, 'text')}` : ''}`, node.comment);
+        line(`${standard ? '\\State ' : ''}\\Return${node.text ? ` ${field(node, 'text')}` : ''}`, node.comment, node);
         break;
       case 'print':
-        line(`\\Print ${field(node, 'text')}`, node.comment);
+        line(`${keyword('print')} ${field(node, 'text')}`, node.comment, node);
         break;
       case 'break':
-        line('\\Break', node.comment);
-        break;
       case 'continue':
-        line('\\Continue', node.comment);
+        line(keyword(node.type), node.comment, node);
         break;
       case 'comment':
-        line(`\\Comment{${node.text || ''}}`);
+        line(`\\Comment{${node.text || ''}}`, null, node);
         break;
+      case 'statex': {
+        const text = field(node, 'text');
+        line(text ? `\\Statex ${text}` : '\\Statex', node.comment, node);
+        break;
+      }
+      case 'counter': {
+        const value = Math.max(0, (parseInt(node.value, 10) || 1) - 1);
+        line(standard ? `\\makeatletter\\setcounter{ALG@line}{${value}}\\makeatother` : `\\setcounter{ALG@line}{${value}}`, null, node);
+        break;
+      }
       case 'if':
         node.branches.forEach((branch, index) => {
-          line(`${index === 0 ? '\\If' : '\\Elif'}{${condition(branch, 'cond')}}`, index === 0 ? node.comment : branch.comment);
+          const head = index === 0 ? '\\If' : standard ? '\\ElsIf' : '\\Elif';
+          line(`${head}{${condition(branch, 'cond')}}`, index === 0 ? node.comment : branch.comment, index === 0 ? node : branch);
           body(branch.body);
         });
         if (node.elseBody) {
-          line('\\Else', node.elseComment);
+          line('\\Else', node.elseComment, node, 'else');
           body(node.elseBody);
         }
         line('\\EndIf');
         break;
       case 'while':
-        line(`\\While{${condition(node, 'cond')}}`, node.comment);
+        line(`\\While{${condition(node, 'cond')}}`, node.comment, node);
         body(node.body);
         line('\\EndWhile');
         break;
       case 'for': {
+        const to = node.downto ? (standard ? '\\textbf{downto}' : '\\DownTo') : (standard ? '\\textbf{to}' : '\\To');
         const head = node.all
           ? forAllHead(node.init || '')
           : node.bound
-            ? `${field(node, 'init')} ${node.downto ? '\\DownTo' : '\\To'} ${field(node, 'bound')}`
+            ? `${field(node, 'init')} ${to} ${field(node, 'bound')}`
             : field(node, 'init');
-        line(`\\${node.all ? 'ForAll' : 'For'}{${head}}`, node.comment);
+        const command = node.all ? 'ForAll' : node.parallel ? 'ParFor' : 'For';
+        if (node.parallel && !node.all) used.add('ParFor');
+        line(`\\${command}{${head}}`, node.comment, node);
         body(node.body);
-        line('\\EndFor');
+        line(standard && command === 'ParFor' ? '\\EndParFor' : '\\EndFor');
         break;
       }
       case 'repeat':
-        line('\\Repeat', node.comment);
+        line('\\Repeat', node.comment, node);
         body(node.body);
-        line(`\\Until{${condition(node, 'until')}}`, node.untilComment);
+        line(`\\Until{${condition(node, 'until')}}`, node.untilComment, node, 'until');
+        break;
+      case 'loop':
+        line('\\Loop', node.comment, node);
+        body(node.body);
+        line('\\EndLoop');
+        break;
+      case 'switch':
+        used.add('Switch');
+        line(`\\Switch{${field(node, 'cond')}}`, node.comment, node);
+        body(node.body);
+        line('\\EndSwitch');
+        break;
+      case 'case':
+        used.add('Switch');
+        line(node.default ? '\\Default' : `\\Case{${field(node, 'value')}}`, node.comment, node);
+        body(node.body);
+        line(standard && node.default ? '\\EndDefault' : '\\EndCase');
         break;
       case 'function': {
         const kind = node.kind === 'Procedure' ? 'Procedure' : 'Function';
-        line(`\\${kind}{${node.name || ''}}{${field(node, 'args')}}`, node.comment);
+        line(`\\${kind}{${node.name || ''}}{${field(node, 'args')}}`, node.comment, node);
         body(node.body);
         line(`\\End${kind}`);
         break;
       }
       default:
-        line(node.text || '', node.comment);
+        line(node.text || '', node.comment, node);
     }
   }
+  return used;
+}
+
+/** Block options: `\begin{algorithmic}[0]` hides line numbers, `[1]` shows them. */
+function algorithmicBegin(model, standard) {
+  if (model.numbers === false) return standard ? '\\begin{algorithmic}' : '\\begin{algorithmic}[0]';
+  return model.numbers === true || standard ? '\\begin{algorithmic}[1]' : '\\begin{algorithmic}';
+}
+
+function startCounter(model, standard) {
+  const start = parseInt(model.start, 10);
+  if (!(start > 1)) return null;
+  return standard ? `  \\makeatletter\\setcounter{ALG@line}{${start - 1}}\\makeatother` : `  \\setcounter{ALG@line}{${start - 1}}`;
 }
 
 PS.serializeLatex = function serializeLatex(model) {
   const out = ['\\begin{algorithm}'];
   if (model.caption) out.push(`\\caption{${model.caption}}`);
-  out.push('\\begin{algorithmic}');
+  out.push(algorithmicBegin(model, false));
+  const counter = startCounter(model, false);
+  if (counter) out.push(counter);
   emitNodes(model.nodes, 1, out);
   out.push('\\end{algorithmic}');
   out.push('\\end{algorithm}');
   return out.join('\n');
+};
+
+// Unicode a builder field may hold → TeX that pdfLaTeX accepts in text and math.
+const UNICODE_TEX = {
+  '≤': '\\le', '≥': '\\ge', '≠': '\\ne', '∞': '\\infty', '∈': '\\in', '∉': '\\notin', '∪': '\\cup', '∩': '\\cap',
+  '⊆': '\\subseteq', '⊂': '\\subset', '⊇': '\\supseteq', '⊃': '\\supset', '∅': '\\emptyset', '×': '\\times', '·': '\\cdot',
+  '←': '\\gets', '→': '\\to', '↑': '\\uparrow', '↓': '\\downarrow', '⌊': '\\lfloor', '⌋': '\\rfloor', '⌈': '\\lceil', '⌉': '\\rceil',
+  '∧': '\\land', '∨': '\\lor', '¬': '\\neg', '±': '\\pm', '…': '\\ldots', 'Θ': '\\Theta', 'Ω': '\\Omega', 'α': '\\alpha',
+  'β': '\\beta', 'γ': '\\gamma', 'δ': '\\delta', 'ε': '\\epsilon', 'θ': '\\theta', 'λ': '\\lambda', 'μ': '\\mu', 'π': '\\pi',
+  'σ': '\\sigma', 'φ': '\\phi', 'ω': '\\omega', 'Δ': '\\Delta', 'Σ': '\\Sigma', '−': '-', '′': "'",
+};
+
+const EXPORT_DEFINITIONS = {
+  ParFor: '\\algdef{SE}[PARFOR]{ParFor}{EndParFor}[1]{\\textbf{parallel for} #1}{\\algorithmicend\\ \\textbf{parallel for}}',
+  Switch: [
+    '\\algdef{SE}[SWITCH]{Switch}{EndSwitch}[1]{\\textbf{switch} #1}{\\algorithmicend\\ \\textbf{switch}}',
+    '\\algdef{SE}[CASE]{Case}{EndCase}[1]{\\textbf{case} #1:}{\\algorithmicend\\ \\textbf{case}}',
+    '\\algdef{SE}[DEFAULT]{Default}{EndDefault}{\\textbf{default}:}{\\algorithmicend\\ \\textbf{default}}',
+  ].join('\n%   '),
+};
+
+/**
+ * The block as LaTeX for a paper or homework: stock algorithm + algpseudocode
+ * commands, with the preamble it needs listed in a comment on top.
+ */
+PS.exportLatex = function exportLatex(model) {
+  const out = ['\\begin{algorithm}'];
+  if (model.caption) out.push(`\\caption{${model.caption}}`);
+  out.push(algorithmicBegin(model, true));
+  const counter = startCounter(model, true);
+  if (counter) out.push(counter);
+  const used = emitNodes(model.nodes, 1, out, true);
+  out.push('\\end{algorithmic}');
+  out.push('\\end{algorithm}');
+  const body = out.join('\n')
+    .replace(/\\twodots\b\s*/g, '\\mathinner{\\ldotp\\ldotp}')
+    .replace(/[≤≥≠∞∈∉∪∩⊆⊂⊇⊃∅×·←→↑↓⌊⌋⌈⌉∧∨¬±…ΘΩαβγδεθλμπσφωΔΣ−′]/g, (ch) => (
+      ch === '−' || ch === '′' ? UNICODE_TEX[ch] : `\\ensuremath{${UNICODE_TEX[ch]}}`))
+    .replace(/“([^”]*)”/g, '``$1\'\'');
+  const preamble = [
+    '% Preamble:',
+    '%   \\usepackage{amsmath}',
+    '%   \\usepackage{algorithm}',
+    '%   \\usepackage[noend]{algpseudocode}  % CLRS style; drop [noend] for "end if" lines',
+    '%   \\algrenewcommand\\algorithmiccomment[1]{\\hfill// #1}',
+    ...[...used].map((name) => `%   ${EXPORT_DEFINITIONS[name]}`),
+  ];
+  return `${preamble.join('\n')}\n${body}`;
+};
+
+/* ------------------------------------------------------------------ */
+/* Typed lines: builder shortcuts and plain-text paste                 */
+/* ------------------------------------------------------------------ */
+
+/*
+ * A line of pseudocode as people type it (`if i > 0 and A[i] > key`,
+ * `for j = 2 to n do`, `else:`, `} else {`, `def foo(a):`) → what it stands
+ * for: `{ kind, fields, cut }`, where `cut` is how many leading characters the
+ * keyword took. Null for an ordinary statement.
+ *
+ * `final` is for a finished line (Enter, paste). While typing (`final` false) a
+ * keyword only counts once a space follows it (`if ` but not `iffy`), and
+ * `else` waits until it cannot be the start of `else if`.
+ */
+const hasCjkText = (value) => /[一-鿿]/.test(String(value || ''));
+const UNICODE_OPERATORS = [[/≠/g, '!='], [/≤/g, '<='], [/≥/g, '>='], [/−/g, '-'], [/[‥]/g, '..']];
+
+/** Strip what other pseudocode dialects put around a condition: then / do / : / { / (...). */
+function cleanCondition(raw) {
+  let value = String(raw || '').trim()
+    .replace(/\s*\{\s*$/, '')
+    .replace(/\s*[:：]\s*$/, '')
+    .replace(/\s+begin\s*$/i, '')
+    .replace(/\s+(?:then|do)\s*$/i, '')
+    // 如果 x > 0 则 / 当 i > 0 时执行
+    .replace(/\s*(?:则|那么|时执行|时做|的时候|时|执行|做)\s*[，,]?\s*$/, '')
+    .trim();
+  // One pair of parentheses around the whole condition (C style).
+  if (/^\(.*\)$/.test(value)) {
+    let depth = 0;
+    let wraps = true;
+    for (let i = 0; i < value.length; i++) {
+      if (value[i] === '(') depth++;
+      else if (value[i] === ')' && --depth === 0 && i < value.length - 1) wraps = false;
+    }
+    if (wraps) value = value.slice(1, -1).trim();
+  }
+  return value;
+}
+PS.cleanCondition = cleanCondition;
+
+/** Split at top-level commas (not inside brackets). */
+function splitTopLevel(text, separator = ',') {
+  const parts = [];
+  let depth = 0;
+  let last = 0;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if ('([{'.includes(ch)) depth++;
+    else if (')]}'.includes(ch)) depth--;
+    else if (ch === separator && depth === 0) {
+      parts.push(text.slice(last, i));
+      last = i + 1;
+    }
+  }
+  parts.push(text.slice(last));
+  return parts.map((part) => part.trim());
+}
+
+/** `n` → `n - 1`, `5` → `4`, `n + 1` → `n`: an exclusive end made inclusive (and back). */
+function shiftBound(value, step) {
+  const text = String(value).trim();
+  if (/^-?\d+$/.test(text)) return String(Number(text) + step);
+  const undo = step < 0 ? /^(.*\S)\s*\+\s*1$/ : /^(.*\S)\s*-\s*1$/;
+  const match = text.match(undo);
+  if (match) return match[1];
+  const wrapped = /[+\-*/\s]/.test(text) && !/^\(.*\)$/.test(text) && !/^[A-Za-z][\w.]*\(.*\)$/.test(text) ? `(${text})` : text;
+  return `${wrapped} ${step < 0 ? '-' : '+'} 1`;
+}
+
+/** C's `int i = 0; i < n; i++` → `i = 0` to `n - 1` (unit steps only). */
+function cForHead(head) {
+  const match = head.match(/^(?:[A-Za-z_][\w<>[\]:]*\s+)?([A-Za-z_]\w*)\s*=\s*([^;]+);\s*([A-Za-z_]\w*)\s*(<=|<|>=|>|!=)\s*([^;]+);\s*(.+)$/);
+  if (!match || match[3] !== match[1]) return null;
+  const [, name, start, , op, end, stepText] = match;
+  const step = stepText.replace(/\s+/g, '');
+  const up = [`${name}++`, `++${name}`, `${name}+=1`, `${name}=${name}+1`].includes(step);
+  const down = [`${name}--`, `--${name}`, `${name}-=1`, `${name}=${name}-1`].includes(step);
+  let bound = null;
+  if (up && (op === '<' || op === '!=')) bound = shiftBound(end, -1);
+  else if (up && op === '<=') bound = end.trim();
+  else if (down && op === '>') bound = shiftBound(end, 1);
+  else if (down && op === '>=') bound = end.trim();
+  if (bound == null) return null;
+  return { kind: 'for', fields: { init: `${name} = ${start.trim()}`, bound, downto: down, split: true } };
+}
+
+/** Python's `i in range(a, b)` → `i = a` to `b - 1` (steps of ±1 only). */
+function rangeHead(head) {
+  const match = head.match(/^([A-Za-z_]\w*)\s+in\s+range\((.*)\)$/);
+  if (!match) return null;
+  const args = splitTopLevel(match[2]).filter(Boolean);
+  const name = match[1];
+  if (args.length === 1) return { kind: 'for', fields: { init: `${name} = 0`, bound: shiftBound(args[0], -1), downto: false, split: true } };
+  const step = args.length === 3 ? args[2].replace(/\s+/g, '') : '1';
+  if (step === '1' || step === '+1') {
+    return { kind: 'for', fields: { init: `${name} = ${args[0]}`, bound: shiftBound(args[1], -1), downto: false, split: true } };
+  }
+  if (step === '-1') {
+    return { kind: 'for', fields: { init: `${name} = ${args[0]}`, bound: shiftBound(args[1], 1), downto: true, split: true } };
+  }
+  return null;
+}
+
+/** `i = 1 to n` → init / bound / downto; `v in S` (or ∈) → a for-each head. */
+function splitForHead(rest) {
+  const head = cleanCondition(rest);
+  const c = head.includes(';') ? cForHead(head) : null;
+  if (c) return c;
+  const each = head.match(/^(?:each|all|每个|每一个)\s*(.*)$/i);
+  if (each) return { kind: 'forall', fields: { init: each[1].replace(/\s*∈\s*/, ' in ') } };
+  const range = rangeHead(head);
+  if (range) return range;
+  if (/^[^\s=]+\s+(?:in|∈)\s/.test(head) || /^[^\s=]+\s*∈\s*\S/.test(head)) {
+    return { kind: 'forall', fields: { init: head.replace(/\s*∈\s*/, ' in ') } };
+  }
+  // 对于 i 从 1 到 n / 对于 i = 1 到 n / 对于 i = n 递减到 1
+  const from = head.match(/^(\S+?)\s*从\s*(.+?)\s*(递减到|降到|到)\s*(.*)$/);
+  if (from) return { kind: 'for', fields: { init: `${from[1]} = ${from[2]}`, bound: from[4], downto: from[3] !== '到', split: true } };
+  const cjk = head.match(/^(.*?\S)\s*(递减到|降到|到)\s*(.*)$/);
+  if (cjk && /[一-鿿]/.test(cjk[2])) return { kind: 'for', fields: { init: cjk[1], bound: cjk[3], downto: cjk[2] !== '到', split: true } };
+  const to = head.match(/^(.*?)\s+(to|downto|down\s+to)(?:\s+(.*))?$/i);
+  if (to) return { kind: 'for', fields: { init: to[1], bound: to[3] || '', downto: !/^to$/i.test(to[2]), split: true } };
+  return { kind: 'for', fields: { init: head, bound: '', downto: false } };
+}
+PS.splitForHead = splitForHead;
+
+// A typed C / Java parameter (`int x`, `int[] A`, `const vector<int>& v`) → its name.
+const TYPED_PARAM = /^(?:(?:const|final|unsigned|signed)\s+)*[A-Za-z_][\w:<>,[\]]*(?:\s*[*&]+\s*|\s+)([A-Za-z_]\w*)\s*(?:\[\s*\])*$/;
+
+/** Parameters as CLRS writes them: names only (Python annotations, C types and defaults dropped). */
+function cleanParams(text) {
+  return splitTopLevel(text).map((param) => {
+    let value = param;
+    const colon = splitTopLevel(value, ':');
+    if (colon.length > 1 && /^[A-Za-z_]\w*$/.test(colon[0])) value = colon[0]; // A: list[int]
+    value = value.replace(/^([A-Za-z_]\w*)\s*=\s*.+$/, '$1'); // lo=0
+    const typed = value.match(TYPED_PARAM);
+    return typed ? typed[1] : value;
+  }).filter((param, index, all) => param || all.length > 1).join(', ');
+}
+
+/** `Max-Heapify(A, i)` → name and args; a return type after `)` is dropped; a bare name keeps empty args. */
+function splitSignature(rest) {
+  const value = String(rest || '').trim().replace(/\s*[:{]\s*$/, '');
+  const open = value.indexOf('(');
+  if (open < 0) return { name: value.replace(/\s*(?:->|\breturns?\b).*$/i, '').trim(), args: '' };
+  let depth = 0;
+  let close = -1;
+  for (let i = open; i < value.length && close < 0; i++) {
+    if (value[i] === '(') depth++;
+    else if (value[i] === ')' && --depth === 0) close = i;
+  }
+  const inside = close < 0 ? value.slice(open + 1) : value.slice(open + 1, close);
+  return { name: value.slice(0, open).trim(), args: close < 0 ? inside.trim() : cleanParams(inside) };
+}
+PS.splitSignature = splitSignature;
+
+const END_LINE = /^(?:end(?:\s*(?:if|while|for|foreach|procedure|function|algorithm|repeat|loop|switch|case))?\.?|endif|endwhile|endfor|endloop|fi|od|done|esac|\}|结束(?:如果|循环|过程|函数|算法)?)\s*;?$/i;
+
+// C / Java function headers, recognized in pasted code: `int max(int a, int b) {`.
+const C_FUNCTION = /^(?:(?:public|private|protected|static|inline|final|virtual|extern|unsigned|signed|const)\s+)*(?:void|int|long|short|bool|boolean|double|float|char|string|String|auto|size_t|[A-Z]\w*(?:<[^>]*>)?(?:\[\])?|(?:std::)?vector<[^>]*>)\s*[*&]*\s+([A-Za-z_]\w*)\s*\((.*)\)\s*(?:const\s*)?\{?\s*$/;
+
+/** `case 1: y = 2` → the value and the statement after it. */
+function splitCase(rest, final) {
+  const parts = final ? splitTopLevel(rest, ':') : [rest];
+  if (parts.length < 2) return { value: final ? cleanCondition(rest) : rest, rest: '' };
+  return { value: parts[0].trim(), rest: parts.slice(1).join(':').trim() };
+}
+
+PS.typedLine = function typedLine(raw, options = {}) {
+  const final = !!options.final;
+  const text = String(raw == null ? '' : raw);
+  const value = text.replace(/^\s+/, '');
+  const lead = text.length - value.length;
+  const make = (kind, fields, rest) => ({ kind, fields: fields || {}, cut: text.length - String(rest == null ? '' : rest).length });
+  let m;
+
+  // Comment line: `// note`, `▷ note` (CLRS 2e), `# note`.
+  if ((m = value.match(/^(?:\/\/|▷|#(?=\s|$))\s?(.*)$/))) return make('comment', { text: m[1] }, m[1]);
+  if (final && END_LINE.test(value)) return make('end', {}, '');
+
+  // `} else {`, `} else if (x) {`: a closing brace in front of else is noise.
+  const body = value.replace(/^\}\s*(?=else\b|否则)/i, '');
+  const shift = lead + value.length - body.length;
+  const keyword = (pattern) => body.match(pattern);
+  const restAt = (match, group) => {
+    const rest = match[group];
+    return rest == null ? null : rest;
+  };
+
+  if ((m = keyword(/^(?:else\s*if|elseif|elif|elsif)(?:\s+([\s\S]*))?$/i)) || (m = keyword(/^否则\s*(?:如果|若)\s*([\s\S]+)$/))) {
+    const rest = restAt(m, 1);
+    if (rest == null && !final) return null;
+    return { kind: 'elseif', fields: { cond: final ? cleanCondition(rest || '') : (rest || '') }, cut: shift + body.length - (rest || '').length };
+  }
+  if ((m = keyword(/^else\s*:?\s*\{?(?:\s+([\s\S]*))?$/i)) || (final && (m = keyword(/^else\s*[:{]?\s*$/i)))
+    || (m = keyword(/^否则\s*[:：,，]?\s*([\s\S]*)$/))) {
+    const rest = restAt(m, 1) || '';
+    // While typing, `else`, `else i` and `else if` may still become `else if` (否则 → 否则如果).
+    if (!final && (rest === '' || /^(?:i|if|如|如果|若)$/i.test(rest))) return null;
+    return { kind: 'else', fields: { rest: final ? rest.trim() : rest }, cut: shift + body.length - rest.length };
+  }
+
+  const simple = [
+    ['if', /^if(?:\s+([\s\S]*))?$/i],
+    ['if', /^(?:如果|若|假如)\s*([\s\S]+)$/],
+    ['while', /^while(?:\s+([\s\S]*))?$/i],
+    ['while', /^当\s+([\s\S]*)$/],
+    ['while', /^当([\s\S]+?时(?:执行|做)?\s*[:：]?)$/],
+    ['until', /^until(?:\s+([\s\S]*))?$/i],
+    ['until', /^直到\s*([\s\S]+)$/],
+    ['switch', /^(?:switch|match)(?:\s+([\s\S]*))?$/i],
+  ];
+  for (const [kind, pattern] of simple) {
+    if ((m = value.match(pattern))) {
+      const rest = restAt(m, 1);
+      if (rest == null && !final) return null;
+      return make(kind, { cond: final ? cleanCondition(rest || '') : (rest || '') }, rest);
+    }
+  }
+
+  if ((m = value.match(/^case(?:\s+([\s\S]*))?$/i))) {
+    const rest = restAt(m, 1);
+    if (rest == null && !final) return null;
+    // Python's `case _:` is the default case.
+    if (/^_\s*:?\s*$/.test(rest || '')) return make('default', { rest: '' }, '');
+    return make('case', splitCase(rest || '', final), rest);
+  }
+  if ((m = value.match(/^(?:default|otherwise|其他情况|其它情况)(\s*[:：])?\s*([\s\S]*)$/i))) {
+    if (!m[1] && !final) return null;
+    if (!m[1] && m[2]) return null; // `defaults = …` is a statement
+    return make('default', { rest: final ? m[2].trim() : m[2] }, m[2]);
+  }
+
+  if ((m = value.match(/^(?:for\s*each|foreach|for\s+all)(?:\s+([\s\S]*))?$/i)) || (m = value.match(/^对于?\s*每一?个\s*([\s\S]+)$/))) {
+    const rest = restAt(m, 1);
+    if (rest == null && !final) return null;
+    return make('forall', { init: cleanCondition(rest || '').replace(/\s*∈\s*/, ' in ') }, rest);
+  }
+  if ((m = value.match(/^(parallel\s+)?for(?:\s+([\s\S]*))?$/i)) || (m = value.match(/^(并行\s*)?对于\s*([\s\S]+)$/))) {
+    const parallel = !!m[1];
+    const rest = restAt(m, 2);
+    if (rest == null && !final) return null;
+    const head = splitForHead(rest || '');
+    // While typing, `for i = 1 t` is not split yet (it may become `total`): only a whole
+    // ` to ` / ` downto ` followed by a space splits the head.
+    if (!final && head.kind === 'for' && !/\s(?:to|downto)\s|到/i.test(rest || '')) {
+      return make('for', { init: rest || '', bound: '', downto: false, parallel }, rest);
+    }
+    if (parallel && head.kind === 'for') head.fields.parallel = true;
+    return make(head.kind, head.fields, rest);
+  }
+
+  if ((m = value.match(/^(repeat|loop)(?:\s*[:{])?(?:(\s+)([\s\S]*))?$/i)) || (m = value.match(/^(重复|循环)\s*[:：]?(?:(\s+)([\s\S]*))?$/))) {
+    if (m[2] == null && !final) return null;
+    const rest = m[3] || '';
+    return make(/^(loop|循环)$/i.test(m[1]) ? 'loop' : 'repeat', { rest: final ? rest.trim() : rest }, rest);
+  }
+  // C's `do {` (closed by `} while (…);`): a repeat loop. Only for a finished line.
+  if (final && /^do\s*[:{]?$/i.test(value)) return make('repeat', { rest: '', doWhile: true }, '');
+
+  if ((m = value.match(/^(return|print)(?:\s+([\s\S]*))?$/i)) || (m = value.match(/^(返回|打印|输出)(?![:：])\s*([\s\S]+)$/))) {
+    const rest = restAt(m, 2);
+    const kind = /^(return|返回)$/i.test(m[1]) ? 'return' : 'print';
+    if (rest == null && !final) return null;
+    if (kind === 'print' && rest == null) return null;
+    return make(kind, { text: final ? (rest || '').trim().replace(/;$/, '') : (rest || '') }, rest);
+  }
+  if (final && /^返回\s*$/.test(value)) return make('return', { text: '' }, '');
+  if ((m = value.match(/^(break|continue)(\s*;?\s*)$/i))) {
+    if (!final && !m[2]) return null;
+    return make(m[1].toLowerCase(), {}, '');
+  }
+  if (final && (m = value.match(/^(跳出(?:循环)?|中断|继续)\s*$/))) return make(m[1] === '继续' ? 'continue' : 'break', {}, '');
+  if ((m = value.match(/^(procedure|function|algorithm|def)(?:\s+([\s\S]*))?$/i)) || (m = value.match(/^(过程|函数|算法)\s*([A-Za-z][\s\S]*)$/))) {
+    const rest = restAt(m, 2);
+    if (rest == null && !final) return null;
+    const kind = /^(function|函数)$/i.test(m[1]) ? 'Function' : 'Procedure';
+    return make('function', Object.assign({ kind }, splitSignature(rest || '')), rest);
+  }
+  if ((m = value.match(/^(require|ensure|input|output)s?(?:\s*:\s*|\s+)([\s\S]*)$/i)) || (m = value.match(/^(输入|输出)\s*[:：]\s*([\s\S]*)$/))) {
+    const kind = /^(require|input|输入)/i.test(m[1]) ? 'require' : 'ensure';
+    return make(kind, { text: m[2] }, m[2]);
+  }
+  if (final && (m = value.match(C_FUNCTION))) {
+    return make('function', { kind: 'Function', name: m[1], args: cleanParams(m[2]) }, '');
+  }
+  return null;
+};
+
+/** A new node for a typed line (not else / else if / until / end, which attach to others). */
+PS.nodeFromTyped = function nodeFromTyped(typed) {
+  const f = typed.fields;
+  const math = (key, value) => ({ [key]: PS.normalizeOperators(value || ''), [`${key}Math`]: !hasCjkText(value) });
+  switch (typed.kind) {
+    case 'if': return PS.node('if', { branches: [Object.assign({ body: [] }, math('cond', f.cond))], elseBody: null });
+    case 'while': return PS.node('while', Object.assign({ body: [] }, math('cond', f.cond)));
+    case 'for': {
+      const node = PS.node('for', Object.assign({ downto: !!f.downto, body: [] }, math('init', f.init), math('bound', f.bound)));
+      if (f.parallel) node.parallel = true;
+      return node;
+    }
+    case 'forall': return PS.node('for', Object.assign({ all: true, bound: '', downto: false, body: [] }, math('init', f.init)));
+    case 'repeat': return PS.node('repeat', { body: [], until: '' });
+    case 'loop': return PS.node('loop', { body: [] });
+    case 'switch': return PS.node('switch', Object.assign({ body: [] }, math('cond', f.cond)));
+    case 'case': return PS.node('case', Object.assign({ body: [] }, math('value', f.value)));
+    case 'default': return PS.node('case', { default: true, value: '', body: [] });
+    case 'return':
+    case 'print':
+    case 'require':
+    case 'ensure': return PS.node(typed.kind, math('text', f.text));
+    case 'break':
+    case 'continue': return PS.node(typed.kind);
+    // A typed `// note` line is its own (numbered) line, `\State \Comment{note}`.
+    case 'comment': return PS.node('state', { text: '', textMath: true, comment: f.text || '' });
+    case 'function': return PS.node('function', Object.assign({ kind: f.kind || 'Procedure', name: f.name || '', body: [] }, math('args', f.args)));
+    default: return null;
+  }
+};
+
+/** A plain statement node. */
+PS.statementNode = (text) => PS.node('state', { text: PS.normalizeOperators(text || ''), textMath: !hasCjkText(text) });
+
+/** A finished line of text → its node: `return x` a return, `break` a break, else a statement. */
+PS.lineNode = function lineNode(text) {
+  const typed = PS.typedLine(text, { final: true });
+  const simple = typed && ['return', 'print', 'break', 'continue'].includes(typed.kind) ? PS.nodeFromTyped(typed) : null;
+  return simple || PS.statementNode(String(text || '').trim().replace(/;$/, ''));
+};
+
+/* ---- pasted plain text → nodes ---- */
+
+const CALL_SHAPED = /^([A-Za-z][A-Za-z0-9]*(?:-[A-Za-z0-9]+)*)\s*\((.*)\)\s*:?\s*$/;
+
+/** `MAX-HEAPIFY` (as copied from CLRS) → `Max-Heapify`; acronyms (BFS, DFS-Visit, RB-Insert) stay. */
+const ACRONYMS = new Set(['BFS', 'DFS', 'RB', 'BST', 'LCS', 'LCA', 'MST', 'SCC', 'KMP', 'FFT', 'GCD', 'CRT', 'OS', 'LU', 'LUP']);
+const titleName = (name) => name.split('-').map((part) => (
+  /^[A-Z][A-Z0-9]+$/.test(part) && !ACRONYMS.has(part) && /[A-Z]{2}/.test(part) ? part[0] + part.slice(1).toLowerCase() : part
+)).join('-');
+
+/** `x = y // note` → text and comment (also ▷ and ` # `), outside quotes. Python's `//` is division. */
+function splitTrailingComment(line, python = false) {
+  let quote = null;
+  for (let i = 0; i < line.length; i++) {
+    const ch = line[i];
+    if (quote) { if (ch === quote || (quote === '“' && ch === '”')) quote = null; continue; }
+    if (ch === '"' || ch === '“') { quote = ch; continue; }
+    const rest = line.slice(i);
+    const marker = python ? /^(?:▷|#(?=\s))/ : /^(?:\/\/|▷|#(?=\s))/;
+    if (i > 0 && /\s/.test(line[i - 1]) && marker.test(rest)) {
+      return { text: line.slice(0, i).trimEnd(), comment: rest.replace(/^(?:\/\/|▷|#)\s?/, '') };
+    }
+  }
+  return { text: line, comment: null };
+}
+
+/** `x > 0` → `x <= 0`: the until of a do-while is its condition negated. */
+function invertCondition(cond) {
+  const value = String(cond || '').trim();
+  const parts = value.split(/\s*(<=|>=|==|!=|<|>)\s*/);
+  if (parts.length === 3 && !/\b(?:and|or|not)\b|&&|\|\|/.test(value)) {
+    const opposite = { '<': '>=', '<=': '>', '>': '<=', '>=': '<', '==': '!=', '!=': '==' }[parts[1]];
+    return `${parts[0]} ${opposite} ${parts[2]}`;
+  }
+  if (/^not\s+/.test(value) && !/\b(?:and|or)\b/.test(value)) return value.replace(/^not\s+/, '');
+  return `not (${value})`;
+}
+PS.invertCondition = invertCondition;
+
+/**
+ * A block head with its body on the same line: `if x > 0 then y = 1`,
+ * `if x: return y`, `if (x) y = 1;`, `while (i < n) { i++; }`.
+ * → { head, body } or null.
+ */
+function inlineBody(text) {
+  const keyword = text.match(/^(?:(if|while|for|elif|else\s+if|elsif|elseif)\b|(如果|当))\s*/i);
+  if (!keyword) return null;
+  const rest = text.slice(keyword[0].length);
+  const headOf = (cond) => `${keyword[1] || keyword[2]} ${cond.trim()}`;
+  // C: if (cond) statement
+  if (rest.startsWith('(')) {
+    let depth = 0;
+    let close = -1;
+    for (let i = 0; i < rest.length && close < 0; i++) {
+      if (rest[i] === '(') depth++;
+      else if (rest[i] === ')' && --depth === 0) close = i;
+    }
+    const after = close < 0 ? '' : rest.slice(close + 1).trim();
+    if (after && after !== '{' && !/^(?:then|do)$/i.test(after)) {
+      const inner = after.replace(/^\{\s*/, '').replace(/\s*\}$/, '');
+      return inner ? { head: headOf(rest.slice(0, close + 1)), body: inner } : null;
+    }
+    return null;
+  }
+  const word = rest.match(/^(.*?\S)\s+(?:then|do)\s+(\S.*)$/i) || rest.match(/^(.*?\S)\s*(?:则|时)\s*[，,]?\s*(\S.*)$/);
+  if (word && !/^begin$/i.test(word[2])) return { head: headOf(word[1]), body: word[2] };
+  const colon = splitTopLevel(rest, ':');
+  if (colon.length > 1 && colon[colon.length - 1] && !/^\s*=/.test(colon[colon.length - 1])) {
+    return { head: headOf(colon.slice(0, -1).join(':')), body: colon[colon.length - 1] };
+  }
+  const brace = rest.match(/^(.*?\S)\s*\{\s*(.+?)\s*\}$/);
+  if (brace) return { head: headOf(brace[1]), body: brace[2] };
+  return null;
+}
+
+// A C / Java / JavaScript declaration's type: `int s = 0` is the assignment `s = 0` in pseudocode.
+const DECLARATION = /^(?:(?:const|final|static|unsigned|signed|let|var)\s+)*(?:(?:int|long|short|bool|boolean|double|float|char|string|String|auto|size_t|var|let|const)(?:\[\])*\s+)?(?=[A-Za-z_]\w*(?:\[[^\]]*\])?\s*=[^=])/;
+
+/** Statements on one line: `a = 1; b = 2;` (C) → nodes. */
+function lineNodes(text, split) {
+  const parts = split ? splitTopLevel(text, ';').filter(Boolean) : [text];
+  return parts
+    .map((part) => (split ? part.replace(DECLARATION, '') : part))
+    .filter((part) => !/^pass$/.test(part.trim()))
+    .map((part) => PS.lineNode(part));
+}
+
+/** Python's floor division `(lo + hi) // 2` → `floor((lo + hi) / 2)`. */
+function floorDivision(text) {
+  let value = text;
+  for (let guard = 0; guard < 20; guard++) {
+    const at = value.search(/\s*\/\/\s*/);
+    if (at < 0) break;
+    const op = value.slice(at).match(/^\s*\/\/\s*/)[0];
+    // Left operand: a bracketed group (with the name before it) or a token.
+    let start = at;
+    if (value[at - 1] === ')' || value[at - 1] === ']') {
+      let depth = 0;
+      for (let i = at - 1; i >= 0; i--) {
+        if (')]'.includes(value[i])) depth++;
+        else if ('(['.includes(value[i]) && --depth === 0) { start = i; break; }
+      }
+      while (start > 0 && /[\w.]/.test(value[start - 1])) start--;
+    } else {
+      while (start > 0 && /[\w.]/.test(value[start - 1])) start--;
+    }
+    let end = at + op.length;
+    if (value[end] === '(') {
+      let depth = 0;
+      for (let i = end; i < value.length; i++) {
+        if (value[i] === '(') depth++;
+        else if (value[i] === ')' && --depth === 0) { end = i + 1; break; }
+      }
+    } else {
+      while (end < value.length && /[\w.]/.test(value[end])) end++;
+      while (value[end] === '[' || value[end] === '(') {
+        const close = value[end] === '[' ? ']' : ')';
+        const found = value.indexOf(close, end);
+        if (found < 0) break;
+        end = found + 1;
+      }
+    }
+    if (start === at || end === at + op.length) break;
+    value = `${value.slice(0, start)}floor(${value.slice(start, at)} / ${value.slice(at + op.length, end)})${value.slice(end)}`;
+  }
+  return value;
+}
+PS.floorDivision = floorDivision;
+
+/**
+ * Plain pseudocode → nodes. Structure comes from indentation (Python, CLRS
+ * copied with its layout) or, when the text has closing lines (`end if`,
+ * `}`), from those. Line numbers (`1 for ...`, `2. x = 1`) are dropped.
+ */
+PS.parsePlain = function parsePlain(source) {
+  const lines = String(source == null ? '' : source).replace(/\r\n?/g, '\n').split('\n')
+    .map((line) => line.replace(/\t/g, '    ').replace(/\s+$/, ''));
+  // Python docstrings become comment lines.
+  const raw = [];
+  let docstring = null;
+  for (const line of lines) {
+    const indent = line.match(/^\s*/)[0];
+    const body = line.trim();
+    if (docstring) {
+      const end = body.indexOf(docstring);
+      const text = (end < 0 ? body : body.slice(0, end)).trim();
+      if (text) raw.push(`${indent}// ${text}`);
+      if (end >= 0) docstring = null;
+      continue;
+    }
+    const open = body.match(/^(?:[rbu]?)("""|''')(.*)$/i);
+    if (open) {
+      const close = open[2].indexOf(open[1]);
+      const text = (close < 0 ? open[2] : open[2].slice(0, close)).trim();
+      if (text) raw.push(`${indent}// ${text}`);
+      if (close < 0) docstring = open[1];
+      continue;
+    }
+    if (!body) continue;
+    // `begin` (Pascal) or `{` (Allman style) on a line of its own opens the block of the line above.
+    if (/^(?:begin|\{)$/i.test(body)) {
+      if (raw.length) raw[raw.length - 1] += body === '{' ? ' {' : ' begin';
+      continue;
+    }
+    raw.push(line);
+  }
+  const all = raw.join('\n');
+  const python = /^\s*(?:def|elif|class)\b|:\s*(?:#.*)?$/m.test(all) && !/[{}]\s*$/m.test(all);
+  // Brace (and begin/end) languages: a head without `{` / begin owns one statement.
+  const braces = /[{}]/.test(all) || /\sbegin$/im.test(all);
+
+  const numberedCount = raw.filter((line) => /^\s*\d+[.:)]?\s/.test(line)).length;
+  const dropNumbers = numberedCount >= 2 && numberedCount >= raw.length / 2;
+  const items = raw.map((line) => {
+    const number = dropNumbers ? line.match(/^\s*\d+[.:)]?\s+/) : null;
+    const start = number ? number[0].length : line.match(/^\s*/)[0].length;
+    let text = applyAll(line.slice(start), UNICODE_OPERATORS);
+    const split = splitTrailingComment(text, python);
+    text = split.text.replace(/\s*;\s*$/, '');
+    if (python) text = floorDivision(text);
+    // Procedure names copied in capitals: INSERTION-SORT(A) → Insertion-Sort(A).
+    text = text.replace(/\b([A-Z][A-Z0-9]*(?:-[A-Z0-9]+)*)(?=\s*\()/g, (name) => ((name.match(/[A-Z]/g) || []).length >= 4 ? titleName(name) : name));
+    return { indent: start, text, comment: split.comment, numbered: !!number };
+  });
+  const explicit = items.some((item) => END_LINE.test(item.text.trim()) || /^\}\s*(?:else|while)\b/i.test(item.text.trim()));
+
+  const nodes = [];
+  // Open blocks: the list new lines go into, the node owning it, its indent, and whether it
+  // closes by itself after one statement (`if (x)` without a brace).
+  const stack = [{ list: nodes, owner: null, indent: -1 }];
+  const top = () => stack[stack.length - 1];
+  const lastIn = (list) => list[list.length - 1];
+  const withComment = (node, comment) => { if (comment != null) node.comment = comment; return node; };
+  const opensBrace = (text) => /(?:\{|\bbegin)\s*$/i.test(text);
+  /** After a statement: blocks that own a single statement are done. */
+  const settle = () => {
+    while (stack.length > 1 && top().single && top().list.length) stack.pop();
+  };
+  const pushBlock = (frame, text) => {
+    stack.push(Object.assign(frame, { single: explicit && braces && !opensBrace(text) && !python }));
+  };
+  const addStatements = (list, text) => {
+    const added = lineNodes(text, braces);
+    list.push(...added);
+    return added;
+  };
+
+  items.forEach((item, index) => {
+    let text = item.text.trim();
+    if (!explicit) while (stack.length > 1 && top().indent >= item.indent) stack.pop();
+
+    // `} while (x > 0);` closes a do … while.
+    const doWhile = explicit && text.match(/^\}\s*while\b\s*(.*)$/i);
+    if (doWhile && top().owner && top().owner.type === 'repeat') {
+      const repeat = top().owner;
+      const cond = invertCondition(cleanCondition(doWhile[1]));
+      Object.assign(repeat, { until: PS.normalizeOperators(cond), untilMath: !hasCjkText(cond) });
+      if (item.comment != null) repeat.untilComment = item.comment;
+      stack.pop();
+      settle();
+      return;
+    }
+    if (explicit && /^\}/.test(text) && !/^\}\s*(?:else|否则)/i.test(text)) {
+      // `}` closes the innermost braced block (a switch's open case goes with it).
+      while (stack.length > 1 && top().single) stack.pop();
+      if (top().owner && top().owner.type === 'case') stack.pop();
+      if (stack.length > 1) stack.pop();
+      settle();
+      text = text.replace(/^\}\s*;?/, '').trim();
+      if (!text) return;
+    }
+
+    const inline = inlineBody(text);
+    const headText = inline ? inline.head : text;
+    const typed = PS.typedLine(headText, { final: true });
+    const next = items[index + 1];
+
+    // Procedure header: keyword, or a call-shaped line that heads a body
+    // (unnumbered among numbered lines, ends with ':', or has indented lines below).
+    const shaped = !typed && text.match(CALL_SHAPED);
+    const header = (typed && typed.kind === 'function') ? typed.fields
+      : shaped && stack.length === 1 && ((dropNumbers && !item.numbered) || /:\s*$/.test(text)
+        || (!explicit && next && next.indent > item.indent && !dropNumbers))
+        ? { kind: 'Procedure', name: titleName(shaped[1]), args: shaped[2] } : null;
+    if (header) {
+      while (stack.length > 1) stack.pop();
+      const node = withComment(PS.nodeFromTyped({ kind: 'function', fields: header }), item.comment);
+      nodes.push(node);
+      // Its body: everything below, even when copied without indentation.
+      const indent = next ? Math.min(item.indent, next.indent - 1) : item.indent;
+      stack.push({ list: node.body, owner: node, indent });
+      return;
+    }
+
+    if (typed && (typed.kind === 'else' || typed.kind === 'elseif')) {
+      let ifNode = null;
+      if (explicit && top().owner && top().owner.type === 'if' && !top().single) {
+        ifNode = top().owner;
+        stack.pop();
+      } else if (lastIn(top().list) && lastIn(top().list).type === 'if') {
+        ifNode = lastIn(top().list);
+      }
+      if (ifNode && !ifNode.elseBody) {
+        let list;
+        if (typed.kind === 'else') {
+          ifNode.elseBody = [];
+          if (item.comment != null) ifNode.elseComment = item.comment;
+          list = ifNode.elseBody;
+          if (typed.fields.rest) {
+            addStatements(list, typed.fields.rest.replace(/^\{\s*/, '').replace(/\s*\}$/, ''));
+            // `else x = 1;` on one line owns nothing more in brace code.
+            if (explicit && braces && !opensBrace(text)) return;
+          }
+        } else {
+          const branch = { cond: PS.normalizeOperators(typed.fields.cond), condMath: !hasCjkText(typed.fields.cond), body: [] };
+          if (item.comment != null) branch.comment = item.comment;
+          ifNode.branches.push(branch);
+          list = branch.body;
+          if (inline) {
+            addStatements(list, inline.body);
+            return;
+          }
+        }
+        pushBlock({ list, owner: ifNode, indent: item.indent }, text);
+        return;
+      }
+      // Python's `while … else:` / `for … else:` runs when the loop ends without break.
+      const loop = lastIn(top().list);
+      if (typed.kind === 'else' && loop && (loop.type === 'while' || loop.type === 'for')) {
+        top().list.push(PS.node('state', { text: '', textMath: true, comment: item.comment || 'if the loop above ended without break:' }));
+        if (typed.fields.rest) addStatements(top().list, typed.fields.rest);
+        stack.push({ list: top().list, owner: null, indent: item.indent });
+        return;
+      }
+    }
+    if (typed && typed.kind === 'until') {
+      const repeat = explicit && top().owner && top().owner.type === 'repeat' ? top().owner : lastIn(top().list);
+      if (repeat && repeat.type === 'repeat') {
+        repeat.until = PS.normalizeOperators(typed.fields.cond);
+        repeat.untilMath = !hasCjkText(typed.fields.cond);
+        if (item.comment != null) repeat.untilComment = item.comment;
+        if (explicit && top().owner === repeat) stack.pop();
+        settle();
+        return;
+      }
+    }
+    // A do … while without braces (`do` / body / `while (x > 0)` at the do's indent).
+    if (typed && typed.kind === 'while' && !explicit) {
+      const repeat = lastIn(top().list);
+      if (repeat && repeat.type === 'repeat' && repeat.doWhile && !repeat.until && !(next && next.indent > item.indent)) {
+        const cond = invertCondition(typed.fields.cond);
+        Object.assign(repeat, { until: PS.normalizeOperators(cond), untilMath: !hasCjkText(cond) });
+        return;
+      }
+    }
+    if (typed && typed.kind === 'end') {
+      if (explicit && stack.length > 1) {
+        while (stack.length > 1 && top().single) stack.pop();
+        if (top().owner && top().owner.type === 'case') stack.pop();
+        if (stack.length > 1) stack.pop();
+        settle();
+      }
+      return;
+    }
+    if (typed && (typed.kind === 'case' || typed.kind === 'default')) {
+      // A case runs until the next case: it never owns a single statement.
+      while (stack.length > 1 && top().single) stack.pop();
+      if (top().owner && top().owner.type === 'case') stack.pop();
+      const node = withComment(PS.nodeFromTyped(typed), item.comment);
+      top().list.push(node);
+      const rest = typed.kind === 'case' ? typed.fields.rest : typed.fields.rest;
+      if (rest) addStatements(node.body, rest);
+      stack.push({ list: node.body, owner: node, indent: item.indent });
+      return;
+    }
+
+    const node = typed ? PS.nodeFromTyped(typed) : null;
+    if (!node) {
+      const added = addStatements(top().list, text);
+      if (item.comment != null && added.length) withComment(added[added.length - 1], item.comment);
+      settle();
+      return;
+    }
+    if (node.type === 'if') {
+      if (item.comment != null) node.comment = item.comment;
+    } else if (typed.kind !== 'comment') withComment(node, item.comment);
+    if (typed.fields && typed.fields.doWhile) node.doWhile = true;
+    top().list.push(node);
+    if ((node.type === 'repeat' || node.type === 'loop') && typed.fields.rest) addStatements(node.body, typed.fields.rest);
+    if (PS.isContainer(node)) {
+      const list = node.type === 'if' ? node.branches[0].body : node.body;
+      if (inline) {
+        addStatements(list, inline.body);
+        settle();
+        return;
+      }
+      pushBlock({ list, owner: node, indent: item.indent }, text);
+    } else {
+      settle();
+    }
+  });
+
+  // C's `break` at the end of a case is how C stops falling through, not pseudocode.
+  PS.walk(nodes, (node) => {
+    if (node.type === 'case' && node.body.length > 1 && lastIn(node.body).type === 'break') node.body.pop();
+    delete node.doWhile;
+  });
+  return nodes;
+};
+
+/** Clipboard text → `{ nodes, caption }`: LaTeX (algorithmic) or plain pseudocode. */
+PS.parsePasted = function parsePasted(text) {
+  let source = String(text == null ? '' : text).replace(/\r\n?/g, '\n');
+  // A Markdown code fence copied along with the code.
+  const fenced = source.trim().match(/^(`{3,}|~{3,})[^\n]*\n([\s\S]*?)\n?\1\s*$/);
+  if (fenced) source = fenced[2];
+  if (/\\(?:State|If|ElsIf|Elif|ElseIf|While|For|ForAll|ForEach|ParFor|Loop|Switch|Repeat|Procedure|Function|Return|begin\{algorithmic\})\b/.test(source)) {
+    const model = PS.parseLatex(source);
+    return { nodes: model.nodes, caption: model.caption || '', latex: true, model };
+  }
+  return { nodes: PS.parsePlain(source), caption: '', latex: false };
 };
 
 /*
@@ -915,13 +1992,14 @@ PS.serializeLatex = function serializeLatex(model) {
     if (isMath && !text.includes('$')) {
       // Constants and booleans are text, not a product of variables.
       if (/^[A-Z]{2,}[A-Z0-9_-]*$/.test(text) || /^(true|false)$/i.test(text)) return `\\textsc{${text.toLowerCase()}}`;
+      const plain = !text.includes('\\');
       const math = (segment) => {
-        const tex = PS.normalizeExpr(segment);
+        const tex = plain ? PS.plainMath(segment) : PS.normalizeExpr(segment);
         return comparison ? asComparison(tex) : tex;
       };
-      const plain = PS.normalizeOperators(text);
+      const source = PS.normalizeOperators(text);
       // Merge-Sort(A, p, r) inside an expression renders like \Call.
-      return PS.inlineWithCalls(plain, math) || `$${math(plain)}$`;
+      return PS.inlineWithCalls(source, math) || `$${math(source)}$`;
     }
     // Conditions mixing text and math ($a = b$ and $c$): `=` still means `==`.
     if (comparison) return text.replace(/\$([^$]*)\$/g, (all, inner) => `$${asComparison(inner)}$`);
@@ -952,8 +2030,9 @@ PS.serializeLatex = function serializeLatex(model) {
       if (!value) return;
       if (previousConstant && STARTS_WITH_OP.test(value)) value = `{}${value}`;
       if (nextConstant && ENDS_WITH_OP.test(value)) value = `${value}{}`;
-      if (!prose) value = value.replace(/(?<![=<>!:{])=(?![=}])/g, GETS);
-      tokens.push({ type: 'math', value: value.replace(/(?<![=<>!])==(?!=)/g, IS_EQUAL) });
+      // (No lookbehind: iOS before 16.4 cannot parse it.)
+      if (!prose) value = value.replace(/=(?![=}])/g, (match, offset, text) => (/[=<>!:{]/.test(text[offset - 1] || '') ? match : GETS));
+      tokens.push({ type: 'math', value: value.replace(/==(?!=)/g, (match, offset, text) => (/[=<>!]/.test(text[offset - 1] || '') ? match : IS_EQUAL)) });
     };
     CONSTANT_TEX.lastIndex = 0;
     for (let match; (match = CONSTANT_TEX.exec(tex));) {
@@ -984,7 +2063,7 @@ PS.serializeLatex = function serializeLatex(model) {
     // MathJax spaces a bare `.` as punctuation (`x. key`); in TeX and CLRS the attribute
     // dot is ordinary, so it goes in a group: `x{.}\mathit{key}`. Decimals are left alone.
     return (prose ? tex : PS.normalizeExpr(tex))
-      .replace(/(?<=[A-Za-z0-9}\])])\.(?=\s*(?:[A-Za-z]|\\(?:math|text)))/g, '{.}')
+      .replace(/([A-Za-z0-9}\])])\.(?=\s*(?:[A-Za-z]|\\(?:math|text)))/g, '$1{.}')
       // clrscode's \twodots: the range dots of A[1 . . n].
       .replace(/\\twodots\b\s*/g, '\\mathinner{\\ldotp\\ldotp}')
       .trim();
@@ -1180,22 +2259,31 @@ PS.serializeLatex = function serializeLatex(model) {
 
   const MERGEABLE = new Set(['state', 'call', 'return', 'print', 'break', 'continue']);
 
+  /** A line's `\label` and highlight, kept on the row for `\ref` and styling. */
+  const meta = (holder, prefix = '') => ({
+    label: holder ? holder[PS.metaKey(prefix, 'label')] || null : null,
+    mark: !!(holder && holder[PS.metaKey(prefix, 'mark')]),
+  });
+
   function buildRows(nodes, depth, counter, rows) {
-    const row = (text, comment, numbered = true, extra = {}) => rows.push(Object.assign({
-      number: numbered ? ++counter.value : null,
-      depth,
-      text,
-      comment: comment || null,
-    }, extra));
+    const row = (text, comment, numbered = true, extra = {}) => {
+      if (numbered) counter.started = true;
+      rows.push(Object.assign({
+        number: numbered ? ++counter.value : null,
+        depth,
+        text,
+        comment: comment || null,
+      }, extra));
+    };
     const body = (list) => buildRows(list || [], depth + 1, counter, rows);
 
     for (const node of nodes) {
       switch (node.type) {
         case 'function': {
-          row(`\\fn{${node.name || ''}}(${expr(node.args, node.argsMath)})`, node.comment, false, { kind: 'function' });
-          // Each procedure numbers its own lines from 1.
+          row(`\\fn{${node.name || ''}}(${expr(node.args, node.argsMath)})`, node.comment, false, Object.assign({ kind: 'function' }, meta(node)));
+          // Each procedure numbers its own lines from 1 (a block's start option counts for the first).
           const saved = counter.value;
-          counter.value = 0;
+          if (counter.started) counter.value = 0;
           body(node.body);
           counter.value = saved;
           break;
@@ -1204,18 +2292,20 @@ PS.serializeLatex = function serializeLatex(model) {
         case 'if': {
           node.branches.forEach((branch, index) => {
             const comment = index === 0 ? node.comment || branch.comment : branch.comment;
-            row(`\\kw{${index === 0 ? 'if' : 'elseif'}} ${expr(branch.cond, branch.condMath, true)}`, comment);
+            row(`\\kw{${index === 0 ? 'if' : 'elseif'}} ${expr(branch.cond, branch.condMath, true)}`, comment, true, meta(index === 0 ? node : branch));
             body(branch.body);
           });
           if (node.elseBody) {
             // CLRS: a plain first statement goes on the else line ("else x = x.right"),
             // the rest of the branch below it.
             const [first, ...rest] = node.elseBody;
-            if (first && MERGEABLE.has(first.type) && !(first.comment && node.elseComment)) {
-              row(`\\kw{else} ${simpleText(first)}`, node.elseComment || first.comment);
+            const elseMeta = meta(node, 'else');
+            if (first && MERGEABLE.has(first.type) && !(first.comment && node.elseComment)
+              && !elseMeta.label && !first.label && elseMeta.mark === !!first.mark) {
+              row(`\\kw{else} ${simpleText(first)}`, node.elseComment || first.comment, true, elseMeta);
               body(rest);
             } else {
-              row('\\kw{else}', node.elseComment);
+              row('\\kw{else}', node.elseComment, true, elseMeta);
               body(node.elseBody);
             }
           }
@@ -1223,12 +2313,13 @@ PS.serializeLatex = function serializeLatex(model) {
         }
 
         case 'while':
-          row(`\\kw{while} ${expr(node.cond, node.condMath, true)}`, node.comment);
+          row(`\\kw{while} ${expr(node.cond, node.condMath, true)}`, node.comment, true, meta(node));
           body(node.body);
           break;
 
         case 'for': {
           let head;
+          const keyword = node.parallel && !node.all ? '\\kw{parallel for}' : '\\kw{for}';
           if (node.all) {
             // CLRS: "**for** each v ∈ G.V" (only "for" is bold). A head already written with text commands
             // (\texttt{child} of \texttt{u}) is prose; math mode would swallow its spaces.
@@ -1245,40 +2336,68 @@ PS.serializeLatex = function serializeLatex(model) {
             }
           } else {
             head = node.bound
-              ? `\\kw{for} ${expr(node.init, node.initMath)} \\kw{${node.downto ? 'downto' : 'to'}} ${expr(node.bound, node.boundMath)}`
-              : `\\kw{for} ${expr(node.init, node.initMath)}`;
+              ? `${keyword} ${expr(node.init, node.initMath)} \\kw{${node.downto ? 'downto' : 'to'}} ${expr(node.bound, node.boundMath)}`
+              : `${keyword} ${expr(node.init, node.initMath)}`;
           }
-          row(head, node.comment);
+          row(head, node.comment, true, meta(node));
           body(node.body);
           break;
         }
 
         case 'repeat':
-          row('\\kw{repeat}', node.comment);
+          row('\\kw{repeat}', node.comment, true, meta(node));
           body(node.body);
-          row(`\\kw{until} ${expr(node.until, node.untilMath, true)}`, node.untilComment);
+          row(`\\kw{until} ${expr(node.until, node.untilMath, true)}`, node.untilComment, true, meta(node, 'until'));
+          break;
+
+        case 'loop':
+          row('\\kw{loop}', node.comment, true, meta(node));
+          body(node.body);
+          break;
+
+        case 'switch':
+          row(`\\kw{switch} ${expr(node.cond, node.condMath)}`, node.comment, true, meta(node));
+          body(node.body);
+          break;
+
+        case 'case':
+          row(node.default ? '\\kw{default}' : `\\kw{case} ${expr(node.value, node.valueMath)}`, node.comment, true, meta(node));
+          body(node.body);
           break;
 
         case 'state':
           // CLRS numbers comment lines too.
-          if (!node.text && node.comment) row('', node.comment, true, { note: true });
-          else row(simpleText(node), node.comment);
+          if (!node.text && node.comment) row('', node.comment, true, Object.assign({ note: true }, meta(node)));
+          else row(simpleText(node), node.comment, true, meta(node));
           break;
+
+        case 'statex':
+          // \Statex: an unnumbered line (blank, or a heading).
+          row(expr(node.text, node.textMath), node.comment, false, Object.assign({ kind: 'statex' }, meta(node)));
+          break;
+
+        case 'counter': {
+          // \setcounter{ALG@line}{k}: the next line is numbered k + 1.
+          const next = parseInt(node.value, 10);
+          if (next >= 1) counter.value = next - 1;
+          counter.started = true;
+          break;
+        }
 
         case 'require':
         case 'ensure':
-          row(`\\kw{${node.type === 'require' ? 'Require' : 'Ensure'}:} ${expr(node.text, node.textMath)}`, node.comment, false);
+          row(`\\kw{${node.type === 'require' ? 'Require' : 'Ensure'}:} ${expr(node.text, node.textMath)}`, node.comment, false, meta(node));
           break;
 
         case 'comment': {
           const last = rows[rows.length - 1];
           if (last && !last.comment) last.comment = node.text || '';
-          else row('', node.text || '', true, { note: true });
+          else row('', node.text || '', true, Object.assign({ note: true }, meta(node)));
           break;
         }
 
         default:
-          row(simpleText(node) || '', node.comment);
+          row(simpleText(node) || '', node.comment, true, meta(node));
       }
     }
   }
@@ -1371,15 +2490,27 @@ PS.serializeLatex = function serializeLatex(model) {
 
   PS.buildRows = function buildRowsForModel(model) {
     const rows = [];
-    buildRows(model.nodes || [], 0, { value: 0 }, rows);
+    const start = parseInt(model.start, 10);
+    buildRows(model.nodes || [], 0, { value: start > 1 ? start - 1 : 0, started: false }, rows);
+    // \ref{name} → the number of the line carrying \label{name}.
+    const numbers = new Map(rows.filter((row) => row.label).map((row) => [row.label, row.number]));
+    const resolve = (text) => (text && text.includes('\\ref')
+      ? text.replace(/\\ref\{([^{}]*)\}/g, (all, name) => (numbers.get(name) != null ? String(numbers.get(name)) : '??'))
+      : text);
+    rows.forEach((row) => {
+      row.text = resolve(row.text);
+      row.comment = resolve(row.comment);
+    });
     return rows;
   };
 
   /** AST → DOM. Math is left as `.ps-math` placeholders for PS.typesetMath. */
   PS.renderBlock = function renderBlock(model, options) {
     const settings = Object.assign({ lineNumbers: true, indentSize: '1.2em', commentDelimiter: '//' }, options || {});
+    // Per-block option: \begin{algorithmic}[0] / [1].
+    if (typeof model.numbers === 'boolean') settings.lineNumbers = model.numbers;
     const block = el('div', 'ps-block');
-    block.style.setProperty('--ps-indent', settings.indentSize || '1.2em');
+    block.setCssProps({ '--ps-indent': settings.indentSize || '1.2em' });
 
     if (model.caption) {
       const title = el('div', 'ps-title');
@@ -1391,36 +2522,43 @@ PS.serializeLatex = function serializeLatex(model) {
     }
 
     const grid = el('div', 'ps-grid');
-    for (const row of PS.buildRows(model)) {
-      const rowEl = el('div', 'ps-row');
-      if (row.kind) rowEl.classList.add(`ps-row-${row.kind}`);
-      rowEl.style.setProperty('--ps-depth', String(row.depth));
-      rowEl.appendChild(el('span', 'ps-num', settings.lineNumbers && row.number != null ? String(row.number) : ''));
+    let commented = false;
+    // A line's cells (number, code, comment) are placed straight into the block's
+    // grid, so code and comments line up across lines. Each cell carries its line's
+    // classes and indent.
+    const rows = PS.buildRows(model);
+    rows.forEach((row, index) => {
+      const lineClasses = [];
+      if (row.kind) lineClasses.push(`ps-row-${row.kind}`);
+      if (row.kind === 'function' && index > 0) lineClasses.push('ps-fn-later');
+      if (index > 0 && rows[index - 1].kind === 'function') lineClasses.push('ps-after-fn');
+      if (row.mark) lineClasses.push('ps-mark');
+      const cell = (className, text) => {
+        const node = el('span', className, text);
+        lineClasses.forEach((name) => node.classList.add(name));
+        node.setCssProps({ '--ps-depth': String(row.depth) });
+        grid.appendChild(node);
+        return node;
+      };
+      cell('ps-num', settings.lineNumbers && row.number != null ? String(row.number) : '');
       // A comment-only line has no code cell: its comment starts at the code
       // column, at the line's indent, and runs to the right edge (CLRS).
       // A procedure header without a comment spans the comment column too, so a long
       // parameter list does not squeeze the comments of the lines below it.
       const span = row.kind === 'function' && !row.comment;
-      if (!row.note) {
-        const codeEl = el('span', span ? 'ps-code ps-span' : 'ps-code');
-        renderInline(codeEl, row.text);
-        rowEl.appendChild(codeEl);
-      }
-      if (span) {
-        grid.appendChild(rowEl);
-        continue;
-      }
-      const commentEl = el('span', row.note ? 'ps-comment ps-note' : 'ps-comment');
+      if (!row.note) renderInline(cell(span ? 'ps-code ps-span' : 'ps-code'), row.text);
+      if (span) return;
+      const commentEl = cell(row.note ? 'ps-comment ps-note' : 'ps-comment');
       if (row.comment) {
+        commented = true;
         // clrscode \CommentSymbol: bold, tightly kerned slashes.
         commentEl.appendChild(el('span', 'ps-comment-mark', settings.commentDelimiter || '//'));
         commentEl.appendChild(document.createTextNode(' '));
         renderInline(commentEl, row.comment, true);
       }
-      rowEl.appendChild(commentEl);
-      grid.appendChild(rowEl);
-    }
+    });
 
+    if (commented) block.addClass('ps-commented');
     block.appendChild(grid);
     return block;
   };
@@ -1428,12 +2566,12 @@ PS.serializeLatex = function serializeLatex(model) {
   /** Render and typeset into `container`, revealing it once math is done. */
   PS.paint = async function paint(app, container, model, options, sourcePath, component) {
     const block = PS.renderBlock(model, options);
-    block.style.visibility = 'hidden';
+    block.addClass('ps-pending'); // hidden until the math is typeset
     container.appendChild(block);
     try {
       await PS.typesetMath(app, block, sourcePath, component);
     } finally {
-      block.style.visibility = '';
+      block.removeClass('ps-pending');
     }
     return block;
   };

@@ -46,7 +46,6 @@ Obsidian 是正文的编辑源，博客保存可直接由 GitHub Pages 构建的
 | `$…$`、`$$…$$` | 原始 TeX 存在 HTML 属性中，避免 Markdown 消耗反斜线、下划线或表格分隔符 |
 | `\ce{…}` | MathJax 完整包自带的 mhchem |
 | `pseudo` 代码块 | 与 Obsidian 插件 Pseudocode Suite 相同的 CLRS 扁平风格伪代码，数学符号使用 SVG |
-| `image-layout-a` | 桌面并排、手机纵向图片布局 |
 | `==高亮==`、`%%注释%%` | `<mark>`、去除注释 |
 | Markdown 表格 | 补充块间空行；表格外的竖线保持为普通文字，避免被 kramdown 误判成表格 |
 
